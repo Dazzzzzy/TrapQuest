@@ -645,7 +645,7 @@ To say AnalVirginityTaunt of (M - mechanic):
 	say "[line break][speech style of M]'[one of]Nothing beats the feeling of a fresh hole.'[or]Now that feels fresh.'[at random][roman type][line break]";
 
 To say VaginalVirginityTaunt of (M - mechanic):
-	say "[line break][speech style of M]'[one of]Heh, I knew you smelled pure. I'm so lucky![or]A virgin? It must be my lucky day!'[at random][roman type][line break]";
+	say "[line break][speech style of M]'[one of]Heh, I knew you smelled pure. I'm so lucky!'[or]A virgin? It must be my lucky day!'[at random][roman type][line break]";
 	now M is penetrating vagina;[we do this earlier than we would normally, so Xavier knows to stay in the player]
 	XavierUp M by 1.
 
