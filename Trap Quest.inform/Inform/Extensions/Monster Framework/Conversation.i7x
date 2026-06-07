@@ -1793,7 +1793,7 @@ To say StoryQuestion of (M - a monster):
 		say "'What's your story?'".
 
 To say StoryAnswer of (M - a monster):
-	say "[speech style of M]'Trapquest.'[roman type][line break]".
+	say "[speech style of M]'TFQuest.'[roman type][line break]".
 
 talk-escape-question is a talk-object.
 
