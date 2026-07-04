@@ -1540,7 +1540,7 @@ To say AfterDominationComment (N - a number) of (M - a wench):
 	otherwise if N is 2:
 		say "[speech style of M]'[one of]What the fuck was that?! UGH[or]UGH, I was CLOSE, you jerk[or]Are you kidding me? Do you even KNOW how CLOSE I was[in random order]! I am SO getting you back for this!'[roman type][line break]";
 	otherwise if N is 3:
-		say "[speech style of M]'[one of]I guess I'm not surprised[or]I don't know what I expected[or]I guess I only have myself to blame[in random order]...Don't think you'll get another chance like this.'[roman type][line break]";
+		say "[speech style of M]'[one of]I guess I'm not surprised[or]I don't know what I expected[or]I guess I only have myself to blame[in random order]... Don't think you'll get another chance like this.'[roman type][line break]";
 	otherwise if N is 4:
 		say "[speech style of M]'[one of]Now, you can tell everybody we had sex[or]Now you can at least say you came inside me[or]Now it's almost like we had sex[in random order]! FYI, I only did this because I pity you. I don't plan on doing that next time.'[roman type][line break]";
 	otherwise if N is 5:[in this case, your penis is huge, so she's probably not aggressive]
