@@ -723,8 +723,8 @@ To compute unique automatic banishment of (M - minotaur):
 	if mythical creature fetish is 1:
 		if equine-strapon is off-stage and the player is getting lucky:
 			now the strap-length of equine-strapon is 11;[15 inches]
-			if full-lady fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
+			if full-lady fetish is 1, say "The huge strap-on dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
+			otherwise say "A huge strap-on dildo materialises on the floor in front of you.";
 			say GotLuckyFlav;
 			now equine-strapon is in the location of the player;
 			compute autotaking equine-strapon;
@@ -738,8 +738,8 @@ To compute unique automatic banishment of (M - minotaur):
 		if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
 			now the strap-length of strapon-dildo is 11;[15 inches]
 			say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			if full-lady fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
+			if full-lady fetish is 1, say "The huge strap-on dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
+			otherwise say "A huge strap-on dildo materialises on the floor in front of you.";
 			now strapon-dildo is in the location of the player;
 			compute autotaking strapon-dildo;
 			increase the loot dropped of M by 1;
