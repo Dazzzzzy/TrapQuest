@@ -941,7 +941,7 @@ This is the wench monster convinced rule:
 		rule succeeds;
 	otherwise if presented-orifice is penis and (M is friendly or the charisma of the player - the times-dominated of M > 0 or M is horny-wench or M is QoS wench):
 		if M is QoS wench:
-			say "[BigNameDesc of M] looks at your [sissy-penis] with disgust.[line break][speech style of M]'[one of]Ewwww. [if the size of penis < 4]Now way am I going anywhere near that shrimp dick.'[otherwise]You might not have the smallest [sissy-penis] I have ever seen, but it's no [BlackCock].'[end if][or]Sweetie you know I don't fuck premature ejaculators.'[or]No hun you'd do a better job taking [BlackCock] or eating me out, fucking just isn't for betas like you.'[in random order][roman type][line break]";
+			say "[BigNameDesc of M] looks at your [sissy-penis] with disgust.[line break][speech style of M]'[one of]Ewwww. [if the size of penis < 4]Now way am I going anywhere near that shrimp dick.'[otherwise]You might not have the smallest [sissy-penis] I have ever seen, but it's no [BlackCock].'[end if][or]Sweetie, you know I don't fuck premature ejaculators.'[or]No hun you'd do a better job taking [BlackCock] or eating me out, fucking just isn't for betas like you!'[in random order][roman type][line break]";
 			now the chosen-orifice of current-monster is face;
 			rule fails;
 		otherwise if M is horny-wench:
@@ -1122,7 +1122,7 @@ To say ErectionLostFlav of (M - a wench):
 	if M is unfriendly: [Now she sits on your face.]
 		if face is not actually occupied:
 			if M is QoS wench:
-				say "[BigNameDesc of M] giggles as [he of M] watches your limp [sissy-penis].[line break][speech style of M]'Well I didn't expect much more from a beta. [one of]Don't worry about your [sissy-penis]; we can use my nice strapon.'[or]Ever deep-throated a BBC? Well you're about to deepthroat mine.'[or]All right hun let's practise your deepthroat skills instead.'[in random order][roman type][line break]";
+				say "[BigNameDesc of M] giggles as [he of M] watches your limp [sissy-penis].[line break][speech style of M]'Well I didn't expect much more from a beta. [one of]Don't worry about your [sissy-penis]; we can use my nice strapon.'[or]Ever deep-throated a BBC? Well you're about to deepthroat mine.'[or]All right hun, let's practise your deepthroat skills instead.'[in random order][roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M] cups a hand to [his of M] [HoleDesc of M] as [he of M] climbs off of you.[line break][speech style of M]'I'm having too much fun to stop now, so... [one of]why don't you have some dinner?'[or]why don't I feed you? I've got your favourite right here.'[or]why don't I give you something to eat? You've got to be hungry...'[in random order][roman type][line break]";
 			increase the sex-length of M by 2;
@@ -2021,7 +2021,7 @@ To compute unique climax of (M - QoS wench) in (F - asshole):
 	now the sex-length of M is 0;
 
 To compute (M - a QoS wench) demanding erection:
-	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
+	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun, let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
 	let C be a random off-stage fetish appropriate chastity cage;
 	if the size of penis < 4 and bondage protection < 3 and C is a thing:
 		say "[speech style of M]'Pfft. Well, I don't need a tape measure to see what needs to be done here. I'm doing you a favour hun, having a [BlackCock] dominate you is simply the best, you just need to taste it once. And you're not getting out of this cage for a long time because I'll be keeping the key nice and safe for you!'[roman type][line break]";
@@ -2037,7 +2037,7 @@ To compute (M - a QoS wench) demanding erection:
 		say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
 		bore M;
 	otherwise if the size of penis < 8 and the size of penis > min penis size:
-		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles pleasantly, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 3]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
+		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles pleasantly, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 3]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strap-on[end if]. See ya later hun.'[line break][roman type]";
 		penisdown 1;
 		SilentlyDelicateUp 1;
 		bore M;
