@@ -1059,7 +1059,7 @@ To set up sex length of (M - a wench) in (B - penis):
 
 To say ErectionDemand of (M - a wench):
 	if M is QoS wench:
-		say "[BigNameDesc of M] stares down at your flaccid [player-penis] dismissively.[line break][speech style of M]'[one of]Does this thing even get hard? It better be at least 12 inches or I'm really not interested.'[or]Wow, what a surprise, the beta can't get hard, maybe you'd prefer to be sucking my strapon instead?'[or]Come on shrimp dick, I could use a laugh, let's see how big you are.'[at random][roman type][line break]";
+		say "[BigNameDesc of M] stares down at your flaccid [player-penis] dismissively.[line break][speech style of M]'[one of]Does this thing even get hard? It better be at least 12 inches or I'm really not interested.'[or]Wow, what a surprise, the beta can't get hard, maybe you'd prefer to be sucking my strap-on instead?'[or]Come on shrimp dick, I could use a laugh, let's see how big you are.'[at random][roman type][line break]";
 	otherwise if M is friendly-fucking or presented-orifice is penis:
 		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Why aren't you hard? Hurry up.'[or]Wow, you aren't even hard... fix that.'[or]What's the matter? Get hard.'[at random][roman type][line break]";
 	otherwise:
@@ -1122,7 +1122,7 @@ To say ErectionLostFlav of (M - a wench):
 	if M is unfriendly: [Now she sits on your face.]
 		if face is not actually occupied:
 			if M is QoS wench:
-				say "[BigNameDesc of M] giggles as [he of M] watches your limp [sissy-penis].[line break][speech style of M]'Well I didn't expect much more from a beta. [one of]Don't worry about your [sissy-penis]; we can use my nice strapon.'[or]Ever deep-throated a BBC? Well you're about to deepthroat mine.'[or]All right hun, let's practise your deepthroat skills instead.'[in random order][roman type][line break]";
+				say "[BigNameDesc of M] giggles as [he of M] watches your limp [sissy-penis].[line break][speech style of M]'Well I didn't expect much more from a beta. [one of]Don't worry about your [sissy-penis]; we can use my nice strap-on.'[or]Ever deep-throated a BBC? Well you're about to deepthroat mine.'[or]All right hun, let's practise your deepthroat skills instead.'[in random order][roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M] cups a hand to [his of M] [HoleDesc of M] as [he of M] climbs off of you.[line break][speech style of M]'I'm having too much fun to stop now, so... [one of]why don't you have some dinner?'[or]why don't I feed you? I've got your favourite right here.'[or]why don't I give you something to eat? You've got to be hungry...'[in random order][roman type][line break]";
 			increase the sex-length of M by 2;
@@ -1932,7 +1932,7 @@ To say DickDesc of (M - a QoS wench):
 	say "strap-on";
 
 To say LongDickDesc of (M - a QoS wench):
-	say "10-inch black strapon".
+	say "10-inch black strap-on".
 
 To say StrapOnDesc of (M - QoS wench):
 	say "a very large black strap-on dildo, probably 8 inches thick and 10 inches long. It's made to be as realistic as possible with an engorged head and veins snaking all the way down its length".
@@ -2006,7 +2006,7 @@ To compute sexSubmit of (M - a QoS wench) in (F - a fuckhole):
 		heal asshole times 2; [To prevent fainting]
 		FavourUp M;
 	otherwise:
-		say "[BigNameDesc of M] continues to powerfully pummel away with [his of M] [LongDickDesc of M]. [one of]You can very clearly feel the realistic contours of [his of M] rubber [BlackCock] as it rubs mercilessly against the sensitive walls of your [asshole].[or][Big he of M] alternates between gyrating [his of M] hips and long strokes so the broad head of [his of M] strapon stretches out the entrance to your [asshole]![or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear [he of M]'s deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
+		say "[BigNameDesc of M] continues to powerfully pummel away with [his of M] [LongDickDesc of M]. [one of]You can very clearly feel the realistic contours of [his of M] rubber [BlackCock] as it rubs mercilessly against the sensitive walls of your [asshole].[or][Big he of M] alternates between gyrating [his of M] hips and long strokes so the broad head of [his of M] strap-on stretches out the entrance to your [asshole]![or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear [he of M]'s deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
 		ruin asshole;
 		if M is friendly-fucking and refractoryperiod > 0:
 			compute anal climax of M.
