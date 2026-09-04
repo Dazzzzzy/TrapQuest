@@ -48,14 +48,14 @@ Carry out kneeling:
 		let TPR be a random number between 1 and 30;
 		if debuginfo > 0 and TP > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
 		if TP >= TPR:
-			say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0] and [end if][if urine-puddle of the location of the player > 0][urine][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the urine-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
+			say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and slime-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and slime-puddle of the location of the player > 0] and [end if][if slime-puddle of the location of the player > 0][slime][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the slime-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
 			if there is worn fluid vulnerable crotch covering clothing:
 				let M be (the milk-puddle of the location of the player + 3) / 4;
 				decrease the milk-puddle of the location of the player by M;
 				AnnouncedSquirt milk on hips by M;
-				let M be (the urine-puddle of the location of the player + 3) / 4;
-				decrease the urine-puddle of the location of the player by M;
-				AnnouncedSquirt urine on hips by M;
+				let M be (the slime-puddle of the location of the player + 3) / 4;
+				decrease the slime-puddle of the location of the player by M;
+				AnnouncedSquirt slime on hips by M;
 			if bukkake fetish is 1 or there is worn fluid vulnerable crotch covering clothing:
 				let M be (the semen-puddle of the location of the player + 3) / 4;
 				decrease the semen-puddle of the location of the player by M;
@@ -102,7 +102,7 @@ Carry out kneeling:
 		say "[if a random number between 1 and 6 is 1][line break][variable custom style]I'm on my knees again![otherwise][bold type][line break]You are now on your knees.[end if][roman type][line break]";
 	otherwise:
 		say "[bold type]You are now on your knees,[roman type] like a good little [if diaper quest is 1]baby[otherwise]slut[end if].[line break]";
-	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0:
+	if [playerRegion is Mansion and ]the ecto-puddle of the location of the player > 0:
 		say "[if bukkake fetish is 1]The thick slime on the floor instantly adheres to your skin.[otherwise]The glowing surface of the floor seems to glue itself to your skin.[end if]";
 		increase the stickiness of the player by a random number between 4 and 6;
 	otherwise if the player is glue stuck:

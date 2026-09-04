@@ -8,7 +8,7 @@ To decide which figure-name is the clothing-image of (C - a pure totem):
 	decide on figure of totem.
 
 To say ClothingDesc of (C - a pure totem):
-	say "A figurine of tiny woman holding a sword, her flowing robes painstakingly carved into the ivory surrounding her. Whenever you look at it, you feel a sense of calm level-headedness.".
+	say "A figslime of tiny woman holding a sword, her flowing robes painstakingly carved into the ivory surrounding her. Whenever you look at it, you feel a sense of calm level-headedness.".
 
 To say ShortDesc of (C - a pure totem):
 	say "totem of purity".

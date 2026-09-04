@@ -62,8 +62,9 @@ Check pulling pullstring collar:
 			now R is 0;
 		otherwise if R is 3 or monster-puller is monster:
 			if watersports fetish is 1 and monster-puller is willing to urinate monster:
-				say "'[if the urine taste addiction of the player < 4]I wonder what your pee tastes like?'[otherwise if the urine taste addiction of the player < 7][one of]I hope [he of monster-puller] pees on my face[or]Force me to drink your pee[then at random]!'[otherwise][one of]I'm a disgusting human toilet, [please] make me drink all your [urine][or]I'm desperate for your pee, [please] give it all to me[at random]!'[end if][roman type][line break]";
-				UrineTasteAddictUp 1;
+				if slimeshooter fetish is 1, say "'[if the slime taste addiction of the player < 4]I wonder what your slime tastes like?'[otherwise if the slime taste addiction of the player < 7][one of]I hope [he of monster-puller] slimes me right in the face[or]Force me to drink your slime[then at random]!'[otherwise][one of]I'm a disgusting slime guzzler, [please] make me drink all your [slime][or]I'm desperate for your slime, [please] give it all to me[at random]!'[end if][roman type][line break]";
+				otherwise say "'[if the slime taste addiction of the player < 4]I wonder what your [slime] tastes like?'[otherwise if the slime taste addiction of the player < 7][one of]I hope [he of monster-puller] [slime]s on my face[or]Force me to drink your [slime][then at random]!'[otherwise][one of]I'm a disgusting human [SlimeTarget], [please] make me drink all your [slime][or]I'm desperate for your [slime], [please] give it all to me[at random]!'[end if][roman type][line break]";
+				SlimeTasteAddictUp 1;
 			otherwise:
 				if diaper quest is 1:
 					say "'[if the sex addiction of the player < 5 and the player is gendered female]Being a prude gets boring, the truth is that I love masturbating just as much as boys do!'[otherwise if the sex addiction of the player < 8][one of]Nothing in life is better than a well-earned orgasm[or]If you hold me down while you play with my bits, I'm sure to enjoy it[then at random]!'[otherwise if the sex addiction of the player < 11][one of]The only thing more fun than being a big baby is being a big baby who's allowed cummies[or]I'll wear anything I'm told as long as you rub me through it[at random]!'[otherwise if there is a worn diaper]If I'm an obedient little baby, will you rub me through my diaper?'[otherwise]If I put on a diaper, will you promise to give me my cummies through it?'[end if][roman type][line break]";
@@ -77,7 +78,7 @@ Check pulling pullstring collar:
 			if skimpy underwear suggestion is not 0 and a random number between -1 and 1 >= diaper quest:
 				now R is 0;
 				if diaper quest is 1 or skimpy underwear suggestion is 1:
-					say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
+					say "'[if diaper lover >= 1]Panties are only for big girls who can control their [SlimeContainer]. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
 					let C be a random worn knickers;
 					if C is pussy covering knickers:
 						if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
@@ -100,7 +101,7 @@ Check pulling pullstring collar:
 						otherwise say "You feel like your strong preference for skimpy underwear just got even skimpier.";
 			otherwise if diaper lover >= 1 and the player is not bladder incontinent:
 				now R is 0;
-				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break][if the player is bladder incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise if the diaper addiction of the player > 14]You are weirdly excited by the idea that this might mean you're becoming incontinent.[otherwise]You realise this probably means it's making you more incontinent.[end if]";
+				say "'Dumb girls wear diapers because they can't control their [slime] [slime]!'[roman type][line break][if the player is bladder incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise if the diaper addiction of the player > 14]You are weirdly excited by the idea that this might mean you're becoming incontinent.[otherwise]You realise this probably means it's making you more incontinent.[end if]";
 				SilentlyBladderIncontinenceUp 1;
 			otherwise:
 				increase R by 1;

@@ -116,7 +116,7 @@ To compute unique periodic effect of (M - a robomilkmaid):
 				otherwise if diaper quest is 1:
 					increase the milk volume of M by a random number between 4 and 6;
 				otherwise:
-					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows its load on the floor.";
+					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] robot [manly-penis] blows its load on the floor.";
 					PuddleUp semen by (a random number between 2 and 3) in (the location of M).
 
 Part 2 - Perception
@@ -300,7 +300,7 @@ This is the robomaid punishment rule:
 			now R is a random modern room;
 		let X be a random number between 1 and 3;
 		while X > 0:
-			let P be a random off-stage generic-appropriate patron;
+			let P be a random off-stage generic-appropriate pimp-appropriate patron;
 			now P is in R;
 			decrease X by 1;
 		drag to R by M;

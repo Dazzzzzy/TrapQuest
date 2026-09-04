@@ -10,6 +10,11 @@ To decide which number is the oral-sex-addiction-influence of (C - a cumslut col
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.
 
+To set up default magic state of (C - a cumslut collar):
+	if the player is a september 2026 top donator, now C is cumguzzling.
+To compute post transformation effect of (C - a cumslut collar):
+	set up default magic state of C.
+
 Figure of cumslut collar is the file "Items/Accessories/Neck/collar3.png".
 
 To decide which figure-name is clothing-image of (C - a cumslut collar):
@@ -51,7 +56,7 @@ Definition: WC collar is class-relevant:
 To decide which number is the initial outrage of (C - WC collar):
 	decide on 10.
 
-To decide which number is the urine-taste-addiction-influence of (C - WC collar):
+To decide which number is the slime-taste-addiction-influence of (C - WC collar):
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.
@@ -78,9 +83,9 @@ To compute periodic effect of (C - WC collar):
 Definition: WC collar is pink themed: decide yes.
 Definition: WC collar is toilet themed: decide yes.
 
-This is the WC collar piss slut rule:
+This is the WC collar slime slut rule:
 	if WC collar is worn, increase the desirability of belly by 15.
-The WC collar piss slut rule is listed in the piss slut eligibility rules.
+The WC collar slime slut rule is listed in the slime slut eligibility rules.
 
 cock collar is a submissive collar. cock collar is latex. cock collar is sheer. The printed name of cock collar is "[clothing-title-before]cock collar[clothing-title-after]". The text-shortcut of cock collar is "ccl".
 

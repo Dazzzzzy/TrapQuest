@@ -11,20 +11,20 @@ familiar has a number called stored-titfuck-addiction.
 familiar has a number called stored-grossness-addiction.
 familiar has a number called stored-semen-addiction.
 familiar has a number called stored-semen-taste-addiction.
-familiar has a number called stored-urine-taste-addiction.
+familiar has a number called stored-slime-taste-addiction.
 familiar has a number called stored-milk-taste-addiction.
 familiar has a number called stored-bbc-addiction.
 
 familiar has a number called arousal.
 
 familiar has a number called face-semen-volume.
-familiar has a number called face-urine-volume.
+familiar has a number called face-slime-volume.
 familiar has a number called face-milk-volume.
 To decide which number is the total face volume of (M - familiar):
-	decide on the face-semen-volume of M + the face-urine-volume of M + the face-milk-volume of M.
+	decide on the face-semen-volume of M + the face-slime-volume of M + the face-milk-volume of M.
 To FaceEmpty (M - familiar):
 	now the face-semen-volume of M is 0;
-	now the face-urine-volume of M is 0;
+	now the face-slime-volume of M is 0;
 	now the face-milk-volume of M is 0.
 To say FamiliarMouthfulSwallow:
 	if the total face volume of familiar > 0:
@@ -109,7 +109,7 @@ To say MonsterComment of (M - familiar):
 	if M is unconcerned, say "[line break][variable custom style]I can sense that [he of M] has some kind of spiritual connection to me, almost like [he of M][']s a part of me. But something tells me that [he of M][']s not just gonna do whatever I say...[roman type][line break]".
 
 Definition: familiar is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 To set up (M - familiar):
@@ -122,7 +122,7 @@ To set up (M - familiar):
 		remove M from play.
 
 To compute familiar arrival:
-	say "[bold type]You feel some of your essence being sucked out of you! [if the player is upright]You are now on your knees.[end if][roman type][line break]You feel less... Everything! Less like a pervert, [if the raw anal sex addiction of the player > 1]less keen on anal sex, [end if][if the player is possessing a vagina and the raw vaginal sex addiction of the player > 1]lower craving for vaginal sex, [otherwise if the raw vaginal sex addiction of the player > 1]lower desire to change sex, [end if][if the raw oral sex addiction of the player > 1]less positive about the idea of sucking dick, [end if][if the raw titfuck addiction of the player > 1]lowered keenness to let [men of male-m] fuck your tits, [end if][if the raw grossness addiction of the player > 1 or the raw semen taste addiction of the player > 1 or the raw urine taste addiction of the player > 1 or the raw milk taste addiction of the player > 1]more disgust for gross smells and tastes, [end if]and [if the flesh volume of breasts >= the real flesh volume of breasts and the thickness of hips >= the real thickness of hips]where it's able to, your body shrinks to become less feminine (your breasts and hips appear to be stuck at their current size, and unable to shrink any further)[run paragraph on][otherwise if the flesh volume of breasts >= the real flesh volume of breasts]where it's able to, your body shrinks to become less feminine (your breasts appear to be stuck at their current size, and unable to shrink any further)[run paragraph on][otherwise if the thickness of hips >= the real thickness of hips]where it's able to, your body shrinks to become less feminine (your hips appear to be stuck at their current thickness, and unable to shrink any further)[run paragraph on][otherwise]your body significantly shrinks to become much less curvy[end if][if the lips of face > 0]. Even your lips have returned to normal[end if]!";
+	say "[bold type]You feel some of your essence being sucked out of you! [if the player is upright]You are now on your knees.[end if][roman type][line break]You feel less... Everything! Less like a pervert, [if the raw anal sex addiction of the player > 1]less keen on anal sex, [end if][if the player is possessing a vagina and the raw vaginal sex addiction of the player > 1]lower craving for vaginal sex, [otherwise if the raw vaginal sex addiction of the player > 1]lower desire to change sex, [end if][if the raw oral sex addiction of the player > 1]less positive about the idea of sucking dick, [end if][if the raw titfuck addiction of the player > 1]lowered keenness to let [men of male-m] fuck your tits, [end if][if the raw grossness addiction of the player > 1 or the raw semen taste addiction of the player > 1 or the raw slime taste addiction of the player > 1 or the raw milk taste addiction of the player > 1]more disgust for gross smells and tastes, [end if]and [if the flesh volume of breasts >= the real flesh volume of breasts and the thickness of hips >= the real thickness of hips]where it's able to, your body shrinks to become less feminine (your breasts and hips appear to be stuck at their current size, and unable to shrink any further)[run paragraph on][otherwise if the flesh volume of breasts >= the real flesh volume of breasts]where it's able to, your body shrinks to become less feminine (your breasts appear to be stuck at their current size, and unable to shrink any further)[run paragraph on][otherwise if the thickness of hips >= the real thickness of hips]where it's able to, your body shrinks to become less feminine (your hips appear to be stuck at their current thickness, and unable to shrink any further)[run paragraph on][otherwise]your body significantly shrinks to become much less curvy[end if][if the lips of face > 0]. Even your lips have returned to normal[end if]!";
 	now the stored-sex-addiction of familiar is the raw sex addiction of the player / 2;
 	decrease the raw sex addiction of the player by the raw sex addiction of the player / 2;
 	now the stored-anal-sex-addiction of familiar is the raw anal sex addiction of the player / 2;
@@ -139,14 +139,14 @@ To compute familiar arrival:
 	decrease the raw semen addiction of the player by the raw semen addiction of the player / 2;
 	now the stored-semen-taste-addiction of familiar is the raw semen taste addiction of the player / 2;
 	decrease the raw semen taste addiction of the player by the raw semen taste addiction of the player / 2;
-	now the stored-urine-taste-addiction of familiar is the raw urine taste addiction of the player / 2;
-	decrease the raw urine taste addiction of the player by the raw urine taste addiction of the player / 2;
+	now the stored-slime-taste-addiction of familiar is the raw slime taste addiction of the player / 2;
+	decrease the raw slime taste addiction of the player by the raw slime taste addiction of the player / 2;
 	now the stored-milk-taste-addiction of familiar is the raw milk taste addiction of the player / 2;
 	decrease the raw milk taste addiction of the player by the raw milk taste addiction of the player / 2;
 	now the stored-bbc-addiction of familiar is the raw bbc addiction of the player / 2;
 	decrease the raw bbc addiction of the player by the raw bbc addiction of the player / 2;
 	if debuginfo > 0:
-		say "[input-style]Total summary of changes:[line break]Sex addiction -[the stored-sex-addiction of familiar][line break]Anal sex addiction -[the stored-anal-sex-addiction of familiar][line break]Vaginal sex addiction -[the stored-vaginal-sex-addiction of familiar][line break]Oral sex addiction -[the stored-oral-sex-addiction of familiar][line break]Titfuck addiction -[the stored-titfuck-addiction of familiar][line break][if grossness fetish > 0]Grossness addiction -[the stored-grossness-addiction of familiar][line break][end if][if interracial fetish is 1]Big Black Cock addiction -[the stored-bbc-addiction of familiar][end if][line break]Creampie [if bukkake fetish is 1]& bukkake [end if]addiction -[the stored-semen-addiction of familiar][line break]Semen taste addiction -[the stored-semen-taste-addiction of familiar][line break][if watersports fetish is 1]Urine taste addiction -[the stored-urine-taste-addiction of familiar][line break][end if][if lactation fetish is 1]Breast milk taste addiction -[the stored-milk-taste-addiction of familiar][line break][end if]Breast flesh units -[the flesh volume of breasts - the real flesh volume of breasts][line break]Hip thickness units -[the thickness of hips - the real thickness of hips][line break][if weight gain fetish is 1]Ass fat -[the flesh volume of hips][line break][end if][roman type]";
+		say "[input-style]Total summary of changes:[line break]Sex addiction -[the stored-sex-addiction of familiar][line break]Anal sex addiction -[the stored-anal-sex-addiction of familiar][line break]Vaginal sex addiction -[the stored-vaginal-sex-addiction of familiar][line break]Oral sex addiction -[the stored-oral-sex-addiction of familiar][line break]Titfuck addiction -[the stored-titfuck-addiction of familiar][line break][if grossness fetish > 0]Grossness addiction -[the stored-grossness-addiction of familiar][line break][end if][if interracial fetish is 1]Big Black Cock addiction -[the stored-bbc-addiction of familiar][end if][line break]Creampie [if bukkake fetish is 1]& bukkake [end if]addiction -[the stored-semen-addiction of familiar][line break]Semen taste addiction -[the stored-semen-taste-addiction of familiar][line break][if watersports fetish is 1]slime taste addiction -[the stored-slime-taste-addiction of familiar][line break][end if][if lactation fetish is 1]Breast milk taste addiction -[the stored-milk-taste-addiction of familiar][line break][end if]Breast flesh units -[the flesh volume of breasts - the real flesh volume of breasts][line break]Hip thickness units -[the thickness of hips - the real thickness of hips][line break][if weight gain fetish is 1]Ass fat -[the flesh volume of hips][line break][end if][roman type]";
 	now the flesh volume of breasts is the real flesh volume of breasts;
 	now the thickness of hips is the real thickness of hips;
 	if weight gain fetish is 1, now the flesh volume of hips is 0;
@@ -198,11 +198,11 @@ To compute perception of (M - familiar):
 		say "[speech style of M]'[one of]This isn't quite what I signed up for, you know...'[or]Hey...'[or]Ugh, so heavy...'[or]Hi again...'[cycling][roman type][line break]";
 	otherwise if the total face volume of M > 0:
 		let LQ be semen;
-		if the face-urine-volume of M > 0:
+		if the face-slime-volume of M > 0:
 			if the face-semen-volume of M > 0 or the face-milk-volume of M > 0:
 				now LQ is murkwater;
 			otherwise:
-				now LQ is urine;
+				now LQ is slime;
 		otherwise if the face-milk-volume of M > 0:
 			if the face-semen-volume of M > 0:
 				now LQ is murkwater;
@@ -232,7 +232,7 @@ To compute perception of (M - familiar):
 				let LQT be the substituted form of "[LQ]";
 				compute addiction reflection on LQT with 0 flavour;
 				if LQ is semen or LQ is murkwater, SlowSemenTasteAddictUp 1;
-				if LQ is urine, SlowUrineTasteAddictUp 1;
+				if LQ is slime, SlowSlimeTasteAddictUp 1;
 				if LQ is milk, SlowMilkTasteAddictUp 1;
 	otherwise:
 		say "[speech style of M]'[one of]Hey there boss~'[or]How's it going, boss?'[or]There you are, boss!'[at random][roman type][line break]";
@@ -263,6 +263,7 @@ To compute perception of (M - familiar):
 						now the egg-origin of E is nothing;
 					now E is not shuddering;
 					now E is not laid;
+				now E is in the location of the player;
 			otherwise:
 				say "[BigNameDesc of M] winces as a spurt of [semen] noisily spurts out of [his of M] butthole!";
 				if the player is prone and bukkake fetish is 1 and the player is getting unlucky:
@@ -308,7 +309,11 @@ To say UnidentifiablePosterReactionFlav of (M - familiar) with (P - a poster):
 	say "[BigNameDesc of M] looks at the banner with a happy expression on [his of M] face. [big he of M] doesn't seem to realise it is you.[line break][speech style of M]'This slut has the right idea!'[roman type][line break]".
 
 To compute diaper mess reaction of (M - familiar):
-	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.".
+	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.";
+	say slightHumiliateReflect.
+To compute continued diaper mess reaction of (M - Icarus):
+	if M is unconcerned, say "[BigNameDesc of M] seems to be enjoying the sounds of your messy episode.";
+	say moderateHumiliateReflect.
 
 To compute MasturbationReaction of (M - familiar):
 	if M is unconcerned, say "[BigNameDesc of M] watches at you with a gleeful smile.".
@@ -363,8 +368,8 @@ To compute mischief of (F - familiar):
 	otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and milking is 0 and there is worn actually nipple covering clothing:
 		compute L pull of F;
 	otherwise if X is a monster and X is not a diaper wetter:
-		if F is in the location of the player, say "[BigNameDesc of F] sniffs at [NameDesc of X][']s crotch.[line break][speech style of F]'You need to pee, don't you [if X is presenting as female]Miss[otherwise]Mister[end if]? Well, your urinal is here!'[roman type][line break][big he of F] gets on [his of F] knees and points at [his of F] mouth.[speech style of F]'Aaaah~'[roman type][line break]";
-		compute FamiliarPissDrink of X;
+		if F is in the location of the player, say "[BigNameDesc of F] sniffs at [NameDesc of X][']s crotch.[line break][speech style of F]'You need to pee, don't you [if X is presenting as female]Miss[otherwise]Mister[end if]? Well, your [SlimeTargetU] is here!'[roman type][line break][big he of F] gets on [his of F] knees and points at [his of F] mouth.[speech style of F]'Aaaah~'[roman type][line break]";
+		compute FamiliarSlimeDrink of X;
 	otherwise if the arousal of F >= 50:
 		let M be a random human male threatening awake noncombative monster in the location of F;
 		if M is a monster:
@@ -482,16 +487,16 @@ To say FamiliarSuckFlav of (M - a monster):
 	say "You can't help but get turned on by the erotic display.";
 	arouse 3000.
 
-To compute FamiliarPissDrink of (M - a monster):
+To compute FamiliarSlimeDrink of (M - a monster):
 	let F be familiar;
-	if F is in the location of the player, say FamiliarPissDrinkFlav of M;
-	increase the face-urine-volume of F by 5;
+	if F is in the location of the player, say FamiliarSlimeDrinkFlav of M;
+	increase the face-slime-volume of F by 5;
 	now the bladder of M is 0.
 
-To say FamiliarPissDrinkFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Oh, good[or]Perfect[or]What good timing[at random].'[roman type][line break][BigNameDesc of M] aims [his of M] [if M is male][LongDickDesc of M][otherwise]crotch[end if] at the willing, waiting living urinal, and lets loose [his of M] bladder. ";
-	otherwise say "[BigNameDesc of M] seems to consent, and happily starts peeing into [NameDesc of familiar][']s mouth. ";
-	say "[BigNameDesc of familiar] happily gargles and gulps away, as the hot golden jet keeps spraying and filling [his of familiar] mouth over and over. Finally, the stream dies away, and [NameDesc of familiar] is left with a final mouth of liquid, which [he of familiar] decides to hold onto, cheeks bulging, rather than spit it out or swallow it.[line break][second custom style]'MMMMM!'[roman type][line break][big he of familiar] makes a happy satisfied cooing sound through [his of familiar] mouthful.";
+To say FamiliarSlimeDrinkFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Oh, good[or]Perfect[or]What good timing[at random].'[roman type][line break][BigNameDesc of M] aims [his of M] [if slimeshooter fetish is 1]slimeshooter[otherwise if M is male][LongDickDesc of M][otherwise]crotch[end if] at the willing, waiting living [SlimeTarget], and lets loose [his of M] [SlimeContainer]. ";
+	otherwise say "[BigNameDesc of M] seems to consent, and happily starts [SlimeShoot]ing into [NameDesc of familiar][']s mouth. ";
+	say "[BigNameDesc of familiar] happily gargles and gulps away, as the hot [SlimeShade] jet keeps spraying and filling [his of familiar] mouth over and over. Finally, the stream dies away, and [NameDesc of familiar] is left with a final mouth of liquid, which [he of familiar] decides to hold onto, cheeks bulging, rather than spit it out or swallow it.[line break][second custom style]'MMMMM!'[roman type][line break][big he of familiar] makes a happy satisfied cooing sound through [his of familiar] mouthful.";
 
 To check familiar trip: [The player has just tripped, and the familiar is in the location of the player]
 	if (the pregnancy of the player is 0 and the preg-progress of familiar >= 5) or the player is getting unlucky:

@@ -29,6 +29,10 @@ To decide which number is the unique cringe of (C - a diaper cover):
 	decide on 6.
 To decide which number is the crotch-tightness of (C - a diaper cover):
 	decide on 0.
+To decide which number is the stealth-influence of (C - a diaper cover):
+	decide on -8.
+To say StealthDownFlav of (C - a diaper cover):
+	say "Its constant loud rustling makes it almost impossible for people to not notice your presence.".
 
 To decide which text is the RecipeDesc of (B - a diaper cover):
 	decide on "The recipe just says 'Pee-soaked underwear'.".
@@ -37,9 +41,9 @@ To decide which figure-name is the recipe-image of (C - a diaper cover):
 
 To compute recipe specific cursing of (T - a diaper cover):
 	if the noun is knickers:
-		if the urine-soak of T > 0 and T is not diaper:
+		if the slime-soak of T > 0 and T is not diaper:
 			now T is blessed;
-		otherwise if the urine-soak of T > 0:
+		otherwise if the slime-soak of T > 0:
 			now T is bland;
 		otherwise:
 			now T is cursed;

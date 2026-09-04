@@ -26,12 +26,12 @@ To say MediumDesc of (M - djinn):
 Figure of djinn femme is the file "NPCs/Forest/Djinn/djinn3.jpg".
 
 To decide which figure-name is the monster-image of (M - djinn):
-	if lady fetish is 1, decide on figure of djinn femme;
+	if gyno fetish is 1, decide on figure of djinn femme;
 	if diaper quest is 0 and M is uninterested, decide on figure of djinn uninterested;
 	decide on figure of djinn.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
-	[if lady fetish is 1, decide on figure of missing NPC;]
+	[if gyno fetish is 1, decide on figure of missing NPC;]
 	decide on figure of djinn cutscene 1.
 
 To decide which number is the default favour of (M - djinn):
@@ -40,7 +40,7 @@ To decide which number is the default favour of (M - djinn):
 djinn has a number called cloudy.
 
 To say MonsterDesc of (M - djinn):
-	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing pink-smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]";
+	say "This tall, [if gyno fetish is 1]muscular, [end if]dark-skinned [man of M] has no legs but instead a billowing pink-smoky pillar below [his of M] [if diaper quest is 1 or super-gyno fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if super-gyno fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]";
 	if the cloudy of M > 0:
 		say "A thin barrier of clouds is floating around above [his of M] chest. You could probably *slap* [him of M] through it, but that's probably exactly what [he of M] wants.";
 
@@ -54,7 +54,7 @@ To say MonsterDesc of (M - djinn):
 	say "[if M is penetrating a body part and the relevant sex addiction of M < 4][first custom style]Well I hope that means [he of M]'ll cum quickly...[otherwise if M is penetrating a body part][variable custom style][big he of M]'s clearly nowhere near as experienced as me![otherwise][variable custom style]Maybe [he of M]'s a virgin?[end if][roman type][line break]".]
 
 To say LongDickDesc of (M - djinn):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "proud celestial [manly-penis]";
 	otherwise if interracial fetish is 1:
 		say "black, veiny [manly-penis]";
@@ -62,7 +62,7 @@ To say LongDickDesc of (M - djinn):
 		say "thick, veiny [manly-penis]";
 
 To say DickDesc of (M - djinn):
-	if full-lady fetish is 1, say "celestial [manly-penis]";
+	if super-gyno fetish is 1, say "celestial [manly-penis]";
 	otherwise say manly-penis.
 
 To set up (M - djinn):
@@ -91,6 +91,9 @@ To compute diaper mess reaction of (M - djinn):
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'[if M is friendly]Fortunately for you, I have no sense of smell in this ascended form. If I did, I would struggle to think of a horrible enough punishment for assailing my nostrils with the scent of your bowels.'[otherwise]Incredible. You are more pathetic than any other mortal I have ever met, in 4000 years of existence. That's quite a remarkable feat.'[end if][roman type][line break]";
 	if voluntarySquatting is 1, say obsceneHumiliateReflect;
 	otherwise say severeHumiliateReflect.
+To compute continued diaper mess reaction of (M - djinn):
+	say "[BigNameDesc of M] frowns at the sounds of your messy episode.";
+	say moderateHumiliateReflect.
 
 To compute (M - a monster) stomping (N - djinn):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
@@ -677,8 +680,8 @@ This is the djinn punishes diaper rule:
 				say "[speech style of M]'[if the transform-attempts of D >= 4]I give up.'[otherwise]Ha ha, that's much better, don't you think?'[roman type][line break]";
 				satisfy M;
 		otherwise:
-			say "[BigNameDesc of M] points at your [ShortDesc of D], and a bolt of magic lightning erupts from [his of M] finger! You watch as a ball of [urine] appears in mid-air in front of you, floating like a bubble, before flattening into a golden stream which flies straight for you! It rushes up through the leg-holes of your [ShortDesc of D] and splatters against you!";
-			PissSoak 10 on D;
+			say "[BigNameDesc of M] points at your [ShortDesc of D], and a bolt of magic lightning erupts from [his of M] finger! You watch as a ball of [slime] appears in mid-air in front of you, floating like a bubble, before flattening into a [SlimeShade] stream which flies straight for you! It rushes up through the leg-holes of your [ShortDesc of D] and splatters against you!";
+			SlimeSoak 10 on D;
 			say "[speech style of M]'Looks like someone needs a change...'[roman type][line break]";
 			satisfy M;
 		rule succeeds.
@@ -824,7 +827,7 @@ To say EnticeFlav of (M - djinn) with (B - breasts):
 	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy set of breasts in front of [his of M] [LongDickDesc of M]. Fat wisps of cloud bounce off of them as they wrap around [his of M] [cockshaft of M] and move to and fro.[line break][speech style of M]'[one of]Only one of us has a set of knees to get onto, mortal.'[or]I wouldn't mind my cock being treated this way, mortal.'[or]The laws of the djinni do not allow for titfucks of my cock, but we can work something out under the table...'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - djinn) with (B - belly):
-	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head in front of [his of M] [LongDickDesc of M]. A cloudy tongue lolls out as its mouth hangs open, as if waiting for something.[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[or]Kneel for my piss, my thirsty little urinal!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head in front of [his of M] [LongDickDesc of M]. A cloudy tongue lolls out as its mouth hangs open, as if waiting for something.[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little [SlimeTarget]?'[or]Do you want to drink some [slime]?'[or]Give up now, get on your knees, and drink my [slime] like a good little [SlimeTarget].'[or]Kneel for my [slime], my thirsty little [SlimeTarget]!'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - djinn) with (B - thighs):
 	if M is eager to do anilingus:
@@ -849,8 +852,8 @@ To say VaginaRideDesc of (M - djinn):
 To say AssRideDesc of (M - djinn):
 	say "Ride [him of M] with your [asshole] in exchange for freedom.".
 
-To say PissFuckDesc of (M - djinn):
-	say "Give [him of M] a faceful of [urine] in exchange for freedom".]
+To say SlimeFuckDesc of (M - djinn):
+	say "Give [him of M] a faceful of [slime] in exchange for freedom".]
 
 [To compute automatic banishment of (M - djinn):
 	say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees.[line break][speech style of M]'I'll be back, mortal! I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";
@@ -946,7 +949,7 @@ To say DominanceFailure of (M - djinn):
 	otherwise if player-fucker is penis:
 		say "[line break][variable custom style]'See this [sexual-player-penis]? I want it in a submissive slut, and they've gotta be my type.'[roman type][line break]";[the djinn becomes the submissive slut]
 	otherwise if player-fucker is belly:
-		say "[line break][variable custom style]'I want to see what you look like with [urine] on your face.'[roman type][line break]";
+		say "[line break][variable custom style]'I want to see what you look like with [slime] on your face.'[roman type][line break]";
 	otherwise:
 		say "[line break][variable custom style]'I wish for a ride of your [DickDesc of M], no wait, give me THREE wishes.'[roman type][line break]"; [player gets him in bed, but is forced to use wishes to actually make things work. Stuff like "oh he can't get hard", or oh he prematurely ejaculated, etc.]
 
@@ -1019,7 +1022,7 @@ To failed dominance penis punish of (M - djinn):
 	if the player is possessing a vagina, now F is vagina;
 	if tg fetish is 1 and F is asshole, now F is vagina;
 	let O be the size of penis - the openness of F;
-	say "A moment later, you find yourself lying in a huge bed with beautiful canopy curtains and decadently soft silk sheets. You sit up, and see that not only are you completely naked in a stranger's bed, [if the player is not possessing a penis]your [printed name of S] has completely disappeared[otherwise if tg fetish is 1]your penis has completely disappeared, leaving a brand new [vagina] in its place[otherwise]your [SexDesc of penis] has completely disappeared, leaving a strange patch of glittering darkness in its place[end if]. Signs of movement in your peripheral vision leave you with no time to feel shocked, and you look over just as a dark-skinned [man of M] with the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god[otherwise]breasts, hips and musculature of a goddess[end if] parts the bed curtains. Your breath is temporarily stolen away by [his of M] gorgeous figure, but you're brought back to your senses by a single flaw, right there [if full-lady fetish is 1 or S is worn]hanging from a harness between [his of M] legs[otherwise]between[end if] [his of M] legs.[line break][speech style of M]'A submissive slut, just your type. Now, about the other part of your wish...'[roman type][line break]The [man of M] gives you a bewitching smile, climbing into bed with you and easily shrugging off your resistance as [he of M] [if F is vagina]spreads your legs.[otherwise]flips you over and spreads your asscheeks.[end if]";
+	say "A moment later, you find yourself lying in a huge bed with beautiful canopy curtains and decadently soft silk sheets. You sit up, and see that not only are you completely naked in a stranger's bed, [if the player is not possessing a penis]your [printed name of S] has completely disappeared[otherwise if tg fetish is 1]your penis has completely disappeared, leaving a brand new [vagina] in its place[otherwise]your [SexDesc of penis] has completely disappeared, leaving a strange patch of glittering darkness in its place[end if]. Signs of movement in your peripheral vision leave you with no time to feel shocked, and you look over just as a dark-skinned [man of M] with the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god[otherwise]breasts, hips and musculature of a goddess[end if] parts the bed curtains. Your breath is temporarily stolen away by [his of M] gorgeous figure, but you're brought back to your senses by a single flaw, right there [if super-gyno fetish is 1 or S is worn]hanging from a harness between [his of M] legs[otherwise]between[end if] [his of M] legs.[line break][speech style of M]'A submissive slut, just your type. Now, about the other part of your wish...'[roman type][line break]The [man of M] gives you a bewitching smile, climbing into bed with you and easily shrugging off your resistance as [he of M] [if F is vagina]spreads your legs.[otherwise]flips you over and spreads your asscheeks.[end if]";
 	if sexual-penis-length > 8:
 		say "[line break][speech style of M]'Hm. It's a little big, but I suppose that's not my problem.'[roman type][line break]The [man of M] muses, lining up *your problem* with your [variable F]. Now that you're on the business end, you can't help but appreciate how massive your [SexDesc of penis] looks, and [if O < 0]as it slides into[otherwise if O < 4]as it slowly enters[otherwise if O < 8]as it slowly forces its way into[otherwise]as it slowly forces its way into[end if] your hole, you get to appreciate how massive it feels as well. It completely swallows up all the space inside you, and the [man of M] takes care to maximise that feeling, [his of M] beautiful muscles rippling as [he of M] fucks you with slow, deep thrusts. You belt out long, heavy moans, your whole body shivering as your nerve endings struggle to parse the incredibly intense, yet gentle fucking. Shame wells up from your core as you realise how painful this might have been if [italic type]you[roman type] were doing the fucking, and as your back arches and your toes curl, you find yourself thinking you deserve to have a much smaller [sexual-player-penis].";
 		if F is vagina, vaginally orgasm shamefully;
@@ -1097,7 +1100,7 @@ To penetration dominate (M - djinn):
 	otherwise AnalGet.
 
 To watersports dominate (M - djinn):
-	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'I want to see what you look like with urine on your face.'[roman type][line break][line break][speech style of M]'What?! That's disgusting! I refuse to grant such a wish! W-wait, I didn't mean that! I'll grant-'[roman type][line break][BigNameDesc of M] yelps as both of you are enveloped by a cloud of pink smoke. A moment later, you find yourself standing in front of an ordinary looking bathroom stall. You push the door open to reveal a naked [man of M] on [his of M] knees, with a metal ring holding [his of M] mouth open and a porcelain toilet seat around [his of M] neck. You look at the graffiti written above [his of M] head.[line break][italic type]Djinni lawbreaker. Sentence: Urinal for mortals.[roman type][line break]The [man of M], apparently [FuckerDesc of M], looks up at you with a dejected look on [his of M] face. [big he of M]'s so pitiful you almost don't want to piss in [his of M] face. Almost. You walk up to [him of M] [if there is bottom level protection clothing]pulling aside your [printed name of random bottom level protection clothing] as you aim a[otherwise]aiming a[end if] stream of [urine] directly into [his of M] mouth.";
+	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'I want to see what you look like with [slime] on your face.'[roman type][line break][line break][speech style of M]'What?! That's disgusting! I refuse to grant such a wish! W-wait, I didn't mean that! I'll grant-'[roman type][line break][BigNameDesc of M] yelps as both of you are enveloped by a cloud of pink smoke. A moment later, you find yourself standing in front of an ordinary looking bathroom stall. You push the door open to reveal a naked [man of M] on [his of M] knees, with a metal ring holding [his of M] mouth open and a [if slimeshooter fetish is 1]wooden target board[otherwise]porcelain [SlimeTarget] seat[end if] around [his of M] neck. You look at the graffiti written above [his of M] head.[line break][italic type]Djinni lawbreaker. Sentence: [if slimeshooter fetish is 1]Target practice[otherwise][big SlimeTargetU][end if] for mortals.[roman type][line break]The [man of M], apparently [FuckerDesc of M], looks up at you with a dejected look on [his of M] face. [big he of M]'s so pitiful you almost don't want to [if slimeshooter fetish is 1]slime [him of M] in the[otherwise]release[end if] in [his of M] face. Almost. You walk up to [him of M] [if there is bottom level protection clothing and slimeshooter fetish is 0]pulling aside your [printed name of random bottom level protection clothing] as you aim a[otherwise]aiming a[end if] stream of [slime] directly into [his of M] mouth.";
 	FavourDown M;
 	severeDignify;
 	now the bladder of the player is 0;
@@ -1130,7 +1133,7 @@ To ride dominate (M - djinn):
 			otherwise PussyFill the semen load of M;
 			say AfterDominationComment 4 of M;
 	otherwise:
-		say "[line break][variable custom style]I'm going to have to try something else...'[roman type][line break]'Something else' turns out to be suckling [his of M] [if full-lady fetish is 1][DickDesc of M], [otherwise]balls, [end if]which is too degrading to be worth it, even if it's the only thing that works. You do your best to swallow your shame as you climb on top of [him of M] and guide [his of M] [DickDesc of M] into your [variable F]. ";
+		say "[line break][variable custom style]I'm going to have to try something else...'[roman type][line break]'Something else' turns out to be suckling [his of M] [if super-gyno fetish is 1][DickDesc of M], [otherwise]balls, [end if]which is too degrading to be worth it, even if it's the only thing that works. You do your best to swallow your shame as you climb on top of [him of M] and guide [his of M] [DickDesc of M] into your [variable F]. ";
 		now M is penetrating F;
 		ruin F;
 		say "The humiliation slowly ebbs away as you begin to ride [him of M], finally turning your attention to your own pleasure. However, it seems you went too far in more ways than one, and all too soon your partner's shaft begins to twitch and throb inside you. [big his of M] strong hands are around your waist before you have a chance to consider stopping, and one look at [his of M] face tells you [he of M] won't let you avoid a creampie unless you use up your last wish.";

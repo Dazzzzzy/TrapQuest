@@ -5,6 +5,8 @@ Rule for constructing the status line:
 		fill status bar with Table of Fetish Points Status;
 	otherwise if fetishMenuInProgress is 2:
 		fill status bar with Table of Handicap Points Status;
+	otherwise if fetishMenuInProgress is 4:
+		fill status bar with Table of Benefit Options Status;
 	otherwise if fetishMenuInProgress is 3 and fetishSelection > 0:
 		fill status bar with Table of Handicap Points Status;
 	otherwise if currently-displaying is true:
@@ -622,7 +624,7 @@ To say VagueInternals:
 		now fine is 0;
 	if the total squirtable fill of belly > 0:
 		if fine is 0, say " & ";
-		say "Holding [if the semen volume of belly > 0]Anal Creampie[otherwise if the total egg fill of belly > 0]Eggs[otherwise if the urine volume of belly > 0]Piss Enema[otherwise if the milk volume of belly > 0]Milk Enema[otherwise]Enema[end if]";
+		say "Holding [if the semen volume of belly > 0]Anal Creampie[otherwise if the total egg fill of belly > 0]Eggs[otherwise if the slime volume of belly > 0][slime] Enema[otherwise if the milk volume of belly > 0]Milk Enema[otherwise]Enema[end if]";
 		now fine is 0;
 	otherwise if the player is feeling full:
 		if fine is 0, say " & ";
@@ -637,7 +639,7 @@ To say VagueInternals:
 			say "Bursting ";
 		otherwise:
 			say "Need ";
-		say "To Pee";
+		say "To [if slimeshooter fetish is 1]Drain Slime[otherwise]Pee[end if]";
 		now fine is 0;
 	if the player is a bit horny:
 		if fine is 0, say " & ";
@@ -794,7 +796,7 @@ left	central	right
 Table of Toilet Allowance Status
 left	central	right
 ""	""	""
-"Enable the player to pull the diaper to one side when in a room with a toilet?"	""	""
+"Enable the player to pull the diaper to one side when in a room with a [SlimeTarget]?"	""	""
 ""	""	""
 
 Table of Random Settings Status

@@ -96,7 +96,7 @@ To decide which figure-name is the monster-image of (M - trainee-jill):
 	decide on figure of jill.
 
 To say MonsterDesc of (M - trainee-jill):
-	say "This skinny, bubbly [boy of M] has long black hair fixed in pigtails. [if the current-rank of M > 1 and diaper quest is 0 and lady fetish < 2][big his of M] huge D cup boobs spill out of [his of M] extremely low cut[otherwise][big he of M] is wearing a[end if] cyan crop top and [his of M] crotch is covered by the tiniest denim microshorts in the world. [big he of M][']s got a big smile but [if the current-rank of M is 1]it looks a little... fake[otherwise][his of M] vacant expression makes it appear there's not too much going on upstairs[end if].".
+	say "This skinny, bubbly [boy of M] has long black hair fixed in pigtails. [if the current-rank of M > 1 and diaper quest is 0 and andro fetish is 0][big his of M] huge D cup boobs spill out of [his of M] extremely low cut[otherwise][big he of M] is wearing a[end if] cyan crop top and [his of M] crotch is covered by the tiniest denim microshorts in the world. [big he of M][']s got a big smile but [if the current-rank of M is 1]it looks a little... fake[otherwise][his of M] vacant expression makes it appear there's not too much going on upstairs[end if].".
 
 The current-rank of trainee-jill is 2.
 The max-rank of trainee-jill is 3.
@@ -115,7 +115,7 @@ To update name of (M - trainee-jill):
 		now the trainee-print of M is "bubbly [if diaper quest is 1]babygirl[otherwise]babe[end if]".
 
 To say StoryAnswer of (M - trainee-jill):
-	say "[speech style of M]'Can you believe I used to be stressed all the time? Tax policy, foreign policy, other responsibilities you have when running a nation... it was all getting to me! But then I met Daddy and soon I realised I didn't need to worry any more. I'm so thankful for having someone to make all the important scary decisions for me, so I've come here to learn how to make him happier and be the best [if diaper quest is 1]babygirl [prince][otherwise if lady fetish is 2]sissy [prince][otherwise]big-titted [prince][end if] I can be!'[roman type][line break]".
+	say "[speech style of M]'Can you believe I used to be stressed all the time? Tax policy, foreign policy, other responsibilities you have when running a nation... it was all getting to me! But then I met Daddy and soon I realised I didn't need to worry any more. I'm so thankful for having someone to make all the important scary decisions for me, so I've come here to learn how to make him happier and be the best [if diaper quest is 1]babygirl [prince][otherwise if andro fetish is 1]sissy [prince][otherwise]big-titted [prince][end if] I can be!'[roman type][line break]".
 
 Part - Default Conversation
 

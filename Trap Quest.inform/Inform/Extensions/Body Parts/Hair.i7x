@@ -39,11 +39,11 @@ To decide which number is the outrage of (B - hair):
 
 To decide which number is the lewdly exposed outrage of (B - hair):
 	let O be (the blondeness of hair + the redness of hair + the brightness of hair) / 3;
-	if the semen coating of hair + the urine coating of hair > 0:
+	if the semen coating of hair + the slime coating of hair > 0:
 		increase O by 2;
-		if the semen coating of hair + the urine coating of hair >= 6, increase O by 2;
-		if the semen coating of hair + the urine coating of hair >= the largeness of hair, increase O by 2;
-		if the urine coating of hair is 0 and the semen coating of hair is 1 and the brightness of hair > 1, decrease O by 2;
+		if the semen coating of hair + the slime coating of hair >= 6, increase O by 2;
+		if the semen coating of hair + the slime coating of hair >= the largeness of hair, increase O by 2;
+		if the slime coating of hair is 0 and the semen coating of hair is 1 and the brightness of hair > 1, decrease O by 2;
 	increase O by the largeness of hair / 5;
 	decide on O.
 
@@ -123,16 +123,16 @@ To decide which text is HairColourVagueText:
 		decide on "pink".
 
 To say HairLiquids:
-	if the semen coating of hair > 0 and the urine coating of hair > 0:
-		say "[semen] and [urine]";
-	otherwise if the urine coating of hair > 0:
-		say "[urine]";
+	if the semen coating of hair > 0 and the slime coating of hair > 0:
+		say "[semen] and [slime]";
+	otherwise if the slime coating of hair > 0:
+		say "[slime]";
 	otherwise:
 		say "[semen]".
 
 To say HairSoak:
-	let P be (100 * (the urine coating of hair + the semen coating of hair)) / the largeness of hair; [percentage soak of hair]
-	if the urine coating of hair + the semen coating of hair is 1:
+	let P be (100 * (the slime coating of hair + the semen coating of hair)) / the largeness of hair; [percentage soak of hair]
+	if the slime coating of hair + the semen coating of hair is 1:
 		say "[HairLiquids] splashed ";
 	otherwise if P >= 100:
 		say "[HairLiquids] saturated ";
@@ -190,7 +190,7 @@ To say 2HairDesc (X - a number):
 		if X is 9, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that touches the ground as you crawl";
 		if X is 10, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
 		if X > 10, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
-	if the semen coating of hair is 1 and the urine coating of hair is 0, say ". The cum is [if the brightness of hair > 1]difficult to spot thanks to its light colour[otherwise]very noticeable[end if]".
+	if the semen coating of hair is 1 and the slime coating of hair is 0, say ". The cum is [if the brightness of hair > 1]difficult to spot thanks to its light colour[otherwise]very noticeable[end if]".
 
 To say RealHairDesc:
 	say RealHairDesc the real largeness of hair;
@@ -410,17 +410,17 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 			decrease the water-drench of hair by a random number between 1 and (1 + 3 * the water-drench of hair / the largeness of hair);
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
-				say "Your [MediumDesc of hair] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[end if].";
-	if the urine coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
+				say "Your [MediumDesc of hair] is now completely dry[if (the slime coating of hair + the semen coating of hair) > 0], if not exactly clean[end if].";
+	if the slime coating of hair > 1: [The last unit of slime cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
 		if a random number between 1 and 14 is 1:
-			decrease the urine coating of hair by 1;
+			decrease the slime coating of hair by 1;
 	if the semen coating of hair > 1: [As above, so below.]
 		if a random number between 1 and 20 is 1:
 			decrease the semen coating of hair by 1.
 
 To compute hair liquids overflow: [This is so we don't have to copy paste 3 lines every time something might decrease hair size below its liquid content.]
 	if the semen coating of hair > the largeness of hair, now the semen coating of hair is the largeness of hair;
-	if the urine coating of hair > the largeness of hair, now the urine coating of hair is the largeness of hair;
+	if the slime coating of hair > the largeness of hair, now the slime coating of hair is the largeness of hair;
 	if the water-drench of hair > the largeness of hair, now the water-drench of hair is the largeness of hair.
 
 Section - Image for graphics window

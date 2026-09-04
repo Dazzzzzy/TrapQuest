@@ -51,7 +51,7 @@ Definition: pink-spraybottle is pink themed: decide yes.
 Definition: pink-spraybottle is fluid immune: decide yes.
 
 Check taking pink-spraybottle when pink-spraybottle is not held:
-	if playerRegion is not facility:
+	if the player is in Facility10 or playerRegion is not facility:
 		if the noun is not actually summonable, say "That requires your dominant hand to be free - you are currently holding [NameDesc of a random worn hand ready clothing]." instead;
 		if the class of the player is not maid:
 			let H be a random worn headgear;
@@ -94,7 +94,7 @@ To compute maidification of (C - a clothing):
 Report taking pink-spraybottle:
 	if the noun is not worn and the player is not in a predicament room:
 		now the noun is worn by the player;
-	if newbie tips is 1 and the noun is worn, say "[newbie style][one of]Newbie tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
+	if newbie tips is 1 and the noun is worn, say "[newbie style][one of]Newbie tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]slime[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
 
 Report taking off pink-spraybottle:
 	if the charge of the noun > 0:
@@ -184,7 +184,7 @@ To compute spraybottle punishment:
 			let L be a random number between 1 and 3;
 			if watersports fetish is 0 and L is 3, now L is 1;
 			if bukkake fetish is 0 and L is 2, now L is 1;
-			say "You notice a shadow looming over you, and look up just in time to see a metal bucket tipping itself over in mid-air, splashing you with [if L is 1]ice cold water[otherwise if L is 2]at least a gallon of [semen][otherwise]at least a gallon of [urine][end if]!";
+			say "You notice a shadow looming over you, and look up just in time to see a metal bucket tipping itself over in mid-air, splashing you with [if L is 1]ice cold water[otherwise if L is 2]at least a gallon of [semen][otherwise]at least a gallon of [slime][end if]!";
 			if L is 1:
 				say "You shriek as it cascades over you, soaking your clothes and stinging your skin.";
 				repeat with C running through currently uncovered fluid vulnerable clothing:
@@ -201,10 +201,10 @@ To compute spraybottle punishment:
 					FaceFill semen by 2;
 				AnnouncedSquirt semen on hair by 50;
 			otherwise:
-				say "[if the urine taste addiction of the player < 8]You shriek[otherwise]You smile and open your mouth wide[end if] as it cascades over you!";
-				if the urine taste addiction of the player >= 8:
-					FaceFill urine by 2;
-				AnnouncedSquirt urine on hair by 50;
+				say "[if the slime taste addiction of the player < 8]You shriek[otherwise]You smile and open your mouth wide[end if] as it cascades over you!";
+				if the slime taste addiction of the player >= 8:
+					FaceFill slime by 2;
+				AnnouncedSquirt slime on hair by 50;
 		say "[variable custom style][if the player is not a pervert]Fuck! This so unfair![otherwise if the player is not disgraced]Is it really my fault I'm such a terrible maid?[otherwise]I'm a stupid ditz, I deserve to be punished like this...[end if][roman type][line break]".
 
 To compute (M - a mechanic) considering (T - pink-spraybottle):

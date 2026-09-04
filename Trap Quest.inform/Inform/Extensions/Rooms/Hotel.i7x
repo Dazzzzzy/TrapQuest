@@ -69,7 +69,7 @@ Hotel29 is an untrappable mandatory modern room. The printed name of Hotel29 is 
 
 Hotel30 is a modern room. The printed name of Hotel30 is "Security Room". "This room has several small monitors lining the east wall, which you would expect to be showing CCTV footage. Instead, every single monitor is showing a webpage from some website or another with some kind of focus on 'exposing' 'perverts'. There are countless amateur photos and videos of wanton sluts doing things they shouldn't in public. [NoChairs]". The shape of Hotel30 is L3/0-0-1-0-1-1.
 
-Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if watersports fetish is 1]. In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
+Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two [SlimeTargetU]s[if watersports fetish is 1]. In between the [SlimeTargetU]s, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
 
 Hotel32 is a guest modern room. The printed name of Hotel32 is "Room 105". "An unusual hotel bedroom. All the usual items you'd expect are here, but they are fashioned in such a way as to mimic a jail cell. The bed, as comfy as it actually is, has dreary grey colours, as do the walls, and the containers of the room remind you of metal lockers. There is even a fake barred window painted onto one wall.". The shape of Hotel32 is L3/0-0-1-0-1-0.
 
@@ -86,8 +86,8 @@ Hotel37 is a mandatory important untrappable modern room. The printed name of Ho
 Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player > 1 and a2m fetish >= 2][NameDesc of woman-player] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1 and a2m fetish >= 2]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
 
 To say HotelToiletDesc:
-	if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-player > 1][BigNameDesc of woman-player] is stuck[otherwise]A slave is lying[end if] here with [his of woman-player] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-player] lower holes, oversized piercings on [his of woman-player] nipples, and the phrases 'TOILET SLUT' and 'URINAL [caps boy of woman-player]' permanently inked onto [his of woman-player] skin[if the human-toilet-scene of woman-player <= 1]. Using the toilet would inevitably involve the slave being forced to drink every last drop[end if].";
-	otherwise say "A single toilet sits at the south end of the room.".
+	if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1, say "A single [SlimeTarget] box sits in the middle of the room. [if the human-toilet-scene of woman-player > 1][BigNameDesc of woman-player] is stuck[otherwise]A slave is lying[end if] here with [his of woman-player] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-player] lower holes, oversized piercings on [his of woman-player] nipples, and the phrases '[caps SlimeTarget] SLUT' and '[caps slime] [caps boy of woman-player]' permanently inked onto [his of woman-player] skin[if the human-toilet-scene of woman-player <= 1]. Using the [SlimeTarget] would inevitably involve the slave being forced to drink every last drop[end if].";
+	otherwise say "A single [SlimeTarget] sits at the south end of the room.".
 
 Hotel39 is a modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the centre seem a bit out of place.".
 To decide which number is the obstacle-hindrance of (R - Hotel39):
@@ -137,20 +137,19 @@ To decide which figure-name is the examine-image of (C - HotelScenery06):
 	decide on figure of hotel basin.
 
 Definition: Hotel45 is puzzle piece:
-	if diaper quest is 1 or the player is not an april 2025 top donator or watersports fetish is 0 or interracial fetish is 0, decide no;
+	if diaper quest is 1 or watersports fetish is 0 or interracial fetish is 0, decide no;
 	if target-floor is in the Hotel, decide yes;
 	decide no.
 To SemenPuddleUp (X - a number) in (R - Hotel45):
 	do nothing.
 To MilkPuddleUp (X - a number) in (R - Hotel45):
 	do nothing.
-To UrinePuddleUp (X - a number) in (R - Hotel45):
+To SlimePuddleUp (X - a number) in (R - Hotel45):
 	do nothing.
 
 Check drinking HotelScenery06:
 	try entering the noun instead.
 Check entering HotelScenery06:
-	if the player is not an april 2025 top donator, say "How did you even find this?! Assuming you didn't use purloin, please report it as a bug." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
 	allocate 6 seconds;
 	say "You get in the basin.";
@@ -165,10 +164,10 @@ To compute hotel bath:
 		say "Nothing seems to happen. Perhaps it needs to recharge?".
 
 To compute bad bath:
-	say "You are blasted from all sides by powerful jets of [urine]![line break][variable custom style]HOLY SHIT! PHLBBBBT![roman type][line break]";
-	announcedSquirt urine on face by 100;
+	say "You are blasted from all sides by powerful jets of [slime]![line break][variable custom style]HOLY SHIT! PHLBBBBT![roman type][line break]";
+	announcedSquirt slime on face by 100;
 	say GotUnluckyFlav;
-	UrineTasteAddictUp 1;
+	SlimeTasteAddictUp 1;
 	now the charge of HotelScenery06 is 300.
 
 To compute good bath:

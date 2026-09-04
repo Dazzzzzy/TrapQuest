@@ -67,7 +67,7 @@ Part 2 - Toilet Allowance
 
 Table of Toilet Allowance Options
 title	subtable	description	toggle
-"If I make it to the toilet, I should be allowed to use it instead of my diaper!"	--	--	toilet allowed rule
+"If I make it to the [SlimeTarget], I should be allowed to use it instead of my diaper!"	--	--	toilet allowed rule
 "If I'm in a cursed diaper, that's my own fault! (+3 points)"	--	--	toilet forbidden rule
 
 This is the toilet allowed rule:
@@ -201,7 +201,7 @@ To decide which number is hungry messer:
 Table of Hungry Messer Options
 title	subtable	description	toggle
 "My character doesn't get hungry (unless there's a temporary magical effect making it so). The game needs to pressure or force me into eating if it wants to make me poop."	--	--	food avoidance messer rule
-"When my stomach is empty, I get hungry and start to slowly lose strength. Since I need to eat to survive, I'm inevitably going to find myself frequently needing to poop. (+3 points)"	--	--	hungry messer rule
+"When my stomach is empty, I get hungry and start to slowly lose strength. Since I need to eat to survive, I'm inevitably going to find myself frequently needing to poop. (+8 points)"	--	--	hungry messer rule
 
 This is the food avoidance messer rule:
 	now choice in row 86 of the Table of Player Options is 0;
@@ -210,6 +210,65 @@ This is the food avoidance messer rule:
 This is the hungry messer rule:
 	now choice in row 86 of the Table of Player Options is 1;
 	follow quit rule.
+
+
+Figure of secret dq Selection Backdrop is the file "Special/Menus/diaperbackdrop1.jpg".
+
+To compute new secret dq selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 6;
+	let menuItems be 2;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is menuItems;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is menuItems, now previous menu selection is menuItems;
+			if current menu selection is less than menuItems, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		now choice in row 19 of the Table of Player Options is 1;
+	otherwise:
+		now choice in row 19 of the Table of Player Options is 0;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new secret dq selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W1 be W / 2;
+	display the image Figure of secret dq Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	repeat with X running from 1 to 2:
+		let X1 be 1;
+		let X2 be W1 + 1;
+		if X > 1:
+			increase X1 by W1;
+			increase X2 by W1;
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (247 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
 
 
 Diaper Lover Options ends here.

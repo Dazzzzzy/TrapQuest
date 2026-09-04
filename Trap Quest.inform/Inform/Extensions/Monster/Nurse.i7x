@@ -40,7 +40,7 @@ To say MonsterDesc of (M - nurse):
 	otherwise if M is diaper-enslaved:
 		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. [big his of M] mouth is kept full by a large purple pacifier gag. [big his of M] skirt has been shortened, so it fully exposes [his of M] new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of [his of M] diaper, and you think you can see a stream of lady-drool trickling down one of [his of M] legs, which might explain why [his of M] face is constantly red and sweating.[otherwise]Every few seconds, [he of M] winces and you hear a nasty squelch-fart sound come from [his of M] rear end. [big his of M] diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down [his of M] right leg. It would appear that [he of M]'s been cursed to have [his of M] anal cavity constantly slowly filled with [semen]...[end if]";
 	otherwise:
-		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] [if lady fetish is 2]ass[otherwise]tits and ass[end if]. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
+		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] [if andro fetish is 1]ass[otherwise]tits and ass[end if]. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
 
 Definition: nurse is willing to do oral: decide yes.
 Definition: nurse is diaper disciplining: decide yes.
@@ -135,9 +135,14 @@ Definition: nurse (called M) is aware that the player needs a change:
 	repeat with N running through things grabbing the player:
 		if N is not M, decide no;
 	let D be a random worn knickers;
-	if D is currently visible knickers or D is messed knickers:
-		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
-		if D is crotch-ripped diaper, decide yes;
+	if D is knickers:
+		if D is diaper and (D is unmessed or diaper messing >= 4): [at diaper messing 3, messed diapers MUST be changed]
+			if D is not easy to remove, decide no;
+		if the class of the player is priestess and D is not diaper, decide yes;
+		if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
+		if D is currently visible or D is messed:
+			if the slime-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
+			if D is crotch-ripped diaper, decide yes;
 	decide no.
 
 To compute trainee perception of (M - nurse):
@@ -220,12 +225,12 @@ To say FriendlyMouthPenetrationFlav of (M - nurse):
 	say MouthPenetrationFlav of M.
 
 To say MouthPenetrationFlav of (M - nurse):
-	say "[NameDesc of M] lifts up [his of M] dress[if lady fetish is 2], allowing you to glimpse a mint-green chastity cage for an instant before [he of M] turns around and plops right down on your face[otherwise] and plonks [his of M] bare shaved [HoleDesc of M] right down onto your mouth[end if].";
+	say "[NameDesc of M] lifts up [his of M] dress[if andro fetish is 1], allowing you to glimpse a mint-green chastity cage for an instant before [he of M] turns around and plops right down on your face[otherwise] and plonks [his of M] bare shaved [HoleDesc of M] right down onto your mouth[end if].";
 	now the sex-length of M is 1.
 
 To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
-	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you.[line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	if andro fetish is 1, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you.[line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices.[line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	if med bay bed is grabbing the player:
 		if another-turn-flavour is "", now another-turn-flavour is "You're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face.";
@@ -234,7 +239,7 @@ To compute facial sex of (M - a nurse):
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [DickDesc of M] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	if andro fetish is 1, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [DickDesc of M] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	SilentlyOralSexAddictUp 1;
 	if there is a worn tattoo and the number of worn belly-tattoo is 0 and the player is getting unlucky:
@@ -256,7 +261,7 @@ To compute diaper mess reaction of (M - nurse):
 		if M is doing nothing special and diaperChecking is false:
 			compute diaper check of M;
 		otherwise:
-			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your potty untraining seems to be going smoothly!'[in random order][roman type][line break]";
+			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your [SlimeTargetP] untraining seems to be going smoothly!'[in random order][roman type][line break]";
 		severeHumiliate;
 		if voluntarySquatting is 1, obsceneHumiliate;
 	otherwise:

@@ -22,20 +22,29 @@ To BladderUp (X - a number):
 		if (the player is bursting or the bladder of the player >= 14) and player-urinating is not 1 and the player is not fake bursting:
 			if the player is diapered:
 				if bladder-bursting-level >= 2 and P < 2:
-					say "[if the delicateness of the player < 17][line break][variable custom style]I'm going to pee myself in my diaper any minute now![otherwise][line break][second custom style][NameBimbo] needs to go tinkles really bad![end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[if the delicateness of the player < 17][line break][variable custom style]I'm going to [slime] myself in my diaper any minute now![otherwise][line break][second custom style][NameBimbo] needs to go tinkles really bad![end if][roman type][line break]";
 				otherwise if bladder-bursting-level >= 0 and P < 0:
-					say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a toilet![otherwise]using your diaper![end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a [SlimeTarget]![otherwise]using your diaper![end if][roman type][line break]";
 				otherwise if old-bursting is 0 and the player is bursting:
-					say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]use your diaper.[end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]use your diaper.[end if][roman type][line break]";
 			otherwise:
 				if bladder-bursting-level >= 2 and P < 2:
-					say "[if the bimbo of the player < 17][line break][variable custom style]Uh-oh, at this rate I'm going to wet myself![otherwise][line break][second custom style][NameBimbo] needs to go tinkles really bad![end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[if the bimbo of the player < 17][line break][variable custom style]Uh-oh, at this rate I'm going to [slimedrain] on myself![otherwise][line break][second custom style][NameBimbo] needs to tinkle really bad![end if][roman type][line break]";
+					otherwise say "[if the bimbo of the player < 17][line break][variable custom style]Uh-oh, at this rate my slimeshooter is going to drain itself on ME![otherwise][line break][second custom style][NameBimbo] needs to drain the slimey slimer really bad![end if][roman type][line break]";
 				otherwise if bladder-bursting-level >= 0 and P < 0:
-					say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a toilet![otherwise]having a piss![end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a [SlimeTarget]![otherwise]having a [slime]![end if][roman type][line break]";
+					otherwise say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a target![otherwise]draining your slimeshooter![end if][roman type][line break]";
 				otherwise if old-bursting is 0 and the player is bursting:
-					say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]pee.[end if][roman type][line break]";
+					if legacy watersports mechanics is 1, say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]pee.[end if][roman type][line break]";
+					otherwise say "[bold type]You are starting to feel the need to drain your slimeshooter.[roman type][line break]";
 			if old-bursting is 0 and the player is bursting:
-				if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like someone needs to take a leak! Having a full bladder lowers your dexterity, so it makes sense to pee. However there are lots of reasons not to:[line break]* Soiled clothing [if diaper lover >= 1](apart from diapers) massively reduce your dexterity as you are grossed out and [end if]will significantly worsen your appearance rating if visible[if diaper lover >= 1]. Diapers themselves can make it very difficult to walk upright when overly soaked[end if].[line break]* Puddles on the floor give you a [if there are worn heels]higher [end if]chance of falling over.[line break][if diaper lover >= 1]Urine puddles also massively gross you out and lower dexterity, and also the player will refuse to rest on furniture here.[line break][end if]Eventually you'll urinate involuntarily[if diaper lover >= 1], and if this happens too many times you'll become incontinent, unable to control when you pee[end if].[line break]So, overall the best way to urinate is to find a body of water or a room with toilets[if diaper lover >= 1] - doing this also gradually recovers lost continence[end if].[roman type][line break][or][stopping]".
+				if slimeshooter fetish is 1:
+					let C be a random worn bottom level pee protection clothing;
+					say "You hear a squeaking sound, and a moist sensation near your crotch draws your attention to a dark blue, watergun shaped slime creature [if C is clothing]nestled into your [ShortDesc of C][otherwise]clinging to your body[end if]. [if the player is not able to use manual dexterity]You think you might be able to spray things with it.[otherwise]When you pick it up, it sticks to your hand without allowing you to drop it. You feel like you might be able to spray something with it.[end if]";
+				if legacy watersports mechanics is 1 and newbie tips is 1:
+					say "[one of][newbie style]Newbie tip: Looks like someone needs to take a leak! Having a full [SlimeContainer] lowers your dexterity, so it makes sense to pee. However there are lots of reasons not to:[line break]* Soiled clothing [if diaper lover >= 1](apart from diapers) massively reduce your dexterity as you are grossed out and [end if]will significantly worsen your appearance rating if visible[if diaper lover >= 1]. Diapers themselves can make it very difficult to walk upright when overly soaked[end if].[line break]* Puddles on the floor give you a [if there are worn heels]higher [end if]chance of falling over.[line break][if diaper lover >= 1][big slime] puddles also massively gross you out and lower dexterity, and also the player will refuse to rest on furniture here.[line break][end if]Eventually you'll [slimedrain] involuntarily[if diaper lover >= 1], and if this happens too many times you'll become incontinent, unable to control when you pee[end if].[line break]So, overall the best way to urinate is to find a body of water or a room with [SlimeTarget]s[if diaper lover >= 1] - doing this also gradually recovers lost continence[end if].[roman type][line break][or][stopping]";
+				otherwise if newbie tips is 1:
+					say "[one of][newbie style]Newbie tip: Looks like you've gotten yoour hands on your very own slimeshooter! Having a full [SlimeContainer] lowers your dexterity, so it makes sense to drain it. However there are lots of reasons not to:[line break]* Walking around in [slime] soiled clothing will significantly worsen your appearance rating if visible.[line break]* Puddles on the floor give you a [if there are worn heels]higher [end if]chance of falling over.[line break]* Eventually it'll drain itself without waiting for permission.[line break]So, overall the best way to drain it is to find a body of water or a room with [SlimeTarget]s[if diaper lover >= 1] - doing this also gradually recovers lost continence[end if].[roman type][line break][or][stopping]".
 
 To BladderDown (X - a number):
 	decrease the bladder of the player by X;
@@ -45,7 +54,7 @@ To BladderDown (X - a number):
 The player has a number called raw-irritable-bladder.
 To IrritableBladderUp (N - number):
 	if diaper lover > 0 and the raw-irritable-bladder of the player < 1000:
-		say "You sense that your bladder will be more irritable in the future.";
+		say "You sense that your [SlimeContainer] will be more irritable in the future.";
 		SilentlyIrritableBladderUp N.
 To SilentlyIrritableBladderUp (N - number):
 	if diaper lover > 0 and the raw-irritable-bladder of the player < 1000:
@@ -65,10 +74,10 @@ An all time based rule (this is the irritable bladder rule):
 			let R be a random number between 1 and 1000;
 			if R <= the irritable-bladder of the player:
 				now irritated-bladder is true;
-				say "[bold type]Your irritable bladder is starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to pee, your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
+				say "[bold type]Your irritable [SlimeContainer] is starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to [SlimeShoot], your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
 	otherwise if irritated-bladder is true:
 		now irritated-bladder is false;
-		say "The pressure in your bladder has gone, and your strength, dexterity and intelligence are no longer being dampened.".
+		say "The [if legacy watersports mechanics is 1]pressure in your [SlimeContainer][otherwise]foul mood of your slimeshooter[end if] has gone, and your strength, dexterity and intelligence are no longer being dampened.".
 
 [How high will the game allow bladder incontinence to go?]
 To decide which number is the max-bladder-incontinence of the player:
@@ -78,7 +87,7 @@ The player has a number called raw-bladder-incontinence.
 
 To BladderIncontinenceUp (N - number):
 	if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
-		say "You feel your ability to hold onto your bladder weakening.";
+		say "You feel your ability to control your [SlimeContainer] weakening.";
 		SilentlyBladderIncontinenceUp N.
 To SilentlyBladderIncontinenceUp (N - number):
 	if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
@@ -87,7 +96,7 @@ To SilentlyBladderIncontinenceUp (N - number):
 
 To BladderIncontinenceDown (N - number):
 	if the raw-bladder-incontinence of the player > 0:
-		say "You feel your ability to hold onto your bladder [if N is 1 and the raw-bladder-incontinence of the player > 1]slightly [otherwise if the raw-bladder-incontinence of the player > N + 2]somewhat [end if]returning.";
+		if legacy watersports mechanics is 1, say "You feel your ability to control your [SlimeContainer] [if N is 1 and the raw-bladder-incontinence of the player > 1]slightly [otherwise if the raw-bladder-incontinence of the player > N + 2]somewhat [end if]returning.";
 		SilentlyBladderIncontinenceDown N.
 To SilentlyBladderIncontinenceDown (N - number):
 	decrease the raw-bladder-incontinence of the player by N;
@@ -101,7 +110,8 @@ To progress temporary incontinence:
 		if the player is bladder diaper aware, now DA is 1;
 		decrease temporary-bladder-incontinence by 1;
 		if temporary-bladder-incontinence is 0 and the bladder-incontinence of the player < the max-bladder-incontinence of the player:
-			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my bladder again![roman type][line break]";
+			if legacy watersports mechanics is 1, say "[bold type]You feel that the magic curse that was making you completely [SlimeContainer] incontinent has finally lifted![line break][variable custom style]I can feel my [SlimeContainer] again![roman type][line break]";
+			otherwise say "[bold type]You feel that the magic curse that was making you completely unable to control your slimeshooter has finally lifted![line break][variable custom style]It's listening to me again![roman type][line break]";
 			if DA is 0 and the player is bladder diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
 				let C be a random worn diaper;
 				if C is diaper, compute awakened state check of C;
@@ -110,8 +120,8 @@ To progress temporary incontinence:
 		if the player is rectum diaper aware, now DA is 1;
 		decrease temporary-rectum-incontinence by 1;
 		if temporary-rectum-incontinence is 0 and the rectum-incontinence of the player < the max-rectum-incontinence of the player:
-			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my rectum again![roman type][line break]";
-			if DA is 0 and the player is rectum diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
+			say "[bold type]You feel that the magic curse that was making you completely bowels incontinent has finally lifted![line break][variable custom style]I can feel my rectum again![roman type][line break]";
+			if DA is 0 and the player is rectum diaper aware: [Player has regained the ability to detect when they poop into a diaper]
 				let C be a random worn diaper;
 				if C is diaper, compute awakened state check of C.
 To TemporaryIncontinenceUp (N - a number):
@@ -131,8 +141,9 @@ To decide which number is the bladder-incontinence-influence of (C - a clothing)
 To decide which number is the bladder-incontinence of the player:
 	if temporary-bladder-incontinence > 0, decide on the max-bladder-incontinence of the player;
 	let I be the raw-bladder-incontinence of the player;
-	repeat with C running through worn wearthings:
-		increase I by the bladder-incontinence-influence of C;
+	if the player is not in a predicament room or the player is in Predicament20:
+		repeat with C running through worn wearthings:
+			increase I by the bladder-incontinence-influence of C;
 	if I > the max-bladder-incontinence of the player, decide on the max-bladder-incontinence of the player;
 	decide on I.
 
@@ -193,12 +204,23 @@ To decide which number is bladder-risky-level:
 To decide which number is bladder-bursting-level:
 	decide on the bladder of the player - bladder-risky-level.
 
+To compute cutscene bladder filling:
+	if the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level.
+To compute cutscene bowel filling:
+	if diaper messing >= 3 and rectum < rectum-risky-level, now rectum is rectum-risky-level.
+To compute cutscene bladder and bowel filling:
+	compute cutscene bladder filling;
+	compute cutscene bowel filling.
+To compute predicament bladder and bowel filling:
+	compute cutscene bladder filling;
+	if diaper messing >= 4, compute cutscene bowel filling.
+
 [!<YourselfIsDesperateToPee>+
 
 Does the player need to pee?
 
 +!]
-Definition: yourself is desperate to pee:
+Definition: yourself is desperate to slime:
 	if tutorial is 1, decide no;
 	if the latex-transformation of the player > 4, decide no;
 	if the bladder of the player > 3, decide yes;
@@ -212,7 +234,7 @@ Can the player tell they need to pee?
 Definition: yourself is bursting:
 	if the player is bladder incontinent or failed potty training tattoo is worn, decide no;
 	if the player is fake bursting, decide yes;
-	if the player is desperate to pee and the bladder of the player >= 6, decide yes;
+	if the player is desperate to slime and the bladder of the player >= 6, decide yes;
 	decide no.
 
 [!<YourselfIsFakeBursting>+
@@ -256,7 +278,8 @@ A game universe initialisation rule:
 		if diaper messing >= 4 and cruel christmas is 0:
 			now rectum is 4;
 			now suppository is 1;
-		say "[bold type]You feel an urgent need to use the toilet![line break][first custom style]What, straight away?! How horribly unfair!!![roman type][line break]".
+		if legacy watersports mechanics is 1, say "[bold type]You feel an urgent need to use the [SlimeTarget]![line break][first custom style]What, straight away?! How horribly unfair!!![roman type][line break]";
+		otherwise say "[bold type]Your slimeshooter lets out a pained squeal[line break][first custom style]What, straight away?! How horribly unfair!!![roman type][line break]".
 
 
 Bladder ends here.

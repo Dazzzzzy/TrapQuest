@@ -135,7 +135,7 @@ To compute teaching of (L - enema-tag-training):
 			say "Your [C] is removed.";
 			now C is carried by the player;
 			dislodge C;
-	if watersports fetish is 1, now LQ is urine;
+	if watersports fetish is 1, now LQ is slime;
 	AssFill 20 with LQ;
 	now the fatigue of the player is 0; [Needed for balance]
 	let distancePerLap be 10;
@@ -337,7 +337,7 @@ To compute teaching of (L - enema-tag-training):
 							otherwise:
 								now D1 is 0;
 							now D2 is playerDistance;
-						otherwise:
+						otherwise if ST is trainee:
 							now D1 is a random number between 3 and 4;
 							if the trainee-diaper-mess of ST is 0, decrease D1 by a random number between 1 and 2;
 							if the dedication of ST <= a random number between -2 and 0, now D1 is 0;
@@ -359,7 +359,7 @@ To compute teaching of (L - enema-tag-training):
 									add yourself to LSE;
 								otherwise:
 									say "You just stand still for now, and gather your energy.";
-							otherwise:
+							otherwise if ST is trainee:
 								let DED be the dedication of ST;
 								if the trainingInt2 of ST > DED:
 									now raceAbandoning is true;
@@ -419,12 +419,12 @@ To compute teaching of (L - enema-tag-training):
 						if ST is yourself:
 							say "[bold type]You release your hold on the massive pressure and the [if diaper quest is 1 and diaper messing >= 3]messy enema[otherwise][LQ][end if] rockets out of your behind, [roman type]making the most unsavoury noises as it does. [moderateHumiliateReflect]";
 							if plain-massive-diaper is worn:
-								UrineSoakUp plain-massive-diaper by the soak-limit of plain-massive-diaper - the total-soak of plain-massive-diaper;
+								SlimeSoakUp plain-massive-diaper by the soak-limit of plain-massive-diaper - the total-soak of plain-massive-diaper;
 								if diaper messing >= 3, MessUp plain-massive-diaper by 20;
 								force immediate clothing-focus redraw;
 							empty belly;
 							now M1 is 0;
-						otherwise:
+						otherwise if ST is trainee:
 							if diaper quest is 1, say "[BigNameDesc of ST][bold type][']s diaper explodes outwards with a loud wet noise as [he of ST] loses control and expels [his of ST] [variable LQ] enema into [his of ST] padding![roman type][line break]";
 							otherwise say "[BigNameDesc of ST] [bold type][one of]squeals[or]exclaims in surprise[or]mewls with shame[or]groans with despair[in random order] as [his of ST] [one of]backdoor explodes[or]sphincter gives up[or]asshole opens[in random order] and the [variable LQ] enema comes [one of]gushing[or]shooting[at random] out.[roman type][line break]";
 							now the trainee-diaper-mess of ST is 3;
@@ -445,7 +445,7 @@ To compute teaching of (L - enema-tag-training):
 								otherwise if M1 is 3:
 									say "[bold type]Your belly begins to cramp. Holding the enema in for any longer will hurt.[line break][newbie style](To expel it, you must stand still for a turn.)[roman type][line break]";
 								increase M1 by 1;
-						otherwise:
+						otherwise if ST is trainee:
 							if the trainee-diaper-mess of ST is 0 and the dedication of ST <= a random number between -1 and 0:
 								say "[BigNameDesc of ST] [bold type]drops to [his of ST] knees, clutching [his of ST] belly in pain![roman type][line break]";
 								add ST to LSE;
@@ -487,7 +487,7 @@ To compute teaching of (L - enema-tag-training):
 						dislodge ST;
 				if ST is yourself:
 					if plain-massive-diaper is worn:
-						UrineSoakUp plain-massive-diaper by the soak-limit of plain-massive-diaper - the total-soak of plain-massive-diaper;
+						SlimeSoakUp plain-massive-diaper by the soak-limit of plain-massive-diaper - the total-soak of plain-massive-diaper;
 						if diaper messing >= 3, MessUp plain-massive-diaper by 20;
 					empty belly;
 					HappinessDown punishmentTarget by 3;
@@ -523,7 +523,7 @@ Definition: pledge-training-toilet is eligible:
 	if diaper lover > 0, decide yes;
 	decide no.
 To pledge-execute (E - pledge-training-toilet):
-	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will [if diaper swapping >= 4]be dragged down into the punishment realm[otherwise]start to forget how to hold in my tinkles[end if].[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
+	say "[second custom style]I'll never use the big [boy of the player] [SlimeTargetP] again. If I ever try to use a [SlimeTarget], I will [if diaper swapping >= 4]be dragged down into the punishment realm[otherwise]start to forget how to hold in my tinkles[end if].[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
 	now toiletJustUsed is false.
 
 An all later time based rule (this is the toilet punishment rule):
@@ -533,7 +533,7 @@ An all later time based rule (this is the toilet punishment rule):
 
 To compute toilet predicament punishment:
 	if diaper swapping >= 4:
-		say "Suddenly, the magic curse you got from [NameDesc of training-tutor of pledge-training] activates! Demonic hands shoot out of the floor and drag you down through the floor, to underneath the toilet. Before you know what's happened, you're on your knees in the thickest diaper you've ever seen, with legs and mittened hands bound behind you by ropes, a ballgag in your mouth, and some kind of tubing stuck down the back of your diaper.";
+		say "Suddenly, the magic curse you got from [NameDesc of training-tutor of pledge-training] activates! Demonic hands shoot out of the floor and drag you down through the floor, to underneath the [SlimeTarget]. Before you know what's happened, you're on your knees in the thickest diaper you've ever seen, with legs and mittened hands bound behind you by ropes, a ballgag in your mouth, and some kind of tubing stuck down the back of your diaper.";
 		unless plain-massive-diaper is worn:
 			only destroy plain-massive-diaper;
 			repeat with K running through worn knickers:
@@ -553,12 +553,12 @@ To compute toilet predicament punishment:
 		say "Yep - [MediumDesc of friend][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [he of friend] continues to unload [his of friend] belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [MediumDesc of friend] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your bonds and carrying you back to the [location of the player], but leaving you with an overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
 		MessSet plain-massive-diaper to 36;
 		now the foreign-mess of plain-massive-diaper is 36;
-		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
+		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a [SlimeTarget] from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
 	otherwise if diaper messing >= 3:
 		say "Suddenly, the magic curse you got from [NameDesc of training-tutor of pledge-training] activates!";
 		RandomIncontinenceUp 2;
 	otherwise:
-		say "Suddenly, the magic curse you got from [NameDesc of training-tutor of pledge-training] activates! You feel like your bladder is much weaker than before. Uh-oh...";
+		say "Suddenly, the magic curse you got from [NameDesc of training-tutor of pledge-training] activates! You feel like your [SlimeContainer] is much weaker than before. Uh-oh...";
 		SilentlyBladderIncontinenceUp 2.
 
 pledge-training-magic is a pledge-training-object.
@@ -575,7 +575,7 @@ A magic consequences rule (this is the pledge-training magic consequence rule):
 		otherwise:
 			say "The magic ripples through your arms, activating the magic pledge you've just broken. Your bladder [if diaper lover > 3]and bowels explode[otherwise]explodes[end if] [if the bladder of the player >= 12]to inhuman levels of fullness[otherwise]with contents until completely full[end if]!";
 			increase the bladder of the player by 12;
-			if diaper lover >= 3:
+			if diaper messing >= 3:
 				increase rectum by 15;
 				increase suppository by 1.
 

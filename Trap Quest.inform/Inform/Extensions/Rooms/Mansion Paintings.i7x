@@ -36,6 +36,7 @@ To compute painting entrance of (P - a painting):
 
 A painting-room is a kind of room. A painting-room has a labyrinth shape called shape. The grid position of a painting-room is usually <0,0,0>. A painting-room is usually discovered.
 Definition: a painting-room is partial squirt: decide yes. [involuntary enema expulsion is 6 units at a time, rather than all of it]
+Definition: a painting-room is nonstandard: decide yes.
 
 Check going north:
 	let P be a random painting in the location of the player;
@@ -175,13 +176,14 @@ Figure of toilet painting rippling is the file "Env/Mansion/painting3b.jpg".
 Figure of toilet painting monster is the file "Env/Mansion/painting3c.jpg".
 
 To decide which figure-name is the examine-image of (P - toilet-painting):
+	if slimeshooter fetish is 1, decide on figure of Missing NPC;
 	if P is rippling, decide on figure of toilet painting rippling;
 	decide on figure of toilet painting.
 
 To say MediumDesc of (P - toilet-painting):
-	say "toilet painting".
+	say "[SlimeTarget] painting".
 To say UniqueExamineDesc of (P - toilet-painting):
-	say "A monster that looks like a toilet with big scary teeth.".
+	say "A monster that looks like a [SlimeTarget] with big scary teeth.".
 
 A toilet-painting-room is a kind of painting-room. The printed name of a toilet-painting-room is "Dark Mansion Room". A toilet-painting-room can be toilet-painting-room-exit.
 
@@ -203,7 +205,7 @@ ToiletPainting08 is east of ToiletPainting07. ToiletPainting08 is south of Toile
 ToiletPainting09 is a toilet-painting-room. The grid position of ToiletPainting09 is <12,10,6>. The shape of ToiletPainting09 is L12/0-0-1-0-0-1.
 ToiletPainting09 is east of ToiletPainting08. ToiletPainting09 is south of ToiletPainting06.
 
-toilet-monster is a person. toilet-monster is neuter. toilet-monster is not portable. The printed name of toilet-monster is "[TQlink of item described]toilet monster[TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-monster is "tltm". toilet-monster has a number called times-terrorised. Understand "toilet", "monster" as toilet-monster.
+toilet-monster is a person. toilet-monster is neuter. toilet-monster is not portable. The printed name of toilet-monster is "[TQlink of item described][SlimeTarget] monster[TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-monster is "tltm". toilet-monster has a number called times-terrorised. Understand "toilet", "monster", "target" as toilet-monster.
 
 To decide which figure-name is the NPC-icon of (P - toilet-monster):
 	decide on Figure of Red NPC.
@@ -212,11 +214,11 @@ To decide which figure-name is the examine-image of (C - toilet-monster):
 	decide on figure of toilet painting monster.
 
 To say ExamineDesc of (C - toilet-monster):
-	say "A giant toilet with teeth and a tongue. It's clearly alive, and sentient. Luckily, it doesn't seem to be able to move.".
+	say "A giant [SlimeTarget] with teeth and a tongue. It's clearly alive, and sentient. Luckily, it doesn't seem to be able to move.".
 To say ShortDesc of (C - toilet-monster):
-	say "toilet monster".
+	say "[SlimeTarget] monster".
 To say MediumDesc of (C - toilet-monster):
-	say "toilet monster".
+	say "[SlimeTarget] monster".
 
 To set map coordinates for (P - toilet-monster) in (R - a room):
 	set centre map coordinates for P.
@@ -228,7 +230,7 @@ An all time based rule (this is the toilet monster rule):
 		DelicateUp 1;
 		increase the times-terrorised of toilet-monster by 1;
 		if the times-terrorised of toilet-monster is 2 and diaper lover > 0:
-			say "This horrific encounter is leaving a lasting impression on your psyche. [bold type]From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
+			say "This horrific encounter is leaving a lasting impression on your psyche. [bold type]From now on, you won't be able to bring yourself to use a [SlimeTarget] unless there's someone friendly there with you.[roman type][line break]";
 		otherwise:
 			say "This horrific encounter is leaving a lasting impression on your psyche. You can tell that [bold type]from now on, you'll be more susceptible to losing hold of liquid in your mouth or butt, when you are surprised, or in pain.[roman type][line break]";
 			increase the raw-expulsion-weakness of the player by 1;
@@ -395,8 +397,8 @@ An all time based rule (this is the cock monster rule):
 							if F is face:
 								now CM is penetrating face;
 								if a random number between 0 and watersports fetish is 1:
-									say "urinates!";
-									FaceFill urine by 7;
+									say "[if slimeshooter fetish is 1]ejaculates [SlimeShade] [slime][otherwise][slimedrain]s[end if]";
+									FaceFill slime by 7;
 									say "It pulls out[if the total volume of face > 0], leaving you with a [MouthfulDesc][end if].";
 									dislodge CM;
 								otherwise:
@@ -424,9 +426,9 @@ An all time based rule (this is the cock monster rule):
 								now cock-monster-origin of CM is expansion;
 								destroy CM;
 				otherwise if the player is prone and a random number between 0 and watersports fetish is 1:
-					say "[BigNameDesc of CM] pisses all over you from above!";
-					AnnouncedSquirt urine on hair by 3;
-					AnnouncedSquirt urine on breasts by 4;
+					say "[BigNameDesc of CM] [slime]es all over you from above!";
+					AnnouncedSquirt slime on hair by 3;
+					AnnouncedSquirt slime on breasts by 4;
 				otherwise:
 					let F be thighs;
 					if bukkake fetish is 1:
@@ -838,7 +840,7 @@ Carry out going when the player is in HeistPainting07:
 			say "You try to keep your balance as you slip and slide your way across the room!";
 			let D be a random number between 1 and the dexterity of the player;
 			let Z be 13;
-			if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5[roman type][line break]";
+			if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = [D] | [Z].5[roman type][line break]";
 			if D > Z:
 				say "You manage to stay upright!";
 			otherwise:
@@ -872,7 +874,7 @@ Carry out going when the player is in HeistPainting09:
 		say "You try to avoid your [BreastDesc] hitting a laser [if the player is prone]beneath[otherwise]in front of you[end if].";
 		let D be a random number between 1 and the dexterity of the player;
 		let Z be 4 + (the largeness of breasts / 2);
-		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5 = 4.5 + ([the largeness of breasts / 2]) breast size[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = [D] | [Z].5 = 4.5 + ([the largeness of breasts / 2]) breast size[roman type][line break]";
 		if D > Z:
 			say "You manage to dodge it!";
 		otherwise:
@@ -899,7 +901,7 @@ Carry out going when the player is in HeistPainting09:
 		say "You try to avoid your [AssDesc] hitting a laser [if the player is prone]above[otherwise]to the side[end if].";
 		let D be a random number between 1 and the dexterity of the player;
 		let Z be 4 + (the total volume of hips / 2);
-		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5 = 4.5 + ([the total volume of hips / 2]) ass size[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = [D] | [Z].5 = 4.5 + ([the total volume of hips / 2]) ass size[roman type][line break]";
 		if D > Z:
 			say "You manage to dodge it!";
 		otherwise:
@@ -923,7 +925,7 @@ Carry out going when the player is in HeistPainting09:
 		say "You try to hop over a low moving laser.";
 		let D be a random number between 1 and the dexterity of the player;
 		let Z be 10;
-		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = [D] | [Z].5[roman type][line break]";
 		if D > Z:
 			say "You manage to dodge it!";
 		otherwise:
@@ -960,11 +962,11 @@ To SemenPuddleUp (X - a number) in (R - a heist-painting-room):
 		now zap-bot is in the location of the player;
 	increase the semen-puddle of R by X.
 
-To UrinePuddleUp (X - a number) in (R - a heist-painting-room):
+To SlimePuddleUp (X - a number) in (R - a heist-painting-room):
 	if the total puddle of R is 0:
-		say "As the [urine] hits the floor, an alarm blares out![line break][first custom style]'SPILLAGE HAZARD DETECTED. SPILLAGE HAZARD DETECTED.'[roman type][line break][if zap-bot is not in the location of the player]The alert causes a security droid to come racing into the room![end if]";
+		say "As the [slime] hits the floor, an alarm blares out![line break][first custom style]'SPILLAGE HAZARD DETECTED. SPILLAGE HAZARD DETECTED.'[roman type][line break][if zap-bot is not in the location of the player]The alert causes a security droid to come racing into the room![end if]";
 		now zap-bot is in the location of the player;
-	increase the urine-puddle of R by X.
+	increase the slime-puddle of R by X.
 
 To MilkPuddleUp (X - a number) in (R - a heist-painting-room):
 	if the total puddle of R is 0:

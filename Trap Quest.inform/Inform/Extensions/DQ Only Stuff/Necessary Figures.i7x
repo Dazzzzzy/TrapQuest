@@ -105,9 +105,22 @@ To decide which figure-name is the monster-image of (M - a ghost):
 To decide which figure-name is the monster-image of (M - jismbodied ghost):
 	decide on figure of ghost 7.
 
+Figure of HipsObject2 is the file "CharWins/FocusWin/Hips/hips2.jpg".
+
+To decide which figure-name is the examine-image of (T - hips):
+	if the fat-weight of the player > 35:
+		decide on Figure of Fat Growth 3;
+	otherwise if the fat-weight of the player > 23:
+		decide on Figure of Fat Growth 2;
+	otherwise if the fat-weight of the player > 11:
+		decide on Figure of Fat Growth 1;
+	otherwise:
+		decide on figure of HipsObject2.
+
 Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-predicament-horizontal-pole2.jpg".
 
 Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
+Figure of hotel toilet room slime is the file "Map/Hotel/HotelBath5.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
 
@@ -352,6 +365,7 @@ Figure of hotel urinal portal cum is the file "Env/MultiFloor/urinal3d.jpg".
 Figure of vibrator urinal is the file "Map/urinals1.jpg".
 
 To decide which figure-name is the examine-image of (T - urinal):
+	if legacy watersports mechanics is 0, decide on figure of urinal;
 	if T is grabbing the player or the urinal-rival of urinal-competition-punishment is guarding monster, decide on Figure of vibrator urinal;
 	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31 and the hotel-urinal-scene of woman-player < 10, decide on Figure of vibrator urinal;
 	if the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
@@ -481,11 +495,11 @@ Figure of Face135 is the file "CharWins/FocusWin/Face/face135.jpg".
 
 To decide which figure-name is the examine-image of (T - face):
 	if the total volume of face > 0:
-		if (the semen volume of face > 0 and the semen taste addiction of the player < 5) or (the urine volume of face > 0 and the urine taste addiction of the player < 5) or (the milk volume of face > 0 and the milk taste addiction of the player < 5):
+		if (the semen volume of face > 0 and the semen taste addiction of the player < 5) or (the slime volume of face > 0 and the slime taste addiction of the player < 5) or (the milk volume of face > 0 and the milk taste addiction of the player < 5):
 			decide on figure of Oral Creampie Cutscene 1;
-		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 11) or (the urine volume of face > 0 and the urine taste addiction of the player < 11) or (the milk volume of face > 0 and the milk taste addiction of the player < 11):
+		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 11) or (the slime volume of face > 0 and the slime taste addiction of the player < 11) or (the milk volume of face > 0 and the milk taste addiction of the player < 11):
 			decide on figure of Oral Creampie Cutscene 2;
-		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 15) or (the urine volume of face > 0 and the urine taste addiction of the player < 15) or (the milk volume of face > 0 and the milk taste addiction of the player < 15):
+		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 15) or (the slime volume of face > 0 and the slime taste addiction of the player < 15) or (the milk volume of face > 0 and the milk taste addiction of the player < 15):
 			decide on figure of Oral Creampie Cutscene 3;
 		otherwise:
 			decide on figure of Oral Creampie Cutscene 4;

@@ -1,6 +1,6 @@
 Mannequin by Monster begins here.
 
-A mannequin is a kind of monster. The poison-status of a mannequin is -1.
+A mannequin is a kind of monster. The poison-status of a mannequin is -1. The blind-status of a mannequin is -1.
 
 Definition: a mannequin is woods dwelling: decide yes.
 
@@ -89,11 +89,11 @@ Definition: goth mannequin is woods prioritised: [it'll have a decent chance of 
 	decide no.
 
 To say mannequin-model of (M - mannequin):
-	if lady fetish is 2, say "male";
+	if andro fetish is 1, say "male";
 	otherwise say "female".
 
 To say MonsterDesc of (M - a mannequin):[topless mannequin]
-	say "A topless [mannequin-model of M] mannequin with a tanned skin tone, wearing tight denim jeans. [big he of M] has blonde hair drawn back into a silky ponytail and a pink scrunchie around each wrist. [if lady fetish is 2]A[otherwise][big his of M] breasts are perfectly spherical and unmoving, and a[end if] small handbag hangs delicately over one shoulder.".
+	say "A topless [mannequin-model of M] mannequin with a tanned skin tone, wearing tight denim jeans. [big he of M] has blonde hair drawn back into a silky ponytail and a pink scrunchie around each wrist. [if andro fetish is 1]A[otherwise][big his of M] breasts are perfectly spherical and unmoving, and a[end if] small handbag hangs delicately over one shoulder.".
 
 To decide if (M - a mannequin) is theme-matched:[topless mannequin]
 	if breasts is exposed, decide yes;

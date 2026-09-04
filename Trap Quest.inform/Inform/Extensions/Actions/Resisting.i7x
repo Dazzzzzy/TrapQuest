@@ -43,6 +43,7 @@ Check resisting:
 	if PEN + GRB + WRN is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
+	if diaper quest is 1 and M is nothing, now M is a random monster grabbing the player;
 	if vampiress is penetrating an orifice, now M is vampiress;[she always gets resisted first, since she has mind control stuff to talk about]
 	if there is a fuckhole-mode glue penetrating face:
 		say "The glue prevents you from moving an inch, making it impossible to resist!";
@@ -169,8 +170,8 @@ To compute wrangled resisting of (T - a thing):
 
 To compute wrangled resisting of (T - a monster):
 	let SR be the strength roll of T;
-	if debuginfo > 0, say "[input-style]Wrangle escape check: Player strength ([the strength of the player]) | ([SR].5) [ShortDesc of T] strength roll[roman type][line break]";
-	if SR >= the strength of the player:
+	if debuginfo > 0, say "[input-style]Wrangle escape check: Player strength ([the flat strength of the player]) | ([SR].5) [ShortDesc of T] strength roll[roman type][line break]";
+	if SR >= the flat strength of the player:
 		compute WrangleResistFail of T;
 	otherwise:
 		compute WrangleResistSuccess of T.
@@ -262,7 +263,7 @@ To say DQSpankResistExtensionFlav of (M - a monster):
 
 To say DQEnemaResistFlav of (M - a monster):
 	say "[if M is penetrating asshole][one of]You try to wrestle free before [NameDesc of M] gets any more inside you but [his of M] grip remains firm[or]You try to pull away from the enema in vain[or]Your belly gurgles as you sway side to side, trying to make it more difficult for [NameDesc of M] to continue filling you up[in random order][otherwise][one of]You try to escape before the enema can begin, but [NameDesc of M][']s grip on you is too strong[or]Realising what's about to happen you pull away with all your strength but it's too little too late[or]You wiggle your butt to try and stop [NameDesc of M] from proceeding but you just can't get away[in random order][end if].";
-	if the player is able to speak, say "[variable custom style]'[if the water volume of belly >= 15][one of]Too much! That's too much now[or]I'm so full it hurts, please no more[or]I'm too full, I can't take any more[or]Uuugh, please no more[in random order][otherwise if M is not penetrating asshole][one of]Is this really necessary?[or]Can't we settle this some other way[or]No, I don't need to be cleaned out[or]I don't need help doing something like this[in random order][otherwise if the bimbo of the player >= 13][one of]What are you doing [daddy of M]? It feels weird[or]Please let me push it out now [daddy of M][or]I'm sorry I'll be a good [boy of the player] from now on, please let me go potty now[or]It feels weird [daddy of M][in random order][otherwise][one of]Stop this immediately[or]Leave my bowels alone[or]You are not a medical professional[or]This can't be happening[or]I DON'T NEED THIS! STOP IT AT ONCE[or]Let me go right now, I need to get to the toilet[or]This feels so wrong[or][in random order][end if]!'[roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the water volume of belly >= 15][one of]Too much! That's too much now[or]I'm so full it hurts, please no more[or]I'm too full, I can't take any more[or]Uuugh, please no more[in random order][otherwise if M is not penetrating asshole][one of]Is this really necessary?[or]Can't we settle this some other way[or]No, I don't need to be cleaned out[or]I don't need help doing something like this[in random order][otherwise if the bimbo of the player >= 13][one of]What are you doing [daddy of M]? It feels weird[or]Please let me push it out now [daddy of M][or]I'm sorry I'll be a good [boy of the player] from now on, please let me go [SlimeTargetP] now[or]It feels weird [daddy of M][in random order][otherwise][one of]Stop this immediately[or]Leave my bowels alone[or]You are not a medical professional[or]This can't be happening[or]I DON'T NEED THIS! STOP IT AT ONCE[or]Let me go right now, I need to get to the [SlimeTarget][or]This feels so wrong[or][in random order][end if]!'[roman type][line break]";
 	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
 
 To say DQEnemaResistReactionFlav of (M - a monster):

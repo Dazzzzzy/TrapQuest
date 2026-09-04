@@ -21,7 +21,7 @@ To decide which figure-name is the monster-image of (M - mistress):
 	decide on figure of mistress.
 
 To say ShortDesc of (M - mistress):
-	say "[if lady fetish is 2]Master[otherwise]Mistress[end if]".
+	say "[if andro fetish is 1]Master[otherwise]Mistress[end if]".
 
 To say MediumDesc of (M - mistress):
 	say "Royal [ShortDesc of M]".
@@ -37,14 +37,14 @@ To say BigFuckerDesc of (C - mistress):
 
 To say MonsterDesc of (M - mistress):
 	if M is sex-enslaved:
-		if lady fetish is 2:
+		if andro fetish is 1:
 			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section revealing [his of M] bright red chastity cage. A presumably new tattoo sits above [his of M] [DickDesc of M], with the words 'Enter in Rear' and an arrow pointing toward [his of M] butt. [big his of M] ass has been made more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like [he of M]'s been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as [he of M] instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. [big he of M] whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as he can.";
 		otherwise:
 			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section right in front of [his of M] bare pussy. A presumably new tattoo sits above [his of M] slit, with the words 'Fuck Here' and an arrow pointing at [his of M] undefended fuckhole. [big his of M] entrance has been made even more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like [he of M][']s been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as [he of M] instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. [big he of M] whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as [he of M] can.";
 	otherwise if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s red dress has been replaced by a heart-themed red onesie with cute pale frills at the shoulders. Matching pale red ribbons keep [his of M] jet black hair in pigtails and make [him of M] look a lot less fierce than [he of M] used to. Long red latex thigh-highs complete the adorable look. It's clear from the bulkiness between [his of M] legs that [he of M]'s well padded under [his of M] new onesie. [one of]More curious, however, is the fact that [he of M]'s keeping [his of M] feet over a metre apart for no clear reason. But then you[or]You[stopping] watch as [he of M] instinctively moves [his of M] feet a little closer together, but then [his of M] fists clench and [his of M] legs shudder wildly as [his of M] high heels give [him of M] painful electric shocks. [big he of M] whimpers and returns to holding [his of M] feet as far apart as [he of M] can.";
 	otherwise:
-		say "This [man of M] looks almost ageless - [he of M]'s clearly an adult but you can't tell if [he of M]'s 20 or 40. [big his of M] very slim figure is complemented by [if lady fetish is 2]a perfectly sculpted chin and a thick, grabbable butt[otherwise]perfect D cup breasts and not insignificant hips[end if]. A tight red latex dress with a very deep V-neck clings tightly to [him of M], allowing you to appreciate all of [his of M] curves. The dress, although very provocative and not reaching below mid-thigh, somehow gives [him of M] an aura of extreme dominance. This sensation is further enhanced by [his of M] straight neat jet black hair and harsh make up which gives [his of M] face a rather... fierce appearance.".
+		say "This [man of M] looks almost ageless - [he of M]'s clearly an adult but you can't tell if [he of M]'s 20 or 40. [big his of M] very slim figure is complemented by [if andro fetish is 1]a perfectly sculpted chin and a thick, grabbable butt[otherwise]perfect D cup breasts and not insignificant hips[end if]. A tight red latex dress with a very deep V-neck clings tightly to [him of M], allowing you to appreciate all of [his of M] curves. The dress, although very provocative and not reaching below mid-thigh, somehow gives [him of M] an aura of extreme dominance. This sensation is further enhanced by [his of M] straight neat jet black hair and harsh make up which gives [his of M] face a rather... fierce appearance.".
 
 To say MonsterComment of (M - mistress):
 	say "[variable custom style]It's like I can actually feel raw power coming from [him of M]. [if the bimbo of the player <= 10]I need to be careful[otherwise]I'd better do whatever [he of M] says[end if].[roman type][line break]".
@@ -167,7 +167,7 @@ To compute nontrainee perception of (M - a mistress):
 
 To compute trainee perception of (M - a mistress):
 	if the armband-print of armband is "new recruit":
-		say "[speech style of M]'Hmm, another newbie, is it? Allow me to introduce you to our proud institution. In these Royal Training Halls, we prepare the next generation of royalty. Once a [prince] comes of age, [he of witch] is sent from [his of witch] kingdom to our training halls to learn the most noble arts of these lands - that is, kink, fetish, masochism, and submission. n other words, trainees rise to the top of the ranks, and graduate the programme, by learning how to be the perfect bottom. Our curriculum is staged to make sure you aren't exposed to anything too... disturbing... until you have proven yourself capable of accepting it. Now, while most of our princesses-in-training are sent here with a specific fetish or four that their kingdom requires them to specialize in, it would appear that you've been sent to us with a blank 'generic bimbo training' mandate. That will actually work in your favour, most likely - you just have to become the Jack of all trades, as opposed to the master of one.[paragraph break]";
+		say "[speech style of M]'Hmm, another newbie, is it? Allow me to introduce you to our proud institution. In these Royal Training Halls, we prepare the next generation of royalty. Once a [prince] comes of age, [he of witch] is sent from [his of witch] kingdom to our training halls to learn the most noble arts of these lands - that is, kink, fetish, masochism, and submission. In other words, trainees rise to the top of the ranks, and graduate the programme, by learning how to be the perfect bottom. Our curriculum is staged to make sure you aren't exposed to anything too... disturbing... until you have proven yourself capable of accepting it. Now, while most of our princesses-in-training are sent here with a specific fetish or four that their kingdom requires them to specialize in, it would appear that you've been sent to us with a blank 'generic bimbo training' mandate. That will actually work in your favour, most likely - you just have to become the Jack of all trades, as opposed to the master of one.[paragraph break]";
 		say "'Now listen closely, the way this training facility works is as follows. You [bold type]attend a training session[speech style of M] by entering the lecture room that matches your trainee rank, which is indicated by the font of the writing on your armband. There is usually a [bold type]minor positive benefit[speech style of M] to attending any session, because, well, experience is the best tutor. Of course, there may be other side-effects depending on your choices. Trainees who perform well in a training session can be [bold type]promoted to the next rank.[speech style of M] You will have to prove yourself if you want to raise your ranking and earn access to more of the training halls. Now, after attending at least one session, you will be free to [bold type]go back through the portal in reception[speech style of M] and spend some more time outside of the training grounds, giving you more time to think on what you've learned, and grow accustomed to the world around you. This is recommended, because [bold type]entering advanced training sessions before you're ready for them can be rather overwhelming[speech style of M]. When you're out in the big wide world, your armband notifies you when the other trainees have arrived and your next session is waiting to begin. You get four warnings. If you hear a fifth alarm tone, when you return to the training facility [bold type]you will be put in a mandatory [']reconditioning['] session as punishment for being late[speech style of M], and my staff will begin to hunt you down and enforce your return.[paragraph break][if the player is the donator]'Another reason to return to the real world in between training sessons is that you can only access the Extra Credit Zone once in a while. You can't just wait in the training facility until you're allowed in again, because time works a bit differently here. [bold type]To access the Extra Credit Zone you must first spend time outside the training grounds until your armband beeps at least once, and then attend at least one normal training session, [speech style of M]and then when you enter the Warp Portal to leave the training halls, you will be offered the opportunity to enter the Extra Credit Zone. When you successfully complete your Extra Credit Mission, you will be rewarded with (amongst other things) a bracelet. The value of the bracelet will match your rank as a trainee. Since you can only wear two bracelets at once, if you already have two, and you plan to enter the Extra Credit Zone, [bold type]it is best to spend or trade at least one of your bracelets before returning to the training facility.[speech style of M][paragraph break][end if]'Now let me take a closer look at you... ";
 		if the player is broken:
 			say "Hmmm... your mind appears already too far gone for us to really have much fun with you, but if your owner still wants you to go through the advanced training sessions, that's fine with me.'";
@@ -203,7 +203,7 @@ To compute trainee perception of (M - a mistress):
 				if the cringe appearance of the player > 10 or the player is broken:
 					now armband is emerald;
 					update trainees;
-					now the armband-print of armband is "promising peepot";
+					now the armband-print of armband is "promising [slime]pot";
 				if the cringe appearance of the player > 16 or the player is broken:
 					now armband is ruby;
 					update trainees;
@@ -215,12 +215,12 @@ To compute trainee perception of (M - a mistress):
 	otherwise if the bladder of M >= 1000 and M is able to use a free use urinal:
 		compute free use urinal perception of M;
 	otherwise if M is puddle-investigating and playerRegion is facility and M is friendly:
-		say "[speech style of M]'[NameBimbo]! I've heard a report of URINATING on the FLOOR! ";
+		say "[speech style of M]'[NameBimbo]! I've heard a report of [caps slime]ING on the FLOOR! ";
 		if the player is not in Facility10:
 			say "Come with me!'[roman type][line break]";
 			drag to Facility10 by M;
 			say "[speech style of M]'Well well well. ";
-		if the urine-puddle of Facility10 > 0:
+		if the slime-puddle of Facility10 > 0:
 			say "Caught red-handed. I will not stand for this level of indignity! EVERYONE! TIME FOR ASSEMBLY!'[roman type][line break]";
 			let A be locked-toilets-assembly;
 			if the assemblyCount of A > 0 or the player is getting unlucky, now A is locked-toilets-shame-assembly;
@@ -264,12 +264,12 @@ Definition: mistress is fluff-question-appropriate:
 
 To consider (T - talk-mistress-toilet) for (M - a monster):
 	if M is mistress and locked-toilets is true and facility-toilet-key is not held and M is friendly:
-		now the printed name of T is the substituted form of "[variable custom style]'[if the delicateness of the player < 5]I need to use the toilet.'[otherwise if the delicateness of the player < 10]Please could I have the key to the toilets?'[otherwise if the delicateness of the player < 15]Please may I have permission to use the toilets?'[otherwise if diaper lover > 0]Miss, please can I have permission to use the big potty? Pretty please?'[otherwise]This lowly trainee begs permission to use the toilets...'[end if][roman type][line break]";
+		now the printed name of T is the substituted form of "[variable custom style]'[if the delicateness of the player < 5]I need to use the [SlimeTarget].'[otherwise if the delicateness of the player < 10]Please could I have the key to the [SlimeTarget]s?'[otherwise if the delicateness of the player < 15]Please may I have permission to use the [SlimeTarget]s?'[otherwise if diaper lover > 0]Miss, please can I have permission to use the big [SlimeTargetP]? Pretty please?'[otherwise]This lowly trainee begs permission to use the [SlimeTarget]s...'[end if][roman type][line break]";
 		set next numerical response to the substituted form of "[printed name of T]".
 
 To execute (T - talk-mistress-toilet) for (M - a monster):
 	if mistress-toilet-ban is true:
-		say "[BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'As I said before, your toilet privileges have been revoked. End of discussion.'[roman type][line break]";
+		say "[BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'As I said before, your [SlimeTarget] privileges have been revoked. End of discussion.'[roman type][line break]";
 	otherwise:
 		let no-toilet-rank be 5;
 		if diaper quest is 1 or watersports fetish is 0, now no-toilet-rank is 4;
@@ -277,7 +277,7 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 		repeat with C running through pee covering actually unavoidable clothing:
 			if able-to-pee is 1 and C is not usually autoremovable, now able-to-pee is 0;
 		if the rank of the player >= no-toilet-rank:
-			say "[BigNameDesc of M] looks at your armband and then shakes [his of M] head.[line break][speech style of M]'[one of]As of today, I have decided that [or][stopping][if no-toilet-rank is 4]Pink [end if]Diamond and higher ranked trainees are not allowed to use the toilets. [if no-toilet-rank is 4]If you want to pee, use a diaper like a good little baby slave[otherwise]At your high rank, you and your peers should be learning to be human toilets yourselves. You can pee in each others['] mouths, or leave my facility and do it on the ground[end if].'[roman type][line break]";
+			say "[BigNameDesc of M] looks at your armband and then shakes [his of M] head.[line break][speech style of M]'[one of]As of today, I have decided that [or][stopping][if no-toilet-rank is 4]Pink [end if]Diamond and higher ranked trainees are not allowed to use the [SlimeTarget]s. [if no-toilet-rank is 4]If you want to [slime], use a diaper like a good little baby slave[otherwise]At your high rank, you and your peers should be learning to be human [SlimeTarget]s yourselves. You can [slime] in each others['] mouths, or leave my facility and do it on the ground[end if].'[roman type][line break]";
 		otherwise if facility-toilet-key is not carried by M:
 			if there is a trainee carrying facility-toilet-key:
 				let P be a random trainee carrying facility-toilet-key;
@@ -289,21 +289,21 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 		otherwise:
 			let R be a random number between 1 and the rank of the player;
 			if R > 2:
-				say "[BigNameDesc of M] gives you an evil smirk.[line break][speech style of M]'If you want to pee so badly, you'll do it right here, in front of me.'[roman type][line break][big he of M] retrieves a large glass fishbowl, and places it on the ground in front of you.[line break][speech style of M]'Go on. Whenever you're ready.'[roman type][line break]Do you pee in the bowl in front of [NameDesc of M]?";
+				say "[BigNameDesc of M] gives you an evil smirk.[line break][speech style of M]'If you want to [slime] so badly, you'll do it right here, in front of me.'[roman type][line break][big he of M] retrieves a large glass fishbowl, and places it on the ground in front of you.[line break][speech style of M]'Go on. Whenever you're ready.'[roman type][line break]Do you [slime] in the bowl in front of [NameDesc of M]?";
 				if the player is consenting:
 					let fishbowl-fill be the bladder of the player;
 					if fishbowl-fill >= 6 - (the humiliation of the player / 10000):
-						say "You [if there is pee covering clothing and the player is possessing a penis]get out your [player-penis] and [otherwise if there is pee covering clothing]expose your [vagina] and [end if]squat. With an excruciatingly loud tinkling sound, your [urine] flows down into the bowl. It's deeply humiliating. [strongHumiliateReflect][line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] coos, with an air of dominance.";
+						say "You [if slimeshooter fetish is 1]get out your slimeshooter and [otherwise if there is pee covering clothing and the player is possessing a penis]get out your [player-penis] and [otherwise if there is pee covering clothing]expose your [vagina] and [end if]squat. With an excruciatingly loud tinkling sound, your [slime] flows down into the bowl. It's deeply humiliating. [strongHumiliateReflect][line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] coos, with an air of dominance.";
 						now the bladder of the player is 0;
 						if a random number between 1 and 2 is watersports fetish:
-							say "[BigNameDesc of M] picks up the fishbowl and offers it to you. It looks like it's filled with about [fishbowl-fill] sips of [urine].[line break][speech style of M]'Now drink it.'[roman type][line break][big he of M] doesn't sound like [he of M][']s messing around.";
+							say "[BigNameDesc of M] picks up the fishbowl and offers it to you. It looks like it's filled with about [fishbowl-fill] sips of [slime].[line break][speech style of M]'Now drink it.'[roman type][line break][big he of M] doesn't sound like [he of M][']s messing around.";
 							let FF be fishbowl-fill;
 							let FFR be 0;
 							while FF > 0 and FFR is 0:
-								say "There [if FF is 1]is 1 sip[otherwise]are [FF] sips[end if] of [urine] remaining. Take a sip?";
+								say "There [if FF is 1]is 1 sip[otherwise]are [FF] sips[end if] of [slime] remaining. Take a sip?";
 								if the player is consenting:
-									say "You slurp up some more of your [urine].";
-									FaceFill urine by 2;
+									say "You slurp up some more of your [slime].";
+									FaceFill slime by 2;
 									decrease FF by 1;
 									if the total volume of face > 2, suggest swallowing;
 								otherwise:
@@ -311,8 +311,8 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 									now FFR is 1;
 							if FF >= a random number between 1 and fishbowl-fill:
 								say "[line break][speech style of M]'That was not a request!'[roman type][line break][BigNameDesc of M] throws the fishbowl at your face!";
-								AnnouncedSquirt urine on hair by fishbowl-fill;
-								UrineTasteAddictUp 1;
+								AnnouncedSquirt slime on hair by fishbowl-fill;
+								SlimeTasteAddictUp 1;
 								say severeHumiliateReflect;
 							otherwise:
 								if FF > 0, say "[BigNameDesc of M] wrinkles [his of M] nose.[line break][speech style of M]'I suppose that will do. You may go!'[roman type][line break]";
@@ -320,13 +320,13 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 						otherwise:
 							say "[BigNameDesc of M] [if M is in Facility08]puts the fishbowl inside a large drawer in [his of M] desk[otherwise]clicks [his of M] fingers, and the bowl disappears[end if]. Then [he of M] looks at you, and raises [his of M] eyebrows with impatience.[line break][speech style of M]'You can go now!'[roman type][line break]";
 					otherwise:
-						say "You try your best but you can't make yourself pee in front of [him of M].[line break][variable custom style]'I, um, I can't go...'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your toilet privileges... indefinitely.'[roman type][line break]";
+						say "You try your best but you can't make yourself [slime] in front of [him of M].[line break][variable custom style]'I, um, I can't go...'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your [SlimeTarget] privileges... indefinitely.'[roman type][line break]";
 						now mistress-toilet-ban is true;
 				otherwise:
-					say "[variable custom style]'I've, err, changed my mind. I don't need to go after all!'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your toilet privileges... indefinitely.'[roman type][line break]";
+					say "[variable custom style]'I've, err, changed my mind. I don't need to go after all!'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your [SlimeTarget] privileges... indefinitely.'[roman type][line break]";
 					now mistress-toilet-ban is true;
 			otherwise if R is 2:
-				say "[BigNameDesc of M] tilts [his of M] head.[line break][speech style of M]'Show me you can hold it first.'[roman type][line break][big he of M] points a finger at you, and shoots some kind of magic ray at you. Suddenly, you're completely paralysed. [big he of M] keeps you like that for several minutes, sitting there and watching you[if the player is bursting] as you fight to hold onto your bladder[end if].";
+				say "[BigNameDesc of M] tilts [his of M] head.[line break][speech style of M]'Show me you can hold it first.'[roman type][line break][big he of M] points a finger at you, and shoots some kind of magic ray at you. Suddenly, you're completely paralysed. [big he of M] keeps you like that for several minutes, sitting there and watching you[if the player is bursting] as you fight to hold onto your [SlimeContainer][end if].";
 				compute bladder growth;
 				if delayed urination is 1:
 					say "It's no good, you can't hold it!";
@@ -339,9 +339,9 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 						summon D cursed with quest;
 					try urinating;
 					say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'Pathetic.'[roman type][line break]";
-					if watersports fetish is 1 and the urine-puddle of the location of M > 0:
-						say "[BigNameDesc of M] shoves your face into the puddle of [urine] on the floor.[line break][speech style of M]'Look what you did, you filthy slut!'[roman type][line break]The strong smell of your [urine] rushes into your nostrils, and when [NameDesc of M] pulls you back up, your cheek and nose now have a little pee on them.";
-						UrineTasteAddictUp 1;
+					if watersports fetish is 1 and the slime-puddle of the location of M > 0:
+						say "[BigNameDesc of M] shoves your face into the puddle of [slime] on the floor.[line break][speech style of M]'Look what you did, you filthy slut!'[roman type][line break]The strong smell of your [slime] rushes into your nostrils, and when [NameDesc of M] pulls you back up, your cheek and nose now have a little [slime] on them.";
+						SlimeTasteAddictUp 1;
 					say "[speech style of M]'Get out of my sight.'[roman type][line break][BigNameDesc of M] spits.";
 				otherwise:
 					say "[BigNameDesc of M] nods, and releases you from the magic paralysis.[line break][speech style of M]'Good. Okay, here you go.'[roman type][line break]";
@@ -352,7 +352,11 @@ To execute (T - talk-mistress-toilet) for (M - a monster):
 
 To compute key drop of (M - mistress):
 	say "[big he of M] [if the player is in Facility08]placed the key on [his of M] desk[otherwise]tosses the key over to you.";
-	now facility-toilet-key is in the location of the player;
-	compute autotaking facility-toilet-key.
+	if a random number between 1 and 10 > the dexterity of the player or there is worn mittens:
+		say "You fumble the catch, and the key clatters to the ground.";
+		now facility-toilet-key is in the location of the player;
+		compute autotaking facility-toilet-key;
+	otherwise:
+		now facility-toilet-key is carried by the player.
 
 Royal Mistress ends here.

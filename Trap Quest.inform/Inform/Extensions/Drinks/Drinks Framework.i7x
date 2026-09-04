@@ -10,7 +10,7 @@ Magic Types:
 6: Potion of lucidity
 7: Potion of brilliance
 20: Semen
-21: Urine
+21: Slime/Golden
 22: Milk
 23: Unholy mix of above
 All others: curse
@@ -27,7 +27,7 @@ To say FillName (N - a number):
 	if N is 7, say "a potion of brilliance";
 	if N >= lowest-cursed and N <= highest-cursed, say "a cursed drink";
 	if N is 20, say "[semen]";
-	if N is 21, say "[urine]";
+	if N is 21, say "[slime]";
 	if N is 22, say "milk";
 	if N is 23, say "an unholy mix of bodily fluids".
 
@@ -87,7 +87,9 @@ To decide which number is the TQcolour of (D - a drink-colour):
 	if D is turquoise, decide on 4251856;
 	if D is white, decide on 16382457;
 	if D is creamy, decide on 16776656;
-	if D is golden, decide on 16766720;
+	if D is golden:
+		if legacy watersports mechanics is 1, decide on 16766720;
+		decide on 43263;[slime]
 	if D is murky, decide on 16111219;
 	decide on 12345.
 
@@ -102,7 +104,7 @@ Definition: A number is remembered:
 	decide no.
 
 Understand "milk" as a can when the fill-colour of item described is white and the doses of item described > 0.
-Understand "urine", "piss", "pee", "wee" as a bottle when the fill-colour of item described is golden and the doses of item described > 0.
+Understand "urine", "piss", "pee", "wee", "slime", "goo", "jelly" as a bottle when the fill-colour of item described is golden and the doses of item described > 0.
 Understand "semen", "cum", "jizz" as a bottle when the fill-colour of item described is creamy and the doses of item described > 0.
 Understand "unholy" as a can when the fill-colour of item described is murky and the doses of item described > 0.
 

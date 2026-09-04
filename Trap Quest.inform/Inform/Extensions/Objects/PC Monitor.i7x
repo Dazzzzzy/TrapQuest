@@ -124,7 +124,7 @@ To say NewAppearanceReaction of (M - a monster):
 
 To say GenericSituationReaction of (M - a monster):
 	let P be the appearance of the player;
-	say "[speech style of M]'Hello there, [NameBimbo]! So, these [if lady fetish is 1]girls[otherwise]boys[end if] and I were just looking in on your beta test, and since there was a screen handy, I thought [']why not let [him of the player] in on it?['] [run paragraph on]";
+	say "[speech style of M]'Hello there, [NameBimbo]! So, these [if gyno fetish is 1]girls[otherwise]boys[end if] and I were just looking in on your beta test, and since there was a screen handy, I thought [']why not let [him of the player] in on it?['] [run paragraph on]";
 	if P < 3:
 		say "By the way, your little [']I'm not a slut['] act is really popular with our investors, so make sure to play that up, alright? ";
 	otherwise if P < 6:
@@ -143,7 +143,7 @@ To say FriendReaction of (M - a slutty sister) to (A - a humiliating situation):
 
 To say NewCircumstanceReaction of (M - a slutty sister):
 	let N be a random dangerous monster in the location of the player;
-	say "'[roman type][line break][big he of M] turns [his of M] attention back to the suited [if lady fetish is 1]women[otherwise]men[end if] behind [him of M].[line break][speech style of M]'";
+	say "'[roman type][line break][big he of M] turns [his of M] attention back to the suited [if gyno fetish is 1]women[otherwise]men[end if] behind [him of M].[line break][speech style of M]'";
 	if N is patron:
 		say "Anyway, we've heard your complaints that our high class [']representatives['] are too expensive, and our players have been testing out a solution for us. The [man of N] next to [NameBimbo] here is actually a customer who has paid to spend time with one of our [']Virtual associates.['] It's true they aren't as well behaved or skilled as the real thing, but the price isn't nearly as prohibitive. All you need to do is sign a few release forms and you can give one a try!'[roman type][line break]";
 	otherwise:

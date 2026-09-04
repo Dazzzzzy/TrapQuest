@@ -56,7 +56,7 @@ To trigger (Y - a rocking horse):
 Check entering rocking horse:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
-	if the player is urine averse and the urine-puddle of the location of the player > 0, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type][line break]" instead;
+	if the player is slime averse and the slime-puddle of the location of the player > 0, say "[variable custom style]I'm not resting in this room with the smell of [slime] everywhere![roman type][line break]" instead;
 	now the noun is grabbing the player;
 	now focused-thing is the noun;
 	trigger the noun instead;

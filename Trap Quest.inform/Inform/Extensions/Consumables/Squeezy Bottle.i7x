@@ -29,7 +29,7 @@ Check drinking squeezy-bottle:
 			now suppository is 5;
 			if the bladder of the player < 6, now the bladder of the player is 6;
 		otherwise:
-			say "You can feel your bladder almost immediately feeling more full than it did a moment ago. And then, with every passing moment, it feels even more full than the moment before! Oh no. You've just drunk an entire bottle of diuretic...";
+			say "You can feel your [SlimeContainer] almost immediately feeling more full than it did a moment ago. And then, with every passing moment, it feels even more full than the moment before! Oh no. You've just drunk an entire bottle of diuretic...";
 			if the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level;
 		do nothing instead;
 	if the latex-transformation of the player > 4, say "You can no longer drink, you're too far through your transformation into a doll and your body doesn't need hydration any more." instead;
@@ -45,16 +45,22 @@ Check drinking squeezy-bottle:
 			say "The [ShortDesc of T] is preventing you from doing that!" instead;
 	allocate 6 seconds;
 	let R be a random number between 1 and 3;
-	if alcohol > 0, decrease R by 1; [alcohol more likely if you've already drunk some]
-	if R <= 1:
-		if alcohol fetish is 1:
-			say "Some kind of alcoholic drink burns your throat![line break][variable custom style]Eek! [one of]That's strong stuff[or]It happened again[stopping]![roman type][line break]";
-			increase alcohol level;
-		otherwise:
-			say "Some kind of extremely spicy liquid burns your throat![line break][variable custom style]Eek! [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
-			PainUp 10;
+	let C be a random worn cumguzzling clothing;
+	if C is clothing:
+		say "Water squirts from the bottle into your mouth. But thanks to your [C], the taste and texture of the drink turns to [semen] as it touches your lips![roman type][line break]";
+		if R <= 1, compute addictive tasting of semen;
+		otherwise compute slightly addictive tasting of semen;
 	otherwise:
-		say "Water squirts from the bottle into your mouth.";
+		if alcohol > 0, decrease R by 1; [alcohol more likely if you've already drunk some]
+		if R <= 1:
+			if alcohol fetish is 1:
+				say "Some kind of alcoholic drink burns your throat![line break][variable custom style]Eek! [one of]That's strong stuff[or]It happened again[stopping]![roman type][line break]";
+				increase alcohol level;
+			otherwise:
+				say "Some kind of extremely spicy liquid burns your throat![line break][variable custom style]Eek! [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
+				PainUp 10;
+		otherwise:
+			say "Water squirts from the bottle into your mouth.";
 	StomachUp 1 instead.
 
 straw-bottle is a thing. The printed name of straw-bottle is "[TQlink of item described]straw bottle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of straw-bottle is "sb". Understand "straw", "bottle" as straw-bottle.

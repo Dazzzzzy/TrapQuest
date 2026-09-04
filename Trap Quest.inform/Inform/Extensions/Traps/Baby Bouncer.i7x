@@ -75,7 +75,8 @@ To say SexSubmissionFlav of (Y - a baby bouncer):
 	increase the bounces of Y by 1;
 	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y < 3]You feel a bit silly, but you resist being made to feel more submissive for now[otherwise]The gentle treatment of the contraption finally gets to you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you start to feel like a little child[in random order][end if].";
 	if the bounces of Y > 2, SilentlyDelicateUp 1;
-	humiliate SEVERE-HUMILIATION + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
+	let HR be SEVERE-HUMILIATION + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
+	say HumiliateReflect HR;
 	now the willingbounce of Y is 0;
 	check bounce release of Y.
 
@@ -117,9 +118,13 @@ To Jump From The Baby Bouncer:
 	let Y be a random trap grabbing the player;
 	say "You [if the diaper addiction of the player < 8]begrudgingly[otherwise if the diaper addiction of the player < 13]willingly[otherwise]eagerly[end if] bounce up and down, [if the diaper addiction of the player < 13]feeling trapped like some pathetic, helpless [otherwise]Enjoying the ride as if you were still a [end if][if there is no worn diaper]child[end if][if there is a worn diaper]baby[end if][if the number of worn perceived messed knickers is 0].[end if][if there is a worn perceived messed knickers], the hot mush caressing you and sifting around your [buttcheeks] certainly not helping you feel any more mature.[end if][if asshole is actually occupied][BigNameDesc of random thing filling asshole] continues to fuck you with each bounce.[end if][line break][variable custom style][if the diaper addiction of the player < 8][one of]This is humiliating![or]I'm not a baby! Let me down![or]This is ridiculous! I don't belong in this thing![at random][otherwise if the diaper addiction of the player < 13][one of]I need to get down but this is actually pretty fun![or]If I didn't have other things to do, I could do this all day![or]I can see why real babies have so much fun with these things![at random][otherwise][one of]Wee![or]Yay![or]Higher! Higher![at random][end if][roman type][line break]";
 	if there is a worn diaper, stimulate vagina from Y;
-	humiliate SEVERE-HUMILIATION + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
+	let HR be SEVERE-HUMILIATION + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
+	say HumiliateReflect HR;
 	if asshole is actually occupied, ruin asshole;
-	DelicateUp 1;
+	if there is a worn perceived messed knickers:
+		GrossOut messyDiaperSmellGrossnessLevel + 1;
+	otherwise if there is a worn perceived wet knickers:
+		GrossOut wetDiaperSmellGrossnessLevel + 1;
 	DiaperAddictUp 1;
 	repeat with M running through reactive monsters:
 		say BouncerBounceTrapReactFlav of M;

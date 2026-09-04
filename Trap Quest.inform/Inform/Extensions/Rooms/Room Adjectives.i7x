@@ -30,9 +30,9 @@ A room has a direction called second forbidden direction. The second forbidden d
 
 A room can be use-the-floor, water-bodied, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.
 Report going when the location is toilets:
-	if watersports fetish is 1, compute addiction reflection on "urine" with 1 flavour.
+	if watersports fetish is 1, compute addiction reflection on "slime" with 1 flavour.
 Report going when the location is urinals:
-	if watersports fetish is 1, compute addiction reflection on "urine" with 1 flavour.
+	if watersports fetish is 1, compute addiction reflection on "slime" with 1 flavour.
 
 Definition: a room is bathroom:
 	if it is urinals or it is toilets, decide yes;

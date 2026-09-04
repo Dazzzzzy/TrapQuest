@@ -484,6 +484,10 @@ To AssImplantsDown (X - a number):
 
 Chapter 3 - Fat
 
+Figure of Body Reaction 10 is the file "Special/Cutscene/cutscene-body-reaction10.jpg".
+Figure of Body Reaction 11 is the file "Special/Cutscene/cutscene-body-reaction11.jpg".
+Figure of Body Reaction 12 is the file "Special/Cutscene/cutscene-body-reaction12.jpg".
+
 To FatAssUp (X - a number):
 	while X > 0:
 		decrease X by 1;

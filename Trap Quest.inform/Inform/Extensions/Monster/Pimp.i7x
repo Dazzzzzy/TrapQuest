@@ -49,7 +49,7 @@ Figure of pimp femme is the file "NPCs/Hotel/Pimp/pimp4.jpg".
 Figure of pimp portal cutscene is the file "Special/Cutscene/cutscene-pimp-portals1.jpg".
 
 To decide which figure-name is the monster-image of (M - pimp):
-	if lady fetish is 1, decide on figure of pimp femme;
+	if gyno fetish is 1, decide on figure of pimp femme;
 	if M is in Hotel44 and (portal-bra is worn or portal-hotpants is worn or woman-player is partially-enslaved):
 		if the player is possessing a vagina, decide on figure of pimp vag for sale;
 		otherwise decide on figure of pimp ass for sale;
@@ -135,7 +135,7 @@ To compute perception of (M - pimp):
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have [if portal-diaper is worn]used your padding[otherwise]had their fun with you[end if].'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
 	otherwise if portal-diaper is worn:
 		say "[speech style of M]'Sales are going well, slut, which I guess is good news for both of us.'[roman type][line break]";
@@ -162,7 +162,7 @@ To compute perception of (M - pimp):
 	otherwise if patronbed uses is 0:
 		say "[speech style of M]'Hi there. Still not tempted to become one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]?'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Hi there [if diaper quest is 1]baby[boy of M][otherwise]whore[end if]. Here to give me my cut?'[roman type][line break]".
+		say "[speech style of M]'Hi there [if diaper quest is 1]baby[boy of the player][otherwise]whore[end if]. Here to give me my cut?'[roman type][line break]".
 
 To send (M - pimp) home:
 	if M is alive:
@@ -272,7 +272,7 @@ This is the pimp uses portals rule:
 		otherwise if diaper quest is 1 and diaper swapping >= 2 and portal-diaper is unclash summonable:
 			say "[speech style of pimp]'I have ways of dealing with disobedient whores. I own your body, and sometimes this is the only way to make sure someone like you understands that.'[roman type][line break][BigNameDesc of pimp] produces a giant white diaper with a faintly glowing blue hue at the crotch.";
 			unclash class summon portal-diaper;
-			say "[if the player is in Hotel31]A matching portal appears at the entrance to the drainage of the urinal![line break][end if][speech style of pimp]'Now I can sell your diaper for use as a urinal at any time, and take ALL the profits for myself[if the player is not in Hotel31]. You'll see what I mean soon enough[end if].'[roman type][line break]";
+			say "[if the player is in Hotel31]A matching portal appears at the entrance to the drainage of the [SlimeTargetU]![line break][end if][speech style of pimp]'Now I can sell your diaper for use as a [SlimeTargetU] at any time, and take ALL the profits for myself[if the player is not in Hotel31]. You'll see what I mean soon enough[end if].'[roman type][line break]";
 			satisfy pimp;
 			rule succeeds;
 		otherwise if diaper quest is 0:
@@ -296,6 +296,14 @@ To compute damaging attack of (M - pimp):
 		try kneeling;
 	otherwise:
 		compute striking attack of M.
+
+To compute tripping attack of (M - pimp):
+	if spade owned tattoo is worn:
+		say "[speech style of M]'Submit to your owner, [bitch]!'[roman type][line break][BigNameDesc of M] snaps [his of M] fingers, and you feel some latent magic in [NameDesc of spade owned tattoo] activate. You immediately, unthinkingly, drop to your knees[if the player is not wrist bound] and place your hands obediently behind your back[end if].";
+		try kneeling;
+		now another-turn is 1;
+	otherwise:
+		compute default tripping attack of M.
 
 This is the pimp convinced rule:
 	if presented-orifice is not nothing, say PresentRejectionFlav of current-monster.
@@ -399,7 +407,7 @@ Section 4 - Dominant Sex
 
 To say DominanceFailure of (M - pimp):
 	if the player is wrist bound, say "";
-	say "[if the player is wrist bound]You try to tackle [NameDesc of M] to the ground, but [he of M] catces you and immediately slaps[otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M] to the ground. [big he of M] isn't all that interested in being thrown around, so instead of falling over, [he of M] responds by slapping[end if] you across the face. Your instincts cause you to immediately release [him of M] and drop to your knees before [he of M] has to hit you again.".
+	say "[if the player is wrist bound]You try to tackle [NameDesc of M] to the ground, but [he of M] catches you and immediately slaps[otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M] to the ground. [big he of M] isn't all that interested in being thrown around, so instead of falling over, [he of M] responds by slapping[end if] you across the face. Your instincts cause you to immediately release [him of M] and drop to your knees before [he of M] has to hit you again.".
 
 To compute failed dominance punishment of (M - pimp):
 	if the player is getting unlucky:
@@ -413,7 +421,7 @@ To compute failed dominance punishment of (M - pimp):
 	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.".
 
 To ride dominate (M - pimp):
-	if the player is wrist bound, say "You tackle [NameDesc of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you sit on [his of M] [LongDickDesc of M].[line break][speech style of M]'Bitch, are you stupid? If a Johns walks in and sees your arms like that, what the fuck do you think-? This won't go well for you, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
+	if the player is wrist bound, say "You tackle [NameDesc of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you sit on [his of M] [LongDickDesc of M].[line break][speech style of M]'Bitch, are you stupid? If any Johns walk in and see your arms like that, what the fuck do you think-? This won't go well for you, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
 	otherwise say "You grab [NameDesc of M] by the front of [his of M] shirt and throw [him of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you wrap your hands around [his of M] [LongDickDesc of M].[line break][speech style of M]'Listen up. If any Johns walk in on this, they'll think I'm- WE're merchandise. You won't get away with disrespecting me like this anyway, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
 	if the player is reverse bimbo consenting:
 		now player-fucking is DOMINANT-NEUTRAL;
@@ -544,7 +552,7 @@ To compute non penetration dominate of (M - pimp):
 
 To watersports dominate (M - a pimp):
 	let C be a random bottom level protection clothing;
-	say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to-..'[roman type][line break][big he of M] trails off as you [if C is clothing]pull aside your [printed name of C][otherwise if the player is possessing a penis]wrap your hand around your [ShortDesc of penis][otherwise]reach down and spread your nether lips[end if] and [he of M] realises what you're about to do.[line break][speech style of M]'...pay. You better be ready to pay, up front. That's the only way I let you use me as a target.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
+	say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to-..'[roman type][line break][big he of M] trails off as you [if slimeshooter fetish is 1]take aim with your slimeshooter[otherwise if C is clothing]pull aside your [printed name of C][otherwise if the player is possessing a penis]wrap your hand around your [ShortDesc of penis][otherwise]reach down and spread your nether lips[end if] and [he of M] realises what you're about to do.[line break][speech style of M]'...pay. You better be ready to pay, up front. That's the only way I let you use me as a target.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
 	let LA be a list of things;
 	repeat with A running through worn plentiful accessories:
 		add A to LA;
@@ -568,7 +576,7 @@ To watersports dominate (M - a pimp):
 
 To compute paid watersports dominate of (M - pimp) with (A - an accessory):
 	now M is carrying A;
-	say "Taking the [ShortDesc of A], [FuckerDesc of M] immediately closes [his of M] eyes and lolls out [his of M] tongue. A second later, a stream of your [urine] hits [his of M] face. [big his of M] nose crinkles a little when you direct the stream into [his of M] mouth, and [he of M] scowls when you aim down at [his of M] chest, but [he of M] doesn't complain. After all - [he of M] understands that you're just getting your money's worth. You finish up by aiming back toward [his of M] mouth, and ordering [him of M] to swallow, which [he of M] does right away.";
+	say "Taking the [ShortDesc of A], [FuckerDesc of M] immediately closes [his of M] eyes and lolls out [his of M] tongue. A second later, a stream of your [slime] hits [his of M] face. [big his of M] nose crinkles a little when you direct the stream into [his of M] mouth, and [he of M] scowls when you aim down at [his of M] chest, but [he of M] doesn't complain. After all - [he of M] understands that you're just getting your money's worth. You finish up by aiming back toward [his of M] mouth, [if the player is able to speak]and ordering [him of M] to swallow, which [he of M] does[otherwise]which [he of M] swallows[end if] right away.";
 	now the bladder of the player is 0;
 	strongDignify;
 	SportsGet;
@@ -694,7 +702,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have had their fun with you.'[roman type][line break]";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have [if portal-diaper is worn]used your padding[otherwise]had their fun with you[end if].'[roman type][line break]";
 	otherwise:
 		if M is guardian:
 			say "[speech style of M]'You're way ahead in your payments to me. As a reward I'll make sure to only send the easiest customers your way for now.'[roman type][line break]";

@@ -156,8 +156,8 @@ To compute puddle cleanup:
 		repeat with R running through placed rooms:
 			if the semen-puddle of R > 0:
 				decrease the semen-puddle of R by 1;
-			if the urine-puddle of R > 0:
-				decrease the urine-puddle of R by 1;
+			if the slime-puddle of R > 0:
+				decrease the slime-puddle of R by 1;
 			if the milk-puddle of R > 0:
 				decrease the milk-puddle of R by 1;
 		now last-puddle-cleanup is earnings.
@@ -398,8 +398,8 @@ This is the tripped over extremely long hair rule:
 The tripped over extremely long hair rule is listed last in the trip reasons rules.
 
 This is the slipped on huge puddle rule:
-	if the urine-puddle of the location of the player > 15:
-		say "You slip on the pool of [urine] underneath your feet!";
+	if the slime-puddle of the location of the player > 15:
+		say "You slip on the pool of [slime] underneath your feet!";
 		rule succeeds;
 	otherwise if the milk-puddle of the location of the player > 15:
 		say "You slip on the pool of [milk] underneath your feet!";
@@ -410,8 +410,8 @@ This is the slipped on huge puddle rule:
 The slipped on huge puddle rule is listed last in the trip reasons rules.
 
 This is the slipped on puddle rule:
-	if the urine-puddle of the location of the player > 0:
-		say "You slip on the puddle of [urine] underneath your feet!";
+	if the slime-puddle of the location of the player > 0:
+		say "You slip on the puddle of [slime] underneath your feet!";
 		rule succeeds;
 	otherwise if the milk-puddle of the location of the player > 0:
 		say "You slip on the puddle of [milk] underneath your feet!";
@@ -477,10 +477,10 @@ Check going:
 					unless the player is in agreement, say "You change your mind." instead;
 		if areYouSure is 1:
 			if futanari-slutty-sister is in L:
-				unless futanari-slutty-sister is asleep or futanari-slutty-sister is off-stage or the wealth of the player < 20:
+				unless futanari-slutty-sister is asleep or futanari-slutty-sister is off-stage or the endgame wealth of the player >= 500000:
 					say "You can see [if the number of alive slutty sisters > 1]the two [boy of futanari-slutty-sister]s[otherwise]one of the [boy of futanari-slutty-sister]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight [if the number of alive slutty sisters > 1]them[otherwise][him of futanari-slutty-sister][end if]. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 					unless the player is bimbo consenting, say "You change your mind." instead;
-		if areYouSure is 1 and robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
+		if areYouSure is 1 and robomatron is alive and robomatron is in L and robomatron is awake and the endgame wealth of the player >= 500000:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0:

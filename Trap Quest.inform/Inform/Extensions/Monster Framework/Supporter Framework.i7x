@@ -393,7 +393,7 @@ The blind-status of a supporter is usually 0. [Can be changed to -1 to make them
 
 To compute post climax effect of (M - a supporter) in (F - a fuckhole):
 	if M is male:
-		if F is asshole, check post climax anal urination of M;
+		if F is asshole, check post climax anal slimation of M;
 		compute M sleeping 200 after sex.
 
 [###SUPPORTERS WITH A PENIS ONLY###]
@@ -695,21 +695,21 @@ To say ClothesPeeReaction of (M - a supporter):
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 	if M is unfriendly, interest M.
 
-To say GroundPeeReaction of (M - a supporter):
+To say GroundSlimeReaction of (M - a supporter):
 	say "[ClothesPeeReaction of M]".
 
-To say UrinationFlav of (M - a supporter):
-	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+To say DrainFlav of (M - a supporter):
+	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [slime] shoots out, headed straight for you!".
 
-To say PissDrinkThreat of (M - a supporter):
-	say "[speech style of M]'[one of]You'd better drink this like a good toilet, or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".
+To say SlimeDrinkThreat of (M - a supporter):
+	say "[speech style of M]'[one of]You'd better drink this like a good [SlimeTarget], or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".
 
 [###DIAPER STUFF###]
 
 To say DiaperReaction of (M - a supporter):
 	if there is a currently visible diaper or the player is shameless or M is concealment immune:
 		if M is unfriendly:
-			say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you wet yourself in fear[end if]?'[roman type][line break]";
+			say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you [slimeonself] in fear[end if]?'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Wow, just like a big baby.'[roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
 			FavourDown M;

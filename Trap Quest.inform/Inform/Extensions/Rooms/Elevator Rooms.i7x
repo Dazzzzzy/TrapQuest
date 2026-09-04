@@ -5,6 +5,7 @@ An elevator-room is a kind of room. An elevator-room has a labyrinth shape calle
 elevator-buttons is a list of rooms that varies.
 
 Definition: an elevator-room is appropriate: decide yes.
+Definition: an elevator-room is nonstandard: decide yes.
 Definition: an elevator-room is partial squirt: decide yes. [involuntary enema expulsion is 6 units at a time, rather than all of it]
 
 To say FurutisticRoomSentence:
@@ -216,16 +217,16 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 				otherwise if the player is possessing a penis and the size of penis > min penis size:
 					say "A needle is injecting some kind of special serum directly into your [player-penis], making it permanently smaller.";
 					PenisDown (surgery-turns + 1) / 2;
-				say "A huge, thick studded dildo is brutally punching in and out of your [variable F]. It is now sore, gaped and is leaving you reeling with the shockwave of the [if surgery-turns > 1][surgery-turns - 1][end if][a random number between 4 and 9] orgasms that your body has just endured. ";
+				say "A huge, thick studded dildo is brutally punching in and out of your [variable F]. It is now sore, gaped and is leaving you reeling with the shockwave of the [if surgery-turns > 1][surgery-turns] orgasms[otherwise]orgasm[end if] that your body has just endured. ";
 				increase the soreness of F by surgery-turns;
 				if the soreness of F > 10, now the soreness of F is 10;
 				gape F times surgery-turns;
 			otherwise:
 				if diaper messing >= 3:
-					say "One needle is injecting a serum directly into your bladder, and another is doing the same to your rectum.";
+					say "One needle is injecting a serum directly into your [SlimeContainer], and another is doing the same to your rectum.";
 					RectumIncontinenceUp surgery-turns;
 				otherwise:
-					say "Two needles are injecting a serum directly into your bladder.";
+					say "Two needles are injecting a serum directly into your [SlimeContainer].";
 				BladderIncontinenceUp surgery-turns;
 				if enema fetish is 1:
 					AssFill (belly limit - the total squirtable fill of belly) water;
@@ -248,7 +249,8 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 				compute single choice question "...What the FUCK?!";
 				now temporaryYesNoBackground is Figure of Surgery Trapped Revealed;
 				say "[variable custom style]What has this machine done to me?!?!?! Oh my god!!![roman type][line break]";
-				compute single choice question "Experience countless orgasms in a split second";
+				if surgery-turns > 1, compute single choice question "Experience multiple orgasms in a split second";
+				otherwise compute single choice question "Experience an instant orgasm";
 				now temporaryYesNoBackground is Figure of Surgery Trapped Sensed;
 				say "[variable custom style]HNNNNNNNNNNNNNNNNG COMINGCOMINGCOMINGCOMING[roman type][line break]Your mind goes blank for a moment as an impossibly intense euphoric experience washes over you.";
 		say "The machine releases your torso, allowing you to, legs shaking, waddle towards the elevator.[line break][first custom style]'WARNING: THIS ROOM WILL NOW FILL WITH STEAM AS PART OF ITS STERILIZATION CYCLE. WOULD ALL ORGANIC MATTER THAT WISHES TO REMAIN ORGANIC MATTER [caps please] IMMEDIATELY LEAVE VIA THE ELEVATOR PROVIDED.'[line break][variable custom style]Crap, I'm being kicked out right away![roman type][line break]";
@@ -262,14 +264,14 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 	compute elevator return.
 
 
-NurseRoom01 is an elevator-room. The grid position of FacialRoom01 is <10,4,4>. The printed name of FacialRoom01 is "Futuristic Room".
+NurseRoom01 is an elevator-room. The grid position of NurseRoom01 is <10,5,5>. The printed name of NurseRoom01 is "Futuristic Room".
 
 To say RoomTitle of (R - NurseRoom01):
 	say "Nurse's Room".
 
 Definition: NurseRoom01 is appropriate:
-	if diaper quest is 0 and the player is an april 2025 top donator, decide yes;
-	if diaper quest is 1 and the player is an april 2025 diaper donator, decide yes;
+	if diaper quest is 0 and the player is the donator, decide yes;
+	if diaper quest is 1, decide yes;
 	decide no.
 
 Figure of mad nurse scene is the file "NPCs/Facility/nurse4.jpg".
@@ -428,6 +430,7 @@ A later time based rule (this is the facial room machine rule):
 				if M is a monster, say "[speech style of N]'Ooh, it seems like [he of the player] wants us to leave [him of the player] alone. What do you think about that, [if N is presenting as male]bro[otherwise]hun[end if]?'[roman type][line break]Holy shit, there's two of them!";
 				otherwise say "[speech style of N]'Ooh, it seems like you want me to leave you alone?'[roman type][line break][BigNameDesc of N] takes a dramatic pause...";
 				now current-monster is N;
+				let UMD be a random worn unmessed unglued unlocked diaper;
 				if diaper quest is 0:
 					let F be a random reasonable target fuckhole;
 					if F is nothing or there is a worn cursed diaper or there is a worn locked diaper or there is a worn glued diaper or the woman-bimbo of woman-player > 5 or (the woman-bimbo of woman-player is 5 and the player is not getting unlucky) or (the woman-bimbo of woman-player < 5 and the player is getting lucky):
@@ -472,6 +475,15 @@ A later time based rule (this is the facial room machine rule):
 							summon DC uncursed;
 							say "[BigNameDesc of M] pulls a [MediumDesc of DC] up your legs!";
 							now thing-to-lock is DC;
+					otherwise if diaper swapping >= 2 and UMD is a thing and a random number between 1 and the soak-limit of UMD > the total-soak of UMD and the number of worn diaper urinal blocking clothing is 0:
+						say "[speech style of N]'[one of]Well, I don't know about you, but I could use a [slime], and there's an excellent makeshift [SlimeTarget] right here.'[or]I've been holding my own [slime] in for a while, hoping that an opportunity like this might arise.'[or]I haven't been to the [SlimeTarget] recently myself, and now I can't say no to this opportunity that's been presented to me...'[cycling][roman type][line break]";
+						say "[speech style of M]'[one of]Oh yeah[or]Hell yeah[or]Great idea[at random] [one of]bro[or]dude[or]man[at random], [one of]good point, me too[or]let's do it at the same time, too[or]we can both use this [SlimeTargetU] together[then at random]!'[roman type][paragraph break]";
+						say "Both [men of M] slide their [manly-penis]s inside your diaper, and let loose joint streams of [slime] directly into your padding.";
+						AnnouncedExpel slime on UMD by 14;
+						now the bladder of M is 0;
+						now M is inseminating UMD;
+						GrossOut 5 with reason "The sensation of being used as a diaper [SlimeTargetU] by two [men of M] at the same time makes you shudder," and sensation "feeling";
+						say "[speech style of M]'[one of]Haha, how pathetic you must feel, reduced to being nothing but a [SlimeTargetU][or]What a convenient [SlimeTargetU][stopping]!'[roman type][paragraph break][strongHumiliateReflect]";
 					otherwise:
 						if there is worn messed knickers:
 							say "[speech style of N]'And you've pooped yourself?! Gross! We know just the punishment for naughty messy babies...'[roman type][line break]";
@@ -546,20 +558,20 @@ A later time based rule (this is the facial room machine rule):
 					say "You hear [NameDesc of N] [if M is a monster]and [his of N] friend [end if]leaving the room via the elevator.";
 					destroy N;
 					if M is a monster, destroy M;
-				cutshow facial-room-machine;
+				if temporary-map-figure is figure of no-image-yet, cutshow facial-room-machine;
 		otherwise if the charge of facial-room-machine >= 4 and M is not a monster:
 			say "[first custom style]'PROCEDURE COMPLETED[if the make-up of face < 3]. PLEASE ENJOY THIS COMPLIMENTARY MAKE UP ENHANCEMENT[end if].'[roman type][line break][if the make-up of face < 3]There is a POOF as your face is suddenly coated with extra heavy layers of make up, and then the[otherwise]The[end if] machine releases you.";
 			FaceUp 3;
 			dislodge facial-room-machine;
 			now the stance of the player is 0;
 		otherwise:
-			cutshow facial-room-machine.
+			if temporary-map-figure is figure of no-image-yet, cutshow facial-room-machine.
 
 
 To say RandomNewKnowledge:
 	say "[variable custom style][one of]I should keep an eye out for pressure pads on the ground[or]By speaking more clearly, magic incantations can be more effective[or]It's important to remember the locations of tripwires I've already encountered[or]The more careful I am crafting, the more chance I have of creating a blessed item[or]The more crafting recipes I can remember, the more effective I can be at alchemy[or]Chess strategy knowledge? Well who knows, maybe that will be helpful[in random order]...[roman type][line break]";
 	IntUp 1;
-	if the player is not getting lucky, say "But then, you also get some extra knowledge you weren't expecting![line break][second custom style][one of][SemenLewdKnowledge][or][OrgasmLewdKnowledge][or][SubmissionLewdKnowledge][or][AnalLewdKnowledge][or][MilkLewdKnowledge][or][UrineLewdKnowledge][or][BBCLewdKnowledge][in random order]".
+	if the player is not getting lucky, say "But then, you also get some extra knowledge you weren't expecting![line break][second custom style][one of][SemenLewdKnowledge][or][OrgasmLewdKnowledge][or][SubmissionLewdKnowledge][or][AnalLewdKnowledge][or][MilkLewdKnowledge][or][SlimeLewdKnowledge][or][BBCLewdKnowledge][in random order]".
 
 
 
@@ -588,10 +600,11 @@ To say MilkLewdKnowledge:
 	otherwise:
 		say BasicLewdKnowledge.
 
-To say UrineLewdKnowledge:
+To say SlimeLewdKnowledge:
 	if watersports fetish is 1:
-		say "Urine is sterile where it is produced, in the kidney. It can sometimes be the cleanest, and safest liquid around for washing a wound or drinking.[roman type][line break]";
-		UrineTasteAddictUp 1;
+		if slimeshooter fetish is 1, say "Slime is found in many places in nature, and in the human body, it is incredibly important for protecting delicate mucus membranes.[roman type][line break]";
+		otherwise say "[big slime] is sterile where it is produced, in the kidney. It can sometimes be the cleanest, and safest liquid around for washing a wound or drinking.[roman type][line break]";
+		SlimeTasteAddictUp 1;
 	otherwise:
 		say BasicLewdKnowledge.
 
@@ -750,7 +763,7 @@ Check slapping belly-room-gloryhole:
 			say "Unfortunately, it turns out that this [NameDesc of belly-room-gloryhole] is a masochist. [GotUnluckyFlav]";
 			compute gloryhole orgasm of belly-room-gloryhole;
 		otherwise:
-			say "Unfortunately, it has the wrong effect, and causes the poor [NameDesc of belly-room-gloryhole] to wet [himself of male-m]. [GotUnluckyFlav]";
+			say "Unfortunately, it has the wrong effect, and causes the poor [NameDesc of belly-room-gloryhole] to [slimedrain] on [himself of male-m]. [GotUnluckyFlav]";
 			compute gloryhole urination of belly-room-gloryhole;
 	otherwise:
 		say "But [he of male-m] doesn't pull out! Yet...";
@@ -817,33 +830,33 @@ To compute gloryhole orgasm of (M - belly-room-gloryhole):
 
 To compute gloryhole urination of (M - belly-room-gloryhole):
 	now the gloryhole-state of M is 0;
-	say "[BigFuckerDesc of M] starts urinating!";
+	say "[BigFuckerDesc of M] starts [SlimeDraining]!";
 	if M is gloryhole-wrapped:
 		say "You watch as the condom fills... And fills... And fills... ";
 		now M is not gloryhole-wrapped;
 		if the player is getting unlucky:
-			say "The condom bursts! [big his of male-m] [urine] flies everywhere, getting all over the floor. [GotUnluckyFlav]";
-			UrinePuddleUp 8;
+			say "The condom bursts! [big his of male-m] [slime] flies everywhere, getting all over the floor. [GotUnluckyFlav]";
+			SlimePuddleUp 8;
 		otherwise:
 			say "And then [he of male-m][']s finished! But now [he of male-m] is pulling out, and it's going to cause the condom to rip and burst!";
 			compute single choice question "Quickly unsheath the condom and tie the end";
 			if the player is getting unlucky:
-				say "As you roll it off [NameDesc of M][']s [manly-penis], you try to pinch and tie the end. But you slip, and nearly all the [urine] quickly bursts out and onto the ground! [GotUnluckyFlav]";
-				UrinePuddleUp 8;
+				say "As you roll it off [NameDesc of M][']s [manly-penis], you try to pinch and tie the end. But you slip, and nearly all the [slime] quickly bursts out and onto the ground! [GotUnluckyFlav]";
+				SlimePuddleUp 8;
 			otherwise:
-				say "You quickly manage to pinch and tie the end as you roll it off [NameDesc of M][']s [manly-penis]. All the [urine] is still contained within.";
+				say "You quickly manage to pinch and tie the end as you roll it off [NameDesc of M][']s [manly-penis]. All the [slime] is still contained within.";
 				now water-bomb is carried by the player;
 				now the cum-known of water-bomb is 2;
 				now water-bomb is sure;
 				now water-bomb is bland;
 	otherwise if M is penetrating face:
-		say "[big his of male-m] [urine] fills your mouth.";
-		FaceFill urine by 8;
+		say "[big his of male-m] [slime] fills your mouth.";
+		FaceFill slime by 8;
 		suggest swallowing;
 		say "[BigFuckerDesc of M] pulls out of the hole.";
 	otherwise:
-		say "[big his of male-m][']s [urine] flows straight onto the floor.";
-		UrinePuddleUp 8;
+		say "[big his of male-m][']s [slime] flows straight onto the floor.";
+		SlimePuddleUp 8;
 		say "[BigFuckerDesc of M] pulls out of the hole.";
 	dislodge M.
 
@@ -989,7 +1002,7 @@ To compute maximum belly liquid fill:
 	if diaper quest is 1, add water to LQL;
 	otherwise add semen to LQL;
 	if lactation fetish is 1, add milk to LQL;
-	if watersports fetish is 1, add urine to LQL;
+	if watersports fetish is 1, add slime to LQL;
 	sort LQL in random order;
 	let LQ be entry 1 in LQL;
 	AssFill AF with LQ.
@@ -1021,21 +1034,21 @@ To SemenPuddleUp (X - a number) in (R - BellyRoom01):
 	otherwise:
 		increase the semen-puddle of R by X.
 
-To UrinePuddleUp (X - a number) in (R - BellyRoom01):
+To SlimePuddleUp (X - a number) in (R - BellyRoom01):
 	if the player is in R:
 		cutshow Figure of Belly Room Expel;
-		say "A klaxon sounds, followed by a loud whooshing sound as the [urine] is sucked down into a drainage system. ";
+		say "A klaxon sounds, followed by a loud whooshing sound as the [slime] is sucked down into a drainage system. ";
 		if (a2m fetish > 1 or currently-squirting is 0) and face is not actually occupied:
-			say "Suddenly, a ring gag connected to a tube flies out of a panel in the ground and into your mouth! It begins pumping the collected [urine] into your mouth[if currently-squirting is 1] - you're being forcefed your own nasty ass-piss[one of][or] once again[stopping][end if]!";
+			say "Suddenly, a ring gag connected to a tube flies out of a panel in the ground and into your mouth! It begins pumping the collected [slime] into your mouth[if currently-squirting is 1] - you're being forcefed your own nasty [slime][one of][or] once again[stopping][end if]!";
 			now smoothie gag is penetrating face;
-			FaceFill urine by X;
+			FaceFill slime by X;
 			if currently-squirting is 1, TasteGrossOut 12;
 			dislodge smoothie gag;
 			say "The gag releases itself from your mouth and retreats back into the ground.";
 		otherwise:
 			compute discombobulation;
 	otherwise:
-		increase the urine-puddle of R by X.
+		increase the slime-puddle of R by X.
 
 To MilkPuddleUp (X - a number) in (R - BellyRoom01):
 	if the player is in R:

@@ -271,11 +271,19 @@ Report taking clothing:
 		say "[bold type]Suddenly, [NameDesc of the noun] disappears from your hands![roman type][line break]";
 		spookify the noun.
 
+silentVanishing is initially false.
+
 To WardrobeVanish (C - a thing):
-	if C is held, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
-	otherwise say "The [C] vanishes. You can sense that it has been sent to the pink wardrobe!";
+	if silentVanishing is false:
+		if C is held, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
+		otherwise say "The [C] vanishes. You can sense that it has been sent to the pink wardrobe!";
 	dislodge C;
 	now C is in pink wardrobe.
+
+To SilentlyPinkWardrobeUnclash (C - a clothing):
+	now silentVanishing is true;
+	PinkWardrobeUnclash C;
+	now silentVanishing is false.
 
 [Removes all clothing that shouldn't be worn at the same time as the new item and sends them to the pink wardrobe. Should be called BEFORE the new item is summoned. This function needs to match the function below.]
 To PinkWardrobeUnclash (C - a clothing):

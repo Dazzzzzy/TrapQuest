@@ -393,7 +393,7 @@ Carry out appeasing something with summoning-circle:
 		only destroy the noun;
 	otherwise:
 		let N be 0;
-		if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+		if the noun is clothing, now N is the slime-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 		if N <= 0:
 			say "You throw [NameDesc of the noun] into the circle. Nothing happens.";
 		otherwise:
@@ -538,7 +538,7 @@ Carry out appeasing something with giant-statue:
 		only destroy the noun;
 	otherwise:
 		let N be 0;
-		if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+		if the noun is clothing, now N is the slime-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 		if N <= 0:
 			say "You throw [NameDesc of the noun] into the circle. Nothing happens.";
 		otherwise:
@@ -671,7 +671,7 @@ Carry out appeasing something with teleportation-pad:
 		only destroy the noun;
 	otherwise:
 		let N be 0;
-		if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+		if the noun is clothing, now N is the slime-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 		if N <= 0:
 			say "You throw [NameDesc of the noun] onto the pad. Nothing happens.";
 		otherwise:
@@ -749,7 +749,7 @@ To say PortalHint of (S - mysterious-mummy):
 		if M is acolyte: [cultist]
 			say "A squirming [man of a random acolyte] wrapped from head to toe in white linen, with a purple aura highlighting [his of a random acolyte] features. [big his of a random acolyte] arms are crossed in front of [his of a random acolyte] chest, but it looks like [his of a random acolyte] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of a random acolyte]'s standing, but whenever you look at [him of a random acolyte], you can't help but feel like you're watching someone having sex.";
 		otherwise if M is gladiator: [gladiator]
-			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish > 0 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
+			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish > 0 or andro fetish is 1]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
 		otherwise if M is gargoyle or M is vampiress:
 			say "A feminine figure wrapped in white linen, [his of vampiress] features highlighted by a faint pink aura. There is a bat resting on one of [his of vampiress] shoulders.";
 		otherwise if M is mannequin: [mannequin]
@@ -821,7 +821,7 @@ Carry out appeasing something with mysterious-mummy:
 			only destroy the noun;
 		otherwise:
 			let N be 0;
-			if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+			if the noun is clothing, now N is the slime-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 			if N <= 0:
 				say "You place [NameDesc of the noun] in front of [NameDesc of the second noun]. Nothing happens.";
 			otherwise:

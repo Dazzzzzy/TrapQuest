@@ -100,7 +100,7 @@ To say flies of (M - a giant wasp):
 	otherwise say "runs";
 
 To say MonsterDesc of (M - a giant wasp):
-	if mythical creature fetish is 1, say "This flying creature may be smaller than you, but [he of M]'s still bigger than any insect you've ever seen, hovering above the ground on giant oscillating wings. [big he of M] has a vaguely human shaped body, with four arms, 'waspish' hips and [if M is honey-wasp and lady fetish is 2]a quartet of honey distended tits. [otherwise if M is not dangerous-wasp and lady fetish is 2]a quartet of perky, featureless breasts. [otherwise]a slender, neither masculine nor feminine chest. [end if]
+	if mythical creature fetish is 1, say "This flying creature may be smaller than you, but [he of M]'s still bigger than any insect you've ever seen, hovering above the ground on giant oscillating wings. [big he of M] has a vaguely human shaped body, with four arms, 'waspish' hips and [if M is honey-wasp and andro fetish is 1]a quartet of honey distended tits. [otherwise if M is not dangerous-wasp and andro fetish is 1]a quartet of perky, featureless breasts. [otherwise]a slender, neither masculine nor feminine chest. [end if]
 	[big his of M] [if M is honey-wasp]ruff of soft, fluffy fur around [his of M] neck, contrasts the needle-like stinger and[otherwise if M is dangerous-wasp]enourmous, blade-like stinger drips purple venom, neatly drawing attention away from the[otherwise]needle-like stinger looks almost as dangerous as the[end if] [LongDickDesc of M] dangling from [his of M] abdomen.
 	Just like an actual wasp, [he of M] seems to be very aggressive for no clear reason.
 	";

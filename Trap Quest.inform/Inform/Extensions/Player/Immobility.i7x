@@ -64,6 +64,7 @@ Definition: yourself is trap stuck: [A player who is trap stuck will not be fuck
 	if punishment-potty is grabbing the player, decide yes;
 	if urinal is grabbing the player, decide yes;
 	if fixed-vibrator is grabbing the player, decide yes;
+	if there is a treasure chest grabbing the player, decide yes; [berri scene 21]
 	decide no.
 
 [!<YourselfIsPoleStuck>+

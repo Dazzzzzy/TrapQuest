@@ -38,7 +38,7 @@ To say MediumDesc of (M - shopkeeper):
 	say "shopkeeper".
 
 To decide which figure-name is the monster-image of (M - shopkeeper):
-	if diaper quest is 0 and lady fetish is 1:
+	if diaper quest is 0 and gyno fetish is 1:
 		decide on figure of female shopkeeper;
 	otherwise:
 		decide on figure of Shopkeeper 1.
@@ -54,11 +54,11 @@ To say MonsterDesc of (M - shopkeeper):
 	if the discounts of M > 0, say "[line break][big he of M] has promised you [if the discounts of M is 1]a discount on your next purchase.[otherwise]discounts on your next [the discounts of M] purchases.[end if]".
 
 To say MonsterComment of (M - a shopkeeper):
-	if lady fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or][big he of M] is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
+	if gyno fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or][big he of M] is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
 	otherwise say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [DickDesc of M] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [DickDesc of M]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic snake...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This harlot isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. [big he of M] should know that [DickDesc of M] doesn't mean anything to anyone.[or]A [man of M] in charge of the shop. I like it, but I wish [he of M] wasn't naked.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That bitch is cut! Maybe I should get [him of M] to give me some workout tips. After [he of M] puts some underwear on, of course.[or]This chick looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] [DickDesc of M].[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking [DickDesc of M]![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] [DickDesc of M]! It looks so yummy![in random order][end if][roman type][line break]".
 
 To say LongDickDesc of (M - shopkeeper):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "[one of]big[or]huge[or]11 inch[at random] strap-on";
 	otherwise:
 		if interracial fetish is 1, say "[one of]big[or]huge[or]11 inch[at random] black [DickDesc of M]";
@@ -165,24 +165,24 @@ To decide which number is total stolen value:
 		increase N by the price of C;
 	decide on N.
 
-To say GroundPeeReaction of (M - shopkeeper):
+To say GroundSlimeReaction of (M - shopkeeper):
 	if the player is in Dungeon41:
 		if diaper quest is 1:
 			if M is friendly:
-				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a shop, not a toilet! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], you clearly need to be diapered and punished!'[roman type][line break]";
+				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a shop, not a [SlimeTarget]! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], you clearly need to be diapered and punished!'[roman type][line break]";
 				anger M;
 			otherwise:
 				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 				interest M;
 		otherwise:
 			if M is friendly:
-				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a shop, not a toilet! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], I'm going to make you wish you never stepped foot in here!'[roman type][line break]";
+				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a shop, not a [SlimeTarget]! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], I'm going to make you wish you never stepped foot in here!'[roman type][line break]";
 				anger M;
 			otherwise:
 				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'You are an utter disgrace!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 				interest M;
 	otherwise:
-		say "[speech style of M]'Hmph. At least it's not in my shop. I hate it when people pee in my shop.'[roman type][line break]".
+		say "[speech style of M]'Hmph. At least it's not in my shop. I hate it when people [slime] in my shop.'[roman type][line break]".
 
 To say BecomesBoredFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -376,7 +376,7 @@ To compute perception of (M - shopkeeper):
 		otherwise if there is a worn diaper:
 			compute diaper check of M;
 		otherwise:
-			say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'OI! I'm pretty sure I told you that you were being potty trained! Oh you're in big trouble now, kiddo!'[roman type][line break]";
+			say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'OI! I'm pretty sure I told you that you were being [SlimeTargetP] trained! Oh you're in big trouble now, kiddo!'[roman type][line break]";
 			FavourDown M by 4;
 			anger M;
 	otherwise if M is friendly and M is in Dungeon41:
@@ -476,8 +476,8 @@ To say waitingflav of (M - shopkeeper):
 The latex punishment rule of shopkeeper is usually the no latex punishment rule.
 
 To compute (M - shopkeeper) urinating:
-	say UrinationFlav of M;
-	FacePiss from M;
+	say DrainFlav of M;
+	FaceDrain from M;
 	if M is in Dungeon41:
 		say "[speech style of M]'We've only just begun!'[roman type][line break]";
 		now the chosen-orifice of M is nothing;
@@ -904,12 +904,12 @@ To compute diaper donating of (M - shopkeeper):
 	PainUp 10;
 	say "It hurts so much that ";
 	if the player is bursting:
-		say "you begin to wet yourself.";
+		say "you begin to [slimedrain] on yourself.";
 		now delayed urination is 1;
 		try urinating;
 	otherwise:
 		say "a little bit of wee comes out, soiling your diaper.";
-		UrineSoakUp D by 1;
+		SlimeSoakUp D by 1;
 	say "[speech style of M]'How disgusting! I can't sell this now. Fuck! Fine, you keep this one but I'd better not see you trying this again.'[roman type][line break]";
 	repeat with Z running through held stolen diapers:
 		now the owner of Z is nothing;
@@ -1017,7 +1017,7 @@ To compute unique banishment of (M - shopkeeper):
 	if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
 		now the strap-length of strapon-dildo is 10;
 		now strapon-dildo is in the location of the player;
-		say "[BigNameDesc of M] leaves [if full-lady fetish is 1][his of M][otherwise]a[end if] [strapon-dildo] behind.";
+		say "[BigNameDesc of M] leaves [if super-gyno fetish is 1][his of M][otherwise]a[end if] [strapon-dildo] behind.";
 		compute autotaking strapon-dildo;
 	repeat with C running through on-stage store clothing:
 		now the owner of C is nothing;

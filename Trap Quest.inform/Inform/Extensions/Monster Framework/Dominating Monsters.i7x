@@ -152,7 +152,7 @@ To say TaxReturnFail of (M - a monster):
 
 Definition: a monster is pitiable: decide yes. [Can this NPC be pitied and left to recover?]
 To say PityDesc of (M - a monster):
-	say "[if M is intelligent]Show mercy and offer a hand of friendship[otherwise]Leave [him of M] alone[end if].".
+	say "[if the diaper-duration of M > 0]Show mercy and offer a hand of friendship, as long as [he of M] no longer demands you stay in diapers[otherwise if M is intelligent]Show mercy and offer a hand of friendship[otherwise]Leave [him of M] alone[end if].".
 To compute pitying of (M - a monster):
 	say PityOfferFlav of M;
 	now the objectification of M is 0;
@@ -167,9 +167,14 @@ To compute pitying of (M - a monster):
 To say PityOfferFlav of (M - a monster):
 	if M is intelligent:
 		say "You lower a hand to help [NameDesc of M] to [his of M] feet.";
-		if the player is able to speak, say "[variable custom style]'[one of]Well fought, but I am the victor.'[or]I trust you will treat me with more respect from now on?'[or]If you promise not to do that again, we can still be friends...'[in random order][roman type][line break]".
+		if the player is able to speak:
+			if the diaper-duration of M > 0, say "[variable custom style]'If you promise not to punish me for wearing panties, we can still be friends...'[roman type][line break]";
+			otherwise say "[variable custom style]'[one of]Well fought, but I am the victor.'[or]I trust you will treat me with more respect from now on?'[or]If you promise not to do that again, we can still be friends...'[in random order][roman type][line break]".
 To say PityOfferResponse of (M - a monster):
-	if M is friendly:
+	if the diaper-duration of M > 0:
+		say "[speech style of M]'Fair is fair. You don't have to wear diapers any more, as far as I'm concerned.'[roman type][line break]";
+		now the diaper-duration of M is 0;
+	otherwise if M is friendly:
 		say "[speech style of M]'[one of]You've proven your point. Let's not do this again.'[or]Haha, you got me. How humiliating.'[or][if the appearance of the player >= the outrage tolerance of M]Maybe if you stop dressing like a whore[otherwise]Fair is fair[end if].'[in random order][roman type][line break]";
 	otherwise if M is objectifying the player:
 		say "[speech style of M]'[one of]I could never be friends with someone who dresses like you.'[or]I'm not big on making allies of people who look like shameless sluts.'[in random order][roman type][line break]";
@@ -225,17 +230,17 @@ Definition: yourself is ass-rideable: [Can the player use their asshole to domin
 To say AssRideDesc of (M - a monster):
 	say "Attempt to dominate [him of M] with your [asshole].".
 
-Definition: a monster is piss-fuckable:
+Definition: a monster is slime-blast-fuckable:
 	if it is wenchy, decide yes;
 	decide no. [Can this NPC be pissed on when defeated?]
-Definition: yourself is piss-fuckable: [Can the player currently piss on someone?]
+Definition: yourself is slime-blast-fuckable: [Can the player currently piss on someone?]
 	if watersports fetish is 0, decide no;
 	if there is worn actually unavoidable pee covering clothing, decide no;
 	if the player is not bursting, decide no;
 	if the player is not able to speak and the player is wrist bound, decide no;
 	decide yes.
-To say PissFuckDesc of (M - a monster):
-	say "Attempt to dominate [him of M] by pissing on [him of M].".
+To say SlimeFuckDesc of (M - a monster):
+	say "Attempt to dominate [him of M] by [if slimeshooter fetish is 1]shooting [slime] at[otherwise]pissing on[end if] [him of M].".
 
 Definition: a monster is diaper-rideable:
 	if it is wenchy, decide yes;
@@ -278,7 +283,7 @@ To compute defeat of (M - a monster):
 			let PeT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][PenisFuckDesc of M]";
 			let AT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][AssRideDesc of M]";
 			let VT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][VaginaRideDesc of M]";
-			let PiT be the substituted form of "[if newbie tips is 1](attempt at dominance increase; relieve bladder) [end if][PissFuckDesc of M]";
+			let PiT be the substituted form of "[if newbie tips is 1](attempt at dominance increase; relieve [SlimeContainer]) [end if][SlimeFuckDesc of M]";
 			let DT be the substituted form of "[if newbie tips is 1](attempt at dominance increase; optionally use diaper) [end if][DiaperRideDesc of M]";
 			let UT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][UniqueFuckDesc of M]";
 			if the player-class is avatar and M is intelligent and M is not infernal and M is not soul-stolen, add "Steal [his of M] soul" to LT;
@@ -290,7 +295,7 @@ To compute defeat of (M - a monster):
 				if M is penis-fuckable and the player is penis-fuckable, add PeT to LT;
 				if M is vagina-rideable and the player is vagina-rideable, add VT to LT;
 				if M is ass-rideable and the player is ass-rideable, add AT to LT;
-				if M is piss-fuckable and the player is piss-fuckable, add PiT to LT;
+				if M is slime-blast-fuckable and the player is slime-blast-fuckable, add PiT to LT;
 				if M is diaper-rideable and the player is diaper-rideable, add DT to LT;
 				if M is uniquely-fuckable, add UT to LT;
 			if the number of entries in LT is 0:
@@ -643,10 +648,11 @@ To compute dominating (M - a monster):
 			say CodLoosenFlav of J;
 			follow the demon junk reward rule;
 		let H be rugged-headband;
+		if diaper quest is 1, now H is police-hat;
 		progress quest of domination-quest;
 		if H is off-stage and H is actually summonable:
 			if the times-dominated of M >= 2 or the player is getting lucky:
-				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
+				say "You feel [if H is rugged-headband]your hair being tousled as a [MediumDesc of H] materialises[otherwise]a [MediumDesc of H] materialise on your head.";
 				summon H cursed with quest;
 				if the times-dominated of M < 2, say GotLuckyFlav;
 		otherwise if stripper-ears is worn and police-hat is off-stage:
@@ -951,7 +957,7 @@ To replace (M - a monster) after domination:
 
 [Use this for scenes where the player pees on a monster; These scenes should be more dignifying than normal, but not give a chance to orgasm]
 To watersports dominate (M - a monster):
-	say "You shove [NameDesc of M] to the ground and douse [him of M] with fresh [urine]. [big he of M] is completely humiliated to be treated like a human toilet.";
+	say "You shove [NameDesc of M] to the ground and douse [him of M] with fresh [slime]. [big he of M] is completely humiliated to be treated like a human [SlimeTarget].";
 	now player-fucking is DOMINANT-DOMINANT;
 	strongDignify;
 	now the bladder of the player is 0;
@@ -1061,7 +1067,7 @@ To diapersit dominate (M - a monster):
 	set numerical response 1 to "hold still and make [him of M] breathe it in";
 	set numerical response 2 to "try to use [his of M] face to get off";
 	if the player is not incontinent:
-		if the latex-transformation of the player <= 4, set numerical response 3 to "try to piss in your diaper while sitting there";
+		if the latex-transformation of the player <= 4, set numerical response 3 to "try to [slime] in your diaper while sitting there";
 		if diaper messing >= 7 and asshole is not actually occupied, set numerical response 4 to "try to mess your diaper while sitting there";
 	compute multiple choice question;
 	if player-numerical-response is 2:
@@ -1070,18 +1076,18 @@ To diapersit dominate (M - a monster):
 		if F is pushed over the edge:
 			increase player-fucking by 1;
 			orgasm;
-		DiaperAddictUp 1;
+		SlowDiaperAddictUp 1;
 	if player-numerical-response is 3:
 		let N be the bladder of the player;
 		if (a random number between 0 and N) + (the humiliation of the player / 4000) < 7:
 			say "You try to go, but you aren't desperate enough, and the humiliation of doing it in front of [NameDesc of M] gets the better of you. You get stage fright, and nothing comes out![line break][variable custom style]I don't know what's more embarrassing, using a diaper in front of [him of M], or [him of M] knowing I was too scared to make myself go...[roman type][line break]";
 			decrease player-fucking by 1;
 		otherwise if N > 0:
-			say "You are able to release a [if N < 4]small amount[otherwise if N < 10]decent amount[otherwise]torrent[end if] of [urine] into the seat of [NameDesc of D], right on top of [NameDesc of M][']s nose and mouth.";
-			UrineSoakUp D by N;
+			say "You are able to release a [if N < 4]small amount[otherwise if N < 10]decent amount[otherwise]torrent[end if] of [slime] into the seat of [NameDesc of D], right on top of [NameDesc of M][']s nose and mouth.";
+			SlimeSoakUp D by N;
 			now the bladder of the player is 0;
 			increase player-fucking by 1;
-			DiaperAddictUp 1;
+			SlowDiaperAddictUp 1;
 		otherwise:
 			say "Nothing comes out!";
 	if player-numerical-response is 4:
@@ -1095,11 +1101,11 @@ To diapersit dominate (M - a monster):
 			reset rectum after messing;
 			now N is the bladder of the player;
 			if N > 0:
-				say "Messing makes you wet your diaper at the same time.";
-				UnannouncedExpel urine on D by N;
+				say "Messing makes you [slimedrain] in your diaper at the same time.";
+				UnannouncedExpel slime on D by N;
 				now the bladder of the player is 0;
 			increase player-fucking by 1;
-			DiaperAddictUp 1;
+			SlowDiaperAddictUp 1;
 		otherwise:
 			say "Nothing comes out!";
 	if D is messed:
@@ -1246,8 +1252,9 @@ To compute default caged domination of (M - a monster):
 	say CagedDominationFlav of M;
 	if the humiliation of the player < the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
-	otherwise:
+	otherwise if the player is not broken:
 		Dignify 1000;
+		say "Performing a dominant act has made you feel a bit better about yourself!";
 	FavourDown M.
 
 To say EnslavedDominationFlav of (M - a monster):

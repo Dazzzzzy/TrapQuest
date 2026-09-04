@@ -20,7 +20,8 @@ To say InternalsDesc:
 		otherwise if the player is horny:
 			say "Your steadily growing addiction to [if diaper quest is 1 and the bimbo of the player > 7]getting your [']cummies['][otherwise if diaper quest is 1]whatever it is about this game that turns you on[otherwise]submissive sex[end if] is causing you to be incredibly horny, making it a bit more difficult to think about other things. ";
 		if the bladder of the player > 6:
-			say "You keep clenching your [ShortDesc of thighs] together to try and deal with your [if the bladder of the player > 10]desperate [end if]need to pee, which is affecting your mobility! ";
+			if legacy watersports mechanics is 1, say "You keep clenching your [ShortDesc of thighs] together to try and deal with your [if the bladder of the player > 10]desperate [end if]need to pee, which is affecting your mobility! ";
+			otherwise say "You keep shifting your [ShortDesc of thighs] together to try and deal with your bloated [if the bladder of the player > 10]and extremely irritiable [end if]slimeshooter, which is affecting your mobility! ";
 		if the thirst of the player > 3:
 			say "You feel weakened by your crippling need for a drink of water! ".
 

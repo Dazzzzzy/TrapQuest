@@ -12,7 +12,7 @@ Check spritzing it with:
 	if the noun is monster, say "It would probably make more sense to zap [NameDesc of the noun] with [NameDesc of the second noun] instead." instead;
 	if the noun is not clothing, say "How would you clean that?" instead;
 	if the noun is wet diaper or the noun is messed knickers, say "Unfortunately, you doubt that would work." instead;
-	if the noun is clothing and the milk-soak of the noun + the semen-soak of the noun + the urine-soak of the noun < 1, say "There's nothing to clean." instead;
+	if the noun is clothing and the milk-soak of the noun + the semen-soak of the noun + the slime-soak of the noun < 1, say "There's nothing to clean." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is wrist bound in front and the noun is worn, say "With your hands bound together like this, there's no way you can clean that without taking it off." instead;
 	if the work ethic of the second noun <= -300:

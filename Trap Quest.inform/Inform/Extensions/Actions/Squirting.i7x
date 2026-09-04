@@ -38,15 +38,15 @@ Carry out squirting:
 			say "You give yourself an artificial anal creampie as the [semen] flows up your [asshole].";
 			AssFill 2;
 		otherwise if the fill-colour of the noun is golden:
-			say "You turn your [asshole] into a [one of]urinal[or]toilet[in random order] as you squirt the [urine] up inside it.";
-			AssFill 2 Urine;
+			say "You turn your [asshole] into a [SlimeTarget] as you squirt the [slime] up inside it.";
+			AssFill 2 Slime;
 		otherwise if the fill-colour of the noun is white:
 			say "You give yourself a small [milk] enema by squirting your breast [milk] into your [asshole].";
 			AssFill 2 Milk;
 		otherwise if the fill-colour of the noun is murky:
 			say "You give yourself a small enema made from a mix of bodily fluids.";
 			AssFill 1;
-			if watersports mechanics is 1, AssFill 1 Urine;
+			if watersports mechanics is 1, AssFill 1 Slime;
 			if lactation fetish is 1, AssFill 1 Milk;
 		otherwise:
 			say "You give yourself a small enema of the [PotionType of the noun], and you feel your insides quickly absorbing the liquid into your bloodstream. ";

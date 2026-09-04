@@ -38,6 +38,14 @@ To say big literalMistress of (M - a monster):
 	if M is presenting as female, say "Mistress";
 	otherwise say "Master".
 
+To say queen of (M - a monster):
+	if M is presenting as male, say "king";
+	otherwise say "queen".
+
+To say big queen of (M - a monster):
+	if M is presenting as male, say "King";
+	otherwise say "Queen".
+
 [!<SayMistress>+
 
 If the player is impressed with the (assumed female) NPC
@@ -130,7 +138,7 @@ Something the player says to NPCs they're unhappy with
 
 +!]
 To say fucker of (M - a monster):
-	if M is female or a random number between 1 and 2 <= lady fetish, say "[one of]bitch[or]idiot[as decreasingly likely outcomes]";
+	if M is female or a random number between 0 and 1 < gender-preference, say "[one of]bitch[or]idiot[as decreasingly likely outcomes]";
 	otherwise say "[one of]asshole[or]motherfucker[or]jackass[or]bastard[or]fucker[as decreasingly likely outcomes]".
 
 To say beautiful:
@@ -198,7 +206,7 @@ To say variable (P - a body part):
 To say variable (L - a liquid-object):
 	if L is semen:
 		say semen;
-	otherwise if L is urine:
+	otherwise if L is slime:
 		say urine;
 	otherwise if L is milk:
 		say milk;
@@ -303,20 +311,96 @@ To say semen:
 To say tasted-semen:
 	say "[semen-adjective] [semen]".
 
+To say caps slime:
+	if slimeshooter fetish is 1, say "SLIME";
+	otherwise say "[one of]PEE[or]PISS[as decreasingly likely outcomes]";
+
+To say big slime:
+	if slimeshooter fetish is 1, say "Slime";
+	otherwise say "[one of]Pee[or]Piss[as decreasingly likely outcomes]";
+
+To say slime:
+	say urine.
+
+To say SlimePistolDesc:
+	if legacy watersports fetish is 1, say SexDesc of penis;
+	otherwise say "blue slimepistol";
+
+To say SlimeJunk:
+	if legacy watersports fetish is 1, say "genitals";
+	otherwise say "slimepistol";
+
+To say SlimeShade:
+	if legacy watersports fetish is 1, say "golden";
+	otherwise say "bright blue";
+
+To say SlimeContainer:
+	if legacy watersports fetish is 1, say "bladder";
+	otherwise say "slimepistol".
+
+To say SlimeShoot:
+	if legacy watersports fetish is 1, say "pee";
+	otherwise say "shoot".
+
+To say big SlimeTarget:
+	if legacy watersports fetish is 1, say "Toilet";
+	otherwise say "Target".
+
+To say SlimeTarget:
+	if legacy watersports fetish is 1, say "toilet";
+	otherwise say "target".
+
+To say SlimeTargetU:
+	if legacy watersports fetish is 1, say "urinal";
+	otherwise say "target".
+
+To say caps SlimeTarget:
+	if legacy watersports fetish is 1, say "TOILET";
+	otherwise say "TARGET".
+
+To say big SlimeTargetU:
+	if legacy watersports fetish is 1, say "Urinal";
+	otherwise say "Target".
+
+To say SlimeDraining:
+	if legacy watersports fetish is 1, say "urinating";
+	otherwise say "draining slime".
+
+To say SlimeTargetP:
+	if legacy watersports fetish is 1, say "potty";
+	otherwise say "target".
+
+To say big SlimeTargetP:
+	if legacy watersports fetish is 1, say "Potty";
+	otherwise say "Target".
+
 To say urine:
 	if the class of the player is santa's little helper:
-		say "hot buttered rum";
+		if legacy watersports fetish is 1, say "hot buttered rum";
+		otherwise say "festive mint tea";
+	otherwise if legacy watersports fetish is 0:
+		say "[one of]slime[or]goo[or]jelly[or]goop[or]slime[as decreasingly likely outcomes]";
 	otherwise if the raw intelligence of the player < 5 and diaper lover >= 1:
 		say "[one of]pee pee[or]wee wee[or]wee[or]tinkle juice[as decreasingly likely outcomes]";
 	otherwise if the bimbo of the player < 8:
 		say "[one of]urine[or]piss[or]urine[or]pee[as decreasingly likely outcomes]";
-	otherwise if the urine taste addiction of the player < 14:
+	otherwise if the slime taste addiction of the player < 14:
 		say "[one of]pee[or]piss[or]piss[or]wee[or]urine[as decreasingly likely outcomes]";
 	otherwise:
 		say "piss".
 
+To say slimedrain:
+	say urinate.
+To say slimedrained:
+	if slimeshooter fetish is 1, say "drained slime";
+	otherwise say "[urinate]d";
+To say slimeonself:
+	if slimeshooter fetish is 1, say "[slimedrain] on yourself";
+	otherwise say "pee on yourself";
+
 To say urinate:
-	say "[one of][if the bimbo of the player < 5]urinate[otherwise]wee[end if][or]pee[or]piss[purely at random]".
+	if slimeshooter fetish is 1, say "drain slime";
+	otherwise say "[one of][if the bimbo of the player < 5]urinate[otherwise]wee[end if][or]pee[or]piss[purely at random]".
 
 To say harden:
 	say "[one of]harden[or]stiffen[or]grow[at random]".
@@ -358,10 +442,10 @@ To decide which text is caps men of (M - a thing):
 
 [Used to refer to npcs, not the player]
 To decide which text is sissy-girl:
-	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
+	decide on "[if andro fetish is 1]sissy[otherwise]girl[end if]".
 
 To decide which text is sissy-girls:
-	decide on "[if lady fetish is 2]sissies[otherwise]girls[end if]".
+	decide on "[if andro fetish is 1]sissies[otherwise]girls[end if]".
 
 To decide which text is boy of (M - a thing):
 	decide on man of M.
@@ -483,14 +567,16 @@ General purpose method of referring to a monster, "M"'s penis
 
 +!]
 To say DickDesc of (M - a monster):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "strap-on";
-	otherwise if M is fairy:
-		say "[one of]miniature[or]minuscule[or]mini[at random]";
 	otherwise if M is not male:[this is an npc that can't fuck you with its penis, not necessarily one that doesn't have one.]
 		say plain-sissy-penis;
 	otherwise:
 		say manly-penis.
+
+To say SlimeDickDesc of (M - a monster):
+	if slimeshooter fetish is 1, say "slimeshooter";
+	otherwise say LongDickDesc of M.
 
 To decide which number is the GirthLength of (M - a monster):
 	let G be the girth of M;
@@ -505,11 +591,9 @@ Specific method of referring to a monster "M"'s penis. Should only be used every
 
 +!]
 To say LongDickDesc of (M - a monster):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "[GirthLength of M] inch strap-on dildo";
-	otherwise if M is fairy:
-		say "tiny, locked-away penis";
-	otherwise: [There's no 'if lady fetish is 2' case here since full-lady fetish is 1 means that lady fetish is 1 and futanari fetish is 0.]
+	otherwise: [There's no 'if andro fetish is 1' case here since super-gyno fetish is 1 means that gyno fetish is 1 and futanari fetish is 0.]
 		say "[GirthLength of M] inch [manly-penis]".
 
 To say HoleDesc of (M - a monster):
@@ -525,13 +609,13 @@ To say ChestDesc of (M - a monster):
 	otherwise say "breasts".
 
 To say cockhead of (M - a monster):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "[one of]straphead[or]dildotip[or]strapend[or]straptip[in random order]";
 	otherwise:
 		say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To say cockshaft of (M - a monster):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "dildo";
 	otherwise:
 		say "shaft".
@@ -641,13 +725,13 @@ To say big brothas of (M - a person):
 To say training halls:
 	say "Royal Training Halls".
 To say prince:
-	say "prince[unless lady fetish is 2]ss[end if]";
+	say "prince[unless andro fetish is 1]ss[end if]";
 To say big prince:
-	say "Prince[unless lady fetish is 2]ss[end if]";
+	say "Prince[unless andro fetish is 1]ss[end if]";
 To say princes:
-	say "prince[if lady fetish is 2]s[otherwise]sses[end if]";
+	say "prince[if andro fetish is 1]s[otherwise]sses[end if]";
 To say big princes:
-	say "Prince[if lady fetish is 2]s[otherwise]sses[end if]";
+	say "Prince[if andro fetish is 1]s[otherwise]sses[end if]";
 
 To say muffled sounds:
 	if the player is able to make sounds:
@@ -685,8 +769,8 @@ To say enema: [must be singular e.g. "creampie", not plural e.g. "creampies"]
 		say "creampie";
 	otherwise if the milk volume of belly is the total squirtable fill of belly:
 		say "[milk] enema";
-	otherwise if the urine volume of belly is the total squirtable fill of belly:
-		say "[urine] enema";
+	otherwise if the slime volume of belly is the total squirtable fill of belly:
+		say "[slime] enema";
 	otherwise if the total egg fill of belly > 0:
 		if egg laying fetish is 1, say "collection of eggs";
 		otherwise say "anal ping pong balls";
@@ -697,7 +781,7 @@ To say liquidMix:
 	if lactation fetish is 1 and watersports fetish is 1:
 		say "some horrid grey liquid";
 	otherwise if watersports fetish is 1:
-		say "some horrid yellowish liquid";
+		say "some horrid [if slimeshooter fetish is 1]blu[otherwise]yellow[end if]ish liquid";
 	otherwise if lactation fetish is 1:
 		say "some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen]";
 	otherwise:

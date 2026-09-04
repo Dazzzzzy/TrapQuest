@@ -73,7 +73,10 @@ Report opening a container:
 			say "How lame, it's empty.";
 		otherwise:
 			say "The [noun] [unless the noun is BellyRoom01]still [end if]contains [ShortDesc of list of things in the noun].";
-		if the noun is trapped:
+		if berriChestRopeScene is 0 and the player is a march 2026 diaper donator and the class of the player is berri and correct-berri-attire is blue-dungarees and (there is a worn dry diaper or the number of worn diaper is 0):
+			say "CLICK! Opening this container has triggered a trap!";
+			compute berri chest rope scene;
+		otherwise if the noun is trapped:
 			say "CLICK! Opening this container has triggered a trap!";
 			repeat with T running through untriggered click traps in the location of the player:
 				if the click-trigger of T is the noun:

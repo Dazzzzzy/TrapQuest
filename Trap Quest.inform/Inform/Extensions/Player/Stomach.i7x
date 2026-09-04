@@ -1,7 +1,7 @@
 Stomach by Player begins here.
 
 To decide which number is the stomach-liquid of the player:
-	decide on the stomach-water of the player + the stomach-semen of the player + the stomach-milk of the player + the stomach-urine of the player.
+	decide on the stomach-water of the player + the stomach-semen of the player + the stomach-milk of the player + the stomach-slime of the player.
 
 To decide which number is the stomach of the player:
 	decide on the stomach-liquid of the player + the stomach-food of the player.
@@ -57,7 +57,7 @@ To StomachDown (X - a number):
 	let M be 0;
 	while X > 0:
 		if the stomach-water of the player >= the stomach-milk of the player:
-			if the stomach-water of the player >= the stomach-urine of the player:
+			if the stomach-water of the player >= the stomach-slime of the player:
 				if the stomach-water of the player >= the stomach-semen of the player:
 					if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 					if watersports mechanics is 1, increase the delayed bladder of the player by 1;
@@ -69,7 +69,7 @@ To StomachDown (X - a number):
 			increase M by 1;
 		decrease X by 1;
 	if S > 0, StomachSemenDown S;
-	if U > 0, StomachUrineDown U;
+	if U > 0, StomachSlimeDown U;
 	if M > 0, StomachMilkDown M.
 
 To StomachFoodUp (X - a number):
@@ -128,25 +128,25 @@ To StomachSemenDown (X - a number):
 				if watersports mechanics is 1, increase the delayed bladder of the player by 1;
 			decrease X by 1.
 
-To StomachUrineUp (X - a number):
-	if X > 0, compute slightly addictive swallowing of urine by X.
+To StomachSlimeUp (X - a number):
+	if X > 0, compute slightly addictive swallowing of slime by X.
 
-To ActualStomachUrineUp (X - a number):
+To ActualStomachSlimeUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		increase the stomach-urine of the player by 1;
+		increase the stomach-slime of the player by 1;
 		if X is 0:
-			SlowUrineTasteAddictUp 1;
-			trigger drink-urine-wisp-quest;
-			progress quest of piss-drinking-quest;
-			now cold turkey of urine is 0.
+			SlowSlimeTasteAddictUp 1;
+			trigger drink-slime-wisp-quest;
+			progress quest of slime-drinking-quest;
+			now cold turkey of slime is 0.
 
-To StomachUrineDown (X - a number):
+To StomachSlimeDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the stomach-urine of the player > 0:
+		if the stomach-slime of the player > 0:
 			if watersports mechanics is 1, increase the delayed bladder of the player by 1;
-			decrease the stomach-urine of the player by 1.
+			decrease the stomach-slime of the player by 1.
 
 To StomachMilkUp (X - a number):
 	if X > 0, compute slightly addictive swallowing of milk by X.

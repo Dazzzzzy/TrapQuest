@@ -154,9 +154,9 @@ Carry out direct-presenting something to:
 			reset multiple choice questions;
 			now player-numerical-response is 1;
 			set numerical response 1 to "Just suggest normal oral sex.";
-			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the urine taste addiction of the player > 6 or the player is disgraced or debugmode > 0 or the class of the player is human toilet):
+			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the slime taste addiction of the player > 6 or the player is disgraced or debugmode > 0 or the class of the player is human toilet):
 				increase player-numerical-response by 1;
-				set next numerical response to "Ask to be pissed on";
+				set next numerical response to "Ask to be [if slimeshooter fetish is 1]sprayed with slime[otherwise]pissed on[end if]";
 			if the second noun is willing to do licking and (the grossness addiction of the player >= 4 or the player is disgraced or debugmode > 0):
 				increase player-numerical-response by 1;
 				set next numerical response to "Ask to worship [him of the second noun] with your tongue";
@@ -164,13 +164,13 @@ Carry out direct-presenting something to:
 				increase player-numerical-response by 1;
 				set next numerical response to "Ask to lick [his of the second noun] asshole";
 			if diaper quest is 0 and player-numerical-response > 1, compute multiple choice question;
-			if diaper quest is 1 or chosen numerical response matches the text "pissed":
+			if diaper quest is 1 or chosen numerical response matches the text "pissed" or chosen numerical response matches the text "slime":
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
 					if the second noun is a dangerous intelligent monster:
-						say UnfriendlyPissRequest of the second noun;
+						say UnfriendlySlimeRequest of the second noun;
 					otherwise if the second noun is friendly intelligent monster:
-						say FriendlyPissRequest of the second noun;
-				say PissRequestFlav of the second noun;
+						say FriendlySlimeRequest of the second noun;
+				say SlimeRequestFlav of the second noun;
 				if player is modest, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
 				now presented-orifice is belly;
 			otherwise if chosen numerical response matches the text "tongue":
@@ -397,16 +397,16 @@ To say UnfriendlyAnilingusRequest of (M - a monster):
 	otherwise:
 		say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me by making me kiss your rosebud... Just bear in mind that there will be consequences once I have recovered.'[otherwise if the grossness addiction of the player < 4][first custom style]'You can degrade me with your butthole if you must. But I'm not going to pretend not to be disgusted by it.'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. Will you let me go if I worship your arsehole?'[otherwise][variable custom style]'Please, let me clean your sweaty taint with my tongue. I'm very good at it by now. N-not that I've been licking buttholes for so long that I like the taste, or anything...'[end if][roman type][line break]".
 
-[!<SayUnfriendlyPissRequestOfMonster>+
+[!<SayUnfriendlySlimeRequestOfMonster>+
 
 The monster is demanding sex, and the player is suggesting a particular type.
 
 +!]
-To say UnfriendlyPissRequest of (M - a monster):
+To say UnfriendlySlimeRequest of (M - a monster):
 	if the player is a nympho:
-		say "[if the player is feeling dominant and M is unintimidating][first custom style]'What are you waiting for, [stud-worm of M]? Mark me as your property with your [urine]. But bear in mind that I'll be back, and next time you'll be the one on [his of M] knees...'[otherwise if the urine taste addiction of the player < 7][variable custom style]'I guess if you wanted to be as gross and cruel as possible, you'd piss on my face, wouldn't you?'[otherwise if the urine taste addiction of the player < 12][variable custom style]'Okay, you win. If you really want to mark me as the loser, I suggest you cover me in your hot, steamy [urine]...'[otherwise][second custom style]'[one of]I guess that makes me your personal urinal then, huh?'[or]Uh-oh, why do I get the feeling I'm about to be forced to serve as a human toilet? *giggle*'[or]This pathetic human urinal is ready for [his of the player] piss-bath, [stud of M]!'[in random order][end if][roman type][line break]";
+		say "[if the player is feeling dominant and M is unintimidating][first custom style]'What are you waiting for, [stud-worm of M]? Mark me as your property with your [slime]. But bear in mind that I'll be back, and next time you'll be the one on [his of M] knees...'[otherwise if the slime taste addiction of the player < 7][variable custom style]'I guess if you wanted to be as gross and cruel as possible, you'd [SlimeShoot] on my face, wouldn't you?'[otherwise if the slime taste addiction of the player < 12][variable custom style]'Okay, you win. If you really want to mark me as the loser, I suggest you cover me in your hot, steamy [slime]...'[otherwise][second custom style]'[one of]I guess that makes me your personal [SlimeTarget] then, huh?'[or]Uh-oh, why do I get the feeling I'm about to be forced to serve as a human [SlimeTarget]? *giggle*'[or]This pathetic human [SlimeTarget] is ready for [his of the player] [slime]-bath, [stud of M]!'[in random order][end if][roman type][line break]";
 	otherwise:
-		say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me with your [urine]... Just bear in mind that there will be consequences once I have recovered.'[otherwise if the urine taste addiction of the player < 7][first custom style]'I'll let you piss on me if you must. But I'm not going to pretend to not be disgusted it.'[otherwise if the urine taste addiction of the player < 12][variable custom style]'Okay, you win. Will you let me go if I drink your [urine]?'[otherwise][variable custom style]'Please, let me drink your [urine]. I'm very good at it by now. N-not that I've been drinking [urine] for so long that I like the taste, or anything...'[end if][roman type][line break]".
+		say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me with your [slime]... Just bear in mind that there will be consequences once I have recovered.'[otherwise if the slime taste addiction of the player < 7][first custom style]'I'll let you [SlimeShoot] on me if you must. But I'm not going to pretend to not be disgusted it.'[otherwise if the slime taste addiction of the player < 12][variable custom style]'Okay, you win. Will you let me go if I drink your [slime]?'[otherwise][variable custom style]'Please, let me drink your [slime]. I'm very good at it by now. N-not that I've been drinking [slime] for so long that I like the taste, or anything...'[end if][roman type][line break]".
 
 [!<SayUnfriendlyTitfuckRequestOfMonster>+
 
@@ -678,50 +678,50 @@ To say FriendlyAnilingusRequest of (M - a monster):
 				say "[variable custom style]'Hey, do you like getting your arsehole worshipped? I've been told I'm really good at it. Not that I'm addicted to the taste of a stiny butthole or anything...'";
 	say "[roman type][line break]".]
 
-[!<SayPissRequestFlavOfMonster>+
+[!<SaySlimeRequestFlavOfMonster>+
 
 This makes sure there is flavour even if the player can't speak.
 
 +!]
-To say PissRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the player is disgraced or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if M is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of M] [urine][otherwise if M is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
+To say SlimeRequestFlav of (M - a monster):
+	if the player is not able to speak or M is unintelligent or the player is disgraced or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if M is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of M] [slime][otherwise if M is friendly]you want to drink [his of M] [slime][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human[or]obedient[at random] [SlimeTarget][otherwise if highest body part sex addiction * 2 < the slime taste addiction of the player]you'd rather get [SlimeShoot]ed on rather than have sex[otherwise]you'd rather drink [his of M] [slime] right now[end if].".
 
 
-[!<SayFriendlyPissRequestOfMonster>+
+[!<SayFriendlySlimeRequestOfMonster>+
 
 The player initiates watersports with a friendly NPC.
 
 +!]
-To say FriendlyPissRequest of (M - a monster):
+To say FriendlySlimeRequest of (M - a monster):
 	if the player is a nympho:
-		if the urine taste addiction of the player < 7:
+		if the slime taste addiction of the player < 7:
 			if the player is feeling dominant:
-				say "[variable custom style]'Hmm, I wonder what the [urine] of a [stud-worm of M] like you tastes like. Come here and let me find out.'";
+				say "[variable custom style]'Hmm, I wonder what the [slime] of a [stud-worm of M] like you tastes like. Come here and let me find out.'";
 			otherwise:
-				say "[variable custom style]'[one of]I need someone to train my tongue to love the taste of [urine].'[or]I have a confession to make... I hate the taste of [urine]. So I need to keep drinking it until I get used to the taste.'[in random order]";
-		otherwise if the urine taste addiction of the player < 13 and the player is not feeling dominant:
-			say "[variable custom style]'[one of]I... I don't usually ask people this, but please can I drink your [urine]? If you don't mind...'[or]Would you mind if I tasted your [urine]?'[or]Don't you think it'd be really hot if you forced me to drink your [urine] right about now?'[in random order]";
+				say "[variable custom style]'[one of]I need someone to train my tongue to love the taste of [slime].'[or]I have a confession to make... I hate the taste of [slime]. So I need to keep drinking it until I get used to the taste.'[in random order]";
+		otherwise if the slime taste addiction of the player < 13 and the player is not feeling dominant:
+			say "[variable custom style]'[one of]I... I don't usually ask people this, but please can I drink your [slime]? If you don't mind...'[or]Would you mind if I tasted your [slime]?'[or]Don't you think it'd be really hot if you forced me to drink your [slime] right about now?'[in random order]";
 		otherwise:
 			if the player is feeling dominant:
 				say "[one of]Hey sugar, I'm thirsty!'[or]Hey, I know how I can get a tasty drink!'[in random order]";
 			otherwise:
-				say "[variable custom style]'[one of]Mmmmm, please [stud of M], I'm desperate to taste your delicious [urine]...'[or]Please would you do me the great honour of pissing on my face, [stud of M]?'[in random order]";
+				say "[variable custom style]'[one of]Mmmmm, please [stud of M], I'm desperate to taste your delicious [slime]...'[or]Please would you do me the great honour of [slime]ing on my face, [stud of M]?'[in random order]";
 	otherwise:
-		if the urine taste addiction of the player < 7:
+		if the slime taste addiction of the player < 7:
 			if the player is feeling dominant:
-				say "[variable custom style]'Stand still. I'm going to try a quick taste of your [urine], just to confirm that I hate it as much as I expect.'";
+				say "[variable custom style]'Stand still. I'm going to try a quick taste of your [slime], just to confirm that I hate it as much as I expect.'";
 			otherwise:
-				say "[variable custom style]'[one of]I've decided to um... let you pee on me. Please don't ask why...'[or]I need to taste your [urine], so I'd appreciate it if you let me.'[in random order]";
-		otherwise if the urine taste addiction of the player < 13:
+				say "[variable custom style]'[one of]I've decided to um... let you [SlimeShoot] on me. Please don't ask why...'[or]I need to taste your [slime], so I'd appreciate it if you let me.'[in random order]";
+		otherwise if the slime taste addiction of the player < 13:
 			if the player is feeling dominant:
-				say "[variable custom style]'[one of]I've got a weird craving for [urine], and I'm going to use your [if M is male][manly-penis][otherwise]cunt[end if] to get it.'[or]I feel like finding out what your [urine] tastes like. As long as you remember that I'm in charge, got it?'[in random order]";
+				say "[variable custom style]'[one of]I've got a weird craving for [slime], and I'm going to use your [if M is male][manly-penis][otherwise]cunt[end if] to get it.'[or]I feel like finding out what your [slime] tastes like. As long as you remember that I'm in charge, got it?'[in random order]";
 			otherwise:
-				say "[variable custom style]'[one of]I've got a weird request... would you mind if I tasted your [urine]?'[or]Hey [stud of M], I was hoping you'd let me sample your [urine]?'[in random order]";
+				say "[variable custom style]'[one of]I've got a weird request... would you mind if I tasted your [slime]?'[or]Hey [stud of M], I was hoping you'd let me sample your [slime]?'[in random order]";
 		otherwise:
 			if the player is feeling dominant:
-				say "[variable custom style]'[one of]Oh yes... you look like you've got some delicious [urine] for me to sample. Stay right there [stud-worm of M], and try to make sure it all goes in my mouth.'[or]You, [stud-worm of M]! My tongue is desperate for a taste of your [urine], so you better get over here and serve me a fresh sample, pronto.'[in random order]";
+				say "[variable custom style]'[one of]Oh yes... you look like you've got some delicious [slime] for me to sample. Stay right there [stud-worm of M], and try to make sure it all goes in my mouth.'[or]You, [stud-worm of M]! My tongue is desperate for a taste of your [slime], so you better get over here and serve me a fresh sample, pronto.'[in random order]";
 			otherwise:
-				say "[variable custom style]'Hey, do you need to pee? I'm really great at drinking it, you know. [one of]I mean, not that I'm a some kind of human toilet[or]But I don't have a [urine] addiction[in random order] or anything...'";
+				say "[variable custom style]'Hey, do you need to [SlimeShoot]? I'm really great at drinking it, you know. [one of]I mean, not that I'm a some kind of human [SlimeTarget][or]But I don't have a [slime] addiction[in random order] or anything...'";
 	say "[roman type][line break]".
 
 [!<SayFriendlyTitfuckRequestOfMonster>+

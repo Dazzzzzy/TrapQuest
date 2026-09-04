@@ -71,7 +71,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 		otherwise if diaper quest is 1:
 			let D be a random worn diaper;
 			if D is diaper, compute automatic state check of D;
-			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or][stopping]!";
+			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your [SlimeContainer][if diaper messing >= 3] and bowels[end if][or][stopping]!";
 			compute strength (3 + (iron-maiden-turns / 2)) tickling;
 		otherwise:
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random].";

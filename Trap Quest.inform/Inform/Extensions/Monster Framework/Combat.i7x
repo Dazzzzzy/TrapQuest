@@ -17,7 +17,8 @@ To check default attack of (M - a monster):
 			compute attack of M.
 
 To compute correct delay of (M - a monster): [Default behaviour of delayed monster]
-	if diaper quest is 1, compute DQ delay of M;
+	if diaper quest is 1:
+		compute DQ delay of M;
 	otherwise:
 		if M is male and M is intelligent and the number of interested friendly monsters in the location of M > 0, compute group delay of M;
 		otherwise compute delay of M.
@@ -104,7 +105,7 @@ The default check for spanking rule is listed last in the default continue sex r
 
 This is the default check for tickling rule:
 	if current-monster is tickling the player:
-		compute spanking of current-monster;
+		compute tickling of current-monster;
 		rule succeeds.
 The default check for tickling rule is listed last in the default continue sex rules.
 
@@ -509,20 +510,20 @@ Handles anything that needs to happen after a monster "M" climaxes in a bodypart
 
 +!]
 To compute post climax effect of (M - a monster) in (F - a body part):
-	if F is asshole, check post climax anal urination of M.
+	if F is asshole, check post climax anal slimation of M.
 
-To check post climax anal urination of (M - a monster):
-	if the player is an april 2025 top donator and watersports fetish is 1 and grossness fetish > 0 and M is willing to urinate and the bladder of M >= 600 and M is not wrapped, compute anal urination of M.
+To check post climax anal slimation of (M - a monster):
+	if watersports fetish is 1 and grossness fetish > 0 and M is willing to urinate and the bladder of M >= 600 and M is not wrapped, compute anal slimation of M.
 
-To compute anal urination of (M - a monster):
-	if M is intelligent, say AnalUrinationAnnounceFlav of M;
-	say "[BigNameDesc of M] sighs with [one of]happiness[or]satisfaction[or]contentment[in random order]... And you feel warmth along with a buiding pressure inside your rectum![line break][variable custom style][one of]Wait... Is [he of M]... PISSING INSIDE OF ME?!?!?!?![or][one of]Oh my god[or]Fuck[purely at random], my [one of]butthole[or]belly[in random order] is being [one of]turned into[or]used as[purely at random] a urinal again[stopping][roman type][line break]";
-	Assfill (the bladder of M / 75) with urine;
+To compute anal slimation of (M - a monster):
+	if M is intelligent, say AnalSlimationAnnounceFlav of M;
+	say "[BigNameDesc of M] sighs with [one of]happiness[or]satisfaction[or]contentment[in random order]... [if slimeshooter fetish is 1]and so does [his of M] slimeshooter![otherwise]And you feel warmth along with a building pressure inside your rectum![end if][line break][variable custom style][one of]Wait... Is [he of M]... [if slimeshooter fetish is 1]DRAINING IT[otherwise][caps slime]ING[end if] INSIDE OF ME?!?!?!?![or][one of]Oh my god[or]Fuck[purely at random], my [one of]butthole[or]belly[in random order] is being [one of]turned into[or]used as[purely at random] a [SlimeTarget] again[stopping][roman type][line break]";
+	Assfill (the bladder of M / 75) with slime;
 	now the bladder of M is 0;
-	GrossOut 4 with reason "The sensation of being used as an anal urinal makes you shudder," and sensation "feeling".
+	GrossOut 4 with reason "The sensation of being used as an anal [SlimeTarget] makes you shudder," and sensation "feeling".
 
-To say AnalUrinationAnnounceFlav of (M - a monster):
-	say "[speech style of M]'[one of]Hold on a sec, I've got something else for you[or]Hold still now, my little cum toilet[or]I think you've got room in there for something more[in random order]...'[roman type][line break]".
+To say AnalSlimationAnnounceFlav of (M - a monster):
+	say "[speech style of M]'[one of]Hold on a sec, I've got something else for you[or]Hold still now, my little cum [SlimeTarget][or]I think you've got room in there for something more[in random order]...'[roman type][line break]".
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole:
@@ -636,10 +637,14 @@ To compute penile climax of (M - a monster):
 To compute penile masturbation end of (M - a monster):
 	TimesSubmittedUp M by 1;
 	say MasturbationStoppedFlav of M;
+	let H be 0;
+	if M is intelligent and M is not piledriver-masturbating and a random number between 5 and 10  >= the favour of M, now H is 1;
+	if H is 1, compute masturbation edge humiliation of M;
+	otherwise compute masturbation edge release of M;
 	replace any chastity;
 	replace any diapers;
 	replace any clothes;
-	if M is not friendly-fucking, say EdgeDomimanceFlav of M;
+	if M is not friendly-fucking and M is intelligent and H is 0, say EdgeDominanceFlav of M;
 	satisfy M.
 
 [Similarly, these are BLAND EXAMPLES of what progress sex might look like for your monster.]
@@ -666,7 +671,7 @@ To compute facial sex of (M - a monster):
 	compute default facial sex of M.
 
 Definition: a monster (called M) is anticipating-climax:
-	let R be a random number between 1 and 7;
+	let R be a random number between 1 and the difficulty of M;
 	if the reaction of the player is 0, increase R by 2;
 	let Ig be the intelligence of the player;
 	if debugmode > 0, say "[input style]Near climax check: Player will notice climax if I > R. I = [Ig], R = [R].[roman type][line break]";
@@ -797,6 +802,8 @@ The default penile sex rule is listed in the default progress sex rules.
 To compute penile masturbation of (M - a monster):
 	if penis is not penis-erect: [which implies that the player came]
 		say ErectionLostFlav of M;
+	otherwise if the sex-length of M is 1 and M is anticipating-climax:
+		say MasturbationNearingClimaxFlav of M;
 	otherwise if the reaction of the player is 0:
 		say MasturbationResistedFlav of M;
 	otherwise:
@@ -813,7 +820,8 @@ To compute penile masturbation of (M - a monster):
 				compute masturbation penis shrink punishment of M;
 			otherwise if M is penis-masturbating:
 				compute masturbation cum in hand punishment of M;
-			if M is interested, satisfy M.
+			if M is interested, satisfy M;
+			now the sex-length of M is 0.
 
 To compute penile sex of (M - a monster):
 	if penis is not penis-erect:[which implies that the player came]
@@ -1322,7 +1330,9 @@ To compute enticing of (M - a monster) with predetermined part (BP - a truth sta
 	let CM be current-monster;
 	now current-monster is M;
 	if diaper quest is 1:
-		if the chosen-diaper-punishment of M is punishment-not-found or the chosen-diaper-punishment of M is dq-trainee-flee, choose a diaper punishment;
+		if BP is false and (the chosen-diaper-punishment of M is punishment-not-found or the chosen-diaper-punishment of M is dq-trainee-flee):
+			if the class of the player is huffer and diaper-facesit is appropriate and a random number between 1 and 4 > 1, now chosen-diaper-punishment is diaper-facesit;
+			otherwise choose a diaper punishment;
 		if the chosen-diaper-punishment of M is punishment-not-found:
 			if debugmode > 0, say "Tried to entice but no acceptable diaper punishment found.";
 		otherwise if the chosen-diaper-punishment of M is dq-trainee-flee:
@@ -1330,6 +1340,11 @@ To compute enticing of (M - a monster) with predetermined part (BP - a truth sta
 		otherwise:
 			if debugmode > 0, say "Tried to entice and successfully selected something.";
 			say EnticeFlav of M for the chosen-diaper-punishment of M;
+			if chosen-diaper-punishment is diaper-facesit and the class of the player is huffer:
+				if the arousal of the player < very-horny-limit + 200:
+					say "[bold type]Your [']diaper huffer['] class trait means that your heart immediately starts pumping hard as you rapidly spike in arousal.[roman type][line break]";
+					now the arousal of the player is very-horny-limit + 200;
+					immediately check for arousal change;
 			let S be the relevant addiction of the chosen-diaper-punishment of M;
 			if S > 5: [at 5 or less addiction, this can't happen]
 				check enticing of M for yourself with temptation level S;
@@ -1344,7 +1359,7 @@ To compute enticing of (M - a monster) with predetermined part (BP - a truth sta
 			if B is thighs:
 				now S is the grossness addiction of the player;
 			otherwise if B is belly:
-				now S is the urine taste addiction of the player;
+				now S is the slime taste addiction of the player;
 			otherwise if B is penis:
 				increase S by 7;
 				increase S by the delicateness of the player / 5;
@@ -1369,7 +1384,7 @@ To compute enticing of (M - a monster) with predetermined part (BP - a truth sta
 				if the player is prone:
 					follow the insertion rules of M;
 					if watersports fetish is 0 and B is a fuckhole and wc hood is off-stage and wc hood is actually summonable:
-						say "All of a sudden, your head is encased in a white latex hood! You can now sense that you have gained [']meat toilet['] class![line break][variable custom style][one of]Oh COME ON! In what universe is that a real class?![or]Uh-oh, I became a meat toilet again...[stopping][roman type][line break]";
+						say "All of a sudden, your head is encased in a white latex hood! You can now sense that you have gained [']meat [SlimeTarget]['] class![line break][variable custom style][one of]Oh COME ON! In what universe is that a real class?![or]Uh-oh, I became a meat [SlimeTarget] again...[stopping][roman type][line break]";
 						summon wc hood cursed;
 	now current-monster is CM.
 
@@ -1465,8 +1480,8 @@ To say EnticeFlav of (M - a monster) with (B - breasts):
 To say EnticeFlav of (M - a monster) with (B - belly):
 	if M is male, say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
 	otherwise say "[BigNameDesc of M] spreads [his of M] pussy lips. ";
-	if M is intelligent, say "[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[or]Kneel for my piss, my thirsty little urinal!'[in random order][roman type][line break]";
-	otherwise say "It seems clear that [he of M] wants to piss on you.".
+	if M is intelligent, say "[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little [SlimeTarget]?'[or]Do you want to drink some [slime]?'[or]Give up now, get on your knees, and drink my [slime] like a good little [SlimeTarget].'[or]Kneel for my [slime], my thirsty little [SlimeTarget]!'[in random order][roman type][line break]";
+	otherwise say "It seems clear that [he of M] wants to [slime] on you.".
 
 To say EnticeFlav of (M - a monster) with (B - thighs):
 	if M is eager to do anilingus, say "[BigNameDesc of M] turns around and exposes [his of M] asshole. ";
@@ -1523,15 +1538,15 @@ To say EnticedFlav of (M - a monster) for (B - thighs) with enticement level (N 
 To say EnticedFlav of (M - a monster) for (B - belly) with enticement level (N - a number):
 	if M is male:
 		if N > 28:
-			say "Your mouth obediently opens wide without a second thought, as a large part of your body and soul clearly feels that things would be a lot simpler and happier if you just obediently accepted your place as a human urinal.";
+			say "Your mouth obediently opens wide without a second thought, as a large part of your body and soul clearly feels that things would be a lot simpler and happier if you just obediently accepted your place as a human [SlimeTarget].";
 		otherwise if N > 22:
-			say "Your heartbeat quickens, and you suddenly feel a desperate craving to drink this [man of M][']s delicious [urine]!";
+			say "Your heartbeat quickens, and you suddenly feel a desperate craving to drink this [man of M][']s delicious [slime]!";
 		otherwise if N > 18:
-			say "Your mouth salivates as you look at [NameDesc of M][']s [LongDickDesc of M], and you can't help but lick your lips with anticipation. What would be so bad about just indulging in a drink of [his of M] [urine] like [he of M] wants?";
+			say "Your mouth salivates as you look at [NameDesc of M][']s [LongDickDesc of M], and you can't help but lick your lips with anticipation. What would be so bad about just indulging in a drink of [his of M] [slime] like [he of M] wants?";
 		otherwise if N > 14:
-			say "You bite your bottom lip as your tongue yearns for a sample of the taste of [his of M] [urine].";
+			say "You bite your bottom lip as your tongue yearns for a sample of the taste of [his of M] [slime].";
 		otherwise:
-			say "[second custom style]It would be simpler and less stressful to just drink [his of M] [urine] rather than fight [him of M]... And probably more fun, too.[paragraph break][variable custom style]...Did I really just think that?![roman type][line break]".
+			say "[second custom style]It would be simpler and less stressful to just drink [his of M] [slime] rather than fight [him of M]... And probably more fun, too.[paragraph break][variable custom style]...Did I really just think that?![roman type][line break]".
 
 To say EnticedFlav of (M - a monster) for (B - face) with enticement level (N - a number):
 	if M is male:
@@ -1747,8 +1762,11 @@ To say MagicUnlocksFlav of (C - a clothing):
 	say "touches the lock on your [ShortDesc of C], and to your surprise, it suddenly clicks open! Was that luck, or magic, or what?! In any case, [NameDesc of C] is now unlocked!".
 
 To compute (M - a monster) replacing (C - a clothing):
-	say "[BigNameDesc of M] pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] back down[otherwise if C is trousers]waistband of your [ShortDesc of C] back up to its proper place[otherwise]crotch section of your [ShortDesc of C] back in place[end if].";
+	say "[BigNameDesc of M] [ReplacesFlav of C].";
 	replace C.
+
+To say ReplacesFlav of (C - a clothing):
+	say "pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] back down[otherwise if C is trousers]waistband of your [ShortDesc of C] back up to its proper place[otherwise]crotch section of your [ShortDesc of C] back in place[end if]".
 
 To compute (M - a monster) topdisplacing (C - a clothing):
 	say "[BigNameDesc of M] [TopDisplacesFlav of C].";
@@ -2119,7 +2137,7 @@ Definition: a monster (called M) is eager to masturbate cocks:
 	decide no.
 
 Definition: a monster (called M) is eager to piledriver masturbate:
-	if bukkake fetish is 0 and face is actually occupied, decide no;
+	if bukkake fetish is 0 and face is actually occupied, decide no;[With bukkake, the load always goes in the player's mouth]
 	let R be a random number between 4 and 12;
 	if debuginfo > 0, say "[input-style]Piledriver position check: [MediumDesc of M] difficulty level ([difficulty of M].5) | ([R]) d9+3[roman type][line break]";
 	if R <= the difficulty of M, decide yes;
@@ -2139,8 +2157,8 @@ To compute (M - a monster) masturbating erection:
 			get penis piledriver masturbation image for M;
 		otherwise:
 			now M is penis-masturbating;
-			say ErectionMasturbationStartFlav of M;
 			say ErectionMasturbationStart of M;
+			say ErectionMasturbationStartFlav of M;
 			get penis normal masturbation image for M;
 		now M is penetrating penis;
 		say GangAnnounce;
@@ -2150,17 +2168,45 @@ To compute (M - a monster) masturbating erection:
 
 masturbation-grab-point is a text that varies. masturbation-grab-point is "balls".
 
+[!<ToSayErectionMasturbationStartFlavOfMonster>
+
+Display some text after the main flavor text of the monster starting player masturbation. Should be very similar to normal MasturbationFlav.
+
+@param <Monster>:<M> The monster that may trip the player
+
++!]
 To say ErectionMasturbationStartFlav of (M - a monster):
 	say "".
-To say ErectionMasturbationStart of (M - a monster):
-	now masturbation-grab-point is the substituted form of "[one of]neck[or]wrist[or][ShortDesc of hair][or]balls[in random order]";
-	say "[BigNameDesc of M] grips your [masturbation-grab-point] with one hand, and your [ShortDesc of penis] with the other.".
+[!<ToSayErectionMasturbationStartOfMonster>
 
+Display the main text of a monster starting player masturbation.
+
+@param <Monster>:<M> The monster that may trip the player
+
++!]
+To say ErectionMasturbationStart of (M - a monster):
+	now masturbation-grab-point is the substituted form of "[one of]neck[or]wrist[or][ShortDesc of hair][or][if the player is possessing a scrotum]balls[otherwise]thigh[end if][in random order]";
+	say "[BigNameDesc of M] grips your [masturbation-grab-point] with one hand, and your [if penis is penis-erect]rigid[otherwise]hardening[end if] [ShortDesc of penis] with the other.".
+
+[!<ToSayPiledriverMasturbationStartFlavOfMonster>
+
+Display some text after the main flavor text of the monster starting piledriver masturbation. Should be very similar to normal MasturbationFlav.
+
+@param <Monster>:<M> The monster that may trip the player
+
++!]
 To say PiledriverMasturbationStartFlav of (M - a monster):
 	say "".
+[!<ToSayPiledriverMasturbationStartOfMonster>
+
+Display the main text of a monster starting piledriver masturbation.
+
+@param <Monster>:<M> The monster that may trip the player
+
++!]
 To say PiledriverMasturbationStart of (M - a monster):
 	now masturbation-grab-point is "hair";
-	say "[BigNameDesc of M] grabs you by the [masturbation-grab-point], and forces you [one of]to lay on your back, and then pulls your feet into the air, up and over your head[or]into the piledriver position once again[stopping]. Your [ShortDesc of penis] is now pointing directly at your face!".
+	say "[BigNameDesc of M] grabs you by the [masturbation-grab-point], and forces you [one of]to lay on your back, and then pulls your feet into the air, up and over your head[or]into the piledriver position once again[stopping]. Your [if penis is penis-erect]rigid[otherwise]hardening[end if] [ShortDesc of penis] is now pointing directly at your face!".
 
 To compute (M - a monster) mounting erection:
 	if penis is not actually occupied:
@@ -2200,23 +2246,21 @@ This is the monster urinating rule:
 The monster urinating rule is listed last in the monster begin urination rules.
 
 To compute (M - a monster) urinating:
-	say UrinationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-	FacePiss from M;
+	say DrainFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+	FaceDrain from M;
 	now the chosen-orifice of M is nothing;
 	satisfy M.
 
-To say UrinationFlav of (M - a monster):
-	if diaper quest is 1, say ForcefeedPissDeclarationFlav of M;
-	if M is male:
-		if M is intelligent:
-			say "[one of][BigNameDesc of M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
-		otherwise:
-			say "[BigNameDesc of M] points [his of M] [manly-penis] towards your face. A golden stream of [urine] shoots out, headed straight for you!";
+To say DrainFlav of (M - a monster):
+	if diaper quest is 1, say ForcefeedSlimeDeclarationFlav of M;
+	unless M is intelligent:
+		say "[BigNameDesc of M] points [his of M] [SlimeJunk] towards your face. A [SlimeShade] stream of [slime] shoots out, headed straight for you!";
+	if slimeshooter fetish is 1:
+		say "[one of][BigNameDesc of M] laughs, taking a handful of your [ShortDesc of hair] as [he of M] pull out [his of M] slimeshooter. [or][BigNameDesc of M] laughs, tilting your chin up and as [he of M] takes aim with [his of M] slimeshooter[in random order] A [SlimeShade] stream of [slime] shoots out, headed straight for your face![if the humiliation of the player < 17500 and the slime taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
+	otherwise if M is male:
+		say "[one of][BigNameDesc of M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A [SlimeShade] stream of [slime] shoots out of [his of M] [DickDesc of M], headed straight for your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A [SlimeShade] stream of [slime] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the slime taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
 	otherwise:
-		if M is intelligent:
-			say "[one of][BigNameDesc of M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart [his of M] pussy lips, [he of M] allows a golden stream of [urine] to start to squirt straight at your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
-		otherwise:
-			say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+		say "[one of][BigNameDesc of M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Spreading [his of M] pussy lips, [he of M] allows a [SlimeShade] stream of [slime] to start to squirt straight at your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A [SlimeShade] stream of [slime] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the slime taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]".
 
 Chapter 6 Damaging and Tripping
 
@@ -2360,7 +2404,7 @@ To say TripChanceFlav of (M - a monster):
 
 This is the choice of attack rule:
 	compute attack choice of current-monster.
-The choice of attack rule is listed last in the default monster attack rules.
+The choice of attack rule is listed last in the default monster attack rules. [That's *default* monster attack rules, not monster attack rules. Each monster can potentially have a version of this.]
 
 To decide which number is the trip threshold of (M - a monster):
 	decide on 4. [The higher this is, the less often they consider tripping next turn]
@@ -2509,12 +2553,18 @@ Handles the default damaging attack for a given monster. Randomly selects a body
 +!]
 To compute striking attack of (M - a monster):
 	let B be the painful-part of M;
-	if the accuracy roll of M >= the dexterity of the player:
-		say StrikingSuccessFlav of M on B;
-		compute M striking B;
-		compute striking success effect of M on B;
+	if the damage-reduction of magic-armour > 0:
+		say "[BigNameDesc of M] tries to smack you [TargetName of B] but it is blocked by your magic armor!";
+		decrease the damage-reduction of magic-armour by 1;
+		if the damage-reduction of magic-armour > 0, say "Your magic armor weakens.";
+		otherwise say "Your magic armor fades away completely. [bold type]You are vulnerable again![roman type][line break]";
 	otherwise:
-		say StrikingFailureFlav of M on B.
+		if the accuracy roll of M >= the dexterity of the player:
+			say StrikingSuccessFlav of M on B;
+			compute M striking B;
+			compute striking success effect of M on B;
+		otherwise:
+			say StrikingFailureFlav of M on B.
 
 [!<ToComputeStrikingSuccessEffectOfMonsterOnBodyPart>
 

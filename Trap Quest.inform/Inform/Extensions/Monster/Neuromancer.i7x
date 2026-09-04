@@ -4,7 +4,7 @@ neuromancer is a monster. neuromancer is intelligent. The leftover-type of neuro
 The text-shortcut of neuromancer is "neu". Understand "neuro" as djinn.
 
 Definition: neuromancer is wenchy:
-	if the player is not an april 2025 top donator, decide no;
+	if the player is not the donator, decide no;
 	decide yes.
 
 Definition: neuromancer is willing to urinate: decide yes.
@@ -31,11 +31,11 @@ To decide which figure-name is the pacified-image of (M - neuromancer):
 
 To say MonsterDesc of (M - neuromancer):
 	if M is sex-enslaved:
-		say "This once-dangerous white-haired cat[boy of M] has been utterly bimbofied. [big his of M] [if lady fetish is 2]flat chest is[otherwise]giant breasts are[end if] poorly contained by a pink skin-tight bunny suit, with the crotch section pulled aside to reveal a hairless, [if lady fetish is 2]leaking [sissy-penis]. [otherwise]soaking wet cunt. [end if]And [his of M] cunt isn't the only thing that's actively drooling - [his of M] thick, pillowy lips are fixed in a permanent pout, with saliva constantly oozing out of the gap in the middle - a sign that [he of M] may not be all there in the head any more. [big his of M] eyes are now a vibrant shade of pink, as are [his of M] long, delicate bimbo nails, and the tight slutty stockings clenching [his of M] thighs, with a roll of unused condoms tucked into one side, communicating just how ready this slut is to be laid down on [his of M] back and taken to pound-town. The bell around the cat collar on [his of M] neck no longer feels like the adornment of a playful cat, but rather the mark of a submissive pet pussy.[line break][variable custom style]I guess [he of M] found out that [he of M][']s not the Top Dog around here any more... And found out the hard way.[roman type][line break]";
+		say "This once-dangerous white-haired cat[boy of M] has been utterly bimbofied. [big his of M] [if andro fetish is 1]flat chest is[otherwise]giant breasts are[end if] poorly contained by a pink skin-tight bunny suit, with the crotch section pulled aside to reveal a hairless, [if andro fetish is 1]leaking [sissy-penis]. [otherwise]soaking wet cunt. [end if]And [his of M] cunt isn't the only thing that's actively drooling - [his of M] thick, pillowy lips are fixed in a permanent pout, with saliva constantly oozing out of the gap in the middle - a sign that [he of M] may not be all there in the head any more. [big his of M] eyes are now a vibrant shade of pink, as are [his of M] long, delicate bimbo nails, and the tight slutty stockings clenching [his of M] thighs, with a roll of unused condoms tucked into one side, communicating just how ready this slut is to be laid down on [his of M] back and taken to pound-town. The bell around the cat collar on [his of M] neck no longer feels like the adornment of a playful cat, but rather the mark of a submissive pet pussy.[line break][variable custom style]I guess [he of M] found out that [he of M][']s not the Top Dog around here any more... And found out the hard way.[roman type][line break]";
 	otherwise if M is diaper-enslaved:
 		say "This once-dangerous white-haired cat[boy of M] has been utterly babified. Not only is [he of M] stuck in a thick, soggy diaper, but [his of M] humiliating and constricting onesie still exposes [his of M] giant breasts, to maximise [his of M] exposure and humiliation. The onesie has a large inflatable tail at the back, which waggles obnoxiously as [he of M] waddles. The fist mittens and pacifier gag complete [his of M] diaper enslavement.";
 	otherwise:
-		say "A sharp-clawed, brown-skinned, white-haired cat[boy of M], complete with matching white cat ears and cat tail. [if lady fetish is 2]Obscenely wide hips and strong thighs contrast[otherwise]Big bouncy round breasts and obscenely wide hips with strong thighs frame[end if] a seemingly impossibly tiny waist, giving [him of M] the most alluring [if lady fetish is 2]pear-shaped[otherwise]hourglass[end if] figure you've ever seen. [big his of M] outfit is immensely provocative as well - an impossibly perfectly figure-hugging black bodice, reminiscent of a playdude bunny suit, exposes most of [his of M] [if lady fetish is 2]chest[otherwise]cleavage[end if] and the entirety of [his of M] hips and ass cheeks. Matching thigh-highs grip [his of M] thick, alluring legs with style and ooze sex appeal. A short black hooded sorcerer's robe sits on top of [his of M] white hair (with holes for [his of M] ears), framing [his of M] shoulders and clasped together at the front by a softly tinkling catbell.".
+		say "A sharp-clawed, brown-skinned, white-haired cat[boy of M], complete with matching white cat ears and cat tail. [if andro fetish is 1]Obscenely wide hips and strong thighs contrast[otherwise]Big bouncy round breasts and obscenely wide hips with strong thighs frame[end if] a seemingly impossibly tiny waist, giving [him of M] the most alluring [if andro fetish is 1]pear-shaped[otherwise]hourglass[end if] figure you've ever seen. [big his of M] outfit is immensely provocative as well - an impossibly perfectly figure-hugging black bodice, reminiscent of a playdude bunny suit, exposes most of [his of M] [if andro fetish is 1]chest[otherwise]cleavage[end if] and the entirety of [his of M] hips and ass cheeks. Matching thigh-highs grip [his of M] thick, alluring legs with style and ooze sex appeal. A short black hooded sorcerer's robe sits on top of [his of M] white hair (with holes for [his of M] ears), framing [his of M] shoulders and clasped together at the front by a softly tinkling catbell.".
 
 [To say MonsterComment of (M - neuromancer):] [TODO]
 
@@ -74,7 +74,7 @@ To compute delay of (M - neuromancer): [NPCs, when they're confident that the pl
 	say "[BigNameDesc of M] puts a palm on [his of M] hip.[line break][speech style of M]'I am a kind Mistress. How will you [please] me?'[roman type][line break]".
 
 To say ToiletReactionFlav of (M - neuromancer):
-	say "[BigNameDesc of M] licks [his of M] lips.[line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big [boy of the player] trying to prove [he of the player] doesn't need diapers? How adorable[end if]!'[roman type][line break]".
+	say "[BigNameDesc of M] licks [his of M] lips.[line break][speech style of M]'[if slimeshooter fetish is 1]You know, it's unusual watching someone else drain their slime without me on my knees underneath them[otherwise if watersports fetish is 1]You know, it's unusual getting to watch someone else [slime] without me being on my knees underneath them[otherwise]Is the big [boy of the player] trying to prove [he of the player] doesn't need diapers? How adorable[end if]!'[roman type][line break]".
 
 To say IdentifiablePosterReactionFlav of (M - neuromancer):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that, nyaaa?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
@@ -85,8 +85,8 @@ To say UnidentifiablePosterReactionFlav of (M - neuromancer) with (P - a poster)
 To say SuddenTransformTrapReactFlav of (M - neuromancer):
 	say "[BigNameDesc of M] looks delighted.[line break][speech style of M]'Oh wow, you look so [beautiful] now!'[roman type][line break]".
 
-To say GroundPeeReaction of (M - neuromancer):
-	say "[speech style of M]'[if diaper lover > 0]Uh-oh! Looks like someone should be diapered, like me! Maybe I should take you to Mommy[otherwise]What a waste! If you piss in a cup, then you can savour the smell for as long as you want, and then when you get thirsty, you can practice being a good little toilet! Hmm, maybe you need help learning to be a better toilet[end if]...'[roman type][line break]";
+To say GroundSlimeReaction of (M - neuromancer):
+	say "[speech style of M]'[if diaper lover > 0]Uh-oh! Looks like someone should be diapered, like me! Maybe I should take you to Mommy[otherwise]What a waste! If you [SlimeShoot] in a cup, then you can savour the smell for as long as you want, and then when you get thirsty, you can practice being a good little [SlimeTarget]! Hmm, maybe you need help learning to be a better [SlimeTarget][end if]...'[roman type][line break]";
 	FavourDown M with consequences.
 
 To say BecomesAggressive of (M - neuromancer):
@@ -406,9 +406,9 @@ This is the neuromancer uses your diaper rule:
 				compute M attacking C;
 			otherwise:
 				now C is a random worn overdress;
-				say "[BigNameDesc of M] pulls up the rear of the waistband of your [D] and squats over your back. [big he of M] starts peeing!";
-				PissSoak 6 on D;
-				if C is clothing, PissSoak 6 on C;
+				say "[BigNameDesc of M] pulls up the rear of the waistband of your [D] and squats over your back. [big he of M] starts [SlimeShoot]ing!";
+				SlimeSoak 6 on D;
+				if C is clothing, SlimeSoak 6 on C;
 				satisfy M;
 		otherwise:
 			say "[BigNameDesc of M] gives you a strong spanking through your [D]![line break][speech style of M]'[one of]Do you like to get treated like a bad [boy of the player], huh? Take this!'[or]Time for your punishment, loser!'[or]When you're in a big nappy like that, there's only one appropriate way to punish you!'[in random order][italic type][line break]SMACK SMACK THWACK SMACK[roman type][line break]";
@@ -564,8 +564,8 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - neuromancer):
 	if the player is prone and watersports fetish is 1:
-		say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'One Piss Slut Special, coming right up!'[roman type][line break][BigNameDesc of M] doesn't give you a chance to react before [he of M] is pissing straight at you! [variable custom style][if the urine taste addiction of the player < 6]Shit shit shit![otherwise if the urine taste addiction of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
-		FacePiss from M;
+		say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'One slime slut Special, coming right up!'[roman type][line break][BigNameDesc of M] doesn't give you a chance to react before [he of M] is [SlimeShoot]ing straight at you! [variable custom style][if the slime taste addiction of the player < 6]Shit shit shit![otherwise if the slime taste addiction of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
+		FaceDrain from M;
 	otherwise:
 		say "[if watersports fetish is 1]You notice a naughty look in [his of M] eyes.[line break][speech style of M]'[one of]Get on your knees and ask me again.'[or]Haha, sure! But only if you get on your knees first!'[or]Of course, why didn't you ask sooner? Get on your knees and open wide!'[or]Totally. Get on your knees and say the word, I've got plenty for you.'[at random][otherwise][speech style of M]'Haha, no, does it look like this outfit has pockets?'[end if][roman type][line break]";
 

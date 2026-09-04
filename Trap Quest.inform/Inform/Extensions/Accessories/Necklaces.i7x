@@ -107,6 +107,8 @@ Definition: a clothing is cowbelled: decide no.
 To decide which number is the stealth-influence of (C - an animalbell):
 	if C is clanking, decide on -12;
 	decide on 0.
+To say StealthDownFlav of (C - an animalbell):
+	if C is clanking, say "It is currently clanking, making it essentially impossible for people to not notice your presence.".
 
 To set up influence of (C - an animalbell):
 	set up taste-based influence of C.
@@ -158,6 +160,8 @@ To decide which number is the initial cringe of (C - catbell):
 	decide on 6.
 To decide which number is the stealth-influence of (C - catbell):
 	decide on -8.
+To say StealthDownFlav of (C - catbell):
+	say "Its constant jingling makes it almost impossible for people to not notice your presence.".
 
 To compute class set up of (C - catbell):
 	now C is speed.

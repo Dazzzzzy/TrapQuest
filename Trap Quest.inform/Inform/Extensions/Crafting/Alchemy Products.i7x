@@ -65,6 +65,10 @@ Carry out quaffing:
 	allocate 3 seconds;
 	StomachUp 1;
 	say QuaffFlav of the noun;
+	let C be a random worn cumguzzling clothing;
+	if C is clothing:
+		say "[bold type]Thanks to your [C], the taste and texture of the drink turns to [semen] as it touches your lips![roman type][line break]";
+		compute slightly addictive tasting of semen;
 	compute alchemy product effect of the noun;
 	if the noun is cursed and the noun is not blessing-potion, say "That tasted really awful - you're pretty sure it was cursed![line break][variable custom style]Uh-oh. That probably hasn't done what it was supposed to do...[roman type][line break]";
 	check stealing of the noun;
@@ -163,7 +167,7 @@ To decide what number is the original price of (C - a smoke bomb):
 
 Section 2 - Water Bomb
 
-water-bomb is a bomb. water-bomb has a number called cum-known. The text-shortcut of water-bomb is "wbmb". Understand "water" as water-bomb when the cum-known of water-bomb is 0 and the number of water-body-scenery in the location of the player is 0. Understand "cum" as water-bomb when the cum-known of water-bomb is 1. Understand "piss" as water-bomb when the cum-known of water-bomb is 2.
+water-bomb is a bomb. water-bomb has a number called cum-known. The text-shortcut of water-bomb is "wbmb". Understand "water" as water-bomb when the cum-known of water-bomb is 0 and the number of water-body-scenery in the location of the player is 0. Understand "cum" as water-bomb when the cum-known of water-bomb is 1. Understand "slime", "piss" as water-bomb when the cum-known of water-bomb is 2.
 
 Definition: water-bomb is semen themed:
 	if the cum-known of water-bomb is 1, decide yes;
@@ -174,10 +178,10 @@ Definition: water-bomb is fetish appropriate:
 Definition: water-bomb is combat-bomb: decide yes.
 
 To say MediumDesc of (B - water-bomb):
-	say "[if the cum-known of water-bomb is 0]water[otherwise if the cum-known of water-bomb is 2]piss[otherwise]cum[end if] bomb".
+	say "[if the cum-known of water-bomb is 0]water[otherwise if the cum-known of water-bomb is 2][slime][otherwise]cum[end if] bomb".
 
 To say ExamineDesc of (B - water-bomb):
-	say "A large thin balloon containing a large, heavy amount of [if the cum-known of water-bomb is 0]a cloudy liquid[otherwise if the cum-known of water-bomb is 2][urine][otherwise][semen][end if]. ";
+	say "A large thin balloon containing a large, heavy amount of [if the cum-known of water-bomb is 0]a cloudy liquid[otherwise if the cum-known of water-bomb is 2][slime][otherwise][semen][end if]. ";
 	if B is sure and B is cursed, say "Since it is cursed, throwing it at an enemy will probably do something bad. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "Throwing it at an enemy should hopefully blind or otherwise incapacitate them.".
 
@@ -199,13 +203,13 @@ Check throwing water-bomb at a monster:
 		if the cum-known of water-bomb is 0, say "[variable custom style]Wait a minute, this isn't water, it's [semen]![roman type][line break]";
 		if water-bomb is cursed, appropriate-cutscene-display figure of water bomb cutscene 2;
 		otherwise appropriate-cutscene-display figure of water bomb cutscene 1;
-		if the cum-known of water-bomb is 2, AnnouncedSquirt urine on face by 20;
+		if the cum-known of water-bomb is 2, AnnouncedSquirt slime on face by 20;
 		otherwise AnnouncedSquirt semen on face by 20;
 	otherwise:
 		if fire theme bonus > a random number between 0 and 1, now the noun is blessed;
 		say "You launch the [water-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! The creamy viscous liquid goes everywhere, blinding [him of the second noun][if the cum-known of water-bomb is 0]. That's not water... it's definitely [semen][end if]!";
 		if the blind-status of the second noun is -1:
-			say "[big he of the second noun] doesn't seem to have any problems detecting where you are through the [if the cum-known of water-bomb is 2][urine][otherwise][semen][end if]. [big he of the second noun] must be immune to being blinded!";
+			say "[big he of the second noun] doesn't seem to have any problems detecting where you are through the [if the cum-known of water-bomb is 2][slime][otherwise][semen][end if]. [big he of the second noun] must be immune to being blinded!";
 		otherwise if the blind-status of the second noun > 0:
 			say "[big he of the second noun] seems to be even more blinded than [he of the second noun] was before you threw it!";
 		if the blind-status of the second noun is not -1:
@@ -780,6 +784,11 @@ To compute alchemy product effect of (Q - womb-potion):
 			if Q is not cursed, check sudden pregnancy;
 		otherwise if Q is cursed:
 			say "The potion seems to have no effect.";
+		otherwise if Q is blessed and the pregnancy of the player < 3:
+			[End the pregnancy]
+			say "You feel blessed magic coursing towards your womb! Your [BellyDesc] seems suddenly... inactive. And... It's shrinking! Within moments, you feel that you're not pregnant any more![line break][variable custom style]Wow![roman type][line break]";
+			now the pregnancy of the player is 0;
+			WombEmpty the womb volume of vagina;
 		otherwise if the pregnancy of the player is 1:
 			[Pause the pregnancy]
 			say "Your [BellyDesc] seems suddenly... inactive[if the largeness of belly > 6]. But you still feel kicking coming from inside your womb[end if].";
@@ -1660,7 +1669,7 @@ An all time based rule (this is the strength tincture decay rule):
 						FatUp 4;
 					decrease strength-bonus of strength-tincture by 1;
 			otherwise:
-				if strength-bonus of strength-tincture > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel the contents of your [if rectum > 1]bowels[otherwise]bladder[end if] expand rapidly![line break][variable custom style]Oh no...![roman type]";
+				if strength-bonus of strength-tincture > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel the contents of your [if rectum > 1]bowels[otherwise][SlimeContainer][end if] expand rapidly![line break][variable custom style]Oh no...![roman type]";
 				while strength-bonus of strength-tincture > 0:
 					if rectum > 1, increase rectum by 1;
 					otherwise increase the bladder of the player by 1;

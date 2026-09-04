@@ -140,7 +140,7 @@ To Execute Fainting:
 				otherwise:
 					now the player is in Dungeon11;
 			now the location of the player is discovered;
-			say "[one of]You wake up, and realise you are lying face down[if the location of the player is OL], still[end if] in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it! [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
+			say "[one of]You wake up, and realise you are lying face down[if the location of the player is OL], still[end if] in the [printed name of the location of the player][if the slime-puddle of the location of the player > 0], surrounded by a puddle of [slime][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it! [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
 			say "You are [RealDesc]";
 			if the pink pill is not held by the player and dungeon chains is not worn:
 				say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
@@ -268,7 +268,7 @@ To Recover Monsters:
 
 To totally clean (R - a room):
 	now the semen-puddle of R is 0;
-	now the urine-puddle of R is 0;
+	now the slime-puddle of R is 0;
 	now the milk-puddle of R is 0;
 	now the sprinkle-puddle of R is 0;
 
@@ -323,7 +323,7 @@ To Recover Rooms:
 		now the grid position of R is <0,0,0>;
 		repeat with D running through N-viable directions:
 			change the D exit of R to Solid Rock;
-		if R is the location of the player, now the slime-puddle of R is 0;
+		if R is the location of the player, now the ecto-puddle of R is 0;
 	repeat with F running through on-stage furniture:
 		unless F is permanent fixture, destroy F;
 	[Now we need to make the three non-west exits to the hallway at the start of the game available for connections again]
@@ -355,7 +355,7 @@ To Recover the Player:
 	SemenPuddleUp (the semen coating of face + the semen coating of breasts + the semen coating of thighs + the semen coating of hair) / 2;
 	now the semen coating of face is 0;
 	now the semen coating of hair is 0;
-	now the urine coating of hair is 0;
+	now the slime coating of hair is 0;
 	now the water-drench of hair is 0;
 	now the semen coating of breasts is 0;
 	now the semen coating of hips is 0;
@@ -386,7 +386,7 @@ To Recover the Player:
 		now the tolerated of asshole is 0;
 		now the openness of asshole is the real openness of asshole;
 		MilkPuddleUp the milk volume of belly / 2;
-		if watersports mechanics is 1, UrinePuddleUp (the urine volume of belly + the urine coating of hair) / 2;
+		if watersports mechanics is 1, SlimePuddleUp (the slime volume of belly + the slime coating of hair) / 2;
 		empty belly liquids;
 		while the small egg count of belly > 0:
 			decrease the small egg count of belly by 1;
@@ -415,14 +415,14 @@ To Recover the Player:
 	now the stomach-water of the player is 3;
 	now the stomach-semen of the player is 0;
 	now the stomach-milk of the player is 0;
-	now the stomach-urine of the player is 0;
+	now the stomach-slime of the player is 0;
 	now the stomach-food of the player is 2;
 	if the bladder of the player + the delayed bladder of the player > 0 and watersports mechanics is 1:
 		let P be a random bottom level pee protection clothing;
 		if P is clothing:
-			if P is fluid vulnerable, UrineSoakUp P by the bladder of the player + the delayed bladder of the player;
+			if P is fluid vulnerable, SlimeSoakUp P by the bladder of the player + the delayed bladder of the player;
 		otherwise:
-			UrinePuddleUp the bladder of the player + the delayed bladder of the player;
+			SlimePuddleUp the bladder of the player + the delayed bladder of the player;
 		now the bladder of the player is 0;
 		now the delayed bladder of the player is 0;
 	now the stance of the player is 1;

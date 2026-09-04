@@ -181,15 +181,19 @@ trashcan has a number called smellCycle.
 
 To compute periodic effect of (C - trashcan):
 	if diaper quest is 0:
-		if the tissue-fill of trashcan < 2, now C is see-through;
+		if the tissue-fill of C < 2, now C is see-through;
 		otherwise now C is dense;
 	otherwise:
-		if the diaper-fill of trashcan < 2, now C is see-through;
+		repeat with SD running through carried soiled-diaper:
+			say "[BigNameDesc of SD] flies out of your hand and into [NameDesc of C]!";
+			destroy SD;
+			increase the diaper-fill of C by 1;
+		if the diaper-fill of C < 2, now C is see-through;
 		otherwise now C is dense;
-	if the diaper-fill of trashcan > 0 and diaper messing < 6:
+	if the diaper-fill of C > 0 and diaper messing < 6:
 		if the remainder after dividing turnsWithSoiledDiaper by 8 is 0, GrossOut wetDiaperSmellGrossnessLevel with reason "" and sensation "[one of]scent[or]aroma[cycling]";
-		increase the smellCycle of trashcan by 1;
-		if the smellCycle of trashcan is 8, now the smellCycle of trashcan is 0;
+		increase the smellCycle of C by 1;
+		if the smellCycle of C is 8, now the smellCycle of C is 0;
 	if C is not class-relevant:
 		say "[BigNameDesc of C] fizzles from existence!";
 		destroy C.

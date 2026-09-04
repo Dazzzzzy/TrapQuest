@@ -475,7 +475,7 @@ To AltarPray (P - a person):
 					summon angel tattoo;
 					say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 					break;
-		if the player is a september 2025 top donator and pregnancy fetish is 1 and the children of the player > 0 and the-goddess is off-stage and the player is possessing a vagina and fertility-idol-errand is appropriate and runic headband is not worn and the class of the player is not priestess:
+		if the player is the donator and pregnancy fetish is 1 and the children of the player > 0 and the-goddess is off-stage and the player is possessing a vagina and fertility-idol-errand is appropriate and runic headband is not worn and the class of the player is not priestess:
 			say "A shimmering blue light surrounds the statue and pure visible energy rushes around the statue, transforming it into a real pregnant woman![line break][second custom style]'I'm... Corporeal? That's... Not what I meant to do. I was trying to bless you with... How strange... Oh well. This is new. Greetings mortal, it is I, your goddess, turned into flesh in your presence. Um, this is a rare honour. I don't usually do this. To be honest, it was kind of an accident. Perhaps it's because you are already a mother...'[roman type][line break]";
 			destroy dungeon altar;
 			now the-goddess is in the location of the player;
@@ -498,6 +498,23 @@ To AltarPray (P - a person):
 			if C is sex toy:
 				bless C;
 	reset dungeon altar.
+
+To AltarReward (T - a gag):
+	if T is cursed:
+		if strongCurses is 1:
+			let OQ be the quest of T;
+			compute new quest of T;
+			if the quest of T is OQ, say "The altar is still glowing.";
+			otherwise reset dungeon altar;
+		otherwise:
+			say "*Click!* It would appear that the [ShortDesc of T] has lost its curse!";
+			bless T;
+			reset dungeon altar;
+	otherwise if T is locked and bondage protection > 0:
+		say "*Click!* It would appear that the [ShortDesc of T][']s lock has sprung open!";
+		reset dungeon altar;
+	otherwise:
+		say "Nothing seems to happen.".
 
 To AltarReward (T - wrist bond):
 	if T is cursed:
@@ -813,7 +830,7 @@ To ElderConnect:
 		say QuestFlav of D;
 	now altar-diaper-link is 99999;
 	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
-		say "It feels like you no longer have 'ownership' over your own bladder. You feel your control weaken.";
+		say "It feels like you no longer have 'ownership' over your own [SlimeContainer]. You feel your control weaken.";
 		SilentlyBladderIncontinenceUp 1;
 	RectumIncontinenceUp 1;
 	compute periodic effect of D.
@@ -912,13 +929,13 @@ To compute dark reward of (T - ritual-beads):
 		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles spraying you with [if bukkake fetish is 1]off-white [end if]liquid as your clothes are spontaneously soaked. The 'soaking' wears off within moments, leaving you completely refreshed, and your clothing remarkably clean.";
 		repeat with C running through worn clothing:
 			now the semen-soak of C is 0;
-			now the urine-soak of C is 0;
+			now the slime-soak of C is 0;
 			now the milk-soak of C is 0;
 			now the water-soak of C is 0;
 			if C is glued, ungluify C;
 		repeat with B running through body parts:
 			now the semen coating of B is 0;
-			if B is hair, now the urine coating of B is 0;
+			if B is hair, now the slime coating of B is 0;
 		now the fatigue of the player is 0;
 		severeHumiliate;
 	otherwise:
@@ -1048,7 +1065,7 @@ To DevilPray (P - a person):
 	let W be infernal-portal;
 	if diaper quest is 0 and avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
 		now R is 0; [free]
-		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
+		say "The statue's eyes glow with multicoloured light as a [if gyno fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
 		now avatar-summoned is true;
 	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:

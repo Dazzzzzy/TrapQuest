@@ -1,8 +1,33 @@
 Kicking by Actions begins here.
 
-To decide which number is the kick damage of the player:
-	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-kick-damage;
-	if damage-explained > 1, say "[input-style]Base kick damage calculation: [bracket]3 (base damage) ";
+To decide which number is the total kick damage improvement of (C - a clothing):
+	let K be 0;
+	if C is ankle bond, decrease K by 100;
+	if C is shoes, increase K by the kick-bonus of C;
+	if C is flight-attendant-top:
+		if the player is zeroG:
+			increase K by 100;
+		otherwise if the player is on tiptoes:
+			increase K by 2;
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 0:
+			if BF < 3:
+				increase K by 1;
+			otherwise:
+				increase K by 3;
+	if C is diaper and the player is diaper kicking, decrease K by 1;
+	if C is skirted and the front-skirt-length of C >= 4 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+		if the front-skirt-length of C >= 7:
+			decrease K by 100;
+		otherwise:
+			let L be 8 - the front-skirt-length of C; [front-skirt-length should be 4, 5 or 6, which convert to 4, 3, 2 respectively]
+			let PA be the early kick damage of the player;
+			let A be (PA * L) / 5; [80%, 60% or 40% damage]
+			decrease K by PA - A;
+	decide on K.
+
+To decide which number is the early kick damage of (P - a person):
 	let A be 3;
 	let H be a random worn shoes;
 	if H is shoes:
@@ -27,6 +52,12 @@ To decide which number is the kick damage of the player:
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
+	decide on A.
+
+To decide which number is the kick damage of (P - a person):
+	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-kick-damage;
+	if damage-explained > 1, say "[input-style]Base kick damage calculation: [bracket]3 (base damage) ";
+	let A be the early kick damage of P;
 	repeat with C running through worn clothing:
 		if the front-skirt-length of C >= 4 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
 			if the front-skirt-length of C >= 7:

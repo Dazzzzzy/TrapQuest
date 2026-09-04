@@ -42,7 +42,7 @@ To say MonsterDesc of (M - hellhound):
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
 
 To say DickDesc of (M - hellhound):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "strap-on";
 	otherwise if mythical creature fetish is 1:
 		say "[one of]canine cock[or]doggy dick[at random]";
@@ -50,7 +50,7 @@ To say DickDesc of (M - hellhound):
 		say manly-penis.
 
 To say LongDickDesc of (M - hellhound):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "strap-on dildo";
 	otherwise if mythical creature fetish is 1:
 		say "[one of]demonic[or]infernal[or]red[at random] [one of]canine cock[or]doggy dick[at random]";
@@ -143,17 +143,17 @@ To compute unique periodic effect of (M - hellhound):
 			increase the peeTimer of M by 1;
 			if a random number between 30 and 1000 <= the peeTimer of M:
 				if M is in the location of the player and M is not penetrating face:
-					if M is asleep, say "As you watch [NameDesc of M], [his of M] completely full diaper begins to leak, [urine] spilling out of the legholes and down to the floor. [big he of M] doesn't even stir from [his of M] slumber.";
-					otherwise say "[BigNameDesc of M] makes eye contact with you as a hissing sound emanates from [his of M] diaper. [big his of M] padding is so completely saturated that [his of M] [urine] just flows out of the legholes and down [his of M] legs. [big he of M] giggles cheekily.";
-				UrinePuddleUp the peeTimer of M / 10 in (the location of M);
+					if M is asleep, say "As you watch [NameDesc of M], [his of M] completely full diaper begins to leak, [slime] spilling out of the legholes and down to the floor. [big he of M] doesn't even stir from [his of M] slumber.";
+					otherwise say "[BigNameDesc of M] makes eye contact with you as a hissing sound emanates from [his of M] diaper. [big his of M] padding is so completely saturated that [his of M] [slime] just flows out of the legholes and down [his of M] legs. [big he of M] giggles cheekily.";
+				SlimePuddleUp the peeTimer of M / 10 in (the location of M);
 				now the peeTimer of M is 0;
 		otherwise:
 			increase the peeTimer of M by 1;
 			if a random number between 30 and 1000 <= the peeTimer of M:
 				let R be the location of M;
-				if the urine-puddle of R <= 0:
-					if M is in the location of the player, say "[BigNameDesc of M] sniffs around a nearby wall, then lifts [his of M] leg and marks it with steaming hot [urine].";
-					UrinePuddleUp the peeTimer of M / 10 in R;
+				if the slime-puddle of R <= 0:
+					if M is in the location of the player, say "[BigNameDesc of M] sniffs around a nearby wall, then lifts [his of M] leg and marks it with steaming hot [slime].";
+					SlimePuddleUp the peeTimer of M / 10 in R;
 					now the peeTimer of M is 0;
 				otherwise:
 					if M is in the location of the player, say "[BigNameDesc of M] sniffs around the puddle on the floor and turns toward you suddenly, as if to glare.";
@@ -163,20 +163,20 @@ To compute unique periodic effect of (M - hellhound):
 Part 1 - Misc Flavour
 
 To decide which text is he of (M - hellhound):
-	decide on "[if mythical creature fetish is 1]it[otherwise if lady fetish is 1]she[otherwise]he[end if]".
+	decide on "[if mythical creature fetish is 1]it[otherwise if gyno fetish is 1]she[otherwise]he[end if]".
 
 To decide which text is his of (M - hellhound):
-	decide on "[if mythical creature fetish is 1]its[otherwise if lady fetish is 1]her[otherwise]his[end if]".
+	decide on "[if mythical creature fetish is 1]its[otherwise if gyno fetish is 1]her[otherwise]his[end if]".
 
 To decide which text is him of (M - hellhound):
-	decide on "[if mythical creature fetish is 1]it[otherwise if lady fetish is 1]her[otherwise]him[end if]".
+	decide on "[if mythical creature fetish is 1]it[otherwise if gyno fetish is 1]her[otherwise]him[end if]".
 
 To decide which text is himself of (M - hellhound):
-	decide on "[if mythical creature fetish is 1]itself[otherwise if lady fetish is 1]herself[otherwise]himself[end if]".
+	decide on "[if mythical creature fetish is 1]itself[otherwise if gyno fetish is 1]herself[otherwise]himself[end if]".
 
 To say cockhead of (M - hellhound):
-	if mythical creature fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if full-lady fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";
-	otherwise say "[if full-lady fetish is 1]plastic [otherwise][one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
+	if mythical creature fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if super-gyno fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";
+	otherwise say "[if super-gyno fetish is 1]plastic [otherwise][one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To say SummoningFlav of (M - hellhound):
 	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with [his of M] teeth as the portal closes, and the mummy slowly returns to its feet.";
@@ -206,26 +206,29 @@ To compute fatherhood to (M - hellhound):
 To say SubduedGrabFlav of (M - hellhound) on (C - a clothing):
 	say "[BigNameDesc of M] grabs hold of your [ShortDesc of C] with [his of M] mouth! There's no getting away now...".
 
-To say GroundPeeReaction of (M - hellhound):
+To say GroundSlimeReaction of (M - hellhound):
 	if diaper quest is 1:
 		say "[speech style of M]'Raaaawr!'[roman type][line break][BigNameDesc of M] doesn't seem impressed!";
 		interest M;
 		anger M.
 
 To say ClothesPeeReaction of (M - hellhound):
-	say GroundPeeReaction of M.
+	say GroundSlimeReaction of M.
 
 To say ToiletPeeReaction of (M - hellhound):
-	say GroundPeeReaction of M.
+	say GroundSlimeReaction of M.
 
 To say ToiletReactionFlav of (M - hellhound):
-	say GroundPeeReaction of M.
+	say GroundSlimeReaction of M.
 
 To compute diaper mess reaction of (M - hellhound):
 	if diaper quest is 1:
 		say "You see [NameDesc of M][']s eyes glaze over with arousal.[line break][speech style of M]'Awoo...'[roman type][line break]It looks like [he of M] wants to play...";
 		anger M;
 		interest M.
+To compute continued diaper mess reaction of (M - hellhound):
+	say "[BigNameDesc of M] lustfully enjoys the sounds of your messy episode.";
+	say moderateHumiliateReflect.
 
 To say MonsterOfferAcceptFlav of (M - hellhound) to (T - a thing):
 	if M is unfriendly:
@@ -508,7 +511,7 @@ To say MessyPullOutFlav of (M - hellhound) in (F - asshole):
 
 [See climax announce above, we already displayed flavour for the creampie.]
 To say MessyPullOutFlav of (M - hellhound) in (F - vagina):
-	say "[BigNameDesc of M] pulls out, seeming to snicker as [he of M] walks around in front of you. [big his of M] red eyes fix you with a cruel stare as [he of M] lifts [his of M] leg and begins to pee in your face, as if marking you as [his of M] territory!".
+	say "[BigNameDesc of M] pulls out, seeming to snicker as [he of M] walks around in front of you. [big his of M] red eyes fix you with a cruel stare as [he of M] lifts [his of M] leg and begins to [slime] in your face, as if marking you as [his of M] territory!".
 
 To say PullOutFlav of (M - hellhound) in (F - vagina):
 	say "[BigNameDesc of M] pulls out, appearing to have immediately lost interest. Meanwhile, [semen] continues leaking from [his of M] [DickDesc of M], leaving a slimy trail along the floor.".
@@ -529,7 +532,7 @@ To compute (M - hellhound) pulling out of (F - vagina):
 To compute (M - hellhound) messily pulling out of (F - vagina):
 	say MessyPullOutFlav of M in F;
 	compute M finishing in F;
-	FacePiss from M.
+	FaceDrain from M.
 
 To compute (M - hellhound) cleanly pulling out of (F - vagina):
 	say PullOutFlav of M in F;
@@ -723,15 +726,15 @@ To compute punishment of (P - hellhound-facesit):
 			decrease the sex-length of M by 1;
 			cutshow figure of puppy cutscene 4 for M;
 		otherwise if the sex-length of M is 1:
-			say "[BigNameDesc of M] [if there is worn top level protection clothing]suddenly sits up, and with a particularly dominant growl begins to use [his of M] diaper[otherwise]speeds up [his of M] oral pleasuring as [he of M] also pushes [his of M] diapered butt hard onto your face and begins to go to the toilet[end if]. ";
+			say "[BigNameDesc of M] [if there is worn top level protection clothing]suddenly sits up, and with a particularly dominant growl begins to use [his of M] diaper[otherwise]speeds up [his of M] oral pleasuring as [he of M] also pushes [his of M] diapered butt hard onto your face and begins to go to the [SlimeTarget][end if]. ";
 			if diaper messing >= 7:
-				say "You can feel the pitter-patter of [his of M] [urine] and the squishiness of [his of M] bulk on your face through the material as [he of M] empties a full bladder and bowels into [his of M] nappy. ";
+				say "You can feel the pitter-patter of [his of M] [slime] and the squishiness of [his of M] bulk on your face through the material as [he of M] empties a full [SlimeContainer] and bowels into [his of M] nappy. ";
 				cutshow figure of puppy cutscene 6 for M;
 			otherwise:
-				say "You can feel the pitter-patter of [his of M] [urine] on your face through the material as [he of M] empties a full bladder into [his of M] nappy. ";
+				say "You can feel the pitter-patter of [his of M] [slime] on your face through the material as [he of M] empties a full [SlimeContainer] into [his of M] nappy. ";
 				cutshow figure of puppy cutscene 5 for M;
 			say "[big he of M] makes sure to give your [genitals] the time of its life as [he of M] does, making strong rhythmic motions with [his of M] tongue that you didn't even realise were possible!";
-			DiaperAddictUp 1;
+			SlowDiaperAddictUp 1;
 			unless there is worn top level protection clothing, ruin vagina times 3;
 			decrease the sex-length of M by 1;
 		otherwise:
@@ -742,6 +745,7 @@ To compute punishment of (P - hellhound-facesit):
 		now M is penetrating face;
 		now the sex-length of M is 5;
 		cutshow figure of puppy cutscene 4 for M;
+		compute police hat transformation;
 		unless there is worn top level protection clothing:
 			say "[big he of M] also moves [his of M] face down to your crotch and [if the player is possessing a penis]takes your [player-penis] into [his of M] mouth[otherwise]begins to explore your [vagina] with [his of M] tongue[end if]!";
 			ruin vagina.

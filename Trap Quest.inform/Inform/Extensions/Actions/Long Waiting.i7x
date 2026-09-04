@@ -15,7 +15,7 @@ Check LongWaiting:
 		try waiting instead;
 	otherwise if reconditioning chair is grabbing the player:
 		reconditioningchairwait instead;
-	if the player is immobile, say "You're a bit busy to use this verb!" instead;
+	if the player is immobile and the number of nursery crib grabbing the player is 0, say "You're a bit busy to use this verb!" instead;
 	if the player is in danger, say "You can't use this verb when there are monsters nearby!" instead;
 	if the player is in a predicament room, say "Sorry, you can't use this in the Extra Credit Zone." instead;
 	if the player is upright:
@@ -131,7 +131,7 @@ The long wait bladder rule is listed in the long wait rules.
 
 This is the long wait report bladder rule:
 	if (the player is bursting and old-bursting is 0) or (the player is not bursting and old-bursting is 1):
-		[say "[bold type]Waiting ended as you have become more desperate to pee.[roman type][line break]";]
+		[say "[bold type]Waiting ended as you have become more desperate to [slime].[roman type][line break]";]
 		rule succeeds.
 The long wait report bladder rule is listed in the long wait report rules.
 
@@ -204,7 +204,7 @@ longWaitTurns is a number that varies.
 
 This is the long wait turns rule:
 	if longWaitTurns <= 0, rule fails.
-The long wait fainting rule is listed in the long wait rules.
+The long wait turns rule is listed in the long wait rules.
 
 This is the long wait report turns rule:
 	if longWaitTurns is 0:

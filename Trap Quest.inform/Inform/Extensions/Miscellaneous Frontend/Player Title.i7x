@@ -25,7 +25,9 @@ To say TitleBimbo:
 		otherwise if the player is diapered:
 			say " diapered";
 			if the rectum-incontinence of the player > 2, say " accident-prone";
-			if the bladder-incontinence of the player > 2, say " bedwetting";
+			if the bladder-incontinence of the player > 2:
+				if slimeshooter fetish is 1, say " bedsliming";
+				otherwise say " bedwetting";
 		let B be 8;
 		if extreme proportions fetish is 1, now B is 13;
 		if the largeness of breasts > B:
@@ -168,8 +170,7 @@ To say TitleBimbo:
 					say " trap";
 				otherwise:
 					say " girl[if the player is presenting as male]yboy[end if]";
-		if the player is a piss slut and T is not "toilet":
-			say " urinal".
+		if the player is a slime slut and T is not the substituted form of "[SlimeTarget]" and legacy watersports fetish is 1, say " [SlimeTargetU]".
 
 To say TitleBaby:
 	let T be the class of the player;
@@ -185,7 +186,9 @@ To say TitleBaby:
 	otherwise if the player is diapered:
 		say " diapered";
 		if the rectum-incontinence of the player > 2, say " accident-prone";
-		if the bladder-incontinence of the player > 2, say " bedwetting";
+		if the bladder-incontinence of the player > 2:
+			if slimeshooter fetish is 1, say " bedsliming";
+			otherwise say " bedwetting";
 	if the number of worn cursed clothing > 4, say " unlucky";
 	if the player is a sissy, say " sissy";
 	if T is not "adventurer":

@@ -173,7 +173,7 @@ To compute class set up of (C - WC thigh high boots):
 	set up heel length of C.
 
 To set up influence of (C - WC thigh high boots):
-	if watersports fetish is 1, now C is urine-taste-addiction-influencing;
+	if watersports fetish is 1, now C is slime-taste-addiction-influencing;
 	otherwise now C is anal-sex-addiction-influencing.
 
 Definition: WC thigh high boots is white themed: decide yes.
@@ -181,7 +181,7 @@ Definition: WC thigh high boots is white themed: decide yes.
 Report kicking when WC thigh high boots is worn:
 	if WC thigh high boots is kicking:
 		if the powerup of WC thigh high boots < 20 and (a random number between 1 and powerup of WC thigh high boots) + (a random number between 1 and powerup of WC thigh high boots) <= 2:
-			say "[bold type]You feel the kicking enchantment leave your [ShortDesc of WC thigh high boots] and the stumbling enchantment return. It looks like it's decided you've been shirking your toilet duties![roman type][line break]";
+			say "[bold type]You feel the kicking enchantment leave your [ShortDesc of WC thigh high boots] and the stumbling enchantment return. It looks like it's decided you've been shirking your [SlimeTarget] duties![roman type][line break]";
 			now WC thigh high boots is stumbling;
 			now the powerup of WC thigh high boots is 0;
 		otherwise:

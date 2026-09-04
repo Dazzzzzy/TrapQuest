@@ -4,12 +4,18 @@ To compute cursed drinking (X - a bottle):
 	compute default cursed drinking X.
 
 To compute default cursed drinking (X - a bottle):
-	if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
-	otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping]";
+	let C be a random worn cumguzzling clothing;
+	if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1:
+		say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][slime][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
+	otherwise if C is clothing:
+		say "[bold type]Thanks to your [C], the taste and texture of the drink turns to [semen] as it touches your lips! [roman type][one of]Despite this, you can tell that it's a cursed drink[or]It's another cursed drink. Fuck![stopping]";
+		compute slightly addictive tasting of semen;
+	otherwise:
+		say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping]";
 	let R be a random number from 1 to (7 + alcohol fetish);
 	if the fill-type of X is lowest-cursed, now R is 9;
 	if debuginfo > 0:
-		if alcohol-level > 0:
+		if alcohol-level > 0 and C is nothing:
 			say "[input-style]Normal cursed drink roll: Overridden; player is getting drunk[roman type][line break]";
 			now R is 8;
 		otherwise if R is 9:
@@ -26,7 +32,7 @@ To compute default cursed drinking (X - a bottle):
 		if diaper lover > 0 and the player is not incontinent:
 			increase temporary-bladder-incontinence by 2;
 			if diaper messing >= 3, increase temporary-rectum-incontinence by 1;
-			say "You suddenly can't feel your insides... including whether or not you need to go to the toilet. The cursed drink has made you temporarily incontinent!";
+			say "You suddenly can't feel your insides... including whether or not you need to go to the [SlimeTarget]. The cursed drink has made you temporarily incontinent!";
 		otherwise:
 			HairUp 1;
 	if R is 3:
@@ -59,7 +65,7 @@ To compute default cursed drinking (X - a bottle):
 		DexDown 1;
 		IntDown 1;
 	if R is 8:
-		if alcohol fetish is 0:
+		if alcohol fetish is 0 or C is clothing:
 			now R is 9;
 		otherwise:
 			say "It tastes extremely alcoholic! It's like you just drank a double-shot of vodka. All your abilities are dimmed until you sober up.";
@@ -72,6 +78,7 @@ To compute default cursed drinking (X - a bottle):
 overfull-quotient is a number that varies. overfull-quotient is 8.
 
 To compute drinking (X - a bottle):
+	let C be a random worn cumguzzling clothing;
 	if X is cursed or (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed):
 		if X is blessed:
 			say "This tastes a bit bitter, but could be worse. Somehow the blessing of your vessel is counteracting the curse of the liquid!";
@@ -81,7 +88,7 @@ To compute drinking (X - a bottle):
 				say "You sense that the blessing of your [ShortDesc of X] has been nullified.";
 			now the curse-ID of X is sure;
 		otherwise if X is gold chalice and X is not cursed:
-			if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
+			if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][slime][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
 			otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping] ";
 			say "Luckily, the gold chalice seems to somehow absorb the curse!";
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
@@ -95,10 +102,14 @@ To compute drinking (X - a bottle):
 			compute cursed drinking X;
 		progress quest of curse-drinking-quest from the fill-type of X;
 	otherwise:
-		if the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient:
+		if C is nothing and the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient:
 			say "With your stomach so full, you to fail to properly appreciate the taste, and the effects are wasted.";
 			now the curse-ID of X is sure; [We know this potion is good so the vessel must be fine too!]
 		otherwise:
+			if C is clothing and the fill-type of X < lowest-cursed:
+				say "[bold type]Thanks to your [C], the taste and texture of the drink turns to [semen] as it touches your lips![roman type][line break]";
+				if the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient, compute addictive tasting of semen;
+				otherwise compute slightly addictive tasting of semen;
 			compute drinking effect the fill-type of X;
 			if the fill-type of X is 20: [semen]
 				repeat with T running through things inseminating X:
@@ -134,19 +145,19 @@ To compute drinking effect (N - a number):
 	do nothing.
 
 To compute drinking effect (N - 1):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a sweet sugary taste. You feel your self-respect returning as you drink it![otherwise]More self-respect restoring potion. Delicious![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of self-respect restoring potion. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a sweet sugary taste. You feel your self-respect returning as you drink it![otherwise]More self-respect restoring potion. Delicious![end if]";
 	dignify 800;
 	if the noun is blessed, dignify 700.
 
 thickDrinkTick is a number that varies.
 
 To compute drinking effect (N - 2):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. [otherwise]More thick sanity potion. Excellent! [end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of sanity potion. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. [otherwise]More thick sanity potion. Excellent! [end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
 	if the noun is blessed or the player is getting lucky:
 		SemenAddictDown 1;
 		SemenTasteAddictDown 1;
-		UrineTasteAddictDown 1;
+		SlimeTasteAddictDown 1;
 		MilkTasteAddictDown 1;
 		if the noun is not blessed, say GotLuckyFlav;
 	if thickDrinkTick is 0:
@@ -163,18 +174,18 @@ To compute drinking effect (N - 2):
 		VaginalSexAddictDown 1.
 
 To compute drinking effect (N - 3):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, you can definitely taste a hint of caffeine. You feel clear-headed![otherwise if the raw intelligence of the player >= the starting intelligence of the player and the noun is not blessed]It doesn't seem to have any effect.[otherwise]More energy drink. Your eyes widen![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]Mmm, you can definitely sense the caffeine. You feel clear-headed![otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, you can definitely taste a hint of caffeine. You feel clear-headed![otherwise if the raw intelligence of the player >= the starting intelligence of the player and the noun is not blessed]It doesn't seem to have any effect.[otherwise]More energy drink. Your eyes widen![end if]";
 	if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20, IntUp 1; [Intelligence is difficult to increase once sex addiction hits max]
 	if the noun is blessed, IntUp 1.
 
 To compute drinking effect (N - 4):
-	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely! [end if]";
-	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
+	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of stabilising drink. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely! [end if]";
+	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of weight loss drink. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
 	if diaper quest is 1:
 		if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and the raw-bladder-incontinence of the player > a random number between 0 and 4:
 			BladderIncontinenceDown 1;
 		otherwise:
-			say "You feel some pressure lifted from your [if diaper lover >= 3]bowels and [end if]bladder.";
+			say "You feel some pressure lifted from your [if diaper messing >= 3]bowels and [end if][SlimeContainer].";
 			decrease the bladder of the player by 2;
 			if the bladder of the player < 0, now the bladder of the player is 0;
 			if rectum > 1:
@@ -199,7 +210,7 @@ To compute drinking effect (N - 4):
 	if the noun is blessed:
 		if diaper quest is 1:
 			if the raw-bladder-incontinence of the player > 0 or the raw-rectum-incontinence of the player > 0:
-				say "You feel the blessed potion of control improving your ability to hold onto your [if the raw-rectum-incontinence of the player > 0]bowels and [end if]bladder!";
+				say "You feel the blessed potion of control improving your ability to hold onto your [if the raw-rectum-incontinence of the player > 0]bowels and [end if][SlimeContainer]!";
 				RectumIncontinenceDown 3;
 				BladderIncontinenceDown 3;
 		otherwise:
@@ -207,7 +218,7 @@ To compute drinking effect (N - 4):
 			otherwise BustDown 1.
 
 To compute drinking effect (N - 5):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of virility![otherwise if the player is somehow possessing a penis]Another heavy drink. You feel the magic going straight to your [player-penis]![otherwise]Another heavy drink. You feel a bit less [']girly[']![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of virility drink. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of virility![otherwise if the player is somehow possessing a penis]Another heavy drink. You feel the magic going straight to your [player-penis]![otherwise]Another heavy drink. You feel a bit less [']girly[']![end if]";
 	if the player is somehow possessing a penis:
 		SpecialPenisUp 1;
 	if the player is possessing a vagina:
@@ -217,15 +228,19 @@ To compute drinking effect (N - 5):
 		VaginalSexAddictDown 1.
 
 To compute drinking effect (N - 6):
-	if the Known corresponding to an Magic of N in the Table of Drinks is 0, say "Mmm, tastes like medicine! ";
-	otherwise say "More soothing medicine! ";
+	if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing:
+		say "It's medicine! ";
+	otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0:
+		say "Mmm, tastes like medicine! ";
+	otherwise:
+		say "More soothing medicine! ";
 	say "You feel [if the soreness of asshole > 0 or the soreness of vagina > 0]less sore[end if][if (the soreness of asshole > 0 or the soreness of vagina > 0) and the arousal of the player >= 3000] and [end if][if the arousal of the player >= 3000]a bit less aroused[end if][if the soreness of asshole <= 0 and the soreness of vagina <= 0 and the arousal of the player < 3000]vaguely more clear-headed[end if].";
 	heal asshole times 3;
 	heal vagina times 3;
 	force cool down 2000.
 
 To compute drinking effect (N - 7):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth! [otherwise]Another magic bubbly drink![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0 and there is worn cumguzzling clothing]It's some sort of magic drink. [otherwise if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth! [otherwise]Another magic bubbly drink![end if]";
 	let C be a random positive-magic-enhanceable in-play clothing;
 	if C is in the location of the player or C is held:
 		say "You see the [C] glow blue for a moment as it turns into a ";
@@ -248,11 +263,11 @@ To compute drinking effect (N - 20):
 
 To compute drinking effect (N - 21):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
-		if the urine taste addiction of the player < 10, say "A very bitter taste. Yuck, yuck, yuck, it's [urine]![one of] You feel completely humiliated[if the humiliation of the player > 22500], which of course just turns you on even more[end if].[or].[or].[in random order]";
-		otherwise say "A very bitter taste. Ooh yum, it's [urine]!";
+		if the slime taste addiction of the player < 10, say "A very bitter taste. Yuck, yuck, yuck, it's [slime]![one of] You feel completely humiliated[if the humiliation of the player > 22500], which of course just turns you on even more[end if].[or].[or].[in random order]";
+		otherwise say "A very bitter taste. Ooh yum, it's [slime]!";
 	otherwise:
-		say "You close your eyes and slurp up the [if the urine taste addiction of the player > 11]tasty [end if][urine]. [if the urine taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the urine taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
-	FaceFill urine by 1;
+		say "You close your eyes and slurp up the [if the slime taste addiction of the player > 11]tasty [end if][slime]. [if the slime taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the slime taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
+	FaceFill slime by 1;
 	suggest swallowing.
 
 To compute drinking effect (N - 22):

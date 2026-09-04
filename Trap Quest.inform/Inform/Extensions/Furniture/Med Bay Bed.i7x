@@ -80,14 +80,14 @@ To compute furniture resting on (F - med bay bed):
 		otherwise if the boost-cooldown of nurse <= 0:
 			say "[big he of nurse] opens a locked cabinet [one of]revealing an array of different coloured syringes[or]and peruses [his of nurse] different coloured syringes[stopping].[line break][speech style of nurse]'What to give you [one of]today[or]this time[stopping]...'[roman type][line break]";
 			let R be a random number between 1 and 3;
-			say "The [nurse] takes a syringe filled with a [if R is 1]green[otherwise if R is 2 and watersports mechanics is 1]golden[otherwise]pink[end if] liquid from the cabinet before closing and locking it. You can't do anything but watch as [he of nurse] approaches you and jabs it into your [if R is 2 or there is a worn rigid arm covering clothing]neck[otherwise]arm[end if]. You feel stronger and faster! ";
+			say "The [nurse] takes a syringe filled with a [if R is 1]green[otherwise if R is 2 and watersports mechanics is 1][SlimeShade][otherwise]pink[end if] liquid from the cabinet before closing and locking it. You can't do anything but watch as [he of nurse] approaches you and jabs it into your [if R is 2 or there is a worn rigid arm covering clothing]neck[otherwise]arm[end if]. You feel stronger and faster! ";
 			now the boost-cooldown of nurse is 300;
 			if R is 1:
 				say "But at the same time your mind clouds over and you struggle to think straight. Uh-oh, looks like you'll have to rely on your brute strength for a while, and not your wits...";
 				now the boost-int-drain of nurse is 1;
 			otherwise if R is 2 and watersports mechanics is 1 and a random number between 0 and 2 > the lips of face - artificial enhancements fetish:
 				if the bladder of the player < 10, now the bladder of the player is 10;
-				say "[if the player is bursting]At the same time, you feel your bladder swelling and swelling to the point of bursting![otherwise][line break][end if]";
+				say "[if the player is bursting]At the same time, you feel your [SlimeContainer] swelling and swelling to the point of bursting![otherwise][line break][end if]";
 			otherwise if R is 2 and the lips of face - artificial enhancements fetish < 2:
 				say "At the same time, you feel your lips swelling up! Something tells you that this part of the [']boost['] is permanent...";
 				LipsUp 1;

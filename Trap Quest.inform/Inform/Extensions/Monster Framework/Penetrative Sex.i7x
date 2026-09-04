@@ -852,7 +852,7 @@ To say sexRoughSplitFlav of (M - a monster) in (O - an orifice):
 			otherwise:
 				say "[if there is a worn chastity cage]Your cage jiggles uselessly[otherwise if the size of penis > 3]Your [ShortDesc of penis] slaps audibly against your [belly][otherwise]Your desperately hard [sissy-penis] drools precum[end if] as [FuckerDesc of M] plows your [asshole] without mercy.";
 		otherwise:
-			say "[one of]You can feel [FuckerDesc of M]'s [DickDesc of M] slamming into your prostate as [he of M] fucks your [asshole] with fast, powerful thrusts.[or][if the humiliation of the player < 22500 and lady fetish is 0][BigFuckerDesc of M] fucks your [asshole] hard and fast. There's something so humiliating about getting fucked by a [DickDesc of M][otherwise][BigFuckerDesc of M] fucks you like the girl you really are[end if]![at random]";
+			say "[one of]You can feel [FuckerDesc of M]'s [DickDesc of M] slamming into your prostate as [he of M] fucks your [asshole] with fast, powerful thrusts.[or][if the humiliation of the player < 22500 and gender-preference is 0][BigFuckerDesc of M] fucks your [asshole] hard and fast. There's something so humiliating about getting fucked by a [DickDesc of M][otherwise][BigFuckerDesc of M] fucks you like the girl you really are[end if]![at random]";
 	otherwise:
 		if relevant sex addiction of M > 7:
 			say "You [if the bimbo of the player > 12]take pride in[otherwise]try not to be ashamed of[end if] the wetness between your legs as [FuckerDesc of M] slams in and out of your [variable O].";

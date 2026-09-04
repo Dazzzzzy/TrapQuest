@@ -70,8 +70,16 @@ Definition: yourself is mega-wallowing:
 	if the player is in Iron Maiden, decide yes;
 	decide no.
 
-[Hunger and thirst and wallowing happens every turn]
+[Mess chance and wallowing happens every turn]
 Definition: yourself is mega-soiling:
+	if diaper quest is 0, decide no;
+	if the player is mega-hungering, decide yes;
+	if there is a treasure chest grabbing the player, decide yes; [berri scene 21]
+	if the player is rectum incontinent and rectum >= 2 and suppository > 0 and the player is able to mess, decide yes; [incontinent with laxative effect = instant bowel movement]
+	decide no.
+
+[Hunger and thirst and mess chance and wallowing happens every turn]
+Definition: yourself is mega-hungering:
 	if diaper quest is 0, decide no;
 	if the player is in DiaperPresentBoxBlindfolded, decide yes;
 	decide no.
@@ -99,9 +107,9 @@ An all time based rule (this is the compute stomach rule):
 						if L is semen and the raw semen taste addiction of the player > 11:
 							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [semen]. [roman type]Keep it up and your body's addiction will continue to lower.";
 							SemenTasteAddictDown 1;
-						otherwise if L is urine and the raw urine taste addiction of the player > 11:
-							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [urine]. [roman type]Keep it up and your body's addiction will continue to lower.";
-							UrineTasteAddictDown 1;
+						otherwise if L is slime and the raw slime taste addiction of the player > 11:
+							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [slime]. [roman type]Keep it up and your body's addiction will continue to lower.";
+							SlimeTasteAddictDown 1;
 						otherwise if L is milk and the raw milk taste addiction of the player > 11:
 							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
 							MilkTasteAddictDown 1;
@@ -110,7 +118,10 @@ An all time based rule (this is the compute stomach rule):
 		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
 		if the latex-transformation of the player < 5:
 			if the player is mega-wallowing or the remainder after dividing time-earnings by wallow-period < time-seconds, compute wallowing;
-			if the player is mega-soiling or the remainder after dividing time-earnings by stomach-period < time-seconds, compute hunger and thirst;
+			if the player is mega-hungering or the remainder after dividing time-earnings by stomach-period < time-seconds:
+				compute hunger and thirst;
+			otherwise if the player is mega-soiling and diaper messing >= 3 and rectum > 0:
+				compute soiling;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
 
 To compute hunger and thirst:
@@ -211,22 +222,22 @@ Definition: yourself is diapered:
 	if there is a worn diaper, decide yes;
 	decide no.
 
-Definition: yourself is urine averse:
+Definition: yourself is slime averse:
 	if the player is an adult baby or the player is broken, decide no;
 	if watersports fetish is 1:
-		if the urine taste addiction of the player < 4, decide yes;
+		if the slime taste addiction of the player < 4, decide yes;
 	otherwise if diaper lover >= 1 and the diaper addiction of the player < 10:
 		decide yes;
 	decide no.
 
-Definition: a clothing (called C) is urine soaked:
-	if the urine-soak of C > 0 and the total-soak of C >= the soak-limit of C, decide yes;
+Definition: a clothing (called C) is slime soaked:
+	if the slime-soak of C > 0 and the total-soak of C >= the soak-limit of C, decide yes;
 	decide no.
 
-Definition: yourself is upset about urine:
-	if the player is urine averse:
-		repeat with C running through worn urine soaked clothing:
-			if the known-urine-soak of C > 0, decide yes;
+Definition: yourself is upset about slime:
+	if the player is slime averse:
+		repeat with C running through worn slime soaked clothing:
+			if the known-slime-soak of C > 0, decide yes;
 	decide no.
 
 Definition: yourself is diaper kicking:

@@ -135,14 +135,14 @@ This is the semen taste addiction imprinting rule:
 		if the raw semen taste addiction of the player < 1, now the raw semen taste addiction of the player is 1.
 The semen taste addiction imprinting rule is listed in the imprinting rules.
 
-This is the urine taste addiction imprinting rule:
-	if the urine-taste-addiction-influence of imprint-target is not 0:
-		say "[ImprintStartFlav]urine addiction [if the urine-taste-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
-		if the urine-taste-addiction-influence of imprint-target > 0, increase the raw urine taste addiction of the player by 1;
-		otherwise decrease the raw urine taste addiction of the player by 1;
-		if the raw urine taste addiction of the player > 20, now the raw urine taste addiction of the player is 20;
-		if the raw urine taste addiction of the player < 1, now the raw urine taste addiction of the player is 1.
-The urine taste addiction imprinting rule is listed in the imprinting rules.
+This is the slime taste addiction imprinting rule:
+	if the slime-taste-addiction-influence of imprint-target is not 0:
+		say "[ImprintStartFlav]slime addiction [if the slime-taste-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
+		if the slime-taste-addiction-influence of imprint-target > 0, increase the raw slime taste addiction of the player by 1;
+		otherwise decrease the raw slime taste addiction of the player by 1;
+		if the raw slime taste addiction of the player > 20, now the raw slime taste addiction of the player is 20;
+		if the raw slime taste addiction of the player < 1, now the raw slime taste addiction of the player is 1.
+The slime taste addiction imprinting rule is listed in the imprinting rules.
 
 This is the milk taste addiction imprinting rule:
 	if the milk-taste-addiction-influence of imprint-target is not 0:
@@ -161,6 +161,15 @@ This is the delicateness imprinting rule:
 		if the raw delicateness of the player > 20, now the raw delicateness of the player is 20;
 		if the raw delicateness of the player < 1, now the raw delicateness of the player is 1.
 The delicateness imprinting rule is listed in the imprinting rules.
+
+This is the grossness addiction imprinting rule:
+	if grossness fetish > 0 and the grossness-addiction-influence of imprint-target is not 0:
+		say "[ImprintStartFlav][if diaper messing >= 3]gross smells[otherwise if diaper lover > 0]gross sensations[otherwise if a2m fetish > 0]ass and foot licking[otherwise]foot licking[end if] [if the grossness addiction of the player >= 14]addiction[otherwise if the grossness addiction of the player >= 7]fetish[otherwise]tolerance[end if] [if the grossness-addiction-influence of imprint-target > 0]increasing[otherwise]decreasing[end if] effect [run paragraph on]";
+		if the grossness-addiction-influence of imprint-target > 0, increase the raw grossness addiction of the player by 1;
+		otherwise decrease the raw grossness addiction of the player by 1;
+		if the raw grossness addiction of the player > 20, now the raw grossness addiction of the player is 20;
+		if the raw grossness addiction of the player < 1, now the raw grossness addiction of the player is 1.
+The grossness addiction imprinting rule is listed in the imprinting rules.
 
 This is the heel skill imprinting rule:
 	if the heel-skill-influence of imprint-target is not 0:
@@ -194,7 +203,7 @@ This is the dignity imprinting rule:
 The dignity imprinting rule is listed in the imprinting rules.
 
 This is the diaper addiction imprinting rule:
-	if the diaper-addiction-influence of imprint-target is not 0:
+	if diaper lover > 0 and the diaper-addiction-influence of imprint-target is not 0:
 		say "[ImprintStartFlav]diaper addiction [if the diaper-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
 		if the diaper-addiction-influence of imprint-target > 0, increase the raw diaper addiction of the player by 1;
 		otherwise decrease the raw diaper addiction of the player by 1;
@@ -203,11 +212,11 @@ This is the diaper addiction imprinting rule:
 The diaper addiction imprinting rule is listed in the imprinting rules.
 
 This is the incontinence imprinting rule:
-	if the bladder-incontinence-influence of imprint-target is not 0:
-		say "[ImprintStartFlav]bladder [if the bladder-incontinence-influence of imprint-target < 0]strengthening[otherwise]weakening[end if] effect [run paragraph on]";
+	if diaper lover > 0 and the bladder-incontinence-influence of imprint-target is not 0:
+		say "[ImprintStartFlav][SlimeContainer] control [if the bladder-incontinence-influence of imprint-target < 0]strengthening[otherwise]weakening[end if] effect [run paragraph on]";
 		if the bladder-incontinence-influence of imprint-target > 0, SilentlyBladderIncontinenceUp 1;
 		otherwise SilentlyBladderIncontinenceDown 1;
-	if the rectum-incontinence-influence of imprint-target is not 0:
+	if diaper messing >= 3 and the rectum-incontinence-influence of imprint-target is not 0:
 		say "[ImprintStartFlav]rectal [if the rectum-incontinence-influence of imprint-target < 0]continence improving[otherwise]incontinence[end if] effect [run paragraph on]";
 		if the rectum-incontinence-influence of imprint-target > 0, SilentlyRectumIncontinenceUp 1;
 		otherwise SilentlyRectumIncontinenceDown 1.

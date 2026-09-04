@@ -5,8 +5,8 @@ Definition: yourself is originally female rather than originally male:
 	decide no.
 
 Definition: a person is presenting as male:
-	if lady fetish is 2, decide yes;
-	if it is male and lady fetish is 0, decide yes;
+	if andro fetish is 1, decide yes;
+	if it is male and gyno fetish is 0, decide yes;
 	decide no.
 
 Definition: yourself is presenting as male:

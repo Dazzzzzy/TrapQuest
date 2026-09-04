@@ -157,7 +157,8 @@ Check touching MansionScenery02:
 					destroy W;
 				say GotLuckyFlav;
 			otherwise:
-				let W be a random stalking wisp;
+				let W be a random stalking evil-wisp;
+				if W is nothing, now W is a random stalking wisp;
 				destroy W;
 		otherwise:
 			say "Nothing seems to happen, other than the strength of the magic fizzling away.";

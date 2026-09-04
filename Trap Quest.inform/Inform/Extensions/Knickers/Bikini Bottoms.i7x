@@ -10,7 +10,9 @@ To decide which number is the assModesty of (C - a bikini bottoms):
 	if C is crotch-exposing, decide on 1;
 	decide on 4.
 
-Definition: a bikini bottoms is displacable: decide yes.
+Definition: a bikini bottoms is displacable:
+	if it is messed, decide no;
+	decide yes.
 Definition: a bikini bottoms is swimming themed: decide yes.
 Definition: a bikini bottoms is same-type:
 	if theme-share-target is knickers and (theme-share-target is not undies or theme-share-target is swimming themed), decide yes;

@@ -121,7 +121,7 @@ To compute cursed drinking (X - baby's bottle):
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
 	otherwise if diaper lover >= 1 and the raw-bladder-incontinence of the player < 5 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
-		say "you feel a weird twang internally, just behind your [if the player is herm][ShortDesc of penis] and [vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]crotch[end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
+		say "you feel a weird twang internally, just behind your [if the player is herm][ShortDesc of penis] and [vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]crotch[end if], where your [SlimeContainer] should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
 		SilentlyBladderIncontinenceUp 1;
 	otherwise:
 		say "a fuzzy feeling enters your head, and it's harder to concentrate.";
@@ -275,6 +275,25 @@ To compute drunken adventure:
 					now the semen volume of vagina is 5;
 					now the womb volume of vagina is 3;
 				if the semen volume of belly < 8, now the semen volume of belly is 8;
+			let M be a random unseen-stranger;
+			if the vaginalvirgin of the player is 1 and the player is possessing a vagina:
+				now M is penetrating vagina;
+				compute virginity loss;
+				dislodge M;
+			if the analvirgin of the player is 1:
+				now the analvirgin of the player is 0;
+				now analvirginity-taker is M;
+				say "[bold type]You realise you've probably lost your anal virginity![roman type][line break]";
+				set up anal virginity loss consequences;
+				compute anal virginity loss consequences;
+			check oral virginity loss with M;
+			if condoms-used is 0:
+				now M is inseminating asshole;
+				if the player is able to get pregnant:
+					now M is inseminating vagina;
+					now the pregnancy of the player is 1;
+					say "A little kick from your belly lets you know that you're no longer eating for one.[line break][variable custom style][if the player is not a pervert]Oh no way you've got to be kidding me! Who in hell is the father?![otherwise]And I guess I shouldn't drink while knocked up...[end if][roman type][line break]";
+					check sudden pregnancy;
 		otherwise:
 			let K be a random worn knickers;
 			if K is knickers:
@@ -283,27 +302,8 @@ To compute drunken adventure:
 				now K is the chosen trap diaper;
 				summon K;
 				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
-			UrineSoakUp K by the soak-limit of K - the total-soak of K;
+			SlimeSoakUp K by the soak-limit of K - the total-soak of K;
 			if K is diaper, process state perception of K;
-		let M be a random unseen-stranger;
-		if the vaginalvirgin of the player is 1 and the player is possessing a vagina:
-			now M is penetrating vagina;
-			compute virginity loss;
-			dislodge M;
-		if the analvirgin of the player is 1:
-			now the analvirgin of the player is 0;
-			now analvirginity-taker is M;
-			say "[bold type]You realise you've probably lost your anal virginity![roman type][line break]";
-			set up anal virginity loss consequences;
-			compute anal virginity loss consequences;
-		check oral virginity loss with M;
-		if condoms-used is 0:
-			now M is inseminating asshole;
-			if the player is able to get pregnant:
-				now M is inseminating vagina;
-				now the pregnancy of the player is 1;
-				say "A little kick from your belly lets you know that you're no longer eating for one.[line break][variable custom style][if the player is not a pervert]Oh no way you've got to be kidding me! Who in hell is the father?![otherwise]And I guess I shouldn't drink while knocked up...[end if][roman type][line break]";
-				check sudden pregnancy;
 		if there is a worn tattoo:
 			repeat with T running through worn tally tattoos:
 				increase the tallies of T by a random number between 4 and 7;
@@ -341,11 +341,11 @@ A time based rule:
 		if diaper quest is 1, now the fill-colour of gold chalice is white;
 		otherwise now the fill-colour of gold chalice is golden;
 		DoseFill gold chalice;
-		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][urine][end if]![roman type][line break]";
+		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][slime][end if]![roman type][line break]";
 		focus-consider gold chalice;
 		repeat with W running through nonstalking evil-wisps:
 			if diaper quest is 1, silently set up wisp quest drink-milk-wisp-quest for W;
-			otherwise silently set up wisp quest drink-urine-wisp-quest for W;
+			otherwise silently set up wisp quest drink-slime-wisp-quest for W;
 			silently set up wisp trigger for W;
 			silently set up wisp GUI for W;
 			say AnnounceNewWisp W;

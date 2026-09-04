@@ -191,7 +191,7 @@ This is the gag already worn rule:
 The gag already worn rule is listed in the gag wearability rules.
 
 This is the mouth already full rule:
-	if face is actually occupied:
+	if face is actually occupied or there is a reactive feeding the player monster:
 		if summoning is 0 and autowear is false, say "Your mouth is [if wearing-target is ringagged]currently[otherwise]already[end if] occupied.";
 		rule fails.
 The mouth already full rule is listed in the gag wearability rules.

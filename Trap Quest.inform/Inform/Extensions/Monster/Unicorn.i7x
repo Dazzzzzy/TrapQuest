@@ -9,7 +9,7 @@ To decide which number is the base semen load of (M - unicorn):
 	decide on 4.
 
 To say LongDickDesc of (M - unicorn):
-	if full-lady fetish is 1, say "short strap-on";
+	if super-gyno fetish is 1, say "short strap-on";
 	otherwise say "short [manly-penis]".
 
 Definition: unicorn is willing to urinate:
@@ -158,7 +158,7 @@ To say SatisfiedFlav of (M - unicorn):
 	say "[BigNameDesc of M] looks really satisfied and loses interest.".
 
 Definition: unicorn is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 To say ChestDesc of (M - unicorn):
@@ -256,11 +256,12 @@ To compute the default taunting of (M - unicorn):[TODO]
 		say "[BigNameDesc of M] watches you, unable to conceal how turned on [he of M] is.";
 		increase the blue-balls of M by 1.
 
-To say PissDrinkThreat of (M - unicorn):
-	say "[speech style of M]'[one of]Drink it! Drink it all[or]I-I'm gonna make you a toilet[or]I-I want to see you drink it[in random order]!'[roman type][line break]Something about the heat radiating off [his of M] [DickDesc of M] seems to promise a punishment if you don't let some in your mouth.".
+To say SlimeDrinkThreat of (M - unicorn):
+	say "[speech style of M]'[one of]Drink it! Drink it all[or]I-I'm gonna make you a [SlimeTarget][or]I-I want to see you drink it[in random order]!'[roman type][line break]Something about the heat radiating off [his of M] [DickDesc of M] seems to promise a punishment if you don't let some in your mouth.".
 
-To say UrinationFlav of (M - a unicorn):
-	say "[BigNameDesc of M] holds [his of M] [LongDickDesc of M] inches away from your face, [one of]sighing in relief[or]furrowing [his of M] brows[or]shivering with relief[at random] as a stream of [urine] flows from the tip.[if the humiliation of the player < HUMILIATION-MODEST + 1500 and the urine taste addiction of the player < 7][line break][variable custom style][line break]This can't be happening[one of].[or] again![stopping][roman type][line break][end if]".
+To say DrainFlav of (M - a unicorn):
+	if slimeshooter fetish is 1, say "[BigNameDesc of M] holds [his of M] pink slimeshooter inches away from your face, smirking triumphantly as a stream of [slime] sprays out![if the humiliation of the player < HUMILIATION-MODEST + 1500 and the slime taste addiction of the player < 7][line break][variable custom style][line break]This can't be happening[one of].[or] again![stopping][roman type][line break][end if]";
+	otherwise say "[BigNameDesc of M] holds [his of M] [LongDickDesc of M] inches away from your face, [one of]sighing in relief[or]furrowing [his of M] brows[or]shivering with relief[at random] as a stream of [slime] flows from the tip.[if the humiliation of the player < HUMILIATION-MODEST + 1500 and the slime taste addiction of the player < 7][line break][variable custom style][line break]This can't be happening[one of].[or] again![stopping][roman type][line break][end if]".
 
 To say PresentAcceptanceFlav of (M - unicorn):
 	say "[speech style of M]'[one of]Hmph. I-I suppose I could take you up on that.'[or]Did you expect me to say no? B-because I won't!'[or]W-well, when you put it like that I suppose I could make an exception...'[stopping][roman type][line break][BigNameDesc of M] seems convinced by your request!".
@@ -547,8 +548,8 @@ To penetration dominate (M - unicorn):
 	let C be a random bottom level protection clothing;
 	say "[BigNameDesc of M] squirms as you [if the player is wrist bound]tackle[otherwise]grab [him of M] by the wrists and wrestle[end if] [him of M] to the ground. The horn on [his of M] forehead somehow catches your eye, and you realise you're slipping into some sort of trance. However, [his of M] wriggling jars you out of your daze, and you avoid any further distractions by immediately tearing off [his of M] panties and forcing [his of M] knees up over [his of M] head.[line break][speech style of M]'[one of]H-How dare you hold me in such a position. Release me. R-right now. I swear I'll...'[or]W-what are you planning on doing to me? This is...'[or]W-what are you doing? Don't you know I'm betrothed? Release...'[at random][roman type][line break][big he of M] trails off as you [if C is not strapon-panties and C is clothing]pull your [SexDesc of penis] out of your pants[otherwise if sexual-penis-length > 3]grind your [SexDesc of penis] between [his of M] cheeks[otherwise]line up your [SexDesc of penis] with [his of M] entrance[end if]";
 	if sexual-penis-length > 8:
-		if the times-seeded of M < 1, say "[line break][speech style of M]'Wait. Even if you are...v-very hung, I am already betrothed. [big please], I'll even strengthen some of your items if you spare me!'[roman type][line break][big he of M] says that, but [his of M] [DickDesc of M] looks pretty hard already. Do you really want to spare [him of M] instead?";
-		otherwise say "[line break][speech style of M]'W-wait! S-surely you wouldn't fuck a bride...never mind. A strong, hung person like you will obviously claim me without remorse. B-but if you don't claim me, I'll strengthen some of your items in return.'[roman type][line break][big he of M] says that, but [his of M] [DickDesc of M] looks pretty hard already. Do you really want to spare [him of M] instead?";
+		if the times-seeded of M < 1, say "[line break][speech style of M]'Wait. Even if you are...v-very hung, I am already betrothed. [big please], I'll even strengthen some of your items if you spare me!'[roman type][line break]Considering how hard [his of M] [DickDesc of M] is, and [he of M] said all that instead of using [his of M] safeword... Do you actually want to spare [him of M] instead?";
+		otherwise say "[line break][speech style of M]'W-wait! S-surely you wouldn't fuck a bride...never mind. A strong, hung person like you will obviously claim me without remorse. B-but if you don't claim me, I'll strengthen some of your items in return.'[roman type][line break][big he of M] says that, but considering how hard [his of M] [DickDesc of M] is, you get the feeling that [he of M]'d use [his of M] safeword if [he of M] actually wanted you to stop. Do you really want to spare [him of M] instead?";
 		if the player is consenting:
 			Calm M;
 			say "You release [him of M], watching expectantly as [his of M] horn lights up and shoots off several glittering motes of light.";
@@ -569,7 +570,7 @@ To penetration dominate (M - unicorn):
 			say AfterDominationComment 2 of M;
 	otherwise if sexual-penis-length > 3:
 		if the times-seeded of M < 1, say "[line break][speech style of M]'W-wait. My arse is the property of the demon lord. I c-cannot disrespect [him of demon lord] by allowing you to claim me. [big please]...I'll even strengthen some of your items!'[roman type][line break][big he of M] says that, but anticipation is clearly written all over [his of M] face. Do you really want to spare [him of M] instead?";
-		otherwise say "[line break][speech style of M]'W-wait! If you claim my arse again...s-surely it could incur the wrath of the demon lord. I promise I'll strengthen some of your items if you reconsider!'[roman type][line break][big he of M] says that, but anticipation is clearly written all over [his of M] face. Do you really want to spare [him of M] instead?";
+		otherwise say "[line break][speech style of M]'W-wait! If you claim my arse again...s-surely it could incur the wrath of the demon lord. I promise I'll strengthen some of your items if you reconsider!'[roman type][line break][big he of M] says that, but if [he of M] really wanted you to stop, [he of M]'d use [his of M] safeword. Do you really want to spare [him of M] instead?";
 		if the player is consenting:
 			Calm M;
 			let X be 2 + (1 + the times-seeded of M / 2);
@@ -587,7 +588,7 @@ To penetration dominate (M - unicorn):
 			increase the times-seeded of M by 1;
 			say AfterDominationComment 2 of M;
 	otherwise:
-		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is gendered male and lady fetish is not 1]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
+		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is gendered male and gyno fetish is 0]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]That wasn't [his of M] safeword, so.... should you really spare [him of M]?";
 		unless the player is consenting:
 			Calm M;
 			let H be a random held clothing;
@@ -596,11 +597,11 @@ To penetration dominate (M - unicorn):
 			now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 1 of M;
 		otherwise:
-			say "[big he of M] snorts.[line break][speech style of M]'Fine, don't you dare look at me, scum.'[roman type][line break][big he of M] makes a scary face, prompting you to immediately look away. You have a little bit of trouble penetrating [him of M] without being able to look at what you're doing, but after embarrassing yourself for around 30 seconds, you finally manage to slip your [sexual-player-penis] into [his of M] [asshole]. Even without looking at [him of M], you can still feel hatred flowing off [him of M] in waves, and you hump [him of M] eagerly in hopes of getting it over with quickly. You end up going too fast and finish before you get the chance to really enjoy yourself.";
+			say "[big he of M] snorts.[line break][speech style of M]'Fine, but don't you dare look at me, scum.'[roman type][line break][big he of M] makes a scary face, prompting you to immediately look away. You have a little bit of trouble penetrating [him of M] without being able to look at what you're doing, but after embarrassing yourself for around 30 seconds, you finally manage to slip your [sexual-player-penis] into [his of M] [asshole]. Even without looking at [him of M], you can still feel hatred flowing off [him of M] in waves, and you hump [him of M] eagerly in hopes of getting it over with quickly. You end up going too fast and finish before you get the chance to really enjoy yourself.";
 			now player-fucking is DOMINANT-SHAMEFUL;
 			orgasm;
 			say AfterDominationComment 3 of M;
-	if full-lady fetish is 1, FuckGet;
+	if super-gyno fetish is 1, FuckGet;
 	otherwise AnalGet.
 
 To say AfterDominationComment (N - a number) of (M - unicorn):
@@ -739,7 +740,7 @@ To say EscapeAnswer of (M - unicorn):
 	say "[speech style of M]'[one of]There's a mansion somewhere nearby. But... last time I went there, I met a very forward undead. I wouldn't recommend it[or]There's a hotel nearby, but stay away from the owner. [big he of demon lord]'s spoken for[at random].'[roman type][line break]".
 
 To say AdviceAnswer of (M - unicorn):
-	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is cunning in addition to being [if lady fetish is 1]very beautiful[otherwise]handsome[end if]. You would be a fool for trying to outsmart [him of mechanic].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to make full use of their magic.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is cunning in addition to being [if gyno fetish is 1]very beautiful[otherwise]handsome[end if]. You would be a fool for trying to outsmart [him of mechanic].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to make full use of their magic.'[at random][roman type][line break]".
 
 To say EnticeFlav of (M - unicorn) with (B - face):
 	say "[BigNameDesc of M] glares at your mouth.[line break][speech style of M]'[one of]H-how can you hold your face like that. I-I'll punish you for that! M-mark my words!'[or]Why are you p-pursing your lips like that? Do you think you'll intimidate me! You c-can't intimidate me! I swear I'll fuck your face!'[in random order][roman type][line break]".
@@ -748,7 +749,7 @@ To say EnticeFlav of (M - unicorn) with (B - breasts):
 	say "[BigNameDesc of M] glares at your chest.[line break][speech style of M]'[one of]S-stupid sexy tits. FUCK! Ugh, I'll show you!'[or]Y-you think you can just show off your tits like that. J-jiggling around like s-some SLUT?! Rrr, I'll GET you!'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - unicorn) with (B - belly):
-	say "[BigNameDesc of M] scowls at you.[line break][speech style of M]'[one of]How dare you look at me like that! I'm gonna pee on your s-stupid sexy face!'[or]You... y-you think you're better than me, don't you! J-just try thinking that when I pee in your mouth!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] scowls at you.[line break][speech style of M]'[one of]How dare you look at me like that! I'm gonna [slime] on your s-stupid sexy face!'[or]You... y-you think you're better than me, don't you! J-just try thinking that when I [slime] in your mouth!'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - unicorn) with (B - thighs):
 	if M is eager to do anilingus:

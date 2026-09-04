@@ -2,19 +2,19 @@ Puddles by Rooms begins here.
 
 A room has a number called semen-puddle. The semen-puddle of a room is usually 0.
 
-A room has a number called urine-puddle. The urine-puddle of a room is usually 0.
+A room has a number called slime-puddle. The slime-puddle of a room is usually 0.
 
 A room has a number called milk-puddle. The milk-puddle of a room is usually 0.
 
 A room has a number called sprinkle-puddle. The sprinkle-puddle of a room is usually 0.
 
-A room has a number called slime-puddle. The slime-puddle of a room is usually 0.
+A room has a number called ecto-puddle. The ecto-puddle of a room is usually 0.
 A room can be glue-puddled. A room is usually not glue-puddled.
 Definition: A room is glue-puddled:
 	if a glue is in it, decide yes;
 	decide no. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead]
 
-Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen-puddle of the room + the milk-puddle of the room + the urine-puddle of the room > 0].
+Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen-puddle of the room + the milk-puddle of the room + the slime-puddle of the room > 0].
 
 Book 1 Puddles
 
@@ -23,10 +23,10 @@ To decide which number is total puddle:
 	decide on the total puddle of the location of the player.
 
 To decide which number is the total puddle of (R - a room):
-	decide on the urine-puddle of R + the milk-puddle of R + the semen-puddle of R.
+	decide on the slime-puddle of R + the milk-puddle of R + the semen-puddle of R.
 
 To decide which number is the slipperiness of (R - a room):
-	Let X be the total puddle of R + sprinkle-puddle of R + the slime-puddle of R;
+	Let X be the total puddle of R + sprinkle-puddle of R + the ecto-puddle of R;
 	now X is X / 5;
 	if R is raining, increase X by 2;
 	if X > 8, decide on 8;
@@ -36,8 +36,8 @@ To PuddleUp (L - murkwater) by (X - a number):
 	MurkwaterPuddleUp X.
 To PuddleUp (L - semen) by (X - a number):
 	SemenPuddleUp X.
-To PuddleUp (L - urine) by (X - a number):
-	UrinePuddleUp X.
+To PuddleUp (L - slime) by (X - a number):
+	SlimePuddleUp X.
 To PuddleUp (L - milk) by (X - a number):
 	MilkPuddleUp X.
 To PuddleUp (L - water) by (X - a number):
@@ -47,8 +47,8 @@ To PuddleUp (L - murkwater) by (X - a number) in (R - a room):
 	MurkwaterPuddleUp X in R.
 To PuddleUp (L - semen) by (X - a number) in (R - a room):
 	SemenPuddleUp X in R.
-To PuddleUp (L - urine) by (X - a number) in (R - a room):
-	UrinePuddleUp X in R.
+To PuddleUp (L - slime) by (X - a number) in (R - a room):
+	SlimePuddleUp X in R.
 To PuddleUp (L - milk) by (X - a number) in (R - a room):
 	MilkPuddleUp X in R.
 To PuddleUp (L - water) by (X - a number) in (R - a room):
@@ -84,20 +84,20 @@ To SemenPuddleUp (X - a number) in (R - Facility34):
 	otherwise:
 		increase the semen-puddle of R by X.
 
-To UrinePuddleUp (X - a number):
-	if X > 0, UrinePuddleUp X in the location of the player.
+To SlimePuddleUp (X - a number):
+	if X > 0, SlimePuddleUp X in the location of the player.
 
-To UrinePuddleUp (X - a number) in (R - an object):
+To SlimePuddleUp (X - a number) in (R - an object):
 	do nothing.
 
-To UrinePuddleUp (X - a number) in (R - a room):
-	if watersports mechanics is 1, increase the urine-puddle of R by X.
+To SlimePuddleUp (X - a number) in (R - a room):
+	if watersports mechanics is 1, increase the slime-puddle of R by X.
 
-To UrinePuddleUp (X - a number) in (R - HoleInWall):
-	increase the urine-puddle of the location of hole-in-wall by X.
+To SlimePuddleUp (X - a number) in (R - HoleInWall):
+	increase the slime-puddle of the location of hole-in-wall by X.
 
-To UrinePuddleUp (X - a number) in (R - DiaperPail):
-	increase the urine-puddle of the location of most-recent-pail by X.
+To SlimePuddleUp (X - a number) in (R - DiaperPail):
+	increase the slime-puddle of the location of most-recent-pail by X.
 
 To MilkPuddleUp (X - a number):
 	if X > 0, MilkPuddleUp X in the location of the player.
@@ -130,13 +130,13 @@ To MurkwaterPuddleUp (X - a number) in (R - a room):
 	let SUM be S + U + M;
 	now X is (X + SUM - 1) / SUM;
 	if S is 1, SemenPuddleUp X in R;
-	if U is 1, UrinePuddleUp X in R;
+	if U is 1, SlimePuddleUp X in R;
 	if M is 1, MilkPuddleUp X in R.
 
 
 A time based rule (this is the puddles disappearing rule):
 	repeat with H running through placed haunted rooms:
-		if the slime-puddle of H > 0, decrease the slime-puddle of H by 1;
+		if the ecto-puddle of H > 0, decrease the ecto-puddle of H by 1;
 	repeat with R running through placed jungle rooms:
 		if R is pink-smoky:
 			decrease the smoke of wild gladiator by 1;
@@ -145,8 +145,8 @@ A time based rule (this is the puddles disappearing rule):
 			decrease the semen-puddle of R by 1;
 			if R is Woods30, ChargeUp giant-statue by 7;
 			ChargeUp giant-statue by 2;
-		if the urine-puddle of R > 0:
-			decrease the urine-puddle of R by 1;
+		if the slime-puddle of R > 0:
+			decrease the slime-puddle of R by 1;
 			if R is Woods30, ChargeUp giant-statue by 3;
 			ChargeUp giant-statue by 2;
 		if the milk-puddle of R > 0:
@@ -186,28 +186,28 @@ To say PuddleDesc:
 	if the semen-puddle of the location of the player > 0:
 		if the semen-puddle of the location of the player <= 20, say "There is a [if the semen-puddle of the location of the player > 12]very large puddle[otherwise if the semen-puddle of the location of the player > 7]large puddle[otherwise if the semen-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [semen] in the middle of this room. ";
 		otherwise say "[if the semen-puddle of the location of the player < 30]Most of the floor of this room is covered in [semen].[otherwise if the semen-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [semen] that has been expelled in this room.[otherwise if the semen-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [semen] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [semen] that is about half an inch deep.[end if]";
-	if the urine-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20: [We only talk about the urine if there's only puddles of semen.]
-		if the urine-puddle of the location of the player <= 20, say "There is a [if the urine-puddle of the location of the player > 12]very large puddle[otherwise if the urine-puddle of the location of the player > 7]large puddle[otherwise if the urine-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [urine] in the middle of this room. ";
-		otherwise say "[if the urine-puddle of the location of the player < 30]Most of the floor of this room is covered in [urine].[otherwise if the urine-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [urine] that has been expelled in this room.[otherwise if the urine-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [urine] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [urine] that is about half an inch deep.[end if]";
-	if the milk-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20 and the urine-puddle of the location of the player <= 20: [We only talk about the milk if there's only puddles of semen and urine.]
+	if the slime-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20: [We only talk about the slime if there's only puddles of semen.]
+		if the slime-puddle of the location of the player <= 20, say "There is a [if the slime-puddle of the location of the player > 12]very large puddle[otherwise if the slime-puddle of the location of the player > 7]large puddle[otherwise if the slime-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [slime] in the middle of this room. ";
+		otherwise say "[if the slime-puddle of the location of the player < 30]Most of the floor of this room is covered in [slime].[otherwise if the slime-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [slime] that has been expelled in this room.[otherwise if the slime-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [slime] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [slime] that is about half an inch deep.[end if]";
+	if the milk-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20 and the slime-puddle of the location of the player <= 20: [We only talk about the milk if there's only puddles of semen and slime.]
 		if the milk-puddle of the location of the player <= 20, say "There is a [if the milk-puddle of the location of the player > 12]very large puddle[otherwise if the milk-puddle of the location of the player > 7]large puddle[otherwise if the milk-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [milk] in the middle of this room. ";
 		otherwise say "[if the milk-puddle of the location of the player < 30]Most of the floor of this room is covered in [milk].[otherwise if the milk-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [milk] that has been expelled in this room.[otherwise if the milk-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [milk] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [milk] that is about half an inch deep.[end if]";
-	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0:
-		if the slime-puddle of the location of the player < 6:
+	if [playerRegion is Mansion and ]the ecto-puddle of the location of the player > 0:
+		if the ecto-puddle of the location of the player < 6:
 			say "[if bukkake fetish is 1]There is a steadily drying film of green slime on every surface in this room.[otherwise]Every surface in this room is glowing with ghostly magic.[end if]";
 		otherwise:
 			say "Every surface in this room is coated in a thick film of glowing green slime.".
 
 To say ShortPuddleDesc of (R - a room):
 	let TV be the total puddle of R;
-	if bukkake fetish > 0 and the slime-puddle of R > 0:
+	if bukkake fetish > 0 and the ecto-puddle of R > 0:
 		say "slimed floor[if TV > 0] and [end if]";
 	otherwise if TV <= 0:
 		say "dry floor";
 	if TV > 0:
 		let LL be a list of liquid-objects;
 		if the semen-puddle of R > 0, add semen to LL;
-		if the urine-puddle of R > 0, add urine to LL;
+		if the slime-puddle of R > 0, add slime to LL;
 		if the milk-puddle of R > 0, add milk to LL;
 		let E be the number of entries in LL;
 		say "[if TV >= 30]flood[otherwise if TV > 20]giant puddle[otherwise if TV > 12]very large puddle[otherwise if TV > 7]large puddle[otherwise if TV > 3]puddle[otherwise]small puddle[end if] of ";
@@ -216,7 +216,7 @@ To say ShortPuddleDesc of (R - a room):
 puddle-object is focus-thing. The text-shortcut of a puddle-object is "puddle".
 
 To decide which figure-name is the examine-image of (T - puddle-object):
-	let N be the semen-puddle of the location of the player + the urine-puddle of the location of the player + the milk-puddle of the location of the player + the slime-puddle of the location of the player;
+	let N be the semen-puddle of the location of the player + the slime-puddle of the location of the player + the milk-puddle of the location of the player + the ecto-puddle of the location of the player;
 	if N > 35, decide on figure of puddle 5;
 	if N > 20, decide on figure of puddle 4;
 	if N > 10, decide on figure of puddle 3;
@@ -224,18 +224,18 @@ To decide which figure-name is the examine-image of (T - puddle-object):
 	decide on figure of puddle 1.
 
 To update background colour of (T - puddle-object):
-	if the urine-puddle of the location of the player > 0:
+	if the slime-puddle of the location of the player > 0:
 		if the semen-puddle of the location of the player > 0, now the backgroundColour of T is the TQColour of murky;
 		otherwise now the backgroundColour of T is the TQColour of golden;
 	otherwise if the semen-puddle of the location of the player > 0:
 		now the backgroundColour of T is the TQColour of creamy;
-	otherwise if the slime-puddle of the location of the player > 0:
+	otherwise if the ecto-puddle of the location of the player > 0:
 		now the backgroundColour of T is the TQColour of lime;
 	otherwise:
 		now the backgroundColour of T is the TQColour of white.
 
 This is the puddles get focused rule:
-	if the semen-puddle of the location of the player + the urine-puddle of the location of the player + the milk-puddle of the location of the player + the slime-puddle of the location of the player > 0:
+	if the semen-puddle of the location of the player + the slime-puddle of the location of the player + the milk-puddle of the location of the player + the ecto-puddle of the location of the player > 0:
 		focus-consider puddle-object.
 The puddles get focused rule is listed in the focus finding rules.
 
@@ -246,14 +246,14 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonCommand entry is "clean puddle with [text-shortcut of pink-spraybottle]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to kneel]
-	if (diaper quest is 0 or the semen-puddle of the location of the player + the urine-puddle of the location of the player + the slime-puddle of the location of the player is 0 or (watersports fetish is 1 and the semen-puddle of the location of the player + the slime-puddle of the location of the player is 0)) and ButtonTableFull is 0:
+	if (diaper quest is 0 or the semen-puddle of the location of the player + the slime-puddle of the location of the player + the ecto-puddle of the location of the player is 0 or (watersports fetish is 1 and the semen-puddle of the location of the player + the ecto-puddle of the location of the player is 0)) and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of DrinkButton;
 		now the ButtonCommand entry is "clean puddle with mouth";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to kneel]
 	repeat with C running through carried fluid vulnerable clothing:
-		if the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C and ButtonTableFull is 0:
+		if the semen-soak of C + the slime-soak of C + the milk-soak of C < the soak-limit of C and ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is examine-image of C;
 			now the ButtonCommand entry is "clean puddle with [text-shortcut of C]";

@@ -58,7 +58,7 @@ To uniquely interest (M - woman-player):
 
 To set up (M - woman-player):
 	now the monstersetup of M is 1;
-	[if lady fetish is 2, now M is truly-male;]
+	[if andro fetish is 1, now M is truly-male;]
 	now the raw difficulty of M is 17;
 	now the health of M is the maxhealth of M;
 	calm M.
@@ -149,9 +149,14 @@ STATES:
 5: Hotel exploring, has appeared via dildo seat scene
 6: Dungeon crawling, just crafted potion.
 7: Just freed the player from bondage (or told them no)
+8: Mansion crawling
 
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+21: TQ only: After used as human stool
+22: TQ only: Inflated by aeromancer
+23: TQ only: Pregnant from swimming pool semen (in swimsuit)
+24: TQ only: Wobbling around on skates
 25: DQ only for now: After stuck in hole in wall
 26: DQ: After matron play scene.
 27: DQ: After matron fight scene.
@@ -179,6 +184,8 @@ STATES:
 101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
 102: DQ: Appeared holding up the lid for the changing station tank.
 103: DQ: Appeared in Christmas box.
+104: DQ: Picked up by ropes after opening chest
+105: TQ: Used as human stool
 ]
 
 Definition: woman-player is uniquely unreactive:
@@ -208,6 +215,8 @@ Definition: woman-player is angry deploy appropriate:
 
 To deploy (M - woman-player) with woman-status (V - a number):
 	if debugmode > 0, say "[input-style]Deploying [womanName] with woman-status [V].[roman type][line break]";
+	repeat with C running through clothing held by M:
+		only destroy C;
 	now the woman-status of M is V;
 	now the sleep of M is 0;
 	deinterest M;
@@ -282,7 +291,7 @@ To construct unique buttons for (M - woman-player):
 	otherwise if diaper quest is 0 and the woman-status of M is 98 and ButtonTableFull is 0: [buried urinal]
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of ToiletButton;
-		now the ButtonCommand entry is "use urinal";
+		now the ButtonCommand entry is the substituted form of "use [SlimeTargetU]";
 		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
 		if the player is not able to use a urinal, now CL is lightModeFullYellow;
@@ -537,6 +546,53 @@ This is the woman gets bored and moves on rule:
 				Vanish M;
 				rule succeeds.
 The woman gets bored and moves on rule is listed last in the woman wandering rules.
+
+Part - Pranks
+
+[If she's lost favour, she might prank you.]
+
+To decide which number is the prank-favour-limit of (W - woman-player):
+	decide on 10.
+
+a woman-prank-action is a kind of object.
+Definition: a woman-prank-action is eligible: decide yes.
+To execute (A - a woman-prank-action):
+	say "BUG - chosen prank action has no execution function.".
+
+To compute default prank of (M - woman-player):
+	now current-monster is M;
+	update appearance level;
+	let A be a random eligible woman-prank-action;
+	if A is nothing:
+		if debuginfo > 0, say "[input-style]Prank action fails (no eligible prank action could be found!)[roman type][line break]";
+		deinterest M;
+	otherwise:
+		execute A.
+
+prank-trip is a woman-prank-action.
+Definition: prank-trip is eligible:
+	if the player is upright, decide yes;
+	decide no.
+To execute (A - prank-trip):
+	say "You trip over [NameDesc of woman-player][']s foot, and go crashing to the ground!";
+	try kneeling;
+	PainUp 4;
+	say "[speech style of woman-player]'Watch yourself!'[line break][variable custom style]Did [he of woman-player] trip me up on purpose?![roman type][line break]";
+	CheerUp woman-player.
+
+prank-deride is a woman-prank-action.
+Definition: prank-deride is eligible:
+	if the woman-bimbo of woman-player * 4 <= the appearance of the player, decide yes;
+	if diaper quest is 1 and the woman-bimbo of woman-player * 4 <= the cringe appearance of the player, decide yes;
+	decide no.
+To execute (A - prank-deride):
+	let AP be the appearance of the player;
+	if diaper quest is 1 and the cringe appearance of the player > the appearance of the player, now AP is the cringe appearance of the player;
+	say "[speech style of woman-player]'Do you have any idea how much of a [if diaper quest is 0][one of]slut[or]whore[or]skank[cycling][otherwise]ridiculous baby[end if] you look like right now?!'[roman type][line break][BigNameDesc of woman-player] says with unhidden [if AP > the woman-bimbo of woman-player * 5]distate[otherwise]disgust[end if].[line break][strongHumiliateReflect]";
+	if a random number between 1 and 4 is 1, CheerUp woman-player;
+
+
+
 
 Part - Combat
 

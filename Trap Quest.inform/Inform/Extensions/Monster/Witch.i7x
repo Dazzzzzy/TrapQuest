@@ -29,13 +29,13 @@ To decide which figure-name is the monster-image of (M - witch):
 	decide on the figure of witch.
 
 To say MonsterDesc of (M - witch):
-	if lady fetish is 2:
+	if andro fetish is 1:
 		say "A tall black [man of M] dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]";
 	otherwise:
 		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
-	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is gendered female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Tee-hee![purely at random][end if][roman type][line break]".
+	if andro fetish is 0, say "[if the bimbo of the player <= 7 and the player is gendered female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Tee-hee![purely at random][end if][roman type][line break]".
 
 To set up (M - witch):
 	reset M;
@@ -66,8 +66,8 @@ To AltarUsesUp (N - a number):
 
 Part 1 - Misc Flavour
 
-To say GroundPeeReaction of (M - witch):
-	say "[BigNameDesc of M] looks disappointed.[line break][speech style of M]'What a waste. Next time pee in a [if diaper quest is 1]diaper[otherwise]cup[end if] for me, and I'll let you use my altar in exchange.'[roman type][line break]".
+To say GroundSlimeReaction of (M - witch):
+	say "[BigNameDesc of M] looks disappointed.[line break][speech style of M]'What a waste. Next time [if slimeshooter fetish is 1]drain it[otherwise][slime][end if] in a [if diaper quest is 1]diaper[otherwise]cup[end if] for me, and I'll let you use my altar in exchange.'[roman type][line break]".
 
 To say GroundPeeSexReaction of (M - witch):
 	say "[BigNameDesc of M] laughs loudly.[line break][speech style of M]'Okay now THAT is hilarious.'[roman type][line break]".
@@ -76,23 +76,26 @@ To say DiaperReaction of (M - witch):
 	say "[BigNameDesc of M] smirks and looks directly at your dampening crotch.[line break][speech style of M]'[one of]Ooh, I hope that you're going to give that to me later.'[or]You're such an exhibitionist! You love doing this in front of me, don't you?'[stopping][roman type][line break]";
 	if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.".
 
+To compute continued diaper mess reaction of (M - witch):
+	say "[BigNameDesc of M] moans happily as [he of M] enjoys the sounds of your messy episode.";
+	say moderateHumiliateReflect.
 To compute diaper mess reaction of (M - witch):
 	say "[BigNameDesc of M] looks at you with unhidden lust, and begins to touch [himself of M].[line break][speech style of M]'[one of]Fuck, watching someone disgustingly degrading themselves in front of me... Really turns me on...'[or]My my my. Thank you for letting me watch again...'[stopping][roman type][line break]";
 	if voluntarySquatting is 1, say obsceneHumiliateReflect;
 	otherwise say severeHumiliateReflect.
 
 To compute disgusting spit reaction of (M - witch):
-	say "[BigNameDesc of M] subtly licks [his of M] lips as [he of M] watches you. [if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]".
+	say "[BigNameDesc of M] subtly licks [his of M] lips as [he of M] watches you. [if the slime volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]".
 
 Definition: witch is a diaper wetter: decide yes.
 
 To compute diaper wetting of (M - witch): [This MUST cause bladder to empty or NPCs might get stuck]
 	let D be a random diaper held by witch;
 	if D is diaper:
-		if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] [MediumDesc of D].";
+		if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is [slime]ing [his of M] [MediumDesc of D].";
 	otherwise:
-		if M is in the location of the player, say "[BigNameDesc of M] [if lady fetish is not 2]parts [his of M] pussy lips and [end if]sighs pleasantly, and you watch as [he of M] shamelessly sprinkles the ground with [his of M] [urine].";
-		PuddleUp urine by (the bladder of M / 100) in (the location of M);
+		if M is in the location of the player, say "[BigNameDesc of M] [if andro fetish is 0]parts [his of M] pussy lips and [end if]sighs pleasantly, and you watch as [he of M] shamelessly sprinkles the ground with [his of M] [slime].";
+		PuddleUp slime by (the bladder of M / 100) in (the location of M);
 	now the bladder of M is 0.
 
 Part 2 - Perception
@@ -200,8 +203,8 @@ To say WitchInitialGreeting of (M - witch):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if newbie tips is 1:
 		say "[speech style of M]'Hi bitch. Putting jewellery on this altar will bless some of your items, but you have to pay me for the privilege. ";
-		if diaper quest is 0, say "I accept cups of semen [if watersports fetish is 1]and urine [end if]as payment. They're, err, spell ingredients... or something. If you've got any in a drinking vessel, just [bold type]give[speech style of M] the vessel to me and I'll transfer the liquid into my container and then give you the vessel back. You can take my goblet if you need something to collect stuff in - but I wouldn't try drinking anything out of it if I were you, it's permanently cursed. [if diaper lover > 0]I also accept soggy diapers, but only if they're really nice and squelchy. [end if]";
-		otherwise say "I accept soggy diapers as payment, but only when they're well used, all really nice and squelchy. They're, err, spell ingredients... or something. I'm definitely not some kind of weird diaper pervert. [if watersports fetish is 1]I also accept cups of pure urine. [end if]Anyway ";
+		if diaper quest is 0, say "I accept cups of semen [if watersports fetish is 1]and [slime] [end if]as payment. They're, err, spell ingredients... or something. If you've got any in a drinking vessel, just [bold type]give[speech style of M] the vessel to me and I'll transfer the liquid into my container and then give you the vessel back. You can take my goblet if you need something to collect stuff in - but I wouldn't try drinking anything out of it if I were you, it's permanently cursed. [if diaper lover > 0]I also accept soggy diapers, but only if they're really nice and squelchy. [end if]";
+		otherwise say "I accept soggy diapers as payment, but only when they're well used, all really nice and squelchy. They're, err, spell ingredients... or something. I'm definitely not some kind of weird diaper pervert. [if watersports fetish is 1]I also accept cups of pure [slime]. [end if]Anyway ";
 		say "I'll let you use the altar for free two times, so you can see how awesome it is, but after that you'll have to pay me.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'You look like you know how this works. I'm the keeper of this altar. If you want to use it, pay me or fuck off.'[roman type][line break]".
@@ -519,7 +522,7 @@ To penetration dominate (M - witch):
 			if the player is possessing a penis, now penis is penis-erect;
 			FavourDown M by 1;
 		otherwise:
-			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in [his of M] head as [if lady fetish is 2][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass...'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
+			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in [his of M] head as [if andro fetish is 1][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass...'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
 			orgasm;
 			AnalGet;
 	otherwise if sexual-penis-length > 6:
@@ -588,8 +591,8 @@ To compute failed dominance punishment of (M - witch):
 		Satisfy M;
 	otherwise:
 		if watersports fetish is 1 and a random number between 1 and 2 is 1:
-			say UrinationFlav of M;
-			FacePiss from M;
+			say DrainFlav of M;
+			FaceDrain from M;
 		otherwise:
 			compute sissy punishment of M;
 		Bore M.
@@ -623,8 +626,8 @@ To say FirstResponse of (M - witch):
 	otherwise if the class of the player is fertility goddess:
 		say "[speech style of M]'What do you want? I'm not going to bless any condoms if that's what you're here for, you obviously wouldn't even use them.'[roman type][line break]";
 	otherwise:
-		if diaper quest is 1, say "[speech style of M]'[one of]Hi there, bitch. Give me a used diaper[if watersports fetish is 1] or some piss[end if] to use my altar or piss off.'[or]Hi. The altar isn't free, so if you don't have any used diapers[if watersports fetish is 1] or urine[end if], fuck off.'[at random][roman type][line break]";
-		otherwise say "[speech style of M]'[one of]Hi there, bitch. Give me some cum[if watersports fetish is 1] or piss[end if] to use my altar or piss off.'[or]Hi. The altar isn't free, so if you don't have any [semen][if watersports fetish is 1] or urine[end if], fuck off.'[at random][roman type][line break]".
+		if diaper quest is 1, say "[speech style of M]'[one of]Hi there, bitch. Give me a used diaper[if watersports fetish is 1] or some [slime][end if] to use my altar or piss off.'[or]Hi. The altar isn't free, so if you don't have any used diapers[if watersports fetish is 1] or [slime][end if], fuck off.'[at random][roman type][line break]";
+		otherwise say "[speech style of M]'[one of]Hi there, bitch. Give me some cum[if watersports fetish is 1] or [slime][end if] to use my altar or piss off.'[or]Hi. The altar isn't free, so if you don't have any [semen][if watersports fetish is 1] or [slime][end if], fuck off.'[at random][roman type][line break]".
 
 To say RepeatResponse of (M - witch):
 	if M is unfriendly:
@@ -740,7 +743,7 @@ To compute teaching of (M - witch):
 					decrease failsafe by 1;
 					now the witch-target of M is a random on-stage human monster;
 					let W be the witch-target of M;
-					if W is trainee or W is staff member or W is ex-princess or W is unconcerned or W is djinn or W is kitsune or W is shopkeeper or W is slutty sister, now the witch-target of M is M;
+					if W is trainee or W is staff member or W is ex-princess or W is unconcerned or W is djinn or W is kitsune or W is shopkeeper or W is slutty sister or W is woman-player, now the witch-target of M is M;
 				if the witch-target of M is M:
 					say "[speech style of M]'...Actually, never mind, I can't seem to think of anyone for you to banish.'[roman type][line break]";
 				otherwise:

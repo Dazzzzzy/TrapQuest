@@ -1,6 +1,6 @@
 Facehugger by Monster begins here.
 
-A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
+A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of facehugger is "fhgr". The poison-status of a facehugger is -1. The blind-status of a facehugger is -1.
 
 There are 10 facehuggers.
 facehuggers-fucked is a number that varies.
@@ -38,7 +38,7 @@ To say MediumDesc of (M - facehugger):
 	say "facehugger".
 
 To say MonsterDesc of (M - facehugger):
-	say "This weird insect-like monster is not much bigger than your hand-span. It has two strong tentacle-like arms extending from its tadpole-like body which allow it to launch really high and then try to latch onto you.".
+	say "This weird slimy monster is not much bigger than your hand-span. It has two strong tentacle-like arms extending from its tadpole-like body which allow it to launch really high and then try to latch onto you.".
 
 To say MonsterComment of (M - facehugger):
 	let U be 0;

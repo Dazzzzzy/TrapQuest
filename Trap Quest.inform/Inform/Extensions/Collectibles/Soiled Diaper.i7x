@@ -13,7 +13,7 @@ The text-shortcut of soiled-diaper is "sdp".
 
 A soiled-diaper has a text called diaper-origin. The diaper-origin of a soiled-diaper is usually "disposable diaper". Understand the diaper-origin property as describing a soiled-diaper.
 To say ExamineDesc of (C - a soiled-diaper):
-	say "A [if diaper messing >= 6]nasty used [diaper-origin of C]. You know what's in it[otherwise]diaper that's already been filled with [urine][end if]. There's nothing to do but find somewhere to properly dispose of it[if there is a worn bag of holding]. It isn't allowed to be put in your [ShortDesc of a random worn bag of holding], so you have to carry it around, completely visible[end if].".
+	say "A [if diaper messing >= 6]nasty used [diaper-origin of C]. You know what's in it[otherwise]diaper that's already been filled with [slime][end if]. There's nothing to do but find somewhere to properly dispose of it[if there is a worn bag of holding]. It isn't allowed to be put in your [ShortDesc of a random worn bag of holding], so you have to carry it around, completely visible[end if].".
 To say ShortDesc of (C - a soiled-diaper):
 	say "used diaper".
 To say MediumDesc of (C - a soiled-diaper):
@@ -35,7 +35,7 @@ To decide which figure-name is the examine-image of (C - a soiled-diaper):
 		decide on figure of soiled-diaper waddle;
 	otherwise if the diaper-origin of C matches the text "massive":
 		decide on figure of soiled-diaper massive;
-	otherwise if the diaper-origin of C matches the text "giant":
+	otherwise if the diaper-origin of C matches the text "giant" or the diaper-origin of C matches the text "demon":
 		decide on figure of soiled-diaper giant;
 	otherwise if the diaper-origin of C matches the text "velcro":
 		decide on figure of soiled-diaper velcro;
@@ -144,7 +144,9 @@ Check inserting something into a diaper pail:
 			say "You feel some self-respect returning to you at properly disposing of your wet diaper.";
 			dignify 400;
 		only destroy the noun;
-		if the noun is soiled-diaper, add the noun to the pailed-diapers of the second noun, if absent;
+		if the noun is soiled-diaper:
+			trigger diaper-pail-wisp-trigger;
+			add the noun to the pailed-diapers of the second noun, if absent;
 		increase diaper-pail-dispose-count by 1;
 	otherwise:
 		say "That doesn't go in there." instead;

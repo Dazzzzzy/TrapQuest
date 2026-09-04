@@ -1,6 +1,6 @@
 Gargoyle by Monster begins here.
 
-gargoyle is a monster. The poison-status of gargoyle is -1. The paralyse-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guard-level.
+gargoyle is a monster. The poison-status of gargoyle is -1. The paralyse-status of gargoyle is -1. gargoyle has a number called guard-level.
 
 Definition: gargoyle is mansion dwelling: decide yes.
 
@@ -36,26 +36,28 @@ Figure of gargoyle BJ 6 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj6.png".
 [Figure of gargoyle cunnilingus 1 is the file "NPCs/Mansion/Gargoyle/gargoyle-cunnilingus1.png".]
 
 To decide which figure-name is the monster-image of (M - gargoyle):
+	if mythical creature fetish is 0, decide on figure of Missing NPC;
 	if M is not dangerous, decide on the friendly-monster-image of M;
 	if M is airborne, decide on figure of flying gargoyle;
 	decide on figure of dismounting gargoyle.
 
 To decide which figure-name is the friendly-monster-image of (M - gargoyle):
+	if mythical creature fetish is 0, decide on figure of Missing NPC;
 	if the sleep of M <= 0 and M is vigilant, decide on figure of awake gargoyle;
 	decide on figure of sleeping gargoyle.
 
 To decide which figure-name is the sex-profile of (M - gargoyle):
-	if diaper quest is 0 and M is penetrating penis:
+	if diaper quest is 0 and M is penetrating penis and mythical creature fetish is 1:
 		if the player is possessing a penis, decide on figure of gargoyle BJ 2;
 		[decide on figure of gargoyle cunnilingus 1;]
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 To say MonsterDesc of (M - gargoyle):
 	if mythical creature fetish is 1:
-		say "An eerie stone statue of a [man of M] with a long tail, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, including [his of M] [if lady fetish < 2]wide hips and expansive, paradoxically soft-looking chest[otherwise]big, but flaccid [manly-penis], and gorgeously chiseled chest[end if]. Although [he of M] is rendered in stone, [if M is unleashed][he of M] certainly isn't acting like it![otherwise if M is vigilant][his of M] bright blue eyes are open, and follow your every movement with beastly keenness, never stopping, not even to blink.[otherwise][his of M] posture gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
+		say "An eerie stone statue of a [man of M] with a long tail, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, including [his of M] [if andro fetish is 0]wide hips and expansive, paradoxically soft-looking chest[otherwise]big, but flaccid [manly-penis], and gorgeously chiseled chest[end if]. Although [he of M] is rendered in stone, [if M is unleashed][he of M] certainly isn't acting like it![otherwise if M is vigilant][his of M] bright blue eyes are open, and follow your every movement with beastly keenness, never stopping, not even to blink.[otherwise][his of M] posture gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
 	otherwise:
-		if diaper quest is 1, say "An eerie stone statue of an angel wearing a thin robe that exposes a lot of [if lady fetish is 2]muscle[otherwise]cleavage[end if]. [run paragraph on]";
-		otherwise say "An eerie stone statue of an angel wearing [if lady fetish < 2]an ill-fitting robe, draped open by [his of M] elbows, leaving [his of M] expansive chest completely exposed[otherwise]a thin robe that exposes [his of M] rippling chest muscles[end if]. [run paragraph on]";
+		if diaper quest is 1, say "An eerie stone statue of an angel wearing a thin robe that exposes a lot of [if andro fetish is 1]muscle[otherwise]cleavage[end if]. [run paragraph on]";
+		otherwise say "An eerie stone statue of an angel wearing [if andro fetish is 0]an ill-fitting robe, draped open by [his of M] elbows, leaving [his of M] expansive chest completely exposed[otherwise]a thin robe that exposes [his of M] rippling chest muscles[end if]. [run paragraph on]";
 		say "[if M is unleashed]Right now, [he of M] isn't acting like much of a statue![otherwise if M is vigilant][big he of M] is motionless, but [his of M] eyes are open, never blinking as [he of M] appraises you silently from atop [his of M] pedestal.[otherwise][big he of M] is resting on one knee and [his of M] head is bowed, as if offering deference to [his of M] master. There's something way too realistic about [him of M].[end if]".
 
 To say MonsterComment of (M - gargoyle):
@@ -67,7 +69,7 @@ To say MonsterComment of (M - gargoyle):
 		otherwise say "[variable custom style]Why do I get the feeling [he of M]s going to attack me?";
 	otherwise if diaper quest is 0:
 		if the bimbo of the player < 7:
-			if the player is gendered male, say "[first custom style][one of][big his of M] [if lady fetish is 2]butt is[otherwise]tits are[end if] fucking rocking![or][big he of M]'s made of stone, but so are THESE GUNS! Heheheh.[or]It's a statue, so it's fine to stare, right?[in random order]";
+			if the player is gendered male, say "[first custom style][one of][big his of M] [if andro fetish is 1]butt is[otherwise]tits are[end if] fucking rocking![or][big he of M]'s made of stone, but so are THESE GUNS! Heheheh.[or]It's a statue, so it's fine to stare, right?[in random order]";
 			otherwise say "[first custom style][one of]How... idealised.[or][if M is guarding]That thing is obviously going to attack me eventually, but how do I hurt it...[otherwise if M is not penetrating a body part]I can bring this thing down![otherwise]This is ridiculous![end if][or][if M is vigilant]It's paying attention to me for some reason.[otherwise]Only Nintendolls would make a statue look that way.[end if][in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of]What a beautiful statue.[or]It's made of stone, so it's unbeatable, right?[or]It seems like it'd be really heavy.[in random order]";
@@ -94,7 +96,9 @@ The spawn initial gargoyle rule is listed in the setting up mansion monsters rul
 To compute monstermotion of (M - gargoyle):
 	if M is unleashed, compute room leaving of M.
 
-To decide which number is the grossness of (M - gargoyle): decide on 7.
+To decide which number is the grossness of (M - gargoyle):
+	if mythical creature fetish is 1, decide on 7;
+	decide on 4.
 
 Part 1 - Misc Flavour
 
@@ -259,7 +263,7 @@ This is the gargoyle lockdown rule:
 	if M is grabbing the player and the guard-level of M > 0:
 		decrease the guard-level of M by 1;
 		if the guard-level of M < 1:
-			say "The stony [if lady fetish is 2]muscles pressing against your back slowly reverts to being made of warm skin[otherwise]breasts squeezed up against your back slowly revert to being made up of warm skin[end if], and you finally feel movement behind you as [NameDesc of M] releases you from [his of M] grip. A moment later, you hear a gust of wind as [if the location of M is no-roof][he of M] takes off into the sky[otherwise][his of M] wings carry [him of M] from the room.[end if]";
+			say "The stony [if andro fetish is 1]muscles pressing against your back slowly reverts to being made of warm skin[otherwise]breasts squeezed up against your back slowly revert to being made up of warm skin[end if], and you finally feel movement behind you as [NameDesc of M] releases you from [his of M] grip. A moment later, you hear a gust of wind as [if the location of M is no-roof][he of M] takes off into the sky[otherwise][his of M] wings carry [him of M] from the room.[end if]";
 			compute gargoylePerchReset;
 			now the guard-level of M is 0;
 		otherwise:
@@ -343,7 +347,7 @@ To compute grabbing attack of (M - a gargoyle):
 	decrease the health of M by 5;
 	if the health of M < 1, now the health of M is 1;[damages her slightly.]
 	if the accuracy roll of M > the dexterity of the player:[She puts you in a full nelson]
-		say "You feel [his of M] [if lady fetish is 2]muscular torso[otherwise]soft breasts[end if] press against your back as [he of M] grabs your legs behind the knee. [big he of M]'s trying to lift you!";
+		say "You feel [his of M] [if andro fetish is 1]muscular torso[otherwise]soft breasts[end if] press against your back as [he of M] grabs your legs behind the knee. [big he of M]'s trying to lift you!";
 		if the tripping roll of M >= the dexterity of the player:
 			say "[BigNameDesc of M] forcibly folds your legs up on either side of your body as [he of M] lifts you off the ground. After a moment, [he of M] locks [his of M] hands behind your head and slowly begins to turn back into stone.";
 			now the stance of the player is 1;
@@ -359,15 +363,15 @@ To compute grabbing attack of (M - a gargoyle):
 		otherwise:
 			say "Luckily, you manage to stay on your feet.";
 	otherwise:
-		say "You feel [his of M] [if lady fetish is 2]muscular torso[otherwise]soft breasts[end if] press up against your back, and quickly jump away from [him of M] before [he of M] latches on.".
+		say "You feel [his of M] [if andro fetish is 1]muscular torso[otherwise]soft breasts[end if] press up against your back, and quickly jump away from [him of M] before [he of M] latches on.".
 
 To say ErectionDemand of (M - gargoyle):
 	say "[BigNameDesc of M][']s wings flap excitedly as [his of M] eyes eagerly focus on your crotch, and you get the sense that [he of M]'s waiting for you to get hard.".
 
 To say ErectionPenetrationFlav of (M - gargoyle):
-	if lady fetish is 2, say "[BigFuckerDesc of M][']s features light up with delight as [if penis is not penis-erect]your [ShortDesc of penis] stirs to life, and [end if][he of M] [if mythical creature fetish is 1]wraps [his of M] tail around your waist,[otherwise]pins you down face up,[end if] holding you down as [he of M] [if the size of penis > 8]wraps [his of M] hands around your [ShortDesc of penis] and hungrily pulls the tip into [his of M] mouth[otherwise]wraps [his of M] surprisingly soft lips around your [ShortDesc of penis][end if].[line break]";
+	if andro fetish is 1, say "[BigFuckerDesc of M][']s features light up with delight as [if penis is not penis-erect]your [ShortDesc of penis] stirs to life, and [end if][he of M] [if mythical creature fetish is 1]wraps [his of M] tail around your waist,[otherwise]pins you down face up,[end if] holding you down as [he of M] [if the size of penis > 8]wraps [his of M] hands around your [ShortDesc of penis] and hungrily pulls the tip into [his of M] mouth[otherwise]wraps [his of M] surprisingly soft lips around your [ShortDesc of penis][end if].[line break]";
 	otherwise say "[BigNameDesc of M][']s features light up with delight as [if penis is not penis-erect]your [ShortDesc of penis] stirs to life, and [end if][he of M] [if mythical creature fetish is 1]wraps [his of M] tail around your waist,[otherwise]pins you down face up,[end if] holding you down as [he of M] [if the size of penis > 8]wraps [his of M] surprisingly soft breasts around your [ShortDesc of penis] and hungrily pulls the tip into [his of M] mouth[otherwise]wraps [his of M] surprisingly soft lips around your [ShortDesc of penis][end if].[line break]";
-	cutshow Figure of gargoyle BJ 1 for M.
+	if mythical creature fetish is 1, cutshow Figure of gargoyle BJ 1 for M.
 
 To set up sex length of (M - gargoyle) in (F - penis):
 	set up sex length 4 of M in F.
@@ -396,12 +400,12 @@ To say ErectionForceFlav of (M - gargoyle):
 	say ErectionUseFlav of M.
 
 To say ErectionUseFlav of (M - gargoyle):
-	if the size of penis > 8 and lady fetish < 2:[boobjob!]
+	if the size of penis > 8 and andro fetish is 0:[boobjob!]
 		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M][']s breasts [if the player is possessing a scrotum]bump your sack[otherwise]encircle your shaft[end if] as [he of M] works your [manly-penis], torturing the tip with practised movements of [his of M] tongue and lips.[at random]";
-		cutshow Figure of gargoyle BJ 3 for M;
+		if mythical creature fetish is 1, cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
 		say "[one of][BigNameDesc of M] slurps away at your [ShortDesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from [if the player is possessing a scrotum]balls[otherwise]base[end if] to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls [his of M] tongue around your tip as [he of M] mercilessly pumps you with [his of M] lips.[at random]";
-		if lady fetish < 2, cutshow Figure of gargoyle BJ 4 for M;
+		if andro fetish is 0 and mythical creature fetish is 1, cutshow Figure of gargoyle BJ 4 for M;
 	otherwise:[doubt this will come up so it's mostly copypasta]
 		say "[one of][BigNameDesc of M] relentlessly teases your [ShortDesc of penis] with [his of M] tongue.[or][BigNameDesc of M] teases your [ShortDesc of penis] with the very tip of [his of M] tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with [his of M] tongue.[in random order]".
 
@@ -414,8 +418,9 @@ To compute erection orgasm of (M - gargoyle):
 	FatigueUp 20;
 	PenisDown 1;
 	SilentlyDifficultyUp M by 1;
-	if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
-	otherwise cutshow Figure of gargoyle BJ 6 for M;
+	if mythical creature fetish is 1:
+		if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
+		otherwise cutshow Figure of gargoyle BJ 6 for M;
 	now penis is not penis-erect.[we must do this, because we don't handle erection loss normally while we're penetrating a monster]
 
 To say ErectionLostFlav of (M - gargoyle):
@@ -445,7 +450,7 @@ To say FriendlyAssholePenetrationFlav of (M - gargoyle):
 
 To say AssholePenetrationFlav of (M - gargoyle):
 	let OF be the openness of asshole - the girth of M;
-	say "[BigNameDesc of M] jumps on top of you, [his of M] [if lady fetish is 2]muscular torso[otherwise]huge breasts[end if] pressing against your body as [his of M] scaly tail slithers between your legs.";
+	say "[BigNameDesc of M] jumps on top of you, [his of M] [if andro fetish is 1]muscular torso[otherwise]huge breasts[end if] pressing against your body as [his of M] scaly tail slithers between your legs.";
 	now the tail-depth of M is 0;
 	now M is penetrating asshole;
 	if the class of the player is living sex doll:
@@ -513,7 +518,7 @@ To say sexDollFlav of (M - gargoyle) in (F - asshole):
 	say "[one of]Your [asshole] squeals like a stuck piglet as [FuckerDesc of M] fucks you with [his of M] tail[or]Your [asshole] squeaks ridiculously as [FuckerDesc of M] fucks you with [his of M] tail.[or][BigFuckerDesc of M] produces faint squeaking noises as [he of M] pumps [his of M] tail in and out of your rubberised [asshole].[in random order]".
 
 To say sexDumbFlav of (M - gargoyle) in (F - asshole):
-	say "[one of][BigFuckerDesc of M] fiercely slams [his of M] tail in and out of your [asshole]![or][BigFuckerDesc of M]'s tail [if the player is sexed male]mercilessly tortures your prostate[otherwise]grinds against your inner walls[end if] as [he of M] slams it in and out of your [asshole]![or][if lady fetish is 2][BigFuckerDesc of M]'s muscles ripple[otherwise][BigFuckerDesc of M]'s breasts jiggle[end if] as [he of M] slams [his of M] tail in and out of your [asshole]![in random order]".
+	say "[one of][BigFuckerDesc of M] fiercely slams [his of M] tail in and out of your [asshole]![or][BigFuckerDesc of M]'s tail [if the player is sexed male]mercilessly tortures your prostate[otherwise]grinds against your inner walls[end if] as [he of M] slams it in and out of your [asshole]![or][if andro fetish is 1][BigFuckerDesc of M]'s muscles ripple[otherwise][BigFuckerDesc of M]'s breasts jiggle[end if] as [he of M] slams [his of M] tail in and out of your [asshole]![in random order]".
 
 To say sexDumbNearingClimax of (M - gargoyle) in (F - asshole):
 	say "[BigFuckerDesc of M] seems to be slowing down... Is [he of M] getting bored?".

@@ -47,7 +47,7 @@ Report going:
 				if the largeness of breasts > 10 and the semen coating of breasts is 0:
 					say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";
 					AnnouncedSquirt semen on breasts by 1;
-					decrease the semen-puddle of the location of the player by 1;[TODO, milk and urine soaking into clothes; Player should probably be humiliated to crawl through their own urine.]
+					decrease the semen-puddle of the location of the player by 1;[TODO, milk and slime soaking into clothes; Player should probably be humiliated to crawl through their own slime.]
 				if there is a worn able to take more liquid leg covering clothing:
 					say "[one of]You can't help crawling through the puddle of [semen] as you move along the ground.[or][or][or][cycling]";
 					CumSoak 1 on a random worn able to take more liquid leg covering clothing;

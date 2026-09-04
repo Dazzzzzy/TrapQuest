@@ -1,8 +1,33 @@
 Kneeing by Actions begins here.
 
-To decide which number is the knee damage of (P - a person):
-	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-knee-damage;
-	if damage-explained > 1, say "[input-style]Base knee damage calculation: [bracket]3 (base damage) ";
+
+To decide which number is the total knee damage improvement of (C - a clothing):
+	let K be the knee-modifier of C;
+	if C is ankle bond, decrease K by 100;
+	if C is flight-attendant-top:
+		if the player is zeroG:
+			increase K by 100;
+		otherwise if the player is on tiptoes:
+			increase K by 2;
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 0:
+			if BF < 3:
+				increase K by 1;
+			otherwise:
+				increase K by 3;
+	if C is diaper and the player is diaper kicking, decrease K by 1;
+	if C is skirted and the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+		if the front-skirt-length of C >= 9:
+			decrease K by 100;
+		otherwise:
+			let L be 10 - the front-skirt-length of C; [front-skirt-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
+			let PA be the early knee damage of the player;
+			let A be (PA * L) / 5; [80%, 60% or 40% damage]
+			decrease K by PA - A;
+	decide on K.
+
+To decide which number is the early knee damage of (P - a person):
 	let A be 3;
 	increase A by combat bonus;
 	if damage-explained > 1, say combat bonus explanation;
@@ -25,6 +50,12 @@ To decide which number is the knee damage of (P - a person):
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
+	decide on A.
+
+To decide which number is the knee damage of (P - a person):
+	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-knee-damage;
+	if damage-explained > 1, say "[input-style]Base knee damage calculation: [bracket]3 (base damage) ";
+	let A be the early knee damage of P;
 	repeat with C running through worn clothing:
 		if the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
 			if the front-skirt-length of C >= 9:

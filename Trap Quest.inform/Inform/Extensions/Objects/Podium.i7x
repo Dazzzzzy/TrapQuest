@@ -75,7 +75,7 @@ Check entering podium:
 			now the ceremony of betrothal-quest is true;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
-	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and ((the player is possessing a vagina and the vaginalvirgin of the player is 1) or (the player is an april 2025 top donator and the player is not possessing a vagina and the analvirgin of the player is 1) or the player is ready for common event tg):
+	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and ((the player is possessing a vagina and the vaginalvirgin of the player is 1) or (the player is the donator and the player is not possessing a vagina and the analvirgin of the player is 1) or the player is ready for common event tg):
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of male-m] dedicates [his of male-m] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
 		progress quest of podium-quest;
@@ -100,13 +100,29 @@ Check entering podium:
 		otherwise if a random number between 1 and 2 is 1 and there is an alive undefeated royal guard:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); guard scene selected automatically.[roman type][line break]";
 			let M be a random alive undefeated royal guard;
-			anger M;
-			interest M;
-			now the boredom of M is 0;
-			now the last-interaction of M is 2;
+			if the player is a september 2026 top donator and interracial fetish is 1 and pimp is alive and pimp is threatening and the times-met of pimp > 0 and there is a worn tattoo and the number of worn left-asscheek tattoo is 0 and the number of worn both-asscheeks tattoo is 0:
+				now M is pimp;
+			otherwise:
+				anger M;
+				interest M;
+				now the boredom of M is 0;
+				now the last-interaction of M is 2;
+				now M is in the location of the player;
 			now the sleep of M is 0;
-			now M is in the location of the player;
-			if diaper quest is 1:
+			if M is pimp:
+				now the fatigue of the player is the very tired threshold of the player + 5;
+				say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all its energy. You collapse to the ground, and are now on your knees![line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of male-m] slams [his of male-m] gavel down on the podium. Swallowing, you shiver as [he of male-m] yanks at your [ShortDesc of hair], and then swings [his of male-m] gavel down onto your ass!";
+				now the stance of the player is 1;
+				PainUp 10;
+				say "The gavel has, through some sort of magic, left a mark on you!";
+				summon spade owned tattoo;
+				try examining spade owned tattoo;
+				if portal-hotpants is unclash summonable:
+					say "And then, almost as soon as you've managed to get a look at it, your tattoo disappears from view, replaced by a stone mannequin's butt![line break][variable custom style]What the hell?![roman type][line break]";
+					unclash class summon portal-hotpants;
+					FavourSet pimp to the aggro limit of pimp - 5;
+				say "[first custom style]'Your body is now owned by the pimp who resides in Hotel Premier Sinn, slave.'[roman type][line break]The Auctioneer lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, and [if portal-hotpants is worn]your newly-inked butt spatially separated from you with magic portal technology[otherwise]a new tattoo[end if].";
+			otherwise if diaper quest is 1:
 				let P be a random pink pacifier;
 				let N be a random off-stage rubber mittens;
 				let D be the chosen trap diaper;
@@ -119,7 +135,7 @@ Check entering podium:
 						only destroy K;
 					summon D cursed with quest;
 				fully clean D;
-				UrineSoakUp D by the soak-limit of D;
+				SlimeSoakUp D by the soak-limit of D;
 				if diaper messing >= 4, MessSet D to 10;
 				say "Opening your eyes, you yelp as you realise it wasn't your imagination at all! Blinking your eyes, you gasp in surprise, staring in shock at your [if M is worn]mitten-clad hands and [end if]drooping [D]! [if P is worn]You try to spit out your new [P] but it is stuck in your mouth! [end if][line break][first custom style]'DISGUSTING!'[roman type][line break]yells a voice. Swallowing, you look up to see [NameDesc of M]! [big he of M] marches towards the stage.";
 				say "Pressing a concealed button at the front of the stage, the guard triggers a mechanical trap door which catapults you down to the ground in front of [him of M]. [bold type]You are now on your knees.[line break][first custom style]'This show is cancelled. You can't just soil yourself in the middle of a performance like that! I'm going to have to refund all those tickets... and as for you, if you are going to mess your Pampers like a baby, I'm going to treat you like one. Stay on your knees.'[roman type][line break]";
@@ -128,7 +144,7 @@ Check entering podium:
 					otherwise cutshow figure of podium cutscene 2 for M;
 				now the previous-babification of M is 1; [prevents flavour where the guard 'changes how he's looking at you']
 				decrease the health of M by 1; [This stops him changing the player, and will instead punish further.]
-			otherwise if bondage protection is 2:
+			otherwise if bondage protection >= 2:
 				now the fatigue of the player is the very tired threshold of the player + 5;
 				say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all its energy. You collapse to the ground, and are now on your knees![line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of male-m] slams [his of male-m] gavel down on the podium. Swallowing, you shiver as [he of male-m] yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new [big literalMistress of M]... [NameDesc of M][line break][first custom style]'Look up at your new [literalMistress of M], slave.'[roman type][line break][big he of M] grabs you by your hair as the Auctioneer lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the player is not a nympho]a decision to be made - fuck or flight?[otherwise][his of M] waiting [manly-penis].[end if]";
 			otherwise:

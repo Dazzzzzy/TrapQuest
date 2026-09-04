@@ -188,6 +188,9 @@ To say FatCutscene (N - a number):
 	if N is 1, appropriate-cutscene-display figure of fat growth 1;
 	if N is 2, appropriate-cutscene-display figure of fat growth 2;
 	if N is 3, appropriate-cutscene-display figure of fat growth 3.
+Figure of Fat Growth 1 is the file "Special/Cutscene/cutscene-fat1.png".
+Figure of Fat Growth 2 is the file "Special/Cutscene/cutscene-fat2.png".
+Figure of Fat Growth 3 is the file "Special/Cutscene/cutscene-fat3.png".
 
 To compute fat burning reset:
 	say "You feel that by resting here, all the recent exercise you have done has gone to waste.";

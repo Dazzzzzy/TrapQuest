@@ -48,7 +48,7 @@ Part 1 - Perception
 To compute perception of (M - robomatron):
 	now the raw difficulty of M is 5;
 	say "[BigNameDesc of M] notices you![line break][speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
-	if the wealth of the player < 20:
+	if the endgame wealth of the player < 500000:
 		say "INSUFFICIENT FUNDS DETECTED. PUSHING BUTTON AND ENDING THE SIMULATION WILL RESULT IN 12 MONTHS OF SERVITUDE TO NINTENDOLLS. TERMINATING FINAL BOSS ROUTINE. THE CHOICE IS YOURS.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
 		calm M;
 	otherwise:
@@ -64,13 +64,13 @@ To compute perception of (M - robomatron):
 			SilentlyDifficultyUp M by 1;
 		if the bladder-incontinence of the player < the max-bladder-incontinence of the player:
 			if diaper messing >= 3:
-				say "BLADDER UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
+				say "[if slimeshooter fetish is 1]SLIMESHOOTER[otherwise]BLADDER[end if] UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
 				SilentlyDifficultyUp M by 1;
 			otherwise:
-				say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
+				say "[caps slime] UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
 				SilentlyDifficultyUp M by 2;
 		if diaper messing >= 3 and the rectum-incontinence of the player < the max-rectum-incontinence of the player:
-			say "TOTAL POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
+			say "TOTAL [caps slime] UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
 			SilentlyDifficultyUp M by 1;
 		if the cringe appearance of the player < 14:
 			say "APPEARANCE INSUFFICIENTLY DEGRADING. INCREASING POWER LEVEL BY 2.";
@@ -159,7 +159,7 @@ To say EnemaAftermath of (M - robomatron):
 	say "[BigNameDesc of M] finally pulls [his of M] hand away, freeing your [asshole].".
 
 To say EnemaAfterFlav of (M - robomatron):
-	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. TOILET QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type][line break][BigNameDesc of M] now seems to be allowing you to leave.".
+	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. [caps SlimeTarget] QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type][line break][BigNameDesc of M] now seems to be allowing you to leave.".
 
 To compute enema floor reaction of (M - robomatron):
 	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]BAD [caps boy of the player]. BAD [caps boy of the player].'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";

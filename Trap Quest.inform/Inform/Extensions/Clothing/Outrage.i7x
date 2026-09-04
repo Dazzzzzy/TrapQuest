@@ -50,11 +50,11 @@ To decide which number is the fluid cringe of (C - a clothing):
 		if C is not currently at least partially visible, decide on 0;
 		let LP be the at least partial concealer of C;
 		if LP is not arms and LP is not butt-windowed clothing and C is not currently visible, decide on 0; [In general, diapers don't reveal their wet status when partially concealed, but arms and butt-windowed clothing are the exceptions]
-	if C is swimming themed and the urine-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
+	if C is swimming themed and the slime-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;
 	otherwise if diaper quest is 0:
-		if current-predicament is team-three-leg-predicament and the player is in a predicament room and C is crotch covering, decide on the water-soak of C + ((1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2);
-		decide on (1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2;
+		if current-predicament is team-three-leg-predicament and the player is in a predicament room and C is crotch covering, decide on the water-soak of C + ((1 + the semen-soak of C + the slime-soak of C + the milk-soak of C) / 2);
+		decide on (1 + the semen-soak of C + the slime-soak of C + the milk-soak of C) / 2;
 	otherwise:
 		if C is crotch covering and C is wet, decide on 5;
 		decide on 0.
@@ -65,7 +65,7 @@ Definition: a clothing (called C) is dirty rather than clean:
 	decide no.
 
 To say fluids of (C - a clothing):
-	if the urine-soak of C > 0, say "[urine][if the milk-soak of C > 0 and the semen-soak of C > 0], [otherwise if the milk-soak of C > 0 or the semen-soak of C > 0] and [end if]";
+	if the slime-soak of C > 0, say "[slime][if the milk-soak of C > 0 and the semen-soak of C > 0], [otherwise if the milk-soak of C > 0 or the semen-soak of C > 0] and [end if]";
 	if the milk-soak of C > 0, say "[milk][if the semen-soak of C > 0] and [end if]";
 	if the semen-soak of C > 0, say "[semen]".
 

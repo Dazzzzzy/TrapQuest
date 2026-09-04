@@ -258,8 +258,9 @@ This is the bottom layer removal rule:
 		repeat with O running through worn bottom-layer-blocking unskirted clothing:
 			if the bottom-layer of O > the bottom-layer of wearing-target:
 				unless O is no protection and wearing-target is not crotch-pullup:
-					if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";
-					if autolayerremove is false, rule fails;
+					unless O is unglued uncursed unlocked diaper and the class of the player is berri:
+						if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";
+						if autolayerremove is false, rule fails;
 		repeat with C running through worn crotch-in-place crotch covering crotch-skirted hobble-skirted clothing: [These will always be on top]
 			unless wearing-target is C:
 				if summoning is 0 and autoremove is false, say "You need to pull up your [printed name of C] first.";

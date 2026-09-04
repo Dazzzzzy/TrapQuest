@@ -220,7 +220,9 @@ Definition: a clothing (called C) is diaper hiding:
 To decide which number is the defaultDiaperCoveringLength of (C - a clothing):
 	if C is skirted:[This is supposed to line up with DQBulk, i.e. if DQBulk is bigger than this, we can see the bottom of your diaper (defaultDiaperCoveringLength). Ideally it also lines up with how many inches of penis it can hide (penis-capacity is 1 + skirtLength*2).]
 		if C is super-short or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
-		if the front-skirt-length of C <= 4 or the back-skirt-length of C <= 4, decide on 1;
+		if the front-skirt-length of C <= 3 or the back-skirt-length of C <= 3, decide on 1;
+		if the front-skirt-length of C <= 4 or the back-skirt-length of C <= 4, decide on 6;
+		if the front-skirt-length of C <= 5 or the back-skirt-length of C <= 5, decide on 7;
 		decide on 8;
 		[if the front-skirt-length of C < the back-skirt-length of C, decide on the front-skirt-length of C;
 		otherwise decide on the back-skirt-length of C;]
@@ -246,6 +248,7 @@ To decide which object is the concealer of (K - a knickers):
 [This hides the wet status of the underwear but not the shape.]
 To decide which object is the at least partial concealer of (K - a knickers):
 	if water-fountain is penetrating asshole, decide on water-fountain;
+	if K is diaper and the DQBulk of K <= the DQBulk of blue-velcro-diaper and babydoll-skirt is worn and babydoll-skirt is crotch-in-place and the player is upright, decide on babydoll-skirt; [babydoll skirt BARELY covers the bottom of a velcro diaper. This is important for tug of war predicament]
 	let DC be K;
 	repeat with C running through worn diaper covering clothing:
 		[if debugmode > 1, say "considering concealment of [ShortDesc of C].";]

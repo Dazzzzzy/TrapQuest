@@ -135,7 +135,7 @@ Drinking from the baby's bottle
 
 Moderate (~50)
 Per dangerous monster that witnesses a floating player land
-Per unit of urine already in a diaper when it is worn
+Per unit of slime already in a diaper when it is worn
 (Periodical) Per size of belly when a male player realises they look pregnant
 Drinking from the squirt dildo
 Inserting a sex toy
@@ -168,7 +168,7 @@ Genitals on display when noticed by monster
 Per turn paddled by matron
 
 Strong + Moderate + Slight (~175)
-Drinking urine from a vessel
+Drinking slime from a vessel
 Sucking on the statue's penis
 
 Severe - Moderate (~200)
@@ -365,8 +365,8 @@ To 2Humiliate (X - a number):
 		if newbie tips is 1 and the humiliation of the player > HUMILIATION-PROUD, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
 	otherwise:
 		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of]You feel a faint pain in your temples as your master seems to shift around inside of you. [big his of male-m] sounds off in your head as you feel [his of male-m] presence slightly expand![line break][first custom style]'Mmf. You've loosened up a little, but you're still so tight, aren't you, [NameBimbo]. I suppose I'll have to humiliate you a little more before we start making any real progress...'[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of male-m] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of male-m] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if gyno fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of male-m] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if gyno fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of male-m] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
 		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of male-m] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Yes, just a little more. Just a scintilla more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
 
 blush factor is a number that varies.

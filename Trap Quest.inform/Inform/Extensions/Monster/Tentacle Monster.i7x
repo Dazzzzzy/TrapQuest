@@ -14,6 +14,9 @@ Definition: a tentacle monster is egg-fathering: decide yes.
 Definition: a tentacle monster is throater: decide yes.
 Definition: a tentacle monster is a clothes-destroyer: decide yes.
 Definition: a tentacle monster is a urinater: decide no.
+Definition: a tentacle monster is concealment immune:
+	if it is doom-evolved, decide yes;
+	decide no.
 
 Definition: a tentacle monster (called M) is a generic-unlocker:
 	if M is doom-evolved, decide yes;

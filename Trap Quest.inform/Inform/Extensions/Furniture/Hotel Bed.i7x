@@ -33,7 +33,7 @@ To say RestingDesc of (F - HotelBedCreamy):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.[if diaper quest is 0][one of]You are so comfortable that you appreciate the warm, moist feeling within the bed without really thinking too hard about it.[or][stopping][end if]".
 To compute rest ending of (F - HotelBedCreamy):
 	if diaper quest is 1:
-		say "Just as you are about to climb out of the bed, you feel the duvet covers clamp down around you as if they were alive! They constrict around you, forcefully putting pressure on your [if diaper messing >= 3]belly and [end if]bladder!";
+		say "Just as you are about to climb out of the bed, you feel the duvet covers clamp down around you as if they were alive! They constrict around you, forcefully putting pressure on your [if diaper messing >= 3]belly and [end if][SlimeContainer]!";
 		let R be a random number between 4 and the bladder of the player;
 		if the player is full and there is worn total protection soilable clothing and asshole is not actually occupied and rectum > 1:
 			compute messing;
@@ -43,7 +43,7 @@ To compute rest ending of (F - HotelBedCreamy):
 			try urinating;
 			now player-currently-resting is 0;
 		otherwise:
-			say "[if the player is bursting]You manage to hold onto your pee[otherwise]Luckily, it seems like you are too empty to be forced into wetting the bed[end if]. ";
+			say "[if the player is bursting]You manage to hold onto your [slime][otherwise]Luckily, it seems like you are too empty to be forced into [Slimeshoot]ing the bed[end if]. ";
 		say "Eventually, the magic bedding seems to tire itself out, and releases its hold on you. You are able to leave the bed.";
 	otherwise if bukkake fetish is 1:
 		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]! [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
@@ -54,7 +54,7 @@ To compute rest ending of (F - HotelBedCreamy):
 				let SM be the soak-limit of C - the total-soak of C;
 				if SM > 10, now SM is 10;
 				CumSoak SM on C;
-		let SM be the largeness of hair - (the semen coating of hair + the urine coating of hair + the water-drench of hair);
+		let SM be the largeness of hair - (the semen coating of hair + the slime coating of hair + the water-drench of hair);
 		if SM > 5, now SM is 5;
 		if SM > 0, AnnouncedSquirt semen on hair by SM;
 		cutshow Figure of hotel bed cutscene 1 for F;

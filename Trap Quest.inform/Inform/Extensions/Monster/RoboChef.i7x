@@ -16,8 +16,8 @@ To decide which figure-name is the monster-image of (M - robochef):
 	decide on figure of robochef.
 
 To say MonsterDesc of (M - robochef):
-	say "A human sized robot with a chef's hat and a painted on moustache. [big he of M] has old fashioned joints and a large compartment in [his of M] [if lady fetish is 1]vase[otherwise]barrel[end if]-shaped torso, perfect for storing large quantities of food. [big his of M] 'eyes' glow brightly as he glides around silently on [his of M] wheels-for-feet. ";
-	if diaper quest is 0, say "At [his of M] groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
+	say "A human sized robot with a chef's hat and a painted on moustache. [big he of M] has old fashioned joints and a large compartment in [his of M] [if gyno fetish is 1]vase[otherwise]barrel[end if]-shaped torso, perfect for storing large quantities of food. [big his of M] 'eyes' glow brightly as he glides around silently on [his of M] wheels-for-feet. ";
+	if diaper quest is 0, say "At [his of M] groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [slime][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [slime] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
 	otherwise say line break;
 	if M is chef-wound, say "One of [his of M] arms is currently spinning faster and faster in preparation for a powerful attack!".
 
@@ -44,7 +44,7 @@ Part 1 - Misc Flavour
 To say SummoningFlav of (M - robochef):
 	if M is in the location of the player:
 		let P be a random patron;
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if gyno fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
 
@@ -120,7 +120,7 @@ To compute DQ perception of (M - robochef):
 		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if the number of worn diapers is 0 and (the player is full or bladder-bursting-level >= 0 or the water volume of belly > 0):
-		say "[big his of M] eyes turn red.[line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style]'IMMINENT [caps SlimeTarget] ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. [caps SlimeTarget] ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
@@ -201,7 +201,7 @@ To compute unique climax of (M - robochef) in (F - asshole):
 	otherwise:
 		say "You can feel the filling of [NameDesc of M][']s [manly-penis] being squirted straight into your belly!";
 		AssFill 6 - ((watersports fetish * 2) + (lactation fetish * 2));
-		if watersports fetish is 1, AssFill 2 Urine;
+		if watersports fetish is 1, AssFill 2 slime;
 		if lactation fetish is 1, AssFill 2 Milk;
 		say "[BigNameDesc of M] pulls out.[line break][first custom style]'SOUP INGREDIENT[if lactation fetish + watersports fetish > 0]S[end if] INSERTED. BREWING IN PROGRESS. ENJOY YOUR MEAL.'[roman type][line break][big he of M] turns away from you and leaves you alone.";
 		say "[variable custom style][one of][if the bimbo of the player < 8]This is hardly what I'd call [']brewing[']![otherwise if the bimbo of the player < 14][big he of M]'s using my butthole for brewing?![otherwise]I can't wait until it's finished brewing! Yum![end if][or][if the bimbo of the player < 8]How did I let this happen again![otherwise if the bimbo of the player < 14]My belly has gotten a lot of use as a cum-dumpster this game![otherwise]That felt good...[end if][stopping][roman type][line break]";
@@ -247,7 +247,7 @@ To say ForcefeedAftermath of (M - robochef):
 	say "The spoons finally stop returning with more food. The panel in the belly of [NameDesc of M] closes, and [he of M] lets go of your wrists. You are able to crawl away, feeling [if the player is overly full]like your belly is going to burst from overstuffing[otherwise]much more full[end if].".
 
 To say ForcefeedAfterFlav of (M - robochef):
-	say "[speech style of M]'[one of][caps please] RETURN ONCE [if diaper messing >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper messing >= 4]. WARNING: DIAPER RECOMMENDED TO AVOID POTTY FAILURE[end if].'[in random order][roman type][line break].".
+	say "[speech style of M]'[one of][caps please] RETURN ONCE [if diaper messing >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper messing >= 4]. WARNING: DIAPER RECOMMENDED TO AVOID CONTINENCE FAILURE[end if].'[in random order][roman type][line break].".
 
 To say DQFeedingResistReactionFlav of (M - robochef):
 	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PARAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".

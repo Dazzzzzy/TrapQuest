@@ -1,6 +1,6 @@
 Robots Framework by Monster Framework begins here.
 
-A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1.
+A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1. The blind-status of a robot is -1.
 
 [can't take a robot's soul]
 A robot is usually soul-stolen.
@@ -39,6 +39,9 @@ To say ArmWrangleSuccess of (M - a robot):
 
 To say ArmWrangleFailure of (M - a robot):
 	say "".
+
+To say AggravatedFlav of (M - a robot):
+	if M is intelligent, say "[speech style of M]'RETALIATION DETECTED. CONFIGURING COMBAT AND HUMILIATION PROTOCOL TO: [']NO MERCY['].'[roman type][line break][BigNameDesc of M][']s eyes turn red.".
 
 To compute DQ kneeling reaction of (M - a robot):
 	compute kneeling reaction of M.
@@ -79,16 +82,16 @@ To compute the default taunting of (M - a robot):
 To say ToiletPeeDeclaration of (M - a robot):
 	say "[if the humiliation of the player < 22500]You squirm uncomfortably, hoping that [NameDesc of M] isn't intelligent enough to understand what [he of M] is watching you do.[otherwise]You casually wonder if [NameDesc of M] understands what [he of M] is witnessing you do.[end if]".
 
-To say GroundPeeReaction of (M - a robot):
+To say GroundSlimeReaction of (M - a robot):
 	say "[speech style of M]'LEAKAGE DETECTED. SUBJECT APPEARS TO BE [if diaper lover > 0]UNABLE TO CONTROL BASIC BODILY FUNCTIONS[otherwise][one of]PUBLIC DISGRACE[or]DANGEROUSLY PERVERSE[or]IN NEED OF RECONDITIONING[in random order][end if].'[roman type][line break]";
 	anger M;
 	now M is diaper-committed.
 
 To say ToiletReactionFlav of (M - a robot):
-	say "[speech style of M]'[one of]THANK YOU FOR USING THE PROPER TOILET FACILITIES[or]WE APPRECIATE YOU NOT MAKING A MESS ON THE FLOOR[cycling].'[roman type][line break]".
+	say "[speech style of M]'[one of]THANK YOU FOR USING THE PROPER [caps SlimeTarget] FACILITIES[or]WE APPRECIATE YOU NOT MAKING A MESS ON THE FLOOR[cycling].'[roman type][line break]".
 
 To say ClothesPeeReaction of (M - a robot):
-	say GroundPeeReaction of M.
+	say GroundSlimeReaction of M.
 
 To say DiaperReaction of (M - a robot):
 	say "[BigNameDesc of M][']s blank metal expression does not change, so it's hard to gauge whether [he of M] saw or understood what you just did in front of [him of M].".
@@ -125,7 +128,11 @@ To compute diaper mess reaction of (M - a robot):
 		anger M;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with its unchanging expression.[line break][speech style of M]'MESSING DETECTED. [if M is unfriendly and M is interested]CHECKING IF PUNISHMENT ROUTINE CAN CONTINUE. [caps please] WAIT...[otherwise][caps please] PROCEED TO NEAREST LAUNDRY ROOM IMMEDIATELY[end if].'[roman type][line break]";
-	severeHumiliate.
+	say severeHumiliateReflect.
+
+To compute continued diaper mess reaction of (M - a robot):
+	say "[BigNameDesc of M] continues to degrade you with its emotionless tones.[line break][speech style of M]'BABY IS GOING POOPY. BABY IS GOING POOPY.'[roman type][line break]";
+	say strongHumiliateReflect.
 
 To compute (M - a robot) protecting against (X - a monster):
 	say "[one of][BigNameDesc of M] watches, seemingly not caring about your situation.[or][or][or][cycling]".
@@ -161,7 +168,7 @@ To say EnemaPlugDeclarationFlav of (M - a robot):
 	say "[speech style of M]'DING DING DING! BONUS PUNISHMENT FOUND ACTIVATED.'[roman type][line break]".
 
 To say EnemaPlugAfterFlav of (M - a robot):
-	say "[speech style of M]'BONUS ROUTINE SUCCESSFUL. VOLUNTARY ENEMA EXPULSION NO LONGER POSSIBLE. INVOLUNTARY POTTY EPISODE INEVITABLE.'[roman type][line break]".
+	say "[speech style of M]'BONUS ROUTINE SUCCESSFUL. VOLUNTARY ENEMA EXPULSION NO LONGER POSSIBLE. INVOLUNTARY [caps slime] EPISODE INEVITABLE.'[roman type][line break]".
 
 To say EnemaFloorReactionFlav of (M - a robot):
 	say "[BigNameDesc of M] stares at you.[line break][speech style of M]'ANAL EXPULSION DETECTED. [one of]SUBJECT SHOULD BE EXTREMELY ASHAMED[or]HUMILIATION AUDIO TRACK LOADED. HA HA HA[or]SAVING RECORDING TO CLOUD... SAVING... SAVING... UPLOAD COMPLETE: PUBLICATION TO INTERNET SUCCESSFUL. ENJOY YOUR HUMILIATION[in random order][if M is unfriendly and diaper quest is 1]. ADDITIONAL PUNISHMENT ROUTINE LOADING[end if].'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".

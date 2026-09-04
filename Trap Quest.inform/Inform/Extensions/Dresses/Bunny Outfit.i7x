@@ -43,7 +43,7 @@ To compute default bunny outfit class set up of (C - a clothing):
 	if W is a thing:
 		now W is carried by the player;
 		now the fill-colour of W is white;
-		if C is urine-taste-addiction-influencing, now the fill-colour of W is golden;
+		if C is slime-taste-addiction-influencing, now the fill-colour of W is golden;
 		now W is bland;
 		now W is sure;
 		DoseFill W;

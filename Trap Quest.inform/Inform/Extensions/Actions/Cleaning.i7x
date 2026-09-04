@@ -72,11 +72,11 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	otherwise if diaper quest is 1:
 		say "[if the make-up of face > 0 and the noun is face]That won't work, you'll need to wash in water[otherwise]That won't do anything[end if]." instead;
 	otherwise:
-		if the semen coating of the noun <= 0 and (the noun is not hair or the second noun is not pocketwipes or the urine coating of hair <= 0), say "Your [noun] [if noun is thighs or noun is breasts]are[otherwise]is[end if] already [semen] free." instead;
+		if the semen coating of the noun <= 0 and (the noun is not hair or the second noun is not pocketwipes or the slime coating of hair <= 0), say "Your [noun] [if noun is thighs or noun is breasts]are[otherwise]is[end if] already [semen] free." instead;
 	if the noun is not face and the noun is not breasts and the noun is not belly and the noun is not thighs and the noun is not hair and the noun is not hips, say "You can only clean your face, hair, chest, belly, hips or thighs at the moment." instead;
 	if the noun is hair and the second noun is not pocketwipes:
 		if the semen coating of hair is 1, say "You can't get that last bit of [semen] out of your hair just by rubbing, you'll need to wash yourself with water." instead;
-		if the semen coating of hair is 0 and the urine coating of hair > 0, say "You can't get the [urine] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
+		if the semen coating of hair is 0 and the slime coating of hair > 0, say "You can't get the [slime] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
 	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that!" instead;
 	if the second noun is not clothing and the second noun is not arms and the second noun is not pocketwipes, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
@@ -84,7 +84,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 		if the player is flying and the second noun is not held by the player, say "[BigNameDesc of the second noun] is on the ground, and you're not." instead;
 		if the second noun is external fluid immune, say "The outside of that is waterproof, so it wouldn't work very well as a rag." instead;
 		if the second noun is fluid immune, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
-		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
+		if the semen-soak of the second noun + the slime-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
 	otherwise if the second noun is arms and the semen taste addiction of the player < 8 and the thirst of the player < 4:
 		say "You can't bring yourself to do that[if the semen addiction of the player > 12]. And even if you did like the taste, you love the feeling of it too much to remove it[end if]!" instead;
@@ -113,7 +113,7 @@ To 2Clean (P - a body part) with (C - a clothing):
 	allocate 6 seconds;
 	say "You use [NameDesc of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
 	let SW be 0;
-	let TSK be the soak-limit of C - (the semen-soak of C + the urine-soak of C + the milk-soak of C);
+	let TSK be the soak-limit of C - (the semen-soak of C + the slime-soak of C + the milk-soak of C);
 	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and TSK > 0: [there is semen to clean and soak limit available]
 		increase SW by 1; [amount of semen to add in one go]
 		decrease TSK by 1; [amount of space on clothing available for soaking]
@@ -131,12 +131,12 @@ To 2Clean (P - a body part) with (C - a clothing):
 To 2Clean (P - a body part) with (C - a pocketwipes):
 	allocate 6 seconds;
 	say "You use [NameDesc of C] to wipe your [P] clean.[if the semen coating of P > 0 and the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
-	if the semen coating of P > 0 or (P is hair and the urine coating of hair > 0), say "Your [if P is face]face is[otherwise if P is hair]hair is[otherwise if P is belly]belly is[otherwise][variable P] are[end if] now completely clean.";
+	if the semen coating of P > 0 or (P is hair and the slime coating of hair > 0), say "Your [if P is face]face is[otherwise if P is hair]hair is[otherwise if P is belly]belly is[otherwise][variable P] are[end if] now completely clean.";
 	if P is face and the make-up of face > 0, say "Your make up [if permanent makeup is 1]is magically permanent, and therefore unaffected[otherwise]has all been washed away[end if].";
 	say "You discard the empty packet of wipes.";
 	now the semen coating of P is 0;
 	if P is face and permanent makeup is 0, FaceDown the make-up of face;
-	if P is hair, now the urine coating of hair is 0;
+	if P is hair, now the slime coating of hair is 0;
 	destroy C.
 
 To 2Clean (P - a body part) with (C - a limb):
@@ -159,7 +159,7 @@ Report cleaning it with when the second noun is clothing:
 		progress quest of stealing-quest.
 
 To clean (C - a clothing):
-	now the urine-soak of C is 0;
+	now the slime-soak of C is 0;
 	now the milk-soak of C is 0;
 	now the semen-soak of C is 0;
 	if C is worn, update appearance level.

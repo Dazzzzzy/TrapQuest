@@ -83,7 +83,7 @@ To compute teaching of (L - pain-training):
 			say "[variable custom style]Boy, that sure went well![roman type][line break]";
 			allocate 12 seconds;
 			update trainees; [an important line which makes boring old trainees disappear and new cool ones appear]
-	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable) and lady fetish < 2:
+	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable) and andro fetish is 0:
 		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilised piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let [him of M] give you a clitoris piercing? ";[possibly more indication here that everyone will follow you]
 		if the player is bimbo consenting:
 			let ST be a random tryhard trainee in the location of the player;
@@ -112,7 +112,7 @@ To compute teaching of (L - pain-training):
 			repeat with ST running through innocent trainees in the location of the player:
 				FavourUp ST;
 			allocate 12 seconds;
-	otherwise if there is a worn clitoris piercing and clitoris lead is not worn and the number of cursed pussy covering clothing <= the number of cursed displacable pussy covering clothing and lady fetish < 2:
+	otherwise if there is a worn clitoris piercing and clitoris lead is not worn and the number of cursed pussy covering clothing <= the number of cursed displacable pussy covering clothing and andro fetish is 0:
 		say "Well, let's try reminding them of the symbol of submission they've got permanently welded in between their thighs, hmm?'[roman type][line break]You shiver as you clench your thighs together, almost instinctively protecting your [ShortDesc of random worn clitoris piercing] from [him of M].[line break][speech style of M]'Today we're going to have a little competition, and the winner will get promoted. I need two volunteers, each with a pierced clit.'[roman type][line break]Do you volunteer? ";
 		if the player is bimbo consenting:
 			let ST be a random promotable trainee in the location of the player;
@@ -190,9 +190,9 @@ To compute teaching of (L - pain-training):
 			say "Well, I think we should try taking away someone's right to choose how their mouth is used, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if portal gag is held]takes the [ShortDesc of portal gag] from your possession[otherwise]produces a magical ballgag with a swirling portal where the ball should be, and carries it over to you[end if]. [big he of M] wraps the strap around your face and locks it into place, so there's now a magical portal fixed in your permanently open mouth! [BigNameDesc of M] holds up another identical portal, attached to similar leather straps.[line break][speech style of M]'Whoever holds this owns your mouth, now. Do you understand what happens when something is inserted here?'[roman type][line break]You whine but nod.[line break][speech style of M]'Now, who should I give it to...'[roman type][line break]";
 			summon portal gag locked;
 			let K be a random worn removable uncursed unglued unlocked knickers;
-			if (portal-pants is actually summonable or (a random number between 1 and 2 is 1 and K is knickers and the number of worn crotch covering clothing is 1)) and (watersports fetish is 1 or watersports mechanics is 0): [Can't do this if the player needs to pee but isn't into piss drinking]
+			if (portal-pants is actually summonable or (a random number between 1 and 2 is 1 and K is knickers and the number of worn crotch covering clothing is 1)) and (watersports mechanics is 1): [Can't do this if the player needs to pee but isn't into piss drinking]
 				if K is knickers, now K is in the location of the player;
-				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is possessing a penis][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise if the player is possessing a vagina][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to resist keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
+				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is possessing a penis][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise if the player is possessing a vagina][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to resist keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the [SlimeTarget] before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
 				summon portal-pants locked;
 			otherwise:
 				let N be a random alive male tutor;
@@ -234,7 +234,7 @@ Definition: toy-training is training-appropriate:
 
 To compute teaching of (L - toy-training):
 	let M be the training-tutor of L;
-	say "[speech style of M]'To turn in a brat into a proper submissive, they need to be constantly reminded that they are OWNED. Most of my colleagues focus on external... [']stimulation['] to deliver this message but I strongly believe that nothing makes someone feel more submissive than allowing themselves to be dominated... on the INSIDE.'[roman type][line break][BigNameDesc of M] pulls away a tablecloth to reveal an array of butt plugs lines up on a table, with wildly varying sizes.[line break][speech style of M]'When wearing a plug, a submissive has a constant intrusion in their most sensitive and private place, constantly making them think: [']I am owned. All of what I am, inside and out, has been claimed by my owners[if diaper quest >= 3]. Even my ability to use the toilet is not my own; I must remain here squirming with discomfort until I am allowed to go[end if].['] And the bigger the plug, the more powerful the effect.'[roman type][line break][big he of M] rubs [his of M] fingers together with unhidden greedy anticipation.";
+	say "[speech style of M]'To turn in a brat into a proper submissive, they need to be constantly reminded that they are OWNED. Most of my colleagues focus on external... [']stimulation['] to deliver this message but I strongly believe that nothing makes someone feel more submissive than allowing themselves to be dominated... on the INSIDE.'[roman type][line break][BigNameDesc of M] pulls away a tablecloth to reveal an array of butt plugs lines up on a table, with wildly varying sizes.[line break][speech style of M]'When wearing a plug, a submissive has a constant intrusion in their most sensitive and private place, constantly making them think: [']I am owned. All of what I am, inside and out, has been claimed by my owners[if diaper quest >= 3]. Even my ability to use the [SlimeTarget] is not my own; I must remain here squirming with discomfort until I am allowed to go[end if].['] And the bigger the plug, the more powerful the effect.'[roman type][line break][big he of M] rubs [his of M] fingers together with unhidden greedy anticipation.";
 	if asshole is actually occupied:
 		let T be a random thing penetrating asshole;
 		say "[speech style of M]'But first... I can sense that one of our group has been busy [']studying['] this [']curriculum['] in [his of the player] own time.'[roman type][line break][big he of M] walks up to you and pushes at your [asshole] with one hand, feeling the base of the solid [ShortDesc of T].[line break][speech style of M]'Just as I thought.'[roman type][line break][BigNameDesc of M] whispers in a seductive voice.[line break][speech style of M]'You already know who owns this hole, don't you, puppet?'[roman type][line break][strongHumiliateReflect]When [his of M] gaze meets yours, you can't help but gulp and nod.[line break][speech style of M]'Very good. Well, I think you're more than ready to move on then.'[roman type][line break]";
@@ -458,7 +458,7 @@ To say MonsterDesc of (M - tutor-bianca):
 	otherwise if M is diaper-enslaved:
 		say "Where there was once a [man of M] with proudly exposed black panties, there is now one with a shamefully exposed thick black diaper, with no skirt whatsoever. Instead there are just small frills at [his of M] waistband. Black elbow-length gloves and a matching pacifier complete the babified look.";
 	otherwise:
-		say "This tall [if lady fetish is 2]slim, yet bootilicious [man of M][otherwise]slim-yet-curvy lady[end if] has long light brown hair. [big he of M]'s wearing all black. [big his of M] tight dress has a split section at the front of the skirt, the resulting gap rising high enough to fully expose [his of M] black panties. [big he of M] seems completely comfortable with [his of M] appearance.".
+		say "This tall [if andro fetish is 1]slim, yet bootilicious [man of M][otherwise]slim-yet-curvy lady[end if] has long light brown hair. [big he of M]'s wearing all black. [big his of M] tight dress has a split section at the front of the skirt, the resulting gap rising high enough to fully expose [his of M] black panties. [big he of M] seems completely comfortable with [his of M] appearance.".
 
 The tutor-name of tutor-bianca is "Bianca".
 
@@ -638,8 +638,8 @@ To compute teaching of (L - drink-training):
 	say "[speech style of M]'Today's training session is on becoming accustomed to unique tastes.'[roman type][line break][BigNameDesc of M] produces a large wooden goblet with intricate runes engraved into a golden rim. Inside the goblet is... ";
 	let LQ be semen;
 	if watersports fetish is 1 and a random number between 1 and 2 is 1:
-		say "Nothing?[line break]...And then [NameDesc of M] lowers the goblet to underneath [his of M] skirt, and you watch transfixed with [horror the urine taste addiction of the player] as you listen to a loud tinkling sound.[line break][variable custom style][big he of M][']s pissing in the cup![roman type][line break]";
-		now LQ is urine;
+		say "Nothing?[line break]...And then [NameDesc of M] lowers the goblet to underneath [his of M] skirt, and you watch transfixed with [horror the slime taste addiction of the player] as you listen to a loud tinkling sound.[line break][variable custom style][big he of M][']s [SlimeShoot]ing in the cup![roman type][line break]";
+		now LQ is slime;
 	otherwise if diaper quest is 1 or a random number between 1 and 2 is lactation fetish:
 		say "Nothing?[line break]...And then [NameDesc of M] reaches down under the desk and produces a large bottle. A bottle full of thick white milk, and attached to a breast pump. [big he of M] detaches the pump, and empties the creamy breast milk into the goblet.";
 		now LQ is milk;
@@ -669,8 +669,8 @@ To compute teaching of (L - drink-training):
 				say "You take a big long sip of the strong-smelling [variable LQ], and now have a [MouthfulDesc]. [BigNameDesc of M] smiles and nods at you.";
 				now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
-				now the armband-title of armband is the substituted form of "[if LQ is urine]Emilia[otherwise if LQ is milk]Bobbi[otherwise]Connie[end if]";
-				now the armband-print of armband is the substituted form of "[if LQ is urine]emiction epicure[otherwise if LQ is milk]breastmilk bon-vivant[otherwise]cum connoisseur[end if]";
+				now the armband-title of armband is the substituted form of "[if LQ is slime]Emilia[otherwise if LQ is milk]Bobbi[otherwise]Connie[end if]";
+				now the armband-print of armband is the substituted form of "[if LQ is slime]emiction epicure[otherwise if LQ is milk]breastmilk bon-vivant[otherwise]cum connoisseur[end if]";
 				say ClothingDesc of armband;
 			otherwise:
 				say "You turn your nose up at the horrid stuff.[line break][speech style of M]'I had high hopes for you, but it seems I misjudged you.'[roman type][line break][BigNameDesc of M] shakes [his of M] head at you.";

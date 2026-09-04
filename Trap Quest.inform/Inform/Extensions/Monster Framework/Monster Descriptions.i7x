@@ -239,7 +239,7 @@ To say SubmissiveDesc of (M - a monster):
 To say WeaknessDesc of (M - a monster):
 	if the noun is undefeated:
 		if the health of the noun < the maxhealth of the noun / 4:
-			if the noun is wenchy and (M is penis-fuckable or M is piss-fuckable or M is uniquely-fuckable or M is ass-rideable or M is vagina-rideable or M is diaper-rideable) and saved-flat-intelligence > 6:
+			if the noun is wenchy and (M is penis-fuckable or M is slime-blast-fuckable or M is uniquely-fuckable or M is ass-rideable or M is vagina-rideable or M is diaper-rideable) and saved-flat-intelligence > 6:
 				say SubmissiveDesc of M;
 			otherwise:
 				say "[BigNameDesc of noun] looks near defeat.";

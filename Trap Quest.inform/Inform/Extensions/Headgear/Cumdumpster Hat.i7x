@@ -203,7 +203,7 @@ To compute cumdumpsterification:
 		if meat-toilet-panties is worn:
 			repeat with C running through worn clothing:
 				if the used condoms of C > 0 and C is not meat-toilet-panties:
-					say "The used condoms attached to your [C] are magically transferred to the meat toilet panties!";
+					say "The used condoms attached to your [C] are magically transferred to the meat [SlimeTarget] panties!";
 					UsedCondomUp meat-toilet-panties by the used condoms of C;
 					add the condom history of C to the condom history of meat-toilet-panties;
 					UsedCondomWipe C.

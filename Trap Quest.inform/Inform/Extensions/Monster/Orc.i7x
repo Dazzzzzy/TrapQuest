@@ -36,18 +36,18 @@ To say MediumDesc of (M - orc):
 	say "hairy orc".
 
 To decide which figure-name is the monster-image of (M - orc):
-	if lady fetish is 1, decide on Figure of female orc;
+	if gyno fetish is 1, decide on Figure of female orc;
 	decide on figure of Orc.
 
 To say MonsterDesc of (M - orc):
-	say "This chubby, hairy [man of M] is visibly half-pig, and half-human. Presumably in pig-man culture, it's normal to be completely stark naked, exposing your massive [if lady fetish is 1]breasts and[end if][DickDesc of M] to the world.".
+	say "This chubby, hairy [man of M] is visibly half-pig, and half-human. Presumably in pig-man culture, it's normal to be completely stark naked, exposing your massive [if gyno fetish is 1]breasts and[end if][DickDesc of M] to the world.".
 
 [To say MonsterComment of (M - a orc):
-	if lady fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That dude is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
+	if gyno fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That dude is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
 	otherwise say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [DickDesc of M] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [DickDesc of M]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic snake...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This harlot isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. [big he of M] should know that [DickDesc of M] doesn't mean anything to anyone.[or]A [man of M] in charge of the shop. I like it, but I wish [he of M] wasn't naked.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That bitch is cut! Maybe I should get [him of M] to give me some workout tips. After [he of M] puts some underwear on, of course.[or]This [man of M] looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] [DickDesc of M].[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles?[or]I shouldn't steal anything. Who knows how [he of M] might punish me?[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking [DickDesc of M]![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] [DickDesc of M]! It looks so yummy![in random order][end if][roman type][line break]".]
 
 To say LongDickDesc of (M - orc):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "huge strap-on";
 	otherwise:
 		say "huge [manly-penis]".
@@ -130,7 +130,7 @@ To say DiaperReaction of (M - orc):
 To compute diaper mess reaction of (M - orc):
 	say "[BigNameDesc of M] snorts.[line break][speech style of M]'To think... You would really do that in front of me! You must have absolutely no self-respect!'[roman type][line break][big he of M] can't stop [himself of M] from laughing. [strongHumiliateReflect]";
 	if diaper quest is 1 and M is not playing-poker-badly:
-		say "[speech style of M]'Your humiliation... It's just scrumptious. Yes... This moment will be imprinted on my mind for a decent while, I should think!";
+		say "[speech style of M]'Your humiliation... It's just scrumptious. Yes... This moment will be imprinted on my mind for a decent while, I should think!'[roman type][line break]";
 		now M is playing-poker-badly.
 
 To compute (M - a monster) stomping (N - orc):
@@ -925,8 +925,8 @@ To compute poker punishment of (PC - a number):
 		otherwise:
 			unless PV is listed in numbersExplained, say "[speech style of orc]'Nines are to do with your preferences and attitudes.'[roman type][paragraph break]";
 			if PS is 0 and watersports fetish is 1:
-				say "[speech style of orc]'The [poker card of PC] increases your desire to drink urine.'[roman type][line break]";
-				UrineTasteAddictUp 1;
+				say "[speech style of orc]'The [poker card of PC] increases your desire to drink slime.'[roman type][line break]";
+				SlimeTasteAddictUp 1;
 			otherwise if PS is 1:
 				say "[speech style of orc]'The [poker card of PC] increases your desire to drink human breast milk.'[roman type][line break]";
 				MilkTasteAddictUp 1;
@@ -955,11 +955,11 @@ To compute poker punishment of (PC - a number):
 				LipsUp 1;
 				say "You feel a swelling sensation in your lips!";
 		otherwise:
-			unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect how soon you'll need to use the toilet.'[roman type][paragraph break]";
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect how soon you'll need to use the [SlimeTarget].'[roman type][paragraph break]";
 			if PS is 0 and the bladder of the player < 12:
-				say "[speech style of orc]'The [poker card of PC] fills up your bladder to the brim.'[roman type][line break]";
+				say "[speech style of orc]'The [poker card of PC] fills up your [SlimeContainer] to the brim.'[roman type][line break]";
 				now the bladder of the player is 12;
-				say "[if the player is bursting]You feel DESPERATE to pee!!![otherwise]Nothing feels any different? Strange...[end if]";
+				say "[if the player is bursting]You feel desperate to release your [SlimeContainer]!!![otherwise]Nothing feels any different? Strange...[end if]";
 			otherwise if PS is 1 and diaper messing >= 3 and rectum < 12:
 				say "[speech style of orc]'The [poker card of PC] fills up your bowels to the brim.'[roman type][line break]";
 				now rectum is 12;

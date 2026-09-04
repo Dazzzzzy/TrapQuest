@@ -107,13 +107,14 @@ To stimulate (F - a body part) from (T - an object) times (N - a number):
 	if F is penis and the player is female, now F is vagina;
 	while N > 0:
 		decrease N by 1;
-		if F is penis and a random number between 0 and 1 < the reaction of the player, RawUp penis;
 		if the player is able to get horny:
 			passively stimulate F from T;
+			if F is penis and a random number between 0 and 1 <= the reaction of the player, FastRawUp penis;
 		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 2:
 			now constant-stimulation-latest is time-turns;
 			if constant-stimulation-started is 0, now constant-stimulation-started is time-turns;
-		if F is orgasming, do nothing.[This is how we check for an orgasm]
+		unless F is orgasming:[Checking for an orgasm can trigger an orgasm.]
+			compute climax resist exp from T on F.
 
 To passively stimulate (F - a body part) from (T - an object) times (N - a number):
 	while N > 0:
@@ -131,8 +132,12 @@ To passively stimulate (F - a body part) from (T - an object):
 			if the player is possessing a vagina, increase A by the square root of the vaginal sex addiction of the player;
 			otherwise increase A by the sex addiction of the player / 2;
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
+		if F is penis, RawUp penis;
 		let ST be the stimulation of T on F * 2;
-		if refractoryperiod <= 0, now ST is a random number between ST and (ST * 3); [in the first three turns after orgasm, arousal from stimulation is slightly lowered]
+		if refractoryperiod <= 0:
+			now ST is a random number between ST and (ST * 3); [in the first three turns after orgasm, arousal from stimulation is slightly lowered]
+		otherwise:[if you haven't climaxed recently, passive stimulation grants xp]
+			increase the gasm-time of the player by 25;
 		let AR be (ST + A) * 20;
 		if F is fuckhole or F is penis:
 			increase AR by 350;

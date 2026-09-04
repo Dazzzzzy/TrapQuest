@@ -131,8 +131,6 @@ To decide which figure-name is Figure of Gladiator Interact 8:
 To decide which figure-name is Figure of Gladiator Interact 9:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of Gladiator Cutscene 1:
-	decide on figure of small image.
 To decide which figure-name is Figure of Gladiator Cutscene 2:
 	decide on figure of small image.
 To decide which figure-name is Figure of Gladiator Cutscene 3:
@@ -251,12 +249,12 @@ To decide which figure-name is Figure of Body Reaction 4:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 7:
 	decide on figure of small image.
-To decide which figure-name is Figure of Body Reaction 10:
+[To decide which figure-name is Figure of Body Reaction 10:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 11:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 12:
-	decide on figure of small image.
+	decide on figure of small image.]
 To decide which figure-name is Figure of Body Reaction 13:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 14:
@@ -311,12 +309,6 @@ To decide which figure-name is Figure of Full Term Pregnancy:
 To decide which figure-name is Figure of Giant Pregnancy:
 	decide on figure of small image.
 To decide which figure-name is Figure of Full Term Contraction:
-	decide on figure of small image.
-To decide which figure-name is Figure of Fat Growth 1:
-	decide on figure of small image.
-To decide which figure-name is Figure of Fat Growth 2:
-	decide on figure of small image.
-To decide which figure-name is Figure of Fat Growth 3:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Flying used condoms:

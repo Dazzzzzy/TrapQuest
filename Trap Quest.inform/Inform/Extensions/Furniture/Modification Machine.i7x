@@ -201,7 +201,7 @@ To compute (M - a modification machine) babifying:
 		say "A robotic arm injects you in the side with a needle. ";
 		while the player is not really bursting and the player is not bladder incontinent and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
 			SilentlyBladderIncontinenceUp 1;
-		say "[if the player is really bursting]You feel your bladder weaken to the point where you're really desperate to pee![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to pee.[line break][variable custom style][one of]I don't need to pee any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
+		say "[if the player is really bursting]You feel your [SlimeContainer] weaken to the point where you're really desperate to [slimedrain]![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to [slime].[line break][variable custom style][one of]I don't need to [slime] any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
 	otherwise if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player:
 		say "A robotic arm injects you in the side with a needle. ";
 		RectumIncontinenceUp 1;
@@ -210,7 +210,7 @@ To compute (M - a modification machine) babifying:
 		if the player is really bursting, now B is 1;
 		say "A robotic arm injects you in the side with a needle. ";
 		now the bladder of the player is 14;
-		say "[if B is 1]You feel even more desperate to go to the toilet![otherwise if the player is really bursting]You suddenly feel a desperate need to go to the toilet![otherwise]You don't feel any different.[line break][variable custom style]Huh?[roman type][line break][end if]".
+		say "[if B is 1]You feel even more desperate to go to the [SlimeTarget]![otherwise if the player is really bursting]You suddenly feel a desperate need to go to the [SlimeTarget]![otherwise]You don't feel any different.[line break][variable custom style]Huh?[roman type][line break][end if]".
 
 To decide which number is the girth of (F - a modification machine):
 	if F is penetrating asshole, decide on the openness of asshole + 1;

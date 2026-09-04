@@ -89,7 +89,7 @@ To say ShortDesc of (H - black hood):
 	say "black latex hood".
 
 To say ClothingDesc of (H - black hood):
-	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or a more conventional gag[if H is worn and H is cursed and there is a worn cursed catsuit]. The bottom of the hood has merged with your catsuit.[end if]".
+	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or a more conventional gag[if H is worn and H is cursed and there is a worn cursed catsuit]. The bottom of the hood has merged with your catsuit[end if].".
 
 Chapter - Class Outfit
 
@@ -211,7 +211,7 @@ Figure of Free Use Hood is the file "Items/Accessories/Head/latexhood4a.jpg".
 Figure of Free Use Hood Worn is the file "Items/Accessories/Head/latexhood4b.jpg".
 
 To decide which figure-name is the clothing-image of (C - WC hood):
-	if watersports fetish is 1:
+	if legacy watersports fetish is 1:
 		decide on figure of WC hood;
 	otherwise:
 		if C is worn, decide on figure of Free Use Hood Worn;
@@ -224,7 +224,7 @@ To say ShortDesc of (H - WC hood):
 	say "white latex hood".
 
 To set up influence of (C - WC hood):
-	now C is oral-sex-addiction-influencing. [Don't want it to be urine taste addiction influencing because if it was, it would probably help reduce urine addiction which is counter-intuitive.]
+	now C is oral-sex-addiction-influencing. [Don't want it to be slime taste addiction influencing because if it was, it would probably help reduce slime addiction which is counter-intuitive.]
 
 Definition: WC hood is roleplay:
 	if watersports fetish is 1, decide yes;
@@ -236,9 +236,9 @@ Definition: WC hood is ringagged:
 	if watersports fetish is 1, decide yes;
 	decide no.
 
-This is the WC hood piss slut rule:
+This is the WC hood slime slut rule:
 	if WC hood is worn, increase the desirability of belly by 10.
-The WC hood piss slut rule is listed in the piss slut eligibility rules.
+The WC hood slime slut rule is listed in the slime slut eligibility rules.
 
 To compute unique periodic effect of (C - WC hood):
 	if (the player is gagged or (diaper quest is 1 and there is a soiled-diaper in the location of the player)) and trashcan is not worn, class summon trashcan.
@@ -261,7 +261,7 @@ To compute class outfit of (H - WC hood):
 	if meat-toilet-panties is worn:
 		repeat with C running through worn clothing:
 			if the used condoms of C > 0 and C is not meat-toilet-panties:
-				say "The used condoms attached to your [C] are magically transferred to the meat toilet panties!";
+				say "The used condoms attached to your [C] are magically transferred to the meat [SlimeTarget] panties!";
 				UsedCondomUp meat-toilet-panties by the used condoms of C;
 				add the condom history of C to the condom history of meat-toilet-panties;
 				UsedCondomWipe C;
@@ -280,10 +280,10 @@ To uniquely set up (C - WC hood):
 	now the quest of C is human-toilet-quest.
 
 To say QuestFlav of (Q - human-toilet-quest):
-	say "You sense that it wants you to take your place as a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet.".
+	say "You sense that it wants you to take your place as a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] [SlimeTarget].".
 
 To say QuestTitle of (Q - human-toilet-quest):
-	say " ([if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet quest)".
+	say " ([if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] [SlimeTarget] quest)".
 
 To progress quest of (Q - human-toilet-quest):
 	repeat with C running through worn clothing:
@@ -302,7 +302,7 @@ To compute persistent reward of (Q - human-toilet-quest) on (C - a clothing):
 	if C is cursed:
 		compute generic first time class reward of Q on C;
 	otherwise:
-		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet.[or]even more blessed magic![stopping]".
+		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] [SlimeTarget].[or]even more blessed magic![stopping]".
 
 To uniquely destroy (C - WC hood):
 	if the gulp-count of human-toilet-quest > 0 and the quest of C is human-toilet-quest:

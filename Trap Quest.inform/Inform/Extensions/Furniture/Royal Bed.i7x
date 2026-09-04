@@ -35,23 +35,23 @@ To compute furniture resting on (F - the royal bed):
 	let N be a random off-stage nightie;
 	if nightie-check > 0 and the bladder of the player > 1:
 		if nightie-check is 3:
-			say "As you lie there, you become aware of a warm wet feeling below you. The nightie has made you wet yourself![line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
+			say "As you lie there, you become aware of a warm wet feeling below you. The nightie [if slimeshooter fetish is 1]drained your slimeshooter![otherwise]has made you wet yourself![end if][line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
 			now a random worn nightie is bed wetting;
 			now a random worn nightie is cursed;
 		otherwise:
-			say "As you lie there, you feel yourself lose control of your bladder.[line break][variable custom style]Yuck![roman type][line break]";
+			say "As you lie there, you feel yourself lose control of your [SlimeContainer].[line break][variable custom style]Yuck![roman type][line break]";
 		if there is bottom level pee protection clothing:
 			let K be a random bottom level pee protection clothing;
 			let flav-said be 0;
-			PissSoak the bladder of the player on K;
+			SlimeSoak the bladder of the player on K;
 			now the bladder of the player is 0;
 		otherwise if there is a worn skirted crotch-in-place clothing:
-			PissSoak the bladder of the player on a random worn skirted crotch-in-place clothing;
+			SlimeSoak the bladder of the player on a random worn skirted crotch-in-place clothing;
 			now the bladder of the player is 0;
 	otherwise if N is actually summonable and the player is getting unlucky:
 		if the bladder of the player > 1 and diaper lover >= 1:
-			say "As you lie there, you become aware of a warm wet feeling below you. You've wet yourself![line break][variable custom style]Oh my god, how embarrassing![line break][bold type]As you get up, feeling fully refreshed, a sheer nightie shimmers into being around your body.[line break][variable custom style]What is this about?![roman type][line break]";
-			if there is bottom level pee protection clothing, PissSoak the bladder of the player on a random bottom level pee protection clothing;
+			say "As you lie there, you become aware of a warm wet feeling below you. [if slimeshooter fetish is 1]Your slimeshooter drained itself everywhere![otherwise]You've [slimedrained] on yourself![end if][line break][variable custom style]Oh my god, how embarrassing![line break][bold type]As you get up, feeling fully refreshed, a sheer nightie shimmers into being around your body.[line break][variable custom style]What is this about?![roman type][line break]";
+			if there is bottom level pee protection clothing, SlimeSoak the bladder of the player on a random bottom level pee protection clothing;
 			now the bladder of the player is 0;
 			now N is bed wetting;
 		otherwise:

@@ -96,7 +96,7 @@ Definition: a monster (called M) is aware that the player needs a change:
 		if the class of the player is priestess and D is not diaper, decide yes;
 		if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 		if D is currently visible or D is messed:
-			if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
+			if the slime-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
 			if D is crotch-ripped diaper, decide yes;
 	decide no.
 
@@ -472,6 +472,7 @@ Definition: a clothing (called C) is babywearable:
 	if C is not potentially babywearable, decide no;
 	if C is unskirted themed and there is worn skirted clothing, decide no;
 	if C is skirted and there is worn unskirted themed clothing, decide no;
+	if C is bondage and current-monster is matron, decide no; [she's too common a babyclothing forcer to use bondage]
 	if C is actually summonable, decide yes;
 	decide no.
 
@@ -528,8 +529,8 @@ Section 9 Diaper Urinal
 diaper-urinal is a diaper punishment. The priority of diaper-urinal is 3.
 
 To say EnticeFlav of (M - a monster) for (P - diaper-urinal):
-	if M is intelligent, say "[line break][speech style of M]'[one of]I'm going to piss in your diaper now. Just get on your knees, and let it happen[or]Oh come on, we both know that deep down, you want me to pee in your diaper. Now get on your knees, and prove it[cycling].'[roman type][line break]";
-	otherwise say "[big he of M] gestures that [he of M] wants to urinate in your diaper.".
+	if M is intelligent, say "[line break][speech style of M]'[one of]I'm going to [slime] in your diaper now. Just get on your knees, and let it happen[or]Oh come on, we both know that deep down, you want me to [slime] in your diaper. Now get on your knees, and prove it[cycling].'[roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] wants to [slime] in your diaper.".
 
 To decide which number is the relevant addiction of (P - diaper-urinal):
 	decide on the grossness addiction of the player.
@@ -599,10 +600,12 @@ diaper-facesit is a diaper punishment. The priority of diaper-facesit is 2.
 
 To say EnticeFlav of (M - a monster) for (P - diaper-facesit):
 	if M is intelligent, say "[line break][speech style of M]'Why don't you lie down on your back, and let me sit my big padded bum-bum right down on that cute little face of yours...'[roman type][line break]";
-	otherwise say "[big he of M] gestures that [he of M] wants to sit on your face and go potty.".
+	otherwise say "[big he of M] gestures that [he of M] wants to sit on your face and go [SlimeTargetP].".
 
 To decide which number is the relevant addiction of (P - diaper-facesit):
-	decide on the grossness addiction of the player - 3.
+	let G be the grossness addiction of the player - 3;
+	if G < 6 and the class of the player is huffer, now G is 6;
+	decide on G.
 
 Definition: a monster is eager to diaper facesit:
 	if it is able to diaper facesit, decide yes;
@@ -643,7 +646,7 @@ Definition: a monster (called M) is able to carry out a tickling:
 	decide yes.
 
 Definition: a monster is willing to tickle:
-	if it is human and it is intelligent and it is not male and the player is an april 2025 diaper donator, decide yes;
+	if it is human and it is intelligent and it is not male, decide yes;
 	decide no.
 
 Definition: tickling-session is appropriate:

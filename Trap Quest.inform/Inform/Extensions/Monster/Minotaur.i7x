@@ -25,22 +25,22 @@ Figure of Minotaur Cutscene 9 is the file "NPCs/Bosses/Minotaur/cutscene-minotau
 
 To decide which figure-name is the monster-image of (M - minotaur):
 	if mythical creature fetish is 1:
-		if lady fetish is 1, decide on figure of female minotaur;
+		if gyno fetish is 1, decide on figure of female minotaur;
 		if M is penetrating a body part and M is asleep, decide on figure of minotaur cutscene 2b;
 		if M is caged, decide on figure of minotaur caged;
 		if the player is in danger and the number of body parts penetrated by M is 0 and the player is prone, decide on figure of minotaur cutscene 9;
 		decide on figure of minotaur;
 	otherwise:
-		if lady fetish is 1, decide on figure of female hulk;
+		if gyno fetish is 1, decide on figure of female hulk;
 		decide on figure of hulk;
 To decide which figure-name is the anal-sex-monster-image of (M - minotaur):
-	if lady fetish is 0 and mythical creature fetish is 1:
+	if gyno fetish is 0 and mythical creature fetish is 1:
 		if M is asleep, decide on figure of minotaur cutscene 2b;
 		if the player is sexed female, decide on figure of minotaur cutscene 3a;
 		otherwise decide on figure of minotaur cutscene 3b;
 	decide on figure of missing NPC.
 To decide which figure-name is the vaginal-sex-monster-image of (M - minotaur):
-	if lady fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 4;
+	if gyno fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 4;
 	decide on figure of missing NPC.
 
 The text-shortcut of minotaur is "mi". Understand "large", "hulk" as minotaur.
@@ -63,15 +63,15 @@ Definition: minotaur is musky:
 
 To say LongDickDesc of (M - a minotaur):
 	if pregnancy fetish is 1 and lactation fetish is 1 and inhuman pregnancy > 0 and mythical creature fetish is 1:
-		if full-lady fetish is 1, say "equine strap-on";
+		if super-gyno fetish is 1, say "equine strap-on";
 		otherwise say "15 inch bull-penis";
 	otherwise:
-		if full-lady fetish is 1, say "15 inch strap-on";
+		if super-gyno fetish is 1, say "15 inch strap-on";
 		otherwise say "15 inch penis".
 
 To say MonsterDesc of (M - minotaur):
-	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long grey horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
-	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
+	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long grey horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if gyno fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
+	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if gyno fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
 	if M is caged, say DungeonBossCageDesc of M.
 
 To say DungeonBossCageDesc of (M - minotaur):
@@ -126,7 +126,8 @@ To decide which number is the starting difficulty of (M - minotaur):
 To decide which number is the girth of (M - minotaur):
 	decide on 8.
 To decide which number is the grossness of (M - minotaur): [grossness addiction needed to tolerate it]
-	decide on 5.
+	if mythical creature fetish is 1, decide on 5;
+	decide on 2.
 
 To decide which number is the base semen load of (M - minotaur):
 	decide on 18.
@@ -197,7 +198,7 @@ To say BecomesBoredFlav of (M - minotaur):
 To compute delay of (M - minotaur):
 	if the player is prone, say "[BigNameDesc of M] stands over you, [his of M] [LongDickDesc of M] quickly raising to full mast in front of your face.";
 	otherwise say "[BigNameDesc of M] closes in on you, [his of M] [LongDickDesc of M] quickly raising to full mast.";
-	if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M.
+	if gyno fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M.
 
 Part 2 - Motion, Seeking and Sleeping
 
@@ -271,7 +272,7 @@ To compute CagedMinotaurExplosion of (M - minotaur):
 	if the player is pheromonal and (a random number between 1 and the intelligence of the player) < the blue-balls of M, now D is 0;[pheromonal? you're less likely to dodge]
 	if D < the blue-balls of M and bukkake fetish is 1:
 		say "You're too late to realise that's your cue to dodge, and half a second later, an explosion of hot [semen] hits you directly in the [if the player is prone]face, [otherwise]chest, knocking you over and [end if]sending you flying into the opposite wall.";
-		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 6 for M;
+		if gyno fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 6 for M;
 		if the player is prone:
 			CumFaceUp 2;
 			SemenPuddleUp L - 2;
@@ -432,7 +433,7 @@ To compute anal sex of (M - minotaur):
 			now M is not penetrating asshole;
 		otherwise:
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with [his of M] full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your [asshole] until [he of M] wakes up...[at random]";
-			if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2b for M;
+			if gyno fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2b for M;
 		say CreampieReactionFlav to M in asshole;
 		if mythical creature fetish is 1 and cow-horns is off-stage and cow-ears is worn and (M is the father or M is mating):
 			say "[bold type]Your fake cow ears transform into a pair of very permanent horns[roman type][line break]";
@@ -516,7 +517,7 @@ To compute fuckhole sex of (M - minotaur):
 			if the reaction of the player is 0, say "[one of]No matter much you clench your muscles, you can't stop the torrent of [semen] into your [BellyDesc][or]Your resistance does nothing to stop the virtually endless torrent of [semen] into your belly.[or]Even with your struggling, [he of M] somehow finds more [semen] to cram into your [BellyDesc][or]No matter what you do, [his of M] [semen] continues to torrent into your [BellyDesc] at full force.[at random]";
 			otherwise say "[one of]Relaxing your [variable F], you accept the virtually endless torrent of [semen] into your [BellyDesc].[or]You do your best to stay relaxed as [his of M] [semen] spurts into your belly.[or]You can feel [his of M] [DickDesc of M] twitching as it continues to spurt [semen] into your [BellyDesc].[or]Relaxing your inner muscles, you accept the unending torrent of [semen] into your [BellyDesc].[at random]";
 		decrease the health of M by 5 * combatSpeed;
-		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
+		if gyno fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
 
 To compute damaging attack of (M - a minotaur):
 	if a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]
@@ -561,7 +562,7 @@ This is the minotaur lifts before crits rule:
 		increase the critical-windup of M by 1;
 		now M is not wrangling thighs;
 		now M is grabbing the player;[Your last struggle will actually be pointless, but it's more fun if we pretend it's not. Use your safe-word, sweetie!]
-		if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M;
+		if gyno fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M;
 		rule succeeds;
 	otherwise if the critical-windup of M is 2:[failsafe]
 		now the critical-windup of M is 0.
@@ -613,7 +614,7 @@ This is the minotaur replaces the monster rule:
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
 	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately![line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
-	if lady fetish is 0 and mythical creature fetish is 1:
+	if gyno fetish is 0 and mythical creature fetish is 1:
 		if the player is sexed female, cutshow figure of minotaur cutscene 3a for M;
 		otherwise cutshow figure of minotaur cutscene 3b for M;
 	now the sex-length of M is 0;
@@ -723,8 +724,8 @@ To compute unique automatic banishment of (M - minotaur):
 	if mythical creature fetish is 1:
 		if equine-strapon is off-stage and the player is getting lucky:
 			now the strap-length of equine-strapon is 11;[15 inches]
-			if full-lady fetish is 1, say "The huge strap-on dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			otherwise say "A huge strap-on dildo materialises on the floor in front of you.";
+			if super-gyno fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
+			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
 			say GotLuckyFlav;
 			now equine-strapon is in the location of the player;
 			compute autotaking equine-strapon;
@@ -738,8 +739,8 @@ To compute unique automatic banishment of (M - minotaur):
 		if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
 			now the strap-length of strapon-dildo is 11;[15 inches]
 			say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			if full-lady fetish is 1, say "The huge strap-on dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
-			otherwise say "A huge strap-on dildo materialises on the floor in front of you.";
+			if super-gyno fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
+			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
 			now strapon-dildo is in the location of the player;
 			compute autotaking strapon-dildo;
 			increase the loot dropped of M by 1;

@@ -96,7 +96,7 @@ Part 2 - Decay Every Turn
 previous-sex-addiction is a number that varies.
 previous-semen-addiction is a number that varies.
 previous-semen-taste-addiction is a number that varies.
-previous-urine-taste-addiction is a number that varies.
+previous-slime-taste-addiction is a number that varies.
 previous-milk-taste-addiction is a number that varies.
 previous-anal-sex-addiction is a number that varies.
 previous-oral-sex-addiction is a number that varies.
@@ -151,21 +151,28 @@ An all later time based rule (this is the compute arousal rule):
 	check for arousal change.
 
 To check for arousal change:
+	check for arousal change type 1.
+To silently check for arousal change:
+	check for arousal change type 0.
+To immediately check for arousal change: [suppresses flavour that implies the arousal was gained 'over time']
+	check for arousal change type 2.
+
+To check for arousal change type (ACT - a number):
 	[This is us checking if the level of arousal has changed since last turn.]
 	let old-pheromonal be 0;
 	if the player is pheromonal, now old-pheromonal is 1;
 	finally arouse;
 	let P be previous-horny;
 	decrease aroused-turns by 1;
-	update arousal;
+	update arousal; [so now previous-horny gets set to the current level of arousal]
 	if P < previous-horny:[TODO: notify player of pheromone activation]
 		if previous-horny is 1:
-			say "[bold type][one of]You are starting to feel a little bit aroused,[or]You feel your arousal slowly start to build once again,[stopping] and you can feel your blood pumping through your body that little bit faster. [one of]You actually feel a bit more energetic than before![line break][variable custom style]Interesting... the game is rewarding me for being horny?[or]Once again, your dexterity is slightly improved until you orgasm.[stopping][roman type][line break]";
+			if ACT > 0, say "[bold type][one of]You are starting to feel a little bit aroused,[or]You feel your arousal slowly start to build once again,[stopping] and you can feel your blood pumping through your body that little bit faster. [one of]You actually feel a bit more energetic than before![line break][variable custom style]Interesting... the game is rewarding me for being horny?[or]Once again, your dexterity is slightly improved until you orgasm.[stopping][roman type][line break]";
 		if previous-horny is 2:
 			if there is a worn cursed chastity bond:
-				say "[bold type]You are feeling fully aroused[one of] now[or] again[stopping], and your chastity cage is making you even more distracted than you would be otherwise! You feel your mind start to cloud over with thoughts of sex.[line break][variable custom style][one of]I hope I find a way to orgasm soon...[or][or]I need to cum again![or][or]This fucking cage... I wish I could touch myself![or][cycling][roman type][line break]";
+				if ACT > 0, say "[bold type]You are feeling fully aroused[one of] now[or] again[stopping], and your chastity cage is making you even more distracted than you would be otherwise! You feel your mind start to cloud over with thoughts of sex.[line break][variable custom style][one of]I hope I find a way to orgasm soon...[or][or]I need to cum again![or][or]This fucking cage... I wish I could touch myself![or][cycling][roman type][line break]";
 			otherwise:
-				say "[bold type][one of]A fresh new wave of horniness suddenly washes over you,[or]Another wave of horniness hits you[stopping] and your [if the player is possessing a scrotum and the size of penis > 1]testicles[otherwise if the player is not possessing a vagina]body[otherwise][vagina][end if] [one of]feel[unless the player is possessing a scrotum and the size of penis > 1]s[end if] desperate to[or][if the player is possessing a scrotum and the size of penis > 1]cry[otherwise]cries[end if] out for another[stopping] orgasm[one of]. [roman type]As your blood starts pumping even faster, you feel yourself getting even faster, but your mind also starts to cloud over with thoughts of [if diaper quest is 1]orgasms[otherwise]sex[end if], making it more difficult to concentrate on the tasks at hand. [or]. Your smarts are dulled and your dexterity further improved until you orgasm.[or]. [stopping][roman type][line break]";
+				if ACT > 0, say "[bold type][one of]A fresh new wave of horniness suddenly washes over you,[or]Another wave of horniness hits you[stopping] and your [if the player is possessing a scrotum and the size of penis > 1]testicles[otherwise if the player is not possessing a vagina]body[otherwise][vagina][end if] [one of]feel[unless the player is possessing a scrotum and the size of penis > 1]s[end if] desperate to[or][if the player is possessing a scrotum and the size of penis > 1]cry[otherwise]cries[end if] out for another[stopping] orgasm[one of]. [roman type]As your blood starts pumping even faster, you feel yourself getting even faster, but your mind also starts to cloud over with thoughts of [if diaper quest is 1]orgasms[otherwise]sex[end if], making it more difficult to concentrate on the tasks at hand. [or]. Your smarts are dulled and your dexterity further improved until you orgasm.[or]. [stopping][roman type][line break]";
 			if the living belt of sturdiness is worn and the player is upright, say "[one of]Suddenly[or]Once again[stopping] the tentacle[if the living belt of sturdiness is penetrating asshole and the living belt of sturdiness is penetrating vagina]s[end if] of the [printed name of the living belt of sturdiness] inside of you start[unless the living belt of sturdiness is penetrating asshole and the living belt of sturdiness is penetrating vagina]s[end if] moving, slowly thrusting all the way in and all the way out.[one of] The thrusting is strong and deliberate but incredibly slow, as if its purpose is to very very slowly build you up to a very powerful orgasm.[or][stopping]";
 			if the player is nipples exposed:
 				let C be a random worn top-placed erect-nipple-exposing actually dense actually nipple covering clothing;
@@ -178,9 +185,9 @@ To check for arousal change:
 				say "[bold type]Blue ghostly hands appear through the rear of the Iron Maiden, and grab onto your [BreastDesc] and [genitals]![roman type] They start to caress and masturbate you, and there's nothing you can do to stop them!";
 				if iron-maiden is penetrating face, OralSexAddictUp 1;
 		if previous-horny is 3:
-			say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[or][stopping][end if][run paragraph on][roman type] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
+			if ACT > 0, say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[or][stopping][end if][run paragraph on][roman type] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
 		if previous-horny is 4:
-			say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
+			if ACT > 0, say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
 		if the class of the player is symbiote, say "[bold type][one of]Thanks to the symbiotic nature of your relationship with your tongued clothing, you feel your strength increase as well.[or]Once again, your symbiotic tongues also help increase your strength as you become more aroused.[stopping][roman type][line break]";
 		if the player is pheromonal and old-pheromonal is 0:
 			let H be a random worn headgear;
@@ -188,9 +195,12 @@ To check for arousal change:
 		now aroused-turns is 8;[When the game announces that the player becomes aroused, they can't cool down and stop being horny for 8 turns.]
 	if P > previous-horny and the number of worn steel collar is 0:
 		if the player is grossed out:
-			say "[bold type]You are quickly losing all arousal since you are too grossed out.[roman type][line break]";
+			if ACT > 0, say "[bold type]You are quickly losing all arousal since you are too grossed out.[roman type][line break]";
 		otherwise if refractoryperiod <= 0:
-			say "[bold type]Over time, [if diaper quest is 1 and there is a worn pacifier]sucking on your pacifier has helped cool you off, and you[otherwise]you have cooled off and[end if] are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
+			if ACT is 1:
+				say "[bold type]Over time, [if diaper quest is 1 and there is a worn pacifier]sucking on your pacifier has helped cool you off, and you[otherwise]you have cooled off and[end if] are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
+			otherwise if ACT > 0:
+				say "[bold type]You are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
 		if the player is not pheromonal and old-pheromonal is 1:
 			say "[bold type]Your primitive urges seem to fade.[roman type][line break]";
 		if penis is penis-erect, compute erection decay;
@@ -218,7 +228,7 @@ To check for arousal change:
 		now previous-semen-addiction is the calculated semen addiction of the player;
 	now previous-grossness-addiction is the calculated grossness addiction of the player;
 	if diaper quest is 1 or lactation fetish is 1, now previous-milk-taste-addiction is the calculated milk taste addiction of the player;
-	if watersports fetish is 1, now previous-urine-taste-addiction is the calculated urine taste addiction of the player;
+	if watersports fetish is 1, now previous-slime-taste-addiction is the calculated slime taste addiction of the player;
 	now previous-sex-addiction is the calculated sex addiction of the player.
 
 Part 3 - Check Values
@@ -240,13 +250,13 @@ A player who is perturbed slowly loses arousal.
 
 +!]
 Definition: yourself is perturbed:
-	if the diaper addiction of the player < 14 and the grossness addiction of the player < 14 and (the player is upset about urine or turnsWithSoiledDiaper > 0), decide yes;
+	if the diaper addiction of the player < 14 and the grossness addiction of the player < 14 and (the player is upset about slime or turnsWithSoiledDiaper > 0), decide yes;
 	if there is a grossing the player out thing penetrating a body part, decide yes;
 	if there is a grossing the player out seduced monster, decide yes;
-	if the player is upset about unclean toilets, decide yes; [stinks of piss]
+	if the player is upset about unclean targets, decide yes; [stinks of piss]
 	decide no.
 
-Definition: yourself is upset about unclean toilets:
+Definition: yourself is upset about unclean targets:
 	if diaper quest is 1, decide no;
 	if the grossness addiction of the player >= 3, decide no;
 	if the location of the player is Dungeon19 or the location of the player is Toilet01, decide yes;

@@ -26,7 +26,7 @@ To say ExamineDesc of (C - the-goddess):
 	say "A lithe young [man of C] with an obscenely huge pregnant belly. Apparently this is the goddess you're supposed to worship.".
 
 A time based rule (this is the compute goddess rule):
-	if the player is a september 2025 top donator and the-goddess is alive:
+	if the player is the donator and the-goddess is alive:
 		increase the labour of the-goddess by time-seconds;
 		if the-goddess is in the location of the player:
 			if the labour of the-goddess >= goddess-labour-stage-3:
@@ -78,13 +78,13 @@ To compute goddess birth:
 	set up M;
 	now M is in the location of the player;
 	if M is tentacle monster, now M is massive;
-	say "[second custom style]'[NameBimbo]... It's too late... It's coming now! Oh fuck... Oh fuck... I'm gonna... I'm gonna split in two!'[roman type][line break]You watch with [horror the vaginal sex addiction of the player] as a fully grown [MediumDesc of M] emerges from [his of the-goddess] impossibly gaped cervix. [NameDesc of the-goddess] screams, passes out from the pain, [if watersports fetish is 1]pisses [himself of the-goddess], [end if]and then vanishes.[line break][variable custom style]Holy fucking shit...[roman type][line break]";
+	say "[second custom style]'[NameBimbo]... It's too late... It's coming now! Oh fuck... Oh fuck... I'm gonna... I'm gonna split in two!'[roman type][line break]You watch with [horror the vaginal sex addiction of the player] as a fully grown [MediumDesc of M] emerges from [his of the-goddess] impossibly gaped cervix. [NameDesc of the-goddess] screams, passes out from the pain, [if watersports fetish is 1][slime]es [himself of the-goddess], [end if]and then vanishes.[line break][variable custom style]Holy fucking shit...[roman type][line break]";
 	maybe-map-display figure of goddess 4;
 	check perception of M;
 	now the-goddess is in Holding Pen.
 
 Carry out talking the-goddess:
-	if the player is a september 2025 top donator:
+	if the player is the donator:
 		reset multiple choice questions;
 		if the player is not able to speak:
 			set numerical response 1 to the substituted form of "[gag sounds]";

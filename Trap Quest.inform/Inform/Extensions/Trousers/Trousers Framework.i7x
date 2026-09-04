@@ -13,6 +13,9 @@ Definition: a trousers is undershoe:
 	if it is overshoe, decide no;
 	decide yes.
 
+Definition: a leggings is overshoe: decide no.
+Definition: a rubber trousers is overshoe: decide no.
+
 To decide which number is the trouserLength of (C - a trousers):
 	if C is ankle covering,	decide on 10;
 	if C is usually calf covering, decide on 8;
@@ -32,6 +35,12 @@ To decide which number is the initial outrage of (C - a trousers):
 	if C is yoga pants, decide on 0;
 	if C is crotch-zipped or C is crotch-unzipped, decide on 2;
 	decide on 1.
+
+To decide which number is the knee-modifier of (C - a trousers):
+	if the trouserLength of C > 5:
+		if the magic-modifier of C < 0, decide on -1;
+		if the magic-modifier of C > 0, decide on 1;
+	decide on 0.
 
 To say ClothingDesc of (U - a trousers):
 	say "[UniqueClothingDesc of U][if U is worn]It [ModestyDesc of U][end if]".

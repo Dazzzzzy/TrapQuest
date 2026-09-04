@@ -1,6 +1,6 @@
 All Trousers by Trousers begins here.
 
-A baby bloomers is a kind of trousers.
+A baby bloomers is a kind of trousers. A baby bloomers is transformation-rare.
 Definition: a baby bloomers is usually thigh covering: decide yes.
 
 Definition: a baby bloomers is fetish appropriate:
@@ -28,6 +28,9 @@ To decide which figure-name is clothing-image of (H - a pink bloomers):
 	decide on figure of pink bloomers.
 
 Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the player]
+
+To decide which number is the trouserLength of (C - a pink bloomers):
+	decide on 6.
 
 
 bitch bottoms is a trousers. bitch bottoms is leg exposing.
@@ -280,6 +283,9 @@ Definition: a leggings is unskirted themed: [Is it something that should not be 
 	decide no.
 To decide which number is the initial armour of (C - a leggings):
 	decide on 2.
+To decide which number is the knee-modifier of (C - a leggings):
+	if the magic-modifier of C < 0, decide on -1;
+	decide on 1.
 
 light-leggings is a leggings. The text-shortcut of light-leggings is "lnl". The printed name of light-leggings is "[clothing-title-before]light nylon leggings[clothing-title-after]". Understand "light" as light-leggings. light-leggings is sheer. light-leggings is transformation-rare. Figure of light leggings is the file "Items/Clothes/Lower/Pants/leggings1.png".
 Definition: light-leggings is sissifying: decide yes.
@@ -328,6 +334,7 @@ To decide which object is the unique-upgrade-target of (C - a leggings):
 
 teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The printed name of teddy bear pantyhose is usually "[clothing-title-before]teddy bear pantyhose[clothing-title-after]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items/Clothes/Lower/Pants/pantyhose1.png".
 Definition: teddy bear pantyhose is usually ankle covering: decide yes.
+Definition: teddy bear pantyhose is overshoe: decide no.
 
 To decide which figure-name is clothing-image of (H - a teddy bear pantyhose):
 	decide on figure of teddy bear pantyhose.

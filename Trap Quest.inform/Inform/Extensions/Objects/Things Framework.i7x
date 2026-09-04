@@ -100,7 +100,7 @@ To decide what number is the pre-discount-price of (C - a clothing):
 		if C is necklace, now X is 4;
 		if C is humility-stone:
 			now X is 0;
-			if the player is an april 2025 top donator, now X is 10;
+			if the player is the donator, now X is 10;
 		if C is sapphire, now X is X * 1;
 		if C is emerald, now X is X * 2;
 		if C is ruby, now X is X * 3;
@@ -122,7 +122,7 @@ To decide what number is the price of (C - a clothing):
 		if C is necklace, now X is 4;
 		if C is humility-stone:
 			now X is 0;
-			if the player is an april 2025 top donator, now X is 10;
+			if the player is the donator, now X is 10;
 		if C is sapphire, now X is X * 1;
 		if C is emerald, now X is X * 2;
 		if C is ruby, now X is X * 3;
@@ -158,6 +158,16 @@ To decide which number is the wealth of the player:
 	let X be 0;
 	repeat with A running through worn accessories:
 		increase X by the price of A;
+	decide on X.
+
+To decide which number is the endgame wealth of the player:
+	let X be 0;
+	repeat with A running through worn accessories:
+		increase X by the price of A;
+	now X is 25000 * X;
+	if there is a worn module, increase X by 200000;
+	if nest egg tattoo is worn, increase X by 150000;
+	if mind flayer is permanently banished, increase X by 100000;
 	decide on X.
 
 Part - Titles and Images

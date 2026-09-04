@@ -111,7 +111,7 @@ To trigger (C - inflation-trap-choice):
 	otherwise:
 		let L be semen;
 		if diaper quest is 1, now L is water;
-		if watersports fetish is 1, now L is urine;
+		if watersports fetish is 1, now L is slime;
 		if enema fetish is 1:
 			say "You feel your belly being magically filled to the brim with [variable L]!";
 			AssFill (belly limit - the total fill of belly) with L;
@@ -226,6 +226,7 @@ To evade trigger (C - spiral-trap-choice):
 
 aphrodesiac-trap-choice is a choice-trap-choice.
 Definition: aphrodesiac-trap-choice is appropriate:
+	if playerRegion is woods or the location of the player is no-roof, decide no;
 	if the player is not horny and the player is able to get horny, decide yes;
 	decide no.
 To say ChoiceFlav of (C - aphrodesiac-trap-choice):

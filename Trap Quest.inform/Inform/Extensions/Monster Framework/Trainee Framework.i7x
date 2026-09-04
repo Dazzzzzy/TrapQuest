@@ -388,22 +388,29 @@ To compute fleeing of (M - a trainee):
 
 Definition: a trainee (called M) is uniquely distracted:
 	if mistress is in the location of M:
-		if M is a urinater and the bladder of M >= 1000 and facility-toilet-key is held by mistress and (M is not interested or M is friendly) and (mistress is not interested or mistress is friendly):
-			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of mistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
+		if M is a urinater and M is not a diaper wetter and the bladder of M >= 1000 and facility-toilet-key is held by mistress and (M is not interested or M is friendly) and (mistress is not interested or mistress is friendly):
+			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of mistress][if diaper lover > 0], while doing a little ['][SlimeTargetP] dance['][end if].[line break][speech style of M]'Please could I have the key to the [SlimeTarget]s, Ma[']am?'[roman type][line break]";
 			if 0 is 1 and (the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M): [TODO add this back in but make trainees actually able to pee this way]
-				if M is in the location of the player, say "[BigNameDesc of mistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as urinals, not the normal boring toilet[otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
+				if M is in the location of the player, say "[BigNameDesc of mistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as [SlimeTargetU]s, not the normal boring [SlimeTarget][otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
 				compute mandatory room leaving of mistress;
 				now mistress is moved;
 			otherwise:
 				if M is in the location of the player, say "[BigNameDesc of mistress] nods and gives [him of M] the key.[line break][speech style of M]'Bring it back after you're done. And don't forget to bring a tutor with you to supervise you.'[roman type][line break]";
 				now M is carrying facility-toilet-key;
-				compute mandatory room leaving of M;
+				compute toilet seeking of M;
+				if M is in the location of mistress:
+					say "BUG - [NameDesc of M] couldn't figure out how to get to the [SlimeTarget].";
+					compute mandatory room leaving of M;
 				now M is moved;
 				now mistress is moved;
 			decide yes;
 		if facility-toilet-key is held by M and (M is not interested or M is friendly) and (mistress is not interested or mistress is friendly):
-			if M is in the location of the player, say "[BigNameDesc of mistress] holds out [his of M] hand expectantly.[line break][speech style of mistress]'The toilet key.'[line break][if M is urinater and the bladder of M >= 1000][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of mistress]'You had your chance. TOILET KEY. NOW.'[line break][end if][speech style of M]'Y-Yes mistress...'[roman type][line break][BigNameDesc of M] hands the toilet key back to [NameDesc of mistress].";
+			if M is in the location of the player, say "[BigNameDesc of mistress] holds out [his of M] hand expectantly.[line break][speech style of mistress]'The [SlimeTarget] key.'[line break][if M is urinater and the bladder of M >= 1000][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of mistress]'You had your chance. [caps SlimeTarget] KEY. NOW.'[line break][end if][speech style of M]'Y-Yes mistress...'[roman type][line break][BigNameDesc of M] hands the [SlimeTarget] key back to [NameDesc of mistress].";
 			now mistress is carrying facility-toilet-key;
+			repeat with X running through trainees:
+				if the current-reward of X is facility-toilet-key:
+					now the current-reward of X is no-reward;
+					now the current-errand of X is no-errand;
 			compute mandatory room leaving of mistress;
 			now mistress is moved;
 			now the bladder of M is 800;
@@ -599,10 +606,10 @@ To HappinessDown (M - a trainee) by (N - a number): [This is the same mechanical
 		decrease the favour of M by N;
 		say "You can tell that [NameDesc of M] is [if M is amicable trainee][one of]a little disappointed[or]a tad vexed[in random order][otherwise if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
 
-To CheerUp (M - a trainee):
+To CheerUp (M - a monster):
 	CheerUp M by 1.
 
-To CheerUp (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour. Mainly for when the trainee pulls pranks or similar]
+To CheerUp (M - a monster) by (N - a number): [This is the same mechanically as favour but with different flavour. Mainly for when the trainee pulls pranks or similar]
 	if N > 0 and M is alive:
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] [if M is not acquaintance][one of]is feeling a bit better now[or]has cheered up a little bit[in random order][otherwise][one of]is even happier now[or]is feeling cheerful, thanks to that[in random order][end if].".
@@ -736,15 +743,15 @@ Report going when the player is in Facility10:
 			now pink-spraybottle is in Facility10;
 			now pink-spraybottle is spray;
 			if M is not interested, say "[BigNameDesc of M] notices you!";
-			say "You watch with [horror the urine taste addiction of the player] as [NameDesc of M] pisses on the floor in front of you. And then... Flashing you a cruel expression, [he of M] runs out into the hallway.";
+			say "You watch with [horror the slime taste addiction of the player] as [NameDesc of M] [if slimeshooter fetish is 1]empties [his of M] slimeshooter[otherwise][slime]es[end if] on the floor in front of you. And then... Flashing you a cruel expression, [he of M] runs out into the hallway.";
 			now the bladder of M is 0;
-			UrinePuddleUp 10 in Facility10;
+			SlimePuddleUp 10 in Facility10;
 			try M going north;
 			now M is moved;
 			bore M;
 			deinterest mistress;
 			now mistress is puddle-investigating;
-			say "[speech style of M]'mistress! mistress! [NameBimbo] is pissing on the floor in the toilets!'[line break][speech style of mistress]'WHAT?! Let me see!'[roman type][line break]Oh SHIT - it sounds like you're being framed for floor pissing! But... There is a spray bottle and cloth on the floor next to you... Perhaps you can wipe it up in time?";
+			say "[speech style of M]'mistress! mistress! [NameBimbo] is [slime]ing on the floor in the [SlimeTarget]s!'[line break][speech style of mistress]'WHAT?! Let me see!'[roman type][line break]Oh SHIT - it sounds like you're being framed for floor [slime]ing! But... There is a spray bottle and cloth on the floor next to you... Perhaps you can wipe it up in time?";
 
 
 [This is where we input flavour for all the other bullying trainees in the crowd.]
@@ -823,7 +830,7 @@ Definition: trainee-bully-toilet-key is appropriate:
 	if current-monster is trainee and facility-toilet-key is held, decide yes;
 	decide no.
 To compute punishment of (P - trainee-bully-toilet-key):
-	say "[speech style of current-monster]'I'm taking this, and you're NEVER having it back!'[roman type][line break][BigNameDesc of current-monster] takes the key for the toilets!";
+	say "[speech style of current-monster]'I'm taking this, and you're NEVER having it back!'[roman type][line break][BigNameDesc of current-monster] takes the key for the [SlimeTarget]s!";
 	now facility-toilet-key is carried by current-monster;
 	satisfy current-monster.
 
@@ -902,7 +909,7 @@ To compute punishment of (P - trainee-bully-swirlie):
 		compute room leaving of M;
 	if the location of the player is not toilets, drag to Facility10 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants!'[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly trainees in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
+	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go [SlimeTargetP], not in your pants!'[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to [slime] in here?'[or]You're such a pathetic baby you couldn't make it to this [SlimeTarget] without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly trainees in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the [SlimeTarget] like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] [SlimeTargetP], the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the [SlimeTarget]? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
 	compute swirlie of current-monster.
 
 Check going when the player is in Facility10:
@@ -921,18 +928,18 @@ Figure of swirlie diaper wet is the file "Special/Cutscene/cutscene-swirlie6.jpg
 Figure of swirlie diaper messed is the file "Special/Cutscene/cutscene-swirlie7.jpg".
 
 To compute swirlie of (M - a monster):
-	say "[BigNameDesc of M] grabs you by the head and dunks your face into the toilet water, and then flushes the water around you.";
-	GrossOut 5 with reason "The gross sensation of the toilet flushing around you makes you shudder," and sensation "sensation";
+	say "[BigNameDesc of M] grabs you by the head and dunks your face into the [SlimeTarget] water, and then flushes the water around you.";
+	GrossOut 5 with reason "The gross sensation of the [SlimeTarget] flushing around you makes you shudder," and sensation "sensation";
 	let FG be Figure of swirlie knickers clean;
 	let D be a random worn knickers;
 	if D is diaper:
 		if D is messed:
 			now FG is Figure of swirlie diaper messed;
-		otherwise if the known-urine-soak of D > 0:
+		otherwise if the known-slime-soak of D > 0:
 			now FG is Figure of swirlie diaper wet;
 		otherwise:
 			now FG is Figure of swirlie diaper clean;
-	otherwise if D is knickers and the known-urine-soak of D > 0:
+	otherwise if D is knickers and the known-slime-soak of D > 0:
 		now FG is Figure of swirlie knickers wet;
 	if M is trainee-laci, cutshow FG for M;
 	now temporaryYesNoBackground is FG;
@@ -940,34 +947,34 @@ To compute swirlie of (M - a monster):
 	let ST be a random unfriendly nasty trainee in the location of M;
 	if ST is trainee and ST is not M:
 		if watersports fetish is 1:
-			say "[BigNameDesc of ST] takes the opportunity to squat above the toilet and urinate, pissing straight down onto your hair and the back of your neck. The toilet water quickly gets mixed with [his of ST] [urine], and still [NameDesc of M] holds your face in it.";
-			let N be the largeness of hair - (the semen coating of hair + the urine coating of hair + the water-drench of hair);
+			say "[BigNameDesc of ST] takes the opportunity to squat above the [SlimeTarget] and [if slimeshooter fetish is 1]drain [his of M] slimeshooter[otherwise][slime][end if] straight down onto your hair and the back of your neck. The [SlimeTarget] [if slimeshooter fetish is 1]paint[otherwise]water[end if] quickly gets mixed with [his of ST] [slime], and still [NameDesc of M] holds your face in it.";
+			let N be the largeness of hair - (the semen coating of hair + the slime coating of hair + the water-drench of hair);
 			if N < 1, now N is 1;
-			AnnouncedSquirt urine on hair by N;
+			AnnouncedSquirt slime on hair by N;
 			severeHumiliate;
-			compute addictive tasting of urine;
+			compute addictive tasting of slime;
 		otherwise:
-			say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the toilet water.";
+			say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the [SlimeTarget] water.";
 			PainUp 20;
 		satisfy ST;
 		compute room leaving of ST;
-	say "[speech style of M]'Gross, [NameBimbo], look at all the toilet water that's splashed up onto the rim! We can't leave the toilet like that. Lick it up, and then maybe we'll call it even...'[roman type][line break]";
+	say "[speech style of M]'Gross, [NameBimbo], look at all the [SlimeTarget] water that's splashed up onto the rim! We can't leave the [SlimeTarget] like that. Lick it up, and then maybe we'll call it even...'[roman type][line break]";
 	let swirlieResisting be 0;
 	if the player is not feeling submissive:
-		say "Lick the toilet water off of the rim of the toilet?";
+		say "Lick the [SlimeTarget] [if slimeshooter fetish is 1]paint[otherwise]water[end if] off of the rim of the [SlimeTarget]?";
 		if the player is not bimbo consenting, now swirlieResisting is 1;
 	if swirlieResisting is 1:
-		say "You buck and thrash and refuse to keep your face close to the toilet for any more moments than you have to. [BigNameDesc of M] still has a solid grip on your hair, so for the first couple of seconds, before you break free, it really hurts.";
+		say "You buck and thrash and refuse to keep your face close to the [SlimeTarget] for any more moments than you have to. [BigNameDesc of M] still has a solid grip on your hair, so for the first couple of seconds, before you break free, it really hurts.";
 		PainUp 15;
 		say "[BigNameDesc of M] loses [his of M] grip and is forced to let you go.[line break][speech style of M]'Fucking [bitch]. I guess you haven't learned your lesson yet.'[roman type][line break]";
 		bore M;
 		compute crowd boredom of M;
 	otherwise:
-		say "You stick out your tongue and allow [NameDesc of M] to guide your head by your hair, forcing you to lap up the water that splashed out of the toilet when you were given your swirlie.";
+		say "You stick out your tongue and allow [NameDesc of M] to guide your head by your hair, forcing you to lap up the water that splashed out of the [SlimeTarget] when you were given your swirlie.";
 		TasteGrossOut 9;
 		say "By the time [he of M] has finished with you, you have slurped up a significant amount of water into your mouth.";
 		FaceFill water by 1;
-		say "Afterwards [he of M] wrenches you up by your [MediumDesc of hair] and throws you to the ground.[line break][speech style of M]'[one of]I guess you've learned your lesson. For now[or]Yeah. That's what I thought[or]It seems like you really love this toilet, huh? You keep coming back to give it more big sloppy kisses. Disgusting, but kind of metal, too[cycling].'[roman type][line break]";
+		say "Afterwards [he of M] wrenches you up by your [MediumDesc of hair] and throws you to the ground.[line break][speech style of M]'[one of]I guess you've learned your lesson. For now[or]Yeah. That's what I thought[or]It seems like you really love this [SlimeTarget], huh? You keep coming back to give it more big sloppy kisses. Disgusting, but kind of metal, too[cycling].'[roman type][line break]";
 		now the stance of the player is 1;
 		DelicateUp 1;
 		compute crowd satisfaction of M;
@@ -1058,13 +1065,13 @@ To execute (A - bully-plug):
 		gluify P;
 	ruin asshole times 2.
 
-bully-piss is a bully-action.
-Definition: bully-piss is eligible:
+bully-slime is a bully-action.
+Definition: bully-slime is eligible:
 	if watersports fetish is 1 and the current-rank of current-monster > 2, decide yes;
 	decide no.
-To execute (A - bully-piss):
-	say "[BigNameDesc of current-monster] [if current-monster is female]pulls apart [his of current-monster] pussy lips[otherwise]holds [his of current-monster] [DickDesc of current-monster] steady[end if], and a moment later a jet of [urine] is heading straight for your face.";
-	FacePiss from current-monster.
+To execute (A - bully-slime):
+	say "[BigNameDesc of current-monster] [if slimeshooter fetish is 1]pulls out [his of current-monster] slimehooter[otherwise if current-monster is female]pulls apart [his of current-monster] pussy lips[otherwise]holds [his of current-monster] [DickDesc of current-monster] steady[end if], and a moment later a jet of [slime] is heading straight for your face.";
+	FaceDrain from current-monster.
 
 bully-forcefeed is a bully-action.
 Definition: bully-forcefeed is eligible:
@@ -1805,7 +1812,7 @@ To say WhereAnswer of (M - a trainee):
 	say "[speech style of M]'[if the rank of the player <= 1]We're in the [training halls].'[otherwise]The better you are at being a princess, the higher rank you'll be able to reach.'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - a trainee):
-	say "[speech style of M]'I came to this place to learn to be a better prince[unless lady fetish is 2]ss[end if]. What more do you need to know?'[roman type][line break]".
+	say "[speech style of M]'I came to this place to learn to be a better prince[unless andro fetish is 1]ss[end if]. What more do you need to know?'[roman type][line break]".
 
 To say EscapeAnswer of (M - a trainee):
 	say "[speech style of M]'Nicer, cosier rooms, that's for sure. And maybe even some cool items.'[roman type][line break]".
@@ -1843,9 +1850,9 @@ To decide which number is the DismissalPowerBursting of (M - a trainee):
 
 To say DismissalResponseBursting of (M - a trainee):
 	if there is a worn diaper:
-		say "[speech style of M]'[if M is interested]Ooh, goody! I can't wait to watch your face as you wet your nappy in front of me[otherwise]Fair enough[end if].'[roman type][line break]";
+		say "[speech style of M]'[if M is interested]Ooh, goody! I can't wait to watch your face as you [slimedrain] in your nappy in front of me[otherwise]Fair enough[end if].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the tutors catch you having an accident[end if]!'[roman type][line break]".
+		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna [slimedrain] on [himself of the player]! Come and see[otherwise]Don't let the tutors catch you having an accident[end if]!'[roman type][line break]".
 
 
 most-recent-leaver is an object that varies.
@@ -1924,13 +1931,13 @@ Check standing when quiz-partner is worn:
 
 To compute quiz partner messing:
 	let ST be the bound-target of quiz-partner;
-	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [trainee-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding covering[end if] [his of ST] eyes, nose and mouth.";
+	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][slime][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [trainee-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding covering[end if] [his of ST] eyes, nose and mouth.";
 	otherwise say "You emit a pained whine as you deposit several more chunks of mess on top of [NameDesc of ST][']s face. [big he of ST] wails through the disgusting soiled padding still engulfing [his of ST] face, still only able to breathe what oxygen [he of ST] can get through the fouled fabric.[line break][variable custom style]'I'm really really sorry!'[roman type][line break]You continue to profusely apologise as you empty your bowels directly on top of [his of ST] nostrils and face.";
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
 		MessUp D by 30;
 		reset rectum after messing;
-	UrineSoakUp D by the bladder of the player;
+	SlimeSoakUp D by the bladder of the player;
 	now the bladder of the player is 0;
 	HappinessDown ST by 5.
 

@@ -233,7 +233,7 @@ This is the pussy protected players can't wear vagina plugging clothes rule:
 The pussy protected players can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
 This is the clothes can't be worn when in danger rule:
-	if summoning is 0 and the player is in danger and wearing-target is not equippable and wearing-target is not accessory:
+	if summoning is 0 and the player is not in a predicament room and the player is in danger and wearing-target is not equippable and wearing-target is not accessory:
 		if autowear is false, say "You can't do that now, you have to deal with the [random dangerous monster in the location of the player]!";
 		rule fails.
 The clothes can't be worn when in danger rule is listed in the global wearability rules.

@@ -22,7 +22,7 @@ To decide which figure-name is the pacified-image of (M - tutor-serenity):
 
 To say MonsterDesc of (M - tutor-serenity):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M] has had the fabric of [his of M] dress removed, leaving [him of M] with little more than a belt, and [his of M] top pulled down beneath [his of M] breasts. [big his of M] exposed nipples are tortured by connected nipple clamps, which [he of M] can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] [if lady fetish is 2]caged [DickDesc of M][otherwise]pussy[end if] is kept constantly stimulated by a vibrating wand, strapped to one thigh. A ballgag sits in [his of M] mouth and a nose hook makes sure [he of M] looks much uglier than before. [big his of M] chunky heels have been further elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
+		say "[BigNameDesc of M] has had the fabric of [his of M] dress removed, leaving [him of M] with little more than a belt, and [his of M] top pulled down beneath [his of M] breasts. [big his of M] exposed nipples are tortured by connected nipple clamps, which [he of M] can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] [if andro fetish is 1]caged [DickDesc of M][otherwise]pussy[end if] is kept constantly stimulated by a vibrating wand, strapped to one thigh. A ballgag sits in [his of M] mouth and a nose hook makes sure [he of M] looks much uglier than before. [big his of M] chunky heels have been further elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
 	otherwise if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s comfortable chunky heels have been replaced by an ingeniously evil combination of rollerskates and ankle spreader bar. [big he of M] has to constantly wave [his of M] arms to remain even vaguely balanced! An ironic fate considering [his of M] previous pride in [his of M] balance in heels. Meanwhile, [his of M] top and skirt have been replaced by a yellow babydoll leotard and a very thick diaper, and a pacifier on a string around [his of M] neck, completing the diaper-slave look.";
 	otherwise:
@@ -110,8 +110,13 @@ To compute teaching of (L - heel-training):
 roulette-training is a training session. The training-tutor of roulette-training is tutor-serenity.
 
 Definition: roulette-training is training-appropriate:
-	if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink, decide yes;
-	decide no.
+	now autodrink is 1;
+	if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink:
+		now autodrink is 0;
+		decide yes;
+	otherwise:
+		now autodrink is 0;
+		decide no.
 To decide which number is the min-trainees of (L - roulette-training):
 	decide on 2.
 To say TrainingSessionTitle of (L - roulette-training):
@@ -201,7 +206,7 @@ To compute teaching of (L - roulette-training):
 					say "You take a canister at random. You put your mouth around the nozzle and push the canister down! ";
 					if CD is 0:
 						remove yourself from LST;
-						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of every trainee in your cohort and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][strongHumiliateReflect]";
+						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of every trainee in your cohort and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your [SlimeContainer]. [end if][strongHumiliateReflect]";
 						if diaper quest is 1:
 							increase temporary-bladder-incontinence by a random number between 3 and 5;
 							TasteGrossOut 2;
@@ -291,12 +296,12 @@ To decide which figure-name is the pacified-image of (M - tutor-angela):
 To say MonsterDesc of (M - tutor-angela):
 	if M is defeated:
 		if M is sex-enslaved:
-			say "[BigNameDesc of M][']s face looks a lot less special with no make up except for some cheap pink lipstick to match [his of M] slutty pink stockings. All the rest of [his of M] clothes have gone. Each stocking has the controls to a wired vibrator clipped to the top, one going to the [if lady fetish is 2]vibrating chastity cage around [his of M] [manly-penis][otherwise]vibe in [his of M] pussy[end if], and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
+			say "[BigNameDesc of M][']s face looks a lot less special with no make up except for some cheap pink lipstick to match [his of M] slutty pink stockings. All the rest of [his of M] clothes have gone. Each stocking has the controls to a wired vibrator clipped to the top, one going to the [if andro fetish is 1]vibrating chastity cage around [his of M] [manly-penis][otherwise]vibe in [his of M] pussy[end if], and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
 		otherwise if M is diaper-enslaved:
 			say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but baby mittens, a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss. [big his of M] bright pink bib reads 'Mittens, Sins, and Diaper Pins'.";
 		say "It would also appear that it's now impossible for [him of M] to stand up straight - [he of M][']s stuck in that same 90 degrees bent over position that [he of M] used to love so much - but it feels like it has very different implications now[if M is diaper-enslaved and diaper messing >= 3]. It looks like [he of M][']s constantly trying to mess [himself of M][end if].";
 	otherwise:
-		say "Clad in [his of M] tight purple latex dress, this [man of M] looks very elegant, provocative and proud. [big his of M] face is immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [he of M] tends to lean forward over [his of M] trainees,to give them an eyeful of both [his of M] expertly made up face[if lady fetish < 2] and impressive cleavage, left visible thanks to the low cut of [his of M] dress[end if].".
+		say "Clad in [his of M] tight purple latex dress, this [man of M] looks very elegant, provocative and proud. [big his of M] face is immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [he of M] tends to lean forward over [his of M] trainees,to give them an eyeful of both [his of M] expertly made up face[if andro fetish is 0] and impressive cleavage, left visible thanks to the low cut of [his of M] dress[end if].".
 
 The tutor-name of tutor-angela is "Angela".
 
@@ -479,7 +484,7 @@ Definition: patience-training is training-appropriate:
 To compute teaching of (L - patience-training):
 	let M be the training-tutor of L;
 	let P be a random trainee in the location of the player;
-	say "[speech style of M]'Today[']z lezzon is in patienze... and also... zenzibility.'[roman type][line break]As [NameDesc of M] addresses you all, [he of M] places a mug of coffee down in front of each of you.[line break][speech style of M]'Drink.'[roman type][line break][big he of M] instructs the class calmly, but with such cold authority and presence, that you each start unquestioningly sipping your new beverage.[line break][speech style of M]'Zere comez a point, ven you must admit zat you are not as big and strong and perfect as you might dream. Failing to recognize this moment is a key failing of zapphire ranked ztudentz, and one vich I vill be condizioning avay.'[roman type][paragraph break]As you finish your warm drink, [if diaper messing >= 3]your belly gurgles loudly... And you can hear that everyone else's belly is doing the same[otherwise]you feel a desperate need to go to the toilet... And judging by the panicked squeaks and clenched shut legs around you, it would appear that everyone else feels the same thing you do[end if].[line break][variable custom style]Uh-oh...[roman type][paragraph break][BigNameDesc of M] smirks knowingly.[line break][speech style of M]'You may leave zis room to uze ze toilet vhenever you like. But if you do zo, you vill not pazz ze clazz. To paz ze clazz, you muzt ztay in zis clazzroom for... five minutez.'[roman type][line break][big he of M] places a large egg timer on the front desk, and the sand starts trickling.[line break][speech style of M]'HOWEVER. If you zoil yourzelf in zis room, rather zan uzing ze toilet, zen you vill have proven yourzelf to have a zeriouz caze of hubriz. You vill ztill be promoted to emerald rank, but ze headmistrezz and I vill arrange for... [']zpecial meazures['] for the rest of your stay here, to enzure zat your hubriz doez not go unpunished.'[roman type][line break]That sounds ominous...";
+	say "[speech style of M]'Today[']z lezzon is in patienze... and also... zenzibility.'[roman type][line break]As [NameDesc of M] addresses you all, [he of M] places a mug of coffee down in front of each of you.[line break][speech style of M]'Drink.'[roman type][line break][big he of M] instructs the class calmly, but with such cold authority and presence, that you each start unquestioningly sipping your new beverage.[line break][speech style of M]'Zere comez a point, ven you must admit zat you are not as big and strong and perfect as you might dream. Failing to recognize this moment is a key failing of zapphire ranked ztudentz, and one vich I vill be condizioning avay.'[roman type][paragraph break]As you finish your warm drink, [if diaper messing >= 3]your belly gurgles loudly... And you can hear that everyone else's belly is doing the same[otherwise]you feel a desperate need to go to the [SlimeTarget]... And judging by the panicked squeaks and clenched shut legs around you, it would appear that everyone else feels the same thing you do[end if].[line break][variable custom style]Uh-oh...[roman type][paragraph break][BigNameDesc of M] smirks knowingly.[line break][speech style of M]'You may leave zis room to uze ze [SlimeTarget] vhenever you like. But if you do zo, you vill not pazz ze clazz. To paz ze clazz, you muzt ztay in zis clazzroom for... five minutez.'[roman type][line break][big he of M] places a large egg timer on the front desk, and the sand starts trickling.[line break][speech style of M]'HOWEVER. If you zoil yourzelf in zis room, rather zan uzing ze [SlimeTarget], zen you vill have proven yourzelf to have a zeriouz caze of hubriz. You vill ztill be promoted to emerald rank, but ze headmistrezz and I vill arrange for... [']zpecial meazures['] for the rest of your stay here, to enzure zat your hubriz doez not go unpunished.'[roman type][line break]That sounds ominous...";
 	let TM be 5; [minutes]
 	if diaper messing >= 3:
 		now suppository is 4;
@@ -494,14 +499,14 @@ To compute teaching of (L - patience-training):
 				say "[speech style of ST]'[one of]F-fuck!'[or]Hnnng!'[or]No...'[or]Aaah!'[in random order][roman type][line break][BigNameDesc of ST] exclaims as [he of ST] leaps up and sprints from the room[one of], desperate to avoid an accident[or][stopping].";
 				now ST is in Facility10;
 		if diaper messing >= 3, say "[one of]Your stomach gurgles loudly, and you can feel the pressure building[or]Your belly cramps painfully[or]The pressure mounting in your rectum is now seriously painful[or]You feel something trying to push its way out, and you do your best to hold the exit closed[or]You feel your body absolutely desperate to push. It would feel so good, so relieving, if you'd just let go[cycling]...";
-		otherwise say "[one of]You can feel the pressure building inside your very full bladder[or]Your bladder cramps painfully[or]The pressure mounting in your bladder is now seriously painful[or]You feel the urine pressing strongly against that barrier in your urethra, desperately begging for release[or]You feel your body absolutely desperate to let it out. It would feel so good, so relieving, if you'd just let go[cycling]...";
+		otherwise say "[one of]You can feel the pressure building inside your very full [SlimeContainer][or]Your [SlimeContainer] cramps painfully[or]The pressure mounting in your [SlimeContainer] is now seriously painful[or]You feel the slime pressing strongly against that barrier in your urethra, desperately begging for release[or]You feel your body absolutely desperate to let it out. It would feel so good, so relieving, if you'd just let go[cycling]...";
 		reset multiple choice questions;
-		set numerical response 1 to "Run for the toilet!";
+		set numerical response 1 to the substituted form of "Run for the [SlimeTarget]!";
 		set numerical response 2 to "Hold onto your [if diaper messing >= 3]poop[otherwise]pee[end if]!";
 		set numerical response 3 to "Dig extra-deep (guaranteed success, but harms long-term continence...)";
 		compute multiple choice question;
 		if player-numerical-response is 1:
-			if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Screw this[otherwise]I'm sorry, I can't[end if]!'[roman type][line break]You bolt out of the door and to the toilets, doing an awkward potty-dance wobble as you go.";
+			if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Screw this[otherwise]I'm sorry, I can't[end if]!'[roman type][line break]You bolt out of the door and to the [SlimeTarget]s, doing an awkward [SlimeTargetP]-dance wobble as you go.";
 			teleport to Facility10;
 			compute toilet use;
 			now TM is -100;
@@ -512,7 +517,7 @@ To compute teaching of (L - patience-training):
 		otherwise:
 			if diaper messing >= 3:
 				if the player is rectum incontinent:
-					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the [SlimeTarget], but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
 					compute messing;
 					now TM is -10;
 				otherwise:
@@ -523,7 +528,7 @@ To compute teaching of (L - patience-training):
 						say "You manage to hold on for now! Phew!";
 						increase suppository by 1;
 					otherwise:
-						say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+						say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the [SlimeTarget], but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
 						compute messing;
 						now TM is -10;
 			otherwise:
@@ -532,7 +537,7 @@ To compute teaching of (L - patience-training):
 					say "You manage to hold on for now! Phew!";
 					increase the bladder of the player by a random number between 1 and 2;
 				otherwise:
-					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you wetting yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the [SlimeTarget], but all that does is provide everyone with an unobstructed view of you wetting yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
 					compute pee protected urination;
 					now TM is -10;
 	if TM > -100:
@@ -543,10 +548,10 @@ To compute teaching of (L - patience-training):
 		now armband is emerald;
 		if TM is -10:
 			now the armband-title of armband is "Toni";
-			now the armband-print of armband is "toilet troubled";
+			now the armband-print of armband is the substituted form of "[SlimeTarget] troubled";
 		otherwise:
 			now the armband-title of armband is "Patty";
-			now the armband-print of armband is "patient potty user";
+			now the armband-print of armband is "patient [SlimeTargetP] user";
 		say "Your armband transforms!";
 		say ClothingDesc of armband;
 		update trainees;
@@ -554,7 +559,7 @@ To compute teaching of (L - patience-training):
 			say "As you study your new [']title['], [NameDesc of M] walks over to you, and flicks you on the head.";
 			now pledge-training-toilet is implanted;
 			pledge-execute pledge-training-toilet;
-			say "[variable custom style]I can't use the toilet any more?! But... But... Then... How will I... Oh god...[roman type][paragraph break]";
+			say "[variable custom style]I can't use the [SlimeTarget] any more?! But... But... Then... How will I... Oh god...[roman type][paragraph break]";
 		say "[BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Clazz dizmizzed!'[roman type][line break]";
 		if nurse is alive and nurse is undefeated:
 			let D be a random worn messed knickers;

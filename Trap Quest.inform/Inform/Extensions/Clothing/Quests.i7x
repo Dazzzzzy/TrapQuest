@@ -134,10 +134,10 @@ To compute consequence of (Q - questNothingHappens):
 
 questWetSelf is a questConsequence.
 Definition: questWetSelf is eligible:
-	if the player is desperate to pee and bladder-bursting-level >= 0 and wetting-valued <= 0, decide yes;
+	if the player is desperate to slime and bladder-bursting-level >= 0 and wetting-valued <= 0, decide yes;
 	decide no.
 To compute consequence of (Q - questWetSelf):
-	say "You concentrate so hard that you accidentally wet yourself!";
+	say "You concentrate so hard that you accidentally [slimedrain] on yourself!";
 	now delayed urination is 1;
 	try urinating.
 
@@ -327,27 +327,27 @@ To say QuestFlav of (Q - cum-swallowing-quest):
 To say QuestTitle of (Q - cum-swallowing-quest):
 	say " (cum swallowing quest)".
 
-Part - Piss Drinking Quest
+Part - Slime Drinking Quest
 
-piss-drinking-quest is a clothing-quest. piss-drinking-quest is persistent.
+slime-drinking-quest is a clothing-quest. slime-drinking-quest is persistent.
 
-Definition: piss-drinking-quest is appropriate:
+Definition: slime-drinking-quest is appropriate:
 	if watersports fetish is 1, decide yes;
 	decide no.
 
-To decide what number is the quest-weighting of (Q - piss-drinking-quest) for (C - a clothing):
+To decide what number is the quest-weighting of (Q - slime-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if C is transforming-earrings, decide on 999;
-	if the urine-taste-addiction-influence of C < 0, decide on 0;
-	if the urine taste addiction of the player < 4, decide on 0;
+	if the slime-taste-addiction-influence of C < 0, decide on 0;
+	if the slime taste addiction of the player < 4, decide on 0;
 	if C is ballgag, decide on 0;
 	decide on 3.
 
-To say QuestFlav of (Q - piss-drinking-quest):
-	say "You sense that it wants you to drink some urine.".
+To say QuestFlav of (Q - slime-drinking-quest):
+	say "You sense that it wants you to drink some [slime].".
 
-To say QuestTitle of (Q - piss-drinking-quest):
-	say " (urine drinking quest)".
+To say QuestTitle of (Q - slime-drinking-quest):
+	say " ([slime] drinking quest)".
 
 Part - Orgasm Quest
 
@@ -841,7 +841,7 @@ To decide what number is the quest-weighting of (Q - careful-peeing-quest) for (
 	decide on 1.
 
 To say QuestFlav of (Q - careful-peeing-quest):
-	say "You sense that it wants you to pee in toilets and bodies of water.".
+	say "You sense that it wants you to [slime] in [SlimeTarget]s and bodies of water.".
 
 To say QuestTitle of (Q - careful-peeing-quest):
 	say " (careful peeing quest)".
@@ -1029,16 +1029,19 @@ To decide what number is the quest-weighting of (Q - bursting-quest) for (C - a 
 	decide on 1.
 
 To say QuestFlav of (Q - bursting-quest):
-	say "You sense that it wants you to [if the player is bladder incontinent]just... wait for it to happen automatically[otherwise]practise self-control by holding onto your pee for a while even after it becomes risky[end if].".
+	if legacy watersports mechanics is 1, say "You sense that it wants you to [if the player is bladder incontinent]just... wait for it to happen automatically[otherwise]practise self-control by holding onto your [slime] for a while even after it becomes risky[end if].";
+	otherwise say "You sense that it wants you to [if the player is bladder incontinent]just... wait for it to happen automatically[otherwise]try to teach your slimeshooter how to endure for a while when it's full[end if].".
 
 To say QuestTitle of (Q - bursting-quest):
-	say " (bladder holding quest)".
+	if legacy watersports mechanics is 1, say " ([SlimeContainer] holding quest)";
+	otherwise say "(slime training quest)".
 
 To say QuestPersistFlav of (Q - bursting-quest) on (C - a clothing):
-	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts[end if] by ".
+	if legacy watersports mechanics is 1, say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to [slime] on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to [slime] on purpose[otherwise]Your [MediumDesc of C] rewards your continued [SlimeContainer] holding efforts[end if] by ";
+	otherwise say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to empty your slimeshooter on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to empty your slimeshooter[otherwise]Your [MediumDesc of C] rewards your continued slimeshooter training efforts[end if] by ".
 
 To compute persistent reward of (Q - bursting-quest) on (C - a clothing):
-	say "filling your bladder even further!";
+	say "filling your [SlimeContainer] even further!";
 	increase the bladder of the player by 1.
 
 Part - Mess Quest
@@ -1085,6 +1088,7 @@ Definition: oversatiated-quest is appropriate:
 
 To decide what number is the quest-weighting of (Q - oversatiated-quest) for (C - a clothing):
 	if oversatiated-quest is not appropriate, decide on 0;
+	if C is gag, decide on 0;
 	if diaper messing >= 3:
 		if C is diaper:
 			if strongCurses is 1, decide on 2;
@@ -1444,10 +1448,10 @@ desperation-quest is a clothing-quest.
 Definition: desperation-quest is appropriate: decide no. [only appears in halloween mode]
 
 To say QuestFlav of (Q - desperation-quest):
-	say "You sense that it wants you to have an empty bladder[if diaper messing >= 3] and bowels[end if].".
+	say "You sense that it wants you to have an empty [SlimeContainer][if diaper messing >= 3] and bowels[end if].".
 
 To say QuestTitle of (Q - desperation-quest):
-	say " (desperate for the potty quest)".
+	say " (desperate for the [SlimeTargetP] quest)".
 
 Part - Birth Quest
 
@@ -1479,6 +1483,7 @@ Definition: skill-quest is appropriate:
 	decide no.
 
 To decide what number is the quest-weighting of (Q - skill-quest) for (C - a clothing):
+	if C is gag, decide on 0;
 	decide on 1.
 
 To say QuestFlav of (Q - skill-quest):
@@ -1520,11 +1525,11 @@ Definition: drink-milk-wisp-quest is eligible:
 	if the total volume of face > 0, decide no;
 	decide yes.
 
-drink-urine-wisp-quest is a wisp quest. The printed name of drink-urine-wisp-quest is "swallow [urine]".
-Definition: drink-urine-wisp-quest is appropriate:
+drink-slime-wisp-quest is a wisp quest. The printed name of drink-slime-wisp-quest is "swallow [slime]".
+Definition: drink-slime-wisp-quest is appropriate:
 	if watersports fetish is 1, decide yes;
 	decide no.
-Definition: drink-urine-wisp-quest is eligible:
+Definition: drink-slime-wisp-quest is eligible:
 	if the total volume of face > 0, decide no;
 	decide yes.
 
@@ -1580,7 +1585,7 @@ Definition: learn-spell-wisp-quest is eligible:
 	if there is a castable magic-spell and there is an uncastable fetish appropriate magic-spell, decide yes;
 	decide no.
 
-use-urinal-wisp-quest is a wisp quest. The printed name of use-urinal-wisp-quest is "urinate in a urinal".
+use-urinal-wisp-quest is a wisp quest. The printed name of use-urinal-wisp-quest is "[if legacy watersports mechanics is 0]drain your slimeshooter in a slime receptacle[otherwise]urinate in a urinal[end if]".
 Definition: use-urinal-wisp-quest is appropriate:
 	if diaper lover is 0 and watersports fetish is 1, decide yes;
 	decide no.
@@ -1622,7 +1627,7 @@ Definition: hunger-wisp-trigger is eligible:
 	if the player is hungry or the player is nearly hungry, decide no;
 	decide yes.
 
-pee-wisp-trigger is a wisp trigger. The printed name of pee-wisp-trigger is "use a toilet, or leak through underwear".
+pee-wisp-trigger is a wisp trigger. The printed name of pee-wisp-trigger is "use a [SlimeTarget], or leak through underwear".
 Definition: pee-wisp-trigger is eligible:
 	if diaper lover is 0, decide no;
 	decide yes.
@@ -1658,6 +1663,13 @@ Definition: cum-panties-wisp-trigger is eligible:
 	if K is knickers and the semen-soak of K is 0, decide yes;
 	decide no.
 
+diaper-pail-wisp-trigger is a wisp trigger. The printed name of diaper-pail-wisp-trigger is "dispose of a messy diaper in a diaper pail".
+Definition: diaper-pail-wisp-trigger is appropriate:
+	if diaper messing < 6, decide no;
+	decide yes.
+Definition: diaper-pail-wisp-trigger is eligible:
+	decide yes.
+
 lose-panties-wisp-trigger is a wisp trigger. The printed name of lose-panties-wisp-trigger is "lose or remove your undies".
 Definition: lose-panties-wisp-trigger is appropriate:
 	if diaper quest is 1, decide no;
@@ -1681,7 +1693,7 @@ Definition: hold-breath-wisp-trigger is eligible:
 	if the player is able to breathe, decide yes;
 	decide no.
 
-wet-yourself-wisp-trigger is a wisp trigger. The printed name of wet-yourself-wisp-trigger is "wet yourself (i.e. accidentally release your bladder)".
+wet-yourself-wisp-trigger is a wisp trigger. The printed name of wet-yourself-wisp-trigger is "[if legacy watersports mechanics is 1]wet yourself (i.e. accidentally release your [SlimeContainer])[otherwise]spill slime (i.e. lose control of your [SlimeContainer])".
 Definition: wet-yourself-wisp-trigger is appropriate:
 	if watersports mechanics is 1, decide yes;
 	decide no.
@@ -1891,7 +1903,7 @@ This is the mindflayer quest of mind flayer list rule:
 The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
 
 This is the fucktoy humility quest list rule:
-	if the player is an april 2025 top donator and fucktoy-stone is not worn and (fucktoy-stone is challenged or the fucktoy-stone-progress of the player > 0):
+	if the player is the donator and fucktoy-stone is not worn and (fucktoy-stone is challenged or the fucktoy-stone-progress of the player > 0):
 		say "The Finest [if fucktoy-stone-progress of the player > 10]Fucktoy: [otherwise]???????: [end if][run paragraph on]";
 		if fucktoy-stone is challenged:
 			say "You found an snooty [ShortDesc of fucktoy-stone] on a statue in the dungeon. It claimed you're a loser who faints instead of finishing when you get gangbanged, but is that really true? Progress: ([fucktoy-stone-progress of the player]/10)[line break]";
@@ -1907,7 +1919,7 @@ This is the fucktoy humility quest list rule:
 The fucktoy humility quest list rule is listed in the quest listing rules.
 
 This is the bondage humility quest list rule:
-	if the player is an april 2025 top donator and bondage-stone is not worn and (bondage-stone is challenged or the bondage-stone-progress of the player > 0):
+	if the player is the donator and bondage-stone is not worn and (bondage-stone is challenged or the bondage-stone-progress of the player > 0):
 		say "The [if bondage-stone-progress of the player > 10]Bondage [otherwise]??????? [end if]Master: [run paragraph on]";
 		if bondage-stone is challenged:
 			say "You found a sad [ShortDesc of bondage-stone] on a statue in the mansion. It claimed it was impossible for you to defeat a fairy while bound at the wrists, or anything for that matter. Is that really true? Progress: ([bondage-stone-progress of the player]/10)[line break]";
@@ -1922,7 +1934,7 @@ This is the bondage humility quest list rule:
 The bondage humility quest list rule is listed in the quest listing rules.
 
 This is the brat humility quest list rule:
-	if the player is an april 2025 top donator and brat-stone is not worn and (brat-stone is challenged or the brat-stone-progress of the player > 0):
+	if the player is the donator and brat-stone is not worn and (brat-stone is challenged or the brat-stone-progress of the player > 0):
 		say "The Boldest [if brat-stone-progress of the player > 10]Brat: [otherwise]???????: [end if][run paragraph on]";
 		if brat-stone is challenged:
 			say "You found an annoying [ShortDesc of brat-stone] on a statue in the woods. It claimed it would let you wear it if you repeatedly found [']lazy['] people, made them angry, and led them on chases before letting them see you cum. It didn't seem to think you were bold enough for something like that, especially not repeatedly, but are you? Progress: ([brat-stone-progress of the player]/10)[line break]";
@@ -1937,7 +1949,7 @@ This is the brat humility quest list rule:
 The brat humility quest list rule is listed in the quest listing rules.
 
 This is the glory humility quest list rule:
-	if the player is an april 2025 top donator and glory-stone is not worn and (glory-stone is challenged or the glory-stone-progress of the player > 0):[TODO: donor lock]
+	if the player is the donator and glory-stone is not worn and (glory-stone is challenged or the glory-stone-progress of the player > 0):[TODO: donor lock]
 		say "The [if glory-stone-progress of the player > 10]Glory [otherwise]????? [end if] Master: [run paragraph on]";
 		if glory-stone is challenged:
 			say "You found a prideful [ShortDesc of glory-stone] on a statue at the bottom of a lake in the Extra Credit Zone. It wants a master that can defeat the greatest enemies while in the most memorable regalia (or at least in front of a gloryhole), but it claimed a mortal couldn't accomplish something like that. Is that really true? Progress: ([glory-stone-progress of the player]/10)[line break]";
@@ -1952,7 +1964,7 @@ This is the glory humility quest list rule:
 The glory humility quest list rule is listed in the quest listing rules.
 
 This is the comeuppance humility quest list rule:
-	if the player is an april 2025 top donator and comeuppance-stone is not worn and (comeuppance-stone is challenged or the comeuppance-stone-progress of the player > 0):
+	if the player is the donator and comeuppance-stone is not worn and (comeuppance-stone is challenged or the comeuppance-stone-progress of the player > 0):
 		say "The [if comeuppance-stone-progress of the player > 10]Comeuppance [otherwise]??????????? [end if]Connoisseur: [run paragraph on]";
 		if comeuppance-stone is challenged:
 			say "You found a singing [ShortDesc of comeuppance-stone] on a statue hidden in a hole in the Hotel. It seemed to think you're a delusional bottom who thinks they're a top, and demanded you learn how to climax when your topping attempts inevitably backfire. Is that even worth doing? Progress: ([comeuppance-stone-progress of the player]/10)[line break]";
@@ -1969,7 +1981,7 @@ This is the comeuppance humility quest list rule:
 The comeuppance humility quest list rule is listed in the quest listing rules.
 
 This is the piercing humility quest list rule:
-	if the player is an april 2025 top donator and piercing-stone is not worn and (piercing-stone is challenged or the piercing-stone-progress of the player > 0):[TODO: donor lock]
+	if the player is the donator and piercing-stone is not worn and (piercing-stone is challenged or the piercing-stone-progress of the player > 0):[TODO: donor lock]
 		say "The [if piercing-stone-progress of the player > 10]Piercing [otherwise]???????? [end if] Master: [run paragraph on]";
 		if piercing-stone is challenged:
 			say "You found a bossy [ShortDesc of piercing-stone] in the Royal Training Halls, and it told you to defeat an npc at the most inconvenient time, like when a guard has his shield up, an aeromancer who has her boobs inflated, or a ghost that's still intangible. The ring seemed to think you weren't capable of following its instructions... is that really true? ([piercing-stone-progress of the player]/10)[line break]";
@@ -2085,11 +2097,17 @@ To destroy (W - a wisp):
 	otherwise:
 		now W is not-buffing;
 
+To deploy an evil wisp:
+	let W be a random nonstalking evil-wisp;
+	if W is a wisp:
+		set up W.
+
 To deploy a wisp:
 	let W be a random nonstalking evil-wisp;
 	if W is not a wisp or (there is a nonstalking nice-wisp and the player is getting very lucky), now W is a random nonstalking nice-wisp;
 	if W is a wisp:
-		set up W.
+		set up W;
+		if W is nice-wisp and there is a nonstalking evil-wisp, say GotLuckyFlav.
 
 To notice a wisp:
 	let W be a random nonstalking wisp;

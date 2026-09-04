@@ -1,16 +1,16 @@
 Spiral Traps by Traps begins here.
 
-A spiral trap is a kind of trap. cocksucker spiral trap is a spiral trap. fucktoy spiral trap is a spiral trap. BBC spiral trap is a spiral trap. milk-spiral-trap is a spiral trap. piss-spiral-trap is a spiral trap. diaper-spiral-trap is a spiral trap. A spiral trap is potentially wire. A spiral trap is potentially sticky. A spiral trap is potentially click. Understand "screen" as spiral trap. The printed name of a spiral trap is "spiral screen".
+A spiral trap is a kind of trap. cocksucker spiral trap is a spiral trap. fucktoy spiral trap is a spiral trap. BBC spiral trap is a spiral trap. milk-spiral-trap is a spiral trap. slime-spiral-trap is a spiral trap. diaper-spiral-trap is a spiral trap. A spiral trap is potentially wire. A spiral trap is potentially sticky. A spiral trap is potentially click. Understand "screen" as spiral trap. The printed name of a spiral trap is "[if legacy content is 1]spiral[otherwise]presentation[end if] screen".
 
 This is the spawn initial dungeon spiral trap rule:
-	if legacy content is 1 and berri fetish is 0:
+	if berri fetish is 0:
 		let T be a random off-stage fetish appropriate spiral trap;
 		let R be a random trappable placed labyrinth room;
 		deploy T in R.
 The spawn initial dungeon spiral trap rule is listed first in the set up dungeon traps rules.
 
 This is the spawn initial hotel spiral traps rule:
-	if legacy content is 1 and berri fetish is 0:
+	if berri fetish is 0:
 		repeat with T running through off-stage fetish appropriate spiral traps:
 			let R be a random trappable placed modern room;
 			let X be 0;
@@ -32,22 +32,23 @@ Definition: milk-spiral-trap is fetish appropriate:
 	if lactation fetish is 1, decide yes;
 	decide no.
 
-Definition: piss-spiral-trap is fetish appropriate:
-	if watersports fetish is 1, decide yes;
+Definition: slime-spiral-trap is fetish appropriate:
+	if watersports fetish is 1 and legacy content is 1, decide yes;
 	decide no.
 
 Definition: diaper-spiral-trap is fetish appropriate:
-	if diaper lover > 0, decide yes;
+	if diaper lover > 0 and legacy content is 1, decide yes;
 	decide no.
 
 To say ExamineDesc of (T - a spiral trap):
 	say "A monitor revealed from within a hidden compartment in a wall. [if T is expired]The screen has now turned off[otherwise]On the screen is [spiral content of T]. It's difficult to look away once you start watching it[end if].".
 
 To say EnvironmentDesc of (T - a spiral trap):
-	say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a swirling pattern[end if] takes up a large portion of the wall in front of you. ".
+	if legacy content is 1, say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a spiraltic pattern[end if] takes up a large portion of the wall in front of you. ";
+	otherwise say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing a documentary about breast milking[otherwise if T is diaper-spiral-trap]TV screen showing a documentary about adults being treated like babies[otherwise]TV screen showing a documentary about sex acts[end if] takes up a large portion of the wall in front of you. ".
 
 To say ShortDesc of (T - a spiral trap):
-	say "spiral screen".
+	say "[if legacy content is 1]spiral[otherwise]presentation[end if] screen".
 
 To trigger (Y - a spiral trap):
 	now Y is revealed;
@@ -69,29 +70,34 @@ To say spiral content of (Y - a spiral trap):
 	say "a swirling pattern".
 
 To say spiral content of (Y - a cocksucker spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
+	if legacy content is 1, say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to [if bukkake fetish is 1]and receiving massive facials from[otherwise]and swallowing massive loads from[end if] massive [DickDesc of shopkeeper]s";
+	otherwise say "a well constructed presentation explaining why giving blowjobs to [if bukkake fetish is 1]and receiving massive facials from[otherwise]and swallowing massive loads from[end if] massive [DickDesc of shopkeeper]s is so great for [if the player is sexed male]transsexual [end if]porn [if infamy fetish is 1]stars like you[otherwise]stars[end if]".
 
 To say spiral content of (Y - a fucktoy spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]anally destroyed and vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
+	if legacy content is 1, say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]anally destroyed and vaginally bred[otherwise]double penetrated[end if] by huge [DickDesc of shopkeeper]s";
+	otherwise say "a well constructed presentation explaining why [if the player is sexed male]transsexual [end if]porn stars should get [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]bred[otherwise]double penetrated[end if] by huge [DickDesc of shopkeeper]s".
 
 To say spiral content of (Y - a BBC spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
+	if legacy content is 1, say "a swirling pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [DickDesc of shopkeeper]s with every part of their body";
+	otherwise say "a well constructed presentation explaining why [DickDesc of shopkeeper]s should be worshipped with every part of the body.".
 
 To say spiral content of (Y - a milk-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery".
+	if legacy content is 1, say "a swirling pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery";
+	otherwise say "a well constructed presentation explaining why having your breasts milked with industrial dairy machinery is an ideal way of contributing to society".
 
-To say spiral content of (Y - a piss-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of women being used as urinals and swallowing [urine]".
+To say spiral content of (Y - a slime-spiral-trap):
+	say "a swirling pattern, with short clips flashing constantly of women being used as [SlimeTargetU]s and swallowing [slime]".
 
 To say spiral content of (Y - a diaper-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
+	say "a swirling pattern, with short clips flashing constantly of adults gleefully [slime]ing [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
 
 To compute spiral effect of (Y - a spiral trap):
 	let R be a random number between -6 and 19;
 	increase R by a random number between 0 and the intelligence of the player / 2;
 	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
 	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
-		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere! [otherwise]You can't bring yourself to look away! [end if]";
+		if legacy content is 1, say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere! [otherwise]You can't bring yourself to look away! [end if]";
+		otherwise say "[if wanking is 1]You continue to stare at the screen, completely engaged. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to tune it out! [otherwise]It's just too interesting! [end if]";
 		say video content of Y;
 		compute specific spiral effect of Y;
 		if woman-player is in the location of the player:
@@ -106,10 +112,12 @@ To compute spiral effect of (Y - a spiral trap):
 			say "Do you block [NameDesc of woman-player][']s vision of the screen? ";
 			if the player is reverse bimbo consenting:
 				if the woman-bimbo of woman-player > 5:
-					say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'NO! NO STOPPING FUN! TAKE ME BACK!'[roman type][line break][big he of woman-player] takes an aggressive stance!";
+					if legacy content is 1, say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'NO! NO STOPPING FUN! TAKE ME BACK!'[roman type][line break][big he of woman-player] takes an aggressive stance!";
+					otherwise say "[BigNameDesc of woman-player] scowls and takes an aggressive stance.[line break][second custom style]'I was WATCHING that!'[roman type][line break]";
 					now woman-player is angered;
 				otherwise:
-					say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'Oh! Eek! Thank you so much for saving me, [NameBimbo]. I owe you one.'[roman type][line break]";
+					if legacy content is 1, say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'Oh! Eek! Thank you so much for saving me, [NameBimbo]. I owe you one.'[roman type][line break]";
+					otherwise say "[BigNameDesc of woman-player] blinks a few times.[line break][second custom style]'Oh, I guess I stopped paying attention to my surroundings.'[roman type][line break]";
 					compute mandatory room leaving of woman-player;
 					bore woman-player;
 					FavourUp woman-player;
@@ -126,9 +134,10 @@ htrigger-maturity is a number that varies.
 htrigger-pussy is a number that varies.
 
 To compute specific spiral effect of (Y - a cocksucker spiral trap):
-	commence animation of OralSpiralAnimation;
+	if legacy content is 1, commence animation of OralSpiralAnimation;
 	if htrigger-tasty is 0:
-		say "For some reason the word 'tasty' repeats in your head over and over and over and over. You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+		if legacy content is 1, say "For some reason the word 'tasty' repeats in your head over and over and over and over. You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+		otherwise say "[variable custom style]'Ok, I'm convinced. When I hear the word 'tasty', that's code for [']get on my knees and suck [DickDesc of shopkeeper]...[']'[roman type]";
 		now htrigger-tasty is 1;
 	otherwise if the thirst of the player < 3:
 		say "You feel weirdly thirsty.";
@@ -138,13 +147,13 @@ To compute specific spiral effect of (Y - a cocksucker spiral trap):
 	if diaper quest is 0:
 		if the oral sex addiction of the player * 2 > semen taste addiction of the player, SemenTasteAddictUp 1;
 		otherwise OralSexAddictUp 1;
-	[UrineTasteAddictUp 1.]
+	[SlimeTasteAddictUp 1.]
 
 To compute specific spiral effect of (Y - a fucktoy spiral trap):
 	if the player is gendered male:
-		commence animation of TransSpiralAnimation;
+		if legacy content is 1, commence animation of TransSpiralAnimation;
 	otherwise:
-		commence animation of DPSpiralAnimation;
+		if legacy content is 1, commence animation of DPSpiralAnimation;
 	if the player is not possessing a vagina or the anal sex addiction of the player < the vaginal sex addiction of the player:
 		if the anal sex addiction of the player * 2 <= the sex addiction of the player, AnalSexAddictUp 1;
 		otherwise SexAddictUp 1;
@@ -153,12 +162,12 @@ To compute specific spiral effect of (Y - a fucktoy spiral trap):
 		otherwise SexAddictUp 1.
 
 To compute specific spiral effect of (Y - a BBC spiral trap):
-	commence animation of BBCSpiralAnimation;
+	if legacy content is 1, commence animation of BBCSpiralAnimation;
 	if the raw BBC addiction of the player > the raw sex addiction of the player * 2, SexAddictUp 1;
 	BBCAddictUp 1.
 
 To compute specific spiral effect of (Y - a milk-spiral-trap):
-	commence animation of MilkSpiralAnimation;
+	if legacy content is 1, commence animation of MilkSpiralAnimation;
 	if milk-squirt-orgasms is false and the sensitivity of breasts >= 4:
 		say "You feel a tingling in your nipples, as if [bold type]your orgasms are now directly linked to your breasts.[roman type][line break]";
 		now milk-squirt-orgasms is true;
@@ -166,10 +175,10 @@ To compute specific spiral effect of (Y - a milk-spiral-trap):
 		say "[one of]Seeing the images on the screen, you can't help but crave that sensation on your own breasts.[or][or][cycling]";
 		BreastsSensitivityUp 1.
 
-To compute specific spiral effect of (Y - a piss-spiral-trap):
-	commence animation of PissSpiralAnimation;
+To compute specific spiral effect of (Y - a slime-spiral-trap):
+	if legacy watersports fetish is 1, commence animation of PissSpiralAnimation;
 	say "[one of]Seeing the images on the screen, you find your own mouth opening, and your tongue feeling rather dry.[or][or][cycling]";
-	UrineTasteAddictUp 1.
+	SlimeTasteAddictUp 1.
 
 htrigger-please is a number that varies.
 
@@ -179,7 +188,7 @@ To compute specific spiral effect of (Y - a diaper-spiral-trap):
 		DiaperAddictUp 1;
 		SexAddictUp 1;
 	otherwise if htrigger is "please" and htrigger-please is 0:
-		say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'PEE'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
+		say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'[caps slime]'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
 		now htrigger-please is 1;
 		now htrigger is "";
 	otherwise if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
@@ -195,32 +204,40 @@ To compute specific spiral effect of (Y - a diaper-spiral-trap):
 	otherwise if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player and a random number between 1 and 2 is 1:
 		RectumIncontinenceUp 1;
 	otherwise if the raw diaper addiction of the player < 20:
-		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper. [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and toilets are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
+		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper. [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and [SlimeTarget]s are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
 		SilentlyDiaperAddictUp 1.
 
-To say video content of (Y - a spiral trap):
-	say "[line break][specific video content of Y][one of]The words flash in front of your eyes and[or]Once again[stopping] [one of]they are imprinted onto your brain[or]they are burned onto the back of your skull[or]you can hear them echo throughout your mind[or]you find yourself repeating the words in your head[or]they are gone in an instant, leaving a permanent impression on your subconscious mind[in random order].".
+To say video content of (Y - a spiral trap):[Should never trigger.]
+	if legacy content is 1, say "[line break][specific video content of Y][one of]The words flash in front of your eyes and[or]Once again[stopping] [one of]they are imprinted onto your brain[or]they are burned onto the back of your skull[or]you can hear them echo throughout your mind[or]you find yourself repeating the words in your head[or]they are gone in an instant, leaving a permanent impression on your mind[in random order].";
+	otherwise say "[line break][specific video content of Y][one of]It's insanely convincing[or]It leaves a really strong impression on you[or]You find yourself repeating the strongest arguments in your head[or]You find yourself agreeing, almost unconsciously[in random order].";
 
-To say specific video content of (Y - a spiral trap):
-	say "[second custom style]I AM A FILTHY SLUT[roman type][line break]". [Should never happen]
+To say specific video content of (Y - a spiral trap):[Should never trigger.]
+	if legacy content is 1, say "[second custom style]I AM A FILTHY SLUT[roman type][line break]";
+	otherwise say "[second custom style]Oh, I get it. I'm a filthy slut.[roman type][line break]";
 
 To say specific video content of (Y - a cocksucker spiral trap):
-	say "[second custom style][one of]I CRAVE CUM[or]FIND A [caps man of male-m][line break]DRAIN [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][or]WORSHIP THE COCK[line break]SWALLOW YOUR PRIZE[or]I CAN'T WAIT[line break]FOR [caps him of male-m] TO PAINT MY [if bukkake fetish is 1]FACE[otherwise]THROAT[end if][or]COCK TASTES GOOD[line break]CUM TASTES BETTER[or]MASSAGE [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][line break]WITH MY TONGUE[or]GOOD THINGS CUM[line break]TO THOSE WHO BEG[or]FUCK MY FACE[or]USE MY THROAT[or]OPEN WIDE[line break]TAKE [caps him of male-m] DEEP[or][caps he of male-m] LIKES IT BEST[line break]WHEN I GAG[or]IF [caps he of male-m] FEELS MY TEETH[line break]I GET A SLAP[or]I KEEP MY HANDS[line break]BEHIND MY BACK[or]I LOOK INTO [caps his of male-m] EYES[line break]AS I GAG ON [caps his of male-m] DICK[or]I CAN'T SAY NO[line break]WHEN MY MOUTH IS FULL OF DICK[or][if bukkake fetish is 1]GET COVERED IN SO MUCH CUM[line break]THAT MY EYES ARE GLUED SHUT[otherwise]GRAB MY HAIR[line break]PULL ME IN[end if][or][if bukkake fetish is 1]I KEEP [caps his of male-m] CUM ON MY FACE[line break]IT MAKES ME LOOK PRETTY[otherwise]I HOLD [caps his of male-m] CUM IN MY MOUTH[line break]TO SAVOUR THE TASTE[end if][in random order][roman type][line break]".
+	if legacy content is 1, say "[second custom style][one of]I CRAVE CUM[or]FIND A [caps man of male-m][line break]DRAIN [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][or]WORSHIP THE COCK[line break]SWALLOW YOUR PRIZE[or]I CAN'T WAIT[line break]FOR [caps him of male-m] TO PAINT MY [if bukkake fetish is 1]FACE[otherwise]THROAT[end if][or]COCK TASTES GOOD[line break]CUM TASTES BETTER[or]MASSAGE [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][line break]WITH MY TONGUE[or]GOOD THINGS CUM[line break]TO THOSE WHO BEG[or]FUCK MY FACE[or]USE MY THROAT[or]OPEN WIDE[line break]TAKE [caps him of male-m] DEEP[or][caps he of male-m] LIKES IT BEST[line break]WHEN I GAG[or]IF [caps he of male-m] FEELS MY TEETH[line break]I GET A SLAP[or]I KEEP MY HANDS[line break]BEHIND MY BACK[or]I LOOK INTO [caps his of male-m] EYES[line break]AS I GAG ON [caps his of male-m] DICK[or]I CAN'T SAY NO[line break]WHEN MY MOUTH IS FULL OF DICK[or][if bukkake fetish is 1]GET COVERED IN SO MUCH CUM[line break]THAT MY EYES ARE GLUED SHUT[otherwise]GRAB MY HAIR[line break]PULL ME IN[end if][or][if bukkake fetish is 1]I KEEP [caps his of male-m] CUM ON MY FACE[line break]IT MAKES ME LOOK PRETTY[otherwise]I HOLD [caps his of male-m] CUM IN MY MOUTH[line break]TO SAVOUR THE TASTE[end if][in random order][roman type][line break]";
+	otherwise say "[second custom style]'[one of]Right, so sucking cock is good manners...'[or]Blowjobs are common courtesy, huh?'[or]I never knew using teeth was that bad!'[in random order][roman type][line break]".
 
 To say specific video content of (Y - a fucktoy spiral trap):
-	say "[second custom style][one of]FILL ME UP[or]FIND A COCK[line break]RIDE IT HARD[or][caps he of male-m][']S SO STRONG[line break][caps he of male-m] DOES WHAT [caps he of male-m] WANTS[or]I CAN'T WAIT[line break]TO FEEL [caps him of male-m] INSIDE ME[or]I CAN TASTE MY ASS[line break]ON [caps his of male-m] DICK[or]ALL OF MY HOLES[line break]NEED FILLING WITH CUM[or]I WILL ONLY CUM[line break]WITH MASTER'S PERMISSION[or][if the player is possessing a penis]MY WILLY IS USELESS[line break]I NEED A REAL MAN[otherwise]MY JOB IN LIFE[line break]IS TO KEEP MY [caps cunt] WARM[end if][or]USE MY ASSHOLE[line break]AS YOUR PERSONAL [if watersports fetish is 1]URINAL[otherwise]CUM DUMP[end if][or][if pregnancy fetish is 1 and the player is possessing a vagina]BREED MY [caps cunt][line break]MAKE ME CARRY YOUR CHILD[otherwise]I DON'T USE CONDOMS[line break]SO I CAN FEEL [caps him of male-m] CUM INSIDE[end if][or]I THANK [caps him of male-m] POLITELY[line break]FOR RUINING MY ASS[or]ONE COCK IS GOOD[line break][if the player is possessing a vagina]THREE[otherwise]TWO[end if] COCKS IS BETTER[or][caps he of male-m] PULLS ON MY HAIR[line break]SO I KNOW TO GO FASTER[or]MY BELLY IS FULL[line break]OF STRANGERS['] SEMEN[or]I DON'T KNOW [caps his of male-m] NAME[line break][if pregnancy fetish is 1 and the player is possessing a vagina]BUT I'M CARRYING [caps his of male-m] KID[otherwise]BUT I RECOGNISE [caps his of male-m] DICK[end if][or][if egg laying fetish is 1 and the player is possessing a vagina]FILL MY [caps pussy] WITH CUM[line break]FILL MY BELLY WITH EGGS[otherwise]FILL MY BELLY SO MUCH[line break]THAT I CAN'T MOVE FOR HOURS[end if][or][if egg laying fetish is 1]I LET MONSTERS BREED ME[line break]WITH THEIR EGGS[otherwise]I KEEP A PLUG IN MY ASS[line break]SO I DON'T LOSE [caps his of male-m] CUM[end if][or]MY FRIENDS ARE WATCHING[line break]NOW THEY KNOW WHO I REALLY AM[or]I'M NOT A WHORE[line break]I'D FUCK ANY GUY FOR FREE[in random order][roman type][line break]".
+	if legacy content is 1, say "[second custom style][one of]FILL ME UP[or]FIND A COCK[line break]RIDE IT HARD[or][caps he of male-m][']S SO STRONG[line break][caps he of male-m] DOES WHAT [caps he of male-m] WANTS[or]I CAN'T WAIT[line break]TO FEEL [caps him of male-m] INSIDE ME[or]I CAN TASTE MY ASS[line break]ON [caps his of male-m] DICK[or]ALL OF MY HOLES[line break]NEED FILLING WITH CUM[or]I WILL ONLY CUM[line break]WITH MASTER'S PERMISSION[or][if the player is possessing a penis]MY WILLY IS USELESS[line break]I NEED A REAL MAN[otherwise]MY JOB IN LIFE[line break]IS TO KEEP MY [caps cunt] WARM[end if][or]USE MY ASSHOLE[line break]AS YOUR PERSONAL [if watersports fetish is 1][caps SlimeTarget][otherwise]CUM DUMP[end if][or][if pregnancy fetish is 1 and the player is possessing a vagina]BREED MY [caps cunt][line break]MAKE ME CARRY YOUR CHILD[otherwise]I DON'T USE CONDOMS[line break]SO I CAN FEEL [caps him of male-m] CUM INSIDE[end if][or]I THANK [caps him of male-m] POLITELY[line break]FOR RUINING MY ASS[or]ONE COCK IS GOOD[line break][if the player is possessing a vagina]THREE[otherwise]TWO[end if] COCKS IS BETTER[or][caps he of male-m] PULLS ON MY HAIR[line break]SO I KNOW TO GO FASTER[or]MY BELLY IS FULL[line break]OF STRANGERS['] SEMEN[or]I DON'T KNOW [caps his of male-m] NAME[line break][if pregnancy fetish is 1 and the player is possessing a vagina]BUT I'M CARRYING [caps his of male-m] KID[otherwise]BUT I RECOGNISE [caps his of male-m] DICK[end if][or][if egg laying fetish is 1 and the player is possessing a vagina]FILL MY [caps pussy] WITH CUM[line break]FILL MY BELLY WITH EGGS[otherwise]FILL MY BELLY SO MUCH[line break]THAT I CAN'T MOVE FOR HOURS[end if][or][if egg laying fetish is 1]I LET MONSTERS BREED ME[line break]WITH THEIR EGGS[otherwise]I KEEP A PLUG IN MY ASS[line break]SO I DON'T LOSE [caps his of male-m] CUM[end if][or]MY FRIENDS ARE WATCHING[line break]NOW THEY KNOW WHO I REALLY AM[or]I'M NOT A WHORE[line break]I'D FUCK ANY GUY FOR FREE[in random order][roman type][line break]";
+	otherwise say "[second custom style]'Getting pounded sure is cool!'[roman type][line break]";
 
 To say specific video content of (Y - a BBC spiral trap):
-	say "[second custom style][one of]BLACK IS BETTER[line break]BLACK IS BEST[or]GET BLACKED[line break]NEVER GO BACK[or]BLACK IS BIGGER[line break]BIGGER IS BETTER[or]I'M A PATHETIC SUBMISSIVE [WhiteSub in upper case][line break]BORN TO SERVE [BlackCock in upper case][or][if the player is possessing a penis]MY WHITE WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[otherwise]MY JOB IN LIFE[line break]IS TO KEEP [BlackCock in upper case] HAPPY[end if][or]THE ONLY THING BETTER THAN A [BlackCock in upper case][line break]IS TWO[or][if pregnancy fetish is 1 and the player is possessing a vagina]MY [caps cunt] IS FOR BREEDING[line break]STRONG BLACK BABIES[otherwise]I ONLY USE CONDOMS[line break]WITH BORING WHITE COCKS[end if][or]MY HOLE IS SO [if ungape is 1]GREEDY[otherwise]STRETCHED[end if][line break]ONLY [BlackCock in upper case] CAN FULFIL IT[or]ONE [BlackCock in upper case] FOR MY MOUTH[line break][if the player is possessing a vagina]TWO EACH FOR MY [caps cunt] AND ASS[otherwise]TWO FOR MY ASS[end if][or]MY [if pregnancy fetish is 1]WOMB[otherwise]BELLY[end if] IS FULL[line break]OF MY BULL'S BABY BATTER[or]I DON'T CARE WHO [caps he of male-m] IS[line break]IF [caps he of male-m][']S BLACK THEN I'M GAME[or]WHEN A BLACK [caps man of male-m] WALKS IN[line break]MY PANTIES HIT THE FLOOR[line break][or]I'LL SERVE AS A SEX SLAVE[line break]TO THE BLACK MASTER RACE[or]WHITE COCKS HAVE TO PAY[line break]BLACK ENTRY IS FREE[in random order][roman type][line break]".
+	if legacy content is 1, say "[second custom style][one of]BLACK IS BETTER[line break]BLACK IS BEST[or]GET BLACKED[line break]NEVER GO BACK[or]BLACK IS BIGGER[line break]BIGGER IS BETTER[or]I'M A PATHETIC SUBMISSIVE [WhiteSub in upper case][line break]BORN TO SERVE [BlackCock in upper case][or][if the player is possessing a penis]MY WHITE WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[otherwise]MY JOB IN LIFE[line break]IS TO KEEP [BlackCock in upper case] HAPPY[end if][or]THE ONLY THING BETTER THAN A [BlackCock in upper case][line break]IS TWO[or][if pregnancy fetish is 1 and the player is possessing a vagina]MY [caps cunt] IS FOR BREEDING[line break]STRONG BLACK BABIES[otherwise]I ONLY USE CONDOMS[line break]WITH BORING WHITE COCKS[end if][or]MY HOLE IS SO [if ungape is 1]GREEDY[otherwise]STRETCHED[end if][line break]ONLY [BlackCock in upper case] CAN FULFIL IT[or]ONE [BlackCock in upper case] FOR MY MOUTH[line break][if the player is possessing a vagina]TWO EACH FOR MY [caps cunt] AND ASS[otherwise]TWO FOR MY ASS[end if][or]MY [if pregnancy fetish is 1]WOMB[otherwise]BELLY[end if] IS FULL[line break]OF MY BULL'S BABY BATTER[or]I DON'T CARE WHO [caps he of male-m] IS[line break]IF [caps he of male-m][']S BLACK THEN I'M GAME[or]WHEN A BLACK [caps man of male-m] WALKS IN[line break]MY PANTIES HIT THE FLOOR[line break][or]I'LL SERVE AS A SEX SLAVE[line break]TO THE BLACK MASTER RACE[or]WHITE COCKS HAVE TO PAY[line break]BLACK ENTRY IS FREE[in random order][roman type][line break]";
+	otherwise say "[second custom style]'Black [DickDesc of shopkeeper] is best or whatever!'[roman type][line break]".
 
 To say specific video content of (Y - a milk-spiral-trap):
-	say "[second custom style][one of]PUMP MY TITS[or]I'M A COW[or]JUST A COW[or]THEY'RE NOT BREASTS[line break]THEY'RE UDDERS[or]I'M NOT A PERSON[line break]I'M JUST CATTLE[or]MOO FOR MASTER[or]SQUEEZE MY TEATS[or]I BELONG ON A RANCH[or]SUCTION CUPS[line break]ON MY MILKERS[or]I MAKE MILK[line break]FOR OTHERS TO DRINK[or]MY MILKERS ARE FULL[or]IT FEELS GOOD TO BE MILKED[or]TO LACTATE[line break]IS GREAT[or]SUCK THE MILK[line break]OUT OF MY UDDERS[or]MILK SLUT FOR HIRE[or]MY TITS GET BIGGER[line break]MY MILK GETS THICKER[or]MAKE ME CUM[line break]WITH MY MILK JUGS[or]MILKING IS MAGICAL[in random order][roman type][line break]".
+	if legacy content is 1, say "[second custom style][one of]PUMP MY TITS[or]I'M A COW[or]JUST A COW[or]THEY'RE NOT BREASTS[line break]THEY'RE UDDERS[or]I'M NOT A PERSON[line break]I'M JUST CATTLE[or]MOO FOR MASTER[or]SQUEEZE MY TEATS[or]I BELONG ON A RANCH[or]SUCTION CUPS[line break]ON MY MILKERS[or]I MAKE MILK[line break]FOR OTHERS TO DRINK[or]MY MILKERS ARE FULL[or]IT FEELS GOOD TO BE MILKED[or]TO LACTATE[line break]IS GREAT[or]SUCK THE MILK[line break]OUT OF MY UDDERS[or]MILK SLUT FOR HIRE[or]MY TITS GET BIGGER[line break]MY MILK GETS THICKER[or]MAKE ME CUM[line break]WITH MY MILK JUGS[or]MILKING IS MAGICAL[in random order][roman type][line break]";
+	otherwise say "[second custom style]'Good soldiers expose their milkers!'[roman type][line break]".
 
-To say specific video content of (Y - a piss-spiral-trap):
-	say "[second custom style][one of]DRINK IT DOWN[or]I'M JUST A RECEPTACLE[line break]FOR PISS[or]GLUG GLUG GLUG[line break]GLUG IT ALL DOWN[or]USE MY MOUTH[line break]AS YOUR TOILET[or]COCK TASTES GOOD[line break]PISS TASTES BETTER[or]PISS ON MY FACE[or]URINALS DON'T TALK[line break]THEY JUST DRINK[or]TOILET WHORE[or]PISS DRINKING SLUT[or]YUM YUM YUM[line break]I LOVE [caps his of male-m] PISS[or]PISS IN MY HAIR[or]A STOMACH FILLED WITH PISS[line break]IS ALL I NEED[or]GARGLE AND GULP[or]DRAIN [caps his of male-m] BLADDER[line break]DOWN MY THROAT[in random order][roman type][line break]".
+To say specific video content of (Y - a slime-spiral-trap):
+	if legacy content is 1, say "[second custom style][one of]DRINK IT DOWN[or]I'M JUST A RECEPTACLE[line break]FOR [caps slime][or]GLUG GLUG GLUG[line break]GLUG IT ALL DOWN[or]USE MY MOUTH[line break]AS YOUR [caps SlimeTarget][or]COCK TASTES GOOD[line break][caps slime] TASTES BETTER[or][caps slime] ON MY FACE[or][caps SlimeTarget] DON'T TALK[line break]THEY JUST DRINK[or][caps SlimeTarget] WHORE[or][caps slime] DRINKING SLUT[or]YUM YUM YUM[line break]I LOVE [caps his of male-m] [caps slime][or][caps slime] IN MY HAIR[or]A STOMACH FILLED WITH [caps slime][line break]IS ALL I NEED[or]GARGLE AND GULP[or]DRAIN [caps his of male-m] [caps slime][line break]DOWN MY THROAT[in random order][roman type][line break]";
+	otherwise say "[second custom style]'I've never thought about [slime] that way...'[roman type][line break]".
 
 To say specific video content of (Y - a diaper-spiral-trap):
-	say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME POTTYPANTS[or]NO TOILETS[line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I WET MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if the player is gendered male]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if the player is gendered male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I PEE[otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE[in random order][roman type][line break]".
+	if legacy content is 1, say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME [caps slime]PANTS[or]NO [caps SlimeTarget][line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I [caps slime] MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if the player is gendered male]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if the player is gendered male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I [caps slime][otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise if slimeshooter fetish is 1]GETTING SLIME ON[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME [caps slime] [caps slime] PLEASE LET ME [caps slime] [caps slime] PLEASE LET ME [caps slime] [caps slime] PLEASE[in random order][roman type][line break]";
+	otherwise say "[second custom style]'I've never thought about diapers that way...'[roman type][line break]".
 
 Figure of SpiralDiaperAnimation000 is the file "Special/Animations/SpiralDiaper/frame_000.jpg".
 Figure of SpiralDiaperAnimation001 is the file "Special/Animations/SpiralDiaper/frame_001.jpg".

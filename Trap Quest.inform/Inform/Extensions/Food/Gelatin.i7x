@@ -12,9 +12,9 @@ Carry out TQeating gelatin:
 	say "[DevourFlav of the noun]";
 	if the quality of the noun is -2:
 		if diaper quest is 1:
-			say "The fruity treat turns to liquid in your throat! You feel it rushing through your body, and filling your bladder!";
+			say "The fruity treat turns to liquid in your throat! You feel it rushing through your body, and filling your [SlimeContainer]!";
 			increase the bladder of the player by 8;
-			if the player is not bursting and the player is desperate to pee:
+			if the player is not bursting and the player is desperate to slime:
 				now delayed urination is 1;
 				try urinating;
 		otherwise:

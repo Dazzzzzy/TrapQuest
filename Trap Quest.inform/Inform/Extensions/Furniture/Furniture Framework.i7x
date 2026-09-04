@@ -13,7 +13,7 @@ Check entering furniture:
 		if the player is immobile, say "Aren't you a bit busy?" instead;
 		[if the fatigue of the player is 0 and the body soreness of the player is 0 and the noun is not modification machine and (the noun is not milking bench or the milk volume of breasts <= 0) and the noun is not lecture chair and the noun is not med bay bed, say "You feel completely fine." instead;]
 		if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
-	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed and the noun is not automated changing station, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
+	if the player is slime averse and the slime-puddle of the location of the player > 0 and the noun is not royal bed and the noun is not automated changing station, say "[variable custom style]I'm not resting in this room with the smell of [slime] everywhere![roman type]" instead;
 	if the noun is soggy hotel bed, say "[variable custom style]I'm not getting in those sheets again, they're soaked![roman type][line break]" instead;
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
 	if the player is upset about mess and the noun is not automated changing station:
@@ -112,7 +112,7 @@ This function represents the effects of resting. The player loses any build-up o
 @param <Furniture>:<F> The furniture the player is going to be resting on
 
 +!]
-To compute normal rest of (F - a furniture):
+To compute normal rest of (F - a thing):
 	now player-currently-resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
@@ -158,7 +158,7 @@ This function runs computeMonsterDetectionFurniture, invokes computeExtraTurn, t
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute normal effect of (F - a furniture):
+To compute normal effect of (F - a thing):
 	check regular humiliating situation;
 	compute extra turn;
 	compute monster detection;
@@ -171,7 +171,7 @@ This function should be called whenever time passes when the player is resting.
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute unique normal effect of (F - a furniture):
+To compute unique normal effect of (F - a thing):
 	do nothing.
 
 [!<sayFurnitureRestingDesc>+
@@ -181,7 +181,7 @@ Describes the player resting on F
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To say RestingDesc of (F - a furniture):
+To say RestingDesc of (F - a thing):
 	say "You continue to rest on the [printed name of F].";
 
 [!<computeFurnitureFatigueRefresh>+
@@ -191,7 +191,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 4, then calls UniqueFurnitu
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute fatigue refresh of (F - a furniture):
+To compute fatigue refresh of (F - a thing):
 	say RestingDesc of F;
 	allocate 4 seconds;
 	compute unique fatigue effect of F;
@@ -204,7 +204,7 @@ By default does nothing
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute unique fatigue effect of (F - a furniture):
+To compute unique fatigue effect of (F - a thing):
 	do nothing.
 
 [!<computeFurnitureSorenessRefresh>+
@@ -214,7 +214,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 6, calls UniqueFurnitureSor
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute soreness refresh of (F - a furniture):
+To compute soreness refresh of (F - a thing):
 	say RestingDesc of F;
 	allocate 6 seconds;
 	if debuginfo > 0, say "[input-style]Body damage [body soreness of the player] -> ";
@@ -230,7 +230,7 @@ By default, does nothing
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute unique soreness effect of (F - a furniture):
+To compute unique soreness effect of (F - a thing):
 	do nothing.
 
 [!<computeFurnitureAlerting>+
@@ -240,7 +240,7 @@ This function is called whenever a nearby monster interrupts the player's restin
 @param <Furniture>:<F> The furniture the player was resting on
 
 +!]
-To compute alerting of (F - a furniture):
+To compute alerting of (F - a thing):
 	say "Your rest has been interrupted!";
 	now player-currently-resting is 0;
 	now the alert of the player is 0.
@@ -252,14 +252,14 @@ This function is called when the player finishes resting without being interrupt
 @param <Furniture>:<F> The furniture the player was resting on
 
 +!]
-To compute rest completion of (F - a furniture):
+To compute rest completion of (F - a thing):
 	say RestCompleteFlav of F;
 	now player-currently-resting is 0;
 	now auto is 1;
 	try standing;
 	now auto is 0.
 
-To say RestCompleteFlav of (F - a furniture):
+To say RestCompleteFlav of (F - a thing):
 	if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
 	otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]".
 
@@ -270,7 +270,7 @@ Called whenever the player stops resting, regardless of the reason why. Does not
 @param <Furniture>:<F> The furniture the player was resting on
 
 +!]
-To compute rest ending of (F - a furniture):
+To compute rest ending of (F - a thing):
 	dislodge F.
 
 an automated changing station is a kind of furniture. The printed name of an automated changing station is "[TQlink of item described]automated changing station[TQxlink of item described][if inline hyperlinks >= 2][link][bracket]use[close bracket][as]sit on [text-shortcut of item described][end link][end if]". The text-shortcut of an automated changing station is "acs". Understand "automated" as an automated changing station.
@@ -319,8 +319,13 @@ To compute furniture resting on (G - an automated changing station):
 	if K is knickers and diaperChangeAllowed is 1:
 		repeat with C running through worn clothing:
 			if the bottom-layer of C > the bottom-layer of K:
+				unless (C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped) and (C is skirted or K is crotch-tie-up):
+					now diaperChangeAllowed is 0;
+					say "Nothing happens. Perhaps the robots don't know how to get past [NameDesc of C].";
+		if diaperChangeAllowed is 1:
+			if K is not autocleanremovable:
 				now diaperChangeAllowed is 0;
-				say "Nothing happens. Perhaps the robots don't know how to get past [NameDesc of C].";
+				say "Nothing happens. Perhaps this [ShortDesc of K] truly can't be removed by conventional means...";
 		if diaperChangeAllowed is 1:
 			if K is locked:
 				now diaperChangeAllowed is 0;
@@ -392,11 +397,11 @@ To compute furniture resting on (G - an automated changing station):
 							say "[variable custom style]'...Gaaaaaaah...!'[roman type][line break]You completely fail to complete your sentence as you experience a mind-shattering orgasm.[paragraph break][speech style of E]'[NameBimbo]... Wait... Are you... Are you ORGASMING right now?! What the fuck are you getting up to in there?!'[roman type][line break][BigNameDesc of E] looks shocked and appalled.[paragraph break][variable custom style]No... I've been caught![roman type][line break][severeHumiliateReflect]";
 						progress quest of berri-quest;
 				otherwise:
-					say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
+					say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your [SlimeContainer]?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
 					increase temporary-bladder-incontinence by 2;
 				say "[if diaperChangeAllowed is not 2][GotUnluckyFlav][line break][end if]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
 			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
-			if K is diaper, DiaperAddictUp 1;
+			if K is diaper and the raw diaper addiction of the player < 7, SlowDiaperAddictUp 1;
 			trigger change-wisp-trigger.
 
 Check pulling hotel changing station:
@@ -472,7 +477,7 @@ A time based rule (this is the stuck in diaper tank rule):
 				say "[BigNameDesc of M] steps into [NameDesc of hotel changing station]. Humming to [himself of M] happily, [he of M] closes the door and slips [his of M] wrists into the restraints.";
 				now M is guarding; [this triggers the graphics to show the wrestler getting a change]
 			otherwise if changing-station-tank-stuck-scene is 6:
-				say "[big his of M] suit unpoppered, [NameDesc of M] relaxes as [his of M] heavy, [if the changing-station-tank-scene of woman-player is 0]mess-filled[otherwise]piss-filled[end if] diaper is swapped out for a fresh, dry one.[line break][variable custom style]Wait a minute... That means that the used one is about to...[italic type][line break]SQUELCH[roman type][line break]Understanding smacks you in the face at the same time as [if the changing-station-tank-scene of woman-player is 0]another big stinky nappy is squashed into your cramped container, pushing all those vile used diapers even more strongly into your body. The smell, somehow, grows even worse[otherwise][NameDesc of M][']s soaked diaper is pneumatically projected out of the transfer pipe and right into your face[end if].";
+				say "[big his of M] suit unpoppered, [NameDesc of M] relaxes as [his of M] heavy, [if the changing-station-tank-scene of woman-player is 0]mess-filled[otherwise][slime]-filled[end if] diaper is swapped out for a fresh, dry one.[line break][variable custom style]Wait a minute... That means that the used one is about to...[italic type][line break]SQUELCH[roman type][line break]Understanding smacks you in the face at the same time as [if the changing-station-tank-scene of woman-player is 0]another big stinky nappy is squashed into your cramped container, pushing all those vile used diapers even more strongly into your body. The smell, somehow, grows even worse[otherwise][NameDesc of M][']s soaked diaper is pneumatically projected out of the transfer pipe and right into your face[end if].";
 				if the changing-station-tank-scene of woman-player < -1:
 					PainUp 15;
 					GrossOut wetDiaperFacesitGrossnessLevel;
@@ -493,8 +498,8 @@ A time based rule (this is the stuck in diaper tank rule):
 						now D is a random off-stage massive diaper;
 						if D is nothing, now D is the chosen trap diaper;
 					blandify and reveal D;
-					now the urine-soak of D is the soak-limit of D;
-					now the perceived-urine-soak of D is the soak-limit of D;
+					now the slime-soak of D is the soak-limit of D;
+					now the perceived-slime-soak of D is the soak-limit of D;
 					now D is in the location of the player;
 				now the stance of the player is 1;
 				interest M;

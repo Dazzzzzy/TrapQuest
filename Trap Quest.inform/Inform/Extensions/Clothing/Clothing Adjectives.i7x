@@ -20,10 +20,6 @@ REQUIRES COMMENTING
 @!]
 A clothing is a kind of wearthing. A clothing is wearable. Understand "worn" as clothing when item described is worn. Understand "unworn", "not worn" as clothing when item described is unworn. Understand "held", "carried", "taken" as a thing when item described is carried. Understand "unheld", "uncarried", "not held", "not carried", "untaken", "not taken" as a thing when item described is not held.
 
-[for the character window labels]
-A clothing has a number called previous-labels.
-A clothing has a number called total-labels.
-A clothing has a number called label-width.
 
 The inventoryFocusPriority of a clothing is usually 10. [This is the order in which they should be displayed in inventory menu slots. I'm leaving gaps in the numbers for more items I haven't thought of yet.]
 
@@ -323,11 +319,11 @@ Definition: a clothing is somewhat fluid vulnerable: [Can it absorb fluid at lea
 	if it is fluid immune, decide no;
 	decide yes.
 Clothing has a number called semen-soak. The semen-soak of clothing is usually 0.
-Clothing has a number called urine-soak. The urine-soak of clothing is usually 0.
+Clothing has a number called slime-soak. The slime-soak of clothing is usually 0.
 Clothing has a number called milk-soak. The milk-soak of clothing is usually 0.
 Clothing has a number called water-soak. The water-soak of clothing is usually 0.
 To decide which number is the total-soak of (C - a clothing):
-	decide on the semen-soak of C + the urine-soak of C + the milk-soak of C + the water-soak of C.
+	decide on the semen-soak of C + the slime-soak of C + the milk-soak of C + the water-soak of C.
 To compute drying of (C - a clothing):
 	if the total-soak of C > 0:
 		if C is fluid immune:
@@ -340,9 +336,9 @@ To compute drying of (C - a clothing):
 			if the milk-soak of C > 0:
 				if a random number between 1 and 32 is 1:
 					decrease the milk-soak of C by 1;
-			if the urine-soak of C > 0:
+			if the slime-soak of C > 0:
 				if a random number between 1 and 28 is 1:
-					decrease the urine-soak of C by 1;
+					decrease the slime-soak of C by 1;
 			if the semen-soak of C > 0:
 				if a random number between 1 and 40 is 1:
 					decrease the semen-soak of C by 1;
@@ -565,7 +561,8 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry, spookiness and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry, spookiness, cumguzzling and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+
 A clothing has a number called impermanence-counter.
 
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
@@ -728,8 +725,10 @@ To decide which number is the stealth-influence of (C - a clothing):
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
 	if the player is not in a heist-painting-room:
-		if C is bsounding, decrease N by 6;
-		if C is messed knickers, decrease N by 5;
+		if C is bsounding:
+			decrease N by 10;
+		otherwise if C is messed knickers:
+			decrease N by 5;
 	decide on N.
 Definition: a clothing is stealthy:
 	if the stealth-influence of it > 0, decide yes;

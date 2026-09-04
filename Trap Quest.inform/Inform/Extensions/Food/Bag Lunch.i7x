@@ -2,12 +2,13 @@ Bag Lunch by Food begins here.
 
 A bag lunch is a kind of food. There are 5 bag lunches. Understand "condom" as bag lunch. The printed name of bag lunch is "[TQlink of item described]bag 'lunch'[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bag lunch is "bal".
 To say ExamineDesc of (B - a bag lunch):
-	say "A stretchy, bite-sized bag full of [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be [otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be [otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be [end if][baglunchcontents]. Apparently it's meant to be eaten whole.".
+	if slimeshooter fetish is 1, say "A stretchy, bite-sized bag full of [if lactation fetish is 1]some horrid grey liquid that looks a lot like it might be [otherwise]some horrid bluish liquid that looks a lot like it might be[end if][baglunchcontents]. Apparently it's meant to be eaten whole.";
+	otherwise say "A stretchy, bite-sized bag full of [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be [otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be [otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be [end if][baglunchcontents]. Apparently it's meant to be eaten whole.".
 To decide which figure-name is the examine-image of (B - a bag lunch):
 	decide on figure of used condom.
 
 To say baglunchcontents:
-	say "[if lactation fetish is 1 and watersports fetish is 1]a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]a mixture of [urine] and [semen][otherwise if lactation fetish is 1]a mixture of [milk] and [semen][otherwise]thick white [semen][end if]".
+	say "[if lactation fetish is 1 and watersports fetish is 1]a mixture of [semen], [milk] and [slime][otherwise if watersports fetish is 1]a mixture of [slime] and [semen][otherwise if lactation fetish is 1]a mixture of [milk] and [semen][otherwise]thick white [semen][end if]".
 
 To say ShortDesc of (C - a bag lunch):
 	say "[']bag lunch[']".
@@ -27,7 +28,7 @@ To compute bagluncheat of (T - a bag lunch):
 	say "Your food pipe makes a gurgling sound as the [baglunchcontents] slides down towards your stomach.";
 	let X be 3;
 	if watersports fetish is 1:
-		StomachUrineUp 1;
+		StomachSlimeUp 1;
 		decrease X by 1;
 	if lactation fetish is 1:
 		StomachMilkUp 1;

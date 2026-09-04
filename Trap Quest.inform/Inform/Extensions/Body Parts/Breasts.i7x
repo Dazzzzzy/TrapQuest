@@ -176,7 +176,7 @@ To decide which number is the semen outrage of (B - breasts):
 To decide which number is the outrage of (B - breasts):
 	let O be 0;
 	let S be the semen outrage of breasts;
-	unless diaper quest is 1 and the breastskill of the player is 1:
+	unless diaper quest is 1 and the breastskill of the player is 1 and the player is not in a predicament room:
 		let P be 0; [This will be the value of how lewd it is that the player's nipples are visible]
 		[if there is a worn currently at least partially visible top-displaced clothing, increase O by 2;] [experimental - displaced clothing is not more lewd]
 		if B is lewdly exposed, now P is the lewdly exposed outrage of B + O;

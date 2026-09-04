@@ -91,18 +91,18 @@ To say StoneDesc of (C - a humility-stone):
 	say "a Master of Humility.".
 
 Check taking humility-stone:
-	if the player is not an april 2025 top donator:
+	if the player is not the donator:
 		say debugadvert;
 		StatueRestore the noun instead.
 Check wearing humility-stone:
-	if the player is not an april 2025 top donator:
+	if the player is not the donator:
 		say debugadvert;
 		StatueRestore the noun instead.
 
 Report taking off a humility-stone:
 	say "After it's removed, [NameDesc of the noun] blurs and disappears. Maybe it returned where it came from?";
 	try dropping the noun;
-	if the player is an april 2025 top donator, StatueRestore the noun.
+	if the player is the donator, StatueRestore the noun.
 
 To StatueRestore (S - a thing):
 	do nothing.
@@ -116,7 +116,7 @@ To StatueRestore (S - glory-stone):
 	now S is off-stage.
 
 Check taking glory-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead.
+	if the player is not the donator, say debugadvert instead.
 
 Report wearing glory-stone:
 	say "Ripples of pain from your arm across every muscle in your body.[line break][first custom style]'[if glory-stone is challenged]Incredible. I did not think you could do it! [otherwise]Your acheivements are something to behold. [end if]I, The Glory Stone, acknowledge you.'[roman type][line break]";
@@ -136,7 +136,7 @@ Report wearing fucktoy-stone:
 	Arouse 1000.
 
 Check taking fucktoy-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead;
+	if the player is not the donator, say debugadvert instead;
 	if fucktoy-stone-progress of the player < 10:
 		if fucktoy-stone is unchallenged:
 			now fucktoy-stone is challenged;
@@ -145,7 +145,7 @@ Check taking fucktoy-stone:
 			say "You try to wiggle the ring off the statue's finger, but it refuses to let go of the statue." instead.
 
 To StatueRestore (S - fucktoy-stone):
-	if the player is an april 2025 top donator, now S is in Dungeon10;
+	if the player is the donator, now S is in Dungeon10;
 	otherwise now S is off-stage.
 
 bondage-stone is a humility-stone. bondage-stone is unique. The printed name of bondage-stone is "[TQlink of item described][item style][if the item described is worn]The Bondage Stone[otherwise]pink diamond ring[end if][clothing-condensed-after]". The text-shortcut of bondage-stone is "bgst". The accessory-colour of bondage-stone is pink diamond.
@@ -154,15 +154,15 @@ To say StoneDesc of (C - bondage-stone):
 	say "a Master of Bondage.".
 
 To StatueRestore (S - bondage-stone):
-	if the player is an april 2025 top donator, now S is in Mansion38;
+	if the player is the donator, now S is in Mansion38;
 	otherwise now S is off-stage.
 
 Report going when the player is in Mansion38:
-	if diaper quest is 0 and the player is an april 2025 top donator and bondage-stone-progress of the player > 0 and bondage-stone is not held:
+	if diaper quest is 0 and the player is the donator and bondage-stone-progress of the player > 0 and bondage-stone is not held:
 		now bondage-stone is in Mansion38.
 
 Check taking bondage-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead;
+	if the player is not the donator, say debugadvert instead;
 	if bondage-stone-progress of the player  < 10:
 		if bondage-stone is unchallenged:
 			now bondage-stone is challenged;
@@ -180,7 +180,7 @@ To say StoneDesc of (C - brat-stone):
 	say "the Boldest Brat".
 
 To StatueRestore (S - brat-stone):
-	if the player is an april 2025 top donator, now S is in Woods10;
+	if the player is the donator, now S is in Woods10;
 	otherwise now S is off-stage.
 
 Report going when the player is in Woods10:
@@ -188,7 +188,7 @@ Report going when the player is in Woods10:
 		now brat-stone is in Woods10;
 
 Check taking brat-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead;
+	if the player is not the donator, say debugadvert instead;
 	if brat-stone-progress of the player < 10:
 		if brat-stone is unchallenged:
 			now brat-stone is challenged;
@@ -206,7 +206,7 @@ To say StoneDesc of (C - piercing-stone):
 	say "a Master of Piercing.".
 
 To StatueRestore (S - piercing-stone):
-	if the player is an april 2025 top donator, now S is in Facility08;
+	if the player is the donator, now S is in Facility08;
 	otherwise now S is off-stage.
 
 Report wearing piercing-stone:
@@ -218,7 +218,7 @@ Report going when the player is in Facility08:
 		now piercing-stone is in Facility08.
 
 Check taking piercing-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead;
+	if the player is not the donator, say debugadvert instead;
 	if piercing-stone-progress of the player < 10:
 		if piercing-stone is unchallenged:
 			now piercing-stone is challenged;
@@ -232,7 +232,7 @@ To say StoneDesc of (C - a humility-stone):
 	say "a Comeuppance Connoisseur.".
 
 To StatueRestore (S - comeuppance-stone):
-	if the player is not an april 2025 top donator or comeuppance-stone-progress of the player <= 0, now S is off-stage;
+	if the player is not the donator or comeuppance-stone-progress of the player <= 0, now S is off-stage;
 	otherwise now S is in HoleInWall.
 
 Report going when the player is in the location of hole-in-wall:
@@ -240,7 +240,7 @@ Report going when the player is in the location of hole-in-wall:
 		now comeuppance-stone is in HoleInWall.
 
 Check taking comeuppance-stone:
-	if the player is not an april 2025 top donator, say debugadvert instead;
+	if the player is not the donator, say debugadvert instead;
 	if comeuppance-stone-progress of the player < 10:
 		if comeuppance-stone is unchallenged:
 			now comeuppance-stone is challenged;

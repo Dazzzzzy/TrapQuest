@@ -191,33 +191,33 @@ To SemenSoakUp (C - a clothing) by (N - a number):
 			if C is diaper, increase the perceived-semen-soak of C by N;
 		if C is worn, update appearance level.
 
-To UrineSoakUp (C - a clothing) by (N - a number):
+To SlimeSoakUp (C - a clothing) by (N - a number):
 	if N > 0:
 		if C is listed in the list of stacked diapers:
 			now previous-clothing-glazed is -1; [force appearance reassessment]
 			let dCapacity be the soak-limit of C - the total-soak of C;
 			let dLeftover be N - dCapacity;
-			if dLeftover > 0: [urine leaks downwards]
-				increase the urine-soak of C by dCapacity;
-				increase the perceived-urine-soak of C by dCapacity;
-				increase the urine-soak of diaper-stack by dCapacity;
-				increase the perceived-urine-soak of diaper-stack by dCapacity;
+			if dLeftover > 0: [slime leaks downwards]
+				increase the slime-soak of C by dCapacity;
+				increase the perceived-slime-soak of C by dCapacity;
+				increase the slime-soak of diaper-stack by dCapacity;
+				increase the perceived-slime-soak of diaper-stack by dCapacity;
 				let E be 0;
 				repeat with D running through the list of stacked diapers:
 					if D is C:
 						now E is 1;
 					otherwise if E is 1: [the next diaper down]
 						now E is 0;
-						UrineSoakUp D by dLeftover;
+						SlimeSoakUp D by dLeftover;
 			otherwise:
-				increase the urine-soak of diaper-stack by N;
-				increase the perceived-urine-soak of diaper-stack by N;
-				increase the urine-soak of C by N;
-				increase the perceived-urine-soak of C by N;
+				increase the slime-soak of diaper-stack by N;
+				increase the perceived-slime-soak of diaper-stack by N;
+				increase the slime-soak of C by N;
+				increase the perceived-slime-soak of C by N;
 		otherwise:
-			increase the urine-soak of C by N;
+			increase the slime-soak of C by N;
 			now previous-clothing-glazed is -1; [force appearance reassessment]
-			if C is diaper, increase the perceived-urine-soak of C by N;
+			if C is diaper, increase the perceived-slime-soak of C by N;
 		if C is worn, update appearance level.
 
 To MilkSoakUp (C - a clothing) by (N - a number):
@@ -307,32 +307,32 @@ To StealthSemenSoakUp (C - a clothing) by (N - a number):
 			now previous-clothing-glazed is -1; [force appearance reassessment]
 			if C is diaper, increase the perceived-semen-soak of C by N.
 
-To StealthUrineSoakUp (C - a clothing) by (N - a number):
+To StealthSlimeSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
 		if the player is bladder diaper aware:
-			increase the perceived-urine-soak of diaper-stack by N;
+			increase the perceived-slime-soak of diaper-stack by N;
 			now previous-clothing-glazed is -1; [force appearance reassessment]
 		let dCapacity be the soak-limit of C - the total-soak of C;
 		let dLeftover be N - dCapacity;
-		if dLeftover > 0: [urine leaks downwards]
-			increase the urine-soak of C by dCapacity;
-			increase the urine-soak of diaper-stack by dCapacity;
-			if the player is bladder diaper aware, increase the perceived-urine-soak of C by dCapacity;
+		if dLeftover > 0: [slime leaks downwards]
+			increase the slime-soak of C by dCapacity;
+			increase the slime-soak of diaper-stack by dCapacity;
+			if the player is bladder diaper aware, increase the perceived-slime-soak of C by dCapacity;
 			let E be 0;
 			repeat with D running through the list of stacked diapers:
 				if D is C:
 					now E is 1;
 				otherwise if E is 1: [the next diaper down]
 					now E is 0;
-					StealthUrineSoakUp D by dLeftover;
+					StealthSlimeSoakUp D by dLeftover;
 		otherwise:
-			increase the urine-soak of C by N;
-			increase the urine-soak of diaper-stack by N;
+			increase the slime-soak of C by N;
+			increase the slime-soak of diaper-stack by N;
 	otherwise:
-		increase the urine-soak of C by N;
+		increase the slime-soak of C by N;
 		if the player is bladder diaper aware:
 			now previous-clothing-glazed is -1; [force appearance reassessment]
-			if C is diaper, increase the perceived-urine-soak of C by N.
+			if C is diaper, increase the perceived-slime-soak of C by N.
 
 To StealthMilkSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:

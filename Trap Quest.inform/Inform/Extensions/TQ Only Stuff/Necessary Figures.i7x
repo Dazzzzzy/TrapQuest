@@ -206,7 +206,6 @@ Figure of Unfriendly Enlightened Gladiator is the file "NPCs/MultiFloor/Gladiato
 Figure of Gladiator Interact 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact8.jpg".
 Figure of Gladiator Interact 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact9.jpg".
 
-Figure of Gladiator Cutscene 1 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform1.png".
 Figure of Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform2.png".
 Figure of Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck1.png".
 Figure of Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck2.png".
@@ -508,9 +507,6 @@ Figure of Body Reaction 1 is the file "Special/Cutscene/cutscene-body-reaction1.
 Figure of Body Reaction 2 is the file "Special/Cutscene/cutscene-body-reaction2.png".
 Figure of Body Reaction 4 is the file "Special/Cutscene/cutscene-body-reaction4.png".
 Figure of Body Reaction 7 is the file "Special/Cutscene/cutscene-body-reaction7.jpg".
-Figure of Body Reaction 10 is the file "Special/Cutscene/cutscene-body-reaction10.jpg".
-Figure of Body Reaction 11 is the file "Special/Cutscene/cutscene-body-reaction11.jpg".
-Figure of Body Reaction 12 is the file "Special/Cutscene/cutscene-body-reaction12.jpg".
 Figure of Body Reaction 13 is the file "Special/Cutscene/cutscene-body-reaction13.jpg".
 Figure of Body Reaction 14 is the file "Special/Cutscene/cutscene-body-reaction14.png".
 Figure of Body Reaction 15 is the file "Special/Cutscene/cutscene-body-reaction15.png".
@@ -527,7 +523,7 @@ Figure of reconditioning chair is the file "Env/Facility/reconditioningchair1.jp
 Figure of DungeonScenery01a is the file "Env/Dungeon/statue1a.jpg".
 Figure of DungeonScenery01b is the file "Env/Dungeon/statue1b.jpg".
 To decide which figure-name is Figure of DungeonScenery01:
-	if lady fetish is 1, decide on Figure of DungeonScenery01b;
+	if gyno fetish is 1, decide on Figure of DungeonScenery01b;
 	otherwise decide on Figure of DungeonScenery01a.
 
 Figure of Egg Laying 1 is the file "Special/Cutscene/cutscene-egg-small1.jpg".
@@ -560,9 +556,27 @@ Figure of enslaved serenity is the file "NPCs/Facility/Tutor/tutor1b.png".
 Figure of Full Term Pregnancy is the file "Special/Cutscene/cutscene-pregnancy1.png".
 Figure of Giant Pregnancy is the file "Special/Cutscene/cutscene-pregnancy2.png".
 Figure of Full Term Contraction is the file "Special/Cutscene/cutscene-pregnancy-contraction1.png".
-Figure of Fat Growth 1 is the file "Special/Cutscene/cutscene-fat1.png".
-Figure of Fat Growth 2 is the file "Special/Cutscene/cutscene-fat2.png".
-Figure of Fat Growth 3 is the file "Special/Cutscene/cutscene-fat3.png".
+
+[Figure of HipsObject1 is the file "CharWins/FocusWin/Hips/hips1.jpg".]
+Figure of HipsObject2 is the file "CharWins/FocusWin/Hips/hips2.jpg".
+Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
+Figure of HipsObject4 is the file "CharWins/FocusWin/Hips/hips4.jpg".
+Figure of HipsObject5 is the file "CharWins/FocusWin/Hips/hips5.jpg".
+Figure of HipsObject6 is the file "CharWins/FocusWin/Hips/hips6.jpg".
+Figure of HipsObject7 is the file "CharWins/FocusWin/Hips/hips7.jpg".
+[Figure of HipsObject8 is the file "CharWins/FocusWin/Hips/hips8.jpg".
+Figure of HipsObject9 is the file "CharWins/FocusWin/Hips/hips9.jpg".]
+
+To decide which figure-name is the examine-image of (T - hips):
+	[if the total volume of hips < 2, decide on figure of HipsObject1;]
+	if the total volume of hips < 4, decide on figure of HipsObject2;
+	if the total volume of hips < 6, decide on figure of HipsObject3;
+	if the total volume of hips < 8, decide on figure of HipsObject3;
+	if the total volume of hips < 10, decide on figure of HipsObject4;
+	if the total volume of hips < 12, decide on figure of HipsObject5;
+	if the total volume of hips < 15, decide on figure of HipsObject6;
+	[if the total volume of hips < 17, decide on figure of HipsObject8;]
+	decide on figure of HipsObject7.
 
 Figure of flying used condoms is the file "Special/Cutscene/cutscene-condoms1.jpg".
 
@@ -1468,26 +1482,6 @@ To decide which figure-name is the examine-image of (T - breasts):
 	if the largeness of breasts < 19, decide on figure of BreastsObject16;
 	decide on figure of BreastsObject20.
 
-[Figure of HipsObject1 is the file "CharWins/FocusWin/Hips/hips1.jpg".]
-Figure of HipsObject2 is the file "CharWins/FocusWin/Hips/hips2.jpg".
-Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
-Figure of HipsObject4 is the file "CharWins/FocusWin/Hips/hips4.jpg".
-Figure of HipsObject5 is the file "CharWins/FocusWin/Hips/hips5.jpg".
-Figure of HipsObject6 is the file "CharWins/FocusWin/Hips/hips6.jpg".
-Figure of HipsObject7 is the file "CharWins/FocusWin/Hips/hips7.jpg".
-[Figure of HipsObject8 is the file "CharWins/FocusWin/Hips/hips8.jpg".
-Figure of HipsObject9 is the file "CharWins/FocusWin/Hips/hips9.jpg".]
-
-To decide which figure-name is the examine-image of (T - hips):
-	[if the total volume of hips < 2, decide on figure of HipsObject1;]
-	if the total volume of hips < 4, decide on figure of HipsObject2;
-	if the total volume of hips < 6, decide on figure of HipsObject3;
-	if the total volume of hips < 8, decide on figure of HipsObject3;
-	if the total volume of hips < 10, decide on figure of HipsObject4;
-	if the total volume of hips < 12, decide on figure of HipsObject5;
-	if the total volume of hips < 15, decide on figure of HipsObject6;
-	[if the total volume of hips < 17, decide on figure of HipsObject8;]
-	decide on figure of HipsObject7.
 
 Figure of SpiralBBCAnimation001 is the file "Special/Animations/SpiralBBC/frame_001.jpg".
 Figure of SpiralBBCAnimation002 is the file "Special/Animations/SpiralBBC/frame_002.jpg".

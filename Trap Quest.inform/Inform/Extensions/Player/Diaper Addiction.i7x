@@ -25,12 +25,30 @@ Part 2 - Modify Diaper Addiction
 
 The player has a number called raw diaper addiction. The raw diaper addiction of the player is usually 1. [Min 1 Max 20]
 
+slowDiaper is a number that varies.
+To slowDiaperAddictUp (X - a number):
+	let slowDiaperLimit be 1;
+	if the raw diaper addiction of the player >= 7, increase slowDiaperLimit by 1;
+	if the raw diaper addiction of the player >= 14, increase slowDiaperLimit by (the raw diaper addiction of the player - 12) / 2;
+	if debugmode > 0, say "Slow diaper addiction threshold is [slowDiaperLimit] ticks.";
+	let addictionIncreased be false;
+	while X > 0:
+		decrease X by 1;
+		increase slowDiaper by 1;
+		if debugmode > 0, say "[slowDiaper - 1] --> [slowDiaper].";
+		if slowDiaper > slowDiaperLimit:
+			if debugmode > 0, say "Diaper addiction increased.";
+			now slowDiaper is 0;
+			now addictionIncreased is true;
+			DiaperAddictUp 1;
+	if addictionIncreased is false, say "You [one of][or]continue to [stopping][one of]slowly[or]very gradually[purely at random] [if the diaper addiction of the player < 7]grow more [one of]accustomed to[or]tolerant of[cycling][otherwise if the diaper addiction of the player > 14]develop your obsession with[otherwise]develop an appreciation of[end if] diapers.".
+
 To DiaperAddictUp (X - a number):
 	if diaper lover > 0:
 		let S be the raw diaper addiction of the player;
 		SilentlyDiaperAddictUp X;
 		decrease S by the raw diaper addiction of the player;
-		if S < 0, say "You feel [if S < -2]much[otherwise if S is -2]significantly[otherwise]a bit[end if] [if the diaper addiction of the player >= 14]more addicted to [one of]wearing[or]using[or]waddling around in[at random] diapers[otherwise if the diaper addiction of the player >= 7]more [one of]happy[or]calm[or]relaxed[at random] about the [one of]idea[or]reality[purely at random] of [one of]using diapers all the time[or]having a weak bladder[or]wearing nappies under your clothes[in random order][otherwise]more tolerant of [one of]being teased about looking like a baby[or]being forced to wear diapers[or]being babied[in random order][end if].".
+		if S < 0, say "You feel [if S < -2]much[otherwise if S is -2]significantly[otherwise]a bit[end if] [if the diaper addiction of the player >= 14]more addicted to [one of]wearing[or]using[or]waddling around in[at random] diapers[otherwise if the diaper addiction of the player >= 7]more [one of]happy[or]calm[or]relaxed[at random] about the [one of]idea[or]reality[purely at random] of [one of]using diapers all the time[or]having a weak [SlimeContainer][or]wearing nappies under your clothes[in random order][otherwise]more tolerant of [one of]being teased about looking like a baby[or]being forced to wear diapers[or]being babied[in random order][end if].".
 
 To SilentlyDiaperAddictUp (X - a number):
 	while X > 0 and diaper lover > 0:

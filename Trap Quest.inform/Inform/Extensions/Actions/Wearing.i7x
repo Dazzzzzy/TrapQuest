@@ -226,7 +226,8 @@ Report plugging something with endurance clothing:
 	say "A strong feeling of energy flows through you[if the second noun is unidentified]. This must be a magic [ShortDesc of the second noun][end if]!".
 
 Report wearing bed wetting clothing:
-	say "Your bladder tingles slightly[if the bladder-incontinence of the player < the max-bladder-incontinence of the player], and you somehow can tell you have less control over not wetting yourself![end if]".
+	if legacy watersports mechanics is 1, say "Your [SlimeContainer] tingles slightly[if the bladder-incontinence of the player < the max-bladder-incontinence of the player], and you somehow can tell you have less control over not wetting yourself![end if]";
+	otherwise say "Your slimeshooter wibbles mischievously[if the bladder-incontinence of the player < the max-bladder-incontinence of the player], and you somehow can tell you have less control over it![end if]".
 
 Report wearing stumbling clothing:
 	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now! [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
