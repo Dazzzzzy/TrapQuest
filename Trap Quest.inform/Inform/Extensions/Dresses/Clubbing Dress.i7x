@@ -42,7 +42,7 @@ The remove inappropriate clubbing dresses rule is listed in the diaper quest fix
 
 Part 1 - Pink Clubbing Dress
 
-A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut. There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
+A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut. The skirt-length of a pink clubbing dress is 3. There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
 
 The printed name of pink clubbing dress is usually "[clothing-title-before]pink clubbing dress[clothing-title-after]".
 
@@ -256,7 +256,7 @@ Definition: an exposing pink clubbing dress is end of transformation chain: deci
 
 Part 10 - Blue Slut Clubbing Dress
 
-A blue slut clubbing dress is a kind of clubbing dress. There is 1 blue slut clubbing dress. A blue slut clubbing dress is usually cotton. A blue slut clubbing dress is transformation-rare. A blue slut clubbing dress is usually very low cut. A blue slut clubbing dress is usually belly exposing. The skirt-length of a blue slut clubbing dress is 6. A blue slut clubbing dress is usually only arm covering. Figure of blue slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress10.png". The text-shortcut of blue slut clubbing dress is "uscd". A blue slut clubbing dress is usually sheer-when-wet.
+A blue slut clubbing dress is a kind of clubbing dress. There is 1 blue slut clubbing dress. A blue slut clubbing dress is usually cotton. A blue slut clubbing dress is transformation-rare. A blue slut clubbing dress is usually very low cut. A blue slut clubbing dress is usually belly exposing. The skirt-length of a blue slut clubbing dress is 5. A blue slut clubbing dress is usually only arm covering. Figure of blue slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress10.png". The text-shortcut of blue slut clubbing dress is "uscd". A blue slut clubbing dress is usually sheer-when-wet.
 
 The printed name of blue slut clubbing dress is usually "[clothing-title-before]blue slut clubbing dress[clothing-title-after]".
 

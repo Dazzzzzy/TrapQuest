@@ -109,7 +109,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				now the puddle-sucks of robo vacuum cleaner is 0;
 		otherwise if fluidRemaining > 0:
 			let collecting be nothing;
-			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the urine-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0][urine] [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
+			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the slime-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the slime-puddle of (the location of robo vacuum cleaner) > 0][slime] [end if][if the slime-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
 			decrease the question-cooldown of robo vacuum cleaner by 1;
 			if (robo vacuum cleaner is not penetrating face or (trainee-hood is not worn and the number of worn unblessed hoods is 0)) and question-cooldown of robo vacuum cleaner <= 0:
 				if robo vacuum cleaner is penetrating a fuckhole: [if there's something penetrating face that's not going to leave willingly, we are going to get into an infinite loop]
@@ -152,9 +152,9 @@ A later time based rule (this is the robo vacuum cleaner rule):
 						increase S by 1;
 						decrease the semen-puddle of (the location of robo vacuum cleaner) by 1;
 						decrease fluidRemaining by 1;
-					if the urine-puddle of (the location of robo vacuum cleaner) > 0:
+					if the slime-puddle of (the location of robo vacuum cleaner) > 0:
 						increase U by 1;
-						decrease the urine-puddle of (the location of robo vacuum cleaner) by 1;
+						decrease the slime-puddle of (the location of robo vacuum cleaner) by 1;
 						decrease fluidRemaining by 1;
 					if the milk-puddle of (the location of robo vacuum cleaner) > 0:
 						increase M by 1;
@@ -163,7 +163,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				let L be water;
 				if U > 0:
 					if S > 0 or M > 0, now L is murkwater;
-					otherwise now L is urine;
+					otherwise now L is slime;
 				otherwise if M > 0:
 					if S > 0, now L is murkwater;
 					otherwise now L is milk;
@@ -172,7 +172,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if collecting is face:
 					say "The tube delivers the [variable L] directly into your mouth!";
 					if M > 0, FaceFill milk by M;
-					if U > 0, FaceFill urine by U;
+					if U > 0, FaceFill slime by U;
 					if S > 0, FaceFill semen by S;
 					increase puddle-sucks of robo vacuum cleaner by 1;
 					SlowGrossOut 9;
@@ -185,7 +185,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					say "[BigNameDesc of collecting] is filled up with [variable L] from the tube!";
 					if SPILL > 0, say "It overflows, and some of the [variable L] flows back down into the puddle!";
 					if L is semen, now the fill-colour of collecting is creamy;
-					if L is urine, now the fill-colour of collecting is golden;
+					if L is slime, now the fill-colour of collecting is golden;
 					if L is milk, now the fill-colour of collecting is white;
 					if L is murkwater, now the fill-colour of collecting is murky;
 					SetDose collecting to SUM2;
@@ -195,7 +195,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 							increase the semen-puddle of (the location of robo vacuum cleaner) by 1;
 							decrease SPILL by 1;
 						if U > 0:
-							increase the urine-puddle of (the location of robo vacuum cleaner) by 1;
+							increase the slime-puddle of (the location of robo vacuum cleaner) by 1;
 							decrease SPILL by 1;
 						if M > 0:
 							increase the milk-puddle of (the location of robo vacuum cleaner) by 1;

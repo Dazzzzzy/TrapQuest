@@ -220,7 +220,7 @@ Eating cum out of unknown used condom: 5
 Drinking mix of fluids: 5
 Intimacy with gross partner: 5
 Given a swirlie: 5
-Urine in butthole: 5
+Slime in butthole: 5
 Used as a diaper cumrag: 5
 Wet diaper on face: 6
 Puking when gagging: 6
@@ -335,8 +335,11 @@ To gross cool down (N - a number):
 To compute potential addiction gain from grossness (X - a number):
 	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
-		let R be a random number between -9 and 5;
-		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d15 - 10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+		let Z be 15;
+		if the class of the player is huffer, now Z is 30;
+		let RZ be a random number between 1 and Z;
+		let R be RZ - 10;
+		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if]d[Z] ([RZ]) - (9.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
 		if R < G:
 			GrossnessAddictUp 1.
 
@@ -385,8 +388,11 @@ To slow gross cool down (N - a number):
 To compute slow addiction gain from grossness (X - a number):
 	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
-		let R be a random number between 0 and 9; [if the player is already tolerant, they won't gain more]
-		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d10 - 1 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+		let Z be 10;
+		if the class of the player is huffer, now Z is 30;
+		let RZ be a random number between 1 and Z;
+		let R be RZ - 1; [if the player is already tolerant, they won't gain more]
+		if debuginfo > 0, say "[input-style]Persistent grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if]d[Z] ([RZ]) - (0.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
 		if R < G:
 			SlowGrossnessAddictUp 1.
 

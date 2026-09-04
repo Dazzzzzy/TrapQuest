@@ -16,7 +16,11 @@ To say ExamineDesc of (C - WoodsScenery02):
 A time based rule (this is the woods statue charge decay rule):
 	if the charge of WoodsScenery02 > 0, decrease the charge of WoodsScenery02 by time-seconds.
 
-woodsMagicHunger is initially false.
+woodsMagicHunger is a number that varies.
+A time based rule (this is the woods magic hunger rule):
+	if woodsMagicHunger > 0:
+		decrease woodsMagicHunger by time-seconds;
+		if woodsMagicHunger <= 0, say "[bold type]You can sense that the dark magic from the statue in the woods has finally run out, and you can now use magic again without it making you more hungry.[roman type][line break]".
 
 Check touching WoodsScenery02:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
@@ -27,9 +31,9 @@ Check touching WoodsScenery02:
 		if the player is deserving of more strength:
 			say "As your hand touches the statue's, magic energy ripples through your fingers. You feel stronger!";
 			StrengthUp 1;
-		otherwise if woodsMagicHunger is false and the total magic power of the player > 0:
-			now woodsMagicHunger is true;
-			say "As your hand touches the statue's, a jolt of dark magic mixes with that running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
+		otherwise if woodsMagicHunger <= 0 and the total magic power of the player > 0:
+			now woodsMagicHunger is a random number between 1500 and 2000;
+			say "As your hand touches the statue's, a jolt of dark magic mixes with that running through your veins. You can feel that for a long time, until the dark magic wears off, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
 		otherwise:
 			say "As your hand touches the statue's, a jolt of electricity shocks your fingers! You recoil in pain. ";
 			PainUp 10;
@@ -99,7 +103,7 @@ Check touching WoodsScenery02:
 		say "You should specify if you're touching the statue's [bold type]hand[roman type], [bold type]foot[roman type], or [bold type]head[roman type]." instead.
 
 A magic consequences rule (this is the woods statue magic consequence rule):
-	if woodsMagicHunger is true:
+	if woodsMagicHunger > 0:
 		say "[bold type]The magic ripples through your arms, activating the curse you got from the statue in the Woods. [roman type]You feel a bit more hungry.";
 		if diaper quest is 1 and diaper messing >= 3, compute DQ hunger;
 		otherwise compute food.

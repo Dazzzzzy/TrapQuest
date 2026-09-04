@@ -400,7 +400,7 @@ Carry out taking museum-store thing:
 			anger V;
 		now V is chain-tethering; [this needs to happen AFTER the summon otherwise the chain-tether will be immediately ended as the vampiress is reset during the summon function]
 		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][paragraph break]";
-		progress quest of stealing-quest.
+	progress quest of stealing-quest.
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 
@@ -432,7 +432,7 @@ Definition: a pedestal is immune to change: decide yes.
 
 To say ExamineDesc of (P - a pedestal):
 	say "A [pedestal-variant of P] pedestal[if there is a thing in P] bearing a [ShortDesc of a random thing in P][end if], which is protected by a glass case. [if P is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if P is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of P] basin protrudes from one side.[otherwise if P is erect and diaper lover > 0]A[one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if P is erect]A [pedestal-variant of P][one of]...[or] [stopping]penis protrudes from one side of the pedestal[one of]. Drinking from it will in all likelihood unlock the case, but at what cost?[or].[stopping][otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of P] on the inside of case, written in roman numerals.";
-	if newbie tips is 1, say "[newbie style]Newbie Tip: You need to [if P is erect]get on your knees and suck on this pedestal[otherwise if P is chilled]pour a container with milk in it into this pedestal[otherwise if P is parched]pour a container with urine in it into this pedestal[otherwise]pour a container with semen in it into this pedestal[end if] to open it.[roman type][line break]".
+	if newbie tips is 1, say "[newbie style]Newbie Tip: You need to [if P is erect]get on your knees and suck on this pedestal[otherwise if P is chilled]pour a container with milk in it into this pedestal[otherwise if P is parched]pour a container with slime in it into this pedestal[otherwise]pour a container with semen in it into this pedestal[end if] to open it.[roman type][line break]".
 
 Report examining a pedestal: [Specifically with examining we want it to appear in the main window always]
 	repeat with T running through things in the noun:
@@ -570,9 +570,9 @@ Check drinking a pedestal:
 Carry out drinking a pedestal:
 	allocate 6 seconds;
 	if a random number between 0 and watersports fetish is 1:
-		say "You put your lips on the end of the [pedestal-variant of the noun] [if diaper lover > 0]sippy cup[otherwise][manly-penis][end if] and suck. It squirts [urine] straight down your throat, with quite some force. [if the urine taste addiction of the player < 7]You cough and splutter![otherwise if the urine taste addiction of the player <= 13][line break][variable custom style]Ack![roman type][line break][otherwise][line break][second custom style]Yum![roman type][line break][end if]";
-		StomachUrineUp the paid of the noun;
-		if the stomach-liquid of the player > 5, say "Your belly feels very full of [urine].";
+		say "You put your lips on the end of the [pedestal-variant of the noun] [if diaper lover > 0]sippy cup[otherwise][manly-penis][end if] and suck. It squirts [slime] straight down your throat, with quite some force. [if the slime taste addiction of the player < 7]You cough and splutter![otherwise if the slime taste addiction of the player <= 13][line break][variable custom style]Ack![roman type][line break][otherwise][line break][second custom style]Yum![roman type][line break][end if]";
+		StomachSlimeUp the paid of the noun;
+		if the stomach-liquid of the player > 5, say "Your belly feels very full of [slime].";
 	otherwise if diaper lover > 0:
 		say "You put your lips on the end of the [pedestal-variant of the noun] sippy cup and suck. Warm sweet fluid immediately rushes into your mouth and straight down your throat![line break]";
 		StomachUp the paid of the noun;
@@ -607,7 +607,7 @@ Carry out pouring bottle into pedestal:
 	allocate 6 seconds;
 	let L be water;
 	if the fill-colour of the noun is creamy, now L is semen;
-	if the fill-colour of the noun is golden, now L is urine;
+	if the fill-colour of the noun is golden, now L is slime;
 	if the fill-colour of the noun is white, now L is milk;
 	if the fill-colour of the noun is murky, now L is murkwater;
 	let N be the doses of the noun;
@@ -621,7 +621,7 @@ To compute PedestalFilling (P - a pedestal) with (L - a liquid-object) by (N - a
 	let oP be the paid of P;
 	if P is fertile and (L is semen or L is murkwater):
 		decrease the paid of P by N;
-	otherwise if P is parched and (L is urine or L is murkwater):
+	otherwise if P is parched and (L is slime or L is murkwater):
 		decrease the paid of P by N;
 	otherwise if P is chilled and L is milk:
 		decrease the paid of P by N;
@@ -636,7 +636,7 @@ To say fullPaymentSatisfy of (P - a pedestal):
 	if P is fertile:
 		say "The stone basin fills with [semen], and you hear a distinctive *shunk* as the glass dome splits and slowly opens.";
 	otherwise if P is parched:
-		say "The [urine] disappears into it, and you hear a deep rumble as the [pedestal-variant of P] carving's mouth snaps closed. A moment passes, and you hear a distinctive *shunk* as the glass dome splits and slowly opens.";
+		say "The [slime] disappears into it, and you hear a deep rumble as the [pedestal-variant of P] carving's mouth snaps closed. A moment passes, and you hear a distinctive *shunk* as the glass dome splits and slowly opens.";
 	otherwise:
 		say "The [pedestal-variant of P] basin fills with [milk], and you hear a deep rumble as the [pedestal-variant of P] carvings in the base fill out impressively, breasts growing and hips widening as the glass dome opens with a distinctive *shunk*.";
 	repeat with X running through things in P:
@@ -648,11 +648,11 @@ To say partialPaymentSatisfy of (P - a pedestal):
 	if P is fertile:
 		say "A dim green glow creeps down the [pedestal-variant of P] vines that make up the base of the pedestal as the basin fills with [semen]. The dome doesn't open. Maybe you'll need more?";
 	otherwise if P is parched:
-		say "You hear a sound very much like a sigh as the [urine] disappears into the hole, and a dim golden glow inside the carving seems to grow in intensity. The dome doesn't open. Maybe you need more?";
+		say "You hear a sound very much like a sigh as the [slime] disappears into the hole, and a dim golden glow inside the carving seems to grow in intensity. The dome doesn't open. Maybe you need more?";
 	otherwise:
 		say "The stone basin fills with [milk], and the mist flowing from the base seems to take on a slightly deeper tint of white. The dome still doesn't open. Maybe you need more?".
 
 To say paymentSatisfyReject of (P - a pedestal):
-	say "The [pedestal-variant of P] basin fills with the liquid, but the dome doesn't open. Maybe that's the wrong type of liquid? [if P is fertile]Something to do with fertility might be a better shot...[otherwise if P is parched]Maybe the fact that the carving looks like a human toilet is supposed to be suggesting something in particular...[otherwise if P is chilled]The pedestal looks like it keeps whatever liquid it stores cool, so maybe it's for making sure that a certain lactated liquid doesn't go off?[end if]".
+	say "The [pedestal-variant of P] basin fills with the liquid, but the dome doesn't open. Maybe that's the wrong type of liquid? [if P is fertile]Something to do with fertility might be a better shot...[otherwise if P is parched]Maybe the fact that the carving looks like a human [SlimeTarget] is supposed to be suggesting something in particular...[otherwise if P is chilled]The pedestal looks like it keeps whatever liquid it stores cool, so maybe it's for making sure that a certain lactated liquid doesn't go off?[end if]".
 
 Containers ends here.

@@ -6,18 +6,18 @@ To say cumdesc:
 To say cumdesc of (C - a clothing):
 	if C is perceived messed knickers, say "[if the known-mess of C > 9]overfilled, [end if]messy [if the known-total-soak of C > 0]and [end if]";
 	if C is diaper:
-		if the known-urine-soak of C > 0:
+		if the known-slime-soak of C > 0:
 			if the known-total-soak of C >= the soak-limit of C:
 				say "overflowing ";
 			otherwise if the known-total-soak of C > (the soak-limit of C * 7) / 10:
 				say "slightly leaking ";
-			otherwise if the known-urine-soak of C > the soak-limit of C / 2:
+			otherwise if the known-slime-soak of C > the soak-limit of C / 2:
 				say "well used ";
-			otherwise if the known-urine-soak of C > the soak-limit of C / 5:
+			otherwise if the known-slime-soak of C > the soak-limit of C / 5:
 				say "used ";
-			otherwise if the known-urine-soak of C > 0:
+			otherwise if the known-slime-soak of C > 0:
 				say "slightly used ";
-		if the known-semen-soak of C > 0 and the known-urine-soak of C > 0, say "and ";
+		if the known-semen-soak of C > 0 and the known-slime-soak of C > 0, say "and ";
 		if the known-semen-soak of C > 0, say "cum-stained ";
 	otherwise:
 		if the known-semen-soak of C > 0 or the known-milk-soak of C > 0:
@@ -28,13 +28,13 @@ To say cumdesc of (C - a clothing):
 			otherwise:
 				say "[soak-types of C]-stained ";
 		otherwise:
-			if the known-urine-soak of C > the soak-limit of C / 3:
-				say "dripping with [urine] ";
-			otherwise if the known-urine-soak of C > the soak-limit of C / 5:
-				say "[urine] sodden ";
-			otherwise if the known-urine-soak of C > 0:
-				say "[urine] stained ";
-	if the known-urine-soak of C <= 0 and the known-semen-soak of C <= 0 and the known-milk-soak of C <= 0 and the known-water-soak of C > 0:
+			if the known-slime-soak of C > the soak-limit of C / 3:
+				say "dripping with [slime] ";
+			otherwise if the known-slime-soak of C > the soak-limit of C / 5:
+				say "[slime] sodden ";
+			otherwise if the known-slime-soak of C > 0:
+				say "[slime] stained ";
+	if the known-slime-soak of C <= 0 and the known-semen-soak of C <= 0 and the known-milk-soak of C <= 0 and the known-water-soak of C > 0:
 		if the known-water-soak of C > (the soak-limit of C * 2) / 3:
 			say "waterlogged ";
 		otherwise if the known-water-soak of C > the soak-limit of C / 3:
@@ -45,10 +45,10 @@ To say cumdesc of (C - a clothing):
 To say soak-types of (C - a clothing):
 	if the known-semen-soak of C > 0:
 		say "[semen]";
-		if the known-urine-soak of C > 0, say "[if the known-milk-soak of C <= 0] and[end if] [urine][if the known-milk-soak of C > 0] and [milk][end if]";
+		if the known-slime-soak of C > 0, say "[if the known-milk-soak of C <= 0] and[end if] [slime][if the known-milk-soak of C > 0] and [milk][end if]";
 		otherwise say "[if the known-milk-soak of C > 0] and [milk][end if]";
 	otherwise:
-		if the known-urine-soak of C > 0, say "[urine][if the known-milk-soak of C > 0] and [milk][end if]";
+		if the known-slime-soak of C > 0, say "[slime][if the known-milk-soak of C > 0] and [milk][end if]";
 		otherwise say "[if the known-milk-soak of C > 0][milk][otherwise]water[end if]".
 
 To say displacement-desc of (C - a clothing):

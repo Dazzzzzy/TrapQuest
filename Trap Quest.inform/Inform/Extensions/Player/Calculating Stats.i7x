@@ -85,7 +85,7 @@ To decide which number is the flat strength of the player:
 		if the milk volume of breasts > 37, increase S by 1;
 		if the milk volume of breasts > 40, increase S by 1;
 	if the class of the player is bunny, increase S by the total squirtable fill of belly / 5;
-	if the class of the player is human toilet, increase S by the square root of the stomach-urine of the player;
+	if the class of the player is human toilet, increase S by the square root of the stomach-slime of the player;
 	if the class of the player is symbiote:
 		if the player is a bit horny, increase S by 1;
 		if the player is horny, increase S by 1;

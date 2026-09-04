@@ -173,7 +173,7 @@ To compute class set up of (C - cum dump's undergarment):
 	now C is semen-addiction-influencing.
 
 
-meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "meat toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
+meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The printed name of meat-toilet-panties is "[clothing-title-before]meat [SlimeTarget] panties[clothing-title-after]". Understand "meat", "meat toilet", "meat target", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
 
 Definition: meat-toilet-panties is class-relevant:
 	if the class of the player is human toilet or the class of the player is cumdumpster, decide yes;
@@ -204,10 +204,10 @@ Definition: meat-toilet-panties is bow themed: decide yes.
 Definition: meat-toilet-panties is condom pinnable: decide yes.
 
 To compute SelfExamineDesc of (K - meat-toilet-panties):
-	say "A pair of meat toilet panties sits on your [ShortDesc of hips]. ";
+	say "A pair of meat [SlimeTarget] panties sits on your [ShortDesc of hips]. ";
 
 To say ClothingDesc of (K - meat-toilet-panties):
-	say "This white pair of crotchless panties has a toilet seat in front of the crotch, and the words 'MEAT TOILET' printed above. [if K is crotch-intact]As long as it doesn't open up, you'll be nicely protected[otherwise if K is crotch-ripped]The lid is missing, so there's just a permanent open seat surrounding your [player-crotch][otherwise]It's currently open, exposing your [player-crotch] to the world[end if].".
+	say "This white pair of crotchless panties has a [SlimeTarget] seat in front of the crotch, and the words 'MEAT [caps SlimeTarget]' printed above. [if K is crotch-intact]As long as it doesn't open up, you'll be nicely protected[otherwise if K is crotch-ripped]The lid is missing, so there's just a permanent open seat surrounding your [player-crotch][otherwise]It's currently open, exposing your [player-crotch] to the world[end if].".
 
 To decide which number is the initial outrage of (C - meat-toilet-panties):
 	decide on 8.
@@ -216,21 +216,21 @@ To decide which number is the crotch-tightness of (C - meat-toilet-panties):
 
 To compute periodic effect of (C - meat-toilet-panties):
 	if watersports fetish > 0:
-		if C is crotch-intact and the stomach-urine of the player is 0:
-			say "[bold type]Now that your stomach is empty of [urine], the lid of your meat toilet panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
+		if C is crotch-intact and the stomach-slime of the player is 0:
+			say "[bold type]Now that your stomach is empty of [slime], the lid of your meat [SlimeTarget] panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
 			now C is crotch-exposing;
-		otherwise if C is crotch-exposing and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
-			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
+		otherwise if C is crotch-exposing and the stomach-slime of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
+			say "[bold type]Your meat [SlimeTarget] panties react to the [slime] in your stomach, and the lid of the [SlimeTarget] seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact;
-		otherwise if C is crotch-ripped and the class of the player is human toilet and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
-			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and a new lid of the toilet seat appears, protecting your [player-crotch]! For now...[roman type][line break]";
+		otherwise if C is crotch-ripped and the class of the player is human toilet and the stomach-slime of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
+			say "[bold type]Your meat [SlimeTarget] panties react to the [slime] in your stomach, and a new lid of the [SlimeTarget] seat appears, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact;
 	otherwise:
 		if C is crotch-intact and the stomach-semen of the player is 0:
-			say "[bold type]Now that your stomach is empty of [semen], the lid of your meat toilet panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
+			say "[bold type]Now that your stomach is empty of [semen], the lid of your meat [SlimeTarget] panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
 			now C is crotch-exposing;
 		otherwise if C is crotch-exposing and the stomach-semen of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
-			say "[bold type]Your meat toilet panties react to the [semen] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
+			say "[bold type]Your meat [SlimeTarget] panties react to the [semen] in your stomach, and the lid of the [SlimeTarget] seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact.
 
 

@@ -89,6 +89,9 @@ To say MediumDesc of (P - nintendolls flag plug):
 To decide which number is the stealth-influence of (C - nintendolls flag plug):
 	if the player is prone, decide on -100;
 	decide on -1.
+To say StealthDownFlav of (C - nintendolls flag plug):
+	if the player is prone, say "The flag waves noisily in the breeze, making it completely impossible for people to not notice your presence.";
+	otherwise say "The long pole makes it slightly more difficult for you to avoid notice, even when it's mostly pointing downwards towards the ground.".
 
 To decide which number is the unworn outrage of (P - nintendolls flag plug):
 	if the player is prone, decide on 20;

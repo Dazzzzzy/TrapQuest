@@ -226,7 +226,7 @@ Definition: outrageous-dry-diaper (called A) is applicable:
 	if the player is proud and the diaper addiction of the player < 3 and there is a worn clean diaper, decide yes;
 	decide no.
 To reflect on (A - outrageous-dry-diaper):
-	if there is a worn cursed diaper or change-self tattoo is worn, say "[first custom style][one of]I'm in a diaper, and I can't even take it off... I've got to prioritise finding a way to get rid of this curse before... before...[or]A magic curse is making it impossible for me to pull this infernal diaper away from my skin! Even just saying that in my head sounds crazy! This can't really be happening, can it?![or]This is just unacceptable... I've got to find a way to take this diaper off and fast! Not only is it super humiliating but I am not going to be able to hold my bladder for forever...[in random order][roman type][line break]";
+	if there is a worn cursed diaper or change-self tattoo is worn, say "[first custom style][one of]I'm in a diaper, and I can't even take it off... I've got to prioritise finding a way to get rid of this curse before... before...[or]A magic curse is making it impossible for me to pull this infernal diaper away from my skin! Even just saying that in my head sounds crazy! This can't really be happening, can it?![or]This is just unacceptable... I've got to find a way to take this diaper off and fast! Not only is it super humiliating but I am not going to be able to hold my [SlimeContainer] for forever...[in random order][roman type][line break]";
 	otherwise say "[first custom style][one of]Am I really wearing a diaper? Me, a fully grown [if the player is gendered female]wo[end if]man, wearing an incontinence aid meant for babies?! No, this can't be happening...[or]Are they watching me? Do they know I'm wearing a diaper in their fucked up game? I bet they do, the bastards...[or]If anyone in the real world know what I was wearing over my crotch down here... I think I'd just die of embarrassment.[in random order][roman type][line break]".
 
 outrageous-wet-diaper is a humiliating situation.
@@ -234,7 +234,7 @@ Definition: outrageous-wet-diaper (called A) is applicable:
 	if the player is modest and the diaper addiction of the player < 5 and there is a worn perceived wet unmessed diaper, decide yes;
 	decide no.
 To reflect on (A - outrageous-wet-diaper):
-	if there is a worn cursed diaper or change-self tattoo is worn, say "[variable custom style][one of]I'm in a wet diaper, and I can't even change myself... I've got to find a way out of this situation before someone gives me a diaper check and finds out...[or]This isn't fair, it's not normal to be stuck in a CURSED diaper!!! How am I supposed to stay dry when even magic is working against me?![or]I've got to find some kind of magical being, or altar, or something... I would worship anyone and anything right now that could get me out of this DISGUSTING SOGGY DIAPER before people get the impression that I can't control my own bladder![in random order][roman type][line break]";
+	if there is a worn cursed diaper or change-self tattoo is worn, say "[variable custom style][one of]I'm in a wet diaper, and I can't even change myself... I've got to find a way out of this situation before someone gives me a diaper check and finds out...[or]This isn't fair, it's not normal to be stuck in a CURSED diaper!!! How am I supposed to stay dry when even magic is working against me?![or]I've got to find some kind of magical being, or altar, or something... I would worship anyone and anything right now that could get me out of this DISGUSTING SOGGY DIAPER before people get the impression that I can't control my own [SlimeContainer]![in random order][roman type][line break]";
 	otherwise say "[variable custom style][one of]I really need to take this gross soggy diaper off before someone gives me a [']check[']...![or]The only worse thing than being caught wearing a diaper would be getting caught wearing a soggy diaper! I need to get this thing off before that happens![or]I can't believe I've allowed this to happen... am I really in a wet nappy right now?! Yes I am, I can feel it... oh it feels so weird and warm and gross. I'm so embarrassed...[in random order][roman type][line break]".
 
 outrageous-messy-undies is a humiliating situation.
@@ -281,7 +281,7 @@ Definition: low-addiction is applicable: decide yes.
 Definition: low-addiction is appropriate: decide yes.
 To reflect on (HS - low-addiction):
 	let AL be a list of texts;
-	if watersports fetish is 1, add "urine taste addiction" to AL;
+	if watersports fetish is 1, add "slime taste addiction" to AL;
 	if lactation fetish is 1 or diaper quest is 1, add "milk taste addiction" to AL;
 	if diaper quest is 0:
 		add {"anal sex addiction", "oral sex addiction", "semen addiction", "semen taste addiction"} to AL;
@@ -298,6 +298,7 @@ addiction-reflection-cooldown is a number that varies.
 An all time based rule (this is the addiction reflection cooldown rule):
 	decrease addiction-reflection-cooldown by 1.
 
+[0 always happens, 1 only happens if we haven't had a reflection recently]
 To compute addiction reflection on (A - a text) with (F - a number) flavour:
 	if addiction-reflection-cooldown <= 0 or F is 0 or (F is 1 and addiction-reflection-cooldown <= 15):
 		now addiction-reflection-cooldown is a random number between 17 and 19;
@@ -459,7 +460,7 @@ To compute addiction reflection on (A - a text) with (F - a number) flavour:
 					if D is wet, increase SA by 4;
 				let ARS be SA * 500; [depending on addiction, we can gain or lose arousal]
 				if ARS > 0:
-					if D is perceived dry, say "[if thicknessLove > 5]The fact you're wearing a diaper is arousing and exciting, but you can't help but wish it was a bit bulkier. You can't wait until someone puts you in a big poofy diaper that really makes you waddle[otherwise if thicknessLove > 2]The padding feels nice against your skin, and you can't help but fantasise about how it will feel when you've soaked it with your [urine][otherwise if the DQBulk of D <= 4][one of]You surprise yourself as you realise that squeezing your padding like this is[or]Once again, you find that it's[stopping] turning you on[otherwise if thighs is not spread]You just love how bulky this diaper is! Your arousal spikes as you clench your legs together and imagine how wonderfully squishy it will feel after it's been filled with [urine][otherwise]You shudder with blissful arousal as you feel the absurdly bulky padding preventing your thighs from even getting close to touching each other! You are addicted to wearing stupidly giant diapers like this. You can't wait to fill it with your [urine][end if].";
+					if D is perceived dry, say "[if thicknessLove > 5]The fact you're wearing a diaper is arousing and exciting, but you can't help but wish it was a bit bulkier. You can't wait until someone puts you in a big poofy diaper that really makes you waddle[otherwise if thicknessLove > 2]The padding feels nice against your skin, and you can't help but fantasise about how it will feel when you've soaked it with your [slime][otherwise if the DQBulk of D <= 4][one of]You surprise yourself as you realise that squeezing your padding like this is[or]Once again, you find that it's[stopping] turning you on[otherwise if thighs is not spread]You just love how bulky this diaper is! Your arousal spikes as you clench your legs together and imagine how wonderfully squishy it will feel after it's been filled with [slime][otherwise]You shudder with blissful arousal as you feel the absurdly bulky padding preventing your thighs from even getting close to touching each other! You are addicted to wearing stupidly giant diapers like this. You can't wait to fill it with your [slime][end if].";
 					otherwise say "[if thicknessLove > 2]The wet padding squelches lewdly against your thighs, causing you to shudder with pleasure[otherwise if the DQBulk of D <= 4][one of]You surprise yourself as you realise that squeezing your wet, squelchy padding like this[or]Once again, you find that the wet squelchy sensation[stopping] is turning you on[otherwise if thighs is not spread]You just love how bulky this diaper is! Your arousal spikes as you clench your legs together and feel all that thick, wet padding squelching against your loins[otherwise]You shudder with blissful arousal as you feel the absurdly bulky, wet and squishy padding preventing your thighs from even getting close to touching each other! You are addicted to soaking stupidly giant diapers like this[end if].";
 					arouse ARS;
 				otherwise if ARS is 0:
@@ -661,7 +662,7 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]Incredible, it seems like the mind altering effects of this game can even affect my intelligence, as well as my desire to [if diaper quest is 0]suck [manly-penis]. I feel like a smart slut[otherwise]get humiliated. I feel like a smart pervert[end if]? That could be okay...[roman type][line break][or][stopping]";
 			otherwise if saved-flat-intelligence < 20:
 				if the bimbo of the player < 13, say "[one of][line break][first custom style][line break]I can do quadratic equations![roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]Facts are appearing in my head... did you know the average [if diaper quest is 0]ejaculation has over 180 million sperm? Yummy[otherwise]bladder can easily hold over half a litre of urine? But I bet mine can't[end if]...[roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]Facts are appearing in my head... did you know the average [if diaper quest is 0]ejaculation has over 180 million sperm? Yummy[otherwise][SlimeContainer] can easily hold over half a litre of [slime]? But I bet mine can't[end if]...[roman type][line break][or][stopping]";
 			otherwise if saved-flat-intelligence < 25:
 				if the bimbo of the player < 13, say "[one of][line break][first custom style][line break]I know pi to ten-thousand places![roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]I feel like my brain is one half Einstein, one half Barbie![roman type][line break][or][stopping]";
@@ -682,7 +683,7 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]What was I thinking about again? [if the largeness of breasts > 6]I keep getting distracted by my tits![end if][roman type][line break][or][stopping]";
 			otherwise if saved-flat-intelligence < 15:
 				if the bimbo of the player < 10, say "[one of][line break][first custom style][line break]What happened to my new intelligence? It's disappearing again...[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break][if diaper quest is 1 and the diaper addiction of the player < 10]Getting up to no good[otherwise if diaper messing >= 3 and diaper quest is 1]Pooping my Pampies[otherwise if diaper quest is 1]Wetting my Pampies[otherwise]Sex[end if] is way more fun than sums![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break][if diaper quest is 1 and the diaper addiction of the player < 10]Getting up to no good[otherwise if diaper messing >= 3 and diaper quest is 1]Pooping my Pampies[otherwise if diaper quest is 1][caps slime]ing my Pampies[otherwise]Sex[end if] is way more fun than sums![roman type][line break][or][stopping]";
 			otherwise:
 				if the bimbo of the player < 15, say "[one of][line break][first custom style][line break]The urge to do maths in my head is fading...[roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]Aww, there was some cool fact about [if diaper quest is 0]sex[otherwise]being a baby[end if] I was just thinking about, but now I can't remember it...[roman type][line break][or][stopping]";

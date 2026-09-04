@@ -410,6 +410,7 @@ To decide which number is the crotch-tightness of (C - police uniform):
 
 Definition: police uniform is black themed: decide yes.
 Definition: police uniform is usually ankle covering: decide yes.
+Definition: police uniform is foot covering: decide yes.
 Definition: police uniform is potentially-mid-layer-concealing: decide no. [only partially conceals midsection]
 
 To compute class set up of (C - police uniform):
@@ -517,7 +518,7 @@ Definition: a yellow baby romper is fetish appropriate:
 Part - Pink Hooded Romper
 
 [this item only appears in a predicament, then disappears again]
-pink-hooded-romper is a bodysuit. pink-hooded-romper is unique. pink-hooded-romper is only arm covering. The text-shortcut of pink-hooded-romper is "phr". The printed name of pink-hooded-romper is "[clothing-title-before]pink hooded romper[clothing-title-after]". Understand "pink", "hooded", "romper" as pink-hooded-romper.
+pink-hooded-romper is a bodysuit. pink-hooded-romper is unique. pink-hooded-romper is only arm covering. pink-hooded-romper is top-exclusive. The text-shortcut of pink-hooded-romper is "phr". The printed name of pink-hooded-romper is "[clothing-title-before]pink hooded romper[clothing-title-after]". Understand "pink", "hooded", "romper" as pink-hooded-romper.
 
 Figure of pink-hooded-romper is the file "Items/Clothes/Upper/Rompers/romper7.png".
 
@@ -531,6 +532,14 @@ To say ShortDesc of (C - pink-hooded-romper):
 	say "pink romper".
 To say MediumDesc of (C - pink-hooded-romper):
 	say "pink hooded romper".
+To say DisplacesFlav of (C - pink-hooded-romper):
+	say "undoes the poppers of your [MediumDesc of C]".
+To say ReplacesFlav of (C - pink-hooded-romper):
+	say "refastens the crotch poppers of your [MediumDesc of C]".
+To say DisplaceFlav of (C - pink-hooded-romper):
+	say "You undo the poppers of your [MediumDesc of C], freeing [if the bimbo of the player > 6]up access to [end if]your crotch.".
+To say ReplaceFlav of (C - pink-hooded-romper):
+	say "You fasten the crotch poppers of your [MediumDesc of C].".
 
 To decide which number is the initial outrage of (C - pink-hooded-romper):
 	if diaper quest is 0, decide on the initial cringe of C;
@@ -878,7 +887,7 @@ Definition: black-catsuit is black themed: decide yes.
 
 Part 3 - WC Catsuit
 
-WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex [if watersports fetish is 1]human[otherwise]meat[end if] toilet catsuit[clothing-title-after]". Understand "meat", "meat toilet", "human", "human toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
+WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex [if legacy watersports fetish is 1]human[otherwise]meat[end if] toilet catsuit[clothing-title-after]". Understand "meat", "meat toilet", "meat target", "human target", "human", "human toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
 
 Definition: WC catsuit is class-relevant:
 	if the class of the player is human toilet, decide yes;
@@ -889,7 +898,7 @@ To compute class set up of (C - WC catsuit):
 	now C is speed.
 
 To say ClassSummonFlav of (C - WC catsuit):
-	say "A white catsuit materialises over your body![line break][variable custom style][if watersports fetish is 0]This icon on the front is labelling me as a [']meat toilet['], Free Use for anyone to come and dump their [semen] inside...[otherwise if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]".
+	say "A white catsuit materialises over your body![line break][variable custom style][if legacy watersports fetish is 0]This icon on the front is labelling me as a [']meat [SlimeTarget]['], Free Use for anyone to come and dump their [semen] inside...[otherwise if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human [SlimeTarget] now![end if][roman type][line break]".
 
 Figure of WC catsuit is the file "Items/Clothes/Upper/Special/WcLatexCat.png".
 
@@ -901,23 +910,23 @@ Definition: WC catsuit is white themed: decide yes.
 Definition: WC catsuit is calf covering: decide no.
 Definition: WC catsuit is ankle covering: decide no.
 
-[!<TheWCCatsuitPissSlutRule>+
+[!<TheWCCatsuitSlimeSlutRule>+
 
 Significantly increases the chances of urination.
 
 +!]
-This is the WC catsuit piss slut rule:
+This is the WC catsuit slime slut rule:
 	if WC catsuit is worn, increase the desirability of belly by 20.
-The WC catsuit piss slut rule is listed in the piss slut eligibility rules.
+The WC catsuit slime slut rule is listed in the slime slut eligibility rules.
 
 To say ClothingDesc of (C - WC catsuit):
-	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public toilet[if watersports fetish is 1]. You can sense that it has the magic power to enhance the wearer's mind if they allow themselves to get pissed on[end if][if C is not worn]. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[otherwise].[end if][line break]".
+	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public [SlimeTarget][if watersports fetish is 1]. You can sense that it has the magic power to enhance the wearer's mind if they allow themselves to get doused in [slime][end if][if C is not worn]. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[otherwise].[end if][line break]".
 
 To compute SelfExamineDesc of (C - WC catsuit):
 	say "Your neck to your knees (except your crotch) is covered by a [MediumDesc of C]. ".
 
 To say MediumDesc of (O - WC catsuit):
-	say "white [']human toilet['] catsuit".
+	say "white ['][if legacy watersports fetish is 1]human[otherwise]meat[end if] [SlimeTarget]['] catsuit".
 
 To decide which number is the initial outrage of (C - WC catsuit):
 	decide on 14.

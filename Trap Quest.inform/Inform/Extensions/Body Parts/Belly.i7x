@@ -5,12 +5,12 @@ Part 1 - Definitions
 belly is a flesh. Belly is everywhere. The text-shortcut of belly is "belly".
 To say FullExamineDesc of (B - belly):
 	say "[ImageDesc of belly][TotalDesc of belly]".
-Understand "torso", "waist", "tummy", "stomach" as belly.
+Understand "torso", "waist", "tummy", "stomach", "bladder", "slimeshooter" as belly.
 
 belly has a number called flesh volume.
 belly has a number called water volume.
 belly has a number called semen volume.
-belly has a number called urine volume.
+belly has a number called slime volume.
 belly has a number called milk volume.
 belly has a number called air volume.
 belly has a number called small egg count.
@@ -22,7 +22,7 @@ belly has a list of things called large-egg-origins.
 
 The player has a number called stomach-water. The stomach-water of the player is 5.
 The player has a number called stomach-semen.
-The player has a number called stomach-urine.
+The player has a number called stomach-slime.
 The player has a number called stomach-milk.
 The player has a number called stomach-food. The stomach-food of the player is 2.
 
@@ -50,7 +50,7 @@ To decide which number is the total squirtable fill of belly:
 
 To decide which number is the total fluid fill of belly:
 	let B be the semen volume of belly;
-	increase B by the urine volume of belly;
+	increase B by the slime volume of belly;
 	increase B by the milk volume of belly;
 	increase B by the water volume of belly;
 	decide on B.
@@ -167,7 +167,7 @@ To say ShortDesc of belly:
 	say BellyDesc.
 
 To say TotalDesc of belly:
-	say "you have a [BellyDesc][if the semen coating of belly > 7] which is plastered in [semen]. [otherwise if the semen coating of belly > 4] which is covered in [semen]. [otherwise if the semen coating of belly > 0] which has a splattering of [semen] on it. [otherwise]. [end if][BellyContents][BellyWeight][StomachContents]";
+	say "you have a [BellyDesc][if the semen coating of belly > 7] which is plastered in [semen]. [otherwise if the semen coating of belly > 4] which is covered in [semen]. [otherwise if the semen coating of belly > 0] which has a splattering of [semen] on it. [otherwise]. [end if][BellyContents][BellyWeight][StomachContents][if watersports fetish is 1][HolsterContents][end if]";
 	if there is a worn corset, compute SelfExamineDesc of a random worn corset.
 
 To say BellyDesc:
@@ -195,7 +195,7 @@ To say BellyDesc:
 To say BellyContents:
 	if the flesh volume of belly > 0, say "It has a [if the flesh volume of belly > 6]large[otherwise if the flesh volume of belly > 3]medium[otherwise]small[end if] amount of fat. ";
 	if the semen volume of belly > 0, say "It is currently [if the semen addiction of the player < 9]a reluctant [otherwise if the semen addiction of the player > 14]a welcoming [end if]home to a [if the semen volume of belly > 20]ridiculously huge[otherwise if the semen volume of belly > 15]huge[otherwise if the semen volume of belly > 10]large[otherwise if the semen volume of belly > 5]decent[otherwise]small[end if] amount of [semen][if the number of things inseminating asshole > 0] from [inseminators of asshole][end if]. ";
-	if the urine volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the urine volume of belly > 20]ridiculously huge[otherwise if the urine volume of belly > 15]huge[otherwise if the urine volume of belly > 10]large[otherwise if the urine volume of belly > 5]decent[otherwise]small[end if] amount of [urine]. ";
+	if the slime volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the slime volume of belly > 20]ridiculously huge[otherwise if the slime volume of belly > 15]huge[otherwise if the slime volume of belly > 10]large[otherwise if the slime volume of belly > 5]decent[otherwise]small[end if] amount of [slime]. ";
 	if the milk volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the milk volume of belly > 20]ridiculously huge[otherwise if the milk volume of belly > 15]huge[otherwise if the milk volume of belly > 10]large[otherwise if the milk volume of belly > 5]decent[otherwise]small[end if] amount of [milk]. ";
 	if the air volume of belly > 0, say "It is currently inflated by a [if the air volume of belly > 20]ridiculously huge[otherwise if the air volume of belly > 15]huge[otherwise if the air volume of belly > 10]large[otherwise if the air volume of belly > 5]decent[otherwise]small[end if] amount of air. ";
 	if the small egg count of belly > 0, say "It is currently inflated by a [if the small egg count of belly > 20]ridiculously huge[otherwise if the small egg count of belly > 15]huge[otherwise if the small egg count of belly > 10]large[otherwise if the small egg count of belly > 5]decent[otherwise]small[end if] number of [ShortDesc of a random small egg]s. ";
@@ -213,7 +213,7 @@ I'm ignoring air content.
 To say BellyContentsAlone:
 	let XM be the milk volume of belly;
 	let XS be the semen volume of belly;
-	let XU be the urine volume of belly;
+	let XU be the slime volume of belly;
 	let XES be the small egg count of belly;
 	let XEM be the medium egg count of belly * 2;
 	let XEL be the large egg count of belly * 4;
@@ -228,20 +228,20 @@ To say BellyContentsAlone:
 	if XSN + XMN + XUN + XEN is:
 		--  0: say "empty";
 		--  1: say "[semen]";
-		--  2: say "[urine]";
-		--  3: say "a mix of [semen] and [urine]";
+		--  2: say "[slime]";
+		--  3: say "a mix of [semen] and [slime]";
 		--  4: say "[milk]";
 		--  5: say "a mix of [semen] and [milk]";
-		--  6: say "a mix of [urine] and [milk]";
-		--  7: say "a mix of [semen], [urine], and [milk]";
+		--  6: say "a mix of [slime] and [milk]";
+		--  7: say "a mix of [semen], [slime], and [milk]";
 		--  8: say eggsOnly XES with XEM and XEL;
 		--  9: say "a mix of [semen] and eggs";
-		-- 10: say "a mix of [urine] and eggs";
+		-- 10: say "a mix of [slime] and eggs";
 		-- 12: say "a mix of [milk] and eggs";
-		-- 11: say "a mix of [semen], [urine], and eggs";
+		-- 11: say "a mix of [semen], [slime], and eggs";
 		-- 13: say "a mix of [semen], [milk], and eggs";
 		-- 14: say "a mix of [semen], [milk], and eggs";
-		-- 15: say "an astonishing melange of [semen], [milk], [urine], and eggs".
+		-- 15: say "an astonishing melange of [semen], [milk], [slime], and eggs".
 
 To say eggsOnly (S - a number) with (M - a number) and (L - a number):
 	if S + M + L < 5, say "eggs";
@@ -269,8 +269,16 @@ To say StomachContents:
 	say "Your stomach is overall [if the stomach of the player <= 2]quite empty[otherwise if the stomach of the player <= 4]a little bit full[otherwise if the stomach of the player <= 6]quite full[otherwise]very full[end if]. ";
 	if the stomach-semen of the player > 0, say "It is currently [if the stomach-semen of the player > 6]almost completely full of[otherwise if the stomach-semen of the player > 4]quite full of[otherwise if the stomach-semen of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [semen]. ";
 	if the stomach-milk of the player > 0, say "It is currently [if the stomach-milk of the player > 6]almost completely full of[otherwise if the stomach-milk of the player > 4]quite full of[otherwise if the stomach-milk of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [milk]. ";
-	if the stomach-urine of the player > 0, say "It is currently [if the stomach-urine of the player > 6]almost completely full of[otherwise if the stomach-urine of the player > 4]quite full of[otherwise if the stomach-urine of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [urine]. ";
+	if the stomach-slime of the player > 0, say "It is currently [if the stomach-slime of the player > 6]almost completely full of[otherwise if the stomach-slime of the player > 4]quite full of[otherwise if the stomach-slime of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [slime]. ";
 	if the stomach-food of the player > 0, say "It is currently [if the stomach-food of the player > 6]almost completely full of[otherwise if the stomach-food of the player > 4]quite full of[otherwise if the stomach-food of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] food. ".
+
+To say HolsterContents:
+	if the player is bursting:
+		if slimeshooter fetish is 1, say "Your slimy slimeshooter is currently clinging to your body, looking bloated and irritable. You'll have to drain it soon!";
+		otherwise say "You really need to [slimedrain]! ";
+	otherwise:
+		if slimeshooter fetish is 1, say "Your slimy slimeshooter is currently clinging to your body, looking bloated and irritable. You'll have to drain it soon!";
+		otherwise say "You don't need to [slimedrain] right now.";
 
 To say PermanentBelly:
 	say "[if the total squirtable fill of belly is 0] permanent[end if]".
@@ -285,7 +293,7 @@ To decide which number is belly liquid types:
 	let X be 0;
 	if the semen volume of belly > 0, increase X by 1;
 	if the milk volume of belly > 0, increase X by 1;
-	if the urine volume of belly > 0, increase X by 1;
+	if the slime volume of belly > 0, increase X by 1;
 	decide on X.
 
 To empty belly:
@@ -310,7 +318,7 @@ To egg-fix belly:
 To empty belly liquids:
 	now the water volume of belly is 0;
 	now the semen volume of belly is 0;
-	now the urine volume of belly is 0;
+	now the slime volume of belly is 0;
 	now the milk volume of belly is 0.
 
 To decide which number is belly egg count:
@@ -345,8 +353,8 @@ To Overflow:
 	otherwise if diaper quest is 1:
 		while the total squirtable fill of belly > belly limit and the water volume of belly > 0:
 			decrease the water volume of belly by 1;
-		while the total squirtable fill of belly > belly limit and the urine volume of belly > 0:
-			decrease the urine volume of belly by 1;
+		while the total squirtable fill of belly > belly limit and the slime volume of belly > 0:
+			decrease the slime volume of belly by 1;
 	otherwise if the total squirtable fill of belly > belly limit + 20 and the latex-transformation of the player > 4:
 		say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 		now delayed fainting is 1;
@@ -354,39 +362,39 @@ To Overflow:
 	otherwise if the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4:
 		let semen-flav-said be 0;
 		let milk-flav-said be 0;
-		let urine-flav-said be 0;
+		let slime-flav-said be 0;
 		let water-flav-said be 0;
 		let flav-said be 0;
 		let small-egg-flav-said be 0;
 		while total squirtable fill of belly - belly limit > 0 and delayed fainting is 0:
-			if the water volume of belly > 0 and the water volume of belly > the urine volume of belly and the water volume of belly > the semen volume of belly:
+			if the water volume of belly > 0 and the water volume of belly > the slime volume of belly and the water volume of belly > the semen volume of belly:
 				if water-flav-said is 0:
 					say "Your stomach audibly gurgles as [water] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
 					now water-flav-said is 1;
 					now flav-said is 1;
 				increase the stomach-water of the player by 1;
 				decrease the water volume of belly by 1;
-			otherwise if the milk volume of belly > 0 and the milk volume of belly > the urine volume of belly and the milk volume of belly > the semen volume of belly:
+			otherwise if the milk volume of belly > 0 and the milk volume of belly > the slime volume of belly and the milk volume of belly > the semen volume of belly:
 				if milk-flav-said is 0:
 					say "Your stomach audibly gurgles as [milk] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
 					now milk-flav-said is 1;
 					now flav-said is 1;
 				increase the stomach-milk of the player by 1;
 				decrease the milk volume of belly by 1;
-			otherwise if the semen volume of belly > 0 and the semen volume of belly > the urine volume of belly:
+			otherwise if the semen volume of belly > 0 and the semen volume of belly > the slime volume of belly:
 				if semen-flav-said is 0:
 					say "Your stomach audibly gurgles as [semen] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
 					now semen-flav-said is 1;
 					now flav-said is 1;
 				increase the stomach-semen of the player by 1;
 				decrease the semen volume of belly by 1;
-			otherwise if the urine volume of belly > 0:
-				if urine-flav-said is 0:
-					say "Your stomach audibly gurgles as [urine] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
-					now urine-flav-said is 1;
+			otherwise if the slime volume of belly > 0:
+				if slime-flav-said is 0:
+					say "Your stomach audibly gurgles as [slime] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
+					now slime-flav-said is 1;
 					now flav-said is 1;
-				increase the stomach-urine of the player by 1;
-				decrease the urine volume of belly by 1;
+				increase the stomach-slime of the player by 1;
+				decrease the slime volume of belly by 1;
 			otherwise if the small egg count of belly > 0:
 				if the stomach of the player < 15:
 					say "[if small-egg-flav-said is 0]Your stomach audibly gurgles and you wince in pain as a solid [ShortDesc of a random small egg] is forced upwards through your body into your stomach.[line break][one of][line break][variable custom style]What the fuck is happening to me![or]Not again![stopping][roman type][line break][otherwise]Another egg is forced up from your belly into your stomach.[end if]";
@@ -496,15 +504,15 @@ To assfill (X - a number) large eggs:
 		if M is a thing, add M to the large-egg-origins of belly;
 	overflow;
 
-To Assfill (X - a number) urine:
-	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with urine even though enemas were disabled. Please report this bug!";
+To Assfill (X - a number) slime:
+	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with slime even though enemas were disabled. Please report this bug!";
 	while X > 0:
 		decrease X by 1;
-		increase the urine volume of belly by 1;
+		increase the slime volume of belly by 1;
 	overflow.
 
-To Assfill (X - a number) with (L - urine):
-	Assfill X urine.
+To Assfill (X - a number) with (L - slime):
+	Assfill X slime.
 
 To Assfill (X - a number) milk:
 	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with milk even though enemas were disabled. Please report this bug!";
@@ -543,7 +551,7 @@ large-egg-count is a number that varies.
 
 milk-count is a number that varies.
 
-urine-count is a number that varies.
+slime-count is a number that varies.
 
 air-count is a number that varies.
 
@@ -569,7 +577,7 @@ To AssSquirt:
 	now medium-egg-count is 0;
 	now large-egg-count is 0;
 	now milk-count is 0;
-	now urine-count is 0;
+	now slime-count is 0;
 	now semen-count is 0;
 	now water-count is 0;
 	[total-count is the total count of all elements currently inside.]
@@ -615,10 +623,10 @@ To AssSquirt:
 		now medium-egg-count is the medium egg count of belly;
 		now large-egg-count is the large egg count of belly;
 		now milk-count is the milk volume of belly;
-		now urine-count is the urine volume of belly;
+		now slime-count is the slime volume of belly;
 		now semen-count is the semen volume of belly;
 		now water-count is the water volume of belly;
-		now liquid-total is milk-count + urine-count + semen-count + water-count;
+		now liquid-total is milk-count + slime-count + semen-count + water-count;
 	otherwise: [always at least one egg if possible]
 		if small egg count of belly > 0:
 			now small-egg-count is 1;
@@ -640,8 +648,8 @@ To AssSquirt:
 			otherwise if R is 3 and large-egg-count < the large egg count of belly:
 				increase large-egg-count by 1;
 				increase total-count by 5;
-			otherwise if R is 4 and urine-count < the urine volume of belly:
-				increase urine-count by 1;
+			otherwise if R is 4 and slime-count < the slime volume of belly:
+				increase slime-count by 1;
 				increase liquid-total by 1;
 				increase total-count by 1;
 			otherwise if R is 5 and milk-count < the milk volume of belly:
@@ -758,12 +766,15 @@ To AssSquirt:
 				[On the first round, we check if the player wants to collect some in a vessel, and output some unique flavour text.]
 				if turn-count is 0 or collecting is a thing:
 					if debugmode is 1, say "there are [number of carried open topped vessels] open topped vessels and [number of carried lid topped vessels] lid topped vessels carried by the player.";
-					if the player is not flying and the player is not in a nonstandard room and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
+					if the player is not flying and (the player is not in a nonstandard room or the player is in a painting-room or the player is in an elevator-room) and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
 						let LV be a list of things;
-						if voluntarySquatting is 1:
-							repeat with V running through carried lid topped vessels:
+						if the player is able to use their hands:
+							if voluntarySquatting is 1:
+								repeat with V running through carried lid topped vessels:
+									add V to LV;
+							repeat with V running through carried open topped vessels:
 								add V to LV;
-						repeat with V running through carried open topped vessels:
+						repeat with V running through open topped vessels in the location of the player:
 							add V to LV;
 						[if the number of entries in LV > 1:
 							say "You have the following open topped vessels:[line break]";
@@ -799,16 +810,16 @@ To AssSquirt:
 					otherwise:
 						say "You [if voluntarySquatting is 1]close your eyes[otherwise]freeze still on the spot[end if] as you expel ";
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
-					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
-					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
+					if slime-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
+					otherwise say "[if slime-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [slime], [milk] and [semen][otherwise if slime-count > 0 and semen-count > 0]what seems like a mix of [slime] and [semen][otherwise if slime-count > 0 and milk-count > 0]what seems like a mix of [slime] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if slime-count > 0][slime][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
 					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise if squirt-target is thighs]onto your [ShortDesc of thighs][otherwise]onto the ground[end if].";
 					if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
 					let L be water;
-					if urine-count > 0:
+					if slime-count > 0:
 						if semen-count > 0 or milk-count > 0, now L is murkwater;
-						otherwise now L is urine;
+						otherwise now L is slime;
 					otherwise if milk-count > 0:
 						if semen-count > 0, now L is murkwater;
 						otherwise now L is milk;
@@ -818,8 +829,8 @@ To AssSquirt:
 						ExpelDisplay;
 					otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
 						cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
-					compute PedestalFilling collecting with L by (urine-count + semen-count + milk-count);
-					now urine-count is 0;
+					compute PedestalFilling collecting with L by (slime-count + semen-count + milk-count);
+					now slime-count is 0;
 					now semen-count is 0;
 					now milk-count is 0;
 					now water-count is 0;
@@ -827,7 +838,7 @@ To AssSquirt:
 					now collecting is anal-origin;
 					[In the first turn we decide what type of liquid the bottle is being filled with]
 					if turn-count is 0:
-						if urine-count > 0:
+						if slime-count > 0:
 							if semen-count > 0 or milk-count > 0 or (collecting is non-empty and the fill-colour of collecting is creamy):
 								now the fill-colour of collecting is murky;
 							otherwise:
@@ -849,7 +860,7 @@ To AssSquirt:
 					otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
 						cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
 					[Now we fill the bottle]
-					if debugmode is 1, say "liquid-count: [liquid-count], liquid-total: [liquid-total], milk-count: [milk-count], semen-count: [semen-count], urine-count: [urine-count], doses: [doses of collecting] / [max-doses of collecting].";
+					if debugmode is 1, say "liquid-count: [liquid-count], liquid-total: [liquid-total], milk-count: [milk-count], semen-count: [semen-count], slime-count: [slime-count], doses: [doses of collecting] / [max-doses of collecting].";
 					while liquid-count < liquid-total and liquid-total > 0 and the doses of collecting < the max-doses of collecting:
 						if milk-count > 0:
 							decrease milk-count by 1;
@@ -861,9 +872,9 @@ To AssSquirt:
 							decrease the semen volume of belly by 1;
 							increase liquid-count by 1;
 							increase doses-count by 1;
-						if urine-count > 0:
-							decrease urine-count by 1;
-							decrease the urine volume of belly by 1;
+						if slime-count > 0:
+							decrease slime-count by 1;
+							decrease the slime volume of belly by 1;
 							increase liquid-count by 1;
 							increase doses-count by 1;
 						[Here we transfer doses-count into actual doses]
@@ -882,7 +893,7 @@ To AssSquirt:
 				if turn-count is 0, compute squirt declarations into C;
 				let temp-milk-count be 0;
 				let temp-semen-count be 0;
-				let temp-urine-count be 0;
+				let temp-slime-count be 0;
 				let temp-water-count be 0;
 				while liquid-count < 6 and liquid-count < liquid-total:
 					if milk-count > 0:
@@ -895,10 +906,10 @@ To AssSquirt:
 						decrease the semen volume of belly by 1;
 						decrease semen-count by 1;
 						increase liquid-count by 1;
-					if urine-count > 0:
-						increase temp-urine-count by 1;
-						decrease the urine volume of belly by 1;
-						decrease urine-count by 1;
+					if slime-count > 0:
+						increase temp-slime-count by 1;
+						decrease the slime volume of belly by 1;
+						decrease slime-count by 1;
 						increase liquid-count by 1;
 					if water-count > 0:
 						let W be water-count;
@@ -908,11 +919,11 @@ To AssSquirt:
 							decrease the water volume of belly by W;
 							decrease water-count by W;
 							increase liquid-count by W;
-					if semen-count is 0 and urine-count is 0 and milk-count is 0 and water-count is 0, now liquid-count is 6; [In case of glitches and we somehow run out of liquid, we don't break the game.]
+					if semen-count is 0 and slime-count is 0 and milk-count is 0 and water-count is 0, now liquid-count is 6; [In case of glitches and we somehow run out of liquid, we don't break the game.]
 				if temp-milk-count > 0:
 					AnnouncedExpel milk on squirt-target by temp-milk-count;
-				if temp-urine-count > 0:
-					AnnouncedExpel urine on squirt-target by temp-urine-count;
+				if temp-slime-count > 0:
+					AnnouncedExpel slime on squirt-target by temp-slime-count;
 				if temp-water-count > 0:
 					AnnouncedExpel water on squirt-target by temp-water-count;
 				if temp-semen-count > 0:
@@ -1142,13 +1153,13 @@ To say enema floor declaration of (M - a monster):
 	say "[variable custom style]'[if voluntarySquatting is 1 and the humiliation of the player < HUMILIATION-MODEST + 4000][purposeful shameful enema floor declaration of M][otherwise if the humiliation of the player < HUMILIATION-MODEST + 4000][shameful enema floor declaration of M][otherwise if voluntarySquatting is 1 and humiliation of the player < HUMILIATION-SHAMELESS - 2000][purposeful apathetic enema floor declaration of M][otherwise if the humiliation of the player < HUMILIATION-SHAMELESS - 2000][apathetic enema floor declaration of M][otherwise if voluntarySquatting is 1][purposeful shameless enema floor declaration of M][otherwise][shameless enema floor declaration of M][end if][roman type][line break]".
 
 To say purposeful shameful enema floor declaration of (M - a monster):
-	say "[one of]Please don't watch...'[or]I'm sorry, please forgive me, I couldn't find a toilet in time...'[or]Please look away, I don't usually do this in front of people...'[in random order]".
+	say "[one of]Please don't watch...'[or]I'm sorry, please forgive me, I couldn't find a [SlimeTarget] in time...'[or]Please look away, I don't usually do this in front of people...'[in random order]".
 
 To say shameful enema floor declaration of (M - a monster):
-	say "[one of]Oh no, quickly, look away, please!'[or]Oh no, I can't make it to the toilet in time... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]! I'm so sorry...'[in random order]".
+	say "[one of]Oh no, quickly, look away, please!'[or]Oh no, I can't make it to the [SlimeTarget] in time... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]! I'm so sorry...'[in random order]".
 
 To say purposeful apathetic enema floor declaration of (M - a monster):
-	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't be bothered to find a toilet.'[in random order]".
+	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't be bothered to find a [SlimeTarget].'[in random order]".
 
 To say apathetic enema floor declaration of (M - a monster):
 	say "[one of]Oops, haha, that's pretty bad timing, but I can't stop it now.'[or]Awkward... No this isn't on purpose, I promise.'[or]I'm not enjoying the fact you're watching me, you know.'[in random order]".
@@ -1166,10 +1177,10 @@ To say purposeful shameful enema declaration of (M - a monster) into (C - a clot
 	say "[one of]It's... it's not what it looks like... Oh okay yes it is, but please don't look!'[or]I'm sorry, please forgive me, I couldn't find a private place in time...'[or]Oh god, how gross. I'm not enjoying this, you know...'[in random order]".
 
 To say shameful enema declaration of (M - a monster) into (C - a clothing):
-	say "[one of]Oh crap, not in my clothes! Not now, in front of [him of M]!'[or]Oh no, I can't [if C is cursed]take these stupid clothes off[otherwise]make it to the toilet in time[end if]... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]!'[in random order]".
+	say "[one of]Oh crap, not in my clothes! Not now, in front of [him of M]!'[or]Oh no, I can't [if C is cursed]take these stupid clothes off[otherwise]make it to the [SlimeTarget] in time[end if]... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]!'[in random order]".
 
 To say purposeful apathetic enema declaration of (M - a monster) into (C - a clothing):
-	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't [if C is cursed]actually take off these clothes right now[otherwise]be bothered to find a toilet[end if].'[in random order]".
+	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't [if C is cursed]actually take off these clothes right now[otherwise]be bothered to find a [SlimeTarget][end if].'[in random order]".
 
 To say apathetic enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]Oops, haha, that's pretty bad timing, but I can't stop it now.'[or]Awkward... No this isn't on purpose, I promise.'[or]I'm not enjoying the fact you're watching me, you know.'[in random order]".
@@ -1181,16 +1192,16 @@ To say shameless enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]It's all coming out! It's all coming out of my [asshole]!'[or]Omigod it's coming out! It's all coming out! Please watch my butt as I defile my clothes!'[in random order]".
 
 To say purposeful shameful enema declaration of (M - a monster) into (C - a diaper):
-	say "[one of]It's... it's not what it sounds like... Oh okay yes it is, but please don't look!'[or]Those sounds aren't what you think they are! I promise!'[or]Oh no, I can't make it to the toilet in time... please don't judge me!'[or]Oh god, how gross. Why aren't you looking away?'[in random order]".
+	say "[one of]It's... it's not what it sounds like... Oh okay yes it is, but please don't look!'[or]Those sounds aren't what you think they are! I promise!'[or]Oh no, I can't make it to the [SlimeTarget] in time... please don't judge me!'[or]Oh god, how gross. Why aren't you looking away?'[in random order]".
 
 To say shameful enema declaration of (M - a monster) into (C - a diaper):
-	say "[one of]Oh crap, not in my diaper! I wanted to make it to the toilet!'[or]Oh no, not here please don't tell me you can hear that!'[or]Oops... that wasn't supposed to happen in front of you...'[in random order]".
+	say "[one of]Oh crap, not in my diaper! I wanted to make it to the [SlimeTarget]!'[or]Oh no, not here please don't tell me you can hear that!'[or]Oops... that wasn't supposed to happen in front of you...'[in random order]".
 
 To say purposeful apathetic enema declaration of (M - a monster) into (C - a diaper):
-	say "[one of]Ugh, I'm just using my diaper [if diaper quest is 1]like I'm told[otherwise]for its intended purpose[end if], it's not a big deal.'[or]You should leave unless you enjoy witnessing this sort of thing.'[or]Don't judge me okay, I just can't [if C is cursed]actually take off this diaper right now[otherwise]be bothered to find a toilet[end if].'[in random order]".
+	say "[one of]Ugh, I'm just using my diaper [if diaper quest is 1]like I'm told[otherwise]for its intended purpose[end if], it's not a big deal.'[or]You should leave unless you enjoy witnessing this sort of thing.'[or]Don't judge me okay, I just can't [if C is cursed]actually take off this diaper right now[otherwise]be bothered to find a [SlimeTarget][end if].'[in random order]".
 
 To say purposeful shameless enema declaration of (M - a monster) into (C - a diaper):
-	say "[one of]Please watch me squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] into my diaper!'[or]Don't look away! I want you to watch as I squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] all into my diaper!'[or]Are you enjoying watching me use my diaper as a toilet for my [asshole]?'[in random order]".
+	say "[one of]Please watch me squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] into my diaper!'[or]Don't look away! I want you to watch as I squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] all into my diaper!'[or]Are you enjoying watching me use my diaper as a [SlimeTarget] for my [asshole]?'[in random order]".
 
 To say shameless enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]It's all coming out! It's all coming out of my [asshole] into my diaper!'[or]Omigod it's coming out! It's all coming out! Please watch my diaper as I fill it from my [asshole]!'[in random order]".
@@ -1224,10 +1235,10 @@ To say EnemaFloorReactionFlav of (M - a person):
 	if M is intelligent, say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if].[line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][moderateHumiliateReflect]".
 
 To compute enema reaction of (M - a person) into (C - a clothing):
-	compute enema floor reaction of M.
+	unless C is portal-hotpants, compute enema floor reaction of M.
 
 To say EnemaReactionFlav of (M - a person) into (C - a clothing):
-	say EnemaFloorReactionFlav of M.
+	unless C is portal-hotpants, say EnemaFloorReactionFlav of M.
 
 Section - Image for graphics window
 

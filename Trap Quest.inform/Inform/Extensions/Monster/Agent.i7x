@@ -9,6 +9,9 @@ Definition: agent is hotel dwelling:
 Definition: agent is willing to do vaginal: decide yes.
 Definition: agent is willing to do anal: decide yes.
 
+Definition: agent is willing to spank: decide yes.
+Definition: agent is willing to deliver enemas: decide yes.
+
 Definition: an agent is a generic-unlocker: decide yes.
 Definition: an agent is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
 Definition: an agent is eager to warn angrily:
@@ -47,20 +50,20 @@ To decide which figure-name is the monster-image of (M - agent):
 
 
 Definition: agent is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 To say ChestDesc of (M - an agent):
-	if lady fetish is 2, say "square pecs";
+	if andro fetish is 1, say "square pecs";
 	otherwise say "giant breasts".
 
 To say MonsterDesc of (M - agent):
-	say "This [if lady fetish is 2]tall[otherwise]tall, extremely curvy[end if] black [man of M] is wearing a grey suit so tight as to look vacuum sealed around [his of M] [ChestDesc of M] and thunderous thighs. ";
+	say "This [if andro fetish is 1]tall[otherwise]tall, extremely curvy[end if] black [man of M] is wearing a grey suit so tight as to look vacuum sealed around [his of M] [ChestDesc of M] and thunderous thighs. ";
 	if M is agent-deglassed, say "[big he of M] has lost [his of M] sunglasses, which has made [him of M] visibly furious with you[if diaper quest is 0]. [big he of M] has also raised [his of M] briefcase, revealing the bulge of [his of M] [LongDickDesc of M][end if].";
 	otherwise say "Reflective sunglasses hide [his of M] eyes[if diaper quest is 0], and a small briefcase hides [his of M] crotch[end if].".
 
 To say LongDickDesc of (M - agent):
-	if full-lady fetish is 1:
+	if super-gyno fetish is 1:
 		say "massive strap-on";
 	otherwise:
 		say "massive [manly-penis]".
@@ -284,10 +287,10 @@ To compute unique variables of (P - first-agent-poster):
 
 To compute title of (P - first-agent-poster):
 	if diaper quest is 0, now the title of P is "THROATED WHORE";
-	otherwise now the title of P is "MOBILE URINAL".
+	otherwise now the title of P is "MOBILE [caps SlimeTarget]".
 
 To say ShortDesc of (P - first-agent-poster):
-	say "A grainy photo of [if diaper quest is 0]the [MediumDesc of agent] standing over a naked submissive slut, and shoving [his of agent] [LongDickDesc of agent] down their throat[otherwise]someone standing above a kneeling diapered submissive, and urinating on their lower back, so that some of the piss goes into their diaper, and the rest puddles on the ground[end if]. ".
+	say "A grainy photo of [if diaper quest is 0]the [MediumDesc of agent] standing over a naked submissive slut, and shoving [his of agent] [LongDickDesc of agent] down their throat[otherwise]someone standing above a kneeling diapered submissive, and [SlimeDraining] on their lower back, so that some of the [slime] goes into their diaper, and the rest puddles on the ground[end if]. ".
 
 To say ExamineDesc of (C - first-agent-poster):
 	say ShortDesc of C;
@@ -362,11 +365,13 @@ To compute next agent scene:
 		otherwise:
 			let D be a random worn diaper;
 			let N be the soak-limit of D - the total-soak of D;
+			SlimePuddleUp 10;
 			if N > 0:
-				increase the urine-soak of D by N;
+				increase the slime-soak of D by N;
 				now previous-clothing-glazed is -1; [force appearance reassessment]
-				if the player is diaper aware, compute awakened state check of D; [immediately make the player notice their new full diaper]
-			UrinePuddleUp 10;
+				if the player is diaper aware:
+					compute awakened state check of D; [immediately make the player notice their new full diaper]
+				if agent is not agent-identified, compute single choice question "Blink, confused, at the puddle of [slime] on the floor, and the apparent gap in your memory...";
 	otherwise if the agent-scene of agent is 1:
 		now the agent-scene of agent is 2;
 		set up second-agent-poster;
@@ -412,6 +417,7 @@ To compute agent anal:
 	otherwise:
 		StomachUp 10;
 		say "[bold type][one of]Your stomach gurgles, and you realise that your belly is extremely bloated - you feel like you've been drinking water until you are literally about to burst![line break][variable custom style]What in the world?![or]It's with mild horror that you notice that your stomach has once again suddenly been filled to maximum capacity with water. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, made you drink as much water as humanly possible, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][stopping][roman type][line break]";
+	if agent is not agent-identified, compute single choice question "Blink, confused, at the apparent gap in your memory...";
 	compute refractoryReset of agent.
 
 To compute agent threesome:
@@ -419,6 +425,7 @@ To compute agent threesome:
 	cutshow figure of woman 5b for woman-player;
 	FaceFill semen by 1;
 	say "[BigNameDesc of woman-player] doesn't seem to be fazed at all - in fact, [he of woman-player] is just silently putting [his of woman-player] clothes back on, as if nothing was amiss.[line break][variable custom style]Um, [womanName], what's going on?![roman type][line break]That's what you try to say, and what you would say, if it wasn't at this moment that you realise that you have a [MouthfulDesc].[paragraph break]A moment later, [NameDesc of woman-player] finishes getting [his of woman-player] clothes back on, and, after rapidly blinking for a second, seems to [']wake up['] from whatever haze [he of woman-player] was in.[line break][speech style of woman-player]'Did... Did something happen? I feel weird... Down there... HUH?!'[roman type][line break][BigNameDesc of woman-player] seems to notice for the first time that [his of woman-player] pussy is full to the brim with [semen].[line break][speech style of woman-player]'Did... Did some kind of magic trap do this? What the fuck! I didn't even notice!'[roman type][line break]";
+	if agent is not agent-identified, compute single choice question "Blink, confused, at the apparent gap in your memory...";
 	compute refractoryReset of agent.
 
 To compute agent reveal:

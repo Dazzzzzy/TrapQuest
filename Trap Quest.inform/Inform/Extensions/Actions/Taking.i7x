@@ -14,6 +14,7 @@ Check taking something:
 
 Check taking something:
 	if the noun is carried by the player or the noun is worn by the player, say "You already have that!" instead;
+	if there is a nursery crib grabbing the player, say "You can't reach from inside your crib!" instead;
 	if the player is trap stuck, say "You can't reach whilst stuck on the [if there is a trap penetrating a fuckhole][random trap penetrating a fuckhole][otherwise]trap[end if]!" instead;
 	if the player is live fucked, say "You're a bit busy getting fucked!" instead;
 	if the player is flying, say FlyingRoll instead;

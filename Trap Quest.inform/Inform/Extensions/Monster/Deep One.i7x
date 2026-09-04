@@ -86,7 +86,7 @@ Definition: deep one is a urinater: decide no.
 
 
 To say LongDickDesc of (M - deep one):
-	say "[one of]lubricated[or][if full-lady fetish is 1]finned[otherwise]grey[end if][or]slimy[in random order] [DickDesc of M]".
+	say "[one of]lubricated[or][if super-gyno fetish is 1]finned[otherwise]grey[end if][or]slimy[in random order] [DickDesc of M]".
 
 Part 1 - Perception
 

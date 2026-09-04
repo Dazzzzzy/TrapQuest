@@ -76,7 +76,7 @@ Sissy - maybe just have it TG you?
 Virgin Warrior - transform the woods sword into a new weapon tbd
 Silicone Queen - eliminate weight of silicone implants entirely?
 Latex Fetish Model - add mindbreak protection, such that submitting is always your choice?
-Human Toilet - look at how urine actually works obv something with that
+Human Toilet - look at how slime actually works obv something with that
 Condom collector - maybe buff the acceptance of condoms by monsters
 Living Sex Doll - self-repairing]
 
@@ -304,7 +304,7 @@ Definition: bed-wetter tattoo is eligible:
 	if the noun is diaper or the noun is bed wetting clothing, decide yes;
 	decide no.
 To say tattoo-desc of (T - bed-wetter tattoo):
-	say "The words 'BED WETTER' are tattooed on your right arm. You feel much less confident about your ability to hold onto your bladder while resting on furniture.".
+	say "The words 'BED WETTER' are tattooed on your right arm. You feel much less confident about your ability to hold onto your [SlimeContainer] while resting on furniture.".
 To decide which number is the initial cringe of (T - bed-wetter tattoo):
 	decide on 7.
 Definition: bed-wetter tattoo is baby themed: [Is it something that only an adult baby fetishist would have?]
@@ -1014,7 +1014,7 @@ Definition: daddy's little girl tattoo is drawable:
 Definition: daddy's little girl tattoo is eligible:
 	if the noun is baby themed, decide yes;
 	if the noun is clothing:
-		if the urine-soak of the noun > 0, decide yes;
+		if the slime-soak of the noun > 0, decide yes;
 	if the noun is bottle:
 		if the fill-colour of the noun is white, decide yes;
 	decide no.
@@ -1269,16 +1269,16 @@ To decide which number is the initial cringe of (T - empty-mind tattoo):
 
 Book - F Tattoos
 
-failed potty training tattoo is a body tattoo. The tattoo-title of failed potty training tattoo is "I failed potty training". Understand "i failed" as failed potty training tattoo.
+failed potty training tattoo is a body tattoo. The tattoo-title of failed potty training tattoo is "I failed [SlimeTargetP] training". Understand "i failed" as failed potty training tattoo.
 Definition: failed potty training tattoo is drawable: decide no.
 Definition: failed potty training tattoo is eligible: decide no.
 Figure of failed potty training tattoo is the file "Items/Tats/tattoo125a.jpg".
 Figure of failed messy potty training tattoo is the file "Items/Tats/tattoo125b.jpg".
 To decide which figure-name is the examine-image of (T - failed potty training tattoo):
-	if diaper lover >= 3, decide on figure of failed messy potty training tattoo;
+	if diaper messing >= 3, decide on figure of failed messy potty training tattoo;
 	decide on figure of failed potty training tattoo.
 To say tattoo-desc of (T - failed potty training tattoo):
-	say "The words 'I FAILED POTTY TRAINING' are tattooed on your belly. You can no longer feel how full your bladder [if diaper messing >= 3]or bowels are[otherwise]is[end if] and you don't notice when you use your diapers.".
+	say "The words 'I FAILED [caps slime] TRAINING' are tattooed on your belly. You can no longer feel how full your [SlimeContainer] [if diaper messing >= 3]or bowels are[otherwise]is[end if] and you don't notice when you use your diapers.".
 To decide which object is the concealer of (T - failed potty training tattoo):
 	decide on a random worn actually dense belly covering clothing.
 To decide which object is the at least partial concealer of (T - failed potty training tattoo):
@@ -1640,7 +1640,7 @@ A speech penalties rule (this is the spontaneous incontinence rule):
 			say "You immediately lose control of your bowels!";
 			compute partial messing;
 		if the bladder of the player > 1 and the player is not bladder incontinent and player-urinating is 0:
-			say "You immediately lose control of your bladder!";
+			say "You immediately lose control of your [SlimeContainer]!";
 			now delayed urination is 1;
 			try urinating.
 
@@ -1955,7 +1955,7 @@ Definition: naughty boy tattoo is drawable:
 	if the player is possessing a vagina or the player is gendered female or TG fetish > 0 or there is a worn belly-tattoo, decide no;
 	decide yes.
 Definition: naughty boy tattoo is eligible:
-	if the noun is star themed or the noun is naughty-or-nice outfit or the noun is naughty-skirt or the noun is high maintenance T-shirt or the noun is spoiled crop top, decide yes;
+	if the noun is star themed or the noun is naughty-or-nice outfit or the noun is naughty-skirt or the noun is high-maintenance T-shirt or the noun is spoiled crop top, decide yes;
 	decide no.
 To say tattoo-desc of (T - naughty boy tattoo):
 	say "The words 'Naughty Boy', surrounded by multicoloured stars, are inked on your belly.".
@@ -2213,9 +2213,9 @@ To compute periodic effect of (T - portal tattoo):
 			say "huge amounts of high [if the diaper messing >= 3]fibre[otherwise]calories[end if] food! At least you're not hungry any more...";
 			StomachFoodUp 6;
 		otherwise if diaper quest is 0 and (lactation fetish is 1 or watersports fetish is 1) and a random number between 1 and 4 is 1:
-			say "an unholy mix of [if lactation fetish is 1][milk][run paragraph on][end if][if lactation fetish is 1 and watersports fetish is 1], [otherwise] [end if][if watersports fetish is 1][urine] [end if]and [semen]!";
+			say "an unholy mix of [if lactation fetish is 1][milk][run paragraph on][end if][if lactation fetish is 1 and watersports fetish is 1], [otherwise] [end if][if watersports fetish is 1][slime] [end if]and [semen]!";
 			let N be (belly limit - the total fill of belly) / 3;
-			Assfill N with urine;
+			Assfill N with slime;
 			Assfill N with milk;
 			let N be belly limit - the total fill of belly;
 			Assfill N with semen;
@@ -2238,7 +2238,7 @@ To compute periodic effect of (T - portal tattoo):
 			Assfill N with water;
 		otherwise:
 			let L be semen;
-			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1), now L is urine;
+			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1), now L is slime;
 			if lactation fetish is 1 and a random number between 1 and 3 is 1, now L is milk;
 			say "insane amounts of [L]!";
 			let N be belly limit - the total fill of belly;
@@ -2994,7 +2994,7 @@ Definition: target tattoo is drawable:
 Definition: target tattoo is eligible:
 	if the noun is pocketwipes or the noun is boob themed or the noun is semen themed, decide yes;
 	if the noun is clothing:
-		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
+		if the semen-soak of the noun + the slime-soak of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - target tattoo):
 	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the centre.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".

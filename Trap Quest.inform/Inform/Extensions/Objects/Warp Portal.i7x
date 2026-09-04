@@ -91,8 +91,18 @@ predicamentSavedRectum is a number that varies.
 
 [predicament-reappearing clothing should be sent to predicament-pen so that it is reunited afterwards]
 Definition: a clothing (called C) is predicament-reappearing:
-	if C is headgear or C is diaper-stack or C is locked or C is glued or C is unremovable:
+	if C is headgear or C is diaper-stack or C is locked or C is glued or C is unremovable or C is messed knickers:
 		decide yes;
+	otherwise if the bottom-layer of C > 0: [diaper covers always keep what's underneath them too]
+		repeat with DC running through worn diaper cover:
+			if the bottom-layer of DC > the bottom-layer of C and DC is predicament-reappearing, decide yes;
+	otherwise if C is sex toy: [unremovable items keep sex toys underneath them too]
+		if C is penetrating vagina:
+			repeat with DC running through worn pussy protection clothing:
+				if DC is predicament-reappearing, decide yes;
+		if C is penetrating asshole:
+			repeat with DC running through worn total protection clothing:
+				if DC is predicament-reappearing, decide yes;
 	otherwise:
 		now wearing-target is C;
 		if there is worn removal-blocking clothing, decide yes;
@@ -104,8 +114,8 @@ To set up predicament status:
 	let LC be a list of things; [the list of clothing that MUST be automatically removed at the start of the predicament AND automatically replaced at the end]
 	add the list of worn predicament-reappearing clothing to LC;
 	repeat with C running through held things:
-		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
-			fully clean C;
+		[if C is clothing and (C is worn or C is not diaper):
+			fully clean C;] [held used diapers don't get refreshed]
 		if C is worn wearthing: [other worn things, e.g. salves, can stay]
 			if C is clothing and C is removable and C is not combat visor and C is not armband and C is not listed in LC: [this removable worn stuff goes to the final room, and the player will be offered to automatically rewear it all]
 				if C is cursed and the raw strength of the player > 1:
@@ -143,7 +153,7 @@ To set up predicament status:
 		if rectum > 1, now rectum is 1;
 	now the semen coating of face is 0;
 	now the semen coating of hair is 0;
-	now the urine coating of hair is 0;
+	now the slime coating of hair is 0;
 	now the water-drench of hair is 0;
 	now the semen coating of breasts is 0;
 	now the semen coating of belly is 0;
@@ -289,6 +299,8 @@ To teleport via (W - a warp portal):
 			if P is regionally in the destination of W, now D is P;
 		if D is warp portal, now the destination of D is playerRegion; [The portal you just went through will send you right back to where you were unless you pull the lever]
 		if playerRegion is facility and receptionistChasing is false:
+			repeat with ST running through trainees in Facility02:
+				try ST going south;
 			if the body soreness of the player < 10 and the fatigue of the player > 0, say "[bold type]As you go through the portal, you find your fatigue leaving you.[roman type][line break]"; [no point telling the player that they have a fatigue refresh at 0% HP]
 			now the fatigue of the player is 0;
 		zero focus stuff;

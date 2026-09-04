@@ -272,8 +272,8 @@ To compute action (N - a number) of (M - a slimeball):
 		if the player is immobile:
 			now X is 0;
 		otherwise if debuginfo > 0:
-			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
-		if X > 6:
+			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (4.5) Slimeball evasion difficulty[roman type][line break]";
+		if X > 4:
 			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, apparently preparing to try again...";
 			cutshow Figure of slimeball cutscene 3 for M;
 		otherwise if diaper quest is 1:
@@ -362,12 +362,14 @@ To compute slimeball forcefeed of (M - a slimeball):
 		StomachUp 2;
 	otherwise:
 		StomachUp 4;
+	if the total volume of face > 0, compute swallowing;
 	mapcutshow figure of slimeball cutscene 4 for M.
 
 To compute slimeball weight forcefeed of (M - a slimeball):
 	say "It surges towards your mouth, forcing its way past your lips! ...And a moment later, it has forced you to swallow it! With an embarrassingly loud burp, you feel it sinking into your stomach, where it is happily(?!) being digested.[line break][variable custom style]Oh god, I feel so impossibly full[one of]. Why do I get the feeling that slimeballs are incredibly high in calories...[or]. Why can't this world have more sensible ways of encouraging me to eat again...[stopping][roman type][line break][GotUnluckyFlav]";
 	StomachFoodUp 13;
 	StomachUp 2;
+	if the total volume of face > 0, compute swallowing;
 	mapcutshow figure of slimeball cutscene 4 for M.
 
 To deploy a slimeball:

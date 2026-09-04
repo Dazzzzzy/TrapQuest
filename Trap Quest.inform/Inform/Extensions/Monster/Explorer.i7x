@@ -33,7 +33,7 @@ Report going:
 	if iron-maiden is in the location of the player and iron-maiden is revealed and (tentacle fetish is 0 or inhuman pregnancy < 2) and blonde-explorer is summon-available and blonde-explorer is off-stage:
 		set up blonde-explorer;
 		now blonde-explorer is in the location of the player;
-		say "Suddenly, from your right, the Iron Maiden opens, and a skimpily dressed [man of blonde-explorer] stumbles out. [if diaper quest is 0][big he of blonde-explorer] looks up at you, seems to think for a minute, and then takes a big gulp, swallowing whatever was in [his of blonde-explorer] mouth[otherwise]A strong stench of piss emanates from both the maiden and [his of blonde-explorer] panties - [he of blonde-explorer] must have pissed [himself of blonde-explorer] into the in-built padding while [he of blonde-explorer] was in there[end if].[line break][speech style of blonde-explorer]'Hello. Um... Don't look at the mirror. That's all I'm going to say. See you around.'[roman type][line break]It looks like [he of blonde-explorer] isn't one for long conversations. Or maybe [he of blonde-explorer] just wants to get out of this creepy place as soon as possible.";
+		say "Suddenly, from your right, the Iron Maiden opens, and a skimpily dressed [man of blonde-explorer] stumbles out. [if diaper quest is 0][big he of blonde-explorer] looks up at you, seems to think for a minute, and then takes a big gulp, swallowing whatever was in [his of blonde-explorer] mouth[otherwise]A strong stench of [slime] emanates from both the maiden and [his of blonde-explorer] panties - [he of blonde-explorer] must have [SlimeShoot]ed [himself of blonde-explorer] into the in-built padding while [he of blonde-explorer] was in there[end if].[line break][speech style of blonde-explorer]'Hello. Um... Don't look at the mirror. That's all I'm going to say. See you around.'[roman type][line break]It looks like [he of blonde-explorer] isn't one for long conversations. Or maybe [he of blonde-explorer] just wants to get out of this creepy place as soon as possible.";
 		bore blonde-explorer for 150 seconds;
 		if diaper quest is 0, cutshow Figure of blonde explorer 1 cutscene 1 for blonde-explorer;
 		now blonde-explorer is moved.
@@ -158,7 +158,7 @@ To MonsterHeal (M - an explorer) by (N - a number):
 Definition: an explorer (called M) is uniquely distracted:
 	if M is in the location of the player:
 		let V be a random vines in the location of M;
-		if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling the player:
+		if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling a body part and V is not grabbing the player:
 			say "[BigNameDesc of M] shrieks as a vine wraps itself around [his of M] ankle! [big he of M] quickly tries to wrestle it off, but before [he of M] gets a chance, several more living vines have joined in, holding [him of M] tight. You watch with [if diaper quest is 1][horror the diaper addiction of the player] as [he of M] is lifted into the air, passed through a portal, and then made to face-plant [his of M] own diapered rear, as the vines begin stroking [his of M] pussy and bringing [him of M] to a shameful climax.[line break][speech style of M]'Please no, no more! Please, I just want to get out of here!'[roman type][line break]Almost as if they heard [NameDesc of M][']s pleas, another portal opens up underneath the poor diapered adventurer, this one leading to a hotel room. [big he of M] is unceremoniously dropped through the portal, onto the waiting hotel bed below. The portal then closes behind [him of M][otherwise][horror the sex addiction of the player] as not just one, but several wriggling vines find their way into both [his of M] poor pussy and [his of M] tight little asshole. Several awkward wailing and gargling sounds later, you watch as [NameDesc of M]'s belly bloats larger and larger under the pressure from the huge amounts of tentacle semen being poured inside [him of M].[line break][speech style of M]'F-fuck this! I'd r-rather be that rude pimp's whore, than stay out here where it's so dangerous...'[roman type][line break]Finally released from the clutches of the vines, [NameDesc of M] begins to drag [his of M] cum-leaking body towards the west[end if].";
 			compute banishment of M;
 			decide yes;
@@ -187,7 +187,7 @@ To check seeking (N - a number) of (M - an explorer): [They don't follow you]
 
 To compute diaper wetting of (M - an explorer): [This MUST cause bladder to empty or NPCs might get stuck]
 	if M is in the location of the player:
-		if the explorer-bimbo of M >= 2, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] diaper.";
+		if the explorer-bimbo of M >= 2, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is [slime]ing [his of M] diaper.";
 		otherwise say "[BigNameDesc of M] suddenly squeaks and turns bright red, and you can hear a gentle hissing and crinkling sound. You look at [NameDesc of M] as [he of M] accidentally wets [himself of M], letting [him of M] know that [he of M][']s been caught. That just makes [him of M] turn even redder.";
 	now the bladder of M is 0.
 
@@ -286,7 +286,7 @@ To compute teaching of (M - an explorer):
 To say ClothesPeeReaction of (M - an explorer):
 	say "[BigNameDesc of M]'s eyes go wide as [he of M] watches you. [moderateHumiliateReflect]".
 
-To say GroundPeeReaction of (M - an explorer):
+To say GroundSlimeReaction of (M - an explorer):
 	say "[BigNameDesc of M] grimaces and looks away.[line break][speech style of M]'Really? You had to do that right in fromt of me?'[roman type][line break][moderateHumiliateReflect]".
 
 To say WaterBodyPeeReaction of (M - an explorer):
@@ -299,5 +299,8 @@ To compute diaper mess reaction of (M - an explorer):
 		say "[BigNameDesc of M] shudders with disgust as you mess yourself.";
 	if voluntarySquatting is 1, say severeHumiliateReflect;
 	otherwise say strongHumiliateReflect.
+To compute continued diaper mess reaction of (M - an explorer):
+	say "[BigNameDesc of M] watches you mess yourself with mild concern.";
+	say moderateHumiliateReflect.
 
 Explorer ends here.

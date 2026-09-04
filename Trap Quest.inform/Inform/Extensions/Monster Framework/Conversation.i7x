@@ -734,9 +734,9 @@ Displayed when the player greets a monster that is already paying attention to t
 +!]
 To say VanityGreeting to (M - a monster):
 	if M is tutor and locked-toilets is true and facility-toilet-key is held:
-		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if]";
+		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the [SlimeTarget]?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the [SlimeTarget]?'[otherwise]Please can you help me use the [SlimeTargetP]?'[end if]";
 	otherwise if the player is toilet traumatised bursting:
-		say "'I need the toilet, but [if facility-toilet-key is held and M is tutor]the rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
+		say "'I need the [SlimeTarget], but [if facility-toilet-key is held and M is tutor]the rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
 	otherwise if the player is a masochist:
 		say "'[one of]Are you getting used to seeing the back of my head?'[or]Maybe you and I should head somewhere more private, hmm?'[or]Where am I taking you, I wonder?'[at random]";
 	otherwise:
@@ -826,7 +826,7 @@ Displayed after the player greets a monster that is already paying attention to 
 +!]
 To say VanityPitied of (M - a monster):
 	if M is guarding or M is caged:
-		say "[speech style of M]'Sorry, I can't. You'll have to brave the toilet alone!'[roman type][line break]";
+		say "[speech style of M]'Sorry, I can't. You'll have to brave the [SlimeTarget] alone!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Aww, you poor sweet [boy of M]. Sure, I can hold your hand while you do your [if the player is feeling full or the total squirtable fill of belly > 0]poopies[otherwise]tinkles[end if].'[roman type][line break]";
 		now the friendly boredom of M is -10.
@@ -1243,7 +1243,7 @@ To consider (T - talk-drink-request) for (M - a monster):
 To execute (T - talk-drink-request) for (M - a monster):
 	if M is defeated:
 		say DefeatedDrinkResponse of M;
-	otherwise if M is willing to urinate and watersports fetish is 1 and a random number between 1 and 20 < the urine taste addiction of the player:
+	otherwise if M is willing to urinate and watersports fetish is 1 and a random number between 1 and 20 < the slime taste addiction of the player:
 		compute M urinating;
 	otherwise if the semen taste addiction of the player > 5 and M is willing to do oral and (M is male or M is wench):
 		now the player-reaction of the player is submitting;
@@ -1258,8 +1258,8 @@ To execute (T - talk-drink-request) for (M - a monster):
 To say DrinkRequest of (M - a monster):
 	if the class of the player is santa's little helper:
 		say "'I'm thirsty. Got any mulled wine?'";
-	otherwise if watersports fetish is 1 and the urine taste addiction of the player > 5 and the urine taste addiction of the player >= the semen taste addiction of the player and M is willing to urinate:
-		say "[if the urine taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your pee if you wanted...'[otherwise if the urine taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [urine] if you'll let me.'[otherwise if the urine taste addiction of the player < 15]I'd love to drink your [urine] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise]Please may I have the privilege of being your toilet? I promise I'll savour every last drop.'[end if]";
+	otherwise if watersports fetish is 1 and the slime taste addiction of the player > 5 and the slime taste addiction of the player >= the semen taste addiction of the player and M is willing to urinate:
+		say "[if the slime taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your [slime] if you wanted...'[otherwise if the slime taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [slime] if you'll let me.'[otherwise if the slime taste addiction of the player < 15]I'd love to drink your [slime] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise]Please may I have the privilege of being your [SlimeTarget]? I promise I'll savour every last drop.'[end if]";
 	otherwise if the semen taste addiction of the player > 5 and M is willing to do oral and (M is male or M is wench):
 		say "[if the semen taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your cum if you wanted...'[otherwise if the semen taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [semen] if you'll let me.'[otherwise if the semen taste addiction of the player < 15]I'd love to drink your [semen] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise if M is male]Please may I have the privilege of sucking your cock? I promise I'll savour every last drop.'[otherwise]Please may I have the privilege of drinking from your [']tap[']? You seem to have a lot to spare...'[end if]";
 	otherwise if the bimbo of the player < 3:
@@ -1530,7 +1530,7 @@ To decide which number is the DismissalPowerToilet of (M - a monster):
 
 To say DismissalRequestToilet of (M - a monster):
 	if diaper quest is 0, say "'[if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [stud of M], would I be allowed to erm, you know, in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]";
-	otherwise say "'[if the diaper-duration of M > 0]Could you PLEASE just leave me alone in this room for a minute? I want to do... something.'[otherwise if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [stud of M], would I be allowed to go potty in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]".
+	otherwise say "'[if the diaper-duration of M > 0]Could you PLEASE just leave me alone in this room for a minute? I want to do... something.'[otherwise if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [stud of M], would I be allowed to go [SlimeTargetP] in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]".
 
 To decide which number is the DismissalPowerBursting of (M - a monster):
 	if diaper quest is 1, decide on -1;
@@ -1540,7 +1540,7 @@ To say DismissalRequestBursting of (M - a monster):
 	if diaper messing >= 3 and (the player is feeling full or the total squirtable fill of belly > 0):
 		say "'[if the diaper addiction of the player > 14]Uh-oh, [NameBimbo] [one of]needs to doo-doo[or]gotta make poopies[or]gonna make mush[in random order]! Are you... going to watch me?'[otherwise]Fuck dude, I'm gonna do something really nasty soon, I can feel it coming! You should leave.'[end if]";
 	otherwise if the player is bursting:
-		say "'[if the diaper addiction of the player > 14][NameBimbo][']s gonna go tinkles... do you wanna watch?'[otherwise]Hey I gotta pee soon, please could you give me some privacy?'[end if]";
+		say "'[if the diaper addiction of the player > 14][NameBimbo][']s gonna go tinkles... do you wanna watch?'[otherwise]Hey I gotta [slime] soon, please could you give me some privacy?'[end if]";
 	otherwise:
 		say "'[if the player is a nympho]Ooh fuck, it's coming out soon... Are you sure you wanna be here to watch this?'[otherwise]I can't hold it in for much longer, please, don't look!'[end if]".
 
@@ -1649,14 +1649,14 @@ To say DismissalResponseVixen of (M - a monster):
 
 To say DismissalResponseToilet of (M - a monster):
 	if diaper quest is 0, say "[speech style of M]'[if M is interested]Come on, just hold it in for a couple more minutes.'[otherwise]Oh. Um, I'll see you later then.'[end if][roman type][line break]";
-	otherwise say "[speech style of M]'[if the diaper-duration of M > 0]Now now, we wouldn't be thinking of trying to use a grown-up potty, would we? You're to stay in diapers until you can prove you can stay dry, so if you really can't hold it, you'll just have to have an accident like a real baby.'[otherwise if M is not interested]Oh sorry, I didn't realise. Well done for making it in time!'[otherwise if the player is feeling submissive]Permission denied. Prove to me you can hold it in. If you really are a big [boy of the player], that is...'[otherwise]Pfft. Come on, surely you can hold it in for at least a couple more minutes? Unless you're just a big baby in disguise?'[end if][roman type][line break]".
+	otherwise say "[speech style of M]'[if the diaper-duration of M > 0]Now now, we wouldn't be thinking of trying to use a grown-up [SlimeTargetP], would we? You're to stay in diapers until you can prove you can stay dry, so if you really can't hold it, you'll just have to have an accident like a real baby.'[otherwise if M is not interested]Oh sorry, I didn't realise. Well done for making it in time!'[otherwise if the player is feeling submissive]Permission denied. Prove to me you can hold it in. If you really are a big [boy of the player], that is...'[otherwise]Pfft. Come on, surely you can hold it in for at least a couple more minutes? Unless you're just a big baby in disguise?'[end if][roman type][line break]".
 
 To say DismissalResponseBursting of (M - a monster):
 	if diaper messing >= 3 and (the player is feeling full or the total squirtable fill of belly > 0):
 		say "[speech style of M]'[if M is interested]I don't believe it. Surely you would never do something as disgraceful as that right in front of me. You've got to be kidding.'[otherwise]Wait, seriously?! Fuck, I'm out of here!'[end if][roman type][line break]";
 	otherwise if the player is bursting:
 		if the diaper addiction of the player > 14, say "[speech style of M]'[if M is interested and there is a worn diaper]I would respect you more if you could hold it in. But I'm not leaving you alone, no.'[otherwise if M is interested]I think the question is, do you want to face the consequences?'[otherwise]Ugh! No, I think not.'[end if][roman type][line break]";
-		otherwise say "[speech style of M]'[if diaper quest is 1 and M is interested]No, no, no! You hold it or you disgrace yourself. Up to you, [honey of M].[otherwise if M is interested]Privacy? No, I don't want to miss watching a silly [boy of the player] pissing [himself of the player] in front of me, that sounds hilarious!'[otherwise if there is a worn diaper]Hmm, well at least you're safely padded, I guess. See you in a bit.'[otherwise]I assume you know where the toilets are. See you later.'[end if][roman type][line break]";
+		otherwise say "[speech style of M]'[if diaper quest is 1 and M is interested]No, no, no! You hold it or you disgrace yourself. Up to you, [honey of M].[otherwise if M is interested]Privacy? No, I don't want to miss watching a silly [boy of the player] [SlimeShoot]ing [himself of the player] in front of me, that sounds hilarious!'[otherwise if there is a worn diaper]Hmm, well at least you're safely padded, I guess. See you in a bit.'[otherwise]I assume you know where the toilets are. See you later.'[end if][roman type][line break]";
 	otherwise:
 		if the player is a nympho, say "[speech style of M]'[if M is interested and there is a worn diaper]I would respect you more if you could hold it in. But I'm not leaving you alone, no.'[otherwise if M is interested]I think the question is, why can't you hold it in until I'm ready to leave you be?'[otherwise]Oh. No thank you. Nope.'[end if][roman type][line break]";
 		otherwise say "[speech style of M]'[if M is interested and diaper lover > 0]Really? Only the biggest baby would really lose hold of their enema while in polite company!'[otherwise if M is interested]If you expel the contents of your belly in front of me, there will be consequences, young [man of the player].'[otherwise]Oh. I have no desire to see that right now, thank you very much.'[end if][roman type][line break]".
@@ -2631,20 +2631,20 @@ To decide which number is the errand-weight of (E - human-urinal-errand) for (P 
 To decide which number is the errand-weight of (E - human-urinal-errand) for (P - kitsune):
 	decide on 2.
 To say ErrandFlav of (E - human-urinal-errand) for (P - a person):
-	say "Well, I really need to piss right now! Fancy being my urinal? ".
+	say "Well, I really need to [slime] right now! Fancy being my [SlimeTarget]? ".
 To compute instant effect of (E - human-urinal-errand) for (P - a person):
-	say "Do you [if the player is upright]get on your knees in front of [NameDesc of P] and [end if]let [him of P] use you as a human urinal?";
+	say "Do you [if the player is upright]get on your knees in front of [NameDesc of P] and [end if]let [him of P] use you as a human [SlimeTarget]?";
 	if the player is bimbo consenting:
 		if the player is upright:
 			now auto is 1;
 			try kneeling;
 			now auto is 0;
 		say "You obediently open your mouth, and [NameDesc of P] steps up so that [his of P] crotch is in your face. [big he of P] [if P is a wrestler]unzips the crotch of [his of P] catsuit, and [end if]sighs pleasantly as [he of P] lets loose.";
-		FacePiss from P;
+		FaceDrain from P;
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
-		say "[variable custom style]'I'd really rather you didn't.'[line break][speech style of P]'[if P is demoness]You disappoint me, mortal! You have yet to learn your place! I am done with you, then.'[roman type][line break][BigNameDesc of P] seems offended.[otherwise]You want me to do things for you, but you won't even drink my piss?! What sort of friend are you?!'[roman type][line break][BigNameDesc of P] sounds hurt.[end if]";
+		say "[variable custom style]'I'd really rather you didn't.'[line break][speech style of P]'[if P is demoness]You disappoint me, mortal! You have yet to learn your place! I am done with you, then.'[roman type][line break][BigNameDesc of P] seems offended.[otherwise]You want me to do things for you, but you won't even drink my [slime]?! What sort of friend are you?!'[roman type][line break][BigNameDesc of P] sounds hurt.[end if]";
 		now the current-errand of P is rejected-errand;
 	now the current-reward of P is no-reward.
 
@@ -2655,9 +2655,9 @@ Definition: diaper-urinal-errand is appropriate:
 To decide which number is the errand-weight of (E - diaper-urinal-errand) for (P - a monster):
 	decide on 10.
 To say ErrandFlav of (E - diaper-urinal-errand) for (P - a person):
-	say "Well, I really need to piss right now! I want you to hold your waistband open, and hold my [manly-penis] while I piss inside your diaper. ".
+	say "Well, I really need to [slime] right now! I want you to hold your waistband open, and hold my [manly-penis] while I [slime] inside your diaper. ".
 To compute instant effect of (E - diaper-urinal-errand) for (P - a person):
-	say "Do you [if the player is upright]get on your knees in front of [NameDesc of P] and [end if]let [him of P] use your diaper as [his of P] urinal?";
+	say "Do you [if the player is upright]get on your knees in front of [NameDesc of P] and [end if]let [him of P] use your diaper as [his of P] [SlimeTarget]?";
 	if the player is bimbo consenting:
 		if the player is upright:
 			now auto is 1;
@@ -3014,7 +3014,7 @@ To compute instant effect of (E - soiled-diaper-errand) for (P - a person):
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
-		UrineSoakUp D by 10;
+		SlimeSoakUp D by 10;
 		now D is carried by the player;
 		focus-consider D;
 		say "[BigNameDesc of P] produces a sopping wet [D] and drops it into your hands.";
@@ -3101,7 +3101,8 @@ To decide which number is the requestability of (C - an object): [How 'expensive
 To decide which number is the requestability of (C - a thing):
 	decide on the tradability of C.
 To say RequestFlav of (C - a thing):
-	say "'Please, is there anything I could do for you to consider giving me your [ShortDesc of C]?'".
+	if the noun is familiar, say "'Can you please hand me the [ShortDesc of C]?'";
+	otherwise say "'Please, is there anything I could do for you to consider giving me your [ShortDesc of C]?'".
 To say RequestFlav of (C - an object):
 	say "BUG - this requestable object doesn't yet have a request phrase.".
 To say RewardFlav of (C - an object):
@@ -3192,17 +3193,17 @@ Definition: be-my-urinal is appropriate:
 	if the noun is trainee and the current-rank of the noun >= 5, decide yes;
 	decide no.
 To say RequestFlav of (C - be-my-urinal):
-	say "'I really need to pee... Would you mind letting me use your mouth?'".
+	say "'I really need to [SlimeShoot]... Would you mind letting me use your mouth?'".
 To say RewardFlav of (C - be-my-urinal):
-	say "drink your piss".
+	say "drink your [slime]".
 To compute errand rewarding of (T - be-my-urinal) from (P - a person):
-	say "[speech style of P]'So... Do you still need to use the toilet?'[roman type][line break]";
+	say "[speech style of P]'So... Do you still need to use the [SlimeTarget]?'[roman type][line break]";
 	if the player is bursting:
 		let C be a random worn actually unavoidable pee covering clothing;
 		if C is clothing:
 			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
 		otherwise if the player is consenting:
-			say "You nod your head, and [NameDesc of P] gets on [his of P] knees and opens [his of P] mouth wide. You move your [genitals] close and feed [him of P] with your fresh [urine]! [big he of P] accepts being used as a human toilet without complaint, and swallows every single drop down.";
+			say "You nod your head, and [NameDesc of P] gets on [his of P] knees and opens [his of P] mouth wide. You move your [genitals] close and feed [him of P] with your fresh [slime]! [big he of P] accepts being used as a human [SlimeTarget] without complaint, and swallows every single drop down.";
 			moderateDignify;
 			now the bladder of the player is 0;
 			SportsGet;
@@ -3220,9 +3221,9 @@ Definition: be-my-diaper is appropriate:
 	if diaper quest is 1 and the noun is trainee and the current-rank of the noun >= 5, decide yes;
 	decide no.
 To say RequestFlav of (C - be-my-diaper):
-	say "'I really need to pee... Would you mind letting me use your diaper?'".
+	say "'I really need to [slime]... Would you mind letting me use your diaper?'".
 To say RewardFlav of (C - be-my-diaper):
-	say "let you pee in my diaper".
+	say "let you [slime] in my diaper".
 To compute errand rewarding of (T - be-my-diaper) from (P - a person):
 	say "[speech style of P]'So... Do you still need to do a wee?'[roman type][line break]";
 	if the player is bursting:
@@ -3230,7 +3231,7 @@ To compute errand rewarding of (T - be-my-diaper) from (P - a person):
 		if C is clothing:
 			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
 		otherwise if the player is consenting:
-			say "You nod your head, and [NameDesc of P] exposes [his of P] diaper and then pulls the front of the waistband forward, prompting you to guide your [genitals] so your pee will go straight into [his of P] diaper. Which, when you release, it does.[line break][speech style of P]'Hehe, that feels funny... And warm...'[roman type][line break]";
+			say "You nod your head, and [NameDesc of P] exposes [his of P] diaper and then pulls the front of the waistband forward, prompting you to guide your [genitals] so your [slime] will go straight into [his of P] diaper. Which, when you release, it does.[line break][speech style of P]'Hehe, that feels funny... And warm...'[roman type][line break]";
 			moderateDignify;
 			now the bladder of the player is 0;
 		otherwise:

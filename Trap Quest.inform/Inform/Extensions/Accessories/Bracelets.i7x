@@ -49,6 +49,8 @@ The inventoryFocusPriority of focus band is -1.
 
 Figure of focus band is the file "Items/Accessories/Arm/focusband1.png".
 
+To decide which figure-name is the examine-image of (C - focus band):
+	decide on the clothing-image of C.
 To decide which figure-name is clothing-image of (C - focus band):
 	decide on figure of focus band.
 
@@ -60,5 +62,10 @@ To say ShortDesc of (C - focus band):
 To decide which number is the bartering value of (T - focus band) for (M - a gladiator):
 	decide on 4.
 Definition: focus band is black themed: decide yes.
+
+To decide which number is the orgasm-resist-influence of (C - focus band):
+	let S be 3;
+	increase S by the magic-modifier of C;
+	decide on S.
 
 Bracelets ends here.

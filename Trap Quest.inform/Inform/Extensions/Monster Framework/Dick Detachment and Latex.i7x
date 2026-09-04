@@ -1517,7 +1517,7 @@ To say BasicPaymentReceivedFlav of (C - players-detached-dick):
 			say "[speech style of M]'Excellent choice, for an obvious thot like yourself. Not many of my customers are gaped enough to handle something that size! But I'm sure you'll handle it with no problem.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'I hope you can handle a monster that size - but practice makes perfect, and you look the sort to practice HARD.'[roman type][line break]";
-	say "[big he of M] turns it over in [his of M] strong, [if lady fetish is 1]powerful[otherwise]masculine[end if] hands, making you squirm at the sensations of [him of M] handling your [DetachedPenis]. [big he of M] flicks the end a few times, and it's all you can do not to moan aloud. [big he of M] eyes you curiously before handing it over.";
+	say "[big he of M] turns it over in [his of M] strong, [if gyno fetish is 1]powerful[otherwise]masculine[end if] hands, making you squirm at the sensations of [him of M] handling your [DetachedPenis]. [big he of M] flicks the end a few times, and it's all you can do not to moan aloud. [big he of M] eyes you curiously before handing it over.";
 	passively stimulate penis from players-detached-dick;
 	slightHumiliate.
 

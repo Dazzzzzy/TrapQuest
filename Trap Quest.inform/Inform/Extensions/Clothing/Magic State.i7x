@@ -172,7 +172,7 @@ To decide which number is the calculated-magic-modifier of (C - a clothing):
 	let R be the raw-magic-modifier of C;
 	[if C is diaper or C is fluid immune, decide on R;
 	decrease R by ((the semen-soak of C + 2) divided by 3);
-	decrease R by ((the urine-soak of C + 2) divided by 4);
+	decrease R by ((the slime-soak of C + 2) divided by 4);
 	decrease R by ((the milk-soak of C + 2) divided by 4);]
 	if C is wet clean swimming themed clothing, increase R by 3;
 	if C is cursed, decrease R by 1;

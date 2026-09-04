@@ -227,7 +227,7 @@ To decide which figure-name is the examine-image of (C - magic-trophy):
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";
-	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells depletes your magic power much more slowly, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise if enema fetish is 0]stomach[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if enema fetish is 0]water[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells depletes your magic power much more slowly, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise if enema fetish is 0]stomach[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if enema fetish is 0]water[otherwise if watersports fetish is 1][slime][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
 	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells cost less magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
@@ -249,8 +249,8 @@ A magic consequences rule (this is the trophy magic consequence rule):
 				say "some water appear inside your stomach!";
 				StomachUp 1;
 			otherwise if a random number between 0 and watersports fetish is 1:
-				say "some [urine] appear inside your belly!";
-				AssFill 2 urine;
+				say "some [slime] appear inside your belly!";
+				AssFill 2 slime;
 			otherwise if diaper quest is 1:
 				say "some water appear inside your belly!";
 				AssFill 2 water;
@@ -261,7 +261,7 @@ A magic consequences rule (this is the trophy magic consequence rule):
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of magic-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][slime][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
 		now the trophy-mode of magic-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend more magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";

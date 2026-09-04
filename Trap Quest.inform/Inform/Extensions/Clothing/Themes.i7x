@@ -273,7 +273,7 @@ Definition: an object is toilet themed: [Is it something that relates to watersp
 	decide no.
 A theme blocking rule:
 	if theme-target is toilet themed and the number of currently at least partially visible toilet themed wearthings > 1:
-		add "toilet themed" to interesting-themes-shared-list;
+		add "[SlimeTarget] themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not toilet themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the toilet matching rule):
 	if theme-target is toilet themed and theme-share-target is toilet themed, rule succeeds.
@@ -636,7 +636,7 @@ A theme description rule:
 		if theme-target is wearable, say "It would be fashionable to wear this along with other items with lots of yellow in them. ";
 		otherwise say "This item would probably be valuable to anyone who loves the colour yellow.".
 
-[Player gets increased tolerance to urine for each yellow thing worn after the first.]
+[Player gets increased tolerance to slime for each yellow thing worn after the first.]
 To decide which number is yellow theme bonus:
 	let N be the number of worn yellow themed wearthings - 1;
 	if N > 0, decide on N;
@@ -646,8 +646,8 @@ A theme effect description rule:
 	if theme-target is yellow themed:
 		let YTB be yellow theme bonus;
 		if YTB > 0:
-			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee[if watersports fetish is 1] and you are better at drinking [urine] without getting addicted to it[end if]. ";
-			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][urine][otherwise][semen][end if] without getting addicted to it. ".
+			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee[if watersports fetish is 1] and you are better at drinking [slime] without getting addicted to it[end if]. ";
+			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][slime][otherwise][semen][end if] without getting addicted to it. ".
 
 Section - Green
 

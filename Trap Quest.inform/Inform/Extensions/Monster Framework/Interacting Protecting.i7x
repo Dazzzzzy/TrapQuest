@@ -57,10 +57,14 @@ To compute merry diaperurinalmass of (M - a monster):
 	compute diaper urinal image of M;
 	say "[variable custom style][one of]What the fuck just happened?! Is that how they wish people Merry Christmas around here?!?!?![or]This really is going to keep happening, isn't it. What a crazy local tradition...[or][if the grossness addiction of the player >= 12 and the player is able to speak]'Merry Pissmass to you too!'[roman type][line break]You chirp happily.[otherwise if the grossness addiction of the player >= 12]I love this tradition![otherwise if the grossness addiction of the player >= 5 and the player is able to speak]'Merry Pissmass.'[roman type][line break]You respond diplomatically.[otherwise if the grossness addiction of the player >= 5]What a silly local tradition.[otherwise if the player is able to speak]'Merry Pissmass, I guess.'[roman type][line break]You respond begrudgingly.[otherwise]What a disgusting local tradition.[end if][stopping][roman type][line break]".
 
+To say GooMass:
+	if slimeshooter fetish is 1, say "Goomass";
+	otherwise say "[big slime]mas";
+
 To compute merry pissmass of (M - a monster):
-	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] has [his of M] [if M is male][manly-penis][otherwise]pussy[end if] held right in front of you face.[line break][speech style of M]'Merry Pissmas!'[roman type][line break][big he of M] says cheerfully, and then a moment later, [he of M] is unleashing a river of piss towards your face, as if it's the most normal thing in the world.";
-	idly FacePiss from M;
-	say "[variable custom style][one of]What the fuck just happened?! Is that how they wish people Merry Christmas around here?!?!?![or]This really is going to keep happening, isn't it. What a crazy local tradition...[or][if the urine taste addiction of the player >= 14 and the player is able to speak]'Merry Pissmass to you too!'[roman type][line break]You chirp happily.[otherwise if the urine taste addiction of the player >= 14]I love this tradition![otherwise if the urine taste addiction of the player >= 7 and the player is able to speak]'Merry Pissmass.'[roman type][line break]You respond diplomatically.[otherwise if the urine taste addiction of the player >= 7]What a silly local tradition.[otherwise if the player is able to speak]'Merry Pissmass, I guess.'[roman type][line break]You respond begrudgingly.[otherwise]What a disgusting local tradition.[end if][stopping][roman type][line break]".
+	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] has [his of M] [if slimeshooter fetish is 1]slimeshooter barrel[otherwise if M is male][manly-penis][otherwise]pussy[end if] held right in front of you face.[line break][speech style of M]'Merry [GooMass]!'[roman type][line break][big he of M] says cheerfully, and then a moment later, [he of M] is unleashing a river of [slime] towards your face, as if it's the most normal thing in the world.";
+	idly FaceDrain from M;
+	say "[variable custom style][one of]What the fuck just happened?! Is that how they wish people Merry Christmas around here?!?!?![or]This really is going to keep happening, isn't it. What a crazy local tradition...[or][if the slime taste addiction of the player >= 14 and the player is able to speak]'Merry [GooMass] to you too!'[roman type][line break]You chirp happily.[otherwise if the slime taste addiction of the player >= 14]I love this tradition![otherwise if the slime taste addiction of the player >= 7 and the player is able to speak]'Merry [GooMass].'[roman type][line break]You respond diplomatically.[otherwise if the slime taste addiction of the player >= 7]What a silly local tradition.[otherwise if the player is able to speak]'Merry Pissmass, I guess.'[roman type][line break]You respond begrudgingly.[otherwise]What a disgusting local tradition.[end if][stopping][roman type][line break]".
 
 To compute merry diaperkissmass of (M - a monster):
 	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] is standing in front of you, facing away and, before you can react, has shoved the seat of [his of M] diaper against your mouth.[line break][speech style of M]'Merry Kissmas!'[roman type][line break][big he of M] says cheerfully, as if it's the most normal thing in the world.[paragraph break]";
@@ -235,7 +239,7 @@ To compute oral assistance from (S - a monster) with (D - a monster):
 			FatigueUp 5;
 	otherwise:
 		if D is male and a random number between 1 and 2 is 1:
-			say "[BigFuckerDesc of S] kneels next to you, [one of]holding [his of S] mouth open, allowing [NameDesc of D] to fuck your mouth and [hers of S] alternately[or]holding [FuckerDesc of D]'s thighs as [he of S] noisily [if (D is presenting as female and futanari fetish is 2) or full-lady fetish is 1]munches [FuckerDesc of D]'s box[otherwise]polishes [FuckerDesc of D]'s scrotum[end if][or]licking the exposed parts of [FuckerDesc of D]'s shaft[or]holding your hair back[in random order].";
+			say "[BigFuckerDesc of S] kneels next to you, [one of]holding [his of S] mouth open, allowing [NameDesc of D] to fuck your mouth and [hers of S] alternately[or]holding [FuckerDesc of D]'s thighs as [he of S] noisily [if (D is presenting as female and futanari fetish is 2) or super-gyno fetish is 1]munches [FuckerDesc of D]'s box[otherwise]polishes [FuckerDesc of D]'s scrotum[end if][or]licking the exposed parts of [FuckerDesc of D]'s shaft[or]holding your hair back[in random order].";
 			if the sex-length of D > 1, decrease the sex-length of D by 1;
 		otherwise:
 			compute boobs assistance from S with D.
@@ -253,7 +257,7 @@ To compute vaginal assistance from (S - a monster) with (D - a monster):
 	if a random number between 1 and 2 is 1 and S is not unfriendly:
 		say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [vagina] and [his of S] face alternately.[or]next to you, periodically slurping your juices off [FuckerDesc of D]'s [DickDesc of D] as [he of D] [if D is male]fucks[otherwise]uses[end if] your [vagina].[in random order]";
 		if the sex-length of D > 0, decrease the sex-length of D by 1;
-	if a random number between 1 and 2 is 1 and S is female and lady fetish < 2:
+	if a random number between 1 and 2 is 1 and S is female and andro fetish is 0:
 		say "[BigNameDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to fuck your [vagina] and [hers of S] alternately.";
 		if the sex-length of D > 0, decrease the sex-length of D by 1;
 	otherwise:
@@ -269,7 +273,7 @@ To compute anal assistance from (S - a monster) with (D - a monster):
 			ruin asshole;
 		if the sex-length of D > 0, decrease the sex-length of D by 1;
 	otherwise if a random number between 1 and 2 is 1 and S is female:
-		say "[BigNameDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to fuck your [asshole] and [if lady fetish is 1][hers of S][otherwise][his of S] [asshole][end if] alternately.";
+		say "[BigNameDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to fuck your [asshole] and [if gyno fetish is 1][hers of S][otherwise][his of S] [asshole][end if] alternately.";
 		if the sex-length of D > 0, decrease the sex-length of D by 1;
 	otherwise:
 		compute generic assistance from S with D.

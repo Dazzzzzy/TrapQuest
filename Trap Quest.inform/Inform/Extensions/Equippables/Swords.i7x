@@ -86,7 +86,7 @@ Report taking which-sword:
 		now woman-player is summon-available;
 		now the sword-stone-scene of woman-player is 2;
 		now woman-player is in the location of the player;
-		say "As soon as you grab the hilt and start to pull, [NameDesc of woman-player][']s curse is undone, and [his of woman-player] body rapidly begins to return to normal. So whilst you started by pulling the dildo sword out of a statue, by the time you're pulling the tip out, you're pulling it out of your friends very real, very alive asshole, which makes a lewd wet slurping sound as the sword departs from it.[line break][speech style of woman-player]'Oh my goooooooood!'[roman type][line break][BigNameDesc of woman-player] squeals as the intense sensations shake [him of woman-player] to [his of woman-player] core, and a jet of [if watersports fetish is 1]piss[otherwise]squirt[end if] shoots out of [his of woman-player] pussy.";
+		say "As soon as you grab the hilt and start to pull, [NameDesc of woman-player][']s curse is undone, and [his of woman-player] body rapidly begins to return to normal. So whilst you started by pulling the dildo sword out of a statue, by the time you're pulling the tip out, you're pulling it out of your friends very real, very alive asshole, which makes a lewd wet slurping sound as the sword departs from it.[line break][speech style of woman-player]'Oh my goooooooood!'[roman type][line break][BigNameDesc of woman-player] squeals as the intense sensations shake [him of woman-player] to [his of woman-player] core, and a jet of [if watersports fetish is 1][slime][otherwise]squirt[end if] shoots out of [his of woman-player] pussy.";
 		compute woman bimbo changes;
 	otherwise:
 		if diaper quest is 1, now S is rattle;

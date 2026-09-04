@@ -257,7 +257,7 @@ To execute (E - bag-feeding-semen):
 	say "Your bag reacts to the semen theme of the [ShortDesc of noun], making you feel very thirsty!";
 	if the stomach-water of the player > 1, now the stomach-water of the player is 1;
 	now the stomach-semen of the player is 0;
-	now the stomach-urine of the player is 0;
+	now the stomach-slime of the player is 0;
 	now the stomach-milk of the player is 0;
 	now the fill-colour of squirt dildo is creamy;
 	now the doses of squirt dildo is 1;
@@ -273,20 +273,20 @@ To execute (E - bag-feeding-semen):
 		silently set up wisp GUI for W;
 		say AnnounceNewWisp W.
 
-bag-feeding-urine is a bag-feeding-effect.
-Definition: bag-feeding-urine is appropriate:
-	if watersports fetish is 1 and the noun is toilet themed and the number of carried non-empty bottles is 0, decide yes;
+bag-feeding-slime is a bag-feeding-effect.
+Definition: bag-feeding-slime is appropriate:
+	if legacy watersports mechanics is 1 and the noun is toilet themed and the number of carried non-empty bottles is 0, decide yes;
 	decide no.
-To execute (E - bag-feeding-urine):
-	say "Your bag reacts to the toilet theme of the [ShortDesc of noun], making you feel very thirsty!";
+To execute (E - bag-feeding-slime):
+	say "Your bag reacts to the [SlimeTarget] theme of the [ShortDesc of noun], making you feel very thirsty!";
 	if the stomach-water of the player > 1, now the stomach-water of the player is 1;
 	now the stomach-semen of the player is 0;
-	now the stomach-urine of the player is 0;
+	now the stomach-slime of the player is 0;
 	now the stomach-milk of the player is 0;
 	now the fill-colour of champagne-glass is golden;
 	now the doses of champagne-glass is 1;
 	if champagne-glass is held:
-		say "What's more, your [champagne-glass] fills up to the brim with [urine]!";
+		say "What's more, your [champagne-glass] fills up to the brim with [slime]!";
 	otherwise:
 		say "What's more, a [champagne-glass] appears on the ground in front of you! Something tells you that you can guess what's inside...";
 		now champagne-glass is in the location of the player;
@@ -373,8 +373,8 @@ Definition: bag-feeding-drink is appropriate:
 To execute (E - bag-feeding-drink):
 	say "Your bag reacts to drink theme of your [ShortDesc of noun] by removing all the water you recently drank from your stomach!";
 	now the stomach-water of the player is 0;
-	if the stomach-urine of the player > 0:
-		say "[variable custom style]Luckily for me, I recently drank [urine]...[roman type][line break]";
+	if the stomach-slime of the player > 0:
+		say "[variable custom style]Luckily for me, I recently drank [slime]...[roman type][line break]";
 	otherwise if the stomach-semen of the player > 0:
 		say "[variable custom style]Luckily for me, I recently swallowed [semen]...[roman type][line break]".
 
@@ -716,7 +716,7 @@ Definition: bag-feeding-pee-time is appropriate:
 	if the player is bursting and the player is not fake bursting and the noun is yellow themed, decide yes;
 	decide no.
 To execute (E - bag-feeding-pee-time):
-	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. You feel a bit more desperate to go to the loo...";
+	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. [if legacy watersports fetish is 1]You feel a bit more desperate to go to the loo[otherwise]Your slimeshooter seems a bit more full[end if]...";
 	BladderUp 2.
 
 bag-feeding-heels is a bag-feeding-effect.
@@ -765,7 +765,7 @@ Definition: bag-feeding-diaper is appropriate:
 	if the noun is diaper and the player is not bladder incontinent and the bladder-incontinence of the player < the max-bladder-incontinence of the player, decide yes;
 	decide no.
 To execute (E - bag-feeding-diaper):
-	say "Your bag reacts to the diaper! You feel a twinge behind your bladder as it weakens...";
+	say "Your bag reacts to the diaper! You feel a twinge behind your [SlimeContainer] as it weakens...";
 	SilentlyBladderIncontinenceUp 1.
 
 bag-feeding-dry-diaper is a bag-feeding-effect.

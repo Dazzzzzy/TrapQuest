@@ -3,7 +3,7 @@ Goblin by Monster begins here.
 a goblin is a kind of monster. a goblin is male. a goblin is intelligent.
 
 Definition: a goblin is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 Definition: a goblin is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]

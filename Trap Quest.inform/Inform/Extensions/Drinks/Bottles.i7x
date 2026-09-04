@@ -265,13 +265,13 @@ To Dump (X - a bottle):
 	if the fill-type of X is 20:
 		SemenPuddleUp 2 * the doses of X;
 	if the fill-type of X is 21:
-		UrinePuddleUp 2 * the doses of X;
+		SlimePuddleUp 2 * the doses of X;
 	if the fill-type of X is 22:
 		MilkPuddleUp 2 * the doses of X;
 	if the fill-type of X is 23:
 		SemenPuddleUp the doses of X;
 		if watersports mechanics is 1:
-			UrinePuddleUp the doses of X;
+			SlimePuddleUp the doses of X;
 		if lactation fetish is 1:
 			MilkPuddleUp the doses of X;
 	if X is non-empty, trigger spill-wisp-trigger;

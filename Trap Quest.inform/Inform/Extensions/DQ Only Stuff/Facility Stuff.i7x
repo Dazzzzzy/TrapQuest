@@ -33,13 +33,13 @@ To say WhereAnswer of (M - tutor-brooke):
 	say "[speech style of M]'[if the rank of the player <= 1]Somewhere people can be safe while learning how not to look like an idiot.'[otherwise]All it takes is putting in more dedication than your peers.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - tutor-brooke):
-	say "[speech style of M]'Things that only potty trained girls and boys are allowed to see.'[roman type][line break]".
+	say "[speech style of M]'Things that only [SlimeTargetP] trained girls and boys are allowed to see.'[roman type][line break]".
 
 To say StoryAnswer of (M - a tutor-brooke):
 	say "[speech style of M]'While the outside world still considers diaper-based training a [']human rights violation['], we see things a bit differently here.'[roman type][line break]".
 
 To say AdviceAnswer of (M - tutor-brooke):
-	say "[speech style of M]'Just DON'T pee your pants! How do you all struggle with something so simple?!'[roman type][line break]".
+	say "[speech style of M]'Just DON'T [slime] your pants! How do you all struggle with something so simple?!'[roman type][line break]".
 
 Part - Amicable Trainee Jennifer
 
@@ -141,10 +141,10 @@ To update name of (M - trainee-polly):
 	if the current-rank of M is 3:
 		now the trainee-name of M is "Polly";
 	otherwise:
-		now the trainee-name of M is "Potty".
+		now the trainee-name of M is the substituted form of "[big SlimeTargetP]".
 
 To say StoryAnswer of (M - trainee-polly):
-	say "[speech style of M]'I have a weak bladder, and so I've been wearing diapers for a long time. It's made it difficult to find lasting romance. The mistress told me that there's a huge number of people out there who find people like me really adorable, and the tutors here are helping me understand how to make sure I'm exactly like the girl in their fantasies.'[roman type][line break]".
+	say "[speech style of M]'I have a weak [SlimeContainer], and so I've been wearing diapers for a long time. It's made it difficult to find lasting romance. The mistress told me that there's a huge number of people out there who find people like me really adorable, and the tutors here are helping me understand how to make sure I'm exactly like the girl in their fantasies.'[roman type][line break]".
 
 To say WhereAnswer of (M - trainee-polly):
 	say "[speech style of M]'I thought we were just supposed to do whatever the tutors tell us?'[roman type][line break]".]
@@ -340,7 +340,7 @@ To decide which figure-name is the monster-image of (M - trainee-minnie):
 	decide on figure of minnie.
 
 To say MonsterDesc of (M - trainee-minnie):
-	say "This [if the current-rank of M is 4]happy[otherwise]blank[end if] looking [boy of M] is not wearing anything at all except a big white diaper. [big his of M] hair is tied into large bushy pigtails. [if the current-rank of M is 4]A tell-tale yellow stain shows you that [he of M][']s definitely not dry[otherwise][big his of M] padding is completely saturated with [urine] to the point of bursting, which is making it sag down low beneath [his of M] crotch[end if].".
+	say "This [if the current-rank of M is 4]happy[otherwise]blank[end if] looking [boy of M] is not wearing anything at all except a big white diaper. [big his of M] hair is tied into large bushy pigtails. [if the current-rank of M is 4]A tell-tale yellow stain shows you that [he of M][']s definitely not dry[otherwise][big his of M] padding is completely saturated with [slime] to the point of bursting, which is making it sag down low beneath [his of M] crotch[end if].".
 
 The min-rank of trainee-minnie is 4.
 The current-rank of trainee-minnie is 4.
@@ -363,13 +363,13 @@ To say WhereAnswer of (M - trainee-minnie):
 	say "[speech style of M]'[if the current-rank of M is 4]I don't really know, I just keep enjoying wetting myself and they seem to like it[otherwise][trainee-name of M] doesn't know, [he of M] just keeps doing the feel good thing and it makes things feel good[end if]...'[roman type][line break]".
 
 To say AdviceAnswer of (M - trainee-minnie):
-	say "[speech style of M]'Using the big [boy of the player] potty is a big no-no!'[roman type][line break]".
+	say "[speech style of M]'Using the big [boy of the player] [SlimeTargetP] is a big no-no!'[roman type][line break]".
 
 To say EscapeAnswer of (M - trainee-minnie):
 	say "[speech style of M]'I bet there's more good feelings! Yay!'[roman type][line break]".
 
 To compute teaching offer of (M - trainee-minnie):
-	say "[speech style of M]'Peepee comes out of [if the current-rank of M is 4]your down-there[otherwise]the tinkle[end if] place.'[roman type][line break]".]
+	say "[speech style of M]'[big slime][slime] comes out of [if the current-rank of M is 4]your down-there[otherwise]the tinkle[end if] place.'[roman type][line break]".]
 
 Part - Chess Stuff
 
@@ -414,7 +414,7 @@ To decide which figure-name is chess-table-image:
 
 To say ExamineDesc of (C - chess table):
 	if chess-victor of chess-training is 1:
-		say "The chess table and bondage chair where [NameDesc of chess-opponent of chess-training] is stuck in a giant [if diaper messing >= 3]messy[otherwise]piss-soaked[end if] diaper and nothing else, covered in humiliating writing.";
+		say "The chess table and bondage chair where [NameDesc of chess-opponent of chess-training] is stuck in a giant [if diaper messing >= 3]messy[otherwise][slime]-soaked[end if] diaper and nothing else, covered in humiliating writing.";
 	otherwise:
 		say "The chess table and bondage chair where the infamous chess competitions are held[unless C is grabbing the player]. You remember it well[end if].".
 
@@ -501,7 +501,7 @@ To compute teaching of (L - chess-training):
 		update arousal;
 		now the player is in Facility16;
 		say "You are led up onto the stage along with [NameDesc of ST], where a unique scene awaits you. Two chairs sit either side of a chess table, but the seats are missing - there's just chair frames. The frames have modern-looking cuffs at the bottom of the front two legs, clearly to keep anyone sitting there locked in place by the ankles. A pressure plate sits underneath each chair frame, with an electronic wire leading to the other seat's anklecuffs. The chess board has a chess clock next to it, which has a large clear container with some orange liquid bubbling away inside it[if diaper messing >= 3] and the word 'NUTRI-LAX' on the side[end if]. This container has two clear tubes running from it, each with a pacifier gag at the end.[paragraph break]You and [NameDesc of ST] are led to the chairs, where you are made to sit down, your giant diapers squashing into the holes where the seats should have been and sort-of holding your weight, along with your thighs on the fronts of the frames. Your ankles are secured in the cuffs and each of you gets a pacifier-tube-gag locked in your mouth. Now, [if mistress is alive][NameDesc of mistress][otherwise][NameDesc of M][end if] speaks to everyone.";
-		say "[speech style of mistress]'Welcome to the second ever [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, babies, you will be force-fed our special [if diaper messing >= 3]NUTRI-LAX brew which makes you desperate to go and increases the bulk of your poopsies[otherwise]brew which is designed to fill up your bladder super fast and make it hard to hold on[end if]! There are two ways to lose: either you get checkmated, or you fill your Pampers so much that your diaper stretches to the pressure pad below you and releases your opponent. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... artistry from anyone with a funny idea and a marker pen, and won't get released until, well, until I decide so. Which is usually quite a long time! And with the stakes made clear, let's get this game underway!'[roman type][line break]That orange-gold liquid begins to emerge from the container, flowing through the tube and into [NameDesc of ST][']s mouth, from whom you hear a muffled [second custom style]Eep![roman type] followed by audible gulping and swallowing. [big he of ST][']s got the white pieces so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] face and instead begins to travel towards you! A moment later you are being forced to swallow a gulp of the foul-tasting fizzy concoction. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. The game has begun.";
+		say "[speech style of mistress]'Welcome to the second ever [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, babies, you will be force-fed our special [if diaper messing >= 3]NUTRI-LAX brew which makes you desperate to go and increases the bulk of your poopsies[otherwise]brew which is designed to fill up your [SlimeContainer] super fast and make it hard to hold on[end if]! There are two ways to lose: either you get checkmated, or you fill your Pampers so much that your diaper stretches to the pressure pad below you and releases your opponent. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... artistry from anyone with a funny idea and a marker pen, and won't get released until, well, until I decide so. Which is usually quite a long time! And with the stakes made clear, let's get this game underway!'[roman type][line break]That orange-gold liquid begins to emerge from the container, flowing through the tube and into [NameDesc of ST][']s mouth, from whom you hear a muffled [second custom style]Eep![roman type] followed by audible gulping and swallowing. [big he of ST][']s got the white pieces so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] face and instead begins to travel towards you! A moment later you are being forced to swallow a gulp of the foul-tasting fizzy concoction. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. The game has begun.";
 		now chess table is in Facility16;
 		now chess table is grabbing the player;
 		now the chess-opponent of chess-training is ST;
@@ -550,7 +550,7 @@ To compute chess time:
 	otherwise if chess-move-choice > 10:
 		now the chess-turn of chess-training is 1; [It was the player's turn, but they did their move]
 	otherwise if chess-turn of chess-training is 0 and the trainee-rectum of chess-training > a random number between 4 + (the trainee-diaper of chess-training / 10) and 14: [Player waits, opponent messes]
-		say "[BigNameDesc of ST] takes this brief reprieve as an opportunity to release [his of ST] hold on [his of ST] bladder[if diaper messing >= 3] and bowels[end if], the noise clearly audible to everyone in the hall. ";
+		say "[BigNameDesc of ST] takes this brief reprieve as an opportunity to release [his of ST] hold on [his of ST] [SlimeContainer][if diaper messing >= 3] and bowels[end if], the noise clearly audible to everyone in the hall. ";
 		compute trainee chess soiling;
 	if the chess-victor of chess-training is 0:
 		compute chess players thinking;
@@ -567,7 +567,7 @@ To compute chess time:
 			compute bladder growth;
 		if the player is bursting:
 			increase player-bladder-penalty of chess-training by 1;
-			if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if chess-thinking-penalty >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bladder[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bladder[end if].[roman type][line break]";
+			if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to [SlimeShoot], which is making it more difficult for you to concentrate[otherwise if chess-thinking-penalty >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your [SlimeContainer][otherwise]You would find it significantly easier to think if you didn't have to focus on holding your [SlimeContainer][end if].[roman type][line break]";
 			if the player is a bit horny and chess-thinking-penalty < saved-flat-dexterity + 4, say "[bold type]Also, you are [if the player is very horny]very horny[otherwise]rather turned on[end if], which is further hindering your ability to think.[roman type][line break]";
 		otherwise:
 			now player-bladder-penalty of chess-training is 0;
@@ -593,7 +593,7 @@ To compute opponent chess turn:
 	let ST be the chess-opponent of chess-training;
 	now the chess-turn of chess-training is 0; [Let's assume this ends their turn]
 	let D be a random worn diaper;
-	let mess-factor be (the urine-soak of D * 55) / the soak-limit of D; [we want to calculate who's winning on the diaper front]
+	let mess-factor be (the slime-soak of D * 55) / the soak-limit of D; [we want to calculate who's winning on the diaper front]
 	if diaper messing >= 3, now mess-factor is (the mess of D * 55) / 40;
 	decrease mess-factor by the trainee-diaper of chess-training; [So now, a positive number means that the opponent is winning in the diaper front]
 	increase mess-factor by the lost-pieces of chess-training - the trainee-lost-pieces of chess-training; [A positive number means that the opponent is LOSING the chess game (so they need to spend more time thinking to catch up)]
@@ -846,15 +846,15 @@ To compute chess messing:
 
 To compute chess urination:
 	let D be a random worn diaper;
-	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking your padding with [if the urine-soak of D > 0]even more [end if][urine], right in front of the entire institution. [moderateHumiliateReflect]";
-	UrineSoakUp D by the bladder of the player;
+	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your [SlimeContainer], soaking your padding with [if the slime-soak of D > 0]even more [end if][slime], right in front of the entire institution. [moderateHumiliateReflect]";
+	SlimeSoakUp D by the bladder of the player;
 	now the bladder of the player is 0;
 	if the diaper addiction of the player > 14 and the player is able to get horny:
 		say "Your arousal grows.";
 		arouse 200 * (the diaper addiction of the player - 14);
 	if diaper messing < 3: [we only use this metric if messing is disabled]
 		if the total-soak of D < the soak-limit of D:
-			now the player-latest-percent of chess-training is (the urine-soak of D * 10) / the soak-limit of D;
+			now the player-latest-percent of chess-training is (the slime-soak of D * 10) / the soak-limit of D;
 			if the total-soak of D > 5, say "Your diaper stretches and expands to the point where it's about [bold type][player-latest-percent of chess-training]0%[roman type] of the way down to the pressure plate!";
 		otherwise:
 			compute chess loss;
@@ -904,7 +904,7 @@ To compute chess move input:
 		if trapping-move of chess-training <= 0, set numerical response 4 to "make a trapping move";
 		if great-move of chess-training <= 0, set numerical response 5 to "make a great move";
 	if rectum > 1 or the player is feeling full, set numerical response 6 to "mess yourself";
-	if the player is bursting, set numerical response 7 to "wet yourself";
+	if the player is bursting, set numerical response 7 to "[slimedrain] on yourself";
 	if the player is a bit horny, set numerical response 8 to "masturbate";
 	set numerical response 9 to "wait and think";
 	set numerical response 0 to "look";
@@ -919,7 +919,7 @@ To compute chess move input:
 	otherwise if chess-move matches the text "mess":
 		now chess-move-choice is 2;
 		compute chess messing;
-	otherwise if chess-move matches the text "wet":
+	otherwise if chess-move matches the text "yourself":
 		now chess-move-choice is 3;
 		compute chess urination;
 	otherwise if chess-move is "masturbate":
@@ -994,7 +994,7 @@ To compute chess win:
 	say "You watch as the ID card inside your armband transforms!";
 	now the armband-title of armband is "Priscilla";
 	if diaper messing >= 3, now the armband-print of armband is "prudent pooper";
-	otherwise now the armband-print of armband is "proud pottypants";
+	otherwise now the armband-print of armband is "proud [SlimeTargetP]pants";
 	say ClothingDesc of armband;
 	compute chess win reward.
 
@@ -1214,7 +1214,7 @@ To compute teaching of (L - enema-race-training):
 						say "The act of [if diaper messing < 3]expelling an enema[otherwise]pooping yourself[end if] is not a normal one to be doing while running, so you find yourself slowed down as you fill your puffy Pampers.";
 						decrease D1 by 2;
 					now M1 is -1;
-					UrineSoakUp D by the soak-limit of D - the total-soak of D;
+					SlimeSoakUp D by the soak-limit of D - the total-soak of D;
 					if diaper messing > 3, MessUp D by 20;
 					force immediate clothing-focus redraw;
 					if D1 >= 0 and S2 is not tryhard trainee:
@@ -1311,7 +1311,7 @@ To compute teaching of (L - enema-race-training):
 			if diaper messing >= 3, now the armband-print of armband is "speedy stinker";
 			otherwise now the armband-print of armband is "soggy sprinter";
 			say ClothingDesc of armband;
-			say "[speech style of M]'As for you, [trainee-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other trainee and tutor your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up toilet in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";
+			say "[speech style of M]'As for you, [trainee-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other trainee and tutor your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up [SlimeTarget] in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";
 			HappinessDown S2 by 3;
 			update trainees; [an important line which makes boring old trainees disappear and new cool ones appear]
 		otherwise:
@@ -1333,7 +1333,7 @@ To compute teaching of (L - enema-race-training):
 		say "Meanwhile [NameDesc of S2] is having problems of [his of S2] own. [big he of S2] grips [his of S2] belly in panic as [he of S2] travels around the track. [big his of S2] lead on [NameDesc of S1] continues to grow but only up until the point that [he of S2] loses control [himself of S2]. If anything the trumpeting coming from [his of S2] butthole is even louder than [NameDesc of S1][']s had been! [big he of S2] groans with audible discomfort as [he of S2] fills the seat of [his of S2] nappy with [his of S2] shame. [big his of S2] sprint turns into a jog turns into an awkward walk as [he of S2] loudly [if diaper messing >= 3]poops [his of S2] pants[otherwise]expels [his of S2] enema[end if]. By the time [he of S2]'s finished and has regained [his of S2] wits [NameDesc of S1] is once again at [his of S2] heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful [men of S1] with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives [him of S1] the advantage - when [NameDesc of M] blows the whistle [he of S1] has managed to grab the lead by less than a metre. They both collapse to the ground, completely exhausted.";
 		say "[speech style of M]'What a great race! [trainee-name of S1], congratulations on your win. You deserve this.'[roman type][line break]";
 		promote S1;
-		say "[speech style of M]'As for you, [trainee-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other trainee and tutor your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up toilet in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";
+		say "[speech style of M]'As for you, [trainee-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other trainee and tutor your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up [SlimeTarget] in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";
 		increase the trainee-extra-diapers of S1 by 2;
 		increase the trainee-diaper-mess of S1 by 2;
 		increase the trainee-diaper-mess of S2 by 2;
@@ -1450,7 +1450,7 @@ To compute teaching of (L - dodgeball-training):
 				say "[one of]Jumping will avoid all low attacks (but costs energy), ducking will avoid all high attacks (but costs energy), and readying your hands gives you a small bonus to dodging either. [bold type]Also, jumping or ducking might make your messy diaper squelch, which would be rather gross[if the grossness addiction of the player < 6] and upsetting[end if].[roman type][line break][or][stopping]";
 			otherwise:
 				say "[one of]Jumping will avoid all low attacks (but costs energy), ducking will avoid all high attacks (but costs energy), and readying your hands gives you a small bonus to dodging either.[or][stopping]";
-			say "[one of][bold type]Your energy level effects how accurate your throws are.[roman type][line break][or][stopping]";
+			say "[one of][bold type]Your energy level affects how accurate your throws are.[roman type][line break][or][stopping]";
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			set numerical response 1 to "stay still and ready your hands";
 			set numerical response 2 to "jump";
@@ -1653,7 +1653,7 @@ To say StoryAnswer of (M - a tutor-kaylee):
 	say "[speech style of M]'If you believe the [man of ex-princess] in the diaper pail, this whole place is a pocket dimension created by a single powerful entity as a safe and fun place for submissives to let off some steam. What a load of bullshit, haha!'[roman type][line break]".
 
 To say AdviceAnswer of (M - tutor-kaylee):
-	say "[speech style of M]'Don't trust toilets. Big [boy of M] potties are evil and mean and nasty. It is known.'[roman type][line break]".
+	say "[speech style of M]'Don't trust [SlimeTarget]s. Big [boy of M] potties are evil and mean and nasty. It is known.'[roman type][line break]".
 
 To compute teaching offer of (M - tutor-kaylee):
 	say "[speech style of M]'I'm going to teach you to fully dedicate yourself to diapers, so that you can become the perfect sexy submissive.'[roman type][line break]".
@@ -1719,7 +1719,7 @@ An all time based rule (this is the staff room rule):
 					add Figure of staff room 11 to temporary-map-figures, if absent;
 			if previousStaffRoomTrainees < retiredTrainees:
 				if previousStaffRoomTrainees is 0:
-					say "Stepping into the [']Staff Room['] for the first time, you can't believe what you see. There are [retiredTrainees] PEOPLE - REAL LIFE HUMAN BEINGS - diapered and permanently installed as PIECES OF FURNITURE for the staff to use for their comfort and leisure[if watersports fetish is 1]... And to relieve their bladders[end if].[line break][roman type][variable custom style]Don't tell me... Every trainee that got sent to the staff room for [']processing[']... actually got abducted and turned into one of these... These THINGS?![roman type][line break]";
+					say "Stepping into the [']Staff Room['] for the first time, you can't believe what you see. There are [retiredTrainees] PEOPLE - REAL LIFE HUMAN BEINGS - diapered and permanently installed as PIECES OF FURNITURE for the staff to use for their comfort and leisure[if watersports fetish is 1]... And to relieve their [SlimeContainer]s[end if].[line break][roman type][variable custom style]Don't tell me... Every trainee that got sent to the staff room for [']processing[']... actually got abducted and turned into one of these... These THINGS?![roman type][line break]";
 				let PS be retiredTrainees - previousStaffRoomTrainees;
 				say "You survey the scene in front of you with [horror the sex addiction of the player].[if previousStaffRoomTrainees is 0]But regardless[otherwise][line break][variable custom style][retiredTrainees] total... [PS] more than the last time I checked.[roman type][line break]Regardless[end if] of your feelings, you can't help but feel proud of yourself for not having been foolish enough to end up in that situation yourself. You feel your own self-esteem swelling as you observe the [if previousStaffRoomTrainees > 0]new [end if]pathetic diapered pieces of human funiture that can be found here.";
 				dignify PS * 2000;

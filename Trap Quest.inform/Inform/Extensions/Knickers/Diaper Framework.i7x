@@ -19,17 +19,17 @@ Definition: a diaper (called D) is same-type:
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
-A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
+A diaper has a number called perceived-slime-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
 
 To uniquely destroy (C - a diaper):
 	now the perceived-mess of C is 0;
-	now the perceived-urine-soak of C is 0;
+	now the perceived-slime-soak of C is 0;
 	now the perceived-water-soak of C is 0;
 	now the perceived-semen-soak of C is 0;
 	now the perceived-milk-soak of C is 0.
 
-To decide which number is the known-urine-soak of (C - a clothing):
-	decide on the urine-soak of C.
+To decide which number is the known-slime-soak of (C - a clothing):
+	decide on the slime-soak of C.
 To decide which number is the known-milk-soak of (C - a clothing):
 	decide on the milk-soak of C.
 To decide which number is the known-semen-soak of (C - a clothing):
@@ -39,8 +39,8 @@ To decide which number is the known-water-soak of (C - a clothing):
 To decide which number is the known-mess of (C - a knickers):
 	decide on the mess of C.
 
-To decide which number is the known-urine-soak of (C - a diaper):
-	decide on the perceived-urine-soak of C.
+To decide which number is the known-slime-soak of (C - a diaper):
+	decide on the perceived-slime-soak of C.
 To decide which number is the known-milk-soak of (C - a diaper):
 	decide on the perceived-milk-soak of C.
 To decide which number is the known-semen-soak of (C - a diaper):
@@ -59,23 +59,25 @@ To process state perception of (C - a diaper):
 	if diaper-stack is worn:
 		process state perception of diaper-stack;
 	otherwise:
-		now the perceived-urine-soak of C is the urine-soak of C;
-		now the perceived-milk-soak of C is the milk-soak of C;
-		now the perceived-water-soak of C is the water-soak of C;
-		now the perceived-semen-soak of C is the semen-soak of C;
-		if the perceived-mess of C is not the mess of C:
-			now the perceived-mess of C is the mess of C;
-			if the perceived-mess of C > 0, progress quest of mess-quest.
-
-To process state perception of (D - diaper-stack):
-	repeat with C running through the list of stacked diapers:
-		now the perceived-urine-soak of C is the urine-soak of C;
+		now the perceived-slime-soak of C is the slime-soak of C;
 		now the perceived-milk-soak of C is the milk-soak of C;
 		now the perceived-water-soak of C is the water-soak of C;
 		now the perceived-semen-soak of C is the semen-soak of C;
 		if the perceived-mess of C is not the mess of C:
 			now the perceived-mess of C is the mess of C;
 			if the perceived-mess of C > 0, progress quest of mess-quest;
+			refresh the graphics-window;
+
+To process state perception of (D - diaper-stack):
+	repeat with C running through the list of stacked diapers:
+		now the perceived-slime-soak of C is the slime-soak of C;
+		now the perceived-milk-soak of C is the milk-soak of C;
+		now the perceived-water-soak of C is the water-soak of C;
+		now the perceived-semen-soak of C is the semen-soak of C;
+		if the perceived-mess of C is not the mess of C:
+			now the perceived-mess of C is the mess of C;
+			if the perceived-mess of C > 0, progress quest of mess-quest;
+			refresh the graphics-window;
 	update diaper stack.
 
 To compute state check of (C - a clothing):
@@ -85,9 +87,9 @@ To compute awakened state check of (C - a clothing): [If the player goes DOWN fr
 	if C is diaper:
 		say "[bold type]For the first time in a while you actually check the state of your [ShortDesc of C][roman type]. ";
 		if C is messed and C is perceived unmessed:
-			say "Oh gosh! It turns out you've [if the known-total-soak of C < the total-soak of C]wet and [end if]messed yourself without even realising it!";
+			say "Oh gosh! It turns out you've [if the known-total-soak of C < the total-soak of C]wet and [end if]messed yourself without even realising it![line break][one of][variable custom style]I had a whole bowel movement without noticing a thing?! I didn't know such levels of incontinence were even possible! How long have I been [if the player is prone]crawling[otherwise]waddling[end if] around messy without even knowing it?![roman type][line break][or][stopping]";
 		otherwise if the known-total-soak of C < the total-soak of C:
-			say "Oh my, it turns out you've wet your diaper [if the known-urine-soak of C > 0]even more [end if]without even realising it!";
+			say "Oh my, it turns out you've wet your diaper [if the known-slime-soak of C > 0]even more [end if]without even realising it!";
 		otherwise if C is messed:
 			if the known-total-soak of C > 0, say "It's just as wet and messy as it was last time you checked[if the known-total-soak of C >= the soak-limit of C]. That is to say, it's still completely saturated[end if].";
 			otherwise say "It's still messy, just like before, but at least it's not any wetter.";
@@ -99,9 +101,9 @@ To compute awakened state check of (C - a clothing): [If the player goes DOWN fr
 To compute automatic state check of (C - a clothing):
 	if C is diaper and the player is not diaper aware:
 		if C is messed and C is perceived unmessed:
-			say "[bold type]At this moment you realise that you've [if the known-total-soak of C < the total-soak of C]wet and [end if]messed yourself without even realising it![roman type][line break]";
+			say "[bold type]At this moment you realise that you've [if the known-total-soak of C < the total-soak of C]gotten [slime] on and [end if]messed yourself without even realising it![roman type][line break]";
 		otherwise if the known-total-soak of C < the total-soak of C:
-			say "[bold type]Looking down, you discover you've wet your diaper [if the known-urine-soak of C > 0]even more [end if]without even realising it![roman type][line break]";
+			say "[bold type]Looking down, you discover you've gotten [slime] in your diaper [if the known-slime-soak of C > 0]even more [end if]without even realising it![roman type][line break]";
 		process state perception of C.
 
 To compute combat diaper squish:
@@ -115,7 +117,7 @@ To decide which number is the known-total-soak of (D - a clothing):
 	decide on the total-soak of D.
 
 To decide which number is the known-total-soak of (D - a diaper):
-	decide on the perceived-urine-soak of D + the perceived-milk-soak of D + the perceived-water-soak of D + the perceived-semen-soak of D.
+	decide on the perceived-slime-soak of D + the perceived-milk-soak of D + the perceived-water-soak of D + the perceived-semen-soak of D.
 
 Definition: a clothing (called D) is dry rather than wet:
 	if the total-soak of D <= 0, decide yes;
@@ -198,13 +200,13 @@ Definition: a pink bikini bottoms is soilable: decide no.
 Definition: a crotchless bikini bottoms is soilable: decide no.
 
 To clean (C - a knickers):
-	now the urine-soak of C is 0;
+	now the slime-soak of C is 0;
 	now the milk-soak of C is 0;
 	now the semen-soak of C is 0;
 	now the foreign-mess of C is 0;
 	MessSet C to 0;
 	if C is diaper:
-		now the perceived-urine-soak of C is 0;
+		now the perceived-slime-soak of C is 0;
 		now the perceived-milk-soak of C is 0;
 		now the perceived-semen-soak of C is 0;
 	if C is listed in the list of stacked diapers, update diaper stack;
@@ -232,7 +234,7 @@ To say ExamineDesc of (C - a diaper):
 	if C is crotch-unzipped:
 		say "The crotch is currently unzipped.";
 	otherwise if C is no protection:
-		say "A large tear at the crotch means that your orifices are left unguarded, and urinating will inevitably still cause you to make a mess.".
+		say "A large tear at the crotch means that your orifices are left unguarded, and [SlimeDraining] will inevitably still cause you to make a mess.".
 
 To decide which number is the original price of (C - a diaper):
 	decide on 1.
@@ -278,7 +280,7 @@ To compute periodic effect of (D - a diaper):
 	compute unique periodic effect of D;
 	if D is no protection and D is not crotch-unzipped and (D is cursed or D is blessed):
 		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and the player is not in danger and (the soak-limit of D / 2 > the total-soak of D):
-			say "[bold type]You feel your [D] somehow repair itself! The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
+			say "[bold type]You feel your [D] somehow repair itself! The rip at the crotch disappears, leaving it looking brand new[if the slime-soak of D > 0] (apart from the [slime])[end if].[roman type][line break]";
 			repair D;
 	increase the curse-charge of D by 1;
 	if the curse-charge of D > 35:
@@ -291,8 +293,8 @@ To compute periodic effect of (D - a diaper):
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
-			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
-			AnnouncedExpel urine on D by 12;
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be [SlimeDraining] [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if [if slimeshooter fetish is 1]your slimeshooter is draining itself.[otherwise]you are wetting yourself.[end if] ";
+			AnnouncedExpel slime on D by 12;
 			now demon lord is inseminating D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
@@ -516,10 +518,10 @@ To say diaper-saturation-desc of (C - a diaper):
 	if C is worn, say "[if the weight of C is 0]It doesn't weigh you down at all.[otherwise if the weight of C is 1]It is weighing you down a tiny amount.[otherwise if the weight of C is 2]It is weighing you down a noticeable amount.[otherwise if the weight of C is 3]It is quite heavy now and the bloated nature is forcing you to walk with a waddle.[otherwise if the weight of C is 4]It is very noticeably weighing you down and making it impossible to walk without a waddle.[otherwise if the weight of C is 5]It is adding significant amounts to your body weight and is forcing your legs apart into an exaggerated waddle.[otherwise if the weight of C is 6]It is extremely heavy and has expanded to a comical size. Your thighs are forced wide apart and you can't bend your knees at all when you walk.[otherwise]It is so heavy from all the [soak-types of C] it is holding that it feels like it is made of lead. The puffy padding has expanded so far in every direction that you can no longer see your feet. You can feel that the bottom of the diaper goes down past your knees. Your thighs and legs are forced so far apart that you can only move by waddling along with the tiniest of steps. You would probably be better off crawling.".
 
 Report wearing diaper:
-	if the urine-soak of the noun > 0:
+	if the slime-soak of the noun > 0:
 		say "The cold wet squelch as you put the [noun] on makes you [if the diaper addiction of the player < 10]shudder involuntarily. How gross[otherwise if the diaper addiction of the player < 14]squirm uncomfortably. It's cold and clammy[otherwise]shiver with arousal[end if].";
 		if the diaper addiction of the player >= 14, stimulate vagina from the noun;
-		DiaperAddictUp 1;
+		SlowDiaperAddictUp 1;
 	if diaper messing is 3 and the player is feeling full:
 		say "Almost as if a switch is flicked inside your stomach, you suddenly feel the [if rectum > 6]desperate [end if]need to go number two.[one of][line break][variable custom style]It's like I only can feel the need to go whilst wearing a diaper?! This game is [if the bimbo of the player < 10]fucked up[otherwise]weird[end if]![roman type][line break][or][stopping]";
 
@@ -539,7 +541,7 @@ Definition: a knickers is removable:
 	decide yes.
 
 To say MonsterOfferRejectFlav of (M - an intelligent monster) to (T - a diaper):
-	say "[speech style of M]'Do I look like I have problems controlling my bladder?!'[roman type][line break]".
+	say "[speech style of M]'Do I look like I have problems controlling my [SlimeContainer]?!'[roman type][line break]".
 
 Definition: a diaper is transformation-theme-blockable: decide no.
 Definition: a diaper is disintegration-protected: decide yes.
@@ -563,7 +565,7 @@ To decide which object is the potential-upgrade-target of (C - a diaper):
 	decide on D4. [couldn't find a good option, so fuck you, you get a waddle diaper. Hopefully this is rare unless the player is in a giant diaper]
 
 Check taking off worn diaper:
-	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead.
+	if there is a worn I love my wet nappies T-shirt and the slime-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead.
 
 Part - Diaper Functions
 
@@ -722,7 +724,7 @@ To late uniquely destroy (C - diaper-stack):
 		set up D;
 	truncate the list of stacked diapers to 0 entries;
 	now the perceived-mess of C is 0;
-	now the perceived-urine-soak of C is 0;
+	now the perceived-slime-soak of C is 0;
 	now the perceived-water-soak of C is 0;
 	now the perceived-semen-soak of C is 0;
 	now the perceived-milk-soak of C is 0.
@@ -788,9 +790,9 @@ To decide which object is the concealer of (K - diaper-stack): [Nothing can comp
 To SemenSoakUp (C - diaper-stack) by (N - a number):
 	now previous-clothing-glazed is -1; [force appearance reassessment]
 	SemenSoakUp entry 1 of the list of stacked diapers by N.
-To UrineSoakUp (C - diaper-stack) by (N - a number):
+To SlimeSoakUp (C - diaper-stack) by (N - a number):
 	now previous-clothing-glazed is -1; [force appearance reassessment]
-	UrineSoakUp entry 1 of the list of stacked diapers by N.
+	SlimeSoakUp entry 1 of the list of stacked diapers by N.
 To MilkSoakUp (C - diaper-stack) by (N - a number):
 	now previous-clothing-glazed is -1; [force appearance reassessment]
 	MilkSoakUp entry 1 of the list of stacked diapers by N.
@@ -800,8 +802,8 @@ To WaterSoakUp (C - diaper-stack) by (N - a number):
 
 To LiquidSoak (L - semen) On (C - diaper-stack):
 	SemenSoakUp entry 1 of the list of stacked diapers by 1.
-To LiquidSoak (L - urine) On (C - diaper-stack):
-	UrineSoakUp entry 1 of the list of stacked diapers by 1.
+To LiquidSoak (L - slime) On (C - diaper-stack):
+	SlimeSoakUp entry 1 of the list of stacked diapers by 1.
 To LiquidSoak (L - milk) On (C - diaper-stack):
 	MilkSoakUp entry 1 of the list of stacked diapers by 1.
 To LiquidSoak (L - water) On (C - diaper-stack):
@@ -907,8 +909,8 @@ To update diaper stack:
 		now the foreign-mess of diaper-stack is 0;
 		now the perceived-mess of diaper-stack is 0;
 		now the raw-soak-limit of diaper-stack is 0;
-		now the urine-soak of diaper-stack is 0;
-		now the perceived-urine-soak of diaper-stack is 0;
+		now the slime-soak of diaper-stack is 0;
+		now the perceived-slime-soak of diaper-stack is 0;
 		now the milk-soak of diaper-stack is 0;
 		now the perceived-milk-soak of diaper-stack is 0;
 		now the semen-soak of diaper-stack is 0;
@@ -919,8 +921,8 @@ To update diaper stack:
 			[stats the diaper stack takes from all diapers go here]
 			increase the mess of diaper-stack by the mess of C;
 			increase the perceived-mess of diaper-stack by the perceived-mess of C;
-			increase the urine-soak of diaper-stack by the urine-soak of C;
-			increase the perceived-urine-soak of diaper-stack by the perceived-urine-soak of C;
+			increase the slime-soak of diaper-stack by the slime-soak of C;
+			increase the perceived-slime-soak of diaper-stack by the perceived-slime-soak of C;
 			increase the milk-soak of diaper-stack by the milk-soak of C;
 			increase the perceived-milk-soak of diaper-stack by the perceived-milk-soak of C;
 			increase the semen-soak of diaper-stack by the semen-soak of C;

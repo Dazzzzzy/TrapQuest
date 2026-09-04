@@ -25,6 +25,7 @@ The player has a number called zapskill.
 The player has a number called makeupskill.
 The player has a number called swordskill.
 The player has a number called condomskill.
+The player has a number called messskill.
 
 Part 1 - Mercy
 
@@ -96,11 +97,11 @@ To teach titshow:
 		say "[bold type]You already know how to [if diaper quest is 1]display your breasts with dignity[otherwise]slap with large breasts[end if]![roman type][line break]".
 
 This is the breastskill list rule:
-	if the breastskill of the player is 1, say "You know how to [if diaper quest is 1]display your breasts with dignity[otherwise]slap well with large breasts[end if].".
+	if the breastskill of the player is 1, say "You know how to [if diaper quest is 1]display your breasts with dignity (this does not work in the Extra Credit Zone)[otherwise]slap well with large breasts[end if].".
 The breastskill list rule is listed in the skill listing rules.
 
 This is the breastskill learn rule:
-	if the breastskill of the player is 0, say "You now know how to [if diaper quest is 1]display your breasts with dignity[otherwise]slap well with large breasts[end if].";
+	if the breastskill of the player is 0, say "You now know how to [if diaper quest is 1]display your breasts with dignity (this does not work in the Extra Credit Zone)[otherwise]slap well with large breasts[end if].";
 	now the breastskill of the player is 1.
 The breastskill learn rule is listed in the skill cheating rules.
 
@@ -504,6 +505,28 @@ Understand "memorise [something]", "memorize [something]", "remember [something]
 Does the player mean memorising a recipe:
 	it is very likely.
 
+Part 24 - Stealth Messing
+
+To teach stealthmessing:
+	if the messskill of the player is 0:
+		say "[bold type]**You have learned how to mess stealthily!**[roman type][line break]As long as the back of your diaper isn't visible, other people won't usually be able to tell that you're messing yourself.";
+		now the messskill of the player is 1;
+		reset skill cooldown;
+	otherwise:
+		say "[bold type]You already know how to mess stealthily![roman type][line break]".
+
+This is the stealthmessing list rule:
+	if the messskill of the player is 1, say "You know how to mess yourself without people noticing.".
+The stealthmessing list rule is listed in the skill listing rules.
+
+This is the stealthmessing learn rule:
+	if the remainder after dividing condom fetish by 2 is 1:
+		if the messskill of the player is 0, say "You now know how to mess yourself without people noticing.";
+		now the messskill of the player is 1.
+The stealthmessing learn rule is listed in the skill cheating rules.
+
+Part 99 - Recalling
+
 Recalling is an action applying to nothing.
 Check recalling:
 	if the number of memorised recipes + the number of castable magic-spells is 0, say "You haven't committed anything to memory." instead.
@@ -515,7 +538,7 @@ Carry out recalling:
 	if there is a castable magic-spell:
 		say "[bold type]MEMORISED SPELLS:[roman type][line break]";
 		repeat with R running through castable magic-spells:
-			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R]. Requires [magic-cost of R] magic power.[SpellOutrageousnessInfo of R][line break]";
+			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R]. Requires [magic-cost of R] magic power[if R is magic-purify], [bold type]plus whatever magic power is needed to break down the concentrated energy.[roman type][otherwise].[end if][SpellOutrageousnessInfo of R][line break]";
 	say "[bold type]LEARNED SKILLS:[roman type][line break]";
 	follow the skill listing rules.
 Understand "memory", "recall", "recall recipes", "recipes", "memorised recipes", "known recipes", "recall spells", "spells", "memorised spells", "known spells", "recall skills", "skills", "memorised skills", "known skills", "skill" as recalling.

@@ -218,8 +218,8 @@ To AnythingAddictDown (X - a number):
 				GrossnessAddictDown 1;
 				decrease X by 1;
 		otherwise if N is 7:
-			if watersports fetish > 0 and the raw urine taste addiction of the player > 1:
-				UrineTasteAddictDown 1;
+			if watersports fetish > 0 and the raw slime taste addiction of the player > 1:
+				SlimeTasteAddictDown 1;
 				decrease X by 1;
 		otherwise if N is 8:
 			if (lactation fetish > 0 or diaper quest is 1) and the raw milk taste addiction of the player > 1:
@@ -758,7 +758,7 @@ To SlowGrossnessAddictUp (X - a number):
 	let slowGrossnessLimit be 1;
 	if the raw grossness addiction of the player >= 7, increase slowGrossnessLimit by 1;
 	if the raw grossness addiction of the player >= 14, increase slowGrossnessLimit by (the raw grossness addiction of the player - 12) / 2;
-	if debugmode > 0, say "Grossness threshold is [slowGrossnessLimit] ticks.";
+	if debugmode > 0, say "Slow grossness threshold is [slowGrossnessLimit] ticks.";
 	while X > 0:
 		decrease X by 1;
 		increase slowGrossness by 1;
@@ -766,9 +766,28 @@ To SlowGrossnessAddictUp (X - a number):
 		if slowGrossness > slowGrossnessLimit:
 			if debugmode > 0, say "Grossness addiction increased.";
 			now slowGrossness is 0;
-			GrossnessAddictUp 1.
+			SlowishGrossnessAddictUp 1.
 
+slowishGrossness is a number that varies.
 To GrossnessAddictUp (X - a number):
+	SlowishGrossnessAddictUp X.
+To SlowishGrossnessAddictUp (X - a number):
+	let slowishGrossnessLimit be 0;
+	if diaper messing >= 4, increase slowishGrossnessLimit by 1;
+	if diaper messing >= 7, increase slowishGrossnessLimit by 1;
+	[if the raw grossness addiction of the player >= 7, increase slowishGrossnessLimit by 1;
+	if the raw grossness addiction of the player >= 14, increase slowishGrossnessLimit by (the raw grossness addiction of the player - 12) / 2;]
+	if debugmode > 0, say "Grossness threshold is [slowishGrossnessLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowishGrossness by 1;
+		if debugmode > 0, say "[slowishGrossness - 1] --> [slowishGrossness].";
+		if slowishGrossness > slowishGrossnessLimit:
+			if debugmode > 0, say "Grossness addiction increased.";
+			now slowishGrossness is 0;
+			FinallyGrossnessAddictUp 1.
+
+To FinallyGrossnessAddictUp (X - a number):
 	if grossness fetish > 0 or diaper quest is 1:
 		let S be the raw grossness addiction of the player;
 		SilentlyGrossnessAddictUp X;
@@ -798,75 +817,75 @@ To SilentlyGrossnessAddictDown:
 	if the raw grossness addiction of the player > 1, decrease the raw grossness addiction of the player by 1.
 
 
-Book - Urine Taste Addiction
+Book - slime taste addiction
 
-Part 1 - Calculate Urine Taste Addiction
+Part 1 - Calculate slime taste addiction
 
-To decide which number is the urine-taste-addiction-influence of (C - a wearthing):
+To decide which number is the slime-taste-addiction-influence of (C - a wearthing):
 	decide on 0.
 
-To decide which number is the urine-taste-addiction-influence of (C - a clothing):
-	if C is urine-taste-addiction-influencing:
+To decide which number is the slime-taste-addiction-influence of (C - a clothing):
+	if C is slime-taste-addiction-influencing:
 		let S be 0;
-		decrease S by the magic-modifier of C; [Positive magic = subtracted urine addiction]
+		decrease S by the magic-modifier of C; [Positive magic = subtracted slime addiction]
 		decide on S;
 	decide on 0.
 
-To decide which number is the urine taste addiction of the player:
-	decide on previous-urine-taste-addiction.
+To decide which number is the slime taste addiction of the player:
+	decide on previous-slime-taste-addiction.
 
-To decide which number is the calculated urine taste addiction of the player:
-	let S be the raw urine taste addiction of the player;
+To decide which number is the calculated slime taste addiction of the player:
+	let S be the raw slime taste addiction of the player;
 	repeat with C running through worn wearthings:
-		increase S by the urine-taste-addiction-influence of C;
+		increase S by the slime-taste-addiction-influence of C;
 	if S > 20, decide on 20;
-	if S < 11 and the raw urine taste addiction of the player >= 11, decide on 11;
+	if S < 11 and the raw slime taste addiction of the player >= 11, decide on 11;
 	if S < 1, decide on 1;
 	decide on S.
 
-Part 2 - Modify Urine Taste Addiction
+Part 2 - Modify slime taste addiction
 
-The player has a number called raw urine taste addiction. The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw slime taste addiction. The raw slime taste addiction of the player is usually 1. [Min 1 Max 20]
 
-slowUrineTasteAddiction is a number that varies.
-To SlowUrineTasteAddictUp (X - a number):
-	let slowUrineTasteAddictionLimit be 0;
-	if the urine taste addiction of the player > 4, increase slowUrineTasteAddictionLimit by 1;
-	if the class of the player is cheerleader, increase slowUrineTasteAddictionLimit by 1;
-	if the urine taste addiction of the player > 13, increase slowUrineTasteAddictionLimit by 1;
-	increase slowUrineTasteAddictionLimit by yellow theme bonus;
-	if debugmode > 0, say "Urine taste addiction threshold is [slowUrineTasteAddictionLimit] ticks.";
+slowSlimeTasteAddiction is a number that varies.
+To SlowSlimeTasteAddictUp (X - a number):
+	let slowSlimeTasteAddictionLimit be 0;
+	if the slime taste addiction of the player > 4, increase slowSlimeTasteAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowSlimeTasteAddictionLimit by 1;
+	if the slime taste addiction of the player > 13, increase slowSlimeTasteAddictionLimit by 1;
+	increase slowSlimeTasteAddictionLimit by yellow theme bonus;
+	if debugmode > 0, say "slime taste addiction threshold is [slowSlimeTasteAddictionLimit] ticks.";
 	while X > 0:
 		decrease X by 1;
-		increase slowUrineTasteAddiction by 1;
-		if debugmode > 0, say "[slowUrineTasteAddiction - 1] --> [slowUrineTasteAddiction].";
-		if slowUrineTasteAddiction > slowUrineTasteAddictionLimit:
-			if debugmode > 0, say "Urine taste addiction increased.";
-			now slowUrineTasteAddiction is 0;
-			UrineTasteAddictUp 1.
+		increase slowSlimeTasteAddiction by 1;
+		if debugmode > 0, say "[slowSlimeTasteAddiction - 1] --> [slowSlimeTasteAddiction].";
+		if slowSlimeTasteAddiction > slowSlimeTasteAddictionLimit:
+			if debugmode > 0, say "slime taste addiction increased.";
+			now slowSlimeTasteAddiction is 0;
+			SlimeTasteAddictUp 1.
 
-To UrineTasteAddictUp (X - a number):
+To SlimeTasteAddictUp (X - a number):
 	if watersports fetish is 1:
 		if there is a worn pure totem:
 			let S be a random worn pure totem;
 			say "Your [printed name of S] glows brightly and slowly disintegrates.";
 			only destroy S;
 			decrease X by 3;
-		let U be the urine taste addiction of the player;
-		SilentlyUrineTasteAddictUp X;
-		let U be the urine taste addiction of the player - U;
-		if U > 0, say "You feel [if U > 1]significantly [end if]more [if the urine taste addiction of the player > 13]addicted to[otherwise if the urine taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [urine].".
+		let U be the slime taste addiction of the player;
+		SilentlySlimeTasteAddictUp X;
+		let U be the slime taste addiction of the player - U;
+		if U > 0, say "You feel [if U > 1]significantly [end if]more [if the slime taste addiction of the player > 13]addicted to[otherwise if the slime taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [slime].".
 
-To SilentlyUrineTasteAddictUp (X - a number):
+To SilentlySlimeTasteAddictUp (X - a number):
 	if watersports fetish is 0 or the latex-transformation of the player > 4 or skirted-maid-corset is worn, now X is 0;
 	while X > 0:
 		decrease X by 1;
-		if the raw urine taste addiction of the player < 20, increase the raw urine taste addiction of the player by 1.
+		if the raw slime taste addiction of the player < 20, increase the raw slime taste addiction of the player by 1.
 
-To UrineTasteAddictDown (X - a number):
+To SlimeTasteAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw urine taste addiction of the player > 1 and the raw urine taste addiction of the player is not 11, decrease the raw urine taste addiction of the player by 1.
+		if the raw slime taste addiction of the player > 1 and the raw slime taste addiction of the player is not 11, decrease the raw slime taste addiction of the player by 1.
 
 
 Book - Milk Taste Addiction
@@ -949,8 +968,8 @@ Book - Taste Addiction Overview
 To decide which number is the relevant taste addiction of (L - a liquid-object):
 	if L is semen:
 		decide on the semen taste addiction of the player;
-	otherwise if L is urine:
-		decide on the urine taste addiction of the player;
+	otherwise if L is slime:
+		decide on the slime taste addiction of the player;
 	otherwise if L is milk:
 		decide on the milk taste addiction of the player;
 	otherwise if L is murkwater:
@@ -959,7 +978,7 @@ To decide which number is the relevant taste addiction of (L - a liquid-object):
 
 To decide which number is highest taste addiction:
 	let X be the semen taste addiction of the player;
-	if the urine taste addiction of the player > X, now X is the urine taste addiction of the player;
+	if the slime taste addiction of the player > X, now X is the slime taste addiction of the player;
 	if the milk taste addiction of the player > X, now X is the milk taste addiction of the player;
 	decide on X.
 
@@ -972,9 +991,9 @@ Definition: a liquid-object (called L) is a highest addicted liquid:
 	if diaper quest is 0 and (the semen taste addiction of the player + 1) / 3 is (X + 1) / 3: [this makes 5-7, 8-10, 17-19 etc. considered equal]
 		increase highest-addiction-liquids by 1;
 		if L is semen, now Y is 1;
-	if watersports fetish is 1 and (the urine taste addiction of the player + 1) / 3 is (X + 1) / 3:
+	if watersports fetish is 1 and (the slime taste addiction of the player + 1) / 3 is (X + 1) / 3:
 		increase highest-addiction-liquids by 1;
-		if L is urine, now Y is 1;
+		if L is slime, now Y is 1;
 	if (diaper quest is 1 or lactation fetish is 1) and (the milk taste addiction of the player + 1) / 3 is (X + 1) / 3:
 		increase highest-addiction-liquids by 1;
 		if L is milk, now Y is 1;

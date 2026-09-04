@@ -7,7 +7,7 @@ supporter-ai is a supporter. supporter-ai is female. The leftover-type of suppor
 The supporter-name of supporter-ai is "Ai".
 
 To say MonsterDesc of (M - supporter-ai):
-	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-sucking lips are coloured a deep shade of pink, and two hoops with hearts in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
+	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if andro fetish is 1]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-sucking lips are coloured a deep shade of pink, and two hoops with hearts in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
 
 Figure of Ai is the file "NPCs/MultiFloor/Supporter/aika1.png".
 
@@ -15,7 +15,7 @@ To decide which figure-name is the monster-image of (M - supporter-ai):
 	decide on figure of Ai.
 
 To say ChestDesc of (M - supporter-ai):
-	if lady fetish is 2, say "pecs";
+	if andro fetish is 1, say "pecs";
 	otherwise say "boobs".
 
 To compute perception of (M - supporter-ai):
@@ -42,7 +42,7 @@ To say BoringPerception of (M - supporter-ai):
 	say "[speech style of M]'[one of]Another player, huh? Sorry but I have no interest in banging someone who looks so basic[or]You again. Sorry, but I'm not looking for people who aren't at least half as hot as me[stopping].'[roman type][line break]".
 
 To say DisapprovalFlav of (M - supporter-ai):
-	say "[BigNameDesc of M] [one of]shivers with arousal.[or]moves a hand down to delicately touch [his of M] [if lady fetish is 2]caged [DickDesc of M][otherwise]clit[end if].[or]licks [his of M] lips seductively[in random order][line break][speech style of M]'Keep that up, and [one of]you might like what happens next[or]I might decide that you're worth my time[at random].'[roman type][line break]".
+	say "[BigNameDesc of M] [one of]shivers with arousal.[or]moves a hand down to delicately touch [his of M] [if andro fetish is 1]caged [DickDesc of M][otherwise]clit[end if].[or]licks [his of M] lips seductively[in random order][line break][speech style of M]'Keep that up, and [one of]you might like what happens next[or]I might decide that you're worth my time[at random].'[roman type][line break]".
 
 To say UnidentifiablePosterReactionFlav of (M - supporter-ai) with (P - a poster):
 	say "[speech style of M]'Not bad, not bad at all! This babe is almost as hot as me.'[roman type][line break]".
@@ -54,7 +54,7 @@ To say DamageReactHealthy of (M - supporter-ai):
 	say "[BigNameDesc of M] giggles condescendingly.[line break][speech style of M]'[one of]Aww, how cute[or]That was adorable[or]You should probably quit while you're ahead[in random order].'[roman type][line break]".
 
 To say DamageReactDamaged of (M - supporter-ai):
-	if lady fetish is 2, say "[BigNameDesc of M][']s body takes the blow!";
+	if andro fetish is 1, say "[BigNameDesc of M][']s body takes the blow!";
 	otherwise say "[BigNameDesc of M][']s [one of]giant boobs bounce wildly from the impact, with inhuman physics[or]body takes the blow, [his of M] big breasts acting like airbags[or]giant tits cushion the vast majority of the hit[in random order]!".
 
 To say DamageReactTired of (M - supporter-ai):
@@ -73,20 +73,20 @@ To say PresentFriendlyAcceptanceFlav of (M - supporter-ai):
 	say "[speech style of M]'It's your lucky day. Since you asked so nicely, I'll allow it, this time.'[roman type][line break]".
 
 To compute the default taunting of (M - supporter-ai):
-	say "[BigNameDesc of M] watches, [one of]gently touching [himself of M] downstairs as [he of M] does[or]moving one hand to [his of M] breast as the other circles [his of M] [if lady fetish is 2]cage[otherwise]clit[end if][or]pushing two fingers inside [himself of M] and tweaking one nipple[or][if lady fetish is 2]teasing [himself of M] through [his of M] cage[otherwise]fingering [himself of M] rapidly[end if] as [he of M] moves [his of M] other hand to play with the entrance to [his of M] asshole[or]pushing three fingers each into [his of M] [if lady fetish is 2]asshole[otherwise]pussy and asshole[end if] before bringing them up to [his of M] mouth to lick them all clean[then at random].".
+	say "[BigNameDesc of M] watches, [one of]gently touching [himself of M] downstairs as [he of M] does[or]moving one hand to [his of M] breast as the other circles [his of M] [if andro fetish is 1]cage[otherwise]clit[end if][or]pushing two fingers inside [himself of M] and tweaking one nipple[or][if andro fetish is 1]teasing [himself of M] through [his of M] cage[otherwise]fingering [himself of M] rapidly[end if] as [he of M] moves [his of M] other hand to play with the entrance to [his of M] asshole[or]pushing three fingers each into [his of M] [if andro fetish is 1]asshole[otherwise]pussy and asshole[end if] before bringing them up to [his of M] mouth to lick them all clean[then at random].".
 
 Part - Aika
 
 supporter-aika is a supporter. The leftover-type of supporter-aika is 203.
 
 Definition: supporter-aika is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 Definition: supporter-aika is father material: decide yes.
 
 To say MonsterDesc of (M - supporter-aika):
-	say "A tall blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs[if lady fetish < 2]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, gently sagging in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth ";
+	say "A tall blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs[if andro fetish is 0]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, gently sagging in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth ";
 	if M is combative, say "does nothing to hide the [LongDickDesc of M][if M is a balls-haver] and balls[end if] hanging from [his of M] crotch, swaying gently as [he of M] moves. ";
 	otherwise say "conceals [his of M] genitalia. ";
 	say "A metal warlord's mask covers [his of M] face, preventing you from seeing [his of M] features or expression.".
@@ -273,8 +273,8 @@ To say ClothesPeeReaction of (M - supporter-aika):
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 		interest M.
 
-To say PissDrinkThreat of (M - supporter-aika):
-	say "[speech style of M]'[one of]That's it, swallow my virtual piss, you skank! It tastes just like the real thing, doesn't it?'[or]Come on now, you'd better drink what I give you! I promise I coded it to be completely harmless, if perhaps a little addictive...'[in random order][roman type][line break]".
+To say SlimeDrinkThreat of (M - supporter-aika):
+	say "[speech style of M]'[one of]That's it, swallow my virtual [slime], you skank! It tastes just like the real thing, doesn't it?'[or]Come on now, you'd better drink what I give you! I promise I coded it to be completely harmless, if perhaps a little addictive...'[in random order][roman type][line break]".
 
 To say RockingReactionSpeech of (M - supporter-aika):
 	say "[one of][line break][speech style of M]'Hahahahaha! If you could only see this from my perspective! You look SO pathetic right now! I really do design the best traps, don't I?'[roman type][line break][or][stopping]".
@@ -431,7 +431,7 @@ To say StandingBlock of (M - supporter-critchett):
 	say "[BigNameDesc of M] grabs handfuls of your [ShortDesc of hair] and stuffs it down [his of M] diaper, purring as the silky strands mix in [his of M] cum pool and caress [his of M] vulva! [big he of M] clamps [his of M] legs together and you can't get off of your knees".
 
 To say BanishFleeFlav of (M - supporter-critchett):
-	say "[speech style of M]'AAAAAHHHHHHHH!!!'[roman type][line break][BigNameDesc of M] cries out as your final blow strikes [his of M] square in between [his of M] legs and [he of M] comes to [his of M] final greatest orgasm![line break][one of][big his of M] body softens and then bursts entirely into slimy sex honey! You blink in disbelief as [his of M] diaper falls to the ground, swiftly absorbing [his of M] now-liquid body of girlcum fully into itself![or][big he of M] falls back onto [his of M] deeply padded butt and actually sinks into the diaper until the waistband comes up to just under [his of M] large breasts. As [he of M] finishes [his of M] soul-breaking climax, [he of M] looks confused for a second as [his of M] whole body tugs downwards a few times. [BigNameDesc of M] eyes go wide in shock and pleasure as [he of M]'s suddenly swallowed by [his of M] diaper, [his of M] tits popping inside as [his of M] legs are slurped up through [his of M] legbands! Very quickly you see the last of [his of M] sucked fully into [his of M] own absorbent paradise[at random].[line break]A fairy swoops in and examines the quivering mess on the floor.[line break][speech style of M]'Wow, you really finished [him of M] off good! I told [him of M] there was a price to pay for that diaper! [big he of M][']s completely used up. A slut this disgraced deserves only one thing at this point: I'm going to go flush [him of M] down the toilet! [big he of M][']s such worthless slop now that this whole diaper full of [his of M] just needs to be sucked spiralling down a drain. It's what [he of M] really wants.[roman type][line break]The fairy effortlessly scoops up the gigantic, soggy diaper and flies off to go make good on that plan. You think you hear a crinkly burble of excitement coming from the disposable cargo...".
+	say "[speech style of M]'AAAAAHHHHHHHH!!!'[roman type][line break][BigNameDesc of M] cries out as your final blow strikes [his of M] square in between [his of M] legs and [he of M] comes to [his of M] final greatest orgasm![line break][one of][big his of M] body softens and then bursts entirely into slimy sex honey! You blink in disbelief as [his of M] diaper falls to the ground, swiftly absorbing [his of M] now-liquid body of girlcum fully into itself![or][big he of M] falls back onto [his of M] deeply padded butt and actually sinks into the diaper until the waistband comes up to just under [his of M] large breasts. As [he of M] finishes [his of M] soul-breaking climax, [he of M] looks confused for a second as [his of M] whole body tugs downwards a few times. [BigNameDesc of M] eyes go wide in shock and pleasure as [he of M]'s suddenly swallowed by [his of M] diaper, [his of M] tits popping inside as [his of M] legs are slurped up through [his of M] legbands! Very quickly you see the last of [his of M] sucked fully into [his of M] own absorbent paradise[at random].[line break]A fairy swoops in and examines the quivering mess on the floor.[line break][speech style of M]'Wow, you really finished [him of M] off good! I told [him of M] there was a price to pay for that diaper! [big he of M][']s completely used up. A slut this disgraced deserves only one thing at this point: I'm going to go flush [him of M] down the [SlimeTarget]! [big he of M][']s such worthless slop now that this whole diaper full of [his of M] just needs to be sucked spiralling down a drain. It's what [he of M] really wants.[roman type][line break]The fairy effortlessly scoops up the gigantic, soggy diaper and flies off to go make good on that plan. You think you hear a crinkly burble of excitement coming from the disposable cargo...".
 
 To say SexResistSlapFlav of (M - supporter-critchett):
 	say "[BigNameDesc of M] [one of]giggles[or]tut-tuts[or]furrows [his of M] brow[or]laughs with exhilaration[at random] at your [one of]inability to pry yourself away from [his of M][or]vain efforts to resist [his of M] insistent grip[or]pointless attempts to disentangle yourself from [his of M] entwining limbs[or]futile struggles to not be pressed so hard into [his of M] hot, wet diaper[at random] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".
@@ -537,10 +537,10 @@ To say ClothesPeeReaction of (M - supporter-critchett):
 		FavourDown M by 2;
 		if M is unfriendly, say "[big he of M] sizes you up before coming to a decision.[line break][speech style of M]'It's too late for you to be a big girl anymore. I'm going to have to show you what a diaper is for, missy!'[roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] giggles.[line break][speech style of M]'[if M is interested]Too late, you wet yourself! Beg me to diaper you!'[otherwise]Well, look at you, such a mess! You're going in a diaper now! Will you go in mine? Or do you want one of your own?'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
+		say "[BigNameDesc of M] giggles.[line break][speech style of M]'[if M is interested]Too late, you [slimedrain] on yourself! Beg me to diaper you!'[otherwise]Well, look at you, such a mess! You're going in a diaper now! Will you go in mine? Or do you want one of your own?'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 		interest M.
 
-To say GroundPeeReaction of (M - supporter-critchett):
+To say GroundSlimeReaction of (M - supporter-critchett):
 	say "[ClothesPeeReaction of M]".
 
 [###DIAPER STUFF###]
@@ -548,7 +548,7 @@ To say GroundPeeReaction of (M - supporter-critchett):
 To say DiaperReaction of (M - supporter-critchett):
 	if there is a currently visible diaper or the player is shameless:
 		if M is unfriendly:
-			say "[BigNameDesc of M] beams with pure joy as you wet your diaper in utter shame![line break][speech style of M]'[if M is interested]Wet, wet, wet! Grow, swell, bulge[otherwise]You're doing wonderful, sweetie! Wetter, bigger, more! I want you primed for some fun[end if]!'[roman type][line break]";
+			say "[BigNameDesc of M] beams with pure joy as you [slimedrain] in your diaper in utter shame![line break][speech style of M]'[if M is interested]Wet, wet, wet! Grow, swell, bulge[otherwise]You're doing wonderful, sweetie! Wetter, bigger, more! I want you primed for some fun[end if]!'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'You look like a natural at this! I can't wait to have some diaper play with you!'[roman type][line break][BigNameDesc of M] rubs [his of M] enormously swollen diaper, promising you something that makes you gulp with trepidation.";
 			FavourDown M;
@@ -1069,10 +1069,10 @@ To say ClothesPeeReaction of (M - supporter-jim):
 		FavourDown M by 2;
 		if M is unfriendly, say BecomesAggressive of M;
 	otherwise if M is uninterested:
-		say "[big he of M] gestures towards you.[line break][speech style of M]'This slut has just pissed [his of the player] pants, in order to get my attention once again.'[roman type][line break]Uh-oh...";
+		say "[big he of M] gestures towards you.[line break][speech style of M]'This slut has just [slime]ed [his of the player] pants, in order to get my attention once again.'[roman type][line break]Uh-oh...";
 		interest M.
 
-To say GroundPeeReaction of (M - supporter-jim):
+To say GroundSlimeReaction of (M - supporter-jim):
 	say "[BigNameDesc of M] turns to an imaginary camera.[line break][speech style of M]'We would like to apologise for the way in which [men of the player] are represented in this programme. It was never our intention to imply that [men of the player] are crabby, ulcerous, little perverse vermin with furry legs and an excessive addiction to [if alcohol fetish is 1]alcohol[otherwise]degradation[end if] and certain explicit sexual practises which some people might find offensive. We are sorry if this impression has come across.'[roman type][line break]";
 	if M is friendly:
 		FavourDown M by 2;
@@ -1081,22 +1081,22 @@ To say GroundPeeReaction of (M - supporter-jim):
 		say "Uh-oh...";
 		interest M.
 
-To say UrinationFlav of (M - supporter-jim):
-	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+To say DrainFlav of (M - supporter-jim):
+	say "[BigNameDesc of M] points [his of M] [SlimeDickDesc of M] towards your face. A [SlimeShade] stream of [slime] shoots out, headed straight for you!".
 
-[To say PissDrinkThreat of (M - supporter-jim):
-	say "[speech style of M]'[one of]You'd better drink this like a good toilet, or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".]
+[To say SlimeDrinkThreat of (M - supporter-jim):
+	say "[speech style of M]'[one of]You'd better drink this like a good [SlimeTarget], or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".]
 
 [###DIAPER STUFF###]
 
 To say DiaperReaction of (M - supporter-jim):
 	if there is a currently visible diaper or the player is shameless or M is concealment immune:
 		if M is unfriendly:
-			say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you wet yourself in fear[end if]?'[roman type][line break]";
+			say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you [slimedrain] on yourself in fear[end if]?'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[if there is a worn messed knickers]I told you to lay off the beans, you whore!'[otherwise]Wow, just like a big baby.'[end if][roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
 			FavourDown M;
-			say "[speech style of M]'[if M is unfriendly and there is a worn messed knickers]You are hereby charged where you did wilfully take part in a strange fetish. That is a piss, poop, or voluminous excretion of a sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise if M is unfriendly]You are hereby charged where you did wilfully take part in a strange fetish. That is a piss, whizz, or urination of an sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
+			say "[speech style of M]'[if M is unfriendly and there is a worn messed knickers]You are hereby charged where you did wilfully take part in a strange fetish. That is a [slime], poop, or voluminous excretion of a sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise if M is unfriendly]You are hereby charged where you did wilfully take part in a strange fetish. That is a [slime], whizz, or urination of an sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
 			if M is unfriendly, interest M;
 		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 		otherwise say "You turn bright red.";
@@ -1312,7 +1312,7 @@ To decide which figure-name is the monster-image of (M - supporter-serena):
 	decide on figure of serena.
 
 Definition: supporter-serena is fetish appropriate:
-	if lady fetish is not 2, decide yes;
+	if andro fetish is 0, decide yes;
 	decide no. [Can't appear with Male NPCs only]
 
 To say LeftoverDesc (N - 208):
@@ -1532,14 +1532,14 @@ To say ClothesPeeReaction of (M - supporter-serena):
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 		interest M.
 
-To say GroundPeeReaction of (M - supporter-serena):
+To say GroundSlimeReaction of (M - supporter-serena):
 	say "[ClothesPeeReaction of M]".
 
-To say UrinationFlav of (M - supporter-serena):
-	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+To say DrainFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] points [his of M] [SlimeDickDesc of M] towards your face. A [SlimeShade] stream of [slime] shoots out, headed straight for you!".
 
-To say PissDrinkThreat of (M - supporter-serena):
-	say "[speech style of M]'[one of]You'd better drink this like a good toilet, or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".
+To say SlimeDrinkThreat of (M - supporter-serena):
+	say "[speech style of M]'[one of]You'd better drink this like a good [SlimeTarget], or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".
 
 Part - Elluria
 
@@ -1557,7 +1557,7 @@ To decide which figure-name is the non-sex-profile of (M - supporter-elluria):
 	decide on figure of elluria uninterested.
 
 Definition: supporter-elluria is fetish appropriate:
-	if lady fetish is not 2, decide yes;
+	if andro fetish is 0, decide yes;
 	decide no. [Can't appear with Male NPCs only]
 
 To say LeftoverDesc (N - 209):
@@ -1792,13 +1792,13 @@ To say ClothesPeeReaction of (M - supporter-elluria):
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 		interest M.
 
-To say GroundPeeReaction of (M - supporter-elluria):
+To say GroundSlimeReaction of (M - supporter-elluria):
 	say ClothesPeeReaction of M.
 
-To say UrinationFlav of (M - supporter-elluria):
-	say "[speech style of M]'Hold still now.'[roman type][line break][BigNameDesc of M] doesn't even leave it up to you, though - [he of M] grabs your head with one hand as [he of M] moves the tip of [his of M] [manly-penis] towards your mouth. And then, before you can even say anything, it starts. A golden stream of [urine], so warm it's almost too hot, shoots out.".
+To say DrainFlav of (M - supporter-elluria):
+	say "[speech style of M]'Hold still now.'[roman type][line break][BigNameDesc of M] doesn't even leave it up to you, though - [he of M] grabs your head with one hand as [he of M] moves the tip of [his of M] [SlimeDickDesc of M] towards your mouth. And then, before you can even say anything, it starts. A [SlimeShade] stream of [slime], so warm it's almost too hot, shoots out.".
 
-To say PissDrinkThreat of (M - supporter-elluria):
+To say SlimeDrinkThreat of (M - supporter-elluria):
 	say "[speech style of M]'If you're a good [boy of the player] and drink it all down, I won't have to punish you.'[roman type][line break][big he of M] warns.".
 
 

@@ -44,10 +44,10 @@ To say MonsterDesc of (M - a ghost):
 	otherwise:
 		let U be 0;
 		if M is unfriendly or M is penetrating a body part, now U is 1;
-		say "This silvery-blue glowing ghost takes on a human [if lady fetish is 2]male[otherwise]female[end if] form. [big his of M] [']body['] is slightly transparent, and it casts a dim glow over the surrounding walls and furniture. [if the wind-up of M is 1 and bukkake fetish is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, along with a rock-hard [DickDesc of M] with bulging veins and slimy grey 'drool' leaking from its tip. It's clearly about to violently explode![otherwise if the wind-up of M is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, glowing brighter and brighter by the second. It's clearly about to unleash a powerful attack![otherwise if U is 1 and M is phased][big he of M] doesn't fully exist in the corporeal world, but from the [LongDickDesc of M] sticking out from [his of M] crotch, that isn't going to stop [him of M] from having [his of M] way with you![otherwise if U is 1][big his of M] body has temporarily shifted into the corporeal world, which only makes the [LongDickDesc of M] stick out of [his of M] crotch seem more substantial![otherwise if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means. Still, it's obvious [he of M] wants to fuck you.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks. [big he of M] probably wants to fuck you.[end if]".
+		say "This silvery-blue glowing ghost takes on a human [if andro fetish is 1]male[otherwise]female[end if] form. [big his of M] [']body['] is slightly transparent, and it casts a dim glow over the surrounding walls and furniture. [if the wind-up of M is 1 and bukkake fetish is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, along with a rock-hard [DickDesc of M] with bulging veins and slimy grey 'drool' leaking from its tip. It's clearly about to violently explode![otherwise if the wind-up of M is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, glowing brighter and brighter by the second. It's clearly about to unleash a powerful attack![otherwise if U is 1 and M is phased][big he of M] doesn't fully exist in the corporeal world, but from the [LongDickDesc of M] sticking out from [his of M] crotch, that isn't going to stop [him of M] from having [his of M] way with you![otherwise if U is 1][big his of M] body has temporarily shifted into the corporeal world, which only makes the [LongDickDesc of M] stick out of [his of M] crotch seem more substantial![otherwise if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means. Still, it's obvious [he of M] wants to fuck you.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks. [big he of M] probably wants to fuck you.[end if]".
 
 To say MonsterDesc of (M - ghostly tentacle):
-	if diaper quest is 1, say "This blue glowing ghost takes on a human [if lady fetish is 2]male[otherwise]female[end if] form, dressed in a right black gown which completely fails to cover [his of M] very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face. [if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks.[end if]";
+	if diaper quest is 1, say "This blue glowing ghost takes on a human [if andro fetish is 1]male[otherwise]female[end if] form, dressed in a right black gown which completely fails to cover [his of M] very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face. [if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks.[end if]";
 	otherwise say "This transparent purple tentacle is hanging from the ceiling, drooling some brightly coloured grey fluid. [if M is wrangling a body part]It has temporarily shifted into the corporeal world and wrapped itself around your wrist![otherwise if M is phased]Its body doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise]Its body has temporarily shifted into the corporeal world.[end if]".
 
 To say MonsterDesc of (M - jismbodied ghost):
@@ -161,7 +161,7 @@ To compute phaseout of (M - a ghost):
 		if M is in the location of the player, say "[BigNameDesc of M] [bold type]shimmers as it shifts out of the corporeal world.[roman type][line break]".
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish > 0]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish > 0]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][slime][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 To compute labour to (M - a ghost):
@@ -175,7 +175,7 @@ To compute labour to (M - a ghost):
 				dislodge N;
 				now N is in the location of the player;
 				anger N;
-	now the slime-puddle of the location of the player is 3;
+	now the ecto-puddle of the location of the player is 3;
 	increase the stickiness of the player by 3.
 
 To compute fatherhood to (M - a ghost):
@@ -191,7 +191,7 @@ Definition: a ghost (called M) is objectifying the player:
 	if the player is prone and the number of monsters in the location of the player is the number of ghosts in the location of the player:
 		now the objectification of M is 1;
 		decide yes;
-	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0:
+	if [playerRegion is Mansion and ]the ecto-puddle of the location of the player > 0:
 		now the objectification of M is 1;
 		decide yes;
 	[if the class of the player is faerie, decide no;]
@@ -507,9 +507,9 @@ To compute normal ectoplasm to (M - a ghost):
 		set up S;
 		now S is in the location of M;
 	otherwise:
-		if bukkake fetish is 1, now the slime-puddle of the location of M is a random number between 5 and 10;
-		otherwise now the slime-puddle of the location of M is 3;
-		if M is jismbodied ghost, increase the slime-puddle of the location of M by 10;
+		if bukkake fetish is 1, now the ecto-puddle of the location of M is a random number between 5 and 10;
+		otherwise now the ecto-puddle of the location of M is 3;
+		if M is jismbodied ghost, increase the ecto-puddle of the location of M by 10;
 		if M is in the location of the player:
 			if the player is upright:
 				say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, knocking you to your knees with a torrent of bright grey, glowing slime[otherwise][BigNameDesc of M] releases a violent pulse of energy, knocking you to your knees[end if].";
@@ -626,7 +626,23 @@ To compute striking success effect of (M - jismbodied ghost) on (B - a body part
 
 Part 2 - DQ
 
-ghost-diapering is a diaper punishment. The priority of ghost-diapering is 5.
+ghost-diaper-preparing is a diaper punishment. The priority of ghost-diaper-preparing is 5.
+Definition: ghost-diaper-preparing (called P) is appropriate:
+	if current-monster is not ghost or current-monster is ghostly tentacle, decide no;
+	if ghost-diaper is on-stage, decide no;
+	if the DQBulk of the player > the DQBulk of ghost-diaper, decide no; [can't stack on top of something bigger]
+	if there is a worn diaper, decide no;
+	if the player is not pussy protected and current-monster is jismbodied ghost, decide no;
+	let C be a random worn top level protection clothing;
+	if C is removable clothing, decide yes;
+	decide no.
+
+To compute punishment of (P - ghost-diaper-preparing):
+	let C be a random worn top level protection clothing;
+	say "[BigNameDesc of current-monster] rubs itself against [NameDesc of C], which fades from existence!";
+	destroy C.
+
+ghost-diapering is a diaper punishment. The priority of ghost-diapering is 4.
 Definition: ghost-diapering (called P) is appropriate:
 	if current-monster is not ghost or current-monster is ghostly tentacle, decide no;
 	if ghost-diaper is on-stage, decide no;
@@ -844,8 +860,8 @@ Definition: ghostly-diaper-use (called P) is appropriate:
 To compute punishment of (P - ghostly-diaper-use):
 	let M be current-monster;
 	let K be a random worn knickers;
-	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... [he of M] starts urinating?! [big his of M] [urine] doesn't go into [his of M] ghostly diaper but becomes completely real!";
-	PissSoak 30 on K;
+	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... [he of M] starts [SlimeDraining]?! [big his of M] [slime] doesn't go into [his of M] ghostly diaper but becomes completely real!";
+	SlimeSoak 30 on K;
 	say "[variable custom style]Oh come on![roman type][line break]";
 	satisfy M.]
 
@@ -861,7 +877,7 @@ To compute punishment of (P - ghost-using):
 	let D be a random worn diaper;
 	if D is diaper:
 		say "[BigNameDesc of M] floats down to you until [he of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] from the warmth below you, you can tell that [NameDesc of M] is using your diaper![line break][variable custom style][if the diaper addiction of the player < 8]That's fucking gross![otherwise if the diaper addiction of the player < 13]That's kind of rude...[otherwise]Haha, that feels funny![end if][roman type][line break]";
-		UrineSoakUp D by 9;
+		SlimeSoakUp D by 9;
 		if diaper swapping >= 4:
 			say "You squirm as the foreign mush squishes itself against your butt.";
 			MessUp D by 7;
@@ -871,11 +887,11 @@ To compute punishment of (P - ghost-using):
 		repeat with C running through worn clothing:
 			if the quest of C is exorcism-quest, compute exorcism punishment of C;
 	otherwise:
-		if diaper swapping >= 2, say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper swapping >= 4] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the grossness addiction of the player < 7]What the fuck, get out of me! This is so gross and weird!!![otherwise if the grossness addiction of the player < 10]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
-		otherwise say "[BigNameDesc of M] focuses [his of M] eyes on your belly. [one of][line break][variable custom style]What now?![roman type][line break][or][stopping][big he of M] points [his of M] fingers towards you, and then shudders slightly. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow magically filling your bladder with pee!";
+		if diaper swapping >= 2, say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal [SlimeTarget], filling your [SlimeContainer] with [his of M] pee[if diaper swapping >= 4] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the grossness addiction of the player < 7]What the fuck, get out of me! This is so gross and weird!!![otherwise if the grossness addiction of the player < 10]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
+		otherwise say "[BigNameDesc of M] focuses [his of M] eyes on your belly. [one of][line break][variable custom style]What now?![roman type][line break][or][stopping][big he of M] points [his of M] fingers towards you, and then shudders slightly. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow magically filling your [SlimeContainer] with [slime]!";
 		increase the bladder of the player by 9;
 		if diaper swapping >= 4, increase rectum by 7;
-		GrossOut 9 with reason "The gross sensation of your bladder [if diaper swapping >= 4]and bowels [end if] being filled by the ghost makes you shudder," and sensation "feeling";
+		GrossOut 9 with reason "The gross sensation of your [SlimeContainer] [if diaper swapping >= 4]and bowels [end if] being filled by the ghost makes you shudder," and sensation "feeling";
 		if red-orange briefs is worn or the player is getting unlucky, compute punishment of ghost-spook;
 		otherwise satisfy M.
 

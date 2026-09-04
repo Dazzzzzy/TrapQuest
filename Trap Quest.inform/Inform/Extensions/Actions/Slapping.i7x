@@ -2,6 +2,44 @@ Slapping by Actions begins here.
 
 punch is a number that varies.
 
+To decide which number is the total slap damage improvement of (C - a clothing):
+	let S be the slap damage improvement of C;
+	if C is wrist-bound-behind:
+		decrease S by 100;
+	otherwise if C is wrist locked:
+		decrease S by 2;
+	if C is sword and the class of the player is chosen one, increase S by 2;
+	if C is flight-attendant-top:
+		if the player is zeroG:
+			increase S by 100;
+		otherwise if the player is on tiptoes:
+			increase S by 2;
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 0:
+			if BF < 3:
+				increase S by 1;
+			otherwise:
+				increase S by 3;
+	if living tentacles is worn:
+		if the charge of living tentacles > 50:
+			increase S by 3;
+		otherwise if the charge of living tentacles > 0:
+			increase S by 2;
+		otherwise:
+			increase S by 1;
+	if diaper quest is 0 and C is bra and the breastskill of the player is 0:
+		let CS be the current support of C;
+		if CS > 0:
+			let N be (the largeness of breasts - 3) / 3;
+			let X be N - CS; [total breast size damage penalty]
+			if X > 0:
+				increase S by CS;
+			otherwise:
+				increase S by N;
+	decide on S.
+
+
 To decide which number is the slap damage of (P - a person):
 	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-slap-damage;
 	if damage-explained > 1, say "[input-style]Base slap damage calculation: [bracket]1 (base damage) ";
@@ -52,7 +90,7 @@ To decide which number is the slap damage of (P - a person):
 			increase A by 1;
 			if damage-explained > 1, say "+1 (living tentacles) ";
 	unless there is a worn slap ready projectile equippable:
-		if the breastskill of the player is 0:
+		if diaper quest is 0 and the breastskill of the player is 0:
 			let N be (the largeness of breasts - 3) / 3;
 			let B be a random worn bra;
 			if B is bra, decrease N by the current support of B;
@@ -195,6 +233,13 @@ Carry out zapping it with:
 	if A > 0:
 		damage A on the second noun;
 		compute spell consequences of currentZapper;
+		if (the second noun is tentacle monster or the second noun is facehugger) and there is worn magical dress and the number of worn headgear is 0 and heart hairpin is off-stage and heart hairpin is actually summonable:
+			say "[bold type]Suddenly, a heart hairpin appears in your hair![roman type][line break]";
+			summon heart hairpin cursed with quest;
+			repeat with C running through worn impermanence dresses:
+				now C is confidence;
+				if C is cursed, now C is bland;
+				say "[BigNameDesc of C] loses the [']impermanence['] enchantment, and becomes a [C]!";
 	otherwise:
 		say "But rather than work correctly, the spell just fizzles in mid-air[if the magic power of the player <= 0 and the magic-cost of currentZapper > 0]! Perhaps because you have no magic power left[end if]!";
 	if the second noun is caged:

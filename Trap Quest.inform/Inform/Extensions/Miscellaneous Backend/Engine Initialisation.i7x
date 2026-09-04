@@ -38,6 +38,7 @@ When play begins:
 		if the player consents, now old-seed is 0;
 		otherwise say "Please respond yes... ";
 	correct table entries;
+	preconfigure gender;
 	retrieve settings;
 	if disclaimer version < current-disclaimer-version:
 		say disclaimer;
@@ -64,7 +65,7 @@ When play begins:
 		if quick start is 1 or quick start is 2:
 			follow the random fetish rules;
 			follow the random handicap rules;
-			compute random bonuses;
+			compute random benefits;
 		if quick start is 0:
 			retrieve benefit options;
 			retrieve TG options;
@@ -284,6 +285,13 @@ To retrieve settings:
 		clear the screen;
 	write File of Preferences from the Table of Settings.
 
+[required to make sure that points are calculated correctly for the initial menu's quick start option]
+To preconfigure gender:
+	if choice in row 1 of the Table of Player Options is 1:
+		now the player is female;
+	otherwise:
+		now the player is male.
+
 To retrieve gender:
 	[now the current menu is the Table of Gender Options;]
 	if quick start < 3, now choice in row 1 of the Table of Player Options is -1; [We always ask the player what gender they want to be, even in quick random start (2)]
@@ -385,10 +393,7 @@ To retrieve diaper focus options:
 		clear the screen.
 
 To retrieve diaper options:
-	if diaper quest is 0 and choice in row 19 of the Table of Player Options >= 0:
-		now the current menu is the Table of Secret Diaper Options;
-		carry out the displaying activity;
-		clear the screen;
+	if diaper quest is 0 and choice in row 19 of the Table of Player Options >= 0, compute new secret dq selection window;
 	if diaper lover >= 1:
 		if choice in row 50 of the Table of Player Options > -2:
 			now the current menu is the Table of Diaper Options;
@@ -414,25 +419,36 @@ To retrieve toilet allowance options:
 		clear the screen.
 
 To retrieve silicone milk options:
-	if lactation fetish > 0 and artificial enhancements fetish > 0:
+	compute new lactating silicone selection window.
+	[if lactation fetish > 0 and artificial enhancements fetish > 0:
 		now the current menu is the Table of Silicone Milk Options;
 		carry out the displaying activity;
-		clear the screen.
+		clear the screen.]
 
 To retrieve slow random options:
-	now the current menu is the Table of Random Settings;
+	compute new random benefits selection window.
+	[now the current menu is the Table of Random Settings;
 	carry out the displaying activity;
-	clear the screen.
+	clear the screen.]
+
+returnToBodyLimits is initially true.
 
 To retrieve benefit options:
-	now the current menu is the Table of Benefit Options;
-	if diaper quest is 1, now the current menu is the Table of Diaper Quest Benefit Options;
-	if points count < 0, follow the reset rule;
-	if tg fetish is 0:
-		choose the row with a toggle of trap fetish toggle rule in the Table of Body Limit Options; [Make sure trap fetish can't be selected]
-		blank out the whole row;
-	carry out the displaying activity;
-	clear the screen.
+	if diaper quest is 1:
+		now the current menu is the Table of Diaper Quest Benefit Options;
+		if points count < 0, follow the reset rule;
+		if tg fetish is 0:
+			choose the row with a toggle of trap fetish toggle rule in the Table of Body Limit Options; [Make sure trap fetish can't be selected]
+			blank out the whole row;
+		carry out the displaying activity;
+		clear the screen;
+	otherwise:
+		while returnToBodyLimits is true:
+			now returnToBodyLimits is false;
+			now the current menu is the Table of Body Limit Options;
+			carry out the displaying activity;
+			clear the screen;
+			compute new benefit selection window.
 
 To retrieve TG options:
 	if tg fetish >= 1 and the player is sexed male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]

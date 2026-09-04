@@ -61,7 +61,7 @@ To compute sacred bathing:
 					decrease tracked-semen by 50;
 	otherwise:
 		say "The water feels nice as it runs over your [if the largeness of breasts > 4][BreastDesc].[otherwise]face.[end if]";
-		if the total felchable volume of vagina + the semen volume of belly + the urine volume of belly + the milk volume of belly > 0:
+		if the total felchable volume of vagina + the semen volume of belly + the slime volume of belly + the milk volume of belly > 0:
 			let C be 0;
 			if vagina is not actually occupied and the player is not pussy protected, now C is 1;
 			if asshole is not actually occupied and the player is not ass protected, increase C by 2;
@@ -75,7 +75,7 @@ To compute sacred bathing:
 					WombEmpty the womb volume of vagina;
 			if C > 1:
 				increase tracked-semen by the semen volume of belly * 2;
-				increase tracked-semen by the urine volume of belly * 3;
+				increase tracked-semen by the slime volume of belly * 3;
 				decrease tracked-semen by the milk volume of belly;
 				empty belly liquids;
 	pollute tracked-semen.]

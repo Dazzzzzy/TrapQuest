@@ -22,7 +22,7 @@ To decide which object is the unique-upgrade-target of (C - a T-shirt):
 
 This is the remove inappropriate T-shirts rule:
 	repeat with B running through T-shirts:
-		unless B is crybaby T-shirt or B is I love my wet nappies T-shirt or B is high maintenance T-shirt or B is dear santa T-shirt, now B is in Holding Pen.
+		unless B is crybaby T-shirt or B is I love my wet nappies T-shirt or B is high-maintenance T-shirt or B is dear santa T-shirt, now B is in Holding Pen.
 The remove inappropriate T-shirts rule is listed in the diaper quest fix rules.
 
 This is the setup starting T-shirt rule:
@@ -268,35 +268,33 @@ Definition: a crybaby T-shirt is pink themed: decide yes.
 
 Part 10 - High Maintenance T-shirt
 
-A high maintenance T-shirt is a kind of T-shirt. The printed name of high maintenance T-shirt is usually "[clothing-title-before]high maintenance T-shirt[clothing-title-after]". The text-shortcut of high maintenance T-shirt is "hmt".
+high-maintenance T-shirt is a T-shirt. The printed name of high maintenance T-shirt is usually "[clothing-title-before]high maintenance T-shirt[clothing-title-after]". The text-shortcut of high maintenance T-shirt is "hmt". Understand "high", "maintenance" as high-maintenance T-shirt.
 
 Figure of high maintenance T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt9.png".
 
-To decide which figure-name is clothing-image of (C - a high maintenance T-shirt):
+To decide which figure-name is clothing-image of (C - high-maintenance T-shirt):
 	decide on figure of high maintenance T-shirt.
 
-There is 1 high maintenance T-shirt.
-
-To say ClothingDesc of (C - a high maintenance T-shirt):
+To say ClothingDesc of (C - high-maintenance T-shirt):
 	say "This thick baby-like T-shirt has the words 'high maintenance' on the front and a drawing of a brattish-looking girl.".
 
-To say MediumDesc of (C - a high maintenance T-shirt):
+To say MediumDesc of (C - high-maintenance T-shirt):
 	say "white and purple 'high maintenance' T-shirt".
 
-To decide which number is the delicateness-influence of (C - a high maintenance T-shirt):
+To decide which number is the delicateness-influence of (C - high-maintenance T-shirt):
 	let S be 2;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
 
-To decide which number is the initial outrage of (C - a high maintenance T-shirt):
+To decide which number is the initial outrage of (C - high-maintenance T-shirt):
 	if diaper quest is 0, decide on the initial cringe of C;
 	decide on 0.
-To decide which number is the initial cringe of (C - a high maintenance T-shirt):
+To decide which number is the initial cringe of (C - high-maintenance T-shirt):
 	decide on 4.
 
-Definition: a high maintenance T-shirt is dog themed: decide yes.
-Definition: a high maintenance T-shirt is white themed: decide yes.
-Definition: a high maintenance T-shirt is fetish appropriate:
+Definition: high-maintenance T-shirt is dog themed: decide yes.
+Definition: high-maintenance T-shirt is white themed: decide yes.
+Definition: high-maintenance T-shirt is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 
@@ -470,5 +468,36 @@ To decide which number is the initial outrage of (C - incontinence-awareness T-S
 	decide on 2.
 To decide which number is the initial cringe of (C - incontinence-awareness T-Shirt):
 	decide on 5.
+To decide which number is the bladder-incontinence-influence of (C - incontinence-awareness T-Shirt):
+	if C is cursed, decide on 0;
+	decide on -1.
+To decide which number is the rectum-incontinence-influence of (C - incontinence-awareness T-Shirt):
+	if C is cursed, decide on 0;
+	decide on -1.
+Definition: incontinence-awareness T-Shirt is upgradable:
+	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player, decide yes;
+	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player, decide yes;
+	decide no.
+Definition: incontinence-awareness T-Shirt is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: incontinence-awareness T-Shirt is disintegration-protected: decide yes.
+Definition: incontinence-awareness T-Shirt is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: incontinence-awareness T-Shirt is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which number is the transformability of (C - incontinence-awareness T-Shirt):
+	decide on 12.
+To decide which object is the unique-upgrade-target of (C - incontinence-awareness T-Shirt):
+	decide on C.
+
+To transform (C - incontinence-awareness T-Shirt):
+	if C is cursed:
+		if diaper messing >= 3 and the raw-rectum-incontinence of the player < the raw-bladder-incontinence of the player, RectumIncontinenceUp 1;
+		otherwise BladderIncontinenceUp 1;
+	otherwise:
+		say "[BigNameDesc of C] [if C is blessed]loses its blessing[otherwise]glows dark as it becomes cursed[end if]!";
+		curse C;
+		compute summoned persistent quest of C.
 
 T-Shirts ends here.

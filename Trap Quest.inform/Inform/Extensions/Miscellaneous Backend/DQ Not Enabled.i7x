@@ -42,8 +42,12 @@ To say ShortDesc of (C - an alchemist outfit):
 berriVineBossScene is a number that varies.
 berriMatronTripScene is a number that varies.
 berriMechanicScene is a number that varies.
+To decide which number is berriChestRopeScene:
+	decide on 1.
 latest-berri-stage is a number that varies.
 To compute berri vine portals:
+	do nothing.
+To compute berri chest rope scene:
 	do nothing.
 To compute berri bladder filling:
 	do nothing.
@@ -63,12 +67,17 @@ To compute berri bladder and facesit-only filling:
 	do nothing.
 To compute berri bladder and bowel facesit-only filling:
 	do nothing.
+To compute berri chest rope scene:
+	do nothing.
 To say BerriCutsceneFlav:
 	say "".
 To decide which object is correct-berri-attire:
 	decide on nothing.
 To decide which object is correct-berri-diaper:
 	decide on nothing.
+To fix berri diaper:
+	do nothing.
+berriChestRopeScene is a number that varies.
 
 urinal-competition-punishment is a diaper punishment. urinal-competition-punishment has an object called urinal-rival.
 berri-collaring is a diaper punishment.

@@ -28,7 +28,7 @@ Definition: yourself is resisting taste addiction:
 			if debugmode > 0, say "[input-style]Fill colour of [MediumDesc of DT] is [fill-colour of DT].[roman type][line break]";
 			let L be water;
 			if the fill-colour of DT is creamy, now L is semen;
-			if the fill-colour of DT is golden, now L is urine;
+			if the fill-colour of DT is golden, now L is slime;
 			if the fill-colour of DT is white, now L is milk;
 			if DT is cursed or (the fill-type of DT >= lowest-cursed and the fill-type of DT <= highest-cursed):
 				if DT is squirt dildo or (DT is teapot and diaper quest is 0), now L is semen;
@@ -263,7 +263,7 @@ Check Spitting:
 Carry Out Spitting:
 	allocate 3 seconds;
 	let collecting be nothing;
-	if the total volume of face > 0 and the player is not flying and (the player is not in a nonstandard room or the player is in a predicament room) and the player is not immobile:
+	if the total volume of face > 0 and the player is not flying and (the player is not in a nonstandard room or the player is in a predicament room or the player is in a painting-room or the player is in an elevator-room) and the player is not immobile:
 		let LV be a list of things;
 		repeat with V running through carried lid topped vessels:
 			add V to LV;
@@ -293,7 +293,7 @@ Carry Out Spitting:
 			let L be mouthful-liquid;
 			repeat with V running through LV:
 				if V is bottle:
-					set next numerical response to "Into the [ShortDesc of V][unless the doses of V is 0 or (L is semen and the fill-colour of V is creamy) or (L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
+					set next numerical response to "Into the [ShortDesc of V][unless the doses of V is 0 or (L is semen and the fill-colour of V is creamy) or (L is slime and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
 				otherwise if V is pedestal:
 					set next numerical response to "Into the [V] (which contains [a list of things in V])";
 				otherwise if V is yourself:
@@ -305,9 +305,9 @@ Carry Out Spitting:
 			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is a thing:
 		let L be water;
-		if urine volume of face > 0:
+		if slime volume of face > 0:
 			if semen volume of face > 0 or milk volume of face > 0, now L is murkwater;
-			otherwise now L is urine;
+			otherwise now L is slime;
 		otherwise if milk volume of face > 0:
 			if semen volume of face > 0, now L is murkwater;
 			otherwise now L is milk;
@@ -325,12 +325,12 @@ Carry Out Spitting:
 			say "You unleash the [L] right into [NameDesc of M][']s face!";
 			if the blind-status of M is not -1:
 				let BS be 2;
-				if L is not urine and the total volume of face > 1, now BS is the total volume of face;
+				if L is not slime and the total volume of face > 1, now BS is the total volume of face;
 				increase the blind-status of M by BS;
 				say "[big he of M] is [if BS is 2]briefly [otherwise if BS > 3]significantly [end if]blinded!";
 			if M is friendly or M is not interested, compute standard damage of M;
 			repeat with RM running through reactive people:
-				if M is not RM and the semen volume of face <= 0 and the urine volume of face <= 0:
+				if M is not RM and the semen volume of face <= 0 and the slime volume of face <= 0:
 					compute boring spit reaction of RM;
 				otherwise:
 					compute disgusting spit reaction of RM;
@@ -343,7 +343,7 @@ Carry Out Spitting:
 				now the noun is a random off-stage can;
 				if the noun is can:
 					if L is semen, now the fill-colour of the noun is creamy;
-					if L is urine, now the fill-colour of the noun is golden;
+					if L is slime, now the fill-colour of the noun is golden;
 					if L is milk, now the fill-colour of the noun is white;
 					if L is murkwater, now the fill-colour of the noun is murky;
 					let T be nothing;
@@ -367,17 +367,17 @@ Carry Out Spitting:
 					otherwise:
 						say "The screen says 'ERROR: Canvas already full. No appropriate templates found.' The arms let go of you and recede into the ceiling.";
 			otherwise if collecting is bottle:
-				unless (L is semen and the fill-colour of collecting is creamy) or (L is urine and the fill-colour of collecting is golden) or (L is milk and the fill-colour of collecting is white) or (L is murkwater and the fill-colour of collecting is murky):
+				unless (L is semen and the fill-colour of collecting is creamy) or (L is slime and the fill-colour of collecting is golden) or (L is milk and the fill-colour of collecting is white) or (L is murkwater and the fill-colour of collecting is murky):
 					dump collecting;
 					if L is semen, now the fill-colour of collecting is creamy;
-					if L is urine, now the fill-colour of collecting is golden;
+					if L is slime, now the fill-colour of collecting is golden;
 					if L is milk, now the fill-colour of collecting is white;
 					if L is murkwater, now the fill-colour of collecting is murky;
 				SetDose collecting to (the total volume of face + 1) / 2;
 				now the drink-origin of collecting is the drink-origin of face;
 				compute father material of face into collecting;
 			repeat with M running through reactive people:
-				if the semen volume of face <= 0 and the urine volume of face <= 0:
+				if the semen volume of face <= 0 and the slime volume of face <= 0:
 					compute boring spit reaction of M;
 				otherwise:
 					compute disgusting spit reaction of M;
@@ -397,8 +397,8 @@ This is the automatic spitting rule:
 	if the semen volume of face > 0 and the semen taste addiction of the player is 1:
 		compute addictive tasting of semen;
 		now nextTimeFlav is true;
-	if the urine volume of face > 0 and the urine taste addiction of the player is 1:
-		compute addictive tasting of urine;
+	if the slime volume of face > 0 and the slime taste addiction of the player is 1:
+		compute addictive tasting of slime;
 		now nextTimeFlav is true;
 	if the milk volume of face > 0 and the milk taste addiction of the player is 1:
 		compute addictive tasting of milk;

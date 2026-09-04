@@ -45,7 +45,7 @@ To sprinkle (T - a sprinkle trap):
 			HairUp 1;
 		if the TrapNo of T is 2 and watersports fetish is 1:
 			repeat with C running through worn able to take more liquid clothing:
-				PissSoak a random number between 0 and 1 on C;
+				SlimeSoak a random number between 0 and 1 on C;
 	if camera-drone is stalking, compute dunking camera-drone.
 
 To say SprinkleLiquid of (S - a sprinkle trap):
@@ -53,7 +53,7 @@ To say SprinkleLiquid of (S - a sprinkle trap):
 		say "clear liquid";
 	otherwise:
 		if the TrapNo of S is 1, say "red liquid";
-		if the TrapNo of S is 2, say "[if watersports fetish is 1][urine][otherwise]golden liquid[end if]";
+		if the TrapNo of S is 2, say "[if watersports fetish is 1][slime][otherwise]golden liquid[end if]";
 		if the TrapNo of S is 3, say "white liquid";
 		if the TrapNo of S is 4, say "pink liquid".
 

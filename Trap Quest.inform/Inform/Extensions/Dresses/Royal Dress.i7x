@@ -29,7 +29,7 @@ To decide which number is the intelligence-influence of (O - a royal dress):
 	decide on I.
 
 To decide which object is the unique-upgrade-target of (C - a royal dress):
-	if there is a worn diaper and (diaper quest is 0 or the number of worn cursed headgear is 0), decide on baby royal dress; [DQ Tiara Quest is impossible to complete with a super short baby dress]
+	if there is a worn diaper, decide on baby royal dress;
 	if the throatskill of the player is 1, decide on deepthroat princess crop top;
 	if C is lolita royal dress, decide on ballgown royal dress;
 	decide on nothing.
@@ -66,6 +66,7 @@ Definition: ballgown royal dress is potentially-bottom-layer-concealing:
 Part 2 - Lolita Royal Dress
 
 lolita royal dress is a royal dress. lolita royal dress is fully covering. lolita royal dress is not-top-displacable. The text-shortcut of lolita royal dress is "rd2".
+The skirt-length of lolita royal dress is 5.
 
 To decide which figure-name is clothing-image of (C - lolita royal dress):
 	decide on figure of royal dress 2.
@@ -84,7 +85,7 @@ To decide which number is the initial cringe of (C - lolita royal dress):
 
 Part 3 - Baby Royal Dress
 
-baby royal dress is a royal dress. baby royal dress is not-top-displacable. The skirt-length of baby royal dress is 4. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
+baby royal dress is a royal dress. baby royal dress is not-top-displacable. The skirt-length of baby royal dress is 2. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
 
 To decide which figure-name is clothing-image of (C - baby royal dress):
 	decide on figure of royal dress 3.
@@ -107,6 +108,9 @@ Definition: baby royal dress is fetish appropriate:
 	decide no.
 Definition: baby royal dress is baby themed: decide yes.
 Definition: baby royal dress is bow themed: decide yes.
+Definition: a tiara (called C) is removal-blocking:
+	if wearing-target is baby royal dress, decide yes;
+	decide no.
 
 To compute (C - baby royal dress) unique inheriting from (D - a clothing):
 	now C is bed wetting.
@@ -117,6 +121,9 @@ To transform (D - a clothing) into (C - baby royal dress):
 	say "a [C][bold type] in front of your eyes![roman type] ";
 	cutshow figure of princess diaper cutscene 1 for C;
 	say TransformReaction of C.
+
+To say TransformReaction of (C - baby royal dress):
+	say "[variable custom style]B-but this completely exposes me down there[if diaper quest is 1 and there is a worn cursed tiara]! Now the only way for me to complete my class quest is to put an even thicker diaper over my main diaper... Unless I change this dress for something else...[roman type][line break]But as you tug on your new dress, considering removing it, you feel your cursed tiara somehow shake with disagreement, its curse preventing you from removing the dress![line break][variable custom style]Oh fuck... I guess that answers that question, then... Maybe the dungeon shop has extra diapers[end if]...[roman type][line break]".
 
 
 Part 4 - Queen of Spades Dress

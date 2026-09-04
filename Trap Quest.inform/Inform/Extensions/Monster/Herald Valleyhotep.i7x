@@ -30,7 +30,7 @@ To say BigFuckerDesc of (M - herald):
 	say "Valleyhotep".
 
 To say MonsterDesc of (M - herald):
-	say "This mass of pink and purple smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied [man of M][otherwise]voluptuous [man of M][end if] which appears to be made out of energy and silicone. [big he of M] stands at least ten feet tall. [big his of M] face has no features except glowing pink eyes and mouth, you feel like a thousand eyes are peering into your soul in [his of M] presence. A large prehensile tail whips around behind [him of M], searching for orifices to penetrate.";
+	say "This mass of pink and purple smoke and crackling lightning has taken the shape of a [if andro fetish is 1]bubble-bootied [man of M][otherwise]voluptuous [man of M][end if] which appears to be made out of energy and silicone. [big he of M] stands at least ten feet tall. [big his of M] face has no features except glowing pink eyes and mouth, you feel like a thousand eyes are peering into your soul in [his of M] presence. A large prehensile tail whips around behind [him of M], searching for orifices to penetrate.";
 
 To set up (M - herald):
 	now the monstersetup of M is 1;
@@ -61,7 +61,7 @@ To compute perception of (M - herald):
 		say "[speech style of M]'Oh man, you are, like, a vampire or something huh? How is that working out for you? No offence but I have nothing for you.'[roman type][line break]";
 		calm M;
 	otherwise:
-		say "[speech style of M]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]";
+		say "[speech style of M]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise][SlimeContainer][end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]";
 		anger M;
 	if the times-met of M <= 1, progress quest of insanity-quest.
 
@@ -127,24 +127,24 @@ To compute punishment of (P - herald-blessing):
 			SilentlyDelicateUp 1;
 			IntDown 1;
 	otherwise:
-		say "[speech style of M]'In the new world order, all humans will be fully potty untrained, to remind them of their submission. I will start with you.'[roman type][line break]The next thing you know, you can't feel your bladder[if diaper messing >= 3] or bowels[end if].";
+		say "[speech style of M]'In the new world order, all humans will be fully [SlimeTarget] untrained, to remind them of their submission. I will start with you.'[roman type][line break]The next thing you know, you can't feel your [SlimeContainer][if diaper messing >= 3] or bowels[end if].";
 		increase the raw-bladder-incontinence of the player by 100;
 		if diaper messing >= 3, increase the raw-rectum-incontinence of the player by 100;
 		let K be a random worn knickers;
 		if K is knickers:
-			say "Looking down, you realise that your [ShortDesc of K] is soaked with fresh warm piss";
+			say "Looking down, you realise that your [ShortDesc of K] is soaked with fresh warm [slime]";
 			if K is soilable and diaper messing >= 3:
 				say " and the back is now full of warm mess";
 				MessUp K by 9;
 			say ".";
-			UrineSoakUp K by 9;
+			SlimeSoakUp K by 9;
 	satisfy M.
 
 Definition: herald is uniquely distracted:
 	if herald is in the location of the player:
 		let M be a random explorer in the location of the player;
 		if M is explorer:
-			say "[BigNameDesc of herald] spots [NameDesc of M].[line break][speech style of herald]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]Before [NameDesc of M] can react, [he of M] is hit with a bolt of pink electricity. You feel like you can almost see [his of M] brain cells getting fried. [BigNameDesc of M] is forced to run squealing from the mansion, the pink lightning chasing [him of M] down through the halls.";
+			say "[BigNameDesc of herald] spots [NameDesc of M].[line break][speech style of herald]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise][SlimeContainer][end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]Before [NameDesc of M] can react, [he of M] is hit with a bolt of pink electricity. You feel like you can almost see [his of M] brain cells getting fried. [BigNameDesc of M] is forced to run squealing from the mansion, the pink lightning chasing [him of M] down through the halls.";
 			compute banishment of M;
 			decide yes;
 	decide no.
@@ -294,7 +294,7 @@ To compute herald's gift:
 				obsceneHumiliate;
 				SexAddictUp 1;
 				if diaper quest is 0, SemenAddictUp 1;
-				otherwise DiaperAddictUp 1;
+				otherwise SlowDiaperAddictUp 1;
 				DelicateUp 1;
 			now the gifted of herald is 75.
 

@@ -468,7 +468,7 @@ Table of Game Settings
 title	subtable	description	toggle
 "Restore a Save File (to guarantee windows are the right size or if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
 "[if earnings is starting-earnings and the player is in Start]Normal Start (choose all your options, read prologue)[otherwise]Confirm Settings[end if] (shortcut: Q)"	--	--	quit rule
-"[if halloween content is 1]UNAVAILABLE DURING HALLOWEEN MODE Quick Start (disable this in Normal Start > Seasonal Content)[otherwise]Quick Start (use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
+"[if halloween content is 1]UNAVAILABLE DURING HALLOWEEN MODE Quick Start (disable this in Normal Start > Seasonal Content)[otherwise if points count < 0]UNAVAILABLE DUE TO BENEFIT POINTS IMBALANCE Quick Start[otherwise]Quick Start (use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
 "[if halloween content is 1]UNAVAILABLE DURING HALLOWEEN MODE Quick Random Start (disable this in Normal Start > Seasonal Content)[otherwise]Quick RANDOM Start (randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
@@ -503,7 +503,7 @@ To prune settings menu:
 	sort the Table of Game Settings in description order. [Move blank rows to the bottom]
 
 This is the quick start rule:
-	if earnings is starting-earnings and halloween content is 0:
+	if earnings is starting-earnings and halloween content is 0 and points count >= 0:
 		now quick start is 3;
 		follow quit rule.
 

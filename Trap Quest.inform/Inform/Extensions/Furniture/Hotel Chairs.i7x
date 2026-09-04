@@ -57,9 +57,9 @@ To compute normal hotel chair sitting on (F - hotel chairs):
 	otherwise if R is 2:
 		if watersports fetish is 1:
 			say "As you bottom out on the dildo, you feel a weird filling sensation. You realise it is filling you up with something!";
-			AssFill 12 Urine;
-			UrinePuddleUp 15;
-			say "You pull yourself off the dong as fast as you can without hurting yourself, which takes a few seconds, and fall forwards onto your hands and knees. Looking behind you, you realise [if the bimbo of the player < 12]it's even worse than you feared[otherwise if the bimbo of the player < 15]exactly what happened[otherwise]that you hit the jackpot[end if] - the dildo is powerfully spurting a flood of [urine] into the air! A couple of pints of that stuff definitely got inside of you. You also realise you do feel a lot less tired!";
+			AssFill 12 slime;
+			SlimePuddleUp 15;
+			say "You pull yourself off the dong as fast as you can without hurting yourself, which takes a few seconds, and fall forwards onto your hands and knees. Looking behind you, you realise [if the bimbo of the player < 12]it's even worse than you feared[otherwise if the bimbo of the player < 15]exactly what happened[otherwise]that you hit the jackpot[end if] - the dildo is powerfully spurting a flood of [slime] into the air! A couple of pints of that stuff definitely got inside of you. You also realise you do feel a lot less tired!";
 		otherwise:
 			say "[RestingDesc of F]";
 	otherwise if R is 3:
@@ -95,13 +95,13 @@ To compute baby hotel chair sitting:
 			say "The pumping keeps going for what feels like a full 10 seconds before it stops, leaving your womb feeling very full.";
 		otherwise if K is clothing:
 			if diaper quest is 1:
-				say "You feel something very thin poke its way through the [if K is not total protection]gap[otherwise if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then start pumping. Your [ShortDesc of K] is being filled with something warm - it's somebody else's [urine]!";
+				say "You feel something very thin poke its way through the [if K is not total protection]gap[otherwise if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then start pumping. Your [ShortDesc of K] is being filled with something warm - it's somebody else's [slime]!";
 				let S be the soak-limit of K;
 				decrease S by the total-soak of K;
 				if S < 5, now S is 5;
 				[if K is fluid immune, now S is 1;]
-				AnnouncedExpel urine on K by S;
-				say "The pumping keeps going for what feels like a full 10 seconds before it stops[if the urine-soak of K > 0], leaving your the inside of your [ShortDesc of K] feeling very wet[end if].";
+				AnnouncedExpel slime on K by S;
+				say "The pumping keeps going for what feels like a full 10 seconds before it stops[if the slime-soak of K > 0], leaving your the inside of your [ShortDesc of K] feeling very wet[end if].";
 			otherwise:
 				say "You feel something very thin poke its way through the [if K is not total protection]gap[otherwise if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then start pumping. Your [ShortDesc of K] is being filled with something warm and viscous - it's [semen]!";
 				let S be the soak-limit of K;

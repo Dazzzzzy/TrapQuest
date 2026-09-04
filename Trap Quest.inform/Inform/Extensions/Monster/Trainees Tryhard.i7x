@@ -25,7 +25,7 @@ To say LewdAppearanceAssessment of (M - a tryhard trainee):
 
 To say ToiletReactionFlav of (M - a tryhard trainee):
 	if the current-rank of M > 4, say "[BigNameDesc of M] stares at you, nodding with approval. [slightHumiliateReflect]";
-	otherwise say "[BigNameDesc of M] forces [himself of M] to stare at you, with a serious expression, as if it's a test of [his of M] own ability to enjoy watching someone else use the toilet. [moderateHumiliateReflect]".
+	otherwise say "[BigNameDesc of M] forces [himself of M] to stare at you, with a serious expression, as if it's a test of [his of M] own ability to enjoy watching someone else use the [SlimeTarget]. [moderateHumiliateReflect]".
 
 Part - Laci
 
@@ -55,7 +55,7 @@ To say ClitLeadDesc of (M - trainee-laci):
 To update name of (M - trainee-laci):
 	if the current-rank of M is 1:
 		now the trainee-name of M is "Laci";
-		if diaper quest is 1, now the trainee-print of M is "proudly potty-trained";
+		if diaper quest is 1, now the trainee-print of M is "proudly [SlimeTargetP]-trained";
 		otherwise now the trainee-print of M is "upskirt understudy";
 	otherwise:
 		now the trainee-name of M is "Lala";
@@ -91,9 +91,9 @@ To decide which figure-name is the monster-image of (M - trainee-misty):
 
 To say MonsterDesc of (M - trainee-misty):
 	if the current-rank of M is 1:
-		say "This slim brunette is wearing a tiny white cotton vest and matching panties. [if diaper quest is 0 and lady fetish is not 2]You can see [his of M] clit piercing poking through. [end if][big he of M] is holding a bottle of water, [if diaper quest is 0]in a somewhat suggestive manner[otherwise]and seems to be trying to remember to take a sip every few seconds[end if].";
+		say "This slim brunette is wearing a tiny white cotton vest and matching panties. [if diaper quest is 0 and andro fetish is 0]You can see [his of M] clit piercing poking through. [end if][big he of M] is holding a bottle of water, [if diaper quest is 0]in a somewhat suggestive manner[otherwise]and seems to be trying to remember to take a sip every few seconds[end if].";
 	otherwise if diaper quest is 1:
-		say "This slim brunette is wearing a tiny white cotton vest and a thick white diaper. [if the current-rank of M is 2][big he of M] is holding a bottle of water, and seems to be trying to remember to take a sip every few seconds[otherwise if the current-rank of M is 3][big his of M] shirt has now been soaked wet with water and turned see-through, and [he of M] seems to be trying to remember to pour a bit of water into [his of M] ever-expanding padding every few seconds[otherwise if the current-rank of M is 4][big his of M] shirt and diaper have now been completely saturated with water, causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] empty water bottle with pride[otherwise][big his of M] shirt and diaper have now been completely saturated with [urine], causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] water bottle full of [urine] with pride. Something tells you it's not [his of M] urine in the bottle[end if].";
+		say "This slim brunette is wearing a tiny white cotton vest and a thick white diaper. [if the current-rank of M is 2][big he of M] is holding a bottle of water, and seems to be trying to remember to take a sip every few seconds[otherwise if the current-rank of M is 3][big his of M] shirt has now been soaked wet with water and turned see-through, and [he of M] seems to be trying to remember to pour a bit of water into [his of M] ever-expanding padding every few seconds[otherwise if the current-rank of M is 4][big his of M] shirt and diaper have now been completely saturated with water, causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] empty water bottle with pride[otherwise][big his of M] shirt and diaper have now been completely saturated with [slime], causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] water bottle full of [slime] with pride. Something tells you it's not [his of M] slime in the bottle[end if].";
 	otherwise if the current-rank of M < 4 and M is clitLeaded:
 		say "This slim brunette is wearing a tiny white cotton vest which has been soaked with water, and is now see-through. [big his of M] panties have been removed entirely to make space for [his of M] new clit lead.";
 	otherwise:
@@ -123,14 +123,14 @@ To update name of (M - trainee-misty):
 		now the trainee-print of M is "saturated sagger";
 	otherwise:
 		now the trainee-name of M is "M";
-		now the trainee-print of M is "human toilet".
+		now the trainee-print of M is the substituted form of "human [SlimeTarget]".
 
 To say WhereAnswer of (M - trainee-misty):
 	say "[speech style of M]'[if the rank of the player <= 1]This is an... exotic skills training facility for [princes]. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - trainee-misty):
 	if diaper quest is 0, say "[speech style of M]'My kingdom's greatest tradition is the national wet T-shirt contest. [big princes] are supposed to join in once they come of age. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll have the courage to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and winning that crown[otherwise]I've learned here, I think I'm going to do much better than just win the tournament. I reckon a dashing prince will notice me in no time, and after I suck [his of male-m] [manly-penis] a few times I'm sure I can convince [him of male-m] to make me [his of male-m] queen[end if]!'[roman type][line break]";
-	otherwise say "[speech style of M]'I caught my boyfriend reading some weird stories. He explained he finds it hot when [men of M] are desperate to go to the toilet and then sometimes end up wetting themselves. So I thought I'd come here to learn more about how to turn his fantasy into a reality. What can I say, I'm a dedicated [boy of M]friend...'[roman type][line break]".
+	otherwise say "[speech style of M]'I caught my boyfriend reading some weird stories. He explained he finds it hot when [men of M] are desperate to go to the [SlimeTarget] and then sometimes end up wetting themselves. So I thought I'd come here to learn more about how to turn his fantasy into a reality. What can I say, I'm a dedicated [boy of M]friend...'[roman type][line break]".
 
 To compute friendly drink of (M - a trainee-misty):
 	if the current-rank of M >= 4:
@@ -190,7 +190,7 @@ To say RepeatResponse of (M - trainee-candy):
 	say FirstResponse of M.
 
 To say StoryAnswer of (M - trainee-candy):
-	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my kingdom! I'm good at following instructions. No actually, I'm the BEST at following instructions! My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this place can help me out.'[otherwise][big princes] in my kingdom are supposed to be the castle's 24/7 live-in pet[boy of M] fuck slaves, but I'm still learning how to properly [please] [men of male-m]. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my kingdom! I'm good at following instructions. No actually, I'm the BEST at following instructions! My owner wants me to learn to [slime] on the ground like a normal kitty but unlearning [SlimeTarget] training is hard. So I'm seeing if this place can help me out.'[otherwise][big princes] in my kingdom are supposed to be the castle's 24/7 live-in pet[boy of M] fuck slaves, but I'm still learning how to properly [please] [men of male-m]. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
 
 To say DamageReaction (N - a number) of (M - trainee-candy):
 	if N > (the maxhealth of M / 4) * 3:

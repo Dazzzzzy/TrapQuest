@@ -583,7 +583,8 @@ To anger (M - a monster): [This should bring the monster just into unfriendly te
 	if M is recently-friendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 	if the favour of M > the aggro limit of M:
 		now M is recently-unknown;
-		FavourSet M to the aggro limit of M.
+		FavourSet M to the aggro limit of M;
+	if M is unfriendly and M is listed in friendly-guys, remove M from friendly-guys.
 
 To calm (M - a monster): [This should bring the monster just into friendly territory.]
 	if M is recently-unfriendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]

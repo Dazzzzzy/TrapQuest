@@ -111,7 +111,7 @@ The egg stuffing rule is listed in the statsetting rules.
 Check attacking egg:
 	if the player is at least partially immobile, say "You're a bit busy!" instead;
 	allocate 1 seconds;
-	say "The shell is too strong! You can't damage it at all. If you want to get rid of it, perhaps you could [bold type]flush it down a toilet[roman type][line break]" instead.
+	say "The shell is too strong! You can't damage it at all. If you want to get rid of it, perhaps you could [bold type]flush it down a [SlimeTarget][roman type][line break]" instead.
 Check slapping egg:
 	try attacking the noun instead.
 Check kneeing egg:
@@ -122,10 +122,10 @@ Check dropping egg:
 	if the location of the player is toilets and (locked-toilets is false or the player is not in Facility10 or facility-toilet-key is held):
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "drop [NameDesc of the noun] on the ground";
-		set numerical response 2 to "flush [NameDesc of the noun] down the toilet";
+		set numerical response 2 to "flush [NameDesc of the noun] down the [SlimeTarget]";
 		if the number of carried eggs > 1:
 			set numerical response 3 to "drop all your eggs on the ground";
-			set numerical response 4 to "flush all your eggs down the toilet";
+			set numerical response 4 to "[if slimeshooter fetish is 1]discard[otherwise]flush[end if] all your eggs down the [SlimeTarget][if slimeshooter fetish is 1] basin[end if]";
 		set numerical response 0 to "cancel";
 		compute multiple choice question;
 		if player-numerical-response is 0, say "Action cancelled." instead;
@@ -140,12 +140,13 @@ Check dropping egg:
 				unless E is the noun, now E is in the location of the player.
 
 Report examining egg when egg laying fetish is 1:
-	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroyed by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
+	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroyed by brute force, but perhaps you could [bold type]drop[roman type] it down the [SlimeTarget].".
 
 To compute flushing of (E - a thing):
 	allocate 2 seconds;
 	destroy E;
-	say "You flush [NameDesc of E] down the toilet.".
+	if slimeshooter fetish is 1, say "You chuck [NameDesc of E] into [SlimeTarget] basin.";
+	otherwise say "You flush [NameDesc of E] down the [SlimeTarget].";
 
 To uniquely destroy (E - an egg):
 	now the hatching of E is 0;

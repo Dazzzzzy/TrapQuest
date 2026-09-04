@@ -28,11 +28,11 @@ Figure of Icarus 2 is the file "NPCs/Dungeon/Icarus/Icarus2.jpg".
 Figure of Lady Icarus 1 is the file "NPCs/Dungeon/Icarus/IcarusFem1.jpg".
 
 To decide which figure-name is the monster-image of (M - Icarus):
-	if lady fetish is 1, decide on figure of Lady Icarus 1;
+	if gyno fetish is 1, decide on figure of Lady Icarus 1;
 	decide on Figure of Icarus 1.
 
 To decide which figure-name is the unfriendly-monster-image of (M - Icarus):
-	if lady fetish is 1, decide on figure of Lady Icarus 1;
+	if gyno fetish is 1, decide on figure of Lady Icarus 1;
 	decide on Figure of Icarus 2.
 
 Figure of Icarus interact 1 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact1.jpg".
@@ -104,6 +104,9 @@ To compute diaper mess reaction of (M - Icarus):
 		if M is uninterested:
 			bore M;
 			if M is in the location of the player, compute mandatory room leaving of M.
+To compute continued diaper mess reaction of (M - Icarus):
+	say "[BigNameDesc of M] lustfully enjoys the sounds of your messy episode.";
+	say moderateHumiliateReflect.
 
 To compute (M - a monster) stomping (N - Icarus):
 	if M is in the location of the player, say "[BigNameDesc of M] hits [NameDesc of N] with a brutal uppercut, which causes [NameDesc of N][']s corporeal body to shudder and then fizzle away, leaving nothing but a few feathers behind.";
@@ -139,7 +142,7 @@ To decide which number is the cringe tolerance of (M - Icarus): [What number of 
 
 To say DisapprovalFlav of (M - Icarus):
 	say "You can see [NameDesc of M]['] [DickDesc of M] twitch underneath [his of M] tight pants.[line break][speech style of M]'[one of]It's so difficult to do my job without getting... distracted...'[or]You look mighty [tasty] right now.'[stopping][roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M.
 
 To say BecomesAggressive of (M - Icarus):
 	say "You watch [him of M] spread [his of M] wings to their full span![line break][speech style of M]'[if diaper quest is 1]Okay, there's something I've just GOT to do with you before I get back to work...'[otherwise][one of]Okay, let's have a quick shag, then I'll get back to work...'[or]Time to have a quick sex break, I think!'[in random order][end if][roman type][line break]Looks like [his of M] intentions have become less than pure...".
@@ -157,40 +160,40 @@ To compute appearance assessment of (M - Icarus):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]Well well well, don't you look delicious? [or]Honey, you've got what I want. [or]You're so beautiful, you look like an angel! [in random order][one of]I really shouldn't, but I can't help myself! [or]It's technically against the rules, but what nobody finds out about won't hurt them... [in random order]Let's have sex.'[roman type][line break][one of]Uh-oh, [he of M] seems unfriendly...[or][stopping]";
 		anger M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
 	otherwise if M is groping:
 		compute grope of M;
 	otherwise:
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
 		say "[speech style of M]'Hey there. [if christmas content is 1]Merry Christmas! [end if][one of]Are you willing to let me test out some new 3D designs on you? If you agree, there's a gift in it for you, courtesy of the big guy upstairs[or]I'm still looking to test my graphics in return for gifts[stopping].'[roman type][line break]Agree to [his of M] request? ";
 		if the player is bimbo consenting:
 			FavourUp M;
 			compute Icarus science of M;
 		otherwise:
 			say "[speech style of M]'[one of]Disappointing...'[or]Fair enough.'[or]Maybe next time then.'[at random][roman type][line break]";
-			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
+			if gyno fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
 			if M is acquaintance, FavourDown M.
 
 To compute perception of (M - Icarus):
 	if the class of the player is living sex doll:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh sweet, you're under the latex curse? I guess this is my lucky day! Come here sweetie, let me try a road test[or]Oh look, my favourite walking fuckdoll is back for more[stopping]...'[roman type][line break]";
 		anger M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if M is objectifying the player:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You look like your game's pretty much over anyway, right? So it shouldn't make any difference if I give you a once-over too!'[or]I really shouldn't, but I can't help myself!'[stopping][roman type][line break]";
 		anger M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's fuck.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is in danger or there is a live thing penetrating a body part:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][big he of M] turns to leave you alone.";
 		distract M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
 	otherwise:
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute appearance assessment of M.
@@ -199,16 +202,16 @@ To compute DQ perception of (M - Icarus):
 	if M is babifying the player:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You look like your game's pretty much over anyway, right? So it shouldn't make any difference if I have some fun with you too!'[or]I really shouldn't, but I can't help myself!'[stopping][roman type][line break]";
 		anger M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's have some fun.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is in danger or there is a live thing grabbing the player:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][big he of M] turns to leave you alone.";
 		distract M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
 	otherwise:
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute DQ appearance assessment of M.
@@ -220,17 +223,29 @@ To compute DQ appearance assessment of (M - Icarus):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]Well well well, don't you look deliciously cute? [or]Sweetheart, you've got that [']play with me['] look. [or]You're so adorable, you look like an angel! [in random order][one of]I really shouldn't, but I can't help myself! [or]It's technically against the rules, but what nobody finds out about won't hurt them... [in random order]Let's have a bit of naughty fun.'[roman type][line break][one of]Uh-oh, [he of M] seems unfriendly...[or][stopping]";
 		anger M;
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise:
-		if lady fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
+		if gyno fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
 		say "[speech style of M]'Hey there. [if christmas content is 1]Merry Christmas! [end if][one of]Are you willing to let me test out some new 3D designs on you? If you agree, there's a gift in it for you, courtesy of the big guy upstairs[or]I'm still looking to test my graphics in return for gifts[stopping].'[roman type][line break]Agree to [his of M] request? ";
 		if the player is bimbo consenting:
 			FavourUp M;
 			compute Icarus science of M;
 		otherwise:
 			say "[speech style of M]'[one of]Disappointing...'[or]Fair enough.'[or]Maybe next time then.'[at random][roman type][line break]";
-			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
+			if gyno fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
 			if M is acquaintance, FavourDown M.
+
+woman-player has a number called icarus-scene.
+
+Definition: Icarus (called M) is distracted:
+	if the icarus-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and M is in the location of the player and woman-player is in the location of the player and the woman-status of M < 30:
+		let W be woman-player;
+		say "[BigNameDesc of W] walks up to [NameDesc of M].[line break][speech style of W]'Hey dude... That experiment you did on my lips... Are you sure it's all over? Because they still feel a bit tingly.'[roman type][line break][big he of W] asks, with a hint of anxiety in [his of W] tone.[paragraph break][speech style of M]'Huh? Let me see...'[roman type][BigNameDesc of M] moves [his of M] head to get a closer look at [NameDesc of W][']s thick, luscious lips. [big he of M] touches them gently, making [NameDesc of W] sigh with poorly hidden pleasure.[line break][speech style of M]'Holy crap, they do seem to be even bigger than before. And, if I'm not mistaken, more sensitive...?'[roman type][paragraph break][speech style of W]'Oh fuck, I thought so... I hope the magic wears off soon... Or else... I'm gonna get an oral fixation for sure...'[roman type][line break][big he of W] whimpers with a mixture of shame and pleasure.";
+		cutshow Figure of barbara cutscene 30 for M;
+		now the icarus-scene of woman-player is 1;
+		compute addiction reflection on "oral sex addiction" with 0 flavour;
+		decide yes;
+	decide no.
 
 Part 3 - Icarus Science
 
@@ -439,8 +454,8 @@ To compute IcarusSummon of (C - icarus-belly):
 			say "insane amounts of poop![line break][variable custom style]Oh god...[roman type][line break]";
 			now rectum is 30;
 		otherwise if watersports fetish is 1:
-			say "[urine]!";
-			increase the urine volume of belly by belly limit - the total fill of belly;
+			say "[slime]!";
+			increase the slime volume of belly by belly limit - the total fill of belly;
 		otherwise:
 			say "warm water!";
 			increase the water volume of belly by belly limit - the total fill of belly;
@@ -628,27 +643,27 @@ Section 1 - Greeting
 
 To say FirstResponse of (M - Icarus):
 	say "[speech style of M]'What, you're talking to me?'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 4 for M.
 
 To say RepeatResponse of (M - Icarus):
 	say "[speech style of M]'What do you want now?'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 2 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 2 for M.
 
 To say PleadRejected of (M - Icarus):
 	say "[speech style of M]'You will regret defying my will!'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
 
 To say SubmissiveResponse of (M - Icarus):
 	say "[speech style of M]'[if M is buddy]Hey there. I'm glad we can still be friends after what I did to you earlier.'[otherwise]Hi again. Let's try to be more civil this time, don't you agree?'[end if][roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 6 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 6 for M.
 
 To say InvitationRejected of (M - Icarus) with (N - a monster):
 	say "[speech style of M]'Am I really the one you should be paying attention to right now?'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 4 for M.
 
 To say MildAnnoyedResponse of (M - Icarus):
 	say "[speech style of M]'Less talking, more fucking.'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
 
 Section 2 - Questioning
 
@@ -659,33 +674,33 @@ To compute teaching of (M - Icarus):
 
 To say WhereAnswer of (M - Icarus):
 	say "[speech style of M]'Where are we? WHERE ARE WE? [if christmas content is 1]Oh never mind, I'll let you off. It's Christmas after all[otherwise]I DREW this place. You are in MY domain, you idiot[end if].'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
 
 To say WhoAnswer of (M - Icarus):
 	say "[speech style of M]'[if christmas content is 1]I'm a messenger of hope and joy! Oh and also I'm the chief graphics designer of this place[otherwise]I'm Aika's chief graphic designer. What you see around you, what you see *on* you, what you see in the mirror... I made it all[end if].'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 3 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 3 for M.
 
 To say StoryAnswer of (M - Icarus):
 	say "[speech style of M]'[if christmas content is 1]You want the story of how this world was created? Well a long long time ago, in another dimension, God decided to create the universe. The year was... 2011. God is better known as [']Aika['].'[otherwise]Booty!'[end if][roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 7 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 7 for M.
 
 To say EscapeAnswer of (M - Icarus):
 	say "[speech style of M]'Oh that's not my department. My job is just to make sure things look incredible while you're down here.'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 3 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 3 for M.
 
 To say AdviceAnswer of (M - Icarus):
 	say "[speech style of M]'[one of]It's best to use the dungeon altar to bless clothing that is uncursed, since the woods altar doesn't have that power.'[or]The dungeon altar's charge isn't actually controlled by time. It decreases every time you interact with another character and every time you open a container.'[in random order][roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 7 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 7 for M.
 
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - Icarus):
 	say "[speech style of M]'I'm sorry, I'm not particularly into watersports.'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M.
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 1 for M.
 
 To compute unfriendly drink of (M - Icarus):
 	say "[speech style of M]'You seem to have misunderstood the current nature of our relationship...'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
 	interest M.
 
 Section 4 - Food Requesting
@@ -699,7 +714,7 @@ To say FriendlyFoodAgreeFlav of (M - Icarus):
 
 To compute unfriendly food of (M - Icarus):
 	say "[speech style of M]'You seem to have misunderstood the current nature of our relationship...'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
+	if gyno fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
 	interest M.
 
 Section 5 - Dismissal

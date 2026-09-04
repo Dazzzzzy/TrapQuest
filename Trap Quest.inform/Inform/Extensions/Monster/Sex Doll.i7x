@@ -56,9 +56,9 @@ To say MediumDesc of (M - uncanny sex doll):
 
 To say SexDollGender of (M - a sex doll):
 	if M is creamfilled-sex-doll:
-		if full-lady fetish is 1:
+		if super-gyno fetish is 1:
 			say "female strapon";
-		otherwise if lady fetish is 1:
+		otherwise if gyno fetish is 1:
 			say "futanari";
 		otherwise:
 			say "male";
@@ -85,7 +85,7 @@ Definition: a sex doll (called M) is liquidfilled:
 Definition: a sex doll is virginity taking: decide yes.
 
 To decide which figure-name is the monster-image of (M - a sex doll):
-	if M is creamfilled-sex-doll and lady fetish is 0:
+	if M is creamfilled-sex-doll and gyno fetish is 0:
 		decide on Figure of Male Sex Doll;
 	otherwise:
 		decide on Figure of Female Sex Doll;
@@ -98,7 +98,7 @@ To say DollColour of (M - a creamfilled-sex-doll):
 
 To say MonsterDesc of (M - a sex doll):
 	if M is creamfilled-sex-doll:
-		say "A [if lady fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if full-lady fetish is 1][big his of M] crotch is black, which makes the flesh-coloured dildo extending from [his of M] crotch look like a strapon[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
+		say "A [if gyno fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if super-gyno fetish is 1][big his of M] crotch is black, which makes the flesh-coloured dildo extending from [his of M] crotch look like a strapon[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
 	otherwise:
 		say "An inflatable female sex doll with spherical breasts and [DollColour of M] lips painted on [his of M] face. [big he of M] is completely naked, and the ends of [his of M] arms are adorned with large suctions cups, which could probably give [him of M] a quite strong grip. A flesh-coloured dildo extends from [his of M] crotch, [if inflation fetish is 1]which appears to be filled with some sort of dark liquid[otherwise]almost like a cork[end if].".
 

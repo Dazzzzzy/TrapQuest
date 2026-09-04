@@ -59,7 +59,7 @@ A later time based rule (this is the desperation quest rule):
 		otherwise if the location of the player is toilets:
 			progress quest of desperation-quest;
 			if playerRegion is mansion and vampiress is summon-available and the player is able to use a toilet:
-				say "You're so desperate for the toilet, that as soon as you see one here, you leap towards it!";
+				say "You're so desperate for the [SlimeTarget], that as soon as you see one here, you leap towards it!";
 				compute toilet use;
 				spawn meet vampiress;
 				now rewardEarned is true;
@@ -68,7 +68,7 @@ A later time based rule (this is the desperation quest rule):
 			blandify and reveal TP;
 			now TP is maturity;
 			now TP is in the location of the player;
-			say "[BigNameDesc of vampiress] claps enthusiastically, as if [he of vampiress] is potty training a toddler.[line break][speech style of vampiress]'Well done, my little cupcake! Maybe we'll make a big [boy of the player] of you yet. Here, take this, on the house.'[roman type][line break][BigNameDesc of vampiress] waves [his of vampiress] hands, and manifests a [TP] in mid-air in front of you! It drops the ground with a soft thud.";
+			say "[BigNameDesc of vampiress] claps enthusiastically, as if [he of vampiress] is [SlimeTargetP] training a toddler.[line break][speech style of vampiress]'Well done, my little cupcake! Maybe we'll make a big [boy of the player] of you yet. Here, take this, on the house.'[roman type][line break][BigNameDesc of vampiress] waves [his of vampiress] hands, and manifests a [TP] in mid-air in front of you! It drops the ground with a soft thud.";
 			satisfy vampiress;
 			compute autotaking TP.
 
@@ -258,8 +258,8 @@ a class explaining rule (this is the explaining warrior rule):
 
 This is the alchemist class rule:
 	if there is a worn blue scrunchie:
-		now player-class is the substituted form of "[alchemist]";
-		if there is a worn magical dress, now player-class is the substituted form of "magical [alchemist]";
+		now player-class is the substituted form of "[alchemist-text]";
+		if there is a worn magical dress, now player-class is the substituted form of "magical [alchemist-text]";
 		let TUC be total used condoms;
 		if there is worn cheerleader outfit or there is worn pom-poms, now player-class is "potion class bully"; [alchemist + cheerleader]
 		if player-class is "potion class bully" and TUC > 0: [alchemist + cheerleader + condom collector]
@@ -269,7 +269,7 @@ This is the alchemist class rule:
 			if player-class is "potion class bully":
 				now player-class is "plastic bully"; [+ cheerleader]
 			otherwise:
-				now player-class is the substituted form of "plastic [alchemist]";
+				now player-class is the substituted form of "plastic [alchemist-text]";
 				if TUC > 0, now player-class is "walking talking condom"; [+ condom collector]
 		otherwise if TUC > 0: [alchemist + condom collector]
 			now player-class is "potion class sperm bank";
@@ -282,7 +282,7 @@ Thanks to the various alchemist multi-classes, we have multiple different texts 
 
 +!]
 Definition: a text (called T) is alchemist:
-	if T matches the text alchmest-text or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete" or T matches the text "teacher", decide yes;
+	if T matches the text alchemist-text or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete" or T matches the text "teacher", decide yes;
 	decide no.
 
 This is the pigtail class rule:
@@ -515,29 +515,29 @@ a class explaining rule (this is the explaining latex fetish model rule):
 
 This is the human toilet class rule:
 	if WC hood is worn:
-		now player-class is "toilet";
+		now player-class is "[SlimeTarget]";
 		if watersports fetish is 0 or meat-toilet-panties is worn:
 			if diaper quest is 1:
-				now player-class is "diaper toilet";
+				now player-class is "diaper [SlimeTarget]";
 				if trashcan is worn, now player-class is "trashcan";
 			otherwise:
-				now player-class is "meat toilet";
-				if (meat-toilet-panties is worn and the used condoms of meat-toilet-panties > 0) or trashcan is worn, now player-class is "meat toilet trashcan";
-		if trashcan is worn and watersports fetish is 1, now player-class is "toilet trashcan";
+				now player-class is "meat [SlimeTarget]";
+				if (meat-toilet-panties is worn and the used condoms of meat-toilet-panties > 0) or trashcan is worn, now player-class is "meat [SlimeTarget] trashcan";
+		if trashcan is worn and watersports fetish is 1, now player-class is "[SlimeTarget] trashcan";
 		rule succeeds.
 The human toilet class rule is listed in the player class rules.
 Definition: a text (called T) is human toilet:
-	if T matches the text "toilet" or T matches the text "wrestler", decide yes;
+	if T matches the text "toilet" or T matches the text "urinal" or T matches the text "target" or T matches the text "target" or T matches the text "slime" or T matches the text "wrestler", decide yes;
 	decide no.
 
 toiletExplained is initially false.
 a class explaining rule (this is the explaining human toilet rule):
 	if toiletExplained is false and the class of the player is human toilet:
 		now toiletExplained is true;
-		say "[bold type]Now that you have become the ['][if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet['] class, you sense that [if watersports fetish is 1]aggressors are more likely to choose to piss on you, and also you will be stronger the more [urine] there is inside your stomach[otherwise if diaper quest is 1 and diaper swapping >= 2]other people will be extra-keen to piss in your diapers[otherwise if diaper quest is 1 and diaper swapping is 1]other people will be extra-keen to make you wear their used diapers[otherwise if diaper quest is 1]many people may try to prank you by pouring water down your diapers[otherwise]once someone demands that you service their [manly-penis], you will find it very difficult to fight back[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the ['][if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] [SlimeTarget]['] class, you sense that [if watersports fetish is 1]aggressors are more likely to choose to [slime] on you, and also you will be stronger the more [slime] there is inside your stomach[otherwise if diaper quest is 1 and diaper swapping >= 2]other people will be extra-keen to [slime] in your diapers[otherwise if diaper quest is 1 and diaper swapping is 1]other people will be extra-keen to make you wear their used diapers[otherwise if diaper quest is 1]many people may try to prank you by pouring water down your diapers[otherwise]once someone demands that you service their [manly-penis], you will find it very difficult to fight back[end if].[roman type][line break]";
 	otherwise if toiletExplained is true and the class of the player is not human toilet:
 		now toiletExplained is false;
-		say "[bold type]Now that you are no longer the ['][if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet['] class, you sense that [if watersports fetish is 1]aggressors are less likely to choose to piss on you, and you are no longer stronger when you have [urine] in your stomach[otherwise if diaper quest is 1]people will try to artifically wet your diaper less often[otherwise]you will no longer struggle to deal damage to enemies that have demanded you service their [manly-penis][end if].[roman type][line break]".
+		say "[bold type]Now that you are no longer the ['][if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] [SlimeTarget]['] class, you sense that [if watersports fetish is 1]aggressors are less likely to choose to [slime] on you, and you are no longer stronger when you have [slime] in your stomach[otherwise if diaper quest is 1]people will try to artifically [slimedrain] into your diaper less often[otherwise]you will no longer struggle to deal damage to enemies that have demanded you service their [manly-penis][end if].[roman type][line break]".
 
 This is the catgirl class rule:
 	if cat-ears is worn:
@@ -1010,10 +1010,10 @@ This is the cumdumpster class rule:
 	if cumdump-headband is worn:
 		now player-class is "cumdumpster";
 		if meat-toilet-panties is worn and the used condoms of meat-toilet-panties > 0:
-			if WC collar is worn, now player-class is "meat toilet trashcan";
+			if WC collar is worn, now player-class is "meat [SlimeTarget] trashcan";
 			otherwise now player-class is "meathole trashcan";
 		otherwise if WC collar is worn:
-			now player-class is "meat toilet";
+			now player-class is "meat [SlimeTarget]";
 		otherwise if porn-star-suspenders is worn or porn star tube top is worn:
 			now player-class is "porn star";
 		rule succeeds.
@@ -1045,12 +1045,12 @@ The condom collector class (revolving around condoms pinned on clothes) requires
 This is the condom collector class rule:
 	if there is a worn condom collector hat:
 		if cumdumpster condom hat is worn or meat-toilet-panties is worn:
-			if WC collar is worn or meat-toilet-panties is worn, now player-class is "meat toilet trashcan";
+			if WC collar is worn or meat-toilet-panties is worn, now player-class is "meat [SlimeTarget] trashcan";
 			otherwise now player-class is "cum collector";
 		otherwise if rubber condom hat is worn:
 			now player-class is "walking condom";
 		otherwise if WC collar is worn:
-			now player-class is "toilet trashcan";
+			now player-class is "[SlimeTarget] trashcan";
 		otherwise if trashcan is worn:
 			now player-class is "trashcan";
 		otherwise:
@@ -1195,21 +1195,37 @@ Definition: a text (called T) is latex clown:
 This is the barbarian class rule:
 	if there is a worn barbarian-headgear:
 		now player-class is "barbarian";
-		if police-hat is worn, now player-class is the substituted form of "[if police-hat is pinkified]big tits[otherwise]long legs[end if] of the law";
+		if police-hat is worn:
+			if diaper quest is 1, now player-class is the substituted form of "padding [if police-hat is pinkified]inspector[otherwise]enforcer[end if]";
+			otherwise now player-class is the substituted form of "[if police-hat is pinkified]big tits[otherwise]long legs[end if] of the law";
 		rule succeeds.
 The barbarian class rule is listed first in the player class rules.
 Definition: a text (called T) is barbarian:
-	if T is "barbarian" or T matches the text "the law", decide yes;
+	if T is "barbarian" or T matches the text "the law" or T matches the text "padding", decide yes;
 	decide no.
 
 barbarianExplained is initially false.
 a class explaining rule (this is the explaining barbarian rule):
 	if barbarianExplained is false and the class of the player is barbarian:
 		now barbarianExplained is true;
-		say "[bold type]Now that you have become the [']barbarian['] class, you can sense that you can successfully wield extra-heavy melee weapons, and you have a progressively higher chance to avoid damage once you reach 50% health.[roman type][line break]";
+		if diaper quest is 1, say "[bold type]Now that you have become the [']police['] class, you can sense that you have a progressively higher chance to avoid damage once you reach 50% health.[roman type][line break]";
+		otherwise say "[bold type]Now that you have become the [']barbarian['] class, you can sense that you can successfully wield extra-heavy melee weapons, and you have a progressively higher chance to avoid damage once you reach 50% health.[roman type][line break]";
 	otherwise if barbarianExplained is true and the class of the player is not barbarian:
 		now barbarianExplained is false;
-		say "[bold type]Now that you are no longer the [']barbarian['] class, you can sense that you no longer have a chance to avoid damage at low health.[roman type][line break]".
+		say "[bold type]Now that you are no longer the [if diaper quest is 1][']police['][otherwise][']barbarian['][end if] class, you can sense that you no longer have a chance to avoid damage at low health.[roman type][line break]".
+
+Definition: a text (called T) is huffer:
+	if diaper messing >= 7 and T matches the text "inspector", decide yes;
+	decide no.
+
+hufferExplained is initially false.
+a class explaining rule (this is the explaining diaper huffer rule):
+	if hufferExplained is false and the class of the player is huffer:
+		now hufferExplained is true;
+		say "[bold type]Now that you have become the [']diaper huffer['] class, you can no longer voluntarily hold your breath, but also gross experiences increase your addiction to gross stuff much more slowly. Furthermore, you'll become extremely aroused whenever an NPC you're fighting tells you that they're going to sit on your face and soil their diaper.[roman type][line break]";
+	otherwise if hufferExplained is true and the class of the player is not huffer:
+		now hufferExplained is false;
+		say "[bold type]Now that you are no longer the [']diaper huffer['] class, you can sense that your ability to hold your breath has returned to normal.[roman type][line break]".
 
 This is the stripper class rule:
 	if there is worn stripper-headgear:
@@ -1223,6 +1239,7 @@ This is the stripper class rule:
 		rule succeeds.
 The stripper class rule is listed first in the player class rules.
 Definition: a text (called T) is stripper:
+	if diaper quest is 1, decide no;
 	if T matches the text "stripper" or T matches the text "porn star" or T matches the text "maiden" or T matches the text "the law" or T matches the text "fatale", decide yes;
 	decide no.
 
@@ -1279,7 +1296,7 @@ babyExplained is initially false.
 a class explaining rule (this is the explaining baby rule):
 	if babyExplained is false and the player is actually an adult baby:
 		now babyExplained is true;
-		say "[bold type]Now that you have become the [']adult baby['] class[if the number of worn baby themed headgear is 0] (because you are wearing three or more baby items)[end if], you feel much less grossed out by, well, gross things, and you will be able to maintain your focus even when desperate to use the toilet. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
+		say "[bold type]Now that you have become the [']adult baby['] class[if the number of worn baby themed headgear is 0] (because you are wearing three or more baby items)[end if], you feel much less grossed out by, well, gross things, and you will be able to maintain your focus even when desperate to use the [SlimeTarget]. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
 	otherwise if babyExplained is true and the player is not actually an adult baby:
 		now babyExplained is false;
 		say "[bold type]Now that you are no longer the [']adult baby['] class, you feel your attitude to gross things and ability to focus while desperate for the loo returning to normal.[roman type][line break]".

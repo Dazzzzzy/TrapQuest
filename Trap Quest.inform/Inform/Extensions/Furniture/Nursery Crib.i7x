@@ -43,7 +43,7 @@ To compute rest ending of (F - a nursery crib):
 	if F is grabbing the player:
 		say "[if the alert of the player is 0]You now feel fully rested[otherwise]your rest has been interrupted[end if][if the charge of F < 8], but the nursery rhyme keeps playing. Being made to keep napping like this, when you no longer need to rest, makes you feel small and pathetic[otherwise]! And you notice that the nursery rhyme has stopped playing[end if].";
 		if the charge of F < 8, SilentlyDelicateUp 1;
-		say "You'll now need to [bold type]rest[roman type] (or [bold type]long rest[roman type]) until [NameDesc of matron] returns, or try to get out with [bold type]jump[roman type].".
+		say "You'll now need to [bold type]wait[roman type] (or [bold type]long wait[roman type]) until [NameDesc of matron] returns, or try to get out with [bold type]jump[roman type].".
 
 To say RestingDesc of (F - a nursery crib):
 	say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if F is grabbing the player], with the mobile singing you its gentle song[end if].".

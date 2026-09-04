@@ -6,6 +6,58 @@ orgasm-count is a number that varies. orgasm-count is 0.
 anal-orgasms is a number that varies. anal-orgasms is 0.
 vaginal-orgasms is a number that varies. vaginal-orgasms is 0.
 
+To decide which number is the orgasm-resist-influence of (C - a thing):
+	decide on 0.
+
+To decide which number is the orgasm-resist-influence of (C - a clothing):
+	let S be 0;
+	if C is orgasm-resist-influencing:
+		increase S by the magic-modifier of C;
+		decide on S;
+	decide on 0.
+
+To decide which number is the orgasm resistance of the player:
+	let R be the raw-orgasm-resist of the player;
+	if the player is not a september 2026 top donator, now R is 0;
+	repeat with C running through worn wearthings:
+		increase R by the orgasm-resist-influence of C;
+	if R < -10, decide on -10;
+	if R > 10, decide on 10;
+	decide on R.
+
+Part 2 - Modify Orgasm Skill
+
+The player has a number called raw-orgasm-resist. The raw-orgasm-resist of the player is usually 1.[Min 1 Max 10]
+
+[!<Player>@<heelTime:Integer>*
+
+Experience
+
+*@!]
+The player has a number called gasm-time.
+
+To decide which number is minGasmXP: [How much experience does it take to go up one level of heel skill]
+	decide on 250.
+
+To GasmResUp (X - a number):
+	if the player is a september 2026 top donator:
+		while X > 0:
+			decrease X by 1;
+			2GasmResUp.
+
+To 2GasmResUp:
+	if the raw-orgasm-resist of the player < 10:
+		increase the raw-orgasm-resist of the player by 1;
+		now gasm-time of the player is 0;
+
+To GasmResDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		2GasmResDown.
+
+To 2GasmResDown:
+	if the raw-orgasm-resist of the player > 1, decrease the raw-orgasm-resist of the player by 1.
+
 Definition: a person is able to orgasm:
 	[if player-fucking is not DOMINANT-NONE and refractoryperiod < 1, decide yes;]
 	if player-fucking is not DOMINANT-NONE, decide yes;
@@ -220,7 +272,7 @@ To punish shameful male orgasm:
 			say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
 To say shameful tip:
-	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
+	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase [if diaper quest is 1]orgasm[otherwise]sex[end if] addiction[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
 
 The orgasm fatigue effects rules is a rulebook.
 
@@ -484,25 +536,31 @@ This is the diaper orgasm resolution rule:
 	if diaper lover > 0:
 		let D be a random worn total protection diaper;
 		if D is diaper, increase diaperOrgasmCount by 1;
-		if the player is grossed out:
-			say "You can feel the gross smell in your nostrils being imprinted into your brain...";
-			if diaper focus > 0 and the raw sex addiction of the player < the raw diaper addiction of the player:
-				SexAddictUp 2;
-				DiaperAddictUp 1;
-			otherwise:
-				SexAddictUp 1;
-				DiaperAddictUp 2;
-		otherwise if D is diaper:
-			if diaper focus > 0 and the raw sex addiction of the player < the raw diaper addiction of the player:
-				SexAddictUp 1; [Don't want sex addiction to fall too far behind diaper addiction from orgasms]
-			otherwise if D is clean:
-				DiaperAddictUp 1;
-			otherwise:
-				DiaperAddictUp 1;
-				SexAddictUp 1;
-		otherwise if the number of worn diaper is 0 and the number of changing the player monsters grabbing the player is 0:
-			if diaper quest is 1, SexAddictUp 1;
-			DiaperAddictDown 1.
+		if wanktype is NO-WANK:
+			if the player is grossed out:
+				say "You can feel the gross smell in your nostrils being imprinted into your brain...";
+				now flinching-allowed is false;
+				SmellGrossOut 15;
+				now flinching-allowed is true;
+			otherwise if D is diaper:
+				if diaper focus > 0 and the raw sex addiction of the player < the raw diaper addiction of the player:
+					SexAddictUp 1; [Don't want sex addiction to fall too far behind diaper addiction from orgasms]
+				otherwise if D is clean:
+					SlowDiaperAddictUp 1;
+				otherwise:
+					SlowDiaperAddictUp 1;
+					SexAddictUp 1;
+			otherwise if the number of worn diaper is 0 and the number of changing the player monsters grabbing the player is 0:
+				if diaper quest is 1, SexAddictUp 1;
+				DiaperAddictDown 1;
+		otherwise:
+			if the player is grossed out:
+				say "You can feel the gross smell in your nostrils being imprinted into your brain...";
+				now flinching-allowed is false;
+				SmellGrossOut 15;
+				now flinching-allowed is true;
+			otherwise if D is diaper:
+				SlowDiaperAddictUp 1.
 The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the BBC orgasm resolution rule:
@@ -560,7 +618,7 @@ The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 		if the bladder of the player is 0, now the bladder of the player is 2;
 		now delayed urination is 2;
 		if the player is bursting, now delayed urination is 1;
-		say "As you cum, you [if the player is bursting]can't help but let go of your bladder too[otherwise]find yourself peeing at the same time[end if]!";
+		say "As you cum, you [if the player is bursting]can't help but let go of your [SlimeContainer] too[otherwise]find yourself peeing at the same time[end if]!";
 		try urinating.
 The girls pee when they orgasm rule is listed last in the orgasm resolution rules.]
 
@@ -645,7 +703,13 @@ To decide which number is the sensitivity of (F - a body part):
 	decide on 0.
 
 To decide which number is the sensitivity of (F - penis):
-	decide on 3.
+	let S be 3;
+	increase S by the rawness of penis / 3;
+	if the size of penis < 4, increase S by 1;
+	if the size of penis < 2, increase S by 1;
+	let P be a random worn insertable thing penetrating asshole;
+	if P is clothing and P is suppression, decrease S by 1;
+	decide on S.
 
 To decide which number is the sensitivity of (F - vagina):
 	let S be the raw sensitivity of F;
@@ -668,9 +732,27 @@ Definition: a person is unable to orgasm so soon rather than able to orgasm so s
 Definition: a body part (called B) is pushed over the edge:
 	decide no.
 
-Definition: breasts (called B) is pushed over the edge:
+Definition: breasts (called F) is pushed over the edge:
 	if the player is unable to orgasm so soon or the player is not a bit horny, decide no;
-	if the sensitivity of breasts > 10 and arousal of the player > a random number between 7000 and 12000, decide yes;
+	let N be -1;
+	let T be a random thing penetrating F;
+	let R be the orgasm resistance of the player;
+	let ST be the stimulation of T on F / 2;
+	let SEN be the sensitivity of F;
+	if N < 0 or SEN < 10, now N is 0;
+	if debuginfo > 1, say "[input-style][F] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) = [N]; square rooted = [run paragraph on]";
+	now N is the square root of N; [some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
+	let A be 4 - fuckhole arousal;
+	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
+	if N <= A, decide no;
+	let O1 be a random number between N and A;
+	let O2 be a random number between N and A;
+	let L1 be O1 - a random number between 0 and R;
+	let L2 be O2 - a random number between 0 and (R / 2);
+	if debuginfo > 0, say "[input-style]Orgasm check: arousal ([A]) orgasm resistance ([R]) & stimulation ([N]); RNG([A]~[N]) - RNG(0~[R]) = [L1] and RNG([A]~[N]) - RNG(0~[R / 2]) = [L2] must both be above [A].[roman type][line break]";
+	if L1 > A or L2 > A:
+		if L1 <= A or L2 <= A and orgasm-count > 0 and the player is glitching-orgasm, decide no;
+		decide yes;
 	decide no.
 
 constant-stimulation-started is a number that varies.
@@ -681,6 +763,13 @@ An all later time based rule (this is the check for constant stimulation rule):
 This is the constant stimulation counter reset rule:
 	now constant-stimulation-started is 0.
 The constant stimulation counter reset rule is listed in the orgasm resolution rules.
+
+This is the orgasm level lost rule:
+	if gasm-time of the player > 0:
+		if gasm-time of the player > minGasmXP:
+			say "You feel like all your efforts to resist climaxing have gone to waste...[line break]";
+			now gasm-time of the player is 0.
+The orgasm level lost rule is listed in the orgasm resolution rules.
 
 Definition: yourself is able to cum hornilessly: [Some things just stimulate you so much that you cum even without being aroused]
 	if the latex-transformation of the player > 3, decide no;
@@ -697,7 +786,26 @@ Definition: penis (called P) is pushed over the edge:
 		if the player is cumming hornilessly, decide yes;
 		decide no;
 	if the player is not a bit horny, decide no;
-	if the rawness of penis > the max-rawness of penis, decide yes;
+	let N be -1;
+	let T be a random thing penetrating P;
+	let R be the orgasm resistance of the player;
+	let ST be the stimulation of T on P;
+	let SEN be the sensitivity of P;
+	increase N by ST + SEN;
+	if N < 0, now N is 0;
+	if debuginfo > 1, say "[input-style][P] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) = [N]; square rooted = [run paragraph on]";
+	now N is the square root of N;[some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
+	let A be 4 - fuckhole arousal;
+	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
+	if N <= A, decide no;
+	let O1 be a random number between N and A;
+	let O2 be a random number between N and A;
+	let L1 be O1 - a random number between 0 and R;
+	let L2 be O2 - a random number between 0 and (R / 2);
+	if debuginfo > 0, say "[input-style]Orgasm check: arousal ([A]) orgasm resistance ([R]) & stimulation ([N]); RNG([A]~[N]) - RNG(0~[R]) = [L1] and RNG([A]~[N]) - RNG(0~[R / 2]) = [L2] must both be above [A].[roman type][line break]";
+	if L1 > A or L2 > A:
+		if L1 <= A or L2 <= A and orgasm-count > 0 and the player is glitching-orgasm, decide no;
+		decide yes;
 	decide no.
 
 Definition: a fuckhole (called F) is pushed over the edge:
@@ -707,6 +815,7 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	if the player is not a bit horny, decide no; [No more than one orgasm in a round, and arousal needs to build at least a bit before the next one!]
 	let N be -1;
 	let T be a random thing penetrating F;
+	let R be the orgasm resistance of the player;
 	let ST be the stimulation of T on F / 2;
 	let SEN be the sensitivity of F;
 	let ENJ be the enjoyment of F;
@@ -716,17 +825,49 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	now N is the square root of N; [some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
 	let A be 4 - fuckhole arousal; [A decreases as arousal increases. NB at 9000 arousal (extremely horny) A becomes -1, allowing for orgasms at any value of N.]
 	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
-	if N <= A, decide no; [enjoyment is too low to trigger an orgasm from this level of arousal]
+	if N <= A, decide no;[enjoyment is too low to trigger an orgasm from this level of arousal]
 	[Now we know that N is greater than A]
 	let O1 be a random number between N and A;
 	let O2 be a random number between N and A;
-	[let O3 be a random number between N and A;]
-	[let OL be A + 1;
-	if OL >= N, now N is OL + 1;]
-	let OL be A;
-	if debuginfo > 0, say "[input-style]Orgasm check: [one of]arousal-based [or][stopping]orgasm resistance ([A]) & stimulation ([N]); RNG([A]~[N]) = [O1] and RNG([A]~[N]) = [O2] must both be above [OL].[roman type][line break]";
-	if O1 > OL and O2 > OL, decide yes; [If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%;]
+	let L1 be O1 - a random number between 0 and R;
+	let L2 be O2 - a random number between 0 and (R / 2);
+	if debuginfo > 0, say "[input-style]Orgasm check: arousal ([A]) orgasm resistance ([R]) & stimulation ([N]); RNG([A]~[N]) - RNG(0~[R]) = [L1] and RNG([A]~[N]) - RNG(0~[R / 2]) = [L2] must both be above [A].[roman type][line break]";
+	if L1 > A or L2 > A:[If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%;]
+		if L1 <= A or L2 <= A and orgasm-count > 0 and the player is glitching-orgasm, decide no;[One roll succeeded, so allow the player to force the issue.]
+		decide yes;
 	decide no.
+
+glitched-orgasms is a number that varies.
+
+Definition: a person is glitching-orgasm:
+	if the player is not a september 2026 top donator, decide no;
+	say "You feel your muscles tightening in anticipation of [one of]another[or]yet another[stopping] orgasm, and you know in your bones you aren't going to be able to fight it unless you [one of]can somehow [or][stopping]force your brain to remember that none of this is even real. [if glitched-orgasms is 0]Fighting the simulation that hard might have[otherwise]You know the[end if] consequences, but... are they worth it?";
+	reset multiple choice questions;
+	set numerical response 1 to "Fight against the simulation and reject the orgasm";
+	set numerical response 2 to "Let the orgasm happen";
+	compute multiple choice question;
+	if player-numerical-response is 1: [Lose 1 orgasm res level, lose all exp, and 1 intelligence, but in exchange, reset arousal.]
+		increase glitched-orgasms by 1;
+		IntDown 1;
+		GasmResDown 1;
+		now gasm-time of the player is 0;
+		now the delayed arousal of the player is 0.
+
+To compute climax resist exp from (T - a thing) on (F - a body part):
+	let combo be 0;
+	if the player is a bit horny, increase combo by 1;
+	if the player is horny, increase combo by 1;
+	if the player is very horny, increase combo by 2;
+	if the player is extremely horny, increase combo by 3;
+	if F is fuckhole, increase combo by the soreness of F / 3;
+	if F is penis, increase combo by the rawness of F / 3;
+	increase combo by the stimulation of T on F;
+	if wanking is 1, now combo is 0;
+	if orgasm-count is 0, now combo is 0;
+	increase the gasm-time of the player by combo * 5;
+	if the gasm-time of the player > minGasmXP * the raw-orgasm-resist of the player:
+		say "[line break][bold type]After resisting orgasm for such a long time, you feel like you've gotten better at it![roman type][line break]";
+		GasmResUp 1.
 
 To decide which number is fuckhole arousal:
 	decide on (the arousal of the player + 1000) / 2000.
@@ -737,7 +878,6 @@ To decide which number is the enjoyment of (F - a fuckhole):
 		if the player is immobile, decide on 4;
 		decide on 2;
 	let A be 2;
-	if focus band is worn, decrease A by (a random number between 0 and 3) + a random number between 0 and 3;
 	if the reaction of the player is 0 and wrestler-jumpsuit is worn, decrease A by 2;
 	if the reaction of the player is 1 or the player is friendly-fucking, increase A by 2;
 	if A < 0, decide on 0;
@@ -767,6 +907,7 @@ Definition: a body part (called F) is orgasming:
 	decide no.
 
 Definition: a fuckhole (called F) is orgasming:
+	if F is vagina and the player is not possessing a vagina and the player is possessing a penis and penis is orgasming, decide yes;
 	if (for deposit only tattoo is not worn or F is not vagina) and (the player is extremely horny or F is pushed over the edge):
 		trigger shameful orgasm of F;
 		decide yes;

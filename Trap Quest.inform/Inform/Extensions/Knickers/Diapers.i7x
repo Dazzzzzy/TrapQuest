@@ -33,7 +33,7 @@ To decide which figure-name is clothing-image of (C - portal-diaper):
 To say selfexamineuniquetitle of (K - portal-diaper):
 	say "massive plain diaper".
 To say ClothingDesc of (C - portal-diaper):
-	say "An extremely large white adult diaper, with huge amounts of extra puffy padding. It doesn't have any kind of humiliating pattern on it. It does, however, have a magic portal on the inside, which is connected to the urinal in the Hotel. It seems to be somehow magically adhered to your body! Apparently nobody can remove it except [NameDesc of pimp].".
+	say "An extremely large white adult diaper, with huge amounts of extra puffy padding. It doesn't have any kind of humiliating pattern on it. It does, however, have a magic portal on the inside, which is connected to the [SlimeTargetU] in the Hotel. It seems to be somehow magically adhered to your body! Apparently nobody can remove it except [NameDesc of pimp].".
 Definition: portal-diaper is white themed: decide yes.
 Definition: portal-diaper is removable: decide no.
 To decide which number is the unique outrage of (C - portal-diaper):
@@ -42,13 +42,13 @@ To compute periodic effect of (C - portal-diaper):
 	increase the portal-charge of C by 1;
 	if the portal-charge of C > a random number between 20 and 250 and Hotel31 is not within vision:
 		now the portal-charge of C is 0;
-		if a random number between 0 and diaper cumrag is 0:
-			say "[bold type]All of a sudden, [urine] starts flowing into your [C]! [roman type]Someone must be pissing in the hotel urinal!";
-			AnnouncedExpel urine on C by a random number between 7 and 11;
-			GrossOut 4 with reason "The sensation of being used as a diaper urinal makes you shudder," and sensation "feeling";
-			cutshow Figure of hotel urinal portal piss;
+		if the semen-soak of C > 0 or a random number between 0 and diaper cumrag is 0:
+			say "[bold type]All of a sudden, [slime] starts flowing into your [C]! [roman type]Someone must be [slimedrain]ing in the hotel [SlimeTargetU]!";
+			AnnouncedExpel slime on C by a random number between 7 and 11;
+			GrossOut 4 with reason "The sensation of being used as a diaper [SlimeTargetU] makes you shudder," and sensation "feeling";
+			if legacy watersports mechanics is 1, cutshow Figure of hotel urinal portal piss;
 		otherwise:
-			say "[bold type]All of a sudden, warm and sticky [semen] spurts into your [C]! [roman type]Someone must be MASTURABTING into the hotel urinal!";
+			say "[bold type]All of a sudden, warm and sticky [semen] spurts into your [C]! [roman type]Someone must be MASTURABTING into the hotel [SlimeTargetU]!";
 			AnnouncedExpel semen on C by a random number between 3 and 5;
 			GrossOut 5 with reason "The sensation of being used as a diaper cumrag makes you shudder," and sensation "[one of]sticky[or]slimy[cycling] feeling";
 			cutshow Figure of hotel urinal portal cum;
@@ -236,7 +236,7 @@ To say MediumDesc of (C - a waddle diaper):
 	say "humongous [selfexamineuniquetitle of C]".
 To say ClothingDesc of (C - a waddle diaper):
 	say "This unique giant PVC [selfexamineuniquetitle of C] has several massive frills on the behind. It has a huge amount of extra material at the crotch, so this heavy rubber forces your thighs apart even when the diaper is completely unused! ";
-	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it! There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
+	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it! There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added slime insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
 
 pink-waddle-diaper is a waddle diaper. The text-shortcut of pink-waddle-diaper is "pwd". Understand "pink" as pink-waddle-diaper.
 Figure of pink waddle diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper3a.png".
@@ -573,7 +573,7 @@ To decide which number is the unique outrage of (C - pink-small-diaper):
 
 Chapter 11 Training Pants
 
-A training pants is a kind of knickers. A training pants is plentiful. The printed name of training pants is "[clothing-title-before]pair of [selfexamineuniquetitle of item described][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants.
+A training pants is a kind of knickers. A training pants is plentiful. The printed name of training pants is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants.
 The DQFigure of training pants is usually DQTrainingPants.
 
 To decide which number is the default-soak-limit of (C - a training pants):
@@ -592,22 +592,24 @@ To decide which number is the initial armour of (C - a training pants):
 	decide on 11.
 
 To decide which number is the fluid cringe of (C - a training pants):
-	decide on (the semen-soak of C / 2) + (the urine-soak of C / 2) + (the milk-soak of C / 2).
+	decide on (the semen-soak of C / 2) + (the slime-soak of C / 2) + (the milk-soak of C / 2).
 
 Definition: a training pants is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
-Definition: a training pants is displacable: decide yes.
+Definition: a training pants is displacable:
+	if it is messed, decide no;
+	decide yes.
 
 To say selfexamineuniquetitle of (K - a training pants):
-	say "pair of [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+	say "pair of [if the slime-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 To say ShortDesc of (K - a training pants):
 	say "training pants".
 To say MediumDesc of (K - a training pants):
 	say selfexamineuniquetitle of K.
 
 To say ClothingDesc of (C - a training pants):
-	say "A pair of [UniqueTrainingPantsDesc of C]with [if the bimbo of the player <= 4 and the urine-soak of C <= 0 and C is worn]weirdly thick padding, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the urine-soak of C <= 0]weirdly thick padding, which looks like it would be a little bit awkward to wear[otherwise]thick padding to catch any little accidents that the wearer might have[end if].".
+	say "A pair of [UniqueTrainingPantsDesc of C]with [if the bimbo of the player <= 4 and the slime-soak of C <= 0 and C is worn]weirdly thick padding, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the slime-soak of C <= 0]weirdly thick padding, which looks like it would be a little bit awkward to wear[otherwise]thick padding to catch any little accidents that the wearer might have[end if].".
 
 To say UniqueTrainingPantsDesc of (C - a training pants):
 	say "relatively plain purple and white underwear ".
@@ -624,7 +626,7 @@ To decide which figure-name is clothing-image of (C - a training pants):
 	decide on figure of purple training pants.
 bunnyrabbit training pants is a training pants. bunnyrabbit training pants is transformation-rare. The text-shortcut of bunnyrabbit training pants is "brpa". Understand "bunny", "rabbit" as bunnyrabbit training pants.
 To say selfexamineuniquetitle of (K - bunnyrabbit training pants):
-	say "pair of bunny rabbit [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+	say "pair of bunny rabbit [if the slime-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 To say UniqueTrainingPantsDesc of (C - bunnyrabbit training pants):
 	say "white underwear with a light blue seam and a gentle pattern of cartoon bunnies holding flowers, ".
 To decide which figure-name is clothing-image of (C - bunnyrabbit training pants):
@@ -636,7 +638,7 @@ To decide which number is the initial cringe of (D - bunnyrabbit training pants)
 
 starcorn training pants is a training pants. starcorn training pants is transformation-rare. The text-shortcut of starcorn training pants is "upa". Understand "unicorn" as starcorn training pants.
 To say selfexamineuniquetitle of (K - starcorn training pants):
-	say "pair of unicorn [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+	say "pair of unicorn [if the slime-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 To say UniqueTrainingPantsDesc of (C - starcorn training pants):
 	say "white underwear with a light green seam and a pastel-coloured pattern of cartoon unicorns with stars on their butts, ".
 To decide which figure-name is clothing-image of (C - starcorn training pants):
@@ -648,7 +650,7 @@ To decide which number is the initial cringe of (D - starcorn training pants):
 
 lovehearts training pants is a training pants. lovehearts training pants is transformation-rare. The text-shortcut of lovehearts training pants is "lhpa". Understand "love", "hearts" as lovehearts training pants.
 To say selfexamineuniquetitle of (K - lovehearts training pants):
-	say "pair of love hearts [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+	say "pair of love hearts [if the slime-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 To say UniqueTrainingPantsDesc of (C - lovehearts training pants):
 	say "pink underwear with a soft, subtle pattern of love hearts, ".
 To decide which figure-name is clothing-image of (C - lovehearts training pants):
@@ -658,10 +660,10 @@ Definition: lovehearts training pants is heart themed: decide yes.
 To decide which number is the initial cringe of (D - lovehearts training pants):
 	decide on 4.
 
-sexy training pants is a training pants. The printed name of sexy training pants is "[clothing-title-before][clothing-title-after]".
+sexy training pants is a training pants. The printed name of sexy training pants is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
-To say selfexamineuniquetitle of (K - lovehearts training pants):
-	say "pair of sexy [if the urine-soak of item described > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+To say selfexamineuniquetitle of (K - a sexy training pants):
+	say "pair of sexy [if the slime-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 The text-shortcut of sexy training pants is "sxt".
 
 To decide which number is the initial outrage of (D - a sexy training pants):
@@ -672,7 +674,7 @@ To decide which figure-name is clothing-image of (C - a sexy training pants):
 	decide on figure of sexy training pants.
 
 To say ClothingDesc of (C - a sexy training pants):
-	say "A pair of frilly purple underwear with [if the diaper addiction of the player <= 1 and the urine-soak of C <= 0 and C is worn]weird padding in the centre, which makes it a little bit awkward to wear[otherwise if the diaper addiction of the player <= 1 and the urine-soak of C <= 0]weird padding in the centre, which looks like it would be a little bit awkward to wear[otherwise]absorbent padding in the centre to catch any little accidents that the wearer might have[end if].".
+	say "A pair of frilly purple underwear with [if the diaper addiction of the player <= 1 and the slime-soak of C <= 0 and C is worn]weird padding in the centre, which makes it a little bit awkward to wear[otherwise if the diaper addiction of the player <= 1 and the slime-soak of C <= 0]weird padding in the centre, which looks like it would be a little bit awkward to wear[otherwise]absorbent padding in the centre to catch any little accidents that the wearer might have[end if].".
 
 
 Chapter 25 Latex Diaper

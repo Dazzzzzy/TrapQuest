@@ -42,7 +42,7 @@ Carry out crafting:
 		now T is a random product-highlighted thing;
 		if T is a thing:
 			repeat with R running through on-stage product-highlighted things:
-				if R is visible, say "The [ShortDesc of R] [if R is held]in your hands [end if]suddenly vanishes[one of]! Maybe you can only have one at a time?[or]![stopping]";
+				if R is visible and R is not smoke bomb, say "The [ShortDesc of R] [if R is held]in your hands [end if]suddenly vanishes[one of]! Maybe you can only have one at a time?[or]![stopping]";
 				destroy R;
 			if the recipe of current-alchemy-key is memorised, progress quest of recipe-quest;
 			compute recipe specific cursing of T;

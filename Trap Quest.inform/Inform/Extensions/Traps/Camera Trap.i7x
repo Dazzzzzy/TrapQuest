@@ -102,7 +102,7 @@ A poster has an object called old-overdress.
 A poster has an object called old-bra.
 A poster has an object called old-knickers.
 A poster has a number called old-knickers-semen.
-A poster has a number called old-knickers-urine.
+A poster has a number called old-knickers-slime.
 A poster has a number called old-knickers-water.
 A poster has a number called old-knickers-mess.
 A poster has an object called old-skirt.
@@ -156,7 +156,7 @@ To develop (P - a poster):
 	now the old-knickers of P is K;
 	if K is knickers:
 		now the old-knickers-semen of P is the semen-soak of K;
-		now the old-knickers-urine of P is the urine-soak of K;
+		now the old-knickers-slime of P is the slime-soak of K;
 		now the old-knickers-water of P is the water-soak of K;
 		now the old-knickers-mess of P is the mess of K;
 	now the old-skirt of P is a random worn skirt;
@@ -315,13 +315,17 @@ To compute title of (P - an upskirt poster):
 	otherwise if the old-knickers-mess of P > 0:
 		if P is in the hotel, now the title of P is "PATHETIC POOPYPANTS";
 		otherwise now the title of P is "This big baby is so pathetic that [he of P] went number two in [his of P] own pants!";
-	otherwise if the old-knickers-urine of P > 0:
+	otherwise if the old-knickers-slime of P > 0:
 		if diaper lover >= 0:
 			if P is in the hotel, now the title of P is "CAN'T STAY DRY";
-			otherwise now the title of P is "Shocking evidence that this little one can't even control [his of P] own bladder!";
+			otherwise now the title of P is "Shocking evidence that this little one can't even control [his of P] own [SlimeContainer]!";
 		otherwise:
-			if P is in the hotel, now the title of P is "NAUGHTY PISS SLUT";
-			otherwise now the title of P is "Shocking evidence that this whore gets turned on by pissing [himself of P].";
+			if slimeshooter fetish is 1:
+				if P is in the hotel, now the title of P is "NAUGHTY SLIME SLUT";
+				otherwise now the title of P is "Shocking evidence that this whore gets turned on by getting slime on [himself of P].";
+			otherwise:
+				if P is in the hotel, now the title of P is "NAUGHTY slime slut";
+				otherwise now the title of P is "Shocking evidence that this whore gets turned on by getting [slime] on [himself of P].";
 	otherwise if the old-knickers of P is diaper:
 		if P is in the hotel, now the title of P is "DIAPERED CRYBABY";
 		otherwise now the title of P is "A properly padded peepot.";
@@ -363,10 +367,10 @@ To say ExamineDesc of (C - an upskirt poster):
 				say "that have an extremely visible bulge on the backdoor, showing that you messed yourself";
 			otherwise if the old-knickers-semen of C > 0:
 				say "[if the old-knickers-semen of C > the soak-limit of old-knickers of C / 2] that is soaked in [semen][otherwise]that has evidence of drippings of [semen][end if]";
-			otherwise if the old-knickers-urine of C > 0:
-				say "[if the old-knickers-urine of C > the soak-limit of old-knickers of C / 2] that is soaked in [urine][otherwise]that has evidence of drippings of [urine][end if]";
+			otherwise if the old-knickers-slime of C > 0:
+				say "[if the old-knickers-slime of C > the soak-limit of old-knickers of C / 2] that is soaked in [slime][otherwise]that has evidence of drippings of [slime][end if]";
 			otherwise if the old-knickers-water of C > 0:
-				say "[if the old-knickers-urine of C > the soak-limit of old-knickers of C / 2] that is soaked[otherwise]that is damp[end if]";
+				say "[if the old-knickers-slime of C > the soak-limit of old-knickers of C / 2] that is soaked[otherwise]that is damp[end if]";
 			say ". ";
 	if old-cumthighs of C > 0, say "Your thighs are [if old-cumthighs of C > 7]caked[otherwise if old-cumthighs of C > 3]covered[otherwise]splattered[end if] with [semen].";
 	say "It seems unlikely someone could recognise you just from this image. [TitleDesc of C]".
@@ -508,7 +512,7 @@ To compute title of (P - a masturbation poster):
 		if the old-knickers-mess of P > 0:
 			if P is in the hotel, now the title of P is "ULTIMATE DISGRACE";
 			otherwise now the title of P is "Little one proves there are no limits to [his of P] depravity.";
-		otherwise if the old-knickers-urine of P > 0:
+		otherwise if the old-knickers-slime of P > 0:
 			if P is in the hotel, now the title of P is "WILD WET WANKER";
 			otherwise now the title of P is "[big he of P] can't help [himself of P] - [he of P] just loves the way [his of P] soggy pants feel!";
 		otherwise if the old-knickers of P is diaper:
@@ -604,7 +608,7 @@ To compute title of (P - a wetting poster):
 	if urination-target of P is diaper:
 		if old-peereaction of P is 2:
 			if the old-overdress of P is royalty themed:
-				if P is in the hotel, now the title of P is "PRINCESS POTTYPANTS";
+				if P is in the hotel, now the title of P is "PRINCESS [caps slime]PANTS";
 				otherwise now the title of P is "A royal relief!";
 			otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 				if P is in the hotel, now the title of P is "SISSY PEEPOT";
@@ -629,7 +633,7 @@ To compute title of (P - a wetting poster):
 					if P is in the hotel, now the title of P is "ATTENTION WHORE DIAPER [caps boy of P]";
 					otherwise now the title of P is "An attention starved diaper slut demands an audience.";
 			otherwise if old-bimbo of P < 7:
-				if P is in the hotel, now the title of P is "TOILET TRAINING?";
+				if P is in the hotel, now the title of P is "[caps SlimeTarget] TRAINING?";
 				otherwise now the title of P is "Getting used to [his of P] new life in nappies.";
 			otherwise if old-bimbo of P < 12:
 				if P is in the hotel, now the title of P is "I LOVE DIAPERS";
@@ -655,13 +659,13 @@ To compute title of (P - a wetting poster):
 				if P is in the hotel, now the title of P is "DISGRACEFUL";
 				otherwise now the title of P is "A public disgrace.";
 			otherwise:
-				if P is in the hotel, now the title of P is "PISS SLUT";
-				otherwise now the title of P is "A well trained piss slave.";
+				if P is in the hotel, now the title of P is "slime slut";
+				otherwise now the title of P is "A well trained [slime] slave.";
 		otherwise if old-bimbo of P < 10:
 			if P is in the hotel, now the title of P is "SOGGY FEELING?";
 			otherwise now the title of P is "Not [his of P] proudest moment.";
 		otherwise:
-			if P is in the hotel, now the title of P is "PISS PERVERT";
+			if P is in the hotel, now the title of P is "[caps slime] PERVERT";
 			otherwise now the title of P is "Caught in the act! What a pervert.";
 	otherwise:
 		if the old-overdress of P is royalty themed:
@@ -675,31 +679,37 @@ To compute title of (P - a wetting poster):
 				if P is in the hotel, now the title of P is "DISGRACEFUL";
 				otherwise now the title of P is "A public disgrace.";
 			otherwise:
-				if P is in the hotel, now the title of P is "PISS SLUT";
-				otherwise now the title of P is "A well trained piss slave.";
+				if P is in the hotel, now the title of P is "slime slut";
+				otherwise now the title of P is "A well trained [slime] slave.";
 		otherwise:
 			if P is in the hotel, now the title of P is "CAUGHT IN THE ACT";
-			otherwise now the title of P is "Use a toilet, you filthy slut!";
+			otherwise now the title of P is "Use a [SlimeTarget], you filthy slut!";
 
 To say ExamineDesc of (C - a wetting poster):
 	say "[ShortDesc of C]";
 	say "[PosterGenitals of C]";
 	if old-peereaction of C is 2:
-		if old-monster of C is monster, say "Your eyes are locked onto the [old-monster of C], [if old-humiliation of C < 20000]and your pale facial expression is one of pure terror that they might notice what you are doing[otherwise if old-humiliation of C < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're doing[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you wet yourself[end if]. ";
-		otherwise say "[if the old-special of C is gag]It's difficult to understand your facial expression because of the [old-special of C] in your mouth[otherwise if old-bimbo of C < 7]You don't look very happy with yourself[otherwise if old-bimbo of C < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
+		if old-monster of C is monster:
+			if slimeshooter fetish is 1, say "Your eyes are locked onto the [old-monster of C], [if old-humiliation of C < 20000]and your pale facial expression is one of pure terror that they might notice what your slimeshooter is doing[otherwise if old-humiliation of C < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're letting your slimeshooter do[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you drain your slimeshooter[end if]. ";
+			otherwise say "Your eyes are locked onto the [old-monster of C], [if old-humiliation of C < 20000]and your pale facial expression is one of pure terror that they might notice what you are doing[otherwise if old-humiliation of C < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're doing[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you [slimeonself][end if]. ";
+		otherwise:
+			say "[if the old-special of C is gag]It's difficult to understand your facial expression because of the [old-special of C] in your mouth[otherwise if old-bimbo of C < 7]You don't look very happy with yourself[otherwise if old-bimbo of C < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
 	otherwise if old-monster of C is monster:
-		say "[if old-humiliation of C < 27500]Your entire face has gone beetroot red as you have allowed the [old-monster of C] to see you [urinate][otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of C] can very clearly see you [urinate][end if]. ";
+		if slimeshooter fetish is 1, say "[if old-humiliation of C < 27500]Your entire face has gone beetroot red as the [old-monster of C] witnesses the exact moment you lost control of[otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of C] sees the exact moment you give up on controlling[end if] your slimeshooter. ";
+		otherwise say "[if old-humiliation of C < 27500]Your entire face has gone beetroot red as you have allowed the [old-monster of C] to see you [slimedrain][otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of C] can very clearly see you [urinate][end if]. ";
 	otherwise if old-peereaction of C is 3:
 		say "[if old-bimbo of C > 9]You have a naughty, guilty grin on your face[otherwise]You have a disgusted look on your face[end if]. ";
 	otherwise if urination-target of C is a room:
-		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor.[line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
+		if slimeshooter fetish is 1, say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind losing control of your slimeshooter.[line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shameful lack of control of your slimeshooter. [end if]";
+		otherwise say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind [slimedrain]ing on the floor.[line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
 	if old-overdress of C is clothing, say "You are wearing a [ShortDesc of old-overdress of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
 	say "It is very easy to recognise you just from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a wetting poster):
-	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
+	if slimeshooter fetish is 1, say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]Your slimeshooter is very visibly draining itself into your [urination-target of P]. [otherwise if urination-target of P is room]Your slimeshooter is very visibly draining itself onto the floor of the [urination-target of P]. [otherwise]Your slimeshooter is draining itself all over the ground. [end if]";
+	otherwise say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
 	if the title of P is "TEACHER'S PET" and the class of the player is alchemist, cutshow figure of teachers pet cutscene 1 for P.
 
 To decide which number is the lewdness of (P - a wetting poster):
@@ -716,7 +726,7 @@ Chapter 5 Expulsion Poster
 An expulsion poster is a kind of poster.
 There are 10 expulsion posters.
 
-An expulsion poster has a number called old-small-eggs. An expulsion poster has a number called old-medium-eggs. An expulsion poster has a number called old-large-eggs. An expulsion poster has a number called old-milk-count. An expulsion poster has a number called old-urine-count. An expulsion poster has a number called old-semen-count. An expulsion poster has a number called old-water-count. An expulsion poster has an object called old-headgear.
+An expulsion poster has a number called old-small-eggs. An expulsion poster has a number called old-medium-eggs. An expulsion poster has a number called old-large-eggs. An expulsion poster has a number called old-milk-count. An expulsion poster has a number called old-slime-count. An expulsion poster has a number called old-semen-count. An expulsion poster has a number called old-water-count. An expulsion poster has an object called old-headgear.
 
 To say CameraFlashFlav of (P - an expulsion poster) by (Y - a camera trap):
 	say "It was in a perfect position to capture a full shot of what just happened.[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh god, how embarrassing![otherwise]Now everyone will know what I've had happen to me recently.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]Ooh, I can't wait to see that one![end if][stopping][roman type][line break]".
@@ -726,7 +736,7 @@ To compute uniquest variables of (P - an expulsion poster): [This has a differen
 	now the old-medium-eggs of P is medium-egg-count;
 	now the old-large-eggs of P is large-egg-count;
 	now the old-milk-count of P is milk-count;
-	now the old-urine-count of P is urine-count;
+	now the old-slime-count of P is slime-count;
 	now the old-semen-count of P is semen-count;
 	now the old-water-count of P is water-count;
 	now the old-headgear of P is a random worn headgear.
@@ -752,9 +762,9 @@ To compute title of (P - an expulsion poster):
 		if the liquid types of P > 1:
 			if P is in the hotel, now the title of P is "LIVING CUM COCKTAIL MACHINE?";
 			otherwise now the title of P is "However that disgusting mess got inside [him of P] is probably a mystery best left unsolved.";
-		otherwise if the old-urine-count of P > 0:
-			if P is in the hotel, now the title of P is "HUMAN TOILET";
-			otherwise now the title of P is "A [boy of P] really knows [his of P] place in the world after [his of P] asshole has been used as a urinal.";
+		otherwise if the old-slime-count of P > 0:
+			if P is in the hotel, now the title of P is "HUMAN [caps SlimeTarget]";
+			otherwise now the title of P is "A [boy of P] really knows [his of P] place in the world after [his of P] asshole has been used as a [SlimeTargetU].";
 		otherwise if the old-milk-count of P > 0:
 			if old-headgear of P is royal circlet:
 				if P is in the hotel, now the title of P is "ROYAL MILK ON TAP";
@@ -765,7 +775,7 @@ To compute title of (P - an expulsion poster):
 		otherwise if the old-semen-count of P is 0: [enema]
 			if old-headgear of P is tiara:
 				if P is in the hotel, now the title of P is "A ROYAL MESS";
-				otherwise now the title of P is "It looks like the Princess couldn't make it to the royal potty in time!";
+				otherwise now the title of P is "It looks like the Princess couldn't make it to the royal [SlimeTargetP] in time!";
 			otherwise if old-headgear of P is maid headdress:
 				if P is in the hotel, now the title of P is "MODERN CLEANING TECHNIQUES";
 				otherwise now the title of P is "You're supposed to clean messes, not make them yourself!";
@@ -789,7 +799,7 @@ To compute title of (P - an expulsion poster):
 					let R be a random number between 1 and 4;
 					if R is 1, now the title of P is "You need reconditioning for such disgusting behaviour, young Miss!";
 					if R is 2, now the title of P is "Someone deserves a spanking!";
-					if R is 3, now the title of P is "If this [boy of P] can't find the toilet, maybe [he of P] should be put back into kindergarten!";
+					if R is 3, now the title of P is "If this [boy of P] can't find the [SlimeTarget], maybe [he of P] should be put back into kindergarten!";
 					if R is 4, now the title of P is "Dumb [boy of P]s should be put back into diapers until they can control their buttholes.";
 			otherwise:
 				if P is in the hotel:
@@ -800,10 +810,10 @@ To compute title of (P - an expulsion poster):
 					if R is 4, now the title of P is "FOUNTAIN OF SHAME";
 				otherwise:
 					let R be a random number between 1 and 4;
-					if R is 1, now the title of P is "Someone didn't make it to the toilet in time!";
+					if R is 1, now the title of P is "Someone didn't make it to the [SlimeTarget] in time!";
 					if R is 2, now the title of P is "Only a baby would make this kind of mess!";
-					if R is 3, now the title of P is "An adult baby demonstrating how difficult it can be to find a potty in time.";
-					if R is 4, now the title of P is "Dumb baby doesn't know what a toilet looks like!";
+					if R is 3, now the title of P is "An adult baby demonstrating how difficult it can be to find a [SlimeTargetP] in time.";
+					if R is 4, now the title of P is "Dumb baby doesn't know what a [SlimeTarget] looks like!";
 		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "DISHONOURED ROYALTY";
 			otherwise now the title of P is "Royal princess caught in sex scandal!";
@@ -842,7 +852,7 @@ To say ExamineDesc of (C - an expulsion poster):
 	say "[ShortDesc of C]";
 	say "[PosterGenitals of C]";
 	if old-small-eggs of C > 0 or old-medium-eggs of C > 0 or old-large-eggs of C > 0, say "[if old-large-eggs of C > 0]The gigantic size of the egg leaving your [asshole] has caused your face to twist in a mixture of pleasure, pain, shame and despair[otherwise if old-sex-addiction of C < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if] as you push [if old-small-eggs of C + old-medium-eggs of C + old-large-eggs of C > 1]them[otherwise]it[end if] out. ";
-	otherwise say "[if old-milk-count of C + old-urine-count of C + old-semen-count of C > 6]A [one of]huge torrent[or]powerful [cascade][or]heavy flow[at random][otherwise]A [one of]moderate flow[or]number of squirts[or]steady trickle[at random][end if] of [if the liquid types of C > 1]multiple bodily fluids mixed together[otherwise if old-milk-count of C > 0][milk][otherwise if old-urine-count of C > 0][urine][otherwise if the old-semen-count of C > 0][semen][otherwise]enema water[end if] travels from your [asshole] to the ground. You have a very [if the old-bimbo of C < 7][one of]distressed[or]upset[or]surprised[at random][otherwise if old-bimbo of C < 12][one of]goofy[or]embarrassed[or]dreamy[sticky random][otherwise][one of]lewd[or]aroused[or]calm[sticky random][end if] expression on your face. ";
+	otherwise say "[if old-milk-count of C + old-slime-count of C + old-semen-count of C > 6]A [one of]huge torrent[or]powerful [cascade][or]heavy flow[at random][otherwise]A [one of]moderate flow[or]number of squirts[or]steady trickle[at random][end if] of [if the liquid types of C > 1]multiple bodily fluids mixed together[otherwise if old-milk-count of C > 0][milk][otherwise if old-slime-count of C > 0][slime][otherwise if the old-semen-count of C > 0][semen][otherwise]enema water[end if] travels from your [asshole] to the ground. You have a very [if the old-bimbo of C < 7][one of]distressed[or]upset[or]surprised[at random][otherwise if old-bimbo of C < 12][one of]goofy[or]embarrassed[or]dreamy[sticky random][otherwise][one of]lewd[or]aroused[or]calm[sticky random][end if] expression on your face. ";
 	if old-overdress of C is clothing:
 		say "You are wearing a [ShortDesc of old-overdress of C].";
 	otherwise if old-bra of C is clothing:
@@ -858,7 +868,7 @@ To decide which number is the liquid types of (P - an expulsion poster):
 	let N be 0;
 	if old-milk-count of P > 0, increase N by 1;
 	if old-semen-count of P > 0, increase N by 1;
-	if old-urine-count of P > 0, increase N by 1;
+	if old-slime-count of P > 0, increase N by 1;
 	decide on N.
 
 To say ShortDesc of (P - an expulsion poster):

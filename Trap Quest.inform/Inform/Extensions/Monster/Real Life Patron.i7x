@@ -63,10 +63,10 @@ To compute patronEncounter of (M - a real-life patron):
 		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'Yes, this is really [friend-old-name of M]!'";
 		if there is a worn overdress:
 			let W be a random worn overdress;
-			let O be the unique outrage of W;
+			let O be the unworn outrage of W;
 			now the severity entry is O * 50;
 		otherwise:
-			now the severity entry is 500;
+			now the severity entry is 650;
 		now the popularity entry is 0;
 		now the viewsfuzz entry is 0;
 		now the lastwitnessed entry is 0;

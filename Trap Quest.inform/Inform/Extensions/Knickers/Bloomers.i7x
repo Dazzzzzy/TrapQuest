@@ -2,7 +2,9 @@ Bloomers by Knickers begins here.
 
 A bloomers is a kind of knickers.
 
-Definition: a bloomers is displacable: decide yes.
+Definition: a bloomers is displacable:
+	if it is messed, decide no;
+	decide yes.
 
 Definition: a bloomers is sissifying: decide yes.
 Definition: a bloomers is pink themed: decide yes.

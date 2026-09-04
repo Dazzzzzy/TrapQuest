@@ -36,20 +36,20 @@ To say AppearanceDesc of (C - a shoes):
 		if the known-total-soak of C > 0:
 			if the known-semen-soak of C >= the soak-limit of C:
 				say "cum-filled ";
-			otherwise if the known-urine-soak of C >= the soak-limit of C:
-				say "piss-filled ";
+			otherwise if the known-slime-soak of C >= the soak-limit of C:
+				say "[slime]-filled ";
 			otherwise if the known-total-soak of C >= the soak-limit of C:
 				say "filled ";
 			otherwise if the known-semen-soak of C > the soak-limit of C / 2:
 				say "half-cum-filled ";
-			otherwise if the known-urine-soak of C > the soak-limit of C / 2:
-				say "half-piss-filled ";
+			otherwise if the known-slime-soak of C > the soak-limit of C / 2:
+				say "half-[slime]-filled ";
 			otherwise if the known-total-soak of C > the soak-limit of C / 2:
 				say "half-filled ";
 			otherwise if the known-semen-soak of C > 0:
 				say "cum-stained ";
-			otherwise if the known-urine-soak of C > 0:
-				say "pee-stained ";
+			otherwise if the known-slime-soak of C > 0:
+				say "[slime]-stained ";
 			otherwise if the known-milk-soak of C > 0:
 				say "milk-stained ";
 			otherwise if the known-total-soak of C > the soak-limit of C / 5:
@@ -67,22 +67,22 @@ To say DefaultAppearanceDesc of (C - a clothing):
 	otherwise if the known-total-soak of C > 0:
 		if the known-semen-soak of C >= the soak-limit of C:
 			say "cum-saturated ";
-		otherwise if the known-urine-soak of C >= the soak-limit of C:
-			say "piss-saturated ";
+		otherwise if the known-slime-soak of C >= the soak-limit of C:
+			say "[slime]-saturated ";
 		otherwise if the known-total-soak of C >= the soak-limit of C:
 			say "saturated ";
 		otherwise if the known-semen-soak of C > the soak-limit of C / 2:
 			say "cum-soaked ";
-		otherwise if the known-urine-soak of C > the soak-limit of C / 2:
-			say "piss-soaked ";
+		otherwise if the known-slime-soak of C > the soak-limit of C / 2:
+			say "[slime]-soaked ";
 		otherwise if the known-total-soak of C > (the soak-limit of C * 7) / 10:
 			say "soaked ";
 		otherwise if the known-water-soak of C > the soak-limit of C / 2:
 			say "soggy ";
 		otherwise if the known-semen-soak of C > 0:
 			say "cum-stained ";
-		otherwise if the known-urine-soak of C > 0:
-			say "pee-stained ";
+		otherwise if the known-slime-soak of C > 0:
+			say "[slime]-stained ";
 		otherwise if the known-milk-soak of C > 0:
 			say "milk-stained ";
 		otherwise if the known-total-soak of C > the soak-limit of C / 5:
@@ -158,8 +158,8 @@ To say InfluenceDesc of (C - a wearthing):
 	if the semen-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the semen-addiction-influence of C > 1]much [end if]more eager to get [if the player is not possessing a vagina and the bimbo of the player < 10]anally [end if]creampied[if bukkake fetish is 1] and covered in [semen][end if].";
 	if the semen-taste-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-taste-addiction-influence of C < -1]really [end if]helping you [if the semen taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the semen taste addiction of the player < 8]taste semen[otherwise]drink [semen][end if].";
 	if the semen-taste-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the semen-taste-addiction-influence of C > 1]much [end if]more eager to [if the semen taste addiction of the player > 8]drink[otherwise]taste[end if] [semen].";
-	if the urine-taste-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the urine-taste-addiction-influence of C < -1]really [end if]helping you [if the urine taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the urine taste addiction of the player < 8]taste urine[otherwise]drink piss[end if].";
-	if the urine-taste-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the urine-taste-addiction-influence of C > 1]much [end if]more eager to [if the urine taste addiction of the player > 8]drink[otherwise]taste[end if] [urine].";
+	if the slime-taste-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the slime-taste-addiction-influence of C < -1]really [end if]helping you [if the slime taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the slime taste addiction of the player < 8]taste[otherwise]drink[end if] [slime].";
+	if the slime-taste-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the slime-taste-addiction-influence of C > 1]much [end if]more eager to [if the slime taste addiction of the player > 8]drink[otherwise]taste[end if] [slime].";
 	if the milk-taste-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the milk-taste-addiction-influence of C < -1]really [end if]helping you [if the milk taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the milk taste addiction of the player < 8]drink lots of breast milk[otherwise]drink loads of milk no matter where it has come from[end if].";
 	if the milk-taste-addiction-influence of C > 0, say "You can sense that this [item of C] is making you [if the milk-taste-addiction-influence of C > 1]much [end if]more eager to [if the milk taste addiction of the player > 8]drink[otherwise]taste[end if] breast milk[if the milk taste addiction of the player > 9] and ass-milk[end if].";
 	if the grossness-addiction-influence of C < 0, say "You can sense that this [item of C] is making you [if the grossness-addiction-influence of C < -1]much [end if]less tolerant of gross sensations.";
@@ -178,11 +178,11 @@ To say InfluenceDesc of (C - a wearthing):
 	if diaper lover > 0:
 		if the diaper-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the diaper-addiction-influence of C < -1]significantly [end if][if the diaper addiction of the player < 5 and there is a worn diaper]suppressing any thoughts of you enjoying wearing your diaper[otherwise if the diaper addiction of the player < 5]helping you avoid any weird temptations to wear a diaper[otherwise if the diaper addiction of the player < 8]reducing the amount you enjoy wearing and using diapers[otherwise]helping to curb your addiction to wearing and using diapers[end if].";
 		if the diaper-addiction-influence of C > 0, say "You can sense that this [item of C] is making you enjoy [unless there is a worn diaper or the diaper addiction of the player > 6]the idea of [end if]wearing and using diapers [if the diaper-addiction-influence of C > 1]a lot [end if]more.";
-		if the bladder-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the bladder-incontinence-influence of C > 1]much [end if]more difficult for you to hold onto your bladder.";
-		if the bladder-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the bladder-incontinence-influence of C < 1]significantly [end if]better at avoiding wetting yourself.";
+		if the bladder-incontinence-influence of C > 0, say "You can sense that [if the player is in a predicament room and the player is not in Predicament20][bold type]when you are not in the Extra Credit Zone, [roman type][end if]this [item of C] is making it [if the bladder-incontinence-influence of C > 1]much [end if]more difficult for you to hold onto your [SlimeContainer].";
+		if the bladder-incontinence-influence of C < 0, say "You can sense that [if the player is in a predicament room and the player is not in Predicament20][bold type]when you are not in the Extra Credit Zone, [roman type][end if]this [item of C] is making you [if the bladder-incontinence-influence of C < 1]significantly [end if]better at controlling your [SlimeContainer]";
 		if diaper messing >= 3:
-			if the rectum-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the rectum-incontinence-influence of C > 1]much [end if]more difficult for you to hold it when you need to poop.";
-			if the rectum-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the rectum-incontinence-influence of C < 1]significantly [end if]better at avoiding messing yourself.";
+			if the rectum-incontinence-influence of C > 0, say "You can sense that [if the player is in a predicament room and the player is not in Predicament20][bold type]when you are not in the Extra Credit Zone, [roman type][end if]this [item of C] is making it [if the rectum-incontinence-influence of C > 1]much [end if]more difficult for you to hold it when you need to poop.";
+			if the rectum-incontinence-influence of C < 0, say "You can sense that [if the player is in a predicament room and the player is not in Predicament20][bold type]when you are not in the Extra Credit Zone, [roman type][end if]this [item of C] is making you [if the rectum-incontinence-influence of C < 1]significantly [end if]better at avoiding messing yourself.";
 	let SDI be the slap damage improvement of C;
 	if SDI < 0, say "You can sense that this [item of C] is making your slap attacks [if SDI < -1]much [end if]weaker[if C is not slap ready and there is a worn slap ready clothing and the class of the player is not chosen one]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
 	if SDI > 0, say "You can sense that this [item of C] is making your slap attacks [if SDI > 1]much [end if]stronger[if C is not slap ready and there is a worn slap ready clothing and the class of the player is not chosen one]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
@@ -191,7 +191,9 @@ To say InfluenceDesc of (C - a wearthing):
 	if the anal sensitivity influence of C > 0 and diaper quest is 0, say "You feel like this [item of C] is making your [asshole] [if the anal sensitivity influence of C > 1]much [end if]more receptive to pleasurable stimulation.";
 	if the anal sensitivity influence of C < 0 and diaper quest is 0, say "You feel like this [item of C] is making your [asshole] [if the anal sensitivity influence of C < -1]much [end if]less likely to make you cum from stimulation.";
 	if the vaginal sensitivity influence of C > 0 and diaper quest is 0, say "You feel like this [item of C] is making your [vagina] [if the vaginal sensitivity influence of C > 1]much [end if]more receptive to pleasurable stimulation.";
-	if the vaginal sensitivity influence of C < 0 and diaper quest is 0, say "You feel like this [item of C] is making your [vagina] [if the vaginal sensitivity influence of C < -1]much [end if]less likely to make you cum from stimulation.";
+	if the vaginal sensitivity influence of C < 0 and diaper quest is 0, say "You feel like this [item of C] is making your [vagina] [if the vaginal sensitivity influence of C < -1]much [end if]less receptive to pleasurable stimulation.";
+	if the orgasm-resist-influence of C > 0, say "You feel like this item is making you [if the orgasm-resist-influence of C > 1]much [end if]more resistant to climaxing.";
+	if the orgasm-resist-influence of C < 0, say "You feel like this item is making you [if the orgasm-resist-influence of C < -1]much [end if]less resistant to climaxing.";
 	if the charisma-influence of C > 0, say "You feel like this [item of C] is making you [if the charisma-influence of C is 1]slightly [end if]better at negotiating and trading.";
 	if the charisma-influence of C < 0, say "You feel like this [item of C] is making you [if the charisma-influence of C is -1]slightly [end if]worse at negotiating and trading.";
 	if the luck-influence of C > 0, say "You feel like this [item of C] is making you [if the luck-influence of C < 4]slightly [end if]more likely to have lucky things happen and [if the luck-influence of C < 4]slightly [end if]less likely to have unlucky things happen.";
@@ -237,6 +239,9 @@ Report examining worn hostility clothing:
 
 Report examining worn elasticity clothing:
 	say "Its magical enhancement makes you much better at accommodating large insertions without suffering from too much discomfort!".
+
+Report examining worn cumguzzling clothing:
+	say "Its magical enhancement often turns the taste of whatever you drink into the taste and texture of [semen]!".
 
 Report examining worn audible jiggles clothing:
 	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
@@ -287,7 +292,7 @@ Report examining clothing:
 			otherwise:
 				if the noun is skirted and there is worn knickers:
 					let K be a random worn knickers;
-					if the defaultDiaperCoveringLength of the noun < the DQBulk of K:
+					if the diaperHidingLength of the noun < the DQBulk of K:
 						say "The skirt is not long enough to cover your [ShortDesc of K].";
 					otherwise:
 						say "The skirt is long enough to cover your [ShortDesc of K][run paragraph on]";
@@ -349,10 +354,22 @@ Report examining clothing:
 			if the player is in a predicament room or the player is stealthy:
 				let S be the stealth-influence of the noun;
 				say "It is [if S < -1]making it MUCH more difficult for you to remain hidden[otherwise if S is -1]is a bit eye-catching, making it a bit more difficult for you to remain hidden[otherwise if S is 0]not making it easier or more difficult for you to remain hidden[otherwise if S is 1]is making it slightly easier for you to remain hidden[otherwise if S is 2]it making it significantly more possible for you to remain hidden[otherwise]is doing a lot of work to help keep you hidden[end if].";
+			otherwise if the stealth-influence of the noun < 0:
+				say StealthDownFlav of the noun;
 		otherwise if the noun is currently at least partially visible:
 			say CurrentlyPartiallyConcealedFlav of the noun;
 		otherwise:
 			say CurrentlyConcealedFlav of the noun.
+
+To say StealthDownFlav of (C - a clothing):
+	let S be the stealth-influence of C;
+	if S < -1 and the player is not in a heist-painting-room and C is bsounding:
+		say "The crazy comic [if C is audible squelches]squelches[otherwise]bouncing sounds[end if] emanating from it are making it borderline impossible for people not to notice you.";
+	otherwise if S < -1 and the player is not in a heist-painting-room and C is messed knickers:
+		say "The mess inside sometimes audibly squelches around, making it even less likely than normal that people will fail to notice you.";
+	otherwise:
+		say "It is [if S < -1]making it MUCH easier for people to spot you[otherwise if S is -1]is a bit eye-catching, making it a bit easier for people to spot you[end if].".
+
 
 Report examining protection clothing:
 	if the noun is identified, say "An aura of magic protection surrounds this item, helping protect [if the noun is worn]you[otherwise]the wearer[end if] from harm in combat.".
@@ -394,7 +411,7 @@ Report examining clothing:
 
 To say PlayerThoughts of (C - a clothing):
 	if the noun is diaper and C is not worn and the number of worn knickers is 0 and earnings > starting-earnings - 250 and the diaper addiction of the player < 4:
-		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is possessing a vagina]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this! But surely they wouldn't put it here for no reason...[roman type][line break]";
+		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did [slimedrain] on myself I'd rather it was into a diaper than onto [if the player is possessing a vagina]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this! But surely they wouldn't put it here for no reason...[roman type][line break]";
 	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is gendered male and the bimbo of the player < 4:
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:
@@ -415,7 +432,7 @@ To say PlayerThoughts of (C - a clothing):
 		otherwise:
 			if C is equippable, say "[variable custom style][if C is worn]I would prefer it if I could find something a little less childish to fight with.[otherwise]It would be quite embarrassing, but I'll use this if I really have to.[end if]";
 			otherwise say "[variable custom style][if C is worn]I feel a bit awkward wearing this. [otherwise]I would feel a little awkward wearing this. [end if]It's very childish.";
-		if the cringe of C - fluid cringe of C is not too humiliating, say "It would be okay if it wasn't [if C is external fluid immune]filled with[otherwise][one of]covered[or]soaked[or]coated[purely at random] in[end if] [if the known-milk-soak of C + the known-urine-soak of C is 0][semen][otherwise if the known-semen-soak of C + the known-milk-soak of C is 0][urine][otherwise if the known-semen-soak of C + the known-urine-soak of C is 0]my milk[otherwise if the bimbo of the player > 8]gross stuff[otherwise]gross bodily fluids[end if]![roman type][line break]";
+		if the cringe of C - fluid cringe of C is not too humiliating, say "It would be okay if it wasn't [if C is external fluid immune]filled with[otherwise][one of]covered[or]soaked[or]coated[purely at random] in[end if] [if the known-milk-soak of C + the known-slime-soak of C + the known-semen-soak of C > 0]gross bodily fluids[otherwise if C is crotch covering]water - other people might think I've gotten [slime] on myself[otherwise]water[end if]![roman type][line break]";
 		otherwise say "[if the humiliation of the player < HUMILIATION-MODEST + 1500 and C is able to cover crotch]But I guess I'd still prefer it to my [player-crotch] being on display...[otherwise if breasts is lewdly exposed and the humiliation of the player < HUMILIATION-MODEST - 3500 and the cringe of C < the lewdly exposed outrage of breasts and C is nipple covering and C is actually dense]But I guess I'd still prefer it to my breasts being on display...[otherwise if C is able to cover crotch and the cringe of C >= the lewdly exposed outrage of asshole]I think I would literally rather be completely naked than wear such a disgraceful item of clothing![otherwise if breasts is lewdly exposed and the cringe of C >= the lewdly exposed outrage of breasts and C is nipple covering]I think I would literally rather be completely topless than wear such a slutty piece of clothing![otherwise if C is crotch-intact knickers and C is not currently at least partially visible]I guess it's fine as long as it's [one of]concealed by something else[or]covered up[or]not visible while I'm wearing it[in random order]...[otherwise]I wish it was [one of]concealed[or]covered up[purely at random] by something else...[end if][roman type][line break]";
 	otherwise if the outrage of C is too humiliating:
 		if C is too outrageous:
@@ -431,7 +448,7 @@ To say PlayerThoughts of (C - a clothing):
 		otherwise:
 			if C is equippable, say "[variable custom style][if C is worn]I would prefer it if I could find something a little less ridiculous to fight with.[otherwise]It would be quite embarrassing, but I'll use this if I really have to.[end if]";
 			otherwise say "[variable custom style][if C is worn]I feel a bit humiliated wearing this.[otherwise]I would feel a little humiliated wearing this.[end if]";
-		if the outrage of C - fluid outrage of C is not too humiliating, say "It would be okay if it wasn't [one of]covered[or]soaked[or]coated[purely at random] in [if the known-milk-soak of C + the known-urine-soak of C is 0][semen][otherwise if the known-semen-soak of C + the known-milk-soak of C is 0][urine][otherwise if the known-semen-soak of C + the known-urine-soak of C is 0]my milk[otherwise if the bimbo of the player > 8]gross stuff[otherwise]gross bodily fluids[end if]![roman type][line break]";
+		if the outrage of C - fluid outrage of C is not too humiliating, say "It would be okay if it wasn't [one of]covered[or]soaked[or]coated[purely at random] in [if the known-milk-soak of C + the known-slime-soak of C is 0][semen][otherwise if the known-semen-soak of C + the known-milk-soak of C is 0][slime][otherwise if the known-semen-soak of C + the known-slime-soak of C is 0]my milk[otherwise if the bimbo of the player > 8]gross stuff[otherwise]gross bodily fluids[end if]![roman type][line break]";
 		otherwise say "[if the humiliation of the player < HUMILIATION-MODEST + 1500 and C is able to cover crotch]But I guess I'd still prefer it to my [player-crotch] being on display...[otherwise if C is not worn and breasts is lewdly exposed and the humiliation of the player < HUMILIATION-MODEST - 3500 and the outrage of C < the lewdly exposed outrage of breasts and C is nipple covering]But I guess I'd still prefer it to my breasts being on display...[otherwise if C is able to cover crotch and the outrage of C >= the lewdly exposed outrage of asshole]I think I would literally rather be completely naked than wear such a disgraceful item of clothing![otherwise if breasts is lewdly exposed and the outrage of C >= the lewdly exposed outrage of breasts and C is breast covering]I think I would literally rather be completely topless than wear such a slutty piece of clothing![otherwise if C is crotch-intact knickers and C is not currently at least partially visible]I guess it's fine as long as it's [one of]concealed by something else[or]covered up[or]not visible while I'm wearing it[in random order]...[otherwise if C is worn]I wish it was concealed by something else...[end if][roman type][line break]";
 	otherwise:
 		if diaper quest is 1 and C is almost too cringeworthy or the unworn cringe of C is too humiliating: [The item isn't humiliating; is it almost humiliating (or only not humiliating because it's worn and covered up)?]

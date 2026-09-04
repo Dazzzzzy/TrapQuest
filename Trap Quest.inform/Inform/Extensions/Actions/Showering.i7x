@@ -25,7 +25,7 @@ Check showering:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper! Are you sure you want to? ";
 		unless the player is in agreement, say "Action cancelled." instead;
 	if watersports fetish is 1 and the humiliation of the player > HUMILIATION-DISGRACED and the semen addiction of the player > 11 and the number of glazed body parts > 0 and auto is 0:[We only prevent players from washing themselves if there is another way for them to get clean. i.e. showers of the golden variety rather than normal ones]
-		unless there is a lake monster in the location of the player or (slimegirl is worn and the hunger of slimegirl > 7), say "[second custom style]No way! If I want to get clean, I'll just have someone douse me in [urine]![roman type]" instead.
+		unless there is a lake monster in the location of the player or (slimegirl is worn and the hunger of slimegirl > 7), say "[second custom style]No way! If I want to get clean, I'll just have someone douse me in [slime]![roman type]" instead.
 
 Report going when the player is in Dungeon35 and newbie tips is 1:
 	say "[one of][newbie style]Newbie tip: A body of water! If [if diaper quest is 1]your clothes have been soiled[otherwise]you have been stained with bodily fluids[end if], you can use this to your advantage. You can clean individual items of clothing with 'clean X in water' and you can use 'swim in water' to go in yourself, and clean everything you're wearing at the same time[if diaper messing >= 4]. You can even use this to clean up after messing yourself[otherwise if diaper lover > 0]. It may be sensible to remove any diapers first though, unless you want them to instantly get fully waterlogged[end if]![roman type][line break][or][stopping]".
@@ -85,10 +85,10 @@ To soak body in water body:
 		let R be a random number between 2 and 4;
 		if the water-drench of hair < the largeness of hair, increase the water-drench of hair by R;
 		if the water-drench of hair > the largeness of hair, now the water-drench of hair is the largeness of hair;
-		if the semen coating of B > 0 or (B is hair and the urine coating of hair > 0):
-			while R > 0 and (the semen coating of B > 0 or (B is hair and the urine coating of hair > 0)):
+		if the semen coating of B > 0 or (B is hair and the slime coating of hair > 0):
+			while R > 0 and (the semen coating of B > 0 or (B is hair and the slime coating of hair > 0)):
 				decrease R by 1;
-				if B is hair and the urine coating of hair > 0, decrease the urine coating of hair by 1;
+				if B is hair and the slime coating of hair > 0, decrease the slime coating of hair by 1;
 				otherwise decrease the semen coating of B by 1;
 				increase tracked-semen by 1;
 	if X < tracked-semen, say "The water feels nice as it washes some fluids off your body.";
@@ -125,10 +125,10 @@ To soak clothing in water body:
 				if quest-only-once is 0, now quest-only-once is 1;
 				let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
 				if diaper quest is 1 or the player is in Hotel45, now R is 999; [we don't do this slow cleaning nonsense in DQ]
-				let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
+				let S be the semen-soak of C + the slime-soak of C + the milk-soak of C;
 				while R > 0 and S > 0:[Clean off everything if S is already 0, then we go on to the next clothing.]
-					if the urine-soak of C > 0:
-						decrease the urine-soak of C by 1;
+					if the slime-soak of C > 0:
+						decrease the slime-soak of C by 1;
 					otherwise if the milk-soak of C > 0:
 						decrease the milk-soak of C by 1;
 					otherwise if the semen-soak of C > 0:
@@ -149,11 +149,11 @@ To soak clothing in water body:
 [TODO: semen cleaning doesn't happen all at once.]
 [To compute fast bathing:
 	wash clothing in water body;
-	if the semen coating of face > 0 or the semen coating of hair > 0 or the urine coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:
+	if the semen coating of face > 0 or the semen coating of hair > 0 or the slime coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:
 		let X be the semen coating of face + the semen coating of hair + the semen coating of breasts + the semen coating of thighs + the semen coating of belly + tracked-semen;
 		now the semen coating of face is 0;
 		now the semen coating of hair is 0;
-		now the urine coating of hair is 0;
+		now the slime coating of hair is 0;
 		now the semen coating of breasts is 0;
 		now the semen coating of belly is 0;
 		now the semen coating of thighs is 0;
@@ -186,7 +186,7 @@ To soak clothing in water body:
 			progress quest of swimming-quest;
 		if the semen-soak of C > 0:
 			increase tracked-semen by the semen-soak of C / 2;
-		if the urine-soak of C > 0:
+		if the slime-soak of C > 0:
 			increase tracked-semen by 1;
 		if the milk-soak of C > 0:
 			increase tracked-semen by 1;

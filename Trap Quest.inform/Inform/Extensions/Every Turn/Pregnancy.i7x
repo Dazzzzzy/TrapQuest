@@ -353,7 +353,7 @@ To compute pregnancy annoyance:
 				StrengthDown 1;
 		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 10 is 1:
 			if the bladder of the player < 6, now the bladder of the player is 6;
-			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your bladder.[line break][variable custom style]Oof![roman type][line break]You're suddenly desperate for the loo!";
+			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your [SlimeContainer]![line break][variable custom style]Oof![roman type][line break][if legacy watersports mechanics is 1]You're suddenly desperate for the loo![otherwise]It looks like it'll need to be drained fast![end if]";
 		otherwise if breastsEngorged is false and the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
 			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
 			BustUp 2;

@@ -9,7 +9,7 @@ inside-out is initially false. [When FALSE, that means that the liquid has appea
 A liquid-object is a kind of object.
 
 semen is a liquid-object.
-urine is a liquid-object.
+slime is a liquid-object.
 milk is a liquid-object.
 water is a liquid-object.
 murkwater is a liquid-object.
@@ -22,8 +22,8 @@ To decide which number is the player taste addiction of (L - a liquid-object):
 	decide on 0.
 To decide which number is the player taste addiction of (L - semen):
 	decide on the semen taste addiction of the player.
-To decide which number is the player taste addiction of (L - urine):
-	decide on the urine taste addiction of the player.
+To decide which number is the player taste addiction of (L - slime):
+	decide on the slime taste addiction of the player.
 To decide which number is the player taste addiction of (L - milk):
 	decide on the milk taste addiction of the player.
 To decide which number is the player taste addiction of (L - murkwater):
@@ -48,7 +48,7 @@ To compute slightly addictive tasting of (L - a liquid-object):
 To compute slightly addictive tasting of (L - a liquid-object) by (N - a number):
 	check tasting of L;
 	if L is semen, SlowSemenTasteAddictUp N;
-	if L is urine, SlowUrineTasteAddictUp N;
+	if L is slime, SlowSlimeTasteAddictUp N;
 	if L is milk, SlowMilkTasteAddictUp N;
 	if L is murkwater, SlowGrossnessAddictUp N.
 
@@ -58,7 +58,7 @@ To compute addictive tasting of (L - a liquid-object):
 To compute addictive tasting of (L - a liquid-object) by (N - a number):
 	check tasting of L;
 	if L is semen, SemenTasteAddictUp N;
-	if L is urine, UrineTasteAddictUp N;
+	if L is slime, SlimeTasteAddictUp N;
 	if L is milk, MilkTasteAddictUp N;
 	if L is murkwater, GrossnessAddictUp N.
 
@@ -69,7 +69,7 @@ To compute slightly addictive swallowing of (L - a liquid-object) by (N - a numb
 	check tasting of L;
 	check swallowing of L;
 	if L is semen, ActualStomachSemenUp N;
-	if L is urine, ActualStomachUrineUp N;
+	if L is slime, ActualStomachSlimeUp N;
 	if L is milk, ActualStomachMilkUp N;
 	if L is murkwater, StomachUp N.
 
@@ -98,10 +98,10 @@ To LiquidSoak (L - semen) On (B - a body part):
 	if diaper quest is 0:
 		if the semen coating of B is 0, force inventory-focus redraw; [Forces redraw of inventory window for wipe buttons to appear]
 		increase the semen coating of B by 1.
-To LiquidSoak (L - urine) On (B - a body part):
+To LiquidSoak (L - slime) On (B - a body part):
 	do nothing.
-To LiquidSoak (L - urine) On (B - hair):
-	increase the urine coating of B by 1.
+To LiquidSoak (L - slime) On (B - hair):
+	increase the slime coating of B by 1.
 To LiquidSoak (L - milk) On (B - a body part):
 	do nothing.
 To LiquidSoak (L - water) On (B - a body part):
@@ -112,8 +112,8 @@ To LiquidSoak (L - murkwater) On (B - an object):
 	LiquidSoak semen on B.
 To LiquidSoak (L - semen) On (C - a clothing):
 	SemenSoakUp C by 1.
-To LiquidSoak (L - urine) On (C - a clothing):
-	UrineSoakUp C by 1.
+To LiquidSoak (L - slime) On (C - a clothing):
+	SlimeSoakUp C by 1.
 To LiquidSoak (L - milk) On (C - a clothing):
 	MilkSoakUp C by 1.
 To LiquidSoak (L - water) On (C - a clothing):
@@ -168,7 +168,7 @@ To UnannouncedExpel (L - a liquid-object) On (C - an object) by (N - a number):
 	reset soak flavour.
 
 
-[Bukkake fetish being disabled prevents most clothes from getting stained with semen, but not urine or milk. We do not care about waterproofing here.]
+[Bukkake fetish being disabled prevents most clothes from getting stained with semen, but not slime or milk. We do not care about waterproofing here.]
 Definition: a clothing is semen-soak-appropriate:
 	if it is crotch covering or bukkake fetish is 1, decide yes;
 	decide no.
@@ -258,34 +258,34 @@ To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
 			decrease N by M; [hair]
 			say "[announced L] gets all over your [ShortDesc of H].";
 			ContinuedSquirt L on H by M;
-	if L is semen or L is urine:
-		while the semen coating of C + the urine coating of C + the water-drench of C < the largeness of hair and N > 0: [soak liquid into hair]
+	if L is semen or L is slime:
+		while the semen coating of C + the slime coating of C + the water-drench of C < the largeness of hair and N > 0: [soak liquid into hair]
 			LiquidSoak L on C;
 			decrease N by 1;
-		if N > 0 and the urine coating of C is 0 and the semen coating of C > 0: [if hair is completely saturated by cum we want to replace one unit with urine so that the hair is correctly identified as both cum and piss stained]
+		if N > 0 and the slime coating of C is 0 and the semen coating of C > 0: [if hair is completely saturated by cum we want to replace one unit with slime so that the hair is correctly identified as both cum and slime stained]
 			LiquidSoak L on C;
 			decrease the semen coating of C by 1;
 			decrease N by 1;
 	otherwise if L is water:
-		if (the semen coating of C + the urine coating of C) > 0: [Water cleans hair, 1 unit of water to 1 unit of semen/urine.]
+		if (the semen coating of C + the slime coating of C) > 0: [Water cleans hair, 1 unit of water to 1 unit of semen/slime.]
 			let O be N;
-			let P be the semen coating of C; [We need to know the pre-cleaning values of semen and urine for accurate flavour text afterwards.]
-			let Q be the urine coating of C;
-			while O > 0: [We only clean 1 unit at a time so we can alternate targets. Would be silly to always clean out all of semen first before touching urine or vice versa.]
+			let P be the semen coating of C; [We need to know the pre-cleaning values of semen and slime for accurate flavour text afterwards.]
+			let Q be the slime coating of C;
+			while O > 0: [We only clean 1 unit at a time so we can alternate targets. Would be silly to always clean out all of semen first before touching slime or vice versa.]
 				if the semen coating of C > 0:
 					decrease O by 1;
 					decrease the semen coating of C by 1;
 					PuddleUp semen by 1;
-				if the urine coating of C > 0 and O > 0:
+				if the slime coating of C > 0 and O > 0:
 					decrease O by 1;
-					decrease the urine coating of C by 1;
-					PuddleUp urine by 1;
-				if (the semen coating of C + the urine coating of C) < 1:
+					decrease the slime coating of C by 1;
+					PuddleUp slime by 1;
+				if (the semen coating of C + the slime coating of C) < 1:
 					now O is 0;
-			if (the semen coating of C + the urine coating of C) > 0:
-				say "The [variable L] washes some [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][end if] out of your hair. ";
+			if (the semen coating of C + the slime coating of C) > 0:
+				say "The [variable L] washes some [if P > 0 and Q > 0][semen] and [slime][otherwise if Q > 0][slime][otherwise][semen][end if] out of your hair. ";
 			otherwise:
-				say "The [variable L] washes all the [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][end if] out of your hair. ";
+				say "The [variable L] washes all the [if P > 0 and Q > 0][semen] and [slime][otherwise if Q > 0][slime][otherwise][semen][end if] out of your hair. ";
 		while the water-drench of C < the largeness of hair and N > 0: [soak water into hair]
 			LiquidSoak L on C;
 			decrease N by 1;
@@ -467,12 +467,12 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 			ContinuedSquirt L on TC by N;
 			now N is 0;
 	otherwise if diaper quest is 1 and playerRegion is mansion and the class of the player is trick-or-treater and ghostly tentacle is alive:
-		if the slime-puddle of the location of the player > 0:
+		if the ecto-puddle of the location of the player > 0:
 			say "The water oozing down your thighs adds to the magic slimy glue trapping you to the ground!";
-			increase the slime-puddle of the location of the player by (N + 1) / 2;
+			increase the ecto-puddle of the location of the player by (N + 1) / 2;
 		otherwise:
 			say "As the water trickles down your thighs, you realise that it is becoming thicker, and slimier, and stickier![line break][variable custom style]What the hell?![roman type][line break]";
-			now the slime-puddle of the location of the player is (N + 1) / 2;
+			now the ecto-puddle of the location of the player is (N + 1) / 2;
 			if the player is upright:
 				say "You weren't expecting this, and as you try to complete your step forward, you completely lose your balance!";
 				try kneeling;
@@ -523,23 +523,23 @@ foot-squelch-cooldown is a number that varies.
 Report going when the player is upright:
 	repeat with C running through worn foot covering clothing:
 		if the total-soak of C >= a random number between 1 and the soak-limit of C:
-			if the urine-soak of C > 0 and the semen-soak of C > 0:
-				say "As you walk, a horrid mixture of [urine] and [semen] squelches out of your [ShortDesc of C] and dribbles to the ground.";
+			if the slime-soak of C > 0 and the semen-soak of C > 0:
+				say "As you walk, a horrid mixture of [slime] and [semen] squelches out of your [ShortDesc of C] and dribbles to the ground.";
 				if the water-soak of C > 0:
 					decrease the water-soak of C by 1;
 				otherwise:
-					unless the semen-soak of C is 1 and the urine-soak of C > 1, decrease the semen-soak of C by 1;
-					unless the urine-soak of C is 1 and the semen-soak of C > 0, decrease the urine-soak of C by 1;
+					unless the semen-soak of C is 1 and the slime-soak of C > 1, decrease the semen-soak of C by 1;
+					unless the slime-soak of C is 1 and the semen-soak of C > 0, decrease the slime-soak of C by 1;
 				PuddleUp semen by 1;
-				PuddleUp urine by 1;
+				PuddleUp slime by 1;
 				SlowGrossOut 4;
-			otherwise if the urine-soak of C > 0:
-				say "As you walk, [urine] squelches out of your [ShortDesc of C] and dribbles to the ground.";
+			otherwise if the slime-soak of C > 0:
+				say "As you walk, [slime] squelches out of your [ShortDesc of C] and dribbles to the ground.";
 				if the water-soak of C > 0:
 					decrease the water-soak of C by 1;
 				otherwise:
-					decrease the urine-soak of C by 1;
-				PuddleUp urine by 1;
+					decrease the slime-soak of C by 1;
+				PuddleUp slime by 1;
 				SlowGrossOut 2;
 			otherwise if the semen-soak of C > 0:
 				say "As you walk, excess [semen] squelches out of your [ShortDesc of C] and bubbles to the ground.";
@@ -558,7 +558,7 @@ Report going when the player is upright:
 				PuddleUp milk by the total-soak of C - the soak-limit of C;
 				SlowGrossOut 2;
 		otherwise if the total-soak of C > the water-soak of C:
-			say "The [if the urine-soak of C > 0 and the semen-soak of C > 0]horrid mixture of [urine] and [semen][otherwise if the urine-soak of C > 0][urine][otherwise if the semen-soak of C > 0][semen][otherwise][milk][end if] in your [ShortDesc of C] squelches [one of]nastily[or]lewdly[or]noisily[at random] [one of][or][or]under your feet [at random]as you walk.";
+			say "The [if the slime-soak of C > 0 and the semen-soak of C > 0]horrid mixture of [slime] and [semen][otherwise if the slime-soak of C > 0][slime][otherwise if the semen-soak of C > 0][semen][otherwise][milk][end if] in your [ShortDesc of C] squelches [one of]nastily[or]lewdly[or]noisily[at random] [one of][or][or]under your feet [at random]as you walk.";
 			SlowGrossOut 1.
 
 
@@ -652,11 +652,11 @@ Definition: a clothing (called C) is able to take more liquid:
 To CumSoak (X - a number) on (C - a clothing):
 	UnannouncedSquirt semen on C by X.
 
-To PissSoak (X - a number) on (C - a clothing):
-	UnannouncedSquirt urine on C by X.
+To SlimeSoak (X - a number) on (C - a clothing):
+	UnannouncedSquirt slime on C by X.
 
-To PissSoak (C - a clothing):
-	pisssoak 1 on C.
+To SlimeSoak (C - a clothing):
+	SlimeSoak 1 on C.
 
 To MilkSoak (X - a number) on (C - a clothing):
 	UnannouncedSquirt milk on C by X
@@ -710,6 +710,6 @@ To compute hips cum dribbling:
 
 To fully clean (B - a body part):
 	now the semen coating of B is 0;
-	now the urine coating of B is 0.
+	now the slime coating of B is 0.
 
 Liquid Movements ends here.

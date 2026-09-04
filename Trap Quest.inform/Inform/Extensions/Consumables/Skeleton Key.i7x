@@ -114,7 +114,7 @@ Definition: a specific-key (called K) is currently locking:
 
 skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of item described]skeleton key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of skeleton key is "skey". The tradability of a skeleton key is 17. [ally]
 
-Figure of skeleton key is the file "Items/Collectibles/key1.jpg".
+Figure of skeleton key is the file "Items/Collectibles/key1.png".
 
 To decide which figure-name is the examine-image of (K - skeleton key):
 	decide on figure of skeleton key.
@@ -123,10 +123,10 @@ To decide what number is the original price of (C - skeleton key):
 	decide on 7.
 
 To say ExamineDesc of (B - skeleton key):
-	say "This small key looks like it could fit into any pair of handcuffs, anklecuffs or similar.".
+	say "This small key shimmers with magic power. It looks like it could fit into any pair of handcuffs, anklecuffs or similar[if bondage protection is 0]... But perhaps not special custom-made locks that require specific keys[end if]...".
 
 To say RewardFlav of (M - a royal guard) for (T - skeleton key):
-	say "[BigNameDesc of M] seems to purposefully let [his of M] [T] drop to the floor.[line break][speech style of M]'Whoops, clumsy me.'[roman type][line break]";
+	say "[BigNameDesc of M] seems to purposefully let [his of M] [T] drop to the floor.[line break][speech style of M]'Whoops, clumsy me.'[roman type][line break]".
 
 chosen-key is an object that varies.
 
@@ -214,12 +214,12 @@ A later time based rule (this is the defeated prison guard key rule):
 		add skeleton key to the tradableItems of prison guard, if absent.
 
 facility-toilet-key is an unlock-key.
-The printed name of facility-toilet-key is "[TQlink of item described]training facility toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of facility-toilet-key is "akey". Understand "training facility toilet", "toilet key" as facility-toilet-key.
+The printed name of facility-toilet-key is "[TQlink of item described]training facility [SlimeTarget] key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of facility-toilet-key is "akey". Understand "training facility toilet", "training facility target", "target key", "toilet key" as facility-toilet-key.
 Figure of toilet key is the file "Items/Collectibles/key4.png".
 To decide which figure-name is the examine-image of (K - facility-toilet-key):
 	decide on Figure of toilet key.
 To say ExamineDesc of (B - facility-toilet-key):
-	say "This key unlocks the padlocks in the training facility's toilets.".
+	say "This key unlocks the padlocks in the training facility's [SlimeTarget]s.".
 To decide which number is the bartering value of (K - facility-toilet-key) for (M - mistress):
 	if M is unfriendly, decide on 1;
 	decide on 10.
@@ -236,11 +236,11 @@ To say MonsterOfferAcceptFlav of (M - mistress) to (T - facility-toilet-key):
 
 
 human-toilet-key is an unlock-key. human-toilet-key is in Holding Pen. [It doesn't start off-stage so that we can easily determine if it's been used yet or not.]
-The printed name of human-toilet-key is "[TQlink of item described]human toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of human-toilet-key is "tkey". Understand "human toilet", "toilet key" as human-toilet-key.
+The printed name of human-toilet-key is "[TQlink of item described]human toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of human-toilet-key is "tkey". Understand "human toilet", "human target", "target key", "toilet key" as human-toilet-key.
 To decide which figure-name is the examine-image of (K - human-toilet-key):
 	decide on Figure of toilet key.
 To say ExamineDesc of (B - human-toilet-key):
-	say "This key could release someone stuck in place as the hotel's human toilet.".
+	say "This key could release someone stuck in place as the hotel's human [SlimeTarget].".
 
 house-key is an unlock-key.
 Figure of house key is the file "Items/Collectibles/key2.png".
@@ -253,7 +253,7 @@ To say ExamineDesc of (B - house-key):
 bike-lock-key is an unlock-key.
 The printed name of bike-lock-key is "[TQlink of item described]bike lock key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bike-lock-key is "blkey". Understand "bike", "lock", "lock key" as bike-lock-key.
 To say ExamineDesc of (B - bike-lock-key):
-	say "This small key unlocks the bike lock in the women's toilets.".
+	say "This small key unlocks the bike lock in the women's [SlimeTarget]s.".
 
 A lockbox is a kind of collectible. Understand "lockbox", "box" as a lockbox.  A lockbox has an object called the locked-object.
 

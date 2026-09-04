@@ -244,41 +244,41 @@ This is the semen taste addiction description rule:
 			say "You really enjoy the taste of [semen]. It's delicious!";
 		otherwise if the semen taste addiction of the player < 17:
 			if semen is highest addicted liquid, say "You would happily admit that [semen] is probably [if highest-addiction-liquids is 1]your favourite drink[otherwise]one of your favourite drinks[end if]. It's the perfect beverage!";
-			[otherwise say "You would happily admit that [semen] is one of the best drinks ever made. But you still love [if urine is highest addicted liquid and milk is highest addicted liquid][urine] and [milk][otherwise if urine is highest addicted liquid][urine][otherwise][milk][end if] more!";]
+			[otherwise say "You would happily admit that [semen] is one of the best drinks ever made. But you still love [if slime is highest addicted liquid and milk is highest addicted liquid][slime] and [milk][otherwise if slime is highest addicted liquid][slime][otherwise][milk][end if] more!";]
 		otherwise if the semen taste addiction of the player < 20:
-			if semen is highest addicted liquid, say "You strongly believe that [semen] [if highest-addiction-liquids is 1]is the only thing[otherwise if urine is highest addicted liquid and milk is highest addicted liquid]and [urine] and [milk] are the only things[otherwise if urine is highest addicted liquid]and [urine] are the only things[otherwise]and [milk] are the only things[end if] ever worth drinking.";
-			[otherwise say "You do enjoy the taste of [semen], but you don't really care about it because it's not [if urine is highest addicted liquid and milk is highest addicted liquid][urine] or [milk][otherwise if urine is highest addicted liquid][urine][otherwise][milk][end if].";]
+			if semen is highest addicted liquid, say "You strongly believe that [semen] [if highest-addiction-liquids is 1]is the only thing[otherwise if slime is highest addicted liquid and milk is highest addicted liquid]and [slime] and [milk] are the only things[otherwise if slime is highest addicted liquid]and [slime] are the only things[otherwise]and [milk] are the only things[end if] ever worth drinking.";
+			[otherwise say "You do enjoy the taste of [semen], but you don't really care about it because it's not [if slime is highest addicted liquid and milk is highest addicted liquid][slime] or [milk][otherwise if slime is highest addicted liquid][slime][otherwise][milk][end if].";]
 		otherwise:
-			say "You are so addicted to [semen][if urine is highest addicted liquid and milk is highest addicted liquid], [urine] and [milk][otherwise if urine is highest addicted liquid] and [urine][otherwise if milk is highest addicted liquid] and [milk][end if] that you don't want to have to drink anything else, ever.";
+			say "You are so addicted to [semen][if slime is highest addicted liquid and milk is highest addicted liquid], [slime] and [milk][otherwise if slime is highest addicted liquid] and [slime][otherwise if milk is highest addicted liquid] and [milk][end if] that you don't want to have to drink anything else, ever.";
 		if debuginfo > 0, say "[input-style](Semen taste addiction [semen taste addiction of the player] / 20)[roman type][line break]".
 The semen taste addiction description rule is listed in the addiction listing rules.
 
-[!<TheUrineTasteAddictionDescriptionRule>+
+[!<TheSlimeTasteAddictionDescriptionRule>+
 
-We explain how much the player likes drinking urine. They always find the taste a bit gross but they love the experience.
+We explain how much the player likes drinking slime. They always find the taste a bit gross but they love the experience.
 
 +!]
-This is the urine taste addiction description rule:
+This is the slime taste addiction description rule:
 	if the latex-transformation of the player <= 4 and watersports fetish is 1:
 		if highest taste addiction < 17 or semen is not highest addicted liquid: [if there's a high taste addiction and semen is one of the highest, we've said everything that needed to be said.]
-			if the urine taste addiction of the player < 2:
+			if the slime taste addiction of the player < 2:
 				say "You couldn't bring yourself to willingly engage in watersports - the idea disgusts you too much.";
-			otherwise if the urine taste addiction of the player < 5:
-				say "You are disgusted by piss play, but can bring yourself to do it if you absolutely have to.";
-			otherwise if the urine taste addiction of the player < 8:
-				say "You find [urine] a bit gross, but believe everyone should try it out at least once, to discover what it's like for themselves.";
-			otherwise if the urine taste addiction of the player < 11:
-				say "You find the taste of [urine] rather bitter, which makes sexual play involving it feel very... intense.";
-			otherwise if the urine taste addiction of the player < 14:
-				say "The bitter and slightly gross taste of [urine] makes it intense and exciting to play with.";
-			otherwise if the urine taste addiction of the player < 17:
-				say "Even though it tastes a bit foul, you enjoy the experience of people pissing in your mouth more than you enjoy any other drink[if milk is highest addicted liquid] except [milk][end if].";
-			otherwise if the urine taste addiction of the player < 20:
-				if urine is highest addicted liquid, say "You strongly believe that your role in life is to be a human urinal, and that you should try to avoid drinking anything except [urine][if highest-addiction-liquids > 1] and [milk][end if].";
+			otherwise if the slime taste addiction of the player < 5:
+				say "You are disgusted by [slime] play, but can bring yourself to do it if you absolutely have to.";
+			otherwise if the slime taste addiction of the player < 8:
+				say "You find [slime] a bit gross, but believe everyone should try it out at least once, to discover what it's like for themselves.";
+			otherwise if the slime taste addiction of the player < 11:
+				say "You find the taste of [slime] rather bitter, which makes sexual play involving it feel very... intense.";
+			otherwise if the slime taste addiction of the player < 14:
+				say "The bitter and slightly gross taste of [slime] makes it intense and exciting to play with.";
+			otherwise if the slime taste addiction of the player < 17:
+				say "Even though it tastes a bit foul, you enjoy the experience of people [slime]ing in your mouth more than you enjoy any other drink[if milk is highest addicted liquid] except [milk][end if].";
+			otherwise if the slime taste addiction of the player < 20:
+				if slime is highest addicted liquid, say "You strongly believe that your role in life is to be a human [SlimeTarget], and that you should try to avoid drinking anything except [slime][if highest-addiction-liquids > 1] and [milk][end if].";
 			otherwise:
-				say "You are addicted to being used as a human urinal. You love the disgusting experience of drinking [urine] so much that you don't want to have to drink anything else[if highest-addiction-liquids > 1] except [milk][end if], ever.";
-		if debuginfo > 0, say "[input-style](Urine taste addiction [urine taste addiction of the player] / 20)[roman type][line break]".
-The urine taste addiction description rule is listed in the addiction listing rules.
+				say "You are addicted to being used as a human [SlimeTarget]. You love the disgusting experience of drinking [slime] so much that you don't want to have to drink anything else[if highest-addiction-liquids > 1] except [milk][end if], ever.";
+		if debuginfo > 0, say "[input-style]([big slime] taste addiction [slime taste addiction of the player] / 20)[roman type][line break]".
+The slime taste addiction description rule is listed in the addiction listing rules.
 
 [!<TheMilkTasteAddictionDescriptionRule>+
 
@@ -287,7 +287,7 @@ We explain how much the player cares about where milk comes from and how much th
 +!]
 This is the milk taste addiction description rule:
 	if the latex-transformation of the player <= 4 and (lactation fetish is 1 or diaper quest is 1):
-		if highest taste addiction < 17 or (semen is not highest addicted liquid and urine is not highest addicted liquid): [if there's a high taste addiction and milk is not the highest on its own, we've said everything that needed to be said.]
+		if highest taste addiction < 17 or (semen is not highest addicted liquid and slime is not highest addicted liquid): [if there's a high taste addiction and milk is not the highest on its own, we've said everything that needed to be said.]
 			if the milk taste addiction of the player < 2:
 				say "You like the taste of cow's milk, but the thought of drinking human breast milk disgusts you.";
 			otherwise if the milk taste addiction of the player < 5:
@@ -333,7 +333,7 @@ This is the grossness addiction description rule:
 		otherwise if the grossness addiction of the player < 17:
 			say "You're rather addicted to [DetailedGrossStuff]. Just the thought of it can make you rather horny!";
 		otherwise if the grossness addiction of the player < 20:
-			say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if a2m fetish >= 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if a2m fetish >= 2], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal urinal[otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
+			say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if a2m fetish >= 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if a2m fetish >= 2], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal [SlimeTargetU][otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
 		otherwise:
 			say "You are [bold type]obsessed[roman type] with [DetailedGrossStuff]. [if diaper messing >= 6]When a messy diaper is nearby, it takes all your self control not to shove your face into the back cover of it and breathe in deeply.[otherwise if a2m fetish >= 1]When you see an exposed butthole in front of your face, you can't help but immediately shove your tongue as deep inside as it will go, savouring every little bit of that wonderful bitter taste of ass.[otherwise]When someone puts their bare foot in front of your face, you can't help but eagerly start to lick it clean, delighting in that delicious tangy taste of sweat and dirt.[end if]";
 		if debuginfo > 0, say "[input-style](Grossness addiction [grossness addiction of the player] / 20)[roman type][line break]".
@@ -373,23 +373,23 @@ This is the diaper addiction description rule:
 		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]".
 	[if diaper lover > 0:
 		if the bladder-incontinence of the player >= 10:
-			say "You have no control over your [if the rectum-incontinence of the player >= 10]bodily functions[otherwise]bladder[end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
+			say "You have no control over your [if the rectum-incontinence of the player >= 10]bodily functions[otherwise][SlimeContainer][end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
 		otherwise if the bladder-incontinence of the player >= 8:
-			say "You only have the tiniest amount of control over your [if the rectum-incontinence of the player is 8 or the rectum-incontinence of the player is 9]bodily functions[otherwise]bladder[end if] - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
+			say "You only have the tiniest amount of control over your [if the rectum-incontinence of the player is 8 or the rectum-incontinence of the player is 9]bodily functions[otherwise][SlimeContainer][end if] - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s [SlimeTargetP][otherwise][SlimeTarget][end if].";
 		otherwise if the bladder-incontinence of the player >= 6:
-			say "You have lost a lot of your ability to hold onto your bladder[if the rectum-incontinence of the player is 6 or the rectum-incontinence of the player is 7] and bowels[end if], which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
+			say "You have lost a lot of your ability to hold onto your [SlimeContainer][if the rectum-incontinence of the player is 6 or the rectum-incontinence of the player is 7] and bowels[end if], which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s [SlimeTargetP][otherwise][SlimeTarget][end if] in time.";
 		otherwise if the bladder-incontinence of the player >= 4:
-			say "You are starting to have real problems with bladder [if the rectum-incontinence of the player is 4 or the rectum-incontinence of the player is 5]and bowel [end if]continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
+			say "You are starting to have real problems with [SlimeContainer] [if the rectum-incontinence of the player is 4 or the rectum-incontinence of the player is 5]and bowel [end if]continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a [SlimeTarget] in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
 		otherwise if the bladder-incontinence of the player >= 2:
-			say "You have a significantly weak bladder[if the rectum-incontinence of the player is 2 or the rectum-incontinence of the player is 3] and disobedient bowels[end if]. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
+			say "You have a significantly weak [SlimeContainer][if the rectum-incontinence of the player is 2 or the rectum-incontinence of the player is 3] and disobedient bowels[end if]. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a [SlimeTarget][otherwise]you're not diapered[end if].";
 		otherwise if the bladder-incontinence of the player > 0:
-			say "You have a slightly weak bladder, which makes your need to go toilet slightly more urgent than for the average adult.";
+			say "You have a slightly weak [SlimeContainer], which makes your need to go [SlimeTarget] slightly more urgent than for the average adult.";
 		otherwise if the bladder-incontinence of the player < 0:
-			say "You are even better at holding onto your bladder than you were when you entered the game.";
+			say "You are even better at holding onto your [SlimeContainer] than you were when you entered the game.";
 		otherwise if the rectum-incontinence of the player is 0:
-			say "You are fully [if the player is a pervert]potty trained[otherwise]continent[end if].";
+			say "You are fully [if the player is a pervert][SlimeTargetP] trained[otherwise]continent[end if].";
 		otherwise:
-			say "You are fully in control of your bladder.";
+			say "You are fully in control of your [SlimeContainer].";
 		if diaper messing >= 3:
 			let bowel-flav-given be false;
 			if the bladder-incontinence of the player >= 2:
@@ -401,21 +401,21 @@ This is the diaper addiction description rule:
 				if the rectum-incontinence of the player >= 10:
 					say "You have no control over your bowels; you can't even feel when you're full, and your body just goes as soon as it is ready.";
 				otherwise if the rectum-incontinence of the player >= 8:
-					say "You only have the tiniest amount of control over your rectum - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
+					say "You only have the tiniest amount of control over your rectum - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s [SlimeTargetP][otherwise][SlimeTarget][end if].";
 				otherwise if the rectum-incontinence of the player >= 6:
-					say "You have lost a lot of your ability to hold onto your bowels, which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
+					say "You have lost a lot of your ability to hold onto your bowels, which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s [SlimeTargetP][otherwise][SlimeTarget][end if] in time.";
 				otherwise if the rectum-incontinence of the player >= 4:
-					say "You are starting to have real problems with bowel continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
+					say "You are starting to have real problems with bowel continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a [SlimeTarget] in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
 				otherwise if the rectum-incontinence of the player >= 2:
-					say "You have significantly disobedient bowels. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
+					say "You have significantly disobedient bowels. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a [SlimeTarget][otherwise]you're not diapered[end if].";
 				otherwise if the rectum-incontinence of the player > 0:
-					say "You have a slightly weak rectum, which makes your need to go toilet slightly more urgent than for the average adult.";
+					say "You have a slightly weak rectum, which makes your need to go [SlimeTarget] slightly more urgent than for the average adult.";
 				otherwise if the rectum-incontinence of the player < 0:
 					say "You are even better at holding onto your bowels than you were when you entered the game.";
 				otherwise if the bladder-incontinence of the player is not 0:
 					say "You are fully in control of your bowels.";
 		if debuginfo > 0:
-			say "[input-style]Bladder Incontinence [bladder-incontinence of the player] / 10[if the max-bladder-incontinence of the player < 10] [bracket]capped at [the max-bladder-incontinence of the player][close bracket][end if][run paragraph on]";
+			say "[input-style][SlimeContainer] Incontinence [bladder-incontinence of the player] / 10[if the max-bladder-incontinence of the player < 10] [bracket]capped at [the max-bladder-incontinence of the player][close bracket][end if][run paragraph on]";
 			if diaper messing >= 3, say "; Bowel Incontinence [rectum-incontinence of the player] / 10[if the max-rectum-incontinence of the player < 10] [bracket]capped at [max-rectum-incontinence of the player][close bracket][end if][run paragraph on]";
 			say ")[roman type][line break]".]
 The diaper addiction description rule is listed in the addiction listing rules.

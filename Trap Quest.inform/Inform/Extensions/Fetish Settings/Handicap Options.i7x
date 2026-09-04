@@ -497,11 +497,11 @@ Figure of stronger_curses_always is the file "Special/Menus/HandicapSelection/st
 Figure of stronger_curses_never is the file "Special/Menus/HandicapSelection/stronger_curses_never.png".
 Figure of stronger_curses_not_this_time is the file "Special/Menus/HandicapSelection/stronger_curses_not_this_time.png".
 Figure of stronger_curses_this_time is the file "Special/Menus/HandicapSelection/stronger_curses_this_time.png".
-Figure of Faster Doom is the file "Special/Menus/HandicapSelection/Stronger Doom.jpg".
-Figure of faster_doom_always is the file "Special/Menus/HandicapSelection/stronger_doom_always.png".
-Figure of faster_doom_never is the file "Special/Menus/HandicapSelection/stronger_doom_never.png".
-Figure of faster_doom_not_this_time is the file "Special/Menus/HandicapSelection/stronger_doom_not_this_time.png".
-Figure of faster_doom_this_time is the file "Special/Menus/HandicapSelection/stronger_doom_this_time.png".
+Figure of Faster Doom is the file "Special/Menus/HandicapSelection/Impending Doom.jpg".
+Figure of faster_doom_always is the file "Special/Menus/HandicapSelection/impending_doom_always.png".
+Figure of faster_doom_never is the file "Special/Menus/HandicapSelection/impending_doom_never.png".
+Figure of faster_doom_not_this_time is the file "Special/Menus/HandicapSelection/impending_doom_not_this_time.png".
+Figure of faster_doom_this_time is the file "Special/Menus/HandicapSelection/impending_doom_this_time.png".
 Figure of Trapped In Bondage is the file "Special/Menus/HandicapSelection/Trapped In Bondage.jpg".
 Figure of Trapped_in_Bondage_always is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_always.png".
 Figure of Trapped_in_Bondage_never is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_never.png".

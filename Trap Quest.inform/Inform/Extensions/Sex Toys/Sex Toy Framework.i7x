@@ -163,7 +163,7 @@ To compute periodic rejuvenation effect of (C - a sex toy):
 		say bold type;
 		if L > 3 and F is asshole:
 			say "Your [ShortDesc of C] pulses as warm, frothy liquid streams into your [variable F].";
-			AssFill N urine;
+			AssFill N slime;
 			if C is blessed, heal asshole times 2;
 			otherwise heal asshole times 1;
 		otherwise if L > 1 or diaper quest is 1:

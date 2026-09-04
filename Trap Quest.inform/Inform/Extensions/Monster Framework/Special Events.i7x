@@ -1,74 +1,74 @@
 Special Events by Monster Framework begins here.
 
-piss-demanding is initially true.
+slime-demanding is initially true.
 
 [No demand to swallow]
-To idly FacePiss from (M - an object):
-	now piss-demanding is false;
-	FacePiss from M;
-	now piss-demanding is true.
+To idly FaceDrain from (M - an object):
+	now slime-demanding is false;
+	FaceDrain from M;
+	now slime-demanding is true.
 
-[!<FacePiss>+
+[!<FaceDrain>+
 
 Handles the player being pissed on by an unknown entity. The flavour is kept neutral so it shouldn't matter.
 
 @param <Object>:<M> Whomever is peeing on the player
 +!]
-To FacePiss from (M - an object):
+To FaceDrain from (M - an object):
 	if the player is upright, try kneeling;
-	if the player is not forced to drink urine and the player is not mouthblocked:
-		if piss-demanding is true, say PissDrinkThreat of M;
-		say "Do you drink the [urine][if the total volume of face > 0] (you'll have to swallow your [MouthfulDesc])[end if]? ";
+	if the player is not forced to drink slime and the player is not mouthblocked:
+		if slime-demanding is true, say SlimeDrinkThreat of M;
+		say "Do you drink the [slime][if the total volume of face > 0] (you'll have to swallow your [MouthfulDesc])[end if]? ";
 	let vm be a random video-monitor in the location of the player;
 	if the player is mouthblocked:
-		compute urine hitting face;
+		compute slime hitting face;
 		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 			now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
-			let T be the substituted form of "getting showered in [urine].";
+			let T be the substituted form of "getting showered in [slime].";
 			now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	otherwise if there is a worn ringagged clothing:
-		say "Your ring gag means that the [urine] flows straight into your mouth, forcing you to swallow it.";
-		DrinkPiss from M;
+		say "Your ring gag means that the [slime] flows straight into your mouth, forcing you to swallow it.";
+		DrinkSlime from M;
 	otherwise:
 		if the thirst of the player is 5 and the player is not disgraced:
 			say "Your thirst overwhelms you and you can't help but open your mouth to wet your tongue and throat.";
-			DrinkPiss from M;
-		otherwise if the player is desperate to drink urine:
+			DrinkSlime from M;
+		otherwise if the player is desperate to drink slime:
 			say "You don't even hesitate - you immediately open your mouth and start collecting as much as you can.";
-			DrinkPiss from M;
+			DrinkSlime from M;
 		otherwise if the player is bimbo consenting:
-			DrinkPiss from M;
+			DrinkSlime from M;
 		otherwise:
 			let V be nothing;[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
-			if the player is not flying and the player is not at least partially monster stuck, now V is the juice-collector of urine;
+			if the player is not flying and the player is not at least partially monster stuck, now V is the juice-collector of slime;
 			if V is bottle:
 				unless the fill-colour of V is golden, dump V;
-				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
+				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [slime]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a [SlimeTarget] is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
 				if the doses of V is 0, now V is boring-origin;
 				now the doses of V is max-doses of V;
 				now the fill-colour of V is golden;
 				now M is inseminating V;
 			otherwise:
-				say "Your face is blasted by a stream of [urine]. ";
+				say "Your face is blasted by a stream of [slime]. ";
 				if the player is air breathing vulnerable, SmellGrossOut 5;
-			compute urine hitting face;
+			compute slime hitting face;
 			if M is nothing: [currently only wrestler urinal scene]
-				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
+				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a [SlimeTarget] properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
 				PainUp 10;
-			otherwise if piss-demanding is true and M is intelligent monster:
+			otherwise if slime-demanding is true and M is intelligent monster:
 				consider angry punishment of M;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 				now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
-				let T be the substituted form of "getting showered in [urine].";
+				let T be the substituted form of "getting showered in [slime].";
 				now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
-		let T be the substituted form of "drinking [urine].";
+		let T be the substituted form of "drinking [slime].";
 		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	SportsCount;
-	if the urine taste addiction of the player > 14:
-		say "The experience [one of]of being used as a toilet now [or][stopping][if the player is a bit horny]arouses you further[otherwise]turns you on[end if].";
-		arouse (the urine taste addiction of the player - 14) * 150;
+	if the slime taste addiction of the player > 14:
+		say "The experience [one of]of being used as a [SlimeTarget] now [or][stopping][if the player is a bit horny]arouses you further[otherwise]turns you on[end if].";
+		arouse (the slime taste addiction of the player - 14) * 150;
 	if WC thigh high boots is worn:
 		say "[bold type]Your [ShortDesc of WC thigh high boots] pulse and glow! ";
 		if the class of the player is human toilet, increase the powerup of WC thigh high boots by a random number between 10 and 15;
@@ -79,21 +79,21 @@ To FacePiss from (M - an object):
 		say "[roman type][line break]";
 	if M is monster, now the bladder of M is 0.
 
-[!<SayPissDrinkThreatOfObject>+
+[!<SaySlimeDrinkThreatOfObject>+
 
-Displays some text from describing "M" demanding the player drink urine
+Displays some text from describing "M" demanding the player drink slime
 
 @param <Object>:<M> Whomever is trying to pee in the player's mouth
 +!]
-To say PissDrinkThreat of (M - an object):
+To say SlimeDrinkThreat of (M - an object):
 	if M is nothing: [Currently this only applies to the wrestler urinal scene]
-		say "[first custom style]'[one of]Now open wide, little toilet-girl[or]Open up your piss chute now, darling[or]Open wide now, daddy's been holding this in for a while[or]You'd better drink this up like a good urinal or else[or]Come on now, let me turn your mouth into my personal toilet[or]Do your job properly and open your mouth already[or]Be a good human toilet and drink this all up[or]I'm sure I don't have to tell you what will happen if you don't drink it all, do I[in random order].'[roman type][line break]";
+		say "[first custom style]'[one of]Now open wide, little [SlimeTarget]-girl[or]Open up your [slime] chute now, darling[or]Open wide now, daddy's been holding this in for a while[or]You'd better drink this up like a good [SlimeTarget] or else[or]Come on now, let me turn your mouth into my personal [SlimeTarget][or]Do your job properly and open your mouth already[or]Be a good human [SlimeTarget] and drink this all up[or]I'm sure I don't have to tell you what will happen if you don't drink it all, do I[in random order].'[roman type][line break]";
 	otherwise if M is intelligent monster:
 		say "[speech style of M]'[one of]Open wide or else!'[or]You'd better drink this, or you'll regret it.'[or]Don't anger me now by refusing to drink my gift.'[or]You'd better drink this up like a good submissive bitch, or else.'[or]As I'm in charge, I order you to drink it all.'[in random order][roman type][line break]".
 
 [!<DecideWhichBottleIsTheJuiceCollector>+
 
-Determines which of the player's containers, if any, will be used to capture urine or semen after a shower or a facial, respectively
+Determines which of the player's containers, if any, will be used to capture slime or semen after a shower or a facial, respectively
 
 @return <Object> The bottle the player will use to catch the liquid, or nothing.
 +!]
@@ -103,13 +103,13 @@ To decide which object is the juice-collector of (L - a liquid-object):
 		let LV be a list of things;
 		repeat with V running through carried vessels:
 			if V is not tight topped:
-				unless the doses of V >= the max-doses of V and (L is milk and the fill-colour of V is white), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff. But with semen and urine and murkwater, there's a chance we want to collect the new stuff for the DNA.]
+				unless the doses of V >= the max-doses of V and (L is milk and the fill-colour of V is white), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff. But with semen and slime and murkwater, there's a chance we want to collect the new stuff for the DNA.]
 		if the number of entries in LV > 0:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			truncate LV to 9 entries;
 			say "Where do you want to collect the [variable L]?[line break]";
 			repeat with V running through LV:
-				if V is bottle, set next numerical response to "The [ShortDesc of V][unless the doses of V is 0 or (L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
+				if V is bottle, set next numerical response to "The [ShortDesc of V][unless the doses of V is 0 or (L is slime and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
 				otherwise set next numerical response to "[BigNameDesc of V]";
 			set numerical response 0 to "don't collect";
 			compute multiple choice question;
@@ -138,65 +138,65 @@ Definition: a person is desperate to drink semen:
 	if semen is craved and the player is not overly full, decide yes;
 	decide no.
 
-[!<APersonIsDesperateToDrinkUrine>+
+[!<APersonIsDesperateToDrinkSlime>+
 
-Determines whether the player is mentally able to refuse to drink urine
+Determines whether the player is mentally able to refuse to drink slime
 
 @return <Boolean> False if the player is able to refuse
 +!]
-Definition: a person is desperate to drink urine:
+Definition: a person is desperate to drink slime:
 	if the thirst of the player is 5, decide yes;
 	if the player is desperate to drink:
-		if the urine taste addiction of the player > 5, decide yes;[do you like the taste of urine?]
+		if the slime taste addiction of the player > 5, decide yes;[do you like the taste of slime?]
 		if the humiliation of the player >= HUMILIATION-DISGRACED + 3500, decide yes;[is your dignity low enough?]
-	if the urine taste addiction of the player > 8 and the player is not overly full, decide yes;
+	if the slime taste addiction of the player > 8 and the player is not overly full, decide yes;
 	decide no.
 
-[!<APersonIsForcedToDrinkUrine>+
+[!<APersonIsForcedToDrinkSlime>+
 
-Determines whether the player is able to choose not to drink urine during a golden shower
+Determines whether the player is able to choose not to drink slime during a golden shower
 
-@return <Boolean> No if the player can choose not to drink urine
+@return <Boolean> No if the player can choose not to drink slime
 +!]
-Definition: a person is forced to drink urine:
+Definition: a person is forced to drink slime:
 	if there is a worn ringagged clothing, decide yes;
-	if the player is desperate to drink urine, decide yes;
+	if the player is desperate to drink slime, decide yes;
 	decide no.
 
-To compute urine hitting face:
-	compute 40 urine hitting face.
+To compute slime hitting face:
+	compute 40 slime hitting face.
 
-[!<ComputeUrineHittingFace>+
+[!<ComputeSlimeHittingFace>+
 
-Handles the player receiving a golden shower and choosing not to drink any
+Handles the player receiving a slime shower and choosing not to drink any
 
 +!]
-To compute (N - a number) urine hitting face:
+To compute (N - a number) slime hitting face:
 	say "[one of]It's even hotter than you were expecting and the unmistakable smell clings to your nostrils. [or]The heat and feeling of the stream is familiar to you now, and you [if the humiliation of the player > 27500]obediently [end if]sit there silently holding your breath until the flow begins to die. [stopping]";
 	if WC catsuit is worn and the player is deserving of more intelligence:
 		say "You feel weirdly enlightened.";
 		IntUp 1;
-	AnnouncedSquirt urine on face by N;
+	AnnouncedSquirt slime on face by N;
 	if the make-up of face > 0 and permanent makeup is 0 and a random number between 1 and 2 is 1:
 		say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
 		FaceDown 1.
 
-[To coat clothes in urine:
+[To coat clothes in slime:
 	repeat with C running through worn able to take more liquid clothing:
-		PissSoak a random number between 3 and 7 on C.]
+		SlimeSoak a random number between 3 and 7 on C.]
 
-[!<DrinkPissFromObject>+
+[!<DrinkSlimeFromObject>+
 
-Handles the player receiving a golden shower and choosing to drink it
+Handles the player receiving a slime shower and choosing to drink it
 
 @param <Object>:<M> Whomever is trying to peeing in the player's mouth
 +!]
-To DrinkPiss from (M - an object):
+To DrinkSlime from (M - an object):
 	if the total volume of face > 0, compute swallowing;
-	Humiliate ULTRA-HUMILIATION - (the urine taste addiction of the player * 50);
-	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
-	StomachUrineUp 3;
-	compute unique piss drink effect of M;
+	Humiliate ULTRA-HUMILIATION - (the slime taste addiction of the player * 50);
+	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [slime]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human [SlimeTarget].[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [slime], taking your place as a human [SlimeTarget].[stopping][if the slime taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the slime taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the slime taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
+	StomachSlimeUp 3;
+	compute unique slime drink effect of M;
 	if the player is not in a predicament room:
 		if WC-plug-panties is worn:
 			say "[bold type]Your [if the player is possessing a vagina][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is possessing a vagina]you feel rushes of energy from your [WC-plug-panties], and now they are[otherwise]you feel a rush of energy from your [WC-plug-panties], and now it is[end if] completely healed! Wow!";
@@ -206,20 +206,20 @@ To DrinkPiss from (M - an object):
 			now the tolerated of vagina is 0;
 		if WC hood is worn:
 			progress quest of human-toilet-quest;
-		otherwise if WC hood is off-stage and the raw urine taste addiction of the player > 2 and WC hood is actually summonable:
+		otherwise if WC hood is off-stage and the raw slime taste addiction of the player > 2 and WC hood is actually summonable:
 			summon WC hood cursed;
-			say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a public toilets! I'm a human being![end if][roman type][line break]";
-		otherwise if the raw urine taste addiction of the player > 2 and WC collar is actually summonable and (the class of the player is cumdumpster or the class of the player is condom collector or the player is getting unlucky):
-			say "[bold type]Suddenly, a [WC collar] [bold type]appears around your neck![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a public toilets! I'm a human being![end if][roman type][line break]";
+			say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![line break][variable custom style][if the player is broken]I'm just a [SlimeTarget]. That's all I am now.[otherwise]I'm not a public [SlimeTarget]! I'm a human being![end if][roman type][line break]";
+		otherwise if the raw slime taste addiction of the player > 2 and WC collar is actually summonable and (the class of the player is cumdumpster or the class of the player is condom collector or the player is getting unlucky):
+			say "[bold type]Suddenly, a [WC collar] [bold type]appears around your neck![line break][variable custom style][if the player is broken]I'm just a [SlimeTarget]. That's all I am now.[otherwise]I'm not a public [SlimeTarget]! I'm a human being![end if][roman type][line break]";
 			summon WC collar cursed with quest.
 
-[!<ComputeUniquePissDrinkEffectOfObject>+
+[!<ComputeUniqueSlimeDrinkEffectOfObject>+
 
-Handles any unique effect to be triggered when the player swallows the urine of a particular entity, "M"
+Handles any unique effect to be triggered when the player swallows the slime of a particular entity, "M"
 
-@param <Object>:<M> Whoever just peed in the player's mouth
+@param <Object>:<M> Whoever just slimed in the player's mouth
 +!]
-To compute unique piss drink effect of (M - an object):
+To compute unique slime drink effect of (M - an object):
 	do nothing.
 
 To say NearingClimaxLicking of (M - a monster):
@@ -277,7 +277,7 @@ To say NearingClimaxAnilingus of (M - a monster):
 		say AnilingusResisting of M;
 		say AnilingusResistingResponse of M;
 	otherwise:
-		say LickSubmissionResponse of M;
+		say AnilingusSubmissionResponse of M;
 	say NearingAnilingusResponse of M.
 
 To say NearingAnilingusResponse of (M - a monster):
@@ -675,11 +675,11 @@ This function is called whenever the player chooses to spit semen into a vessel/
 +!]
 To compute semen catching from (M - a monster) in (V - a bottle):
 	say "You position the [printed name of V] below your chin[if the semen taste addiction of the player < 9], looking away from [him of M][otherwise if the semen taste addiction of the player < 13], trying not to look at [him of M][otherwise], winking up at [him of M][end if] as it catches the [one of]load[or][tasted-semen][at random] [one of]dribbling slowly out of your mouth[or]in thick gooey clumps[or]slides out of your open mouth[at random][run paragraph on]";
-	if the urine volume of face <= 0 and the milk volume of face <= 0:
+	if the slime volume of face <= 0 and the milk volume of face <= 0:
 		say ".[one of] As your [printed name of V] quickly fills up you realise the only thing more humiliating than swallowing [semen] is being witnessed saving some for later![or][stopping]";
 		now the fill-colour of V is creamy;
 	otherwise:
-		say ", along with the [if the urine volume of face > 0 and the milk volume of face > 0][urine] and [milk][otherwise if the urine volume of face > 0][urine][otherwise][milk][end if] already in your mouth.";
+		say ", along with the [if the slime volume of face > 0 and the milk volume of face > 0][slime] and [milk][otherwise if the slime volume of face > 0][slime][otherwise][milk][end if] already in your mouth.";
 		now the fill-colour of V is murky;
 	say strongHumiliateReflect;
 	SetDose V to (the total volume of face + 1) / 2;
@@ -1441,6 +1441,21 @@ To say PenileClimaxFlav of (M - a monster):
 	say "[BigNameDesc of M] screams out in satisfaction as [he of M] climaxes.";
 	orgasm M.
 
+To say PileDriverOpenDemand of (M - a monster):
+	say "[speech style of M]'Open wide, my little cumslut.'[roman type][line break]";
+
+To say PileDriverClimaxLandFlav of (M - a monster) with (open-mouth - a truth state):
+	if open-mouth is true:
+		let SV be (the semen load of the player + 1) / 2;
+		say "Your [if SV >= 4]huge serving of [otherwise if SV is 3]large helping of [otherwise if SV is 1]small squirt of [end if][semen] is delivered directly into your own mouth.";
+		FaceFill semen by SV;
+	otherwise:
+		let SV be the semen load of the player;
+		say "Your face gets [if SV >= 9]caked by your huge load of[otherwise if SV >= 7]hosed down by your large helping of[otherwise if SV >= 5]blasted by your medium-sized ropes of[otherwise if SV >= 3]splattered by your smallish-sized load of[otherwise]dribbled on by your own tiny squirts of[end if] [semen]!";
+		if SV >= 3, mapcutshow figure of piledriver handjob facial for face;
+		AnnouncedSquirt semen on face by SV.
+To say HandjobClimaxFlav of (M - a monster):
+	say "Your [player-penis] unleashes several [if the semen load of the player <= 4]weak [otherwise if the semen load of the player > 7]super thick [end if]ropes of [semen] into [NameDesc of M][']s [one of]waiting hand[or]cupped palm[cycling].".
 
 [!<ComputeHandjobOrgasmOfMonster>+
 
@@ -1451,70 +1466,84 @@ Displays some text describing the player ejaculating whilst being given a handjo
 To compute handjob orgasm of (M - a monster):
 	if M is piledriver-masturbating:
 		let open-mouth be false;
-		say "Your [player-penis] unleashes a rope of [semen] towards your own face!";
+		let SV be the semen load of the player;
+		let spurtFlav be the substituted form of "[player-penis] [one of]unleashes[or]spurts[or]shoots[in random order] [if SV >= 9]rope after big, fat rope[otherwise if SV >= 7]thick ropes[otherwise if SV >= 5]several ropes[otherwise if SV >= 3]several strands[otherwise]a droplet[end if] of [semen] towards your own face";
 		if bukkake fetish is 0:
-			if M is intelligent, say "[speech style of M]'Open wide, my little cumslut.'[roman type][line break][BigNameDesc of M] demands, gripping you painfully tightly. You wince and obediently open your mouth.";
-			otherwise say "[BigNameDesc of M] grips you painfully tightly. You wince and obediently open your mouth.";
+			if M is intelligent, say "[PileDriverOpenDemand of M]The rush of pleasure is so intense that you obey without even thinking about it, opening wide just as your [spurtFlav]!";
+			otherwise say "The rush of pleasure is so intense that you open your mouth right as your [spurtFlav]!";
 			now open-mouth is true;
 		otherwise if face is not actually occupied:
 			if semen is craved:
 				now open-mouth is true;
-				say "Your desperate craving for [semen] makes you instinctively open your mouth.";
-			say "Open your mouth?";
-			if the player is consenting:
-				now open-mouth is true;
-				say "You open your mouth to catch the [semen] inside.";
-		if open-mouth is true:
-			let SV be (the semen load of the player + 1) / 2;
-			say "Your [if SV >= 4]huge serving of [otherwise if SV is 3]large helping of [otherwise if SV is 1]small squirt of [end if][semen] is delivered directly into your own mouth.";
-			FaceFill semen by SV;
-		otherwise:
-			let SV be the semen load of the player;
-			say "Your face gets [if SV >= 9]caked by your huge load of[otherwise if SV >= 7]hosed down by your large helping of[otherwise if SV >= 5]blasted by your medium-sized ropes of[otherwise if SV >= 3]splattered by your smallish-sized load of[otherwise]dribbled on by your own tiny squrits of[end if] [semen]!";
-			if SV >= 3, mapcutshow figure of piledriver handjob facial for face;
-			AnnouncedSquirt semen on face by SV;
+				say "Your desperate cravings make you open your mouth instinctively as your [spurtFlav]";
+			otherwise:
+				say "[if M is intelligent][PileDriverOpenDemand of M][end if]Your [spurtFlav]! Do you open your mouth?";
+				if the player is consenting:
+					now open-mouth is true;
+					say "You open your mouth to catch your own [semen] inside.";
+		say PileDriverClimaxLandFlav of M with open-mouth;
 	otherwise:
-		say "Your [player-penis] unleashes several [if the semen load of the player <= 4]weak [otherwise if the semen load of the player > 7]super thick [end if]ropes of [semen] into [NameDesc of M][']s [one of]waiting hand[or]cupped palm[cycling].";
-	now the sex-length of M is the size of penis * -1; [this allows us to simultaneously track whether the player orgasmed and how large the penis was just before 'punish male shameful orgasm' is called, to decide whether to call the 'masturbation penis shrink punishment' function]
+		say HandjobClimaxFlav of M;
+	now the sex-length of M is the size of penis * -1;[this allows us to simultaneously track whether the player orgasmed and how large the penis was just before 'punish male shameful orgasm' is called, to decide whether to call the 'masturbation penis shrink punishment' function]
 	now penis is not penis-erect. [This line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
-To compute masturbation penis shrink punishment of (M - a monster):
+To say CumShrinkPunishFlav of (M - a monster):
 	say "[speech style of M]'Oh my god, did it just get SMALLER? Hahaha!'[roman type][line break]";
+To say CumShrinkPunishCageFlav of (M - a monster):
+	say "[speech style of M]'There's no way this thing is of any use to anyone now. Time to lock it away for good.'[roman type][line break]";
+To compute masturbation penis shrink punishment of (M - a monster):
+	let flav-said be 0;
 	if the size of penis <= min penis size or the size of penis <= 3:
 		let C be a random application appropriate off-stage actually summonable chastity cage;
-		if C is a thing and the player is ready for more bondage:
-			say "[speech style of M]'There's no way this thing is of any use to anyone now. Time to lock it away for good.'[roman type][line break]";
+		if C is a thing and the player is ready for more bondage and M is a bondage applier:
+			say CumShrinkPunishCageFlav of M;
 			say BondageForceFlav of M for C;
 			summon C locked;
 			compute M keylocking C;
 			say BondageAfterFlav of M for C;
-			reset bondage timer.
+			reset bondage timer;
+			now flav-said is 1;
+	if flav-said is 0, say CumShrinkPunishFlav of M.
+
+To say HandCumPunishFlav of (M - a monster):
+	say "[if M is intelligent][speech style of M]'[one of]You're pathetic[or]Disgraceful[at random], now get out of my sight, you [worm of M].'[roman type][line break][end if][BigNameDesc of M] slaps you in the face with [his of M] hand covered in your [semen]!";
+To say HandCumEatRequest of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Won't you lick it clean for me?'[or]Here, have a taste.'[or]Open wide now, there's a good [boy of the player]...'[then at random][roman type][line break]";
+	otherwise say "[BigNameDesc of M] presents you with [his of M] sticky hand.";
+To say HandCumEatFlav of (M - a monster):
+	say "You obediently lick [his of M] [semen]-covered fingers clean, and [NameDesc of M] [one of]smiles proudly[or]looks very pleased[in random order].[if M is intelligent][line break][speech style of M]'[one of]Good[or]What a good[or]Very good[cycling] [boy of the player].'[roman type][line break][end if]";
+To say HandCumKeepFlav of (M - a monster):
+	say "[if M is intelligent][speech style of M]'[one of]You're so cute[or]How adorable[or]How precious[in random order].'[roman type][line break][end if][BigNameDesc of M] toys with your [semen]!".
 
 To compute masturbation cum in hand punishment of (M - a monster):
 	if a random number between 6 and 11 >= the favour of M:
-		say "[speech style of M]'[one of]You're so pathetic[or]Disgraceful[at random].'[roman type][line break][BigNameDesc of M] slaps you in the face with [his of M] hand covered in your [semen]!";
+		say HandCumPunishFlav of M;
 		PainUp 15;
-		if bukkake fetish is 1, AnnouncedSquirt semen on face by (the semen volume of the player + 2) / 3;
+		if bukkake fetish is 1, AnnouncedSquirt semen on face by (the semen load of the player + 2) / 3;
 		say moderateHumiliateReflect;
-		say "[speech style of M]'Now get out of my sight, you [worm of M].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]You're so cute[or]How adorable[or]How precious[in random order].'[roman type][line break][BigNameDesc of M] toys with your [semen]!";
-		if a random number between 1 and 20 < the difficulty of M:
-			say "[speech style of M]'[one of]Won't you lick it clean for me?'[or]Here, have a taste.'[or]Open wide now, there's a good [boy of the player]...'[then at random][roman type][line break]Do you obey?";
+		if a random number between 1 and 20 < the difficulty of M and face is not actually occupied:
+			say HandCumEatRequest of M;
+			say "Do you lick it off?";
 			if the player is bimbo consenting:
-				say "You obediently lick [his of M] cum-covered fingers clean, and [NameDesc of M] [one of]smiles proudly[or]looks very pleased[in random order].[line break][speech style of M]'[one of]Good[or]What a good[or]Very good[cycling] [boy of the player].'[roman type][line break]";
+				say HandCumEatFlav of M;
 				say moderateHumiliateReflect;
 				FavourUp M;
-				FaceFill semen by (the semen volume of the player + 1) / 2;
+				FaceFill semen by (the semen load of the player + 1) / 2;
 				suggest swallowing;
 			otherwise:
 				say "You pull away, and [NameDesc of M] [one of]frowns[or]looks disappointed[in random order], but shrugs, and decides to leave you alone for now.";
 				FavourDown M;
-				bore M.
+				bore M;
+		otherwise:
+			say HandCumKeepFlav of M.
 
 
 To say (M - a monster) sex reaction:
 	say "".
+
+To say MasturbationNearingClimaxFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]holds you still[or]keeps [his of M] hold on your [masturbation-grab-point][or]grips tightly to your [masturbation-grab-point][in random order] as [he of M] [one of]pumps your [player-penis][or]jacks your [player-penis] off[or]steadily strokes your [player-penis][or]plays with the tip of your [player-penis] with the tips of [his of M] fingers[in random order], but it feels like [he of M] might be slowing down!".
 
 To say MasturbationResistedFlav of (M - a monster):
 	say DefaultMasturbationResistedSpeech of M;
@@ -1536,37 +1565,43 @@ To say DefaultMasturbationSubmittedFlav of (M - a monster):
 	say "[BigNameDesc of M] [one of]holds you still[or]keeps [his of M] hold on your [masturbation-grab-point][or]grips tightly to your [masturbation-grab-point][in random order] as [he of M] [one of]pumps your [player-penis][or]jacks your [player-penis] off[or]steadily strokes your [player-penis][or]plays with the tip of your [player-penis] with the tips of [his of M] fingers[in random order][if M is piledriver-masturbating] [one of]towards[or]above[purely at random] your face[end if].".
 
 To say MasturbationStoppedFlav of (M - a monster):
-	say "Suddenly, [NameDesc of M] stops masturbating you!";
 	if M is intelligent, say MasturbationStoppedComment of M;
-	say "[BigNameDesc of M] releases [his of M] hold on your [masturbation-grab-point].".
+	otherwise say "Suddenly, [NameDesc of M] stops masturbating you!";
 
 To say MasturbationStoppedComment of (M - a monster):
 	if M is piledriver-masturbating:
 		say "[speech style of M]'[one of]Impressive[or]Hmph[or]Hmm[at random]. [one of]I didn't expect you to be able to hold back this long[or]You've held out for longer than I expected[or]I really thought you'd have lost control and exploded over yourself by now[at random]. [one of]Fine[or]Very well[purely at random], [one of]I'll let you go for now[or]you've earned a LITTLE bit of respect, this time[or]I'll show you mercy for now[in random order].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Oh[or]Aww[or]Haha[at random], [one of]did you think[or]were you hoping[purely at random] [one of]I was going to let you cum[or]I'd let you cum[or]you were going to get cummies[in random order]? [one of]Too bad[or]Not this time, [NameBimbo][purely at random].'[roman type][line break]";
-		if a random number between 5 and 10 >= the favour of M, compute masturbation edge humiliation of M.
+		say "[speech style of M]'[one of]Oh[or]Aww[or]Haha[at random], [one of]did you think[or]were you hoping[purely at random] [one of]I was going to let you cum[or]I'd let you cum[or]you were going to get cummies[in random order]? [one of]Too bad[or]Not this time, [NameBimbo][purely at random].'[roman type][line break]".
 
 [Said just after masturbating the player but finishing before they cum and then replacing their clothes, and just before becoming satisfied and losing interest]
-To say EdgeDomimanceFlav of (M - a monster):
+To say EdgeDominanceFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]I hope you're slowly learning your place[or]Only people who act right get to cum[or]If you want to cum next time, then get your act together[then at random], [YouDumbBitch of M].'[roman type][line break]".
 
+[Player was a nice sub during the handjob, and didn't make their partner mad.]
+To compute masturbation edge release of (M - a monster):
+	say "[BigNameDesc of M] releases your [player-penis] and lets go of your [masturbation-grab-point].".
+
+To say EdgeCageFlav of (M - a monster):
+	say "[speech style of M]'[one of]In fact, I don't think you should be allowed to cum this way for a while[or]And in fact, I'm not going to let you finish yourself off, either[in random order].'[roman type][line break]";
+To say EdgeInsultFlav of (M - a monster):
+	say "[speech style of M]'Now get out of my sight, [one of]you [or][cycling][worm of M].'[roman type][line break]";
+[Player was a bad sub during the handjob, and made their partner mad.]
 To compute masturbation edge humiliation of (M - a monster):
 	let C be a random application appropriate off-stage actually summonable chastity cage;
-	if C is a thing and the player is ready for more bondage:
-		say "[speech style of M]'[one of]In fact, I don't think you should be allowed to cum this way for a while[or]And in fact, I'm not going to let you finish yourself off, either[in random order].'[roman type][line break]";
-		say BondageForceFlav of M for C;
+	if C is a thing and the player is ready for more bondage and M is a bondage applier:
+		say EdgeCageFlav of M;
+		say "[BondageForceFlav of M for C] Only then does [he of M] let go of your [masturbation-grab-point].";
 		summon C locked;
 		compute M keylocking C;
 		say BondageAfterFlav of M for C;
 		reset bondage timer;
 	otherwise if a random number between 1 and 2 is 1:
-		say "As a final insult, [NameDesc of M] slaps you across the face!";
+		say "[BigNameDesc of M] releases your [player-penis], but as a final insult, slaps you across the face before letting go of your [masturbation-grab-point].[EdgeInsultFlav of M]";
 		PainUp 15;
 	otherwise:
-		say "As a final insult, [NameDesc of M] spits in your face!";
+		say "[BigNameDesc of M] releases your [player-penis], but as a final insult, spits in your face before letting go of your [masturbation-grab-point]![EdgeInsultFlav of M]";
 		say moderateHumiliateReflect;
-	say "[speech style of M]'Now get out of my sight, you [worm of M].'[roman type][line break]";
 
 To compute labour to (M - a monster): [Should never appear]
 	say "Tried to give birth but the parent of the baby ([MediumDesc of M]) has not been accounted for, please report this bug!";

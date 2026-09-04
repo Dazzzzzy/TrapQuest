@@ -18,9 +18,11 @@ To check default motion of (M - a monster):
 			wait 200 ms before continuing;
 		compute default motion actions of M;
 		if M is toilet desiring:
-			if debugmode > 0 and verbose-debug > 0, say "[MediumDesc of M] is toilet seeking...";
+			if debugmode > 0 and verbose-debug > 0, say "[MediumDesc of M] is [SlimeTarget] seeking...";
 			if lagdebug is true, wait 200 ms before continuing;
 			compute toilet seeking of M;
+		otherwise if facility-toilet-key is held by M and M is not mistress:
+			compute mistress-seeking of M;
 		otherwise:
 			if lagdebug is true:
 				say "Monstermotion...";
@@ -46,8 +48,8 @@ To compute default motion actions of (M - a monster):
 			now the boredom of M is 0;
 	if M is intelligent and M is uninterested:
 		repeat with D running through unlock-key in the location of M:
-			unless (M is royal guard and D is skeleton key) or the owner of D is shopkeeper:
-				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with an intrigued look on [his of M] face.";
+			unless (M is royal guard and D is skeleton key) or (M is staff member and D is facility-toilet-key) or the owner of D is shopkeeper:
+				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with [if M is trainee and D is facility-toilet-key]a smug[otherwise]an intrigued[end if] look on [his of M] face.";
 				now D is carried by M;
 				now the boredom of M is 0;
 	if players-detached-dick is in the location of M: [#LXorDD]
@@ -225,7 +227,7 @@ To compute default toilet seeking of (M - a monster):
 			if A is not down and A is not up:
 				let P be the room A from L;
 				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the toilet at [TR][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M and there is a monster carrying facility-toilet-key] (key held by [random monster carrying facility-toilet-key])[end if][line break]";
+					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the [SlimeTarget] at [TR][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M and there is a monster carrying facility-toilet-key] (key held by [random monster carrying facility-toilet-key])[end if][line break]";
 					blockable move M to A;
 					compute monstermotion reactions of M;
 					if ATKM is not M: [facility toilet key is held by another monster]
@@ -239,6 +241,31 @@ To compute default toilet seeking of (M - a monster):
 				compute room leaving of M;
 		otherwise: [Failed to find a legal toilet target]
 			compute room leaving of M.
+
+To compute mistress-seeking of (M - a monster):
+	let L be the location of M;
+	let LR be the location of mistress;
+	let ATKM be M;
+	if LR is regional:
+		let A be down;
+		if M is in the location of the player or M is nearby:
+			let XD be the best route from L to LR through unbossed rooms;
+			if XD is a direction, now A is XD;
+		otherwise:
+			now M is in LR;
+		if M is trainee: [trainees can't go where they can't go]
+			let P be the room A from L;
+			if the entry-rank of P > the entry-rank of L and the entry-rank of P > the current-rank of M, now A is down;
+		if A is not down and A is not up:
+			let P be the room A from L;
+			if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to return the key to royal mistress at [LR][line break]";
+				blockable move M to A;
+				compute monstermotion reactions of M;
+		otherwise: [Failed to find a valid path to target]
+			compute room leaving of M;
+	otherwise: [Failed to find a legal toilet target]
+		compute room leaving of M.
 
 To compute bladder cleanup:
 	repeat with M running through monsters:
@@ -265,13 +292,11 @@ To compute toilet use of (M - a monster): [If called during standard wandering m
 		if M is in the location of the player or (debugmode > 0 and verbose-debug > 0):
 			if M is not in the location of the player, say input-style;
 			if M is caged and the location of M is Facility35:
-				say "[BigNameDesc of M] uses the toilet at the back of [his of M] cell to relieve [his of M] bladder.";
+				say "[BigNameDesc of M] uses the [SlimeTarget] at the back of [his of M] cell to relieve [his of M] [SlimeContainer].";
 			otherwise if the location of M is toilets:
-				say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
-			otherwise if the location of M is urinals:
-				say "[BigNameDesc of M] uses a urinal to relieve [his of M] bladder.";
+				say "[BigNameDesc of M] uses a [SlimeTarget] to relieve [his of M] [SlimeContainer].";
 			otherwise:
-				say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
+				say "[BigNameDesc of M] [if slimeshooter fetish is 1]drains slime[otherwise][slimedrain]s[end if] into [NameDesc of water-body].";
 			if M is not in the location of the player, say roman type;
 		now the bladder of M is 0.
 

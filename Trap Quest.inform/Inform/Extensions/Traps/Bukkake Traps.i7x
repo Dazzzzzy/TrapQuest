@@ -60,8 +60,8 @@ To trigger (Y - a bukkake trap door):
 	now Y is revealed;
 	now Y is expired;
 	if watersports fetish is 1 and a random number between 0 and bukkake fetish is 0:
-		say "A trap door opens above your head, and a torrent of [urine] cascades down and over you.";
-		AnnouncedSquirt urine on hair by 50;
+		say "A trap door opens above your head, and a torrent of [slime] cascades down and over you.";
+		AnnouncedSquirt slime on hair by 50;
 		say "You feel utterly degraded inside.";
 	otherwise:
 		if the semen coating of face + the semen coating of breasts + the semen coating of belly + the semen coating of thighs < 30:

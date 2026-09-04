@@ -45,11 +45,11 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 			if the current-torment of M > 0, decide on figure of caged pail princess facedown;
 			decide on figure of caged pail princess messy; [if diaper messing >= 7, ]
 			[otherwise decide on figure of caged pail princess;]
-		if watersports fetish is 0, decide on figure of temporary caged princess;
+		if legacy watersports fetish is 0, decide on figure of temporary caged princess;
 		if the current-torment of M > 0, decide on figure of caged urinal princess piss;
 		decide on figure of caged urinal princess;
 	if M is guarding:
-		if current-final-battle-object is final-battle-imp-piss, decide on Figure of princess final battle piss box;
+		if current-final-battle-object is final-battle-imp-piss and legacy watersports fetish is 1, decide on Figure of princess final battle piss box;
 		if current-final-battle-object is final-battle-pit, decide on Figure of princess final battle pit;
 		if current-final-battle-object is final-battle-food, decide on Figure of princess final battle food;
 		if current-final-battle-object is final-battle-plug, decide on Figure of princess final battle plug;
@@ -84,45 +84,45 @@ To say MonsterDesc of (M - ex-princess):
 			say "[BigNameDesc of M] is stuck in a small cell behind a solid wall with a single viewing window. The cell is empty except for two pink blocks, which [his of M] ankles are strapped to, keeping [his of M] legs apart in a kneeling position, a foot off the ground. [big he of M][']s wearing nothing except for a thick diaper, a tiara, a pink arm binder and a pink collar. The arm binder is connected to a hole in the ceiling by a tight rope, and [his of M] collar is similarly connected to a hole in the ground by another tight rope. These two ropes serve to allow the [ShortDesc of M][']s captors to move [him of M] into any position of their choice and hold [him of M] there, without needing to go into the room themselves. A clear tube descends in front of the [ShortDesc of M][if the current-torment of M <= 0], with several soiled diapers ready to exit through the flap. However, they are currently being held in place thanks to [NameDesc of M][']s nose and face obstructing the exit, pressed unpleasantly into the worst part of the front most diaper[end if]. Several other used diapers litter the ground, no doubt having at some point descended from the tube, which is likely connected to the diaper pail in the nearby hallway. In summary, it would appear that every diaper used in the Royal Training Halls ends up in [NameDesc of M][']s cell, essentially making [his of M] cell into a giant diaper pail.[paragraph break]An intercom system has been set up to allow any speakers to communicate with [NameDesc of M]. You also notice a keyhole to the side of the viewing portal, presumably for use on the rare occasion that [he of M] is fed or [his of M] pail is cleaned out. A big button is also accessible to you, on a stand in front of the viewing portal. [if torment-count of M is 0]What could that do?[otherwise]You know that this forces [him of M] to face plant into the diapers below [him of M], covering [him of M] in more diapers from the tube above, and forcing [him of M] to orgasm.";
 			if the current-torment of M > 0, say "[big he of M] is currently being held with [his of M] face to the ground, engulfed in soiled diapers, with a vibrator loudly buzzing away from within [his of M] diaper. You can hear [him of M] moaning with a mixture of arousal and disgust.";
 		otherwise:
-			say "[BigNameDesc of M] is stuck in a small cell behind a series of strong metal cage bars. The cell is empty except for a toilet in one corner. ";
+			say "[BigNameDesc of M] is stuck in a small cell behind a series of strong metal cage bars. The cell is empty except for a [SlimeTarget] in one corner. ";
 			if watersports fetish is 1:
-				say "[big he of M] is wearing a golden tiara and a pink silk royal dress with the symbol of a [if lady fetish is 0]men's toilets[otherwise]public toilet door[end if] on the chest. [if diaper lover > 0][big he of M] is wearing a thick white diaper under the very short skirt[otherwise]The hem of [his of M] dress is very short, making [his of M] lack of underwear fully visible[end if]. Attached to the front of one vertical metal bar is a large white urinal. On [NameDesc of M][']s side, the piping of the urinal leads through a clear tube to the top of a locked clear plastic box. There is some sort of meal, with a soup-like consistency, contained inside the box. Halfway along the tube, a hollow dildo protrudes, pointing at the [man of M].";
+				say "[big he of M] is wearing a golden tiara and a pink silk royal dress with the symbol of a [if gyno fetish is 0]men's [SlimeTarget]s[otherwise]public [SlimeTarget] door[end if] on the chest. [if diaper lover > 0][big he of M] is wearing a thick white diaper under the very short skirt[otherwise]The hem of [his of M] dress is very short, making [his of M] lack of underwear fully visible[end if]. Attached to the front of one vertical metal bar is a large white [SlimeTarget]. On [NameDesc of M][']s side, the piping of the [SlimeTarget] leads through a clear tube to the top of a locked clear plastic box. There is some sort of meal, with a soup-like consistency, contained inside the box. Halfway along the tube, a hollow dildo protrudes, pointing at the [man of M].";
 				if the current-torment of M > 0:
-					say "The bowl section of the urinal and the top half of the tube are filled with [urine]. A timer on the locked box counts down from [current-torment of M] seconds. It looks like [he of M] has that long to suck the [urine] out of the tube system and transfer it mouthful by mouthful to the toilet. Anything [he of M] doesn't manage to bring [himself of M] to transfer by that time will become part of [his of M] next meal.";
+					say "The bowl section of the [SlimeTarget] and the top half of the tube are filled with [slime]. A timer on the locked box counts down from [current-torment of M] seconds. It looks like [he of M] has that long to suck the [slime] out of the tube system and transfer it mouthful by mouthful to the [SlimeTarget]. Anything [he of M] doesn't manage to bring [himself of M] to transfer by that time will become part of [his of M] next meal.";
 				otherwise if the torment-count of M > 0:
-					say "There's currently no [urine] in the tube, but once someone pisses in the urinal and presses the button on top, [he of M][']ll once again be forced to transfer it to [his of M] own toilet with [his of M] mouth, if [he of M] doesn't want it to become a part of [his of M] next meal.";
+					say "There's currently no [slime] in the tube, but once someone [if slimeshooter fetish is 1]fires on[otherwise][SlimeShoot]s in[end if] the [SlimeTarget] and presses the button on top, [he of M][']ll once again be forced to transfer it to [his of M] own [SlimeTarget] with [his of M] mouth, if [he of M] doesn't want it to become a part of [his of M] next meal.";
 				otherwise:
-					say "It looks like some sort of mechanism has been set up that will force [him of M] to suck up any [urine] that enters the urinal and transfer it to [his of M] own toilet, unless [he of M] wants it to end up part of [his of M] next meal.";
+					say "It looks like some sort of mechanism has been set up that will force [him of M] to suck up any [slime] that enters the [SlimeTarget] and transfer it to [his of M] own [SlimeTarget], unless [he of M] wants it to end up part of [his of M] next meal.";
 			otherwise: [temporary]
 				say "[big he of M] is wearing a golden tiara and a very short pink silk royal dress, clearly revealing [his of M] lack of underwear. Attached to the front of one vertical metal bar is a large white tank of [semen]. On [NameDesc of M][']s side, the piping of the tank leads via a clear tube to the top of a locked clear plastic box. There is some sort of meal, with a soup-like consistency, contained inside the box. Halfway along the tube, a hollow dildo protrudes, pointing at the [man of M].";
 				if the current-torment of M > 0:
-					say "The top half of the tube is filled with [semen]. A timer on the locked box counts down from [current-torment of M] seconds. It looks like [he of M] has that long to suck the [semen] out of the tube system and transfer it mouthful by mouthful to the toilet. Anything [he of M] doesn't manage to bring [himself of M] to transfer by that time will become part of [his of M] next meal.";
+					say "The top half of the tube is filled with [semen]. A timer on the locked box counts down from [current-torment of M] seconds. It looks like [he of M] has that long to suck the [semen] out of the tube system and transfer it mouthful by mouthful to the [SlimeTarget]. Anything [he of M] doesn't manage to bring [himself of M] to transfer by that time will become part of [his of M] next meal.";
 				otherwise if the torment-count of M > 0:
-					say "There's currently no [semen] in the tube, but once someone presses the button on top of the tank, [he of M][']ll once again be forced to transfer it to [his of M] own toilet with [his of M] mouth, if [he of M] doesn't want it to become a part of [his of M] next meal.";
+					say "There's currently no [semen] in the tube, but once someone presses the button on top of the tank, [he of M][']ll once again be forced to transfer it to [his of M] own [SlimeTarget] with [his of M] mouth, if [he of M] doesn't want it to become a part of [his of M] next meal.";
 				otherwise:
-					say "It looks like some sort of mechanism has been set up that will force [him of M] to suck up any [semen] that enters the tube and transfer it to [his of M] own toilet, unless [he of M] wants it to end up part of [his of M] next meal.";
+					say "It looks like some sort of mechanism has been set up that will force [him of M] to suck up any [semen] that enters the tube and transfer it to [his of M] own [SlimeTarget], unless [he of M] wants it to end up part of [his of M] next meal.";
 	otherwise if M is defeated:
 		if M is diaper-enslaved, say "The [man of M] who used to be a proud powerful [ShortDesc of M] has been reduced to a long haired baby-bottle sucking bimbo, who wanders the halls aimlessly with a calm vacant look on [his of M] face.";
 		otherwise say "The princess has lost all power and all will to fight back against [his of M] captors. [big he of M] lies on [his of M] back, fully naked except for [his of M] tiara, [his of M] hands magically stuck to [his of M] asscheeks, unable to remove [his of M] knees from behind [his of M] shoulders, making it look like [he of M][']s begging anyone and everyone [he of M] sees to ruin [his of M] asshole. [big his of M] buttcheeks have been magically enhanced, and are now triple the size they first were when you met [him of M].";
 	otherwise if M is unleashed: [dark princess]
 		say "This is not the princess you first met. Unfortunately, [he of M] is gone forever. Left behind is this corrupted, dark form. [big he of M] has red hair and a purple and black dress in the same style as [his of M] old pink dress, with a parting at the front which draws your eyes to [his of M] crotch. ";
 		if M is male:
-			say "Here, a huge thick [if lady fetish < 2]futa [end if]cock swings side to side menacingly, dripping precum from the massive balls dangling behind it.";
+			say "Here, a huge thick [if andro fetish is 0]futa [end if]cock swings side to side menacingly, dripping precum from the massive balls dangling behind it.";
 		otherwise if diaper quest is 0:
-			if lady fetish is 2, say "[big his of M] caged clitty is dripping with excitement, creating a little pitter-patter sound as [his of M] sissy juices gradually create a little puddle between [his of M] feet.";
+			if andro fetish is 1, say "[big his of M] caged clitty is dripping with excitement, creating a little pitter-patter sound as [his of M] sissy juices gradually create a little puddle between [his of M] feet.";
 			otherwise say "[big his of M] pussy is dripping wet with excitement, creating a little pitter-patter sound as [his of M] vaginal juices gradually create a little puddle between [his of M] feet.";
 		otherwise if diaper messing < 7:
-			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soaked to capacity with [urine][otherwise]in a fresh plain diaper[end if].";
+			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soaked to capacity with [slime][otherwise]in a fresh plain diaper[end if].";
 		otherwise:
-			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soaked to capacity with [urine][otherwise]plain white but stupidly thick, and as far as you can tell, currently unused[end if].";
+			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soaked to capacity with [slime][otherwise]plain white but stupidly thick, and as far as you can tell, currently unused[end if].";
 	otherwise:
-		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise if lady fetish is 2]caged penis[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
+		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise if andro fetish is 1]caged penis[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
 
 To say MonsterComment of (M - ex-princess):
 	if M is caged, say "[line break][variable custom style][one of][big he of M] looks important. I wonder if [he of M] would reward me if I helped break [him of M] out of here...[or]Poor thing is still trapped here. Are they going to keep [him of M] here like this forever?[stopping][roman type][line break]".
 
 Definition: ex-princess is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 
 To set up (M - ex-princess):
@@ -178,7 +178,7 @@ To decide which number is the bab tolerance of (M - ex-princess):
 To compute perception of (M - ex-princess):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if M is unleashed:
-		if diaper quest is 1, say "A loud hiss fills the room, as [he of M] audibly fills [his of M] diaper to the brim with highly concentrated [urine]. As the tell-tale yellow stain spreads across the white plastic, an sadistic smile spreads across [his of M] face.";
+		if diaper quest is 1, say "A loud hiss fills the room, as [he of M] audibly fills [his of M] diaper to the brim with highly concentrated [slime]. As the tell-tale yellow stain spreads across the white plastic, an sadistic smile spreads across [his of M] face.";
 		say "[speech style of M]'HEHEHEHEHE!'[roman type][line break][big his of M] laugh sounds completely deranged, but there's clearly something still working correctly in [his of M] mind, because [he of M] adopts a combat stance and prepares to pounce.";
 	otherwise if the times-met of M is 0:
 		say "[big his of M] voice is dry, cracked and very quiet.[line break][speech style of M]'[if the class of the player is princess]Don't tell me... they're replacing me with you?! How cruel. Unless... could it be... my throne sent you here? [otherwise if there is a trainee in the location of the player]Have you come here to torment me? Or deep down, do you have kind hearts? [otherwise]Have you come here to torment me or are you another innocent? [end if][big please]... if you can... find a way to get me out of here, before it's too late...'[roman type][line break]";
@@ -270,7 +270,7 @@ The princess facesitting prevents breathing rule is listed in the breathing bloc
 
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face and the player is air breathing vulnerable:
-		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy and diaper messing >= 7]stinky[otherwise][urine]-soaked[end if] diaper.";
+		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy and diaper messing >= 7]stinky[otherwise][slime]-soaked[end if] diaper.";
 		let G be wetDiaperFacesitGrossnessLevel;
 		if ex-princess is messy, now G is messyDiaperFacesitGrossnessLevel;
 		SmellGrossOut G.
@@ -344,7 +344,7 @@ To say RepeatResponse of (M - ex-princess):
 	say "[speech style of M]'[if M is caged][big please], you've got to help me get out of here!'[otherwise]Oh?'[end if][roman type][line break]".
 
 To say SubmissiveResponse of (M - ex-princess):
-	say "You try to talk to [NameDesc of M], but [he of M][']s busy [if diaper quest is 0 and watersports fetish is 1]sucking up the [urine] and transferring it to [his of M] toilet[otherwise if diaper quest is 0]sucking up the [semen] and transferring it to [his of M] toilet[otherwise]occupied by having [his of M] face smushed into used diapers[end if].[line break][speech style of M]'[if diaper quest is 0][one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][otherwise]Mmmmgggg!'[end if][roman type][line break]".
+	say "You try to talk to [NameDesc of M], but [he of M][']s busy [if diaper quest is 0 and watersports fetish is 1]sucking up the [slime] and transferring it to [his of M] [SlimeTarget][otherwise if diaper quest is 0]sucking up the [semen] and transferring it to [his of M] [SlimeTarget][otherwise]occupied by having [his of M] face smushed into used diapers[end if].[line break][speech style of M]'[if diaper quest is 0][one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][otherwise]Mmmmgggg!'[end if][roman type][line break]".
 
 Section 2 - Questioning
 
@@ -623,8 +623,8 @@ An all later time based rule (this is the facility rescue fight rule):
 					if M is in the location of the player:
 						say "[speech style of N]'[one of]That's enough. This rebellion is over[or]This is the end[or]Stay down[stopping].'[roman type][line break][BigNameDesc of N] makes a few arcane gestures and ropes of light begin to fly at you and [NameDesc of M].";
 						if a random number between 1 and 8 < the princess-power of M:
-							let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise]cock-snot[end if] in men's public toilets[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
-							if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise][milk][end if] from my mommy[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
+							let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]spend my weekends guzzling [if watersports fetish is 1][slime][otherwise]cock-snot[end if] in men's public [SlimeTarget]s[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
+							if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]spend my weekends guzzling [if watersports fetish is 1][slime][otherwise][milk][end if] from my mommy[or]am a worthless baby who can't even make it to the [SlimeTargetP] in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
 							say "[speech style of M]'[one of]No[or]I can't go back[or]Not yet[stopping]!'[roman type][line break][BigNameDesc of M] raises [his of M] wand and points it at you. You hear [him of M] reciting the incantation to cast a spell.[line break][speech style of M]'[T]!'[roman type][line break]";
 							if T matches the text "dedicated":
 								say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
@@ -849,11 +849,13 @@ To construct unique buttons for (T - ex-princess):
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is Figure of PokeButton;
 				now the ButtonCommand entry is "push button";
+				now the ButtonPriority entry is 3;
 				now the ButtonColour entry is lightModeFullGreen;
 			otherwise if watersports fetish is 1 and the player is not incontinent:
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is Figure of ToiletButton;
-				now the ButtonCommand entry is "use urinal";
+				now the ButtonCommand entry is "use [SlimeTarget]";
+				now the ButtonPriority entry is 3;
 				now the ButtonColour entry is lightModeFullGreen;
 				if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
 		if T is guarding and (current-final-battle-object is final-battle-wand-curse or current-final-battle-object is final-battle-facehugger):
@@ -861,6 +863,8 @@ To construct unique buttons for (T - ex-princess):
 			now the ButtonImage entry is Figure of WrangledIcon;
 			now the ButtonCommand entry is "pull [text-shortcut of ex-princess]";
 			now the ButtonColour entry is lightModeFullGreen;
+			now the ButtonPriority entry is 1;
+			if current-final-battle-object is final-battle-wand-curse and royal sceptre is not actually summonable, now the ButtonColour entry is lightModeFullYellow;
 			if the player is immobile, now the ButtonColour entry is lightModeFullRed; [turn red - player immobile]
 
 Check pushing ex-princess when ex-princess is caged:
@@ -899,10 +903,10 @@ An all later time based rule (this is the caged princess torture continues rule)
 					say "[one of]You can't help but find the sight rather arousing.[or][or][or][or][or][cycling]";
 					arouse 300;
 			otherwise:
-				say "You watch [NameDesc of M] sucking up [if watersports fetish is 1][urine][otherwise][semen][end if] from the transparent tubing.[line break][speech style of M]'[one of]Hlk Hlk Hlk[or]Hlk Hlk Nnk[or]Gluk gluk gluk[at random]...'[roman type][line break][one of][or][or]With a mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if], [he of M] turns around and spits it into the toilet behind [him of M]. [big he of M] gags in disgust.[line break][speech style of M]'[if a random number between 1 and 2 is 1]Yuck, disgusting[otherwise]Ergh, so gross[end if]!'[roman type][line break][or][or][or][big he of M] spits the mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if] into the toilet. [big he of M] [if a random number between 1 and 2 is 1]half-coughs, half-chokes a few times before gasping for breath[otherwise]moans weakly[end if].[cycling]";
+				say "You watch [NameDesc of M] sucking up [if watersports fetish is 1][slime][otherwise][semen][end if] from the transparent tubing.[line break][speech style of M]'[one of]Hlk Hlk Hlk[or]Hlk Hlk Nnk[or]Gluk gluk gluk[at random]...'[roman type][line break][one of][or][or]With a mouthful of [if watersports fetish is 1][slime][otherwise][semen][end if], [he of M] turns around and spits it into the [SlimeTarget] behind [him of M]. [big he of M] gags in disgust.[line break][speech style of M]'[if a random number between 1 and 2 is 1]Yuck, disgusting[otherwise]Ergh, so gross[end if]!'[roman type][line break][or][or][or][big he of M] spits the mouthful of [if watersports fetish is 1][slime][otherwise][semen][end if] into the [SlimeTarget]. [big he of M] [if a random number between 1 and 2 is 1]half-coughs, half-chokes a few times before gasping for breath[otherwise]moans weakly[end if].[cycling]";
 				if the current-torment of ex-princess <= 0:
 					let N be a random threatening monster in the location of the player;
-					say "Finally the tube is empty, and [NameDesc of M] collapses back to the ground, breathless and exhausted[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for using this obedient toilet slut, I hope you'll come again[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
+					say "Finally the tube is empty, and [NameDesc of M] collapses back to the ground, breathless and exhausted[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for using this obedient [SlimeTarget] slut, I hope you'll come again[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
 				otherwise if the player is feeling dominant or the player is a nympho:
 					say "[one of]You can't help but find the sight rather arousing.[or][or][or][or][or][cycling]";
 					arouse 300.
@@ -912,7 +916,7 @@ An all time based rule (this is the caged princess tortured rule):
 		let N be a random threatening friendly monster in the location of ex-princess;
 		if N is monster and a random number between 1 and 8 is 1:
 			let M be ex-princess;
-			say "[if N is trainee][one of][speech style of N]'Hmm, this looks fun!'[roman type][line break][or][stopping][end if][if watersports fetish is 1 and diaper quest is 0][BigNameDesc of N] waltzes up to the urinal and lets loose a stream of [urine] into the bowl. [BigNameDesc of M] watches on with a mixture of despair and anger.[end if]";
+			say "[if N is trainee][one of][speech style of N]'Hmm, this looks fun!'[roman type][line break][or][stopping][end if][if watersports fetish is 1 and diaper quest is 0][BigNameDesc of N] waltzes up to the [SlimeTarget] and lets loose a stream of [slime] into the bowl. [BigNameDesc of M] watches on with a mixture of despair and anger.[end if]";
 			increase the torment-count of M by 1;
 			increase the current-torment of M by 60;
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
@@ -922,7 +926,7 @@ An all time based rule (this is the caged princess tortured rule):
 				cutshow examine-image of M;
 			otherwise:
 				now the bladder of N is 0;
-				say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+				say "the [if watersports fetish is 1][slime][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1][SlimeTarget] [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
 
 [We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
@@ -993,7 +997,7 @@ To compute ChangeRequest of (M - ex-princess):
 		compute ChangeRequestDecision of M.
 
 To compute ChangeRequestDecision of (M - ex-princess):
-	say "Let [NameDesc of M] grind [his of M] [if diaper messing >= 7]messy[otherwise]piss-soaked[end if] diaper on your face until [he of M] cums?";
+	say "Let [NameDesc of M] grind [his of M] [if diaper messing >= 7]messy[otherwise][slime]-soaked[end if] diaper on your face until [he of M] cums?";
 	if the player is consenting:
 		if the player is upright:
 			say "[bold type]You get on your knees.[roman type][line break]";
@@ -1016,7 +1020,11 @@ To compute ChangeRequestDecision of (M - ex-princess):
 
 
 To compute diaper mess reaction of (M - ex-princess):
-	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.".
+	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.";
+	say moderateHumiliateReflect.
+To compute continued diaper mess reaction of (M - ex-princess):
+	if M is unconcerned, say "[BigNameDesc of M] doesn't stop smiling and watching.";
+	say slightHumiliateReflect.
 
 To compute MasturbationReaction of (M - ex-princess):
 	if M is unconcerned, say "[BigNameDesc of M] looks at you with a mildly interested smile.".

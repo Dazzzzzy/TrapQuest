@@ -25,7 +25,7 @@ Definition: kitsune is presenting as male:
 		if the target-disguise of kitsune is presenting as male, decide yes;
 		decide no;
 	otherwise:
-		if lady fetish is 2, decide yes;
+		if andro fetish is 1, decide yes;
 		decide no.
 
 To say ShortDesc of (M - kitsune):
@@ -60,7 +60,7 @@ To decide which number is the starting difficulty of (M - kitsune):
 	decide on 12.
 
 To compute unique periodic effect of (M - kitsune):
-	unless the player is an april 2025 top donator:[TODO: alpha toggle]
+	unless the player is the donator:
 		do nothing instead;
 	let R be the location of M;
 	if R is the location of the player and R is the room south from Dungeon41:

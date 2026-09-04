@@ -20,7 +20,7 @@ To decide which figure-name is the monster-image of (M - a robobutler):
 	decide on figure of robobutler.
 
 To say MonsterDesc of (M - a robobutler):
-	say "A tall, humanoid robot with state-of-the-art joints and a fixed pouting big-lipped expression moulded into [his of M] polished metal face. [big his of M] has an exaggerated female shape, with a jutting rigid metal chest, and giant leg plates that resemble impossibly wide hips. Each of [his of M] two strong-looking robotic hands is holding a shot glass full of liquid - one is golden, one is creamy. [big his of M] [']eyes['] glow brightly as [he of M] ambles around quietly on [his of M] sturdy metal feet.".
+	say "A tall, humanoid robot with state-of-the-art joints and a fixed pouting big-lipped expression moulded into [his of M] polished metal face. [big his of M] has an exaggerated female shape, with a jutting rigid metal chest, and giant leg plates that resemble impossibly wide hips. Each of [his of M] two strong-looking robotic hands is holding a shot glass full of liquid - one is [SlimeShade], one is creamy. [big his of M] [']eyes['] glow brightly as [he of M] ambles around quietly on [his of M] sturdy metal feet.".
 
 To set up (M - a robobutler):
 	reset M;
@@ -65,7 +65,7 @@ To compute perception of (M - a robobutler):
 		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
 			serve alcohol from M;
 		otherwise if a random number between 0 and watersports fetish is 1:
-			serve urine from M;
+			serve slime from M;
 		otherwise if a random number between 0 and 1 is 1:
 			serve goop from M;
 		otherwise:
@@ -120,14 +120,14 @@ To serve alcohol from (M - a robobutler):
 		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][speech style of M]'PARTYGOER DETECTED. I HOPE YOU ARE ENJOYING THE PARTY.'[roman type][line break]";
 		calm M.
 
-To serve urine from (M - a robobutler):
+To serve slime from (M - a robobutler):
 	now autodrink is 1;
 	if the player is able to drink:
-		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][speech style of M]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. [big he of M] doesn't seem like [he of M]'s looking for 'no' as an answer.[line break][variable custom style]Can [he of M] tell that I'm thirsty?![roman type][line break]Do you drink the shot? ";
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][speech style of M]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [slime]. [big he of M] doesn't seem like [he of M]'s looking for 'no' as an answer.[line break][variable custom style]Can [he of M] tell that I'm thirsty?![roman type][line break]Do you drink the shot? ";
 		if the player is bimbo consenting:
 			StomachUp 1;
-			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck, yuck, yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
-			StomachUrineUp 1;
+			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [slime] in one, [if the slime taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck, yuck, yuck![roman type][line break][otherwise if the slime taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
+			StomachSlimeUp 1;
 			satisfy M;
 		otherwise if the player is thirsty:
 			say "[big his of M] eyes turn red.[line break][speech style of M]'UNSAFE LEVELS OF DEHYDRATION DETECTED. SUBJECT MUST BE TAUGHT THE CONSEQUENCES OF FAILING TO DRINK SUFFICIENT FLUIDS. SELECTING PUNISHMENT ROUTINE...'[roman type][line break]Uh-oh, it looks like you've angered [him of M]!";

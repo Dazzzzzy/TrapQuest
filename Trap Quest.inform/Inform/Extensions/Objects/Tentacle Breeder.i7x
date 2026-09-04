@@ -80,7 +80,7 @@ A later time based rule (this is the tentacle breeder becomes active and makes y
 					compute portal reset of TB;
 				say "You feel yourself filling up with a new sensation... Unmistakable magical energy descends upon you in this time of need!";
 				MagicPowerUp 3;
-			if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is the donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][line break][or][stopping]";
 			now TB is active;
 		if inhuman pregnancy >= 2 and the player is not a bit horny and the player is able to get horny:
 			say "As you watch the tentacles rhythmically plunging into [NameDesc of TB][']s holes, you feel your own [fuckholes] tingling, and [if the player is not a pervert]despite yourself, [end if]you can feel your body becoming more aroused.";

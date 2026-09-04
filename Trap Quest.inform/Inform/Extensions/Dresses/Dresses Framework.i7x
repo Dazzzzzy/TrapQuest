@@ -53,7 +53,7 @@ To decide which number is the default-soak-limit of (C - a dress):
 	decide on X.
 
 Definition: a dress is overshoe:	[Does this outfit go over the shoes]
-	if it is leg covering, decide no;
+	if it is leg covering or it is foot covering, decide no;
 	decide yes.
 Definition: a dress is undershoe:
 	if it is overshoe, decide no;
@@ -185,7 +185,7 @@ To say ShortDesc of (O - an overdress):
 	say "[printed name of O]".
 
 To decide which object is the unique-upgrade-target of (C - an overdress):
-	if there is a worn hood and C is crotch covering and the urine-soak of C > 0 and WC catsuit is off-stage:
+	if there is a worn hood and C is crotch covering and the slime-soak of C > 0 and WC catsuit is off-stage:
 		decide on WC catsuit;
 	otherwise if the player is diaper focused and the class of the player is adventurer and a random number between 1 and 3 is 1:
 		decide on a random off-stage onesie;

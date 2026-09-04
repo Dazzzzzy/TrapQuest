@@ -24,9 +24,9 @@ To decide which number is the default-soak-limit of (C - a bra):
 
 To decide which number is the current support of (B - a bra):
 	let S be 0;
-	if B is top-placed and B is worn:
-		if the largeness of breasts + 2 > the size of B, increase S by the support of B;
-		increase S by the magic-modifier of B;
+	if B is top-placed and B is worn and the largeness of breasts + 2 > the size of B:
+		increase S by the support of B;
+		[if S is not 0, increase S by the magic-modifier of B;]
 	decide on S.
 
 A bra is usually rare.
@@ -155,7 +155,7 @@ To compute bra strain:
 			compute bra strain of B.
 
 To compute bra strain of (B - a bra):
-	if the size of B < the max size of B and (B is blessed or B is augmentation):
+	if the size of B < the max size of B and (B is blessed or B is augmentation or (B is cow themed and the class of the player is cowgirl)):
 		say "Your [ShortDesc of B] grows with your [BreastDesc] to continue to contain them.";
 		increase the size of B by 1;
 	otherwise:

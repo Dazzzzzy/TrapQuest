@@ -323,7 +323,7 @@ To compute punishment of (P - hole-enema):
 		now C is a random worn top level ass protection clothing;
 	let L be semen;
 	if watersports fetish is 1 and a random number between 1 and 2 is 1:
-		now L is urine;
+		now L is slime;
 	otherwise if diaper quest is 1:
 		now L is water;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:

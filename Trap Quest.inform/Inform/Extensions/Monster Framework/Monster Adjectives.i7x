@@ -67,7 +67,7 @@ A monster can be bossdefeated.
 A monster can be diaper-committed.
 A monster can be bulkier-diaper-committed. [Going to upgrade your padding thickness]
 A monster can be double-diaper-committed. [Going to double diaper you now]
-A monster can be diaperMessReacted. [Have they already recently reacted to the player messing themselves?]
+A person can be diaperMessReacted. [Have they already recently reacted to the player messing themselves?]
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
 A monster can be summon-available or permanently banished. A monster is usually summon-available. [Can it come back?]
 Definition: a monster is summon appropriate:
@@ -170,7 +170,7 @@ A monster has a number called refractory-period. [This will be greater than 0 if
 To decide which number is the refractory-time of (M - a monster):
 	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
 A monster has a number called bladder. The bladder of a monster is usually 400. [Increases by 4 each turn. Divide by 100 to get a number similar to player's bladder]
-Definition: a monster is a urinater: decide yes. [Does this NPC have a bladder, and urinate?]
+Definition: a monster is a urinater: decide yes. [Does this NPC have a slimeshoter that they can drain?]
 Definition: a monster is a diaper wetter: decide no. [Does this NPC use a diaper rather than a toilet to urinate?]
 Definition: a monster is a normal-urinater:
 	if it is not a urinater or it is a diaper wetter, decide no;
@@ -345,7 +345,7 @@ To instantThroat (M - a monster): [Deepthroat and check for gagging right away]
 
 Definition: a monster (called M) is a balls-haver:
 	unless M is male, decide no;
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	if futanari fetish is 1, decide yes;[This is specifically futanari fetish "is 1", not "> 0"]
 	decide no.
 

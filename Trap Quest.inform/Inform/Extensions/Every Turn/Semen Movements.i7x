@@ -196,7 +196,7 @@ To check enema holding with reason (T - a text):
 				say "With your [asshole] spread open by your [MediumDesc of gape-gloves], you are forced to immediately begin expelling the contents of your belly.";
 				compute enema holding failure;
 			otherwise if current-predicament is segway-predicament and T is not "" and the player is in an unbossed predicament room: [always just little squirts]
-				if expelling-allowed is true and the player is getting lucky, say "[T] it's only by sheer luck that you [one of]manage to keep your sphincter clamped tight[or]are able hold your butthole shut tight and prevent anything from escaping[or]can successfully hold onto your [if the milk volume of belly + the urine volume of belly + the water volume of belly > 0]enema[otherwise]anal creampie[end if][in random order].";
+				if expelling-allowed is true and the player is getting lucky, say "[T] it's only by sheer luck that you [one of]manage to keep your sphincter clamped tight[or]are able hold your butthole shut tight and prevent anything from escaping[or]can successfully hold onto your [if the milk volume of belly + the slime volume of belly + the water volume of belly > 0]enema[otherwise]anal creampie[end if][in random order].";
 				otherwise compute enema leaking with reason T;
 			otherwise if T is "" and strain factor < 4 and (strain factor < 2 or the player is not in an unbossed predicament room): [at less than 4 strain factor, we just give flavour. this is changed to 2 for predicament rooms]
 				if strain factor > 0 and the trophy-mode of expel-trophy is 0 and cumdump-headband is not worn and the number of worn enema-helping clothing is 0:
@@ -210,13 +210,13 @@ To check enema holding with reason (T - a text):
 						if cumdump-headband is worn: [no warning given]
 							compute enema leaking with reason "";
 						otherwise:
-							unless the player is rectum incontinent, say "[bold type]You feel a rumble in your [BellyDesc] and a pressure building from within your [asshole]... [if the small egg count of belly > 0 and the player is in a predicament room]You're going to expel the ping pong balls soon, [otherwise if the small egg count of belly > 0 or the medium egg count of belly > 0 or the large egg count of belly > 0]You're going to lay some eggs soon,[otherwise if the urine volume of belly > the total fill of belly / 2]The [urine] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the semen volume of belly > the total fill of belly / 2]The [semen] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the milk volume of belly > the total fill of belly / 2]The [milk] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the water volume of belly is the total fill of belly]The enema inside you is about to come out no matter how hard you try to hold it in,[otherwise]The stuff inside you is about to come out no matter how hard you try to hold it in,[end if] and it doesn't look like there's any way to stop it! [if the player is live fucked]You desperately hope that your fucking ends before it starts![otherwise if the class of the player is royal slave and the player is ass protected and the player is not in danger and the milk volume of belly > 0 and the semen volume of belly <= 0 and the urine volume of belly <= 0]You should get your [random top level ass protection clothing] out of the way if possible so you can collect the milk that comes out![otherwise]Better [one of]get ready[or]prepare yourself[or]find somewhere safe if possible[in random order]...[end if][roman type][line break]";
+							unless the player is rectum incontinent, say "[bold type]You feel a rumble in your [BellyDesc] and a pressure building from within your [asshole]... [if the small egg count of belly > 0 and the player is in a predicament room]You're going to expel the ping pong balls soon, [otherwise if the small egg count of belly > 0 or the medium egg count of belly > 0 or the large egg count of belly > 0]You're going to lay some eggs soon,[otherwise if the slime volume of belly > the total fill of belly / 2]The [slime] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the semen volume of belly > the total fill of belly / 2]The [semen] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the milk volume of belly > the total fill of belly / 2]The [milk] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the water volume of belly is the total fill of belly]The enema inside you is about to come out no matter how hard you try to hold it in,[otherwise]The stuff inside you is about to come out no matter how hard you try to hold it in,[end if] and it doesn't look like there's any way to stop it! [if the player is live fucked]You desperately hope that your fucking ends before it starts![otherwise if the class of the player is royal slave and the player is ass protected and the player is not in danger and the milk volume of belly > 0 and the semen volume of belly <= 0 and the slime volume of belly <= 0]You should get your [random top level ass protection clothing] out of the way if possible so you can collect the milk that comes out![otherwise]Better [one of]get ready[or]prepare yourself[or]find somewhere safe if possible[in random order]...[end if][roman type][line break]";
 							now the squirt timer of belly is a random number between 5 and (belly strain balance - 6); [it should always be sooner than the next cramp would have been.]
 					otherwise:
 						say "[T] you lose hold of your sphincter.";
 						compute enema holding failure;
 				otherwise if T is not "":
-					if expelling-allowed is true and the player is getting lucky, say "[T] it's only by sheer luck that you [one of]manage to keep your sphincter clamped tight[or]are able hold your butthole shut tight and prevent anything from escaping[or]can successfully hold onto your [if the milk volume of belly + the urine volume of belly + the water volume of belly > 0]enema[otherwise]anal creampie[end if][in random order].";
+					if expelling-allowed is true and the player is getting lucky, say "[T] it's only by sheer luck that you [one of]manage to keep your sphincter clamped tight[or]are able hold your butthole shut tight and prevent anything from escaping[or]can successfully hold onto your [if the milk volume of belly + the slime volume of belly + the water volume of belly > 0]enema[otherwise]anal creampie[end if][in random order].";
 					otherwise compute enema leaking with reason T;
 				otherwise if the trophy-mode of expel-trophy is 0 and cumdump-headband is not worn and the number of worn enema-helping clothing is 0:
 					let E be a random viable enema-effect;
@@ -228,18 +228,18 @@ To compute enema leaking with reason (T - a text):
 		if C is a thing, compute enema vs glue pressure of C;
 		if the player is able to expel:
 			now milk-count is 0;
-			now urine-count is 0;
+			now slime-count is 0;
 			now semen-count is 0;
 			now water-count is 0;
 			now small-egg-count is 0;
 			[total-count is the total count of all elements currently inside.]
 			let total-count be 0;
 			if the milk volume of belly > 0, now milk-count is 1;
-			if the urine volume of belly > 0, now urine-count is 1;
+			if the slime volume of belly > 0, now slime-count is 1;
 			if the semen volume of belly > 0, now semen-count is 1;
 			if the water volume of belly > 0, now water-count is 1;
 			if the small egg count of belly > 0, now small-egg-count is 1;
-			now total-count is milk-count + urine-count + semen-count + water-count + small-egg-count;
+			now total-count is milk-count + slime-count + semen-count + water-count + small-egg-count;
 			if total-count > 0:
 				now currently-squirting is 1;
 				now player-just-enema-leaked is true;
@@ -265,14 +265,14 @@ To compute enema leaking with reason (T - a text):
 					if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and the number of worn total protection diapers is 0:
 						compute snapshot of Y with target-poster;
 					if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
-				if milk-count + urine-count + semen-count + water-count > 0:
+				if milk-count + slime-count + semen-count + water-count > 0:
 					say "[one of]a little bit of[or]a small squirt of[in random order] ";
-					if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 1:
+					if slime-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 1:
 						say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
-					otherwise if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 0:
+					otherwise if slime-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 0:
 						say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise:
-						say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
+						say "[if slime-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [slime], [milk] and [semen][otherwise if slime-count > 0 and semen-count > 0]what seems like a mix of [slime] and [semen][otherwise if slime-count > 0 and milk-count > 0]what seems like a mix of [slime] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if slime-count > 0][slime][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
 					say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
 					if C is clothing:
 						say " into [NameDesc of C]. ";
@@ -284,19 +284,19 @@ To compute enema leaking with reason (T - a text):
 						SemenSoakUp torn-shirt by total-count;
 					otherwise if C is thighs and the player is not getting unlucky:
 						SemenPuddleUp total-count;
-					otherwise if milk-count + urine-count + semen-count > 1:
+					otherwise if milk-count + slime-count + semen-count > 1:
 						AnnouncedExpel murkwater on C by total-count;
 					otherwise: [water gets converted into other liquids for simplicity]
 						if semen-count > 0:
 							AnnouncedExpel semen on C by total-count;
 						otherwise if milk-count > 0:
 							AnnouncedExpel milk on C by total-count;
-						otherwise if urine-count > 0:
-							AnnouncedExpel urine on C by total-count;
+						otherwise if slime-count > 0:
+							AnnouncedExpel slime on C by total-count;
 						otherwise:
 							AnnouncedExpel water on C by total-count;
 					decrease the milk volume of belly by milk-count;
-					decrease the urine volume of belly by urine-count;
+					decrease the slime volume of belly by slime-count;
 					decrease the semen volume of belly by semen-count;
 					decrease the water volume of belly by water-count;
 				if the total squirtable fill of belly is 0 and the holding strain of belly > 0:
@@ -381,7 +381,7 @@ Definition: enema-irritability is viable:
 
 To execute (E - enema-irritability):
 	say "You've been holding onto your [enema] for so long that feel your bowels becoming more irritable. ";
-	SilentlyRectumIncontinenceUp 5.
+	IrritableRectumUp 5.
 
 To compute absorption:
 	let NC be the number of worn absorption clothing;

@@ -18,17 +18,17 @@ drink-origin is a kind of value. The drink-origins are boring-origin, vaginal-or
 Face has a drink-origin. Understand the drink-origin property as describing face. Face is boring-origin.
 
 Face has a number called semen volume.
-Face has a number called urine volume.
+Face has a number called slime volume.
 Face has a number called milk volume.
 To decide which number is the total volume of face:
-	decide on the semen volume of face + the urine volume of face + the milk volume of face.
+	decide on the semen volume of face + the slime volume of face + the milk volume of face.
 To decide which number is face-limit:
 	decide on 4.
 To decide which object is mouthful-liquid:
 	let L be water;
 	if the semen volume of face > 0, now L is semen;
-	if the urine volume of face > 0:
-		if L is water, now L is urine;
+	if the slime volume of face > 0:
+		if L is water, now L is slime;
 		otherwise now L is murkwater;
 	if the milk volume of face > 0:
 		if L is water, now L is milk;
@@ -172,7 +172,7 @@ To say MouthfulDesc:
 	otherwise:
 		let LL be a list of liquid-objects;
 		if the semen volume of face > 0, add semen to LL;
-		if the urine volume of face > 0, add urine to LL;
+		if the slime volume of face > 0, add slime to LL;
 		if the milk volume of face > 0, add milk to LL;
 		let E be the number of entries in LL;
 		say "[if TV > 3]huge [otherwise if TV is 3]large [otherwise if TV is 1]small [end if]mouthful of ";
@@ -280,11 +280,11 @@ To FaceFill (L - a liquid-object) by (N - a number):
 			if L is semen:
 				increase the semen volume of face by 1;
 				compute father material of face;
-			if L is urine, increase the urine volume of face by 1;
+			if L is slime, increase the slime volume of face by 1;
 			if L is milk, increase the milk volume of face by 1;
 			if L is murkwater:
 				if watersports fetish is 1 and a random number between 1 and 3 is 1:
-					increase the urine volume of face by 1;
+					increase the slime volume of face by 1;
 				otherwise if diaper quest is 0 and (lactation fetish is 0 or a random number between 1 and 2 is 1):
 					increase the semen volume of face by 1;
 				otherwise:
@@ -319,7 +319,7 @@ To MouthEmpty:
 	cancel father material of face;
 	now face is boring-origin;
 	now the semen volume of face is 0;
-	now the urine volume of face is 0;
+	now the slime volume of face is 0;
 	now the milk volume of face is 0;
 	trigger lose-mouthful-wisp-trigger.
 
@@ -341,10 +341,11 @@ To compute swallowing:
 		if auto is 0, say "You try to swallow, but your mouth is empty.";
 	otherwise:
 		if auto < 2, say "You [if the player is always automatically swallowing]automatically [otherwise if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
-		[StomachSemenUp the semen volume of face;]
-		compute slightly addictive swallowing of semen by the semen volume of face; [can't do StomachSemenUp because if there's an NPC with a condom fucking your face, it creates a condom instead]
-		if the semen volume of face > 0 and face is not boring-origin, progress quest of creampie-drinking-quest;
-		StomachUrineUp the urine volume of face;
+		[StomachSemenUp the semen volume of face;] [can't do StomachSemenUp because if there's an NPC with a condom fucking your face, it creates a condom instead]
+		if the semen volume of face > 0:
+			compute slightly addictive swallowing of semen by the semen volume of face;
+			if face is not boring-origin, progress quest of creampie-drinking-quest;
+		StomachSlimeUp the slime volume of face;
 		StomachMilkUp the milk volume of face;
 		if current-predicament is breastfeeding-predicament, compute special breastfeeding predicament drink;
 		MouthEmpty.
@@ -353,19 +354,19 @@ This is the swallowing rule:
 
 Definition: yourself is refusing to swallow:
 	if the player is very thirsty, decide no;
-	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the urine volume of face > 0 and the urine taste addiction of the player is 1) or (the milk volume of face > 0 and (diaper quest is 1 or lactation fetish > 0) and the milk taste addiction of the player is 1), decide yes;
+	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the slime volume of face > 0 and the slime taste addiction of the player is 1) or (the milk volume of face > 0 and (diaper quest is 1 or lactation fetish > 0) and the milk taste addiction of the player is 1), decide yes;
 	decide no.
 
 Definition: yourself is always automatically swallowing:
-	if (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the urine volume of face > 0 and the urine taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20), decide yes;
+	if (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the slime volume of face > 0 and the slime taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20), decide yes;
 	decide no.
 
 Definition: yourself is automatically swallowing:
 	if the semen volume of face > 0 and (the semen taste addiction of the player is 20 or a random number between 10 and 30 < the semen taste addiction of the player):
 		if the semen taste addiction of the player < 20, say "You can't help it - something inside you is too in love with the taste of that [semen] - you can't stop yourself!";
 		decide yes;
-	if the urine volume of face > 0 and (the urine taste addiction of the player is 20 or a random number between 10 and 30 < the urine taste addiction of the player):
-		if the urine taste addiction of the player < 20, say "You can't help it - something inside you is too eager to act like a human urinal - you can't stop yourself!";
+	if the slime volume of face > 0 and (the slime taste addiction of the player is 20 or a random number between 10 and 30 < the slime taste addiction of the player):
+		if the slime taste addiction of the player < 20, say "You can't help it - something inside you is too eager to act like a human [SlimeTargetU] - you can't stop yourself!";
 		decide yes;
 	if the milk volume of face > 0 and (the milk taste addiction of the player is 20 or a random number between 10 and 30 < the milk taste addiction of the player):
 		if the milk taste addiction of the player < 20, say "You can't help it - something inside you is too in love with the taste of that [milk] - you can't stop yourself!";
@@ -374,14 +375,14 @@ Definition: yourself is automatically swallowing:
 
 To suggest swallowing: [Sometimes the player shouldn't have to spend a turn swallowing]
 	if the total volume of face > 0:
-		if autodrink is 1 or (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the urine volume of face > 0 and the urine taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20):
+		if autodrink is 1 or (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the slime volume of face > 0 and the slime taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20):
 			compute swallowing;
 		otherwise if the player is refusing to swallow:
 			if face is not actually occupied:
 				say "You're too disgusted [if the milk volume of face > 0 and the milk taste addiction of the player is 1]by the thought that it's human breast milk in your mouth [end if]- you immediately spit it out onto the floor!";
 				let L be a list of liquid-objects; [We should then immediately increase taste addiction so that this doesn't happen again]
 				if the semen volume of face > 0, add semen to L;
-				if the urine volume of face > 0, add urine to L;
+				if the slime volume of face > 0, add slime to L;
 				if the milk volume of face > 0, add milk to L;
 				compute silent spitting;
 				repeat with LQ running through L:
@@ -400,7 +401,7 @@ To suggest swallowing with (L - a liquid-object) consequences: [If the player do
 	if refusal is 0:
 		if L is milk and the milk volume of face > 0 and the player is not getting lucky:
 			compute slightly addictive tasting of L;
-		otherwise if L is urine and the urine volume of face > 0 and the player is not getting lucky:
+		otherwise if L is slime and the slime volume of face > 0 and the player is not getting lucky:
 			compute slightly addictive tasting of L;
 		otherwise if L is semen and the semen volume of face > 0 and the player is not getting lucky:
 			compute slightly addictive tasting of L;
@@ -441,7 +442,7 @@ To compute silent spitting:
 To compute spitting: [This is specifically spitting on the ground.]
 	let TV be the total volume of face;
 	let S be the semen volume of face;
-	let U be the urine volume of face;
+	let U be the slime volume of face;
 	let M be the milk volume of face;
 	if TV <= 0:
 		if auto is 0, say "You spit a glob of saliva onto the floor.";
@@ -464,31 +465,31 @@ To compute spitting: [This is specifically spitting on the ground.]
 		if TV is S + U + M:
 			say "You accidentally spit the [MouthfulDesc] onto the floor.";
 		otherwise:
-			say "You accidentally spit [if (the semen volume of face is TV or the urine volume of face is TV or the milk volume of face is TV) and TV > 2]a bit[otherwise]half[end if] of your [MouthfulDesc] onto the floor.";
+			say "You accidentally spit [if (the semen volume of face is TV or the slime volume of face is TV or the milk volume of face is TV) and TV > 2]a bit[otherwise]half[end if] of your [MouthfulDesc] onto the floor.";
 		cutshow Figure of Oral Creampie Cutscene 6 for face;
 	otherwise if auto is 0:
 		say "You spit the [MouthfulDesc] onto the floor.";
 	repeat with P running through reactive people:
 		unless P is penetrating face: [This is handled in `To compute voluntary spitting of`]
-			if the semen volume of face <= 0 and the urine volume of face <= 0:
+			if the semen volume of face <= 0 and the slime volume of face <= 0:
 				compute boring spit reaction of P;
 			otherwise:
 				compute disgusting spit reaction of P;
 	SemenPuddleUp S;
-	UrinePuddleUp U;
+	SlimePuddleUp U;
 	MilkPuddleUp M;
 	if TV is S + U + M: [Entire mouthful is going out]
 		MouthEmpty; [Do it properly to make sure we reset semen trackers]
 	otherwise:
 		decrease the semen volume of face by S;
-		decrease the urine volume of face by U;
+		decrease the slime volume of face by U;
 		decrease the milk volume of face by M;
 	if auto is not 1: [punish maids]
 		let L be milk;
 		if S > 0 and U is 0 and M is 0:
 			now L is semen;
 		if S is 0 and U > 0 and M is 0:
-			now L is urine;
+			now L is slime;
 		if S is 0 and U is 0 and M > 0:
 			now L is milk;
 		otherwise:
@@ -499,12 +500,12 @@ To compute boring spit reaction of (M - a person):
 	say "[BigNameDesc of M] [one of]wrinkles [his of M] nose[or]frowns[or]curls [his of M] lips[in random order].[line break][speech style of M]'[one of]How impolite[or]Really now[or]Eww[or]Do you mind[in random order].'[roman type][line break][slightHumiliateReflect]".
 
 To compute disgusting spit reaction of (M - a person):
-	if the urine volume of face > 0 or the semen volume of face > 0, say "[BigNameDesc of M] [one of]grimaces[or]almost chokes in shock[or]makes an outraged sound[in random order].[line break][speech style of M]'Was that [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if]?! [one of]Disgusting[or]What the fuck[in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
+	if the slime volume of face > 0 or the semen volume of face > 0, say "[BigNameDesc of M] [one of]grimaces[or]almost chokes in shock[or]makes an outraged sound[in random order].[line break][speech style of M]'Was that [if the slime volume of face > 0 and the semen volume of face > 0][one of][slime][or]cum[purely at random][otherwise if the slime volume of face > 0][slime][otherwise]cum[end if]?! [one of]Disgusting[or]What the fuck[in random order]!'[roman type][line break][if the slime volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
 	otherwise say "[BigNameDesc of M] [one of]frowns[or]wrinkles [his of M] nose[or]winces[in random order].[line break][speech style of M]'Eww!'[roman type][line break][slightHumiliateReflect]";
 	if M is monster, FavourDown M with consequences.
 
 To NoseBurst (L - a liquid-object) by (N - a number):
-	say "A [if N > 2]river[otherwise if N is 2]few dribbles[otherwise]dribble[end if] of [L] bursts from your nose!";
+	say "A [if N > 2]river[otherwise if N is 2]few dribbles[otherwise]dribble[end if] of [variable L] bursts from your nose!";
 	unless L is murkwater, UnannouncedSquirt L On Breasts By N; [MURKWATER SHOULD BE HANDLED BY THE FUNCTION THAT CALLED THIS]
 	if the fatigue of the player < the buckle threshold of the player:
 		say "Your lungs burn as you are temporarily starved of oxygen, making you rapidly lose energy.";
@@ -589,10 +590,10 @@ This is the player pukes rule:
 			let S be 0;
 			let M be 0;
 			let W be 0;
-			if the urine volume of face > 0:
-				if L is water, now L is urine;
+			if the slime volume of face > 0:
+				if L is water, now L is slime;
 				otherwise now L is murkwater;
-				increase U by the urine volume of face;
+				increase U by the slime volume of face;
 			if the semen volume of face > 0:
 				if L is water, now L is semen;
 				otherwise now L is murkwater;
@@ -601,15 +602,15 @@ This is the player pukes rule:
 				if L is water, now L is milk;
 				otherwise now L is murkwater;
 				increase M by the milk volume of face;
-			if the stomach-urine of the player > 0:
-				if L is water, now L is urine;
+			if the stomach-slime of the player > 0:
+				if L is water, now L is slime;
 				otherwise now L is murkwater;
-				increase U by the stomach-urine of the player;
-			otherwise if the stomach-semen of the player > 0:
+				increase U by the stomach-slime of the player;
+			if the stomach-semen of the player > 0:
 				if L is water, now L is semen;
 				otherwise now L is murkwater;
 				increase S by the stomach-semen of the player;
-			otherwise if the stomach-milk of the player > 0:
+			if the stomach-milk of the player > 0:
 				if L is water, now L is milk;
 				otherwise now L is murkwater;
 				increase U by the stomach-milk of the player;
@@ -618,18 +619,18 @@ This is the player pukes rule:
 			if T is a thing:
 				NoseBurst L by N;
 				if L is murkwater:
-					if U > 0, UnannouncedExpel urine On Breasts By U;
+					if U > 0, UnannouncedExpel slime On Breasts By U;
 					if M > 0, UnannouncedExpel milk On Breasts By M;
 					if S > 0, UnannouncedExpel semen On Breasts By S; [semen last so it's not cleaned away]
 			otherwise:
 				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable [cascade] of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][L][end if] flows out of your mouth and onto the floor.";
 				cutshow Figure of Oral Creampie Cutscene 6 for face;
 				PuddleUp semen by S;
-				PuddleUp urine by U;
+				PuddleUp slime by U;
 				PuddleUp milk by M;
 				MouthEmpty;
 			now the stomach-semen of the player is 0;
-			now the stomach-urine of the player is 0;
+			now the stomach-slime of the player is 0;
 			now the stomach-milk of the player is 0;
 			now the stomach-water of the player is 0.
 
@@ -640,10 +641,10 @@ To decide which number is tasteAddictionFlatInterval:
 	decide on 20.
 
 An all time based rule (this is the player gets used to the taste rule):
-	if the urine volume of face > 0:
-		let A be tasteAddictionFlatInterval + (the urine taste addiction of the player * tasteAddictionInterval);
+	if the slime volume of face > 0:
+		let A be tasteAddictionFlatInterval + (the slime taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			compute slightly addictive tasting of urine;
+			compute slightly addictive tasting of slime;
 	if the semen volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the semen taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:

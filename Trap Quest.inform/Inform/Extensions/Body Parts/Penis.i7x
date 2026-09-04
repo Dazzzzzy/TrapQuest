@@ -35,9 +35,7 @@ Describes how close to orgasm the player's penis is.
 *@!]
 To decide which number is the max-rawness of (P - penis):
 	let X be the size of penis;
-	if focus band is worn, increase X by 2;
-	let P be a random worn insertable thing penetrating asshole;
-	if P is clothing and P is suppression, increase X by 1;
+	increase X by the orgasm resistance of the player;
 	if the player is horny, decrease X by 1;
 	if the player is very horny, decrease X by 2;
 	if the player is extremely horny, decrease X by 2;
@@ -49,9 +47,13 @@ Increases the rawness value of penis. Should be called whenever the player's pen
 
 @param <Penis>:<P> The player's penis
 +!]
+To FastRawUp (P - penis):
+	if the rawness of penis < the max-rawness of penis:
+		say "Your [player-penis] [one of]pulses[or]throbs[or]jerks[or]twitches[in random order]!";
+		increase the rawness of penis by 10.
 
 To RawUp (P - penis):
-	if the rawness of penis < the max-rawness of penis, increase the rawness of penis by 10.
+	if the rawness of penis < the max-rawness of penis, increase the rawness of penis by 1.
 
 To RawDown (P - penis):
 	if the rawness of penis > 0, decrease the rawness of penis by 1.

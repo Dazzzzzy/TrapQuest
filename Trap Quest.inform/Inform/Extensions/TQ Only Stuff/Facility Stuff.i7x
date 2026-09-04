@@ -503,7 +503,7 @@ To decide which figure-name is the monster-image of (M - tutor-seraphina):
 	decide on figure of seraphina.
 
 To say MonsterDesc of (M - tutor-seraphina):
-	if lady fetish is 2:
+	if andro fetish is 1:
 		say "This short, stocky [man of M] has wavy brown hair sitting above a confident and slightly vindictive expression. [big his of M] steampunk style gothic corset exudes a feeling of sex appeal and power.";
 	otherwise:
 		if M is defeated, say "[tutor-name of M][']s steampunk outfit has been removed at the crotch and breasts. [big his of M] heaving chest is now on complete display[if lactation fetish is 1], and seems to be uncontrollably lactating[end if]. [big his of M] arms and hands appear to be unable to move from their current position - holding a flat silver serving tray up under [his of M] hefty bosom, as if preparing them for 'serving', whilst painfully trapping [his of M] own nipples under [his of M] thumbs. [big his of M] huge cleavage is decorated with flavoured chocolate and strawberry sauce which has been used to spell 'Free Fuck Meat' across [his of M] chest, and finished with a dollop of whipped cream and a cherry for good measure.";
@@ -544,12 +544,12 @@ To compute teaching of (L - tits-training):
 	let M be the training-tutor of L;
 	now temporaryYesNoBackground is Figure of training session seraphina;
 	now temporaryYesNoResetNeeded is false;
-	if lady fetish is 2, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] nipples chains waving back and forth in front of [him of M] as [he of M] breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
+	if andro fetish is 1, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] nipples chains waving back and forth in front of [him of M] as [he of M] breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
 	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] giant chest gently heaving up and down in front of [him of M] as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
 	allocate 35 seconds;
 	if the player is top heavy or the largeness of breasts >= 12 or the breast-enhancement of nurse < 0:
 		if the breast-enhancement of nurse < 0 or breasts is lewdly exposed or the number of worn top-placed low cut or higher nipple covering clothing is 0:
-			if lady fetish is 2:
+			if andro fetish is 1:
 				say "[NameDesc of M] gestures at you.[line break][speech style of M]'This is what all women could look like. She is a woman who has truly striven for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
 			otherwise:
 				say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a [if the largeness of breasts > 5]woman who has truly striven for perfection, and I am proud to call her my equal.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your large breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't want to try and compete with this cutie for attention in a club or bar[otherwise]special case, there seems to be some special magic keeping these puppies small and disappointing.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your nipples with one of [his of M] hands, squeezing them painfully.[line break][speech style of M]'Still, even itty bitties like this can be fun to play with, I think[end if].'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more I need to teach you. You may proceed.'[roman type][line break]";
@@ -591,7 +591,7 @@ To compute teaching of (L - tits-training):
 			say "[BigNameDesc of M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] will certainly have to learn [his of the player] lesson the practical way - TWENTY TIMES, in in fact. Anyway, until next time.'[roman type][line break][big he of M] disbands the class.";
 	otherwise if (the breast-enhancement of nurse is not 0 or a random number between 1 and 2 is 1) and the number of worn chest tattoos is 0 and (breasts is showing cleavage or the number of worn actually not-top-displacable fully covering clothing is 0):
 		let S be random trainee in the location of the player;
-		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their [if lady fetish is 2]flat chests[otherwise]cleavage[end if]. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's [if lady fetish is 2]cleavage[otherwise]chest[end if]. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
+		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their [if andro fetish is 1]flat chests[otherwise]cleavage[end if]. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's [if andro fetish is 1]cleavage[otherwise]chest[end if]. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
 		compute tits marker choice of S;
 		now the text-shortcut of marker chest tattoo is the substituted form of "[tattoo-title of marker chest tattoo]";
 		if the initial outrage of marker chest tattoo - 2 is too humiliating:
@@ -709,11 +709,11 @@ Figure of roger is the file "NPCs/Facility/Tutor/tutor8a.png".
 Figure of slave roger is the file "NPCs/Facility/Tutor/tutor8b.png".
 
 To decide which figure-name is the monster-image of (M - tutor-rochelle):
-	if lady fetish is 1 or futanari fetish > 0, decide on figure of rochelle;
+	if gyno fetish is 1 or futanari fetish > 0, decide on figure of rochelle;
 	decide on figure of roger.
 
 To decide which figure-name is the pacified-image of (M - tutor-rochelle):
-	if lady fetish is 1 or futanari fetish > 0, decide on figure of slave rochelle;
+	if gyno fetish is 1 or futanari fetish > 0, decide on figure of slave rochelle;
 	decide on figure of slave roger.
 
 To decide which number is the girth of (M - tutor-rochelle):
@@ -724,7 +724,7 @@ To say LongDickDesc of (M - tutor-rochelle):
 
 To say MonsterDesc of (M - tutor-rochelle):
 	if M is pacified:
-		if lady fetish is 1 or futanari fetish > 0, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is facility]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
+		if gyno fetish is 1 or futanari fetish > 0, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is facility]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
 		otherwise say "The cuffed ankles, wrists cuffed behind [his of M] back and the ballgag tightly strapped in [his of M] mouth are hardly noticeable thanks to the two huge pink ribbons that now constitute this big-dicked [man of M][']s only clothing. One is around [his of M] neck, the other around the base of [his of M] [LongDickDesc of M], mostly covering it. It would appear that either due to magic or just the sheer emasculation of [his of M] new appearance, [he of M] can no longer get hard.";
 	otherwise:
 		say "Even if [his of M] armband didn't make it clear that this grinning [man of M] is a tutor, there's no avoiding noticing [his of M] [LongDickDesc of M] swinging from [his of M] crotch. Its 9.5 inch length and equally impressive girth must put it in the top 1% of [manly-penis]s.".
@@ -1208,7 +1208,7 @@ To compute teaching of (L - practical-training):
 					now pussy-count is 0;
 					now slobber-owner is M;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
-				otherwise if ass-count is 0 and M is female and lady fetish < 2 and a random number between 1 and (20 - the practical dirtiness of M) <= VagChance:
+				otherwise if ass-count is 0 and M is female and andro fetish is 0 and a random number between 1 and (20 - the practical dirtiness of M) <= VagChance:
 					if the remainder after dividing the trainingInt1 of M by 4 < 2, increase the trainingInt1 of M by 2; [set bit 2 to 1]
 					say "[BigNameDesc of M] crouches above [NameDesc of DL] before carefully lowering [his of M] spread pussy onto [NameDesc of DL][']s [one of]waiting shaft[or]rock hard rod[or]thick [LongDickDesc of DL][in random order]. [big he of M] [one of]audibly moans as [he of M] rocks back and forth[or]goes a bit red in the face as [he of M] repeatedly rides up and down the whole length[or]hardly moves at all before [he of M] mewls in a high pitched voice and loses control of [his of M] shuddering body as [he of M] cums hard. This leaves [him of M] panting and collapsed on top of [NameDesc of DL], that [LongDickDesc of DL] still fully embedded inside of [him of M][or]tries to clench [his of M] vaginal muscles as [he of M] rides up and down, to make it tighter for [NameDesc of DL][or]silently thrusts [his of M] hips back and forth, taking on the role of the obedient cowgirl[or]grinds down onto the [DickDesc of DL] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] tutor[or]quickly gets to bouncing up and down with a steady, smooth rhythm[in random order].";
 					increase pussy-count by 1;
@@ -2034,7 +2034,7 @@ To compute teaching of (L - bukkake-training):
 					add the substituted form of "[one of]each[or]per[or]every[purely at random]" to correctWords;
 					add the substituted form of "[one of]day[or]week[or]fortnight[purely at random]" to correctWords;
 				otherwise:
-					if watersports fetish is 1, add "urinate" to correctWords;
+					if watersports fetish is 1, add the substituted form of "[slimedrain]" to correctWords;
 					otherwise add "masturbate" to correctWords;
 					add "in" to correctWords;
 					add "public" to correctWords;
@@ -2123,7 +2123,7 @@ To compute teaching of (L - bukkake-training):
 				add "their" to correctWords;
 				add "spouse[']s" to correctWords;
 			if a random number between 1 and 2 <= watersports fetish:
-				add the substituted form of "[one of]urine[or]piss[purely at random]" to correctWords;
+				add the substituted form of "[one of]slime[or]piss[purely at random]" to correctWords;
 			otherwise:
 				add the substituted form of "[one of]semen[or]cum[purely at random]" to correctWords;
 			add "daily" to correctWords;
@@ -2497,7 +2497,7 @@ Part - Chess Stuff
 
 The training-tutor of chess-training is tutor-hyacinthe.
 chess-training has a number called chess-refused.
-chess-training has a number called trainee-urine.
+chess-training has a number called trainee-slime.
 chess-training has a number called trainee-bowl-fill.
 chess-training has a number called player-bowl-fill.
 chess-training has a number called trainee-machine.
@@ -2539,7 +2539,7 @@ To decide which figure-name is chess-table-image:
 
 To say ExamineDesc of (C - chess table):
 	if chess-victor of chess-training is 1:
-		say "The chess table and bondage chair where [MediumDesc of chess-opponent of chess-training] is bound in place, a vibrator constantly pounding [his of chess-opponent of chess-training] pussy at a brutal rate of five thrusts a second, and a fishbowl full of [if watersports fetish is 1][urine][otherwise][semen][end if] taped to [his of chess-opponent of chess-training] head.";
+		say "The chess table and bondage chair where [MediumDesc of chess-opponent of chess-training] is bound in place, a vibrator constantly pounding [his of chess-opponent of chess-training] pussy at a brutal rate of five thrusts a second, and a fishbowl full of [if watersports fetish is 1][slime][otherwise][semen][end if] taped to [his of chess-opponent of chess-training] head.";
 	otherwise:
 		say "The chess table and bondage chair where the infamous chess competitions are held[unless C is grabbing the player]. You remember it well[end if].".
 
@@ -2579,41 +2579,41 @@ Figure of ChessFuckRight is the file "Special/TQChess/FuckRight.png".
 To render chess state:
 	truncate temporary-map-figures to 0 entries;
 	if the chess-turn of chess-training is 1:
-		if watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissLeft;
+		if legacy watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissLeft;
 		otherwise now temporary-map-figure is Figure of ChessBaseCumLeft;
 	otherwise:
-		if watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissRight;
+		if legacy watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissRight;
 		otherwise now temporary-map-figure is Figure of ChessBaseCumRight;
 	add temporary-map-figure to temporary-map-figures;
 	if the trainee-bowl-fill of chess-training >= 12:
-		if watersports fetish is 1, add Figure of ChessFullPissLeft to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessFullPissLeft to temporary-map-figures;
 		otherwise add Figure of ChessFullCumLeft to temporary-map-figures;
 	otherwise if the trainee-bowl-fill of chess-training >= 9:
-		if watersports fetish is 1, add Figure of ChessEyesPissLeft to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessEyesPissLeft to temporary-map-figures;
 		otherwise add Figure of ChessEyesCumLeft to temporary-map-figures;
 	otherwise if the trainee-bowl-fill of chess-training >= 6:
-		if watersports fetish is 1, add Figure of ChessNosePissLeft to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessNosePissLeft to temporary-map-figures;
 		otherwise add Figure of ChessNoseCumLeft to temporary-map-figures;
 	otherwise if the trainee-bowl-fill of chess-training >= 3:
-		if watersports fetish is 1, add Figure of ChessMouthPissLeft to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessMouthPissLeft to temporary-map-figures;
 		otherwise add Figure of ChessMouthCumLeft to temporary-map-figures;
 	if the trainee-bowl-fill of chess-training > 0:
-		if watersports fetish is 1, add Figure of ChessDripsPissLeft to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessDripsPissLeft to temporary-map-figures;
 		otherwise add Figure of ChessDripsCumLeft to temporary-map-figures;
 	if the player-bowl-fill of chess-training >= 12:
-		if watersports fetish is 1, add Figure of ChessFullPissRight to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessFullPissRight to temporary-map-figures;
 		otherwise add Figure of ChessFullCumRight to temporary-map-figures;
 	otherwise if the player-bowl-fill of chess-training >= 9:
-		if watersports fetish is 1, add Figure of ChessEyesPissRight to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessEyesPissRight to temporary-map-figures;
 		otherwise add Figure of ChessEyesCumRight to temporary-map-figures;
 	otherwise if the player-bowl-fill of chess-training >= 6:
-		if watersports fetish is 1, add Figure of ChessNosePissRight to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessNosePissRight to temporary-map-figures;
 		otherwise add Figure of ChessNoseCumRight to temporary-map-figures;
 	otherwise if the player-bowl-fill of chess-training >= 3:
-		if watersports fetish is 1, add Figure of ChessMouthPissRight to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessMouthPissRight to temporary-map-figures;
 		otherwise add Figure of ChessMouthCumRight to temporary-map-figures;
 	if the player-bowl-fill of chess-training > 0:
-		if watersports fetish is 1, add Figure of ChessDripsPissRight to temporary-map-figures;
+		if legacy watersports fetish is 1, add Figure of ChessDripsPissRight to temporary-map-figures;
 		otherwise add Figure of ChessDripsCumRight to temporary-map-figures;
 	if the trainee-machine of chess-training is 1, add Figure of ChessFuckLeft to temporary-map-figures;
 	if the player-machine of chess-training is 1, add Figure of ChessFuckRight to temporary-map-figures.
@@ -2663,8 +2663,8 @@ To compute teaching of (L - chess-training):
 		update arousal;
 		if mistress is alive, now M is mistress;
 		say "You are led up onto the stage along with [NameDesc of ST], where a unique scene awaits you. Two chairs sit either side of a chess table, but each seat is built like a gynecologist's chair - a V shape keeps the legs spread with the sitter's genitals left fully exposed and accessible. The frames have modern-looking cuffs at the bottom of the front two legs and the end of one arm rest, clearly to keep anyone sitting there locked in place. The chairs and chess table sit inside a massive rectangular transparent tray, which acts like a paddling pool, keeping any and all fluids inside. The chess board has a chess clock next to it, which has a large metal pump connected to it.[paragraph break]You and [NameDesc of ST] are led to the chairs, where you are made to sit, your groins completely exposed and vulnerable. Your ankles are secured in the cuffs. Two pneumatic dildo fucking machines are brought in and set up, the upper halves of the dildos inserted into your [F]s. They begin to fuck each of you, at a very slow but steady pace.[paragraph break]Hollow nose plugs are inserted in your nostrils, and a tube leading from these plugs dangles down to your chest. Large fishbowl-like helmets are placed over your heads, and loosely sealed at the bottom with tape. The tube from your nose runs underneath this tape, allowing you to breathe. Translucent tubes are used to connect the pump device to the tops of the helmets. Now, [NameDesc of M] speaks to everyone.";
-		say "[speech style of M]'Welcome to the [one of]second ever[or]third ever[or]latest[stopping] [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, challengers, the pump will quickly fill your helmet with whatever liquid it can draw from the ground beneath you! It'll slowly dribble out the seal at the bottom but not as quickly as it'll fill up! If your helmet gets filled to the top, your fucking machine will click into overdrive until some drains away. There are two ways to lose: either you get checkmated, or you cum. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... one-on-one time with a helmet full of [if watersports fetish is 1][urine][otherwise][semen][end if], and won't get released until, well, until I decide so. Which is usually quite a long time! So, with the stakes made clear, let's get this game underway!'[roman type][line break][big he of M] claps [his of M] hands, making you and [trainee-name of ST] yelp as you feel your [if a2m fetish >= 2]bellies[otherwise]bladders[end if] suddenly filled with ludicrous amounts of [if watersports fetish is 1][urine][otherwise][semen][end if]! You try to hold on but there's way too much and it's no use. Moments later, both you and [trainee-name of ST] are [if a2m fetish >= 2]expelling[otherwise]squirting[end if] litres of [if watersports fetish is 1][urine][otherwise][semen][end if] into the perspex tray underneath you, where it pools, spreading out from the middle.";
-		say "And then a pump starts. The pungent liquid is slowly sucked up into the pump and begins flowing through the tube and into [NameDesc of ST][']s fishbowl, from whom you hear a muffled [second custom style]Eep![roman type] as it soaks into [his of ST] hair and then begins trickling down [his of ST] face. [big he of ST][']s got the pink pieces, which are arranged in white's normal positions, so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] helmet and instead begins to travel towards you! A moment later you are being showered by the stuff that had moments ago been inside the two of you. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. Enough [if watersports fetish is 1][urine][otherwise][semen][end if] has collected in each of your fishbowls that it would flow into your mouths if either of you opened them. The game has truly begun.";
+		say "[speech style of M]'Welcome to the [one of]second ever[or]third ever[or]latest[stopping] [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, challengers, the pump will quickly fill your helmet with whatever liquid it can draw from the ground beneath you! It'll slowly dribble out the seal at the bottom but not as quickly as it'll fill up! If your helmet gets filled to the top, your fucking machine will click into overdrive until some drains away. There are two ways to lose: either you get checkmated, or you cum. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... one-on-one time with a helmet full of [if watersports fetish is 1][slime][otherwise][semen][end if], and won't get released until, well, until I decide so. Which is usually quite a long time! So, with the stakes made clear, let's get this game underway!'[roman type][line break][big he of M] claps [his of M] hands, making you and [trainee-name of ST] yelp as you feel your [if a2m fetish >= 2]bellies[otherwise][SlimeContainer]s[end if] suddenly filled with ludicrous amounts of [if watersports fetish is 1][slime][otherwise][semen][end if]! You try to hold on but there's way too much and it's no use. Moments later, both you and [trainee-name of ST] are [if a2m fetish >= 2]expelling[otherwise]squirting[end if] litres of [if watersports fetish is 1][slime][otherwise][semen][end if] into the perspex tray underneath you, where it pools, spreading out from the middle.";
+		say "And then a pump starts. The pungent liquid is slowly sucked up into the pump and begins flowing through the tube and into [NameDesc of ST][']s fishbowl, from whom you hear a muffled [second custom style]Eep![roman type] as it soaks into [his of ST] hair and then begins trickling down [his of ST] face. [big he of ST][']s got the pink pieces, which are arranged in white's normal positions, so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] helmet and instead begins to travel towards you! A moment later you are being showered by the stuff that had moments ago been inside the two of you. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. Enough [if watersports fetish is 1][slime][otherwise][semen][end if] has collected in each of your fishbowls that it would flow into your mouths if either of you opened them. The game has truly begun.";
 		now chess table is in Facility16;
 		now chess table is grabbing the player;
 		now the chess-opponent of chess-training is ST;
@@ -2706,28 +2706,28 @@ To compute chess time:
 		now the defensive-move of chess-training is 2; [player always takes a couple of turns to find the defensive move when it's their turn]
 	otherwise if chess-move-choice > 10:
 		now the chess-turn of chess-training is 1; [It was the player's turn, but they did their move]
-	otherwise if chess-turn of chess-training is 0 and the trainee-urine of chess-training > a random number between 6 and 18: [Player waits, opponent pisses]
-		say "[BigNameDesc of ST] takes this brief reprieve as an opportunity to release [his of ST] hold on [his of ST] bladder, which trickles down and joins the [urine] beneath your feet.";
+	otherwise if chess-turn of chess-training is 0 and the trainee-slime of chess-training > a random number between 6 and 18: [Player waits, opponent pisses]
+		say "[BigNameDesc of ST] takes this brief reprieve as an opportunity to release [his of ST] hold on [his of ST] [SlimeContainer], which trickles down and joins the [slime] beneath your feet.";
 		[compute trainee chess soiling;]
 	otherwise if the trainee-bowl-fill of chess-training - the trainee-drink-tolerance of chess-training > a random number between 2 and 11:
-		say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][urine][otherwise][semen][end if] filling [his of ST] fishbowl.";
+		say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][slime][otherwise][semen][end if] filling [his of ST] fishbowl.";
 		if the trainee-bowl-fill of chess-training > 11, now the trainee-bowl-fill of chess-training is 11; [drinking always stops it getting completely full again straight away]
 		if the trainee-bowl-fill of chess-training is 3, now the trainee-bowl-fill of chess-training is 2;
 		otherwise decrease the trainee-bowl-fill of chess-training by 2;
-		if watersports fetish is 1, increase the trainee-urine of chess-training by 1;
+		if watersports fetish is 1, increase the trainee-slime of chess-training by 1;
 		increase the trainee-drink-tolerance of chess-training by 1;
 	if the chess-victor of chess-training is 0:
 		if chess-turn of chess-training is 0: [Who's getting filled?]
 			increase the player-bowl-fill of chess-training by 2;
-			say "The pump sends [if watersports fetish is 1][urine][otherwise][semen][end if] down the tube and into your fishbowl. It is [if the remainder after dividing player-bowl-fill of chess-training by 3 is 2]still[otherwise]now[end if] [if the player-bowl-fill of chess-training >= 12]completely full[otherwise if the player-bowl-fill of chess-training >= 9]up to your eyes[otherwise if the player-bowl-fill of chess-training >= 6]up to your nose[otherwise if the player-bowl-fill of chess-training >= 3]up to your mouth[otherwise]nearly up to your mouth[end if].";
+			say "The pump sends [if watersports fetish is 1][slime][otherwise][semen][end if] down the tube and into your fishbowl. It is [if the remainder after dividing player-bowl-fill of chess-training by 3 is 2]still[otherwise]now[end if] [if the player-bowl-fill of chess-training >= 12]completely full[otherwise if the player-bowl-fill of chess-training >= 9]up to your eyes[otherwise if the player-bowl-fill of chess-training >= 6]up to your nose[otherwise if the player-bowl-fill of chess-training >= 3]up to your mouth[otherwise]nearly up to your mouth[end if].";
 			if the player-bowl-fill of chess-training > 12, now the player-bowl-fill of chess-training is 12;
 			if the trainee-bowl-fill of chess-training > 0, decrease the trainee-bowl-fill of chess-training by 1;
 		otherwise:
 			increase the trainee-bowl-fill of chess-training by 2;
-			say "The pump sends [if watersports fetish is 1][urine][otherwise][semen][end if] down the tube and into [NameDesc of ST][']s fishbowl. It is [if the remainder after dividing trainee-bowl-fill of chess-training by 3 is 2]still[otherwise]now[end if] [if the trainee-bowl-fill of chess-training >= 12]completely full[otherwise if the trainee-bowl-fill of chess-training >= 9]up to [his of ST] eyes[otherwise if the trainee-bowl-fill of chess-training >= 6]up to [his of ST] nose[otherwise if the trainee-bowl-fill of chess-training >= 3]up to [his of ST] mouth[otherwise]nearly up to [his of ST] mouth[end if].";
+			say "The pump sends [if watersports fetish is 1][slime][otherwise][semen][end if] down the tube and into [NameDesc of ST][']s fishbowl. It is [if the remainder after dividing trainee-bowl-fill of chess-training by 3 is 2]still[otherwise]now[end if] [if the trainee-bowl-fill of chess-training >= 12]completely full[otherwise if the trainee-bowl-fill of chess-training >= 9]up to [his of ST] eyes[otherwise if the trainee-bowl-fill of chess-training >= 6]up to [his of ST] nose[otherwise if the trainee-bowl-fill of chess-training >= 3]up to [his of ST] mouth[otherwise]nearly up to [his of ST] mouth[end if].";
 			if the trainee-bowl-fill of chess-training > 12, now the trainee-bowl-fill of chess-training is 12;
 			if the player-bowl-fill of chess-training > 0, decrease the player-bowl-fill of chess-training by 1;
-		say "[if watersports fetish is 1]Piss[otherwise]Cum[end if] continues to slowly trickle out of both of your helmets at the bottom[one of], trickling down your neck then down your [BreastDesc][or] and down your body[or] and down your back and front[or], running down you, even between your thighs and over your [genitals][or], front and back, puddling now between your [AssDesc][or], all over you, even down your legs[or], painting your whole body[or][stopping].";
+		say "[if watersports fetish is 1][big slime][otherwise]Cum[end if] continues to slowly trickle out of both of your helmets at the bottom[one of], trickling down your neck then down your [BreastDesc][or] and down your body[or] and down your back and front[or], running down you, even between your thighs and over your [genitals][or], front and back, puddling now between your [AssDesc][or], all over you, even down your legs[or], painting your whole body[or][stopping].";
 		let F be a random fuckhole penetrated by chess table;
 		if the player-bowl-fill of chess-training >= 12:
 			say "[bold type]The dildo machine in your [variable F] [if the player-machine of chess-training is 1]keeps pumping away[otherwise]begins to piston in and out with increasing speed. [roman type]Within moments you're being fucked at a brutal rate of five thrusts a second[end if]!";
@@ -2759,7 +2759,10 @@ To compute chess time:
 				compute bladder growth;
 				if the bladder of the player > 6:
 					increase player-bladder-penalty of chess-training by 1;
-					if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bladder[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bladder[end if].[roman type][line break]";
+					if legacy watersports fetish is 1:
+						if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your [SlimeContainer][otherwise]You would find it significantly easier to think if you didn't have to focus on holding your [SlimeContainer][end if].[roman type][line break]";
+					otherwise:
+						if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]Your slimeshooter is beginning to seem pretty bloated, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bloated slimeshooter[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bloated slimeshooter[end if].[roman type][line break]";
 				otherwise:
 					now player-bladder-penalty of chess-training is 0;
 		if delayed urination > 0, compute chess urination;
@@ -2770,22 +2773,22 @@ To compute chess time:
 		update saved stats;
 		now focused-thing is ST;
 		render chess state;
-		if the chess-victor of chess-training is 0, say "You have [16 - lost-pieces of chess-training] pieces left, and [NameDesc of ST] has [16 - trainee-lost-pieces of chess-training] pieces left. Your fishbowl helmet is [if the player-bowl-fill of chess-training >= 12]completely full of[otherwise if the player-bowl-fill of chess-training >= 9]filled up to your eyes with[otherwise if the player-bowl-fill of chess-training >= 6]filled up to your nose with[otherwise if the player-bowl-fill of chess-training >= 3]filled up to your mouth with[otherwise if the player-bowl-fill of chess-training > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][urine][otherwise][semen][end if], and [NameDesc of ST][']s fishbowl helmet is [if (the player-bowl-fill of chess-training / 3) is (the trainee-bowl-fill of chess-training / 3)]also [end if][if the trainee-bowl-fill of chess-training >= 12]completely full of[otherwise if the trainee-bowl-fill of chess-training >= 9]filled up to [his of ST] eyes with[otherwise if the trainee-bowl-fill of chess-training >= 6]filled up to [his of ST] nose with[otherwise if the trainee-bowl-fill of chess-training >= 3]filled up to [his of ST] mouth with[otherwise if the trainee-bowl-fill of chess-training > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][urine][otherwise][semen][end if].";
+		if the chess-victor of chess-training is 0, say "You have [16 - lost-pieces of chess-training] pieces left, and [NameDesc of ST] has [16 - trainee-lost-pieces of chess-training] pieces left. Your fishbowl helmet is [if the player-bowl-fill of chess-training >= 12]completely full of[otherwise if the player-bowl-fill of chess-training >= 9]filled up to your eyes with[otherwise if the player-bowl-fill of chess-training >= 6]filled up to your nose with[otherwise if the player-bowl-fill of chess-training >= 3]filled up to your mouth with[otherwise if the player-bowl-fill of chess-training > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][slime][otherwise][semen][end if], and [NameDesc of ST][']s fishbowl helmet is [if (the player-bowl-fill of chess-training / 3) is (the trainee-bowl-fill of chess-training / 3)]also [end if][if the trainee-bowl-fill of chess-training >= 12]completely full of[otherwise if the trainee-bowl-fill of chess-training >= 9]filled up to [his of ST] eyes with[otherwise if the trainee-bowl-fill of chess-training >= 6]filled up to [his of ST] nose with[otherwise if the trainee-bowl-fill of chess-training >= 3]filled up to [his of ST] mouth with[otherwise if the trainee-bowl-fill of chess-training > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][slime][otherwise][semen][end if].";
 		compute chess move input.
 
 To compute opponent chess turn:
 	let ST be the chess-opponent of chess-training;
 	let competition-factor be the lost-pieces of chess-training - the trainee-lost-pieces of chess-training; [A positive number means that the opponent is LOSING the chess game (so they need to spend more time thinking to catch up)]
 	decrease competition-factor by (the trainee-orgasm of chess-training / 10) + (the trainee-bowl-fill of chess-training / 4); [The more cum in the fishbowl and closer to orgasm, the more urgent it is for the opponent to make a move]
-	if a random number between 5 and 25 < trainee-urine of chess-training:
-		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [he of ST] squeaks and the next thing you know, [he of ST][']s whining with shame and pissing [himself of ST].";
+	if a random number between 5 and 25 < trainee-slime of chess-training:
+		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [he of ST] squeaks and the next thing you know, [he of ST][']s whining with shame and [slimedrain]ing [himself of ST].";
 		[compute trainee chess soiling;]
 	otherwise if a random number between 1 and (11 + competition-factor) > 4 and the trainee-great-move of chess-training > 0: [The more they're winning the orgasm game or losing the chess game, the more time they spend thinking]
 		if the trainee-bowl-fill of chess-training - the trainee-drink-tolerance of chess-training > a random number between 2 and 11:
-			say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][urine][otherwise][semen][end if] filling [his of ST] fishbowl.";
+			say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][slime][otherwise][semen][end if] filling [his of ST] fishbowl.";
 			if the trainee-bowl-fill of chess-training > 11, now the trainee-bowl-fill of chess-training is 11; [drinking always stops it getting completely full again straight away]
 			decrease the trainee-bowl-fill of chess-training by 2;
-			if watersports fetish is 1, increase the trainee-urine of chess-training by 1;
+			if watersports fetish is 1, increase the trainee-slime of chess-training by 1;
 			increase the trainee-drink-tolerance of chess-training by 1;
 		otherwise:
 			say "[BigNameDesc of ST] keeps thinking.";
@@ -2953,9 +2956,9 @@ To compute chess players thinking:
 	decrease the trainee-great-move of chess-training by a random number between 1 and STI.
 
 To compute chess mouthful:
-	say "You draw a [if player-bowl-fill of chess-training is 3]small[otherwise]large[end if] mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if] into your mouth and gulp it all down. ";
+	say "You draw a [if player-bowl-fill of chess-training is 3]small[otherwise]large[end if] mouthful of [if watersports fetish is 1][slime][otherwise][semen][end if] into your mouth and gulp it all down. ";
 	if watersports fetish is 1:
-		StomachUrineUp 1;
+		StomachSlimeUp 1;
 	otherwise:
 		StomachSemenUp 1;
 	if the player-bowl-fill of chess-training > 11, now the player-bowl-fill of chess-training is 11; [drinking always gives you a turn's break from the dildo]
@@ -2963,7 +2966,8 @@ To compute chess mouthful:
 	otherwise decrease the player-bowl-fill of chess-training by 1.
 
 To compute chess urination:
-	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking the pool below your feet with even more [urine] right in front of everyone. [severeHumiliateReflect]";
+	if legacy watersports mechanics is 1, say "You [if delayed urination is 1]involuntarily [end if]release your hold on your [SlimeContainer], soaking the pool below your feet with even more [slime] right in front of everyone. [severeHumiliateReflect]";
+	otherwise say "You [if delayed urination is 1]are unable to stop it[otherwise]caught off guard[end if] as your slimeshooter spits everywhere, soaking the pool below your feet with even more [slime] right in front of everyone. [severeHumiliateReflect]";
 	now the bladder of the player is 0;
 	progress temporary incontinence;
 	now delayed urination is 0;
@@ -2985,8 +2989,8 @@ To compute chess move input:
 		if safe-move of chess-training <= 0, set numerical response 3 to "make a safe move";
 		if trapping-move of chess-training <= 0, set numerical response 4 to "make a trapping move";
 		if great-move of chess-training <= 0, set numerical response 5 to "make a great move";
-	if the player-bowl-fill of chess-training >= 3, set numerical response 6 to "drink a mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if]";
-	if the bladder of the player > 6 and the player is not incontinent, set numerical response 7 to "wet yourself";
+	if the player-bowl-fill of chess-training >= 3, set numerical response 6 to "drink a mouthful of [if watersports fetish is 1][slime][otherwise][semen][end if]";
+	if the bladder of the player > 6 and the player is not incontinent, set numerical response 7 to "[slimeonself]";
 	set numerical response 9 to "wait and think";
 	set numerical response 0 to "look";
 	compute multiple choice question;
@@ -2997,7 +3001,7 @@ To compute chess move input:
 		try looking;
 	otherwise if chess-move matches the text "wait":
 		now chess-move-choice is 1;
-	otherwise if chess-move matches the text "wet":
+	otherwise if chess-move matches the text "wet" or chess-move matches the text "slime":
 		now chess-move-choice is 3;
 		compute chess urination;
 	otherwise if chess-move matches the text "mouthful":
@@ -3067,7 +3071,7 @@ To compute chess win:
 	say "You watch as the ID card inside your armband transforms!";
 	if watersports fetish is 1:
 		now the armband-title of armband is "Priscilla";
-		now the armband-print of armband is "prudent piss-guzzler";
+		now the armband-print of armband is "prudent [slime]-guzzler";
 	otherwise:
 		now the armband-title of armband is "Constanza";
 		now the armband-print of armband is "competitive cum-guzzler";
@@ -3083,7 +3087,7 @@ To compute checkmate:
 	say "You watch as the ID card inside your armband transforms!";
 	if watersports fetish is 1:
 		now the armband-title of armband is "Penny";
-		now the armband-print of armband is "pensive piss-bucket";
+		now the armband-print of armband is "pensive [slime]-bucket";
 	otherwise:
 		now the armband-title of armband is "Starburst";
 		now the armband-print of armband is "semen-filled schemer";
@@ -3101,7 +3105,7 @@ To compute chess win reward:
 	while the player is thirsty:
 		increase the stomach-water of the player by 1;
 	let ST be the chess-opponent of chess-training;
-	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the trainee body begins to file out of the hall, as [NameDesc of ST][']s fishbowl quickly fills up to the brim with [if watersports fetish is 1][urine][otherwise][semen][end if], and then the fucking machine begins to ruthlessly pound [his of ST] [F] without hesitation.";
+	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the trainee body begins to file out of the hall, as [NameDesc of ST][']s fishbowl quickly fills up to the brim with [if watersports fetish is 1][slime][otherwise][semen][end if], and then the fucking machine begins to ruthlessly pound [his of ST] [F] without hesitation.";
 	remove ST from play; [prevents fuckhole acquisition]
 	update trainees; [an important line which makes boring old trainees disappear and new cool ones appear]
 	appropriate-cutscene-display chess-table-image with priority 3;
@@ -3126,9 +3130,9 @@ To compute chess loss punishment:
 	if mistress is alive, now M is mistress;
 	say "[speech style of M]'Congratulations [trainee-name of ST], you've made us proud!'[roman type][line break]";
 	if ST is promotable, promote ST;
-	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the trainee body begins to file out of the hall, as your fishbowl quickly fills up to the brim with [if watersports fetish is 1][urine][otherwise][semen][end if], and then the fucking machine ramps up its speed until it's brutally pumping your [variable F] at a rapid rate! [BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [NameBimbo] to sit and... [']stew['] on [his of the player] failings! Nobody is allowed to release [him of the player], understand? Okay, assembly is over!'[roman type][line break]";
+	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the trainee body begins to file out of the hall, as your fishbowl quickly fills up to the brim with [if watersports fetish is 1][slime][otherwise][semen][end if], and then the fucking machine ramps up its speed until it's brutally pumping your [variable F] at a rapid rate! [BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [NameBimbo] to sit and... [']stew['] on [his of the player] failings! Nobody is allowed to release [him of the player], understand? Okay, assembly is over!'[roman type][line break]";
 	summon fishbowl-hat locked;
-	if watersports fetish is 1, now fishbowl-hat is fishbowl-urine;
+	if watersports fetish is 1, now fishbowl-hat is fishbowl-slime;
 	otherwise now fishbowl-hat is fishbowl-cum;
 	repeat with X running through monsters in the location of the player:
 		distract X;
@@ -3227,7 +3231,7 @@ Figure of kaylee is the file "NPCs/Facility/Tutor/tutor10.jpg".
 Figure of karl is the file "NPCs/Facility/Tutor/tutor11.jpg".
 
 To decide which figure-name is the monster-image of (M - tutor-kaylee):
-	if lady fetish is 1 or futanari fetish > 0, decide on figure of kaylee;
+	if gyno fetish is 1 or futanari fetish > 0, decide on figure of kaylee;
 	decide on figure of karl.
 
 To decide which number is the girth of (M - tutor-kaylee):
@@ -3237,7 +3241,7 @@ To say LongDickDesc of (M - tutor-kaylee):
 	say "long uncut [manly-penis]".
 
 To say MonsterDesc of (M - tutor-kaylee):
-	if lady fetish is 1 or futanari fetish > 0, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
+	if gyno fetish is 1 or futanari fetish > 0, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
 	otherwise say "This naked [man of M]'s impossibly perfect abs and shockingly impressive muscles [if the player is gendered female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
 
 The tutor-name of tutor-kaylee is "Kaylee".
@@ -3284,7 +3288,7 @@ To compute teaching of (L - ultimate-training):
 	let LST be the list of trainees in the location of M;
 	repeat with ST running through LST:
 		now ST is guarding;
-	say "[BigNameDesc of M] stands waiting for you.[line break][speech style of M]'Yes, that's right, I'm your final instructor.'[roman type][line break][big he of M] guides you [if the number of entries in LST is 1]and [trainee-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down and puts a blindfold over your eyes.[line break][speech style of M]'Try to think of this as less of a training session and more of an initiation into our inner circle. All you have to do is each obey all our commands and always [bold type]submit[speech style of M] and you'll earn your golden armband. You [if the number of entries in LST > 0]each [end if]get a single time you're allowed to say no. If [if the number of entries in LST > 0]anyone refuses[otherwise]you refuse[end if] to do something more than that, then you [if the number of entries in LST > 0]ALL [end if]fail.'[roman type][line break]You hear the steps of what sounds like about [if the number of entries in LST > 1]at least ten[otherwise][4 * (the number of entries in LST + 1)][end if] [if lady fetish is 1]women[otherwise]men[end if] entering the room, chuckling sadistically and cracking their joints in preparation.";
+	say "[BigNameDesc of M] stands waiting for you.[line break][speech style of M]'Yes, that's right, I'm your final instructor.'[roman type][line break][big he of M] guides you [if the number of entries in LST is 1]and [trainee-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down and puts a blindfold over your eyes.[line break][speech style of M]'Try to think of this as less of a training session and more of an initiation into our inner circle. All you have to do is each obey all our commands and always [bold type]submit[speech style of M] and you'll earn your golden armband. You [if the number of entries in LST > 0]each [end if]get a single time you're allowed to say no. If [if the number of entries in LST > 0]anyone refuses[otherwise]you refuse[end if] to do something more than that, then you [if the number of entries in LST > 0]ALL [end if]fail.'[roman type][line break]You hear the steps of what sounds like about [if the number of entries in LST > 1]at least ten[otherwise][4 * (the number of entries in LST + 1)][end if] [if gyno fetish is 1]women[otherwise]men[end if] entering the room, chuckling sadistically and cracking their joints in preparation.";
 	now the training-completed of ultimate-training is 8;
 	now the training-vetos of ultimate-training is 1;
 	now the stance of the player is 1;
@@ -3342,8 +3346,8 @@ To compute tongue demand of (M - an unseen-stranger):
 			say "[big he of M] takes this opportunity to inject the inside of each of your [LipDesc] with some kind of needle![line break][speech style of M]'Bigger cockpillows make a better cocksucker.'[roman type][line break][big he of M][']s not wrong - you can feel they've been pumped full of some kind of artificial plumper!";
 			LipsUp 1;
 		otherwise if watersports fetish is 1 and a random number between 1 and 3 is 1:
-			say "[speech style of M]'Make sure you swallow every drop.'[roman type][line break]A hissing sound heralds a stream of hot [urine] landing directly into your open waiting mouth.";
-			FacePiss from M;
+			say "[speech style of M]'Make sure you swallow every drop.'[roman type][line break]A hissing sound heralds a stream of hot [slime] landing directly into your open waiting mouth.";
+			FaceDrain from M;
 		otherwise if a random number between 1 and 2 is 1:
 			let ST be a random trainee in the location of the training-tutor of ultimate-training;
 			if ST is monster and a2m fetish >= 2 and a random number between 1 and 2 is 1:
@@ -3394,7 +3398,7 @@ To compute anal creampie expel demand of (M - an unseen-stranger):
 					say "Moments later you find the vessel pressed against your lips.[line break][speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]Do you obey?";
 					if the player is bimbo consenting:
 						FaceFill semen by the semen volume of belly;
-						FaceFill urine by the urine volume of belly;
+						FaceFill slime by the slime volume of belly;
 						progress quest of creampie-drinking-quest;
 					otherwise:
 						compute training session veto;
@@ -3411,8 +3415,8 @@ To compute anal torture of (M - an unseen-stranger):
 		say "A new [manly-penis] pushes its way into your [asshole]. ";
 		now M is penetrating asshole;
 		ruin asshole;
-		say "[one of]You expect it to begin fucking you, but instead[or]Once again instead of a thrusting motion[stopping] you feel your belly begin to fill from the inside. [big he of M][']s using your asshole as [his of M] urinal! By the time [he of M] finishes and pulls out, you are feeling very full of [urine].";
-		AssFill 12 with urine;
+		say "[one of]You expect it to begin fucking you, but instead[or]Once again instead of a thrusting motion[stopping] you feel your belly begin to fill from the inside. [big he of M][']s using your asshole as [his of M] [SlimeTargetU]! By the time [he of M] finishes and pulls out, you are feeling very full of [slime].";
+		AssFill 12 with slime;
 		dislodge M;
 	otherwise if the number of entries in LST > 0 and a2m fetish > 1 and the total squirtable fill of belly is 0:
 		say "You hear what sounds like some kind of power drill spinning up behind you![line break][speech style of M]'Spread your asshole wide, slut!'[roman type][line break]Do you obey?";
@@ -3442,12 +3446,12 @@ To compute anal torture of (M - an unseen-stranger):
 		let ST2 be entry 2 of LST;
 		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is face-planted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
 		if the player is bimbo consenting:
-			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed.[TasteGrossOut 9][strongHumiliateReflect]";
+			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the slime volume of belly > 0], [slime][end if] and ass begin to make you feel a bit light headed.[TasteGrossOut 9][strongHumiliateReflect]";
 			otherwise say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare[TasteGrossOut 7]. [strongHumiliateReflect]";
-			if a2m fetish >= 2 and the semen volume of belly + the urine volume of belly > 0:
-				say "Then, all of a sudden, you and the other trainees all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing, and gagging.[TasteGrossOut 12]";
+			if a2m fetish >= 2 and the semen volume of belly + the slime volume of belly > 0:
+				say "Then, all of a sudden, you and the other trainees all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the slime volume of belly > 0] and [slime][end if]. The room fills with the sound of squirting, swallowing, and gagging.[TasteGrossOut 12]";
 				FaceFill semen by the semen volume of belly;
-				FaceFill urine by the urine volume of belly;
+				FaceFill slime by the slime volume of belly;
 				empty belly liquids;
 				progress quest of creampie-drinking-quest;
 			otherwise:
@@ -3691,7 +3695,7 @@ To say ClitLeadDesc of (M - trainee-tiana):
 	say "[big his of M] clitoris piercing is connected to nipple piercings by a long gold chain. ".
 
 Definition: trainee-tiana is fetish appropriate:
-	if lady fetish is 2, decide no;
+	if andro fetish is 1, decide no;
 	decide yes.
 
 The max-rank of trainee-tiana is 4.
@@ -3746,7 +3750,7 @@ To decide which figure-name is the monster-image of (M - trainee-minnie):
 	decide on figure of minnie.
 
 To say MonsterDesc of (M - trainee-minnie):
-	say "This tall leggy brunette is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny brown plasters, and the identical tiny bandage [if the current-rank of M is 3 and lady fetish is 2]barely covers [his of M] tiny [DickDesc of M] and balls[otherwise if lady fetish is 2]doesn't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely covers [his of M] pussy[otherwise]doesn't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, B cup tits, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
+	say "This tall leggy brunette is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny brown plasters, and the identical tiny bandage [if the current-rank of M is 3 and andro fetish is 1]barely covers [his of M] tiny [DickDesc of M] and balls[otherwise if andro fetish is 1]doesn't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely covers [his of M] pussy[otherwise]doesn't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, B cup tits, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
 
 The min-rank of trainee-minnie is 3.
 The current-rank of trainee-minnie is 3.
@@ -3783,7 +3787,7 @@ To decide which figure-name is the monster-image of (M - trainee-christi):
 	decide on figure of christi.
 
 To say MonsterDesc of (M - trainee-christi):
-	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if lady fetish is 2]aside from a brightly coloured chastity cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if lady fetish is 2][his of M] recently-fucked asshole[otherwise][his of M] shaved recently-fucked pussy[end if].".
+	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if andro fetish is 1]aside from a brightly coloured chastity cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if andro fetish is 1][his of M] recently-fucked asshole[otherwise][his of M] shaved recently-fucked pussy[end if].".
 
 The min-rank of trainee-christi is 5.
 The current-rank of trainee-christi is 5.
@@ -3870,7 +3874,7 @@ To decide which figure-name is the monster-image of (M - trainee-bree):
 	decide on figure of bree.
 
 To say MonsterDesc of (M - trainee-bree):
-	say "This very well-tanned [man of M] looks very fake. [big his of M] long bleach blonde hair frames a fully made-up face with long fake eye-lashes and full, pouty dicksucking lips[if artificial enhancements fetish is 1] that have almost certainly had some cosmetic enhancement to become quite so thick and pillowy[end if]. [if the current-rank of M > 2][big his of M][otherwise][big he of M] looks slightly shy about the fact that [his of M][end if] [if lady fetish < 2]huge D cup boobs are completely bare, the heavily bronzed skin rendering [his of M] nipples almost completely camouflaged. [big his of M] only item of clothing is a[otherwise]bright yellow chastity cage is peeking out of the[end if] very skimpy pink thongkini covering [his of M] loins, which is decorated with a few lines of pearly beads, one of which has the large pearl letters 'S', 'E', 'X' and 'Y' hanging from it. [big his of M] face seems permanently fixed into a sexy pout, regardless of how [he of M] actually feels inside.".
+	say "This very well-tanned [man of M] looks very fake. [big his of M] long bleach blonde hair frames a fully made-up face with long fake eye-lashes and full, pouty dicksucking lips[if artificial enhancements fetish is 1] that have almost certainly had some cosmetic enhancement to become quite so thick and pillowy[end if]. [if the current-rank of M > 2][big his of M][otherwise][big he of M] looks slightly shy about the fact that [his of M][end if] [if andro fetish is 0]huge D cup boobs are completely bare, the heavily bronzed skin rendering [his of M] nipples almost completely camouflaged. [big his of M] only item of clothing is a[otherwise]bright yellow chastity cage is peeking out of the[end if] very skimpy pink thongkini covering [his of M] loins, which is decorated with a few lines of pearly beads, one of which has the large pearl letters 'S', 'E', 'X' and 'Y' hanging from it. [big his of M] face seems permanently fixed into a sexy pout, regardless of how [he of M] actually feels inside.".
 
 The min-rank of trainee-bree is 3.
 The current-rank of trainee-bree is 4.
@@ -3900,7 +3904,7 @@ To say EscapeAnswer of (M - trainee-bree):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]Oh darling, there are so many [manly-penis]s to suck! And so little time!'[otherwise]Oh darling, I bet there are even more [manly-penis]s! And even bigger ones too!'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - trainee-bree):
-	say "[speech style of M]'Darling, you need to [if breasts are lewdly exposed]get those big ol['] titties of yours some more attention! And get a few more [manly-penis]s up in between them...'[otherwise if the largeness of breasts > 3]get your tits out! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and yours aren't?'[otherwise if lady fetish is 2]take your shirt off! Guys love cumming on your tits, even if they aren't big!'[otherwise]get a real rack! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and you don't even have any?'[end if][roman type][line break]".
+	say "[speech style of M]'Darling, you need to [if breasts are lewdly exposed]get those big ol['] titties of yours some more attention! And get a few more [manly-penis]s up in between them...'[otherwise if the largeness of breasts > 3]get your tits out! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and yours aren't?'[otherwise if andro fetish is 1]take your shirt off! Guys love cumming on your tits, even if they aren't big!'[otherwise]get a real rack! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and you don't even have any?'[end if][roman type][line break]".
 
 To compute teaching of (M - trainee-bree):
 	say "[speech style of M]'Oh darling, I'm as dumb as a doormat. The only thing I can teach is how to be air-headed!'[roman type][line break]".
@@ -3920,7 +3924,7 @@ To decide which figure-name is the monster-image of (M - trainee-pebbles):
 	decide on figure of pebbles.
 
 To say MonsterDesc of (M - trainee-pebbles):
-	say "This chubby brunette [man of M] has [if lady fetish is 2]a black chastity cage peeking out below his matching [otherwise][his of M] big sagging tits hanging over a[end if] tight black underbust corset. The only other things [he of M]'s wearing are a pink collar and pigtail scrunchies. [if the current-rank of M > 4][big he of M] seems to keep [his of M] tongue out of [his of M] mouth at all times, and keep [his of M] hands in a submissive [']puppy paw['] pose[otherwise]Every now and then [he of M] seems to suddenly remember [he of M][']s supposed to be acting like a puppy, and lolls [his of M] tongue out of [his of M] mouth, panting like a happy dog[end if].".
+	say "This chubby brunette [man of M] has [if andro fetish is 1]a black chastity cage peeking out below his matching [otherwise][his of M] big sagging tits hanging over a[end if] tight black underbust corset. The only other things [he of M]'s wearing are a pink collar and pigtail scrunchies. [if the current-rank of M > 4][big he of M] seems to keep [his of M] tongue out of [his of M] mouth at all times, and keep [his of M] hands in a submissive [']puppy paw['] pose[otherwise]Every now and then [he of M] seems to suddenly remember [he of M][']s supposed to be acting like a puppy, and lolls [his of M] tongue out of [his of M] mouth, panting like a happy dog[end if].".
 
 The min-rank of trainee-pebbles is 4.
 The current-rank of trainee-pebbles is 5.
@@ -4010,8 +4014,8 @@ To decide which figure-name is the monster-image of (M - trainee-nell):
 	decide on figure of narcissa.
 
 To say MonsterDesc of (M - trainee-nell):
-	if the current-rank of M <= 5, say "This tall brunette is wearing a tight red shirt with horizontal strips cut out at [his of M] cleavage, above a short black latex skirt. Underneath the skirt, a sheer black lacy thong can be spotted... And the [man of M] appears to be OOZING with [if lady fetish is 2]pre-cum[otherwise]vaginal juices[end if]. [if the current-rank of M <= 3][big he of M] seems anxious about [his of M] aroused stated and what it's doing to [his of M] nether-regions[otherwise][big he of M] seems to have come to love [his of M] new permanetly-aroused-and-leaking body, and spends most of [his of M] time happily toying with [his of M] privates while making lewd gestures at anyone who might have a big cock for [him of M] to suck[end if].";
-	otherwise say "This tall brunette has totally lost the plot. [big he of M] seems to have been semi-permanently installed as some kind of fucktoy by being tied upside-down in a urinal of all places. [big he of M] looks absolutely overjoyed to be here.";
+	if the current-rank of M <= 5, say "This tall brunette is wearing a tight red shirt with horizontal strips cut out at [his of M] cleavage, above a short black latex skirt. Underneath the skirt, a sheer black lacy thong can be spotted... And the [man of M] appears to be OOZING with [if andro fetish is 1]pre-cum[otherwise]vaginal juices[end if]. [if the current-rank of M <= 3][big he of M] seems anxious about [his of M] aroused stated and what it's doing to [his of M] nether-regions[otherwise][big he of M] seems to have come to love [his of M] new permanetly-aroused-and-leaking body, and spends most of [his of M] time happily toying with [his of M] privates while making lewd gestures at anyone who might have a big cock for [him of M] to suck[end if].";
+	otherwise say "This tall brunette has totally lost the plot. [big he of M] seems to have been semi-permanently installed as some kind of fucktoy by being tied upside-down in a [SlimeTargetU] of all places. [big he of M] looks absolutely overjoyed to be here.";
 
 The current-rank of trainee-nell is 3.
 
@@ -4103,7 +4107,7 @@ The max-rank of trainee-abbi is 4.
 The current-rank of trainee-abbi is 2.
 
 Definition: trainee-abbi is fetish appropriate:
-	if lady fetish < 2, decide yes;
+	if andro fetish is 0, decide yes;
 	decide no.
 
 To update name of (M - trainee-abbi):
@@ -4199,7 +4203,7 @@ To decide which figure-name is the monster-image of (M - trainee-katya):
 		decide on figure of cuntwarmer.
 
 To say MonsterDesc of (M - trainee-katya):
-	if lady fetish is 2:
+	if andro fetish is 1:
 		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white alchemist blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
 	otherwise:
 		say "This platinum blonde [man of M] has the perfect bimbo body shape[if artificial enhancements fetish is 1] including visibly silicone-enhanced fuckballs and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white alchemist blouse tightly stretches over [his of M] seemingly spherical E-cup tits, and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] white alchemist blouse only has one button done up, exposing huge amounts of cleavage from [his of M] round F-cup fuckballs, and the complete lack of a bra. [big his of M] tiny pink microskirt hugs [his of M] figure so tightly it almost looks like it's painted on, and [he of M] prances perfectly elegantly on [his of M] tall pink platform heels[otherwise if the current-rank of M is 3][big his of M] white tube top only has one button done up, exposing huge amounts of cleavage and underboob from [his of M] giant plastic N-cup fuckballs. [big his of M] tiny pink microskirt is somehow even smaller than before perhaps because of how massive [his of M] beachball buttocks are now. [big he of M] prances perfectly elegantly on [his of M] extra-tall pink platform heels[otherwise][big he of M] is completely naked and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].".
@@ -4234,13 +4238,13 @@ To compute trainee perception of (M - trainee-katya):
 		say "[big he of M] makes a face like [he of M][']s not happy with you, but then it seems like [his of M] new training gets the better of [him of M] and [he of M] looks at the ground submissively instead.";
 
 To say FirstResponse of (M - trainee-katya):
-	if lady fetish is 2:
+	if andro fetish is 1:
 		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my clitty for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is pushing up [his of M] chastity cage with both hands.[line break][speech style of M]'My job is to keep my ass hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers into [his of M] ass and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock? I feel so empty and sad when there's no cock inside me!'[roman type][line break][end if]";
 	otherwise:
 		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside [himself of M] and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock? I feel so empty and sad when there's no cock inside me!'[roman type][line break][end if]".
 
 To say WhoAnswer of (M - trainee-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][trainee-name of M]['], should I allow you to talk to me,[otherwise][trainee-name of M]['] because the only important thing about me is my[end if] [if lady fetish is 2]asshole[otherwise][cunt][end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][trainee-name of M]['], should I allow you to talk to me,[otherwise][trainee-name of M]['] because the only important thing about me is my[end if] [if andro fetish is 1]asshole[otherwise][cunt][end if].'[roman type][line break]".
 
 To say WhereAnswer of (M - trainee-katya):
 	if the rank of the player is 1, say "[speech style of M]'[if the current-rank of M < 4]We're in a pathetic excuse for an institution that tries to turn people from dominant divas into worthless whimpering worms. But only if you're so weak that you can't resist their techniques[otherwise]It would take a very weird set of events for me to be a domesticated fuckdoll but for you to be rank one. How very unusual. Aika would be very interested to know how that happened. I, err, I mean, welcome to my favourite place, the [training halls][end if].'[roman type][line break]";
@@ -4251,15 +4255,15 @@ To say EscapeAnswer of (M - trainee-katya):
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]I don't know yet, but I plan to be the first sane person here to find out[otherwise]I'm hoping there's even bigger and juicier [manly-penis]s to serve[end if].'[roman type][line break]".
 
 To say AdviceAnswer of (M - trainee-katya):
-	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your ass as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your ass won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful! Except it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]";
+	if andro fetish is 1, say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your ass as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your ass won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful! Except it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]";
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your [cunt] as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your [cunt] won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful! Except it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]".
 
 To say StoryAnswer of (M - trainee-katya):
-	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I signed that pre-nup I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his gross dick! Have you ever SEEN a foreskin? It's disgusting. He thinks that by sending me here he can get me to 'learn my place' and become his little sissy wife and the perfect subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to finger myself every few minutes to keep my pathetic asshole hot and wet at all times. Who knows when the next person will want to use me? A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best! He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long! I'm hoping he'll bring his best friends so they can use me whenever they want, too! Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break! It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]";
+	if andro fetish is 1, say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I signed that pre-nup I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his gross dick! Have you ever SEEN a foreskin? It's disgusting. He thinks that by sending me here he can get me to 'learn my place' and become his little sissy wife and the perfect subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to finger myself every few minutes to keep my pathetic asshole hot and wet at all times. Who knows when the next person will want to use me? A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best! He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long! I'm hoping he'll bring his best friends so they can use me whenever they want, too! Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break! It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]";
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I'm as hot as a supermodel I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his tiny dick! He thinks that by sending me here he can get me to 'learn my place' and become his little housewife and the perfect little subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to masturbate every few minutes to keep my pathetic [cunt] hot and wet at all times. Who knows when the next person will want to use me? A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best! He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long! I'm hoping he'll bring his best friends so they can use me whenever they want, too! Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break! It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]".
 
 To compute teaching of (M - trainee-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise if lady fetish is 2]If you have a smaller penis than your partner, it's your duty to let him do whatever he wants with you. It's just the way of the world![otherwise]Let me teach you how to be a perfect cock-warmer. Step one: Have a [cunt]. Step two: Keep it full of [manly-penis] as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise if andro fetish is 1]If you have a smaller penis than your partner, it's your duty to let him do whatever he wants with you. It's just the way of the world![otherwise]Let me teach you how to be a perfect cock-warmer. Step one: Have a [cunt]. Step two: Keep it full of [manly-penis] as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
 
 To compute friendly drink of (M - trainee-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]Do I look like a fucking vending machine to you?'[otherwise]I'm sorry, but the only [tasty] thing I drink nowadays is dick juice. And if you want your own, you'll have to use those lips of yours to earn it yourself!'[end if][roman type][line break]".
@@ -4276,7 +4280,7 @@ To decide which figure-name is the monster-image of (M - trainee-darla):
 	decide on figure of darla.
 
 To say MonsterDesc of (M - trainee-darla):
-	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee thin spaghetti straps down the front which leave [if lady fetish is 2][his of M] toned belly on display, and the tiny bulge of [his of M] [DickDesc of M] just shy of popping out[otherwise]all of [his of M] thighs and a lot of cleavage of [his of M] incredible F-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
+	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee thin spaghetti straps down the front which leave [if andro fetish is 1][his of M] toned belly on display, and the tiny bulge of [his of M] [DickDesc of M] just shy of popping out[otherwise]all of [his of M] thighs and a lot of cleavage of [his of M] incredible F-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
 
 The min-rank of trainee-darla is 2.
 The max-rank of trainee-darla is 3.
@@ -4291,7 +4295,7 @@ To update name of (M - trainee-darla):
 		now the trainee-print of M is "dazzling diva".
 
 To say StoryAnswer of (M - trainee-darla):
-	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise][man of M][end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
+	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if andro fetish is 1]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise][man of M][end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
 
 
 
@@ -4308,7 +4312,7 @@ To decide which figure-name is the monster-image of (M - trainee-hiroko):
 	decide on figure of hiroko.
 
 To say MonsterDesc of (M - trainee-hiroko):
-	say "This beautiful Asian [man of M] is wearing nothing but an outfit made out of thin black straps that cover absolutely nothing[if lady fetish is 2], not even the metal chastity cage between [his of M] legs[otherwise] but [his of M] pussy - [his of M] breasts are on full display[end if]. [big he of M] looks at you with unconcealed disgust.".
+	say "This beautiful Asian [man of M] is wearing nothing but an outfit made out of thin black straps that cover absolutely nothing[if andro fetish is 1], not even the metal chastity cage between [his of M] legs[otherwise] but [his of M] pussy - [his of M] breasts are on full display[end if]. [big he of M] looks at you with unconcealed disgust.".
 
 The current-rank of trainee-hiroko is 4.
 The max-rank of trainee-hiroko is 6.
@@ -4368,7 +4372,7 @@ To decide which figure-name is the monster-image of (M - trainee-rain):
 	decide on figure of rain.
 
 To say MonsterDesc of (M - trainee-rain):
-	if lady fetish is 2, say "This very short, petite sissy can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] puffy nipples and lavender-coloured chastity cage are very visible[otherwise][big his of M] puffy nipples are very visible through the fabric and it is purposefully parted above his belly button, leaving [his of M] lavender-coloured chastity cage on full display[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] ass squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].";
+	if andro fetish is 1, say "This very short, petite sissy can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] puffy nipples and lavender-coloured chastity cage are very visible[otherwise][big his of M] puffy nipples are very visible through the fabric and it is purposefully parted above his belly button, leaving [his of M] lavender-coloured chastity cage on full display[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] ass squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].";
 	otherwise say "This very short, petite [man of M] can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] small boobs and cute innie pussy are very visible[otherwise][big his of M] small boobs are very visible through the fabric and it is purposefully parted above [his of M] belly button, to leave [his of M] pussy fully exposed[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] pussy squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].".
 
 The min-rank of trainee-rain is 3.
@@ -4390,10 +4394,10 @@ To say WhereAnswer of (M - trainee-rain):
 	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]how much you love[otherwise]your skill with a[end if] [manly-penis]! And then others will be proud of you!'[roman type][line break]".
 
 To say EscapeAnswer of (M - trainee-rain):
-	say "[speech style of M]'More people who you can [if lady fetish is 2]bend over for[otherwise if the current-rank of M > 3]spread your [cunt] for[otherwise]show off your [cunt] to[end if], of course!'[roman type][line break]".
+	say "[speech style of M]'More people who you can [if andro fetish is 1]bend over for[otherwise if the current-rank of M > 3]spread your [cunt] for[otherwise]show off your [cunt] to[end if], of course!'[roman type][line break]".
 
 To compute teaching of (M - trainee-rain):
-	say "[speech style of M]'[if lady fetish < 2]This is a [cunt]. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".]
+	say "[speech style of M]'[if andro fetish is 0]This is a [cunt]. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".]
 
 Book - Ferrari
 
@@ -4411,7 +4415,7 @@ To decide which figure-name is the monster-image of (M - trainee-ferrari):
 	decide on figure of ferrari 3.
 
 To say MonsterDesc of (M - trainee-ferrari):
-	say "This short busty [man of M] has [his of M] blonde hair in a ponytail and is wearing a red racer girl outfit. [if lady fetish is 2 and the current-rank of M >= 4][big he of M] is wearing a custom black chastity cage with neon red trim. [end if][if the current-rank of M <= 3][big he of M] is pulling the big zipper at the front of [his of M] outfit up and down, as if unsure what the correct place to leave it is, to create the perfect sexy appeal without having gone too far[otherwise if the current-rank of M is 4][big he of M] has unfastened the big zipper at the front of [his of M] outfit all the way, exposing both [his of M] big tits and genitalia[otherwise][big his of M] face and cleavage are coated in oozing, sticky [semen], and [he of M] looks very pleased and proud of this[end if].".
+	say "This short busty [man of M] has [his of M] blonde hair in a ponytail and is wearing a red racer girl outfit. [if andro fetish is 1 and the current-rank of M >= 4][big he of M] is wearing a custom black chastity cage with neon red trim. [end if][if the current-rank of M <= 3][big he of M] is pulling the big zipper at the front of [his of M] outfit up and down, as if unsure what the correct place to leave it is, to create the perfect sexy appeal without having gone too far[otherwise if the current-rank of M is 4][big he of M] has unfastened the big zipper at the front of [his of M] outfit all the way, exposing both [his of M] big tits and genitalia[otherwise][big his of M] face and cleavage are coated in oozing, sticky [semen], and [he of M] looks very pleased and proud of this[end if].".
 
 The min-rank of trainee-ferrari is 3.
 The current-rank of trainee-ferrari is 3.

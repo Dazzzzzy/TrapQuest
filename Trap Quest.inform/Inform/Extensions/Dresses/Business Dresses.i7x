@@ -1,13 +1,13 @@
 Business Dresses by Dresses begins here.
 
-A business dress is a kind of overdress.
+A business dress is a kind of overdress. The skirt-length of a business dress is 3.
 
 To decide which number is the adult-influence of (C - a business dress):
 	decide on 2.
 
 Part 1 - Polka Dot Business Dress
 
-polka dot business dress is a business dress. polka dot business dress is fully covering. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is "[clothing-title-before]polka dot business dress[clothing-title-after]".
+polka dot business dress is a business dress. polka dot business dress is fully covering. The skirt-length of polka dot business dress is 8. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is "[clothing-title-before]polka dot business dress[clothing-title-after]".
 
 Figure of polka dot business dress is the file "Items/Clothes/Upper/Business/businessdress2.png".
 
@@ -90,7 +90,7 @@ To decide which object is the unique-upgrade-target of (C - fetish business dres
 
 Part 4 - Vest Business Dress
 
-vest-dress is a business dress. vest-dress is low cut. The skirt-length of vest-dress is 4. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
+vest-dress is a business dress. vest-dress is low cut. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
 
 Figure of vest-dress is the file "Items/Clothes/Upper/Business/businessdress4.png".
 

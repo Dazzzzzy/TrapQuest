@@ -210,7 +210,7 @@ To store previous sizes:
 	now the previous total volume of hips is the total volume of hips;
 	now the previous visible size of penis is the visible size of penis;
 	repeat with B running through body parts:
-		now the previous urine coating of B is the urine coating of B;
+		now the previous slime coating of B is the slime coating of B;
 		now the previous semen coating of B is the semen coating of B;
 
 [!<timeBased:Rulebook>*
@@ -354,7 +354,7 @@ To compute automatic actions:
 To compute optional actions:
 	if was-mopping is true:
 		now was-mopping is false;
-		if total puddle > 0 and the noun is clothing and the semen-soak of the noun + the urine-soak of the noun + the milk-soak of the noun < the soak-limit of the noun:
+		if total puddle > 0 and the noun is clothing and the semen-soak of the noun + the slime-soak of the noun + the milk-soak of the noun < the soak-limit of the noun:
 			say "Keep mopping? ";
 			if the player is consenting: [if this was bimbo consenting there are some edge case loops with broken players who infinitely lick a puddle while peeing]
 				now another-turn is 1;
@@ -452,7 +452,8 @@ To compute player standing:
 						MagicPowerRefresh 6;
 				otherwise if there is a combative monster and the body soreness of the player > 8 and the bladder of the player > 6 and the player is not feeling dominant:
 					now delayed urination is 1;
-					say "Overcome with pain[if the player is not a pervert] and fear[otherwise if the humiliation of the player < 12500] and shame[end if], you involuntarily wet yourself.";
+					if legacy watersports mechanics is 1, say "Overcome with pain[if the player is not a pervert] and fear[otherwise if the humiliation of the player < 12500] and shame[end if], you involuntarily [slimeonself].";
+					otherwise say "You are so overcome with pain[if the player is not a pervert] and fear[otherwise if the humiliation of the player < 12500] and shame[end if], that you accidentally scare your slimeshooter, which squeals as it spits slime everywhere!";
 					try urinating;
 			otherwise:
 				if the player is hook stuck:
@@ -489,9 +490,10 @@ To compute dildo damage:
 		repeat with Y running through dildo traps grabbing the player:
 			say "[BigNameDesc of Y] buzzes away powerfully at your crotch!";
 			stimulate vagina from Y;
-			if Y is grabbing the player and the player is getting lucky: [if the player orgasms, it lets go. but if not, maybe they get lucky]
-				say "[BigNameDesc of Y] seems to run out of power, and the anklecuffs click open! [GotLuckyFlav]";
+			if Y is grabbing the player and the reset-timer of Y < 250 and (the reset-timer of Y <= 220 or the player is getting lucky): [if the player orgasms, it lets go. but if not, maybe they get lucky]
+				say "[BigNameDesc of Y] seems to run out of power, and the anklecuffs click open[if the reset-timer of Y > 220]! [GotLuckyFlav][otherwise].[end if]";
 				dislodge Y;
+				now Y is expired;
 	otherwise if the latex-transformation of the player <= 3:
 		repeat with D running through traps penetrating a fuckhole:
 			say "[BigNameDesc of D] keeps pressing on your sensitive spots inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if][one of], making you more and more sore![or].[stopping]";
@@ -526,17 +528,18 @@ To decide which number is fatigue bonus:
 	decide on 20.
 
 To compute fatigue loss:
-	if the fatigue of the player > fatimod + fatigue bonus:
-		let F be 0;
-		if the player is tired, now F is 1;
-		if debuginfo > 1, say "[input-style]Fatigue recovery turn ([fatimod]): [the fatigue of the player] - ([fatimod]+[fatigue bonus]) -> ";
-		FatigueDown fatimod + fatigue bonus;
-		if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]";
-		if F is 1 and the player is not tired, say "Your legs are starting to feel a bit better.";
-		increase fatimod by 1;
-	otherwise if the fatigue of the player > 0:
-		now the fatigue of the player is 0;
-		if the body soreness of the player < 10, say "Your legs feel [if the body soreness of the player is 0]completely rested[otherwise]ready to go[end if].".
+	if the player is able to breathe or the player is not air breathing vulnerable:
+		if the fatigue of the player > fatimod + fatigue bonus:
+			let F be 0;
+			if the player is tired, now F is 1;
+			if debuginfo > 1, say "[input-style]Fatigue recovery turn ([fatimod]): [the fatigue of the player] - ([fatimod]+[fatigue bonus]) -> ";
+			FatigueDown fatimod + fatigue bonus;
+			if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]";
+			if F is 1 and the player is not tired, say "Your legs are starting to feel a bit better.";
+			increase fatimod by 1;
+		otherwise if the fatigue of the player > 0:
+			now the fatigue of the player is 0;
+			if the body soreness of the player < 10, say "Your legs feel [if the body soreness of the player is 0]completely rested[otherwise]ready to go[end if].".
 
 The player has a number called suffocation.
 The breathing blocking rules is a rulebook.
@@ -548,7 +551,10 @@ ManuallyBreathing is an action applying to nothing.
 Check ManuallyBreathing:
 	if yourself is not needing to breathe:
 		now player-breathing is true;
-		say "You currently have no way (or need) to breathe at all!" instead.
+		say "You currently have no way (or need) to breathe at all!" instead;
+	if the class of the player is huffer:
+		now player-breathing is true;
+		say "Your [']diaper huffer['] class prevents you from holding your breath on purpose!" instead.
 Carry out ManuallyBreathing:
 	if player-breathing is false:
 		say "You will now [bold type]breathe normally[if tubesuit is worn] through your tubesuit mask[end if][roman type] when time moves forward.";
@@ -583,7 +589,7 @@ Definition: yourself is able to recover:
 	if the player is not air breathing vulnerable or the player is able to breathe, decide yes;
 	decide no.
 Definition: yourself is holding-breath-this-turn: [if we return yes, we output flavour about holding our breath]
-	if the player is not needing to breathe, decide no;
+	if the player is not needing to breathe or the class of the player is huffer, decide no;
 	follow the breathing blocking rules;
 	if the rule succeeded, decide yes;
 	if the suffocation of the player >= the suffocation limit of the player:
@@ -626,8 +632,8 @@ An all later time based rule (this is the breathe or suffocate rule):
 			if the player is air breathing vulnerable, follow the breathing consequences rules;
 		otherwise if the suffocation of the player >= the suffocation limit of the player:
 			if the player is able to faint from suffocation:
-				say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
-				if watersports mechanics is 1, UrinePuddleUp 3;
+				say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1][slimeonself] and then [end if]pass out.";
+				if watersports mechanics is 1, SlimePuddleUp 3;
 				now delayed fainting is 1;
 				now the fainting reason of the player is 8;
 				if there is a wench penetrating face, now the fainting reason of the player is 9;
@@ -636,7 +642,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 				say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
 				PainUp 10;
 		otherwise:
-			say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
+			say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you, and you won't be able to regain energy.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
 			increase the suffocation of the player by 1;
 			let M be a random monster penetrating face;
 			if M is nothing, now M is a random monster grabbing the player;
@@ -666,28 +672,28 @@ To compute pink smoke:
 	if there is a gladiator in the location of the player and R < 6 and a random number between 1 and 2 is 1, increase R by 6; [gladiators make bust increases more likely]
 	if the player is not able to breathe, now R is 0;
 	if diaper quest is 1:
-		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
+		if the player is possessing a penis and a random number between 1 and 2 is 1, now R is 7; [penis shrink]
 		otherwise now R is 1; [arousal]
 	if the player is in Facility34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
 	if game difficulty > 2 and R >= 10:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		RandomStatDown 1;
 	otherwise if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R >= 6:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		SpecialPenisDown 1;
 	otherwise if R >= 6 and diaper quest is 0:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
 		Bustup 1;
 	otherwise if R is 5:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the blondeness of hair is 3]Your hair feels tingly.[end if]";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the blondeness of hair is 3]Your hair feels tingly.[end if]";
 		HairBlondeUp 1;
 	otherwise if R is 4:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the redness of hair is 3]Your hair feels strange.[end if]";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the redness of hair is 3]Your hair feels strange.[end if]";
 		HairRedUp 1;
 	otherwise if R is 0:
 		say "[one of]You would be breathing in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] in this room, but you can't breathe at the moment![or][stopping]";
 	otherwise:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
+		say "You lightly cough as [if the player is prone]your position on your knees forces you to[otherwise]you[end if] breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
 		arouse 1000;
 	if R is not 0 and the number of dangerous gladiators in the location of the player is 0, say "(You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])".
 
@@ -752,7 +758,7 @@ To Compute Compulsions:
 			summon cultist veil;
 			now another-turn is 1;
 		if the traitor-h of traitor-training > 0:
-			if diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
+			if diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to slime and the player is able to use a urinal:
 				if (ex-princess is in the location of the player and ex-princess is caged) or (woman-player is in the location of the player and the woman-status of woman-player is 98):
 					decrease the traitor-h of traitor-training by 1;
 					say "You remember that it is your duty to [second custom style]help your friend[roman type].";
@@ -840,7 +846,7 @@ The great ones hypno rule is listed in the speech triggers rules.
 
 This is the present-for-oral hypno rule:
 	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 0:
-		say "[bold type]Having heard the word 'tasty', you find yourself automatically [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
+		say "[bold type]Having heard the word 'tasty', you [if legacy content is 0]follow the secret 'give a blowjob code,'[otherwise]find yourself automatically[end if] [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
 		if the player is upright, try silently kneeling;
 		let M be a random interested monster in the location of the player;
 		if M is nothing:
@@ -859,7 +865,7 @@ The present-for-oral hypno rule is listed in the speech triggers rules.
 This is the eat-all-food hypno rule:
 	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 1:
 		if the number of held food > 0 and face is not actually occupied and the player is able to eat:
-			say "[bold type]Having heard the word 'tasty', you find yourself automatically starting to eat everything you can.[roman type][line break]";
+			say "[bold type]Having heard the word 'tasty', you [if legacy content is 0]follow the secret 'eat as much as possible code,'[otherwise]find yourself automatically[end if] starting to eat everything you can.[roman type][line break]";
 			now auto is 1;
 			repeat with F running through held food:
 				try TQeating F;
@@ -911,7 +917,7 @@ This is the autopiss hypno rule:
 	if htrigger is "please" and htrigger-please is 1:
 		if diaper lover > 0:
 			if the bladder of the player > 0 and the latex-transformation of the player <= 4:
-				say "[bold type]Having heard the word 'please', your bladder immediately lets itself go, completely without your conscious control.[roman type][line break]";
+				say "[bold type]Having heard the word 'please', your [SlimeContainer] immediately lets itself go, completely without your conscious control.[roman type][line break]";
 				now delayed urination is 1;
 				try urinating;
 		otherwise if the player is able to get horny: [Different hypnotic effect from the statue when diapers are disabled]
@@ -966,13 +972,13 @@ A later time based rule (this is the science charge decay rule):
 A later time based rule (this is the laundry charge decay rule):
 	if the charge of laundry robots > 0, decrease the charge of laundry robots by time-seconds.
 
-previous-urine-upset is a number that varies.
-An all later time based rule (this is the urine gross out resolution rule):
-	let P be previous-urine-upset;
-	if the player is upset about urine, now previous-urine-upset is 1;
-	otherwise now previous-urine-upset is 0;
-	if P is not previous-urine-upset:
-		if P is 0, say "[bold type][one of]You can't help but be a bit grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be reduced.[or]Once again your dexterity is reduced until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]".
+previous-slime-upset is a number that varies.
+An all later time based rule (this is the slime gross out resolution rule):
+	let P be previous-slime-upset;
+	if the player is upset about slime, now previous-slime-upset is 1;
+	otherwise now previous-slime-upset is 0;
+	if P is not previous-slime-upset:
+		if P is 0, say "[bold type][one of]You can't help but be a bit grossed out by the [if the number of worn slime soaked clothing > 1][slime] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn slime soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be reduced.[or]Once again your dexterity is reduced until you can escape the gross [if the number of worn slime soaked clothing > 1][slime] soaked clothing[otherwise][random worn slime soaked clothing][end if].[stopping][roman type][line break]".
 
 previous-mess-upset is a number that varies.
 An all later time based rule (this is the mess gross out resolution rule):
@@ -980,7 +986,7 @@ An all later time based rule (this is the mess gross out resolution rule):
 	if the player is upset about mess, now previous-mess-upset is 1;
 	otherwise now previous-mess-upset is 0;
 	if P is not previous-mess-upset:
-		if P is 0 and previous-urine-upset is 0:
+		if P is 0 and previous-slime-upset is 0:
 			if the player is upset about sitting in mess:
 				if diaper messing is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping][if the player is not magically horny and the player is a bit horny]! Your arousal quickly begins to disappear as the reality of your situation hits you[end if].[roman type][line break]";
 				otherwise say "[bold type][one of]You can't believe what has just happened! Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";

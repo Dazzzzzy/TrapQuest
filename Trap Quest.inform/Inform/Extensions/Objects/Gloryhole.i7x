@@ -245,7 +245,7 @@ To say SexSubmissionFlav of (G - a gloryhole):
 		say "[if the oral sex addiction of the player < 5]You stay still and let the anonymous [manly-penis] fuck your mouth.[otherwise][one of]You fellate the anonymous [manly-penis] with your mouth.[or]You suck diligently on the [manly-penis] poking through the hole in the wall.[or]You find yourself moaning gently as you pleasure the anonymous stranger's [manly-penis].[or]You smile inwardly at the pleasant taste of the stranger's [manly-penis].[or]You push the large [manly-penis] to the back of your mouth tickling the entrance to your throat. The man on the other side of the wall groans with pleasure.[or]You fuck the anonymous [manly-penis] with your face as fast and hard as you can, making a[line break][variable custom style]'Hyuk hyuk hyuk'[roman type][line break]sound as you do.[in random order][end if]";
 	otherwise if G is normal glory hole:
 		if player-urinating is 1:
-			say "You stand there patiently and allow your flow of [urine] to continue.";
+			say "You stand there patiently and allow your flow of [slime] to continue.";
 		otherwise:
 			if the player is upright, say "You stand still and continue to enjoy the oral service[one of], although it does feel a bit weird being held in place by magical forces[or][or][or][or][or][cycling].";
 			if the semen volume of vagina > 0:
@@ -282,7 +282,7 @@ An all time based rule (this is the compute gloryhole rule):
 			if gloryhole is normal glory hole:
 				if the player is male:
 					if player-urinating is 1:
-						say "[one of]The anonymous mouth obediently gulps down your [urine] as you try to slow down the flow enough for her have time to swallow it all[or]The girl on the other side continues to hoover the [urine] out of your [player-penis] and drink every single drop[stopping].";
+						say "[one of]The anonymous mouth obediently gulps down your [slime] as you try to slow down the flow enough for her have time to swallow it all[or]The girl on the other side continues to hoover the [slime] out of your [player-penis] and drink every single drop[stopping].";
 					otherwise if (the player is extremely horny and the turns trapped of gloryhole > 1) or (the player is very horny and the turns trapped of gloryhole > 3) or the turns trapped of gloryhole > 5 or the size of penis < 3:
 						[Some mods for small penis sizes:]
 						if the player is not possessing a penis:

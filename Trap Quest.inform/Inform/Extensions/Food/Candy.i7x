@@ -101,15 +101,15 @@ To compute CandyCornEat:
 						let S be 13 - the total-soak of C;
 						if S > 0:[Below 13? Dirty it up!]
 							if watersports fetish is 1 and a random number between 1 and 2 is 1:
-								say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [urine]!";
-								PissSoak S on C;
+								say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [slime]!";
+								SlimeSoak S on C;
 							otherwise:
 								if bukkake fetish is 1:
 									say "[line break]A [if the semen addiction of the player < 6]heavy[otherwise]heavenly[end if] smell hits your nose as your [printed name of C] suddenly dampens with [semen]!";
 									CumSoak S on C;
 								otherwise:[if bukkake fetish is 0, it means that watersports fetish must be 1, otherwise we would have gone for hair colour.]
-									say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [urine]!";
-									PissSoak S on C;
+									say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [slime]!";
+									SlimeSoak S on C;
 						otherwise if S < 0:[Above 13? Clean it completely!]
 							say "a lemony smell wafts into your nose as your [printed name of C] dries out completely!";
 							clean C;[At 13? No change.]
@@ -401,7 +401,7 @@ Carry out TQeating creme egg:
 				say "taste something extremely sour.[line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
 				increase suppository by 2;
 			otherwise:
-				say "taste something bitter. Moments later, you feel a slight twinge in your bladder as your control over it weakens.";
+				say "taste something bitter. Moments later, you feel a slight tremble in your [SlimeContainer] as your control over it weakens.";
 				SilentlyBladderIncontinenceUp 1;
 		otherwise:
 			say "are [if the semen taste addiction of the player > 12]thrilled[otherwise if the semen taste addiction of the player > 8]surprised[otherwise if the semen taste addiction of the player > 4]dismayed[otherwise]disgusted[end if] to find that it is filled with [semen]! You [if the semen taste addiction of the player > 10]happily swallow it[otherwise]reluctantly force it[end if] down.";

@@ -22,7 +22,7 @@ To say ExamineDesc of (C - an ass hook):
 To decide which figure-name is the examine-image of (C - an ass hook):
 	if playerRegion is facility:
 		let K be a random worn knickers;
-		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook facility wedgie pissed;
+		if K is knickers and the slime-soak of K > 0, decide on figure of ass hook facility wedgie pissed;
 		decide on figure of ass hook facility wedgie;
 	if C is penetrating asshole:
 		if the player is not possessing a vagina, decide on figure of hook cutscene 1;

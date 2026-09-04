@@ -60,7 +60,7 @@ To compute periodic effect of (L - a onesie):
 			now the charge of L is 0;
 			let D be the chosen smallish diaper;
 			if D is actually summonable:
-				summon D;
+				summon D cursed with quest;
 				say "[bold type]You feel a [D] [bold type]appear out of nowhere under your [L][bold type]![roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a onesie):
@@ -219,9 +219,9 @@ To compute periodic effect of (C - tubesuit):
 		if D is messed:
 			say "You are forced to [one of]breathe in every single last disgusting wisp of stink emitted by[or]inhale a whiff of the full pungent stink of[or]smell the horrid concentrated aroma created by[or]sniff the intense foul scent of[at random] your messy [ShortDesc of D]!";
 			SlowGrossOut messyDiaperSmellGrossnessLevel + (the mess of D / 10);
-		otherwise if the urine-soak of D > 0:
-			say "[one of]Your olfactory senses are flooded by[or]You are forced to smell[or]You can't help but breathe in[in random order] the [one of]strong[or]powerful[purely at random] [one of]smell[or]scent[purely at random] of [urine] from your [ShortDesc of D]!";
-			SlowGrossOut 3 + (the urine-soak of D / 15);
+		otherwise if the slime-soak of D > 0:
+			say "[one of]Your olfactory senses are flooded by[or]You are forced to smell[or]You can't help but breathe in[in random order] the [one of]strong[or]powerful[purely at random] [one of]smell[or]scent[purely at random] of [slime] from your [ShortDesc of D]!";
+			SlowGrossOut 3 + (the slime-soak of D / 15);
 		otherwise if the semen-soak of D > 0:
 			say "It [one of]smells like[or]stinks of[or]smells strongly of[at random] [semen].";
 			SlowGrossOut 2;

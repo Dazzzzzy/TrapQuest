@@ -632,9 +632,9 @@ The transform-resistance of transforming-earrings is 0.
 Definition: transforming-earrings is toilet themed:
 	if it is cursed and watersports fetish is 1, decide yes;
 	decide no.
-This is the earrings piss slut rule:
+This is the earrings slime slut rule:
 	if there is a worn toilet themed pair of earrings, increase the desirability of belly by 8.
-The earrings piss slut rule is listed in the piss slut eligibility rules.
+The earrings slime slut rule is listed in the slime slut eligibility rules.
 Definition: transforming-earrings is interracial themed:
 	if it is cursed and watersports fetish is 0, decide yes;
 	decide no.
@@ -721,7 +721,7 @@ To decide which figure-name is the clothing-image of (C - transforming-earrings)
 To say ClothingDesc of (C - transforming-earrings):
 	if C is cursed:
 		if watersports fetish is 1:
-			say "A pair of earrings shaped like toilet rolls, marking you as a human toilet. ";
+			say "A pair of earrings shaped like [SlimeTarget] rolls, marking you as a human [SlimeTarget]. ";
 		otherwise if interracial fetish is 1:
 			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it. ";
 		otherwise if the player is originally female and the variation of C is 1:
@@ -758,7 +758,7 @@ To decide which number is the bimbo-influence of (C - transforming-earrings):
 To decide which number is the anal-sex-addiction-influence of (C - transforming-earrings):
 	if C is cursed and the variation of C is not 2 and watersports fetish is 0, decide on 1;
 	decide on 0.
-To decide which number is the urine-taste-addiction-influence of (C - transforming-earrings):
+To decide which number is the slime-taste-addiction-influence of (C - transforming-earrings):
 	if C is cursed and watersports fetish is 1, decide on 1;
 	decide on 0.
 To decide which number is the oral-sex-addiction-influence of (C - transforming-earrings):

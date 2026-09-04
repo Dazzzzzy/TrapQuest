@@ -22,7 +22,7 @@ Carry out TQeating truffle:
 				say "your bowels rumble worryingly!";
 				increase suppository by 1;
 			otherwise:
-				say "you feel a weird numbness in your bladder!";
+				say "you feel a weird [if slimeshooter fetish is 1]calmness from[otherwise]numbness in[end if] your [SlimeContainer]!";
 				SilentlyBladderIncontinenceUp 1;
 		otherwise:
 			say "The rich chocolate leaves you feeling really satisfied, but it's impossible to let go of the knowledge that someone definitely came in your food.";

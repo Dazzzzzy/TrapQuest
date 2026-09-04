@@ -61,7 +61,7 @@ To say MonsterDesc of (M - a fairy):
 	if diaper quest is 1:
 		say "A fairy.";
 	otherwise:
-		if lady fetish is 2:
+		if andro fetish is 1:
 			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned fairy, about twice the size of your fist. [big he of M] has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. [big he of M] has a thin, wispy body and [his of M] although it's hard to tell thanks to [his of M] erratic movements, [his of M] [DickDesc of M] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
 		otherwise:
 			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned fairy, about twice the size of your fist. [big he of M] has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. [big his of M] breasts are big for [his of M] size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized [man of M], and [his of M] [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down [his of M] erratic, unpredictable movements at all.".
@@ -71,9 +71,9 @@ To set up (M - a fairy):
 	now the monstersetup of M is 1;
 	add pink-hair to the tradableItems of M, if absent;
 	add pink-hair to the taxableItems of M, if absent;
-	add womb-potion to the tradableItems of M, if absent;
-	add womb-potion to the taxableItems of M, if absent;
 	if pregnancy fetish is 1:
+		add womb-potion to the tradableItems of M, if absent;
+		add womb-potion to the taxableItems of M, if absent;
 		let T be a random birth control for sissies T-shirt;
 		add T to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
@@ -121,6 +121,9 @@ To compute labour to (M - a fairy):
 
 To say NonAliveFatherBirthFlav of (M - a fairy):
 	say "[if playerRegion is Woods]You should probably make sure the exit to your vagina is clear[otherwise]Something tells you that you should return to the Woods[end if]!".
+
+To say LongDickDesc of (M - a fairy):
+	say "[one of]miniature[or]minuscule[or]mini[or]tiny[at random], locked-away [DickDesc of M]".
 
 Part 1 - Perception
 
@@ -171,7 +174,7 @@ To say MonsterOfferAcceptFlav of (M - a fairy) to (T - a thing):
 	otherwise:
 		say "[BigNameDesc of M] seems elated.[line break][speech style of M]'Wow, thank you so much! It's like Christmas!'[roman type][line break]".
 
-To say GroundPeeReaction of (M - a fairy):
+To say GroundSlimeReaction of (M - a fairy):
 	say "[speech style of M]'Tee-hee, you're such a naughty minx!'[roman type][line break]".
 
 To compute enema floor reaction of (M - a fairy):
@@ -617,10 +620,20 @@ To compute fairy meddling on (XXX - vagina):
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [printed name of D] as [he of current-monster] does. ";
 		potentially transform D;
 	otherwise:
+		let B be 0;
+		if the player is bursting, now B is 1;
 		increase the bladder of the player by 7;
 		if the bladder of the player < 14, now the bladder of the player is 14;
 		if the bladder of the player > 20, now the bladder of the player is 20;
-		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as [he of current-monster] does. [big he of current-monster] turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
+		if B is 1:
+			say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [if slimeshooter fetish is 1]slimeshooter[otherwise]waist[end if] as [he of current-monster] does. [if slimeshooter fetish is 1]It seems even more bloated![otherwise]You suddenly feel an urgent need to [slimedrain]![end if]";
+		otherwise:
+			if the player is bursting:
+				if slimeshooter fetish is 1, say "[BigNameDesc of current-monster] whizzes past you, firing a tiny blue bolt at your waist as [he of current-monster] does. [big he of current-monster] turns and smirks as a very bloated slimeshooter pops into existence!";
+				otherwise say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as [he of current-monster] does. [big he of current-monster] turns and smirks as you feel a sudden urgent need to [slimedrain].";
+			otherwise:
+				say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as [he of current-monster] does. [big he of current-monster] turns and smirks, though you have no clue why.".
+
 
 [Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off? And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
 [Aika: Maybe we do need a more reliable way to deal with fairies. Something like the spraybottle idea but accessible to any class (or at least most)]
@@ -1027,7 +1040,7 @@ fairy-witch is a fairy. The text-shortcut of fairy-witch is "faw". Understand "f
 To say ShortDesc of (M - fairy-witch):
 	say MediumDesc of M.
 To say MediumDesc of (M - fairy-witch):
-	say "fairy [if lady fetish is 2]wizard[otherwise]witch[end if]".
+	say "fairy [if andro fetish is 1]wizard[otherwise]witch[end if]".
 
 To decide which figure-name is the monster-image of (M - fairy-witch):
 	if diaper quest is 1, decide on the figure of diaper fairy;

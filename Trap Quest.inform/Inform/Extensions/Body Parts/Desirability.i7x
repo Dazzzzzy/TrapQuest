@@ -58,7 +58,7 @@ An all time based rule (this is the determining desirability rule):
 			follow the penis slut eligibility rules;
 		if watersports fetish is 1:
 			now the desirability of belly is 5;
-			follow the piss slut eligibility rules;
+			follow the slime slut eligibility rules;
 		follow the butt slut eligibility rules;
 		follow the blowjob slut eligibility rules;
 		follow the tongue slut eligibility rules;
@@ -113,21 +113,21 @@ Let's check all the things that might increase the chances of oral sex.
 *!]
 the blowjob slut eligibility rules is a rulebook.
 
-[!<YourselfIsAPissSlut>+
+[!<YourselfIsASlimeSlut>+
 
 Let's check if the player has a huge magical influence towards watersports.
 
 +!]
-Definition: yourself is a piss slut:
+Definition: yourself is a slime slut:
 	if the desirability of belly >= 25 and belly is most desirable, decide yes;
 	decide no.
 
-[!<PissSlutEligibilityRules:Rulebook>*
+[!<SlimeSlutEligibilityRules:Rulebook>*
 
 Let's check all the things that might increase the chances of watersports.
 
 *!]
-the piss slut eligibility rules is a rulebook.
+the slime slut eligibility rules is a rulebook.
 
 [!<YourselfIsAPussySlut>+
 
@@ -190,6 +190,7 @@ To update gropability:
 			now the gropability of B is 0;
 		now the gropability of breasts is cleavage outrage + the breasts grope preference of groping-person;
 		if the player is a tit slut, increase the gropability of breasts by 8;
+		if grope-me-skirt is worn, increase the gropability of breasts by 9999;
 		now the gropability of asshole is the asshole grope preference of groping-person;
 		if the player is a butt slut, increase the gropability of asshole by 8;
 		now the gropability of vagina is the vagina grope preference of groping-person;
@@ -198,7 +199,7 @@ To update gropability:
 		if the player is a penis slut, increase the gropability of penis by 8;
 		if penis is at least partially exposed, increase the gropability of penis by 10 - the size of penis;
 		now the gropability of belly is the largeness of belly + the belly grope preference of groping-person;
-		if the player is a piss slut, increase the gropability of belly by 8;
+		if the player is a slime slut, increase the gropability of belly by 8;
 		now the gropability of face is the lewdly exposed outrage of face + the face grope preference of groping-person;
 		if the player is a blowjob slut, increase the gropability of face by 8;
 		now the gropability of thighs is 5 + the thighs grope preference of groping-person;
@@ -246,7 +247,7 @@ To decide which number is the groping threshold of (M - a person):
 	decide on a random number between 10 and 20.
 Definition: a person (called M) is groping:
 	if segway-predicament is penetrating a fuckhole, decide no;
-	if grope-me-skirt is worn, decide yes;
+	if grope-me-skirt is worn and hair is listed in the armUses of arms, decide yes;
 	if diaper quest is 1, decide no;
 	if M is monster and the times-met of M is 0, decide no;
 	if M is interested-in-groping, decide yes;
@@ -370,7 +371,9 @@ To compute seduction grope of (M - a monster):
 		if refractoryperiod > RF, compute grope orgasm reaction of M.
 
 To say BreastsGropeFlav of (M - a person):
-	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These [if the silicone volume of breasts > 0]bolt-ons[otherwise]funbags[end if] are just begging to be played with!'[or]Do you really expect people to just leave these alone when you walk around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
+	if M is not unintelligent monster:
+		if grope-me-skirt is worn,say "[speech style of M]'[one of]Well, if your sign says I can...'[or]Wow, today is my lucky day!'[or]Honk honk!'[then at random][roman type][line break]";
+		otherwise say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These [if the silicone volume of breasts > 0]bolt-ons[otherwise]funbags[end if] are just begging to be played with!'[or]Do you really expect people to just leave these alone when you walk around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
 To compute breasts grope of (M - a person):
 	if the number of worn rigid actually nipple covering clothing is 0 and M is intelligent:
 		let V be the milk volume of breasts;
@@ -435,7 +438,7 @@ To say BellyGropeFlav of (M - a person):
 		otherwise if the total squirtable fill of belly > 0:
 			say "[speech style of M]'[one of]Looks like someone is keeping themselves nice and full of their recent conquests. What a [slut] you are.'[or]I can't believe this. Is your belly really full of... you know what?'[or]Oh my god, you really are carrying around a belly full of... of... yuck!!!'[in random order][roman type][line break]";
 		otherwise if M is willing to urinate monster and watersports fetish is 1:
-			say "[speech style of M]'[one of]This belly would look even hotter if it was full of my piss, don't you think?'[or][if the largeness of belly > 3]Your belly looks nice and full[otherwise]Don't you think you should try and keep this belly nice and full of piss[end if], like a good little toilet...'[or]This tummy of yours, something tells me its destiny is to be a piss bucket. Hmm...'[or]Tell me, does your stomach crave to be filled to the brim with piss?'[in random order][roman type][line break]";
+			say "[speech style of M]'[one of]This belly would look even hotter if it was full of my [slime], don't you think?'[or][if the largeness of belly > 3]Your belly looks nice and full[otherwise]Don't you think you should try and keep this belly nice and full of [slime][end if], like a good little [SlimeTarget]...'[or]This tummy of yours, something tells me its destiny is to be a [slime] bucket. Hmm...'[or]Tell me, does your stomach crave to be filled to the brim with [slime]?'[in random order][roman type][line break]";
 		otherwise if M is male monster:
 			say "[speech style of M]'[one of]Something tells me you would be a lot happier if you were full of my cum.'[or][if pregnancy fetish > 0]Not pregnant yet? There's still time...'[otherwise]Are you thirsty, [honey of M]? If so, I could help...'[end if][or]I wonder, is this really a normal stomach, or is it just a cum receptacle in disguise?'[in random order][roman type][line break]";
 		otherwise:
@@ -447,7 +450,7 @@ To compute belly grope of (M - a person):
 To compute face grope of (M - a person):
 	if there is worn ringagged clothing or (the player is a nympho and the player is not feeling dominant):
 		say "[BigNameDesc of M] [one of]pushes[or]worms[in random order] two fingers into your [if the player is a nympho and the player is not feeling dominant]willing and [end if]open mouth, [one of]prodding[or]inspecting[or]pushing down on[in random order] your [if the player is a nympho and the player is not feeling dominant]obedient[otherwise]defenceless[end if] tongue.";
-		if M is not unintelligent monster and M is not seduced monster, say "[speech style of M]'[one of]Well isn't this just begging to be filled?'[or]Thirsty, [slut]?'[or][if M is willing to do oral monster]I know a good quality fuckhole when I see one.'[otherwise]Well don't you just look positively scrumptious...'[end if][or][if M is willing to urinate monster]Some day soon I'm going to use this cute little mouth as my personal toilet.'[otherwise]I bet you're a slobberer.'[end if][in random order][roman type][line break]";
+		if M is not unintelligent monster and M is not seduced monster, say "[speech style of M]'[one of]Well isn't this just begging to be filled?'[or]Thirsty, [slut]?'[or][if M is willing to do oral monster]I know a good quality fuckhole when I see one.'[otherwise]Well don't you just look positively scrumptious...'[end if][or][if M is willing to urinate monster]Some day soon I'm going to use this cute little mouth as my personal [SlimeTarget].'[otherwise]I bet you're a slobberer.'[end if][in random order][roman type][line break]";
 	otherwise if the lips of face > a random number between 0 and 3:
 		say "[BigNameDesc of M] runs a finger along your [LipDesc].";
 		if M is not unintelligent monster and M is not seduced monster, say "[speech style of M]'[one of]These lips are just perfect for a [slut] like you.'[or][if the lips of face > 1]I wonder if you realise quite how ridiculous these make you look[otherwise]If you want to play the part of the PERFECT slut, you would let these grow even bigger[end if]...'[or][if M is willing to do oral male monster]I bet these would feel amazing around my [manly-penis]...'[otherwise]Well don't you just look positively scrumptious...'[end if][in random order][roman type][line break]";
@@ -480,6 +483,8 @@ To compute grope reaction of (M - a person):
 	otherwise if the player is a pervert:
 		say "[one of]You try to ignore the arousal that [his of M] touch has sent to your [genitals][or]You can't help but shiver with arousal[or]Your heart flutters[or]Your breath quickens[in random order].";
 		if the player is able to speak, say "[variable custom style]'[if the player is feeling submissive][one of]T-thank you, I think...'[or]Aah~! Please be gentle with me...'[or]Haaaah~!'[or]Eek! That feels... Ooh...'[or]Eep! You surprised me!'[in random order][otherwise if the player is not feeling dominant][one of]Eep! What happened to asking someone first?!'[or]Oh my! How crude!'[or]Aah~! Well, I guess it's better than you trying to fuck me...'[or]Eek! Is this your crude attempt at flirting?!'[in random order][otherwise][one of]H-Hey! Don't touch what isn't yours, unless you want a fight.'[or]Careful [stud of M]. I might decide to do the same to you, or worse.'[or]Oi! Do I look like the kind of [man of the player] who is going to just bend over for the first [stud of M] who touches me there?!'[in random order][end if][roman type][line break]";
+	otherwise if grope-me-skirt is worn:
+		if the player is able to speak, say "[variable custom style]'[one of]J-just because there's a sign doesn't mean you shouldn't ask first!'[or]W-wait, you don't understand, I don't want to look like this!'[cycling][roman type][line break]You squeal with shy indignation.[line break][strongHumiliateReflect]";
 	otherwise:
 		say "[if the player is feeling submissive]You squeal with indignation[otherwise if the player is not feeling dominant]You snarl with anger[otherwise if the player is not able to use their hands]You shake with anger[otherwise]You smack [his of M] hand away[end if].";
 		if the player is able to speak, say "[if the player is feeling submissive][variable custom style]'[one of]T-that's much too forward...'[or]Nooo, please don't touch me there, [stud of M]!'[or]Haaaah~! Please, I'm not that kind of [boy of the player]...'[or]Eek! That feels wrong!'[or]Eep! You can't just do that to people with no warning!'[in random order][otherwise if the player is not feeling dominant][variable custom style]'[one of]Is that really how people treat each other around here?!'[or]H-hey! You can't just grope people like that!'[or]What the hell was that?!'[or]Hey, get off me!'[in random order][otherwise][variable custom style]'[one of]What the fuck! Did I say you could touch me?!'[or]Hey! No touching, motherfucker!'[or]What the fuck do you think you're doing?!'[or]Get the fuck away from me, creep!'[or]Hey! Keep your hands to yourself, you fucking pervert!'[or]What the fuck! Are you looking for a fight?!'[or]Don't fucking touch me! Step the fuck back before I cave in your skull.'[in random order][end if][roman type][line break]".

@@ -12,7 +12,7 @@ Definition: fishbowl is blessable: decide no.
 To compute drinking (X - fishbowl):
 	unless the fill-type of X > highest-cursed, compute cursed drinking X.
 
-fishbowl-hat is a headgear. fishbowl-hat is glass. Understand "fish", "bowl", "fishbowl" as fishbowl-hat. fishbowl-hat can be fishbowl-cum, fishbowl-urine, or betrayal (this is the fishbowl-hat-type property).
+fishbowl-hat is a headgear. fishbowl-hat is glass. Understand "fish", "bowl", "fishbowl" as fishbowl-hat. fishbowl-hat can be fishbowl-cum, fishbowl-slime, or betrayal (this is the fishbowl-hat-type property).
 The printed name of fishbowl-hat is "[clothing-title-before]fishbowl[clothing-title-after]". The text-shortcut of fishbowl-hat is "fshb".
 
 To set up influence of (C - fishbowl-hat):
@@ -36,11 +36,11 @@ Figure of upside down fishbowl urine is the file "Items/Accessories/Head/bowl3.p
 
 To decide which figure-name is the clothing-image of (C - fishbowl-hat):
 	if C is betrayal, decide on figure of upside down fishbowl traitor;
-	if C is fishbowl-urine, decide on figure of upside down fishbowl urine;
+	if C is fishbowl-slime and legacy watersports fetish is 1, decide on figure of upside down fishbowl urine;
 	decide on figure of upside down fishbowl cum.
 
 To say ClothingDesc of (H - fishbowl-hat):
-	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session with [NameDesc of woman-player][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red pen across the front, to let everyone know you have no honour even amongst your own kind[end if].".
+	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][slime] and [end if][semen] that was collected during your gangbang session with [NameDesc of woman-player][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red pen across the front, to let everyone know you have no honour even amongst your own kind[end if].".
 
 To compute SelfExamineDesc of (H - fishbowl-hat):
 	say "You are wearing a glass bowl [if H is betrayal]that reads 'WHORE TRAITOR' [end if]on top of your [ShortDesc of hair]. ".
@@ -48,7 +48,7 @@ To compute SelfExamineDesc of (H - fishbowl-hat):
 Chapter - Class Outfit
 
 Definition: fishbowl-hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if the semen-soak of wearing-target > 0 or the urine-soak of wearing-target > 0, decide yes;
+	if the semen-soak of wearing-target > 0 or the slime-soak of wearing-target > 0, decide yes;
 	decide no.
 
 Check cleaning a body part with a clothing when fishbowl-hat is worn:
@@ -58,7 +58,7 @@ Check showering when fishbowl-hat is worn:
 	say "Your [fishbowl-hat] is somehow preventing your muscles from following through on that command!" instead.
 
 To say RemovalBlocked of (C - fishbowl-hat):
-	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has [if the urine-soak of C > 0][urine] or [end if][semen] on it!".
+	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has [if the slime-soak of C > 0][slime] or [end if][semen] on it!".
 
 This is the fishbowl class rule:
 	if fishbowl-hat is worn:

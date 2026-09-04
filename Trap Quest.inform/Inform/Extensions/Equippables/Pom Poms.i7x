@@ -36,7 +36,7 @@ To decide which number is the slap damage improvement of (W - a pom-pom):
 To decide which number is the luck-influence of (W - a pom-pom):
 	decide on the magic-modifier of W + 5.
 
-To compute periodic effect of (C - a pom-pom):
+To compute charge decay of (C - a pom-pom):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
 		if the charge of C < 1, say "Your [printed name of C] stop glowing as your excess spirit fades.".
@@ -59,7 +59,7 @@ To decide which figure-name is the clothing-image of (F - purple-pom-pom):
 	decide on figure of pom poms.
 
 To say ClothingDesc of (C - purple-pom-pom):
-	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the sluttier you look, the more they will enhance your agility.".
+	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the sluttier you look, the more they will enhance your agility.[if the charge of C > 0] Your cheering has charged them up with spirit![end if]".
 
 To say MediumDesc of (C - purple-pom-pom):
 	say "pair of purple pom-poms".
@@ -78,7 +78,9 @@ To compute periodic effect of (C - purple-pom-pom):
 		say "[bold type]Your [MediumDesc of C] reacts to having a used condom pinned to it![roman type] ";
 		UsedCondomWipe C;
 		now the empty condoms of C is 0;
-		transform C into condom-pom-pom.
+		transform C into condom-pom-pom;
+	otherwise:
+		compute charge decay of C.
 
 condom-pom-pom is a pom-pom. The printed name of condom-pom-pom is "[clothing-title-before]pair of used condom pom-poms[clothing-title-after]". Understand "used", "condom" as condom-pom-pom. The text-shortcut of condom-pom-pom is "cpom".
 
@@ -93,14 +95,15 @@ To decide which figure-name is the clothing-image of (F - condom-pom-pom):
 	decide on figure of condom pom poms.
 
 To say ClothingDesc of (C - condom-pom-pom):
-	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more you look like a slut, the more they will enhance your agility.".
+	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more you look like a slut, the more they will enhance your agility.[if the charge of C > 0] Your cheering has charged them up with spirit![end if]".
 
 To say MediumDesc of (C - condom-pom-pom):
 	say "pair of condom pom-poms".
 
 To compute periodic effect of (C - condom-pom-pom):
 	now the used condoms of C is 20;
-	now the empty condoms of C is 0.
+	now the empty condoms of C is 0;
+	compute charge decay of C.
 To compute facility periodic effect of (C - condom-pom-pom):
 	compute periodic effect of C.
 

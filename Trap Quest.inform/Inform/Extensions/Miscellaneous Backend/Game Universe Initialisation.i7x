@@ -63,7 +63,7 @@ To Start The Machine:
 	if debugmode > 1, say "Now configuring pink smoke.";
 	move pink smoke backdrop to all pink-smoky rooms;
 	move water-body backdrop to all water-bodied rooms;
-	if debugmode > 1, say "Now configuring toilets.";
+	if debugmode > 1, say "Now configuring [SlimeTarget]s.";
 	move toilet backdrop to all toilets rooms;
 	move urinal backdrop to all urinals rooms;
 	if spontaneous tattoos is 1:
@@ -127,9 +127,9 @@ To Start The Machine:
 				set numerical response 2 to "Touch the pentagram"; [doom quest starts but you get the necronomicon?]
 				set numerical response 3 to "Touch the bone"; [trick or treat]
 			otherwise:
-				say "[bold type]Dark forces are more powerful at this time of year! You sense a sinister energy in the air... Shaping your fate...[roman type][paragraph break]In front of you, in the darkness, are three items. You see a doll, a potty, and a bat wing in front of you. You could reach out and touch one, if you like...";
+				say "[bold type]Dark forces are more powerful at this time of year! You sense a sinister energy in the air... Shaping your fate...[roman type][paragraph break]In front of you, in the darkness, are three items. You see a doll, a [SlimeTargetP], and a bat wing in front of you. You could reach out and touch one, if you like...";
 				set numerical response 1 to "Touch the doll"; [ghosts?]
-				set numerical response 2 to "Touch the potty"; [urgently needs toilet]
+				set numerical response 2 to "Touch the [SlimeTargetP]"; [urgently needs toilet]
 				set numerical response 3 to "Touch the bat wing"; [diapered trick or treat]
 				set numerical response 4 to "Don't touch anything, and let the dark forces choose randomly for you...";
 			compute multiple choice question;
@@ -207,7 +207,7 @@ To Start The Machine:
 					now the bladder of the player is 11;
 					if diaper messing >= 3, now rectum is 8;
 					say "You are wearing a [trick-or-treat onesie] over a [purple-velcro-diaper], and a [pom-pom-shoes] over a [halloween socks].";
-					say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. But then you feel a concerning pressure in your bladder[if diaper messing >= 3] and bowels[end if].[line break][variable custom style]'Oh my... Actually... I really need to use your toilet!'[roman type][paragraph break][BigNameDesc of vampiress] steps up to you, and places a hand on the front of your onesie, feeling the soft padding underneath.[line break][speech style of vampiress]'But you have your potty right here, don't you?'[roman type][paragraph break]You recoil, but your enchanted [halloween socks] force you to keep your legs wide apart, so it's actually more of an embarrassing waddle.[line break][variable custom style]'N-no way! That's just part of my costume! Please, I don't want to [if diaper messing >= 3]poop[otherwise]wet[end if] myself!'[roman type][paragraph break][BigNameDesc of vampiress] laughs patronizingly.[line break][speech style of vampiress]'Okay okay, sure thing. But let's turn it into a game. If you can't find the toilet before you [if diaper messing >= 3]make [']pushies['][otherwise]soak yourself[end if], then I'm going to keep you in diapers until you can learn to use the potty like a big [boy of the player].'[roman type][paragraph break]You're too desperate to argue.[line break][variable custom style]'F-fine! Whatever! Just let me in!'[roman type][paragraph break][BigNameDesc of vampiress] smirks and steps to the side, inviting you in. You awkwardly waddle past [him of vampiress], and into [his of vampiress] creepy old mansion.[line break][speech style of vampiress]'If you see anything scary, try not to [if diaper messing >= 3]poop[otherwise]piss[end if] your pants with fear.'[roman type][line break][big he of vampiress] whispers in your ear as you pass [him of vampiress].";
+					say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. But then you feel a concerning pressure in your [SlimeContainer][if diaper messing >= 3] and bowels[end if].[line break][variable custom style]'Oh my... Actually... I really need to use your [SlimeTarget]!'[roman type][paragraph break][BigNameDesc of vampiress] steps up to you, and places a hand on the front of your onesie, feeling the soft padding underneath.[line break][speech style of vampiress]'But you have your potty right here, don't you?'[roman type][paragraph break]You recoil, but your enchanted [halloween socks] force you to keep your legs wide apart, so it's actually more of an embarrassing waddle.[line break][variable custom style]'N-no way! That's just part of my costume! Please, I don't want to [if diaper messing >= 3]poop[otherwise]wet[end if] myself!'[roman type][paragraph break][BigNameDesc of vampiress] laughs patronizingly.[line break][speech style of vampiress]'Okay okay, sure thing. But let's turn it into a game. If you can't find the [SlimeTarget] before you [if diaper messing >= 3]make [']pushies['][otherwise]soak yourself[end if], then I'm going to keep you in diapers until you can learn to use the potty like a big [boy of the player].'[roman type][paragraph break]You're too desperate to argue.[line break][variable custom style]'F-fine! Whatever! Just let me in!'[roman type][paragraph break][BigNameDesc of vampiress] smirks and steps to the side, inviting you in. You awkwardly waddle past [him of vampiress], and into [his of vampiress] creepy old mansion.[line break][speech style of vampiress]'If you see anything scary, try not to [if diaper messing >= 3]poop[otherwise][slime][end if] your pants with fear.'[roman type][line break][big he of vampiress] whispers in your ear as you pass [him of vampiress].";
 				otherwise if player-numerical-response is 3:
 					now candy corn is in Mansion28;
 					now liquorice is in Mansion36;
@@ -252,7 +252,7 @@ To Start The Machine:
 					now K is carried by matron;
 			if the bladder of the player < 5, now the bladder of the player is 5;
 			let D be a random worn diaper;
-			if D is diaper, UrineSoakUp D by the soak-limit of D;
+			if D is diaper, SlimeSoakUp D by the soak-limit of D;
 			if diaper messing >= 3 and rectum < 3, now rectum is 3;
 			now dungeon nursery crib is grabbing the player;
 			now the stance of the player is 1;
@@ -415,7 +415,7 @@ To initialise wardrobe:
 	if diaper focus >= 1, now C is a random plentiful training pants;
 	if diaper lover >= 1 and tough-shit is 1:
 		now the bladder of the player is 9;
-		say "[bold type]You are bursting to pee![line break][variable custom style]Crap, how unfair! I've got to find a toilet right away or I'm going to piss myself![roman type][line break]";
+		say "[bold type]You are bursting to [slimedrain]![line break][variable custom style]Crap, how unfair! I've got to find a [SlimeTarget] right away or I'm going to get [slime] on myself![roman type][line break]";
 	if C is clothing, add C to L;
 	now C is a random pinkWardrobeAppropriate bikini top;
 	if C is bikini top:

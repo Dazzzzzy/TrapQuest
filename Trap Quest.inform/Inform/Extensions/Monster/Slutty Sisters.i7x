@@ -3,13 +3,13 @@ Slutty Sisters by Monster begins here.
 A slutty sister is a kind of monster. A slutty sister is usually intelligent. Understand "Nintendoll" as a slutty sister.
 
 Definition: a slutty sister is wenchy:
-	if the player is not an april 2025 top donator, decide no;
+	if the player is not the donator, decide no;
 	decide yes.
 
 Definition: a slutty sister is raunchy: decide yes.
 Definition: a slutty sister is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a slutty sister is presenting as male:
-	if lady fetish is 2, decide yes;
+	if andro fetish is 1, decide yes;
 	decide no.
 Definition: a slutty sister is a urinater: decide no. [If they went to the bathroom they'd not be very good guards]
 Definition: a slutty sister is ready to entice: decide no. [Never entices]
@@ -29,8 +29,8 @@ Definition: futanari-slutty-sister is willing to do oral: decide no.
 Definition: futanari-slutty-sister is willing to do titfucks: decide no.
 
 To say DickDesc of (M - futanari-slutty-sister):
-	[say "[if futanari fetish is 0 and lady fetish < 2]dildo sword[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".]
-	say "[if lady fetish is 2][manly-penis][otherwise]dildo sword[end if]".
+	[say "[if futanari fetish is 0 and andro fetish is 0]dildo sword[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".]
+	say "[if andro fetish is 1][manly-penis][otherwise]dildo sword[end if]".
 
 To say LongDickDesc of (M - futanari-slutty-sister):
 	say "massive [DickDesc of M]".
@@ -83,12 +83,12 @@ Figure of Slutty Sisters Cutscene 1 is the file "NPCs/Bosses/SluttySister/slutty
 Figure of Slutty Sisters Cutscene 2 is the file "NPCs/Bosses/SluttySister/sluttysister-start2.png".
 
 To decide which figure-name is the monster-image of (M - futanari-slutty-sister):
-	if lady fetish is 2, decide on figure of male slutty sister;
+	if andro fetish is 1, decide on figure of male slutty sister;
 	[if futanari fetish is 0, ]decide on figure of dildo sword slutty sister;
 	decide on figure of futanari slutty sister.
 
 To decide which figure-name is the monster-image of (M - bulging-slutty-sister):
-	if lady fetish is 2, decide on figure of male bulging slutty sister;
+	if andro fetish is 1, decide on figure of male bulging slutty sister;
 	if the belly contents of M > 14, decide on figure of bulging slutty sister belly 3;
 	if the belly contents of M > 7, decide on figure of bulging slutty sister belly 2;
 	if the belly contents of M > 0, decide on figure of bulging slutty sister belly 1;
@@ -99,7 +99,7 @@ To say MonsterDesc of (M - a slutty sister):
 	if M is futanari-slutty-sister:
 		say "However, [if futanari fetish is 0]you're pretty sure the foot long, mega thick dildo sword is new[otherwise]you're pretty sure that in real life [he of M] didn't have a foot long, mega thick [DickDesc of M] dangling between [his of M] legs[end if].";
 	otherwise if M is bulging-slutty-sister:
-		if a2m fetish < 2 and lady fetish is 2, say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging ballsack[otherwise if the belly contents of M > 7]large, bloated ballsack[otherwise if the belly contents of M > 0]visibly swollen ballsack[otherwise]small, normal-sized ballsack[end if].";
+		if a2m fetish < 2 and andro fetish is 1, say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging ballsack[otherwise if the belly contents of M > 7]large, bloated ballsack[otherwise if the belly contents of M > 0]visibly swollen ballsack[otherwise]small, normal-sized ballsack[end if].";
 		otherwise say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging belly[otherwise if the belly contents of M > 7]large, bloated belly[otherwise if the belly contents of M > 0]visibly distended belly[otherwise]flat, empty belly[end if].".
 
 To say MonsterComment of (M - futanari-slutty-sister):
@@ -159,7 +159,7 @@ Definition: a slutty sister (called M) is objectifying the player:
 		now the objectification of M is 0;
 		decide no;
 	if the objectification of M is 1, decide yes;
-	if the wealth of the player >= 20:
+	if the endgame wealth of the player >= 500000:
 		now the objectification of M is 1;
 		decide yes;
 	decide no.
@@ -177,10 +177,10 @@ To compute perception of (M - a slutty sister):
 			if M is futanari-slutty-sister, say "[speech style of M]'Can you even handle that many humility stones? You won't be able to end the game unless you actually get past us and press the STOP button.'[roman type][line break]";
 			otherwise say "[speech style of M]'Ooh, yay, you made it at last! Yep, were the final boss and you... [if H is 6]collected all 6. Impressive.'[otherwise]collected [H]. Interesting.'[end if][roman type][line break]";
 		otherwise:
-			if M is futanari-slutty-sister, say "[speech style of M]'[one of]About fucking time, I was getting tired of [if lady fetish is 2 or futanari fetish > 0]just fucking Little Miss Cum Balloon here over and over[otherwise]toying with this airheaded bimbo over and over[end if].'[or]Yum, let's go again.'[stopping][roman type][line break]";
+			if M is futanari-slutty-sister, say "[speech style of M]'[one of]About fucking time, I was getting tired of [if andro fetish is 1 or futanari fetish > 0]just fucking Little Miss Cum Balloon here over and over[otherwise]toying with this airheaded bimbo over and over[end if].'[or]Yum, let's go again.'[stopping][roman type][line break]";
 			otherwise say "[one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][roman type][line break]";
 		if the times-met of M is 0 and M is futanari-slutty-sister:
-			if lady fetish is 2:
+			if andro fetish is 1:
 				alwayscutshow figure of slutty sisters cutscene 2 for M;
 			otherwise if futanari fetish > 0:
 				alwayscutshow figure of slutty sisters cutscene 1 for M;
@@ -266,7 +266,7 @@ This is the futanari lets bulging go first rule:
 	let M be current-monster;
 	if there is a worn messed knickers:
 		if bulging-slutty-sister is asleep and bulging-slutty-sister is in the location of the player:
-			say "[speech style of M]'Me next! Open wide, bitch!'[roman type][line break]Just as you think you're going to get a chance to properly breathe, [NameDesc of M] plugs your throat with [his of M] [LongDickDesc of M]. You choke around it, gasping and clawing for breath in vain. A few seconds later, your eyes roll back as you [if the bladder of the player > 0]wet yourself and [end if]pass out.";
+			say "[speech style of M]'Me next! Open wide, bitch!'[roman type][line break]Just as you think you're going to get a chance to properly breathe, [NameDesc of M] plugs your throat with [his of M] [LongDickDesc of M]. You choke around it, gasping and clawing for breath in vain. A few seconds later, your eyes roll back as you [if the bladder of the player > 0][slimedrain] on yourself and [end if]pass out.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 99;
 		otherwise:
@@ -332,10 +332,10 @@ To compute (M - bulging-slutty-sister) entering mouth:
 	otherwise say "[BigNameDesc of M] rolls you over onto your back!";
 	if presented-orifice is face, say "You let [him of M], and [he of M] immediately sits on your face. ";
 	otherwise say "[big he of M] succeeds, and immediately sits on your face. ";
-	if a2m fetish >= 2, say "[if lady fetish is 2]Facing your forehead, [he of M] pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] vagina, and your mouth with [his of M] taint, giving you access to both [his of M] creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][speech style of M]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
-	otherwise say "[if lady fetish is 2]Facing your forehead, [he of M] pinches your nose shut with two fingers and fills your mouth with the tip of [his of M] cum-leaking [manly-penis], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] creampied pussy, and cutting off your ability to breathe.[end if][line break][speech style of M]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
-	if bukkake fetish is 1 and (lady fetish < 2 or a2m fetish >= 2):
-		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2][his of M] hole[otherwise]both [his of M] holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
+	if a2m fetish >= 2, say "[if andro fetish is 1]Facing your forehead, [he of M] pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] vagina, and your mouth with [his of M] taint, giving you access to both [his of M] creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][speech style of M]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	otherwise say "[if andro fetish is 1]Facing your forehead, [he of M] pinches your nose shut with two fingers and fills your mouth with the tip of [his of M] cum-leaking [manly-penis], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] creampied pussy, and cutting off your ability to breathe.[end if][line break][speech style of M]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	if bukkake fetish is 1 and (andro fetish is 0 or a2m fetish >= 2):
+		say "[big his of M] [semen] starts to seep out of [if andro fetish is 1][his of M] hole[otherwise]both [his of M] holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
 		if the semen coating of face < 10, CumFaceUp 1;
 	now the sex-length of M is 4;
 	now the cum overload of M is 0;
@@ -343,15 +343,15 @@ To compute (M - bulging-slutty-sister) entering mouth:
 
 To compute facial sex of (M - bulging-slutty-sister):
 	if the oral sex addiction of the player > 6, passively stimulate face from M;
-	if bukkake fetish is 1 and (lady fetish < 2 or a2m fetish >= 2):
+	if bukkake fetish is 1 and (andro fetish is 0 or a2m fetish >= 2):
 		CumFaceUp 1;
 	compute facesit sex of M;
 	if delayed fainting is 0 and the sex-length of M is 0 and the reaction of the player > 0:
-		if lady fetish is 2, say "[BigNameDesc of M] climaxes on top of you, shooting several extra strings of [semen] [if a2m fetish >= 2]across your forehead[otherwise]inside your mouth[end if]. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
+		if andro fetish is 1, say "[BigNameDesc of M] climaxes on top of you, shooting several extra strings of [semen] [if a2m fetish >= 2]across your forehead[otherwise]inside your mouth[end if]. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
 		otherwise say "[BigNameDesc of M] climaxes on top of you, and [his of M] vaginal secretions sweeten the taste of the [semen] in your mouth. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]".
 
 To say FacesitResisting of (M - bulging-slutty-sister):
-	say "[one of]You keep your mouth closed, winning the battle but fighting a losing war. There's no way to escape the inevitability of fainting except to [if lady fetish is 2 and a2m fetish < 2]suck [him of M] off[otherwise]lick [him of M] out[end if]. [or]You keep your mouth shut, deciding you'd rather faint than submit. [or]You continue to keep your mouth shut, and await the inevitable. [stopping]".
+	say "[one of]You keep your mouth closed, winning the battle but fighting a losing war. There's no way to escape the inevitability of fainting except to [if andro fetish is 1 and a2m fetish < 2]suck [him of M] off[otherwise]lick [him of M] out[end if]. [or]You keep your mouth shut, deciding you'd rather faint than submit. [or]You continue to keep your mouth shut, and await the inevitable. [stopping]".
 
 To say FacesitResistingResponse of (M - bulging-slutty-sister):
 	say "[BigNameDesc of M] mercilessly holds [himself of M] in place.".
@@ -380,8 +380,8 @@ To say FacesitSubmissionResponse of (M - bulging-slutty-sister):
 			if the belly contents of M <= 0, say "The flow of [semen] seems to slow down and then dry up. [if the semen taste addiction of the player < 8]Hopefully[otherwise if the semen taste addiction of the player < 14 or the stomach of the player >= 10]Maybe[otherwise]Oh no,[end if] that's the last of it?[if the sex-length of M > 0][line break][BigNameDesc of M] continues to ride your face. It looks like you're not going to be allowed to breathe until you've made [him of M] cum![end if]";
 			otherwise say "[if SL <= 1]You only get through a small[otherwise if SL is 2]You manage to consume a decent[otherwise]You are able to bring yourself to guzzle down a huge[end if] amount of [semen] this turn.";
 	otherwise:
-		if a2m fetish >= 1, say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]";
-		otherwise say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give [if lady fetish is 2][NameDesc of M][']s [manly-penis][otherwise]the outside of [NameDesc of M][']s pussy[end if] a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go [if lady fetish is 2]along [NameDesc of M][']s shaft[otherwise]into [NameDesc of M][']s pussy[end if], and [he of M] responds by shuddering in pleasure.[in random order]".
+		if a2m fetish >= 1, say "You [one of]flick your tongue along [NameDesc of M][']s [if andro fetish is 1][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]";
+		otherwise say "You [one of]flick your tongue along [NameDesc of M][']s [if andro fetish is 1][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give [if andro fetish is 1][NameDesc of M][']s [manly-penis][otherwise]the outside of [NameDesc of M][']s pussy[end if] a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go [if andro fetish is 1]along [NameDesc of M][']s shaft[otherwise]into [NameDesc of M][']s pussy[end if], and [he of M] responds by shuddering in pleasure.[in random order]".
 
 To say NearingClimaxFacesit of (M - bulging-slutty-sister):
 	say FacesitSubmissionResponse of M;
@@ -430,18 +430,18 @@ To compute unique climax of (M - futanari-slutty-sister) in (F - asshole):
 	compute creampie of M in F;
 	now the sleep of M is 300;
 	if delayed fainting is 0:
-		if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
+		if andro fetish is 0 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
 		otherwise say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To compute unique climax of (M - futanari-slutty-sister) in (F - vagina):
 	compute creampie of M in F;
 	now the sleep of M is 300;
 	if delayed fainting is 0:
-		if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
+		if andro fetish is 0 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
 		otherwise say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To say CreampieFlav of (M - futanari-slutty-sister) in (F - a fuckhole):
-	if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'This sword has one final trick for you... Coming right up!'[roman type][line break]";
+	if andro fetish is 0 and futanari fetish is 0, say "[speech style of M]'This sword has one final trick for you... Coming right up!'[roman type][line break]";
 	otherwise say "[speech style of M]'Unf... So [if the openness of F < 8]tight, so [end if]good! Aaah!'[roman type][line break]";
 	say "[BigNameDesc of M][if futanari fetish is 0][']s magic sword starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]! It feels like there's a powerful hosepipe shoved inside your belly!";
 
@@ -458,7 +458,7 @@ To compute damage reaction of (M - futanari-slutty-sister):
 To compute damage reaction of (M - bulging-slutty-sister):
 	if M is awake:
 		if attack-type is 2 and the belly contents of M > 0:
-			say "Your knee right in [his of M] [if a2m fetish < 2 and lady fetish is 2]swollen scrotum[otherwise]stomach[end if] causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [if a2m fetish >= 2][asshole][otherwise if lady fetish is 2][manly-penis][otherwise][vagina][end if]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller [if a2m fetish < 2 and lady fetish is 2]ballsack[otherwise]belly[end if] has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
+			say "Your knee right in [his of M] [if a2m fetish < 2 and andro fetish is 1]swollen scrotum[otherwise]stomach[end if] causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [if a2m fetish >= 2][asshole][otherwise if andro fetish is 1][manly-penis][otherwise][vagina][end if]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller [if a2m fetish < 2 and andro fetish is 1]ballsack[otherwise]belly[end if] has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
 			if the belly contents of M >= 4:
 				SemenPuddleUp 4;
 				decrease the belly contents of M by 4;

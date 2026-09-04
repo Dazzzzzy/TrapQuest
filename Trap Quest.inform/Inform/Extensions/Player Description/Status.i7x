@@ -70,7 +70,7 @@ The player has a number called lick-count.[total cunnilingus/anilingus/foot wors
 The player has a number called blow-count.[total blowjobs from player]
 The player has a number called anal-count.[total player did butt stuff]
 The player has a number called fuck-count.[number of times the player got fucked vaginally]
-The player has a number called sports-count.[total golden showers the player received]
+The player has a number called sports-count.[total slime showers the player received]
 
 To FuckCount:
 	increase the fuck-count of the player by 1.

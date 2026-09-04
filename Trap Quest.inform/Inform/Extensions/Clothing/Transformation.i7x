@@ -234,12 +234,12 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 		now the semen-soak of C is (the semen-soak of D * the soak-limit of C) / the soak-limit of D;
 		now the milk-soak of C is (the milk-soak of D * the soak-limit of C) / the soak-limit of D;
 		now the water-soak of C is (the water-soak of D * the soak-limit of C) / the soak-limit of D;
-		now the urine-soak of C is (the urine-soak of D * the soak-limit of C) / the soak-limit of D;
+		now the slime-soak of C is (the slime-soak of D * the soak-limit of C) / the soak-limit of D;
 		if C is diaper and D is diaper:
 			now the perceived-semen-soak of C is (the perceived-semen-soak of D * the soak-limit of C) / the soak-limit of D;
 			now the perceived-milk-soak of C is (the perceived-milk-soak of D * the soak-limit of C) / the soak-limit of D;
 			now the perceived-water-soak of C is (the perceived-water-soak of D * the soak-limit of C) / the soak-limit of D;
-			now the perceived-urine-soak of C is (the perceived-urine-soak of D * the soak-limit of C) / the soak-limit of D;
+			now the perceived-slime-soak of C is (the perceived-slime-soak of D * the soak-limit of C) / the soak-limit of D;
 	now the used condoms of C is the used condoms of D;
 	add the condom history of D to the condom history of C;
 	now the empty condoms of C is the empty condoms of D;
@@ -366,6 +366,9 @@ To silently transform (D - a clothing) into (C - a clothing):
 	if the quest of C is not appropriate, compute quest of C.
 
 To compute post transformation effect of (C - a clothing):
+	if C is semen themed and the player is a september 2026 top donator and the player is getting unlucky:
+		now C is cumguzzling;
+		say "[BigNameDesc of C] has gained a new magical effect... You can sense that it is now [']cumguzzling['], and will make (almost) every drink you bring to your lips taste and feel like [semen]. [GotUnluckyFlav]";
 	if C is not cursed and C is blandness and C is cursable and the player is getting very unlucky:
 		now C is strength stealing;
 		say "[BigNameDesc of C] has gained a new magical effect... You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally. [GotUnluckyFlav]".

@@ -31,9 +31,9 @@ choice
 -1 [forgetful airhead]
 -1 [diaper lover]
 0 [inhuman pregnancy]
-0 [bonus strength points]
-0 [bonus dexterity points]
-0 [bonus intelligence points]
+0 [RETIRED - bonus strength points]
+0 [RETIRED - bonus dexterity points]
+0 [RETIRED - bonus intelligence points]
 0 [bonus strength]
 0 [bonus dexterity]
 0 [bonus intelligence]
@@ -80,7 +80,7 @@ choice
 0 [april fools content]
 1 [futanari fetish (NPCs)]
 -1 [alcohol fetish]
-0 [lady fetish (what biological sex are NPCs)]
+0 [gender preference (what biological sex are NPCs)]
 0 [incontinence protection]
 2 [inventory handicap]
 1 [fast TG - reworked into shrink TG and event TG]
@@ -130,14 +130,28 @@ To decide which number is inhuman pregnancy:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 20 of the Table of Player Options.
 
+To decide which number is bonus stat points of (BS - a number):
+	let N be 0;
+	let next-cost be 2;
+	let next-cost-step be 0;
+	while BS > 0:
+		increase N by next-cost;
+		decrease BS by 1;
+		if next-cost-step is 1:
+			increase next-cost by 1;
+			now next-cost-step is 0;
+		otherwise:
+			increase next-cost-step by 1;
+	decide on N.
+
 To decide which number is bonus strength points:
-	decide on choice in row 21 of the Table of Player Options.
+	decide on bonus stat points of bonus strength.
 
 To decide which number is bonus dexterity points:
-	decide on choice in row 22 of the Table of Player Options.
+	decide on bonus stat points of bonus dexterity.
 
 To decide which number is bonus intelligence points:
-	decide on choice in row 23 of the Table of Player Options.
+	decide on bonus stat points of bonus intelligence.
 
 To decide which number is bonus strength:
 	decide on choice in row 24 of the Table of Player Options.
@@ -174,11 +188,13 @@ To decide which number is trap fetish:
 	decide on choice in row 34 of the Table of Player Options.
 
 To decide which number is mindbreak protection:
-	decide on choice in row 35 of the Table of Player Options.
+	if choice in row 35 of the Table of Player Options <= 0, decide on 0;
+	decide on 1.
 
 To decide which number is spontaneous tattoos:
 	if tattoo-fetish is 1, decide on 1;
-	decide on choice in row 36 of the Table of Player Options.
+	if choice in row 36 of the Table of Player Options <= 0, decide on 0;
+	decide on 1.
 
 To decide which number is max belly size points:
 	if diaper quest is 1, decide on 0;
@@ -237,7 +253,7 @@ To decide which number is bondage protection:
 
 [This determines whether NPCs can be futas. But if gender preference is set to all MALE, there is no futa possible]
 To decide which number is futanari fetish:
-	if lady fetish is 2, decide on 0;
+	if andro fetish is 1, decide on 0;
 	decide on the choice in row 68 of the Table of Player Options.
 
 [
@@ -246,7 +262,7 @@ To decide which number is futanari fetish:
 2 - futanari, without balls
 ]
 This is the futanari fetish rule:
-	if lady fetish < 2 and choice in row 68 of the Table of Player Options < 2:
+	if andro fetish is 0 and choice in row 68 of the Table of Player Options < 2:
 		increase choice in row 68 of the Table of Player Options by 1;
 	otherwise:
 		now choice in row 68 of the Table of Player Options is 0.
@@ -366,7 +382,7 @@ To decide which number is positive points count:
 	if diaper lover >= 1 and diaper quest is 0, increase X by diaper points;
 	if egg laying fetish is 1, increase X by 3;
 	if weight gain fetish is 1, increase X by 3;
-	if hungry messer >= 1, increase X by 3;
+	if hungry messer >= 1, increase X by 8;
 	if inflation fetish is 1, increase X by 4;
 	if artificial enhancements fetish is 1, increase X by 2;
 	if interracial fetish is 1, increase X by 2;
@@ -426,6 +442,7 @@ To decide which number is points count:
 	decrease X by bondage protection * 2;
 	decrease X by incontinence protection * 2;
 	if background-selected is 1, decrease X by 5;
+	if diaper quest is 0 and background-pure is 1 and the player is originally male, decrease X by 9999;
 	decrease X by total-secret-cost;
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
@@ -486,7 +503,7 @@ FETISH MENU ID CHEAT SHEET
 ]
 
 fetishMenuInProgress is a number that varies.
-fetishSelection is a number that varies. [0: gender, 1: pregnancy type]
+fetishSelection is a number that varies. [0: gender, 1: pregnancy type, 2: new player; 3: pregnancy size; 4: pregnancy growth, 5: font instructions, 6: secret dq, 7: lactating silicone, 8: random benefits]
 previous menu selection is a number that varies. previous menu selection is 1.
 
 Figure of Fetish Selection Backdrop is the file "Special/Menus/FetishSelection/backdrop1.jpg".
@@ -603,26 +620,31 @@ Figure of TG_not_now is the file "Special/Menus/FetishSelection/TG_not_now.png".
 Figure of TG_this_time is the file "Special/Menus/FetishSelection/TG_this_time.png".
 Figure of Watersports is the file "Special/Menus/FetishSelection/Watersports.jpg".
 Figure of watersports_always is the file "Special/Menus/FetishSelection/watersports_always.png".
-Figure of watersports_never is the file "Special/Menus/FetishSelection/watersports_never.png".
-Figure of watersports_not_now is the file "Special/Menus/FetishSelection/watersports_not_now.png".
+[Figure of watersports_never is the file "Special/Menus/FetishSelection/watersports_never.png".]
+[Figure of watersports_not_now is the file "Special/Menus/FetishSelection/watersports_not_now.png".]
 Figure of watersports_this_time is the file "Special/Menus/FetishSelection/watersports_this_time.png".
+Figure of Slimeshooter is the file "Special/Menus/FetishSelection/slimeshooter.jpg".
+Figure of slimeshooter_always is the file "Special/Menus/FetishSelection/slimeshooter_always.jpg".
+Figure of slimeshooter_never is the file "Special/Menus/FetishSelection/slimeshooter_never.jpg".
+Figure of slimeshooter_not_now is the file "Special/Menus/FetishSelection/slimeshooter_not_now.jpg".
+Figure of slimeshooter_this_time is the file "Special/Menus/FetishSelection/slimeshooter_this_time.jpg".
 Figure of Weight Gain is the file "Special/Menus/FetishSelection/Weight Gain.jpg".
 Figure of weight_gain_always is the file "Special/Menus/FetishSelection/weight_gain_always.png".
 Figure of weight_gain_never is the file "Special/Menus/FetishSelection/weight_gain_never.png".
 Figure of weight_gain_not_now is the file "Special/Menus/FetishSelection/weight_gain_not_now.png".
 Figure of weight_gain_this_time is the file "Special/Menus/FetishSelection/weight_gain_this_time.png".
-Figure of Infamy is the file "Special/Menus/FetishSelection/Infamy.jpg".
-Figure of infamy_always is the file "Special/Menus/FetishSelection/infamy_always.png".
-Figure of infamy_never is the file "Special/Menus/FetishSelection/infamy_never.png".
-Figure of infamy_not_now is the file "Special/Menus/FetishSelection/infamy_not_now.png".
-Figure of infamy_this_time is the file "Special/Menus/FetishSelection/infamy_this_time.png".
+Figure of Infamy is the file "Special/Menus/FetishSelection/Internet Infamy.jpg".
+Figure of infamy_always is the file "Special/Menus/FetishSelection/internet_infamy_always.png".
+Figure of infamy_never is the file "Special/Menus/FetishSelection/internet_infamy_never.png".
+Figure of infamy_not_now is the file "Special/Menus/FetishSelection/internet_infamy_not_now.png".
+Figure of infamy_this_time is the file "Special/Menus/FetishSelection/internet_infamy_this_time.png".
 Figure of yes_this_time_icon is the file "Special/Menus/FetishSelection/yes_this_time_icon.png".
 Figure of yes_this_time_off_buttons is the file "Special/Menus/FetishSelection/yes_this_time_off_buttons.png".
 Figure of yes_this_time_on_buttons is the file "Special/Menus/FetishSelection/yes_this_time_on_buttons.png".
 
 To decide which number is fetishSelectionTotalOptions:
-	if the player is sexed male, decide on 15 + (3 * legacy content); [THE LAST OPTION MUST BE TG, so it's the one that gets cut off if the player chooses to start female]
-	decide on 14 + (3 * legacy content).
+	if the player is sexed male, decide on 16 + (2 * legacy content); [THE LAST OPTION MUST BE TG, so it's the one that gets cut off if the player chooses to start female]
+	decide on 15 + (2 * legacy content).
 
 To decide which number is fetishSelectionTotalButtons:
 	decide on fetishSelectionTotalOptions + 3.
@@ -662,47 +684,54 @@ To compute new fetish selection window:
 	now the position of the graphics-window is g-placeleft;
 	now the measurement of the graphics-window is default-graphics-window-measurement.
 
+[From left to right, which row in the table of player options does each GUI fetish selection correspond to?]
 To decide which number is fetishMenuRow of (X - a number):
 	let N be 0;
 	if X is 1:
-		now N is 4;
+		now N is 4;[Bukkake]
 	otherwise if X is 2:
-		now N is 5;
+		now N is 5;[Pregnancy]
 	otherwise if X is 3:
-		now N is 6;
+		now N is 6;[Lactation]
 	otherwise if X is 4:
-		now N is 8;
+		now N is 8;[Eggs]
 	otherwise if X is 5:
-		now N is 11;
+		now N is 11;[Inflation]
 	otherwise if X is 6:
-		now N is 12;
+		now N is 12;[Weight]
 	otherwise if X is 7:
-		now N is 13;
+		now N is 13;[Silicone/Enhancements]
 	otherwise if X is 8:
-		now N is 9;
+		now N is 9;[Proportions]
 	otherwise if X is 9:
-		now N is 45;
+		now N is 45;[BBC]
 	otherwise if X is 10:
-		now N is 61;
+		now N is 61;[Tentacles everywhere]
 	otherwise if X is 11:
-		now N is 83;
+		now N is 83;[Licking]
 	otherwise if X is 12:
-		now N is 53;
+		now N is 53;[condoms]
 	otherwise if X is 13:
-		now N is 70;
+		now N is 70;[Gender preference]
 	otherwise if X is 14:
-		now N is 96;
-	otherwise if legacy content is 1 and X is 15:
-		now N is 7;
+		now N is 96;[internet reputation]
+	otherwise if X is 15:
+		now N is 7;[slimeshooters]
 	otherwise if legacy content is 1 and X is 16:
 		now N is 48;
 	otherwise if legacy content is 1 and X is 17:
-		now N is 69;
+		now N is 69;[drinks]
 	otherwise:
-		now N is 10;
+		now N is 10;[TG]
 	decide on N.
 
-[For certain fetishes with multiple tiers, the numbers are all jumbled in the table, compared to what the new menu expects]
+[Tiered rows will need an extra block when rendering their buttons.]
+To decide whether fetishRow (N - a number) is tiered-row:
+	if N is 11 or N is 12 or N is 13, decide yes;[Respectively, Grossness, Condoms, Gender preference]
+	if N is 15 and legacy content is 1, decide yes;[slimeshooters]
+	decide no.
+
+[For certain fetishes with multiple tiers, the numbers are all jumbled in the table, compared to what the new menu expects.]
 To decide which number is convert-to-table (N - a number):
 	if N <= 0:
 		decide on N + 1;
@@ -723,7 +752,7 @@ To compute fetish toggle (D - a direction):
 	if N > 0:
 		if the player is not the donator and current menu selection is 13:
 			do nothing; [NPC gender is donators only]
-		otherwise if current menu selection is 11 or current menu selection is 12 or current menu selection is 13:
+		otherwise if fetishRow current menu selection is tiered-row:
 			if D is down:
 				if choice in row N of the Table of Player Options is 6:
 					now choice in row N of the Table of Player Options is 0;
@@ -808,13 +837,16 @@ To decide which figure-name is fetish menu banner:
 			decide on figure of Condoms 3;
 	otherwise if CMS is 13:
 		if the player is not the donator, decide on figure of NPC Gender Patreon;
-		if lady fetish is 0, decide on figure of NPC Gender 2;
-		if lady fetish is 1, decide on figure of NPC Gender 3;
+		if gender-preference is 0, decide on figure of NPC Gender 2;
+		if gyno fetish is 1, decide on figure of NPC Gender 3;
 		decide on figure of NPC Gender 1;
 	otherwise if CMS is 14:
 		decide on figure of Infamy;
-	otherwise if legacy content is 1 and CMS is 15:
-		decide on figure of watersports;
+	otherwise if CMS is 15:
+		let T be the choice in row 7 of the Table of Player Options;
+		if legacy content is 0, decide on figure of Slimeshooter;[the legacy lock *shouldn't* be necessary, but just in case...]
+		if legacy watersports fetish is 1, decide on figure of Watersports;
+		decide on figure of Slimeshooter;
 	otherwise if legacy content is 1 and CMS is 16:
 		if egg laying fetish is 1, decide on figure of Mythical Creatures Eggs;
 		decide on figure of Mythical Creatures;
@@ -965,7 +997,7 @@ To render full new fetish selection menu:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
 				decrease C by 2; [this function expects yes this time to come before always]
-			if X is CMS, now BTNS is 8;
+			if X is CMS, now BTNS is 8;[Display 8 buttons, not 4]
 			if C is -1:
 				now F is figure of gross_licking_1_never;
 			otherwise if C is 0:
@@ -987,7 +1019,7 @@ To render full new fetish selection menu:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
 				decrease C by 2; [this function expects yes this time to come before always]
-			if X is CMS, now BTNS is 8;
+			if X is CMS, now BTNS is 8;[Display 8 buttons, not 4]
 			if C is -1:
 				now F is figure of condoms_1_never;
 			otherwise if C is 0:
@@ -1006,10 +1038,10 @@ To render full new fetish selection menu:
 				now F is figure of condoms_3_always;
 		otherwise if X is 13:
 			if C <= 1:
-				decrease C by 1; [this function expects -1 and 0 for never / not now]
+				decrease C by 1;
 			otherwise if the remainder after dividing C by 2 is 1:
-				decrease C by 2; [this function expects yes this time to come before always]
-			if X is CMS, now BTNS is 6;
+				decrease C by 2;
+			if X is CMS, now BTNS is 6;[Display 6 buttons, not 4]
 			if C is -1 or the player is not the donator:
 				now F is figure of NPC_gender_1_never;
 			otherwise if C is 0:
@@ -1018,7 +1050,7 @@ To render full new fetish selection menu:
 				now F is figure of NPC_gender_1_this_time;
 			otherwise if C is 2:
 				now F is figure of NPC_gender_1_always;
-			otherwise if C is 3 or C is 5:
+			otherwise if C is 3:
 				now F is figure of NPC_gender_2_this_time;
 			otherwise:
 				now F is figure of NPC_gender_2_always;
@@ -1031,12 +1063,22 @@ To render full new fetish selection menu:
 				now F is figure of infamy_this_time;
 			otherwise:
 				now F is figure of infamy_always;
-		otherwise if legacy content is 1 and X is 15:
+		otherwise if X is 15:
+			if legacy content is 1:
+				if C <= 1:
+					decrease C by 1;
+				otherwise if the remainder after dividing C by 2 is 1:
+					decrease C by 2;
+				if X is CMS, now BTNS is 6;[Display 6 buttons, not 4]
 			if C is -1:
-				now F is figure of watersports_never;
+				now F is figure of slimeshooter_never;
 			otherwise if C is 0:
-				now F is figure of watersports_not_now;
-			otherwise if C is 1:
+				now F is figure of slimeshooter_not_now;
+			otherwise if C is 1 or (C is 3 and legacy content is 0):
+				now F is figure of slimeshooter_this_time;
+			otherwise if C is 2 or (C > 2 and legacy content is 0):
+				now F is figure of slimeshooter_always;
+			otherwise if C is 3:
 				now F is figure of watersports_this_time;
 			otherwise:
 				now F is figure of watersports_always;
@@ -1133,5 +1175,125 @@ To render full new fetish selection menu:
 			increase buttonX by buttonN;
 
 
+
+Figure of lactating silicone Selection Backdrop is the file "Special/Menus/lactationbackdrop1.jpg".
+
+To compute new lactating silicone selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 7;
+	let menuItems be 2;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is menuItems;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is menuItems, now previous menu selection is menuItems;
+			if current menu selection is less than menuItems, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		now choice in row 19 of the Table of Player Options is 1;
+	otherwise:
+		now choice in row 19 of the Table of Player Options is 0;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new lactating silicone selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W1 be W / 2;
+	display the image Figure of lactating silicone Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	repeat with X running from 1 to 2:
+		let X1 be 1;
+		let X2 be W1 + 1;
+		if X > 1:
+			increase X1 by W1;
+			increase X2 by W1;
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (175 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
+
+
+
+
+
+Figure of random benefits Selection Backdrop is the file "Special/Menus/randombackdrop1.jpg".
+
+To compute new random benefits selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 8;
+	let menuItems be 2;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is menuItems;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is menuItems, now previous menu selection is menuItems;
+			if current menu selection is less than menuItems, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		now quick start is 1;
+	otherwise:
+		now quick start is 0;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new random benefits selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W1 be W / 2;
+	display the image Figure of random benefits Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	repeat with X running from 1 to 2:
+		let X1 be 1;
+		let X2 be W1 + 1;
+		if X > 1:
+			increase X1 by W1;
+			increase X2 by W1;
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (330 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
 
 Fetish Settings ends here.

@@ -46,8 +46,8 @@ To SilentSquirt (L - a liquid-object) On (C - portal-pants) by (N - a number):
 				now N is (N + 1) / 2;
 				if L is semen or (L is murkwater and diaper quest is 0):
 					say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
-				otherwise if L is urine:
-					say "[variable custom style][if the urine taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the urine taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's piss, I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
+				otherwise if L is slime:
+					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
 				FaceFill L by N;
 		otherwise:
 			if thighs is unsoaked, say "[announced L] flows down to your thighs.";
@@ -160,7 +160,7 @@ To say ClothingDesc of (K - giant-teddy):
 	if K is worn:
 		if watersports fetish is 0 or diaper quest is 0, say "The battery powered fleshlight is fervently masturbating you. ";
 		if watersports fetish is 1, say "The bear also has a hidden internal mechanism that pumps anything that comes out of your [player-penis] into your mouth...";
-		otherwise say "The bear also has a hidden internal mechanism that slowly forcefeeds you warm [milk] through your mouth, and anything that comes out of your player-penis will soak into the bear's diaper. But it's already very full, so will probably leak if you wet yourself...";
+		otherwise say "The bear also has a hidden internal mechanism that slowly forcefeeds you warm [milk] through your mouth, and anything that comes out of your player-penis will soak into the bear's diaper. But it's already very full, so will probably leak if you [slimeonself]...";
 
 To say selfexamineuniquetitle of (K - giant-teddy):
 	say "giant teddy bear".
@@ -197,8 +197,8 @@ To SilentSquirt (L - a liquid-object) On (C - giant-teddy) by (N - a number):
 				now N is (N + 1) / 2;
 				if L is semen or (L is murkwater and diaper quest is 0):
 					say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
-				otherwise if L is urine:
-					say "[variable custom style][if the urine taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the urine taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's piss, I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
+				otherwise if L is slime:
+					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
 				FaceFill L by N;
 			otherwise:
 				say "[announced L] flows through into the teddy's diaper.";

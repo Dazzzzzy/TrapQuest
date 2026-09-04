@@ -138,7 +138,7 @@ mechanic-id-card is an id-card. The printed name of mechanic-id-card is "[TQlink
 Figure of mechanic-id-card is the file "Items/Collectibles/idcard1.png".
 Figure of female mechanic-id-card is the file "Items/Collectibles/idcard2.png".
 To decide which figure-name is the examine-image of (E - mechanic-id-card):
-	if lady fetish is 1, decide on figure of female mechanic-id-card;
+	if gyno fetish is 1, decide on figure of female mechanic-id-card;
 	decide on figure of mechanic-id-card.
 
 To say ExamineDesc of (B - mechanic-id-card):

@@ -191,7 +191,7 @@ To finally destroy (M - a monster):
 	remove M from play;
 	if debugmode > 1, say "[BigNameDesc of M] is now in [location of M].";
 	now the monstersetup of M is 0;
-	reset M.
+	unless M is trainee, reset M. [when a trainee leaves, we don't want them to reset to their minimum rank. This would upset the flavour when the player notices they've gone.]
 
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]
 	if M is masturbating the player, now masturbation-swimming is false;

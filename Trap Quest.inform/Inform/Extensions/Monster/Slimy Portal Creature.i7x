@@ -254,16 +254,16 @@ To compute unique early action of (M - slimy-portal-creature):
 					say "You hear a dominant-sounding voice from the other side of [NameDesc of M]![line break][speech style of X]'[one of]Well well well, look what we have here. Some silly baby's gone and got [himself of the player] caught by the slime wall[or]Ooh, the slime wall has got a new catch[stopping]. Well, as I'm here, and there's this very convenient padding right here for me to use...'[roman type][line break]";
 					now diaper-invasion-waistband is false;
 					now diaper-invasion-hold is false;
-					say "You are powerless to resist as [NameDesc of X] uses [his of X] own hand to pull the waistband of the rear of your diaper back to accept [his of X] [urine].";
+					say "You are powerless to resist as [NameDesc of X] uses [his of X] own hand to pull the waistband of the rear of your diaper back to accept [his of X] [slime].";
 					say DiaperUrinalPeeFlav of X;
 					compute diaper urinal peeing of X;
-					say "With a satisfied sigh, [NameDesc of X] zips back up.[line break][speech style of X]'Well, now I feel a lot better. And hey, if anything, you should be thanking me, baby[boy of the player]. Since that slime diaper you've got will only dissolve once it's completely soaked inside.'[roman type][line break]And with that, [NameDesc of X] leaves you alone, with the warmth of [his of X] [urine] still a lasting reminder of what [he of X] did to you against your skin.";
+					say "With a satisfied sigh, [NameDesc of X] zips back up.[line break][speech style of X]'Well, now I feel a lot better. And hey, if anything, you should be thanking me, baby[boy of the player]. Since that slime diaper you've got will only dissolve once it's completely soaked inside.'[roman type][line break]And with that, [NameDesc of X] leaves you alone, with the warmth of [his of X] [slime] still a lasting reminder of what [he of X] did to you against your skin.";
 				otherwise:
 					say "With a loud [']SLURP['], [NameDesc of M] releases you, depositing you back on the ground! It begins to shamble away.";
 					bore M;
 			otherwise:
 				if K is knickers:
-					now the urine-soak of K is 0;
+					now the slime-soak of K is 0;
 					now the milk-soak of K is 0;
 					now the semen-soak of K is 0;
 					WaterEmpty K;

@@ -333,7 +333,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the naughtiness entry is 13;
 		if watersports fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "am a disgusting piss drinking human urinal";
+			now the phrase entry is "am a disgusting [slime] drinking human [SlimeTarget]";
 			now the naughtiness entry is 14;
 		if diaper lover > 0:
 			choose a blank row in the Table of Possible Incantations;
@@ -361,7 +361,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the phrase entry is "love my wet nappies";
 			now the naughtiness entry is 10;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "pee myself for fun";
+			now the phrase entry is "[slimeonself] for fun";
 			now the naughtiness entry is 11;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "am going tinkles in my diaper";
@@ -374,7 +374,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the naughtiness entry is 14;
 			if diaper messing >= 3:
 				choose a blank row in the Table of Possible Incantations;
-				now the phrase entry is "am a pathetic poopy pottypants";
+				now the phrase entry is "am a pathetic poopy [SlimeTargetP]pants";
 				now the naughtiness entry is 13;
 				choose a blank row in the Table of Possible Incantations;
 				now the phrase entry is "love doing stinkies in my panties";
@@ -391,7 +391,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 				now the naughtiness entry is 16;
 			if diaper swapping >= 2:
 				choose a blank row in the Table of Possible Incantations;
-				now the phrase entry is "want you to piss in my padding";
+				now the phrase entry is "want you to [slime] in my padding";
 				now the naughtiness entry is 14;
 			if diaper cumrag >= 1:
 				choose a blank row in the Table of Possible Incantations;
@@ -452,7 +452,7 @@ An all later time based rule (this is the magic power spell rule):
 		say "[bold type]You now instinctively know how to [MagicSpellEffect of wand-summoning]! The magic incantation is 'I [incantation of wand-summoning]'.[SpelloutrageousnessInfo of wand-summoning][roman type][line break]".
 
 An all later time based rule (this is the magical girl spell rule):
-	if the player is not in a predicament room and the class of the player is magical girl and magic-purify is uncastable:
+	if the player is not in a predicament room and magic-purify is uncastable and (the class of the player is magical girl or (the class of the player is princess and there is a tentacle-breeder in the location of the player)):
 		now magic-purify is everywhere;
 		if inhuman pregnancy >= 2:
 			now the outrageousness of magic-purify is 6;
@@ -717,7 +717,7 @@ Report Spellcasting magic-mouthful when there is a reactive monster:
 	let L be semen;
 	if diaper quest is 1, now L is milk;
 	if lactation fetish is 1 and a random number between -1 and watersports fetish is -1, now L is milk;
-	if a random number between 0 and watersports fetish is 1, now L is urine;
+	if a random number between 0 and watersports fetish is 1, now L is slime;
 	say "[if the total volume of face is 0]Your mouth is suddenly filled to the brim with [variable L][otherwise]The magic begins to manifest [variable L] in your mouth[end if]!";
 	FaceFill L by 4.
 Definition: magic-mouthful is staller: decide yes. [Does it make all NPCs lose a turn?]
@@ -780,6 +780,49 @@ Check Spellcasting magic-purify:
 	unless T is nothing:
 		let C be the magic-cost of the noun + the magic-cost of T;
 		if the magic power of the player < C, say "You don't have enough magic power to cast that spell (you need [C])." instead.
+Report Spellcasting magic-purify:
+	let T be a random tentacle-breeder in the location of the player;
+	unless T is tentacle-breeder, now T is a random stalking mini-portal;
+	if T is nothing, now T is a random stalking wisp;
+	unless T is nothing:
+		compute MagicDrain of T;
+		MagicPurify T.
+
+magic-armour is a magic-spell. magic-armour has a number called damage-reduction. magic-armour has a number called armour-cooldown.
+To decide which number is the raw-magic-cost of (S - magic-armour):
+	decide on 4.
+Definition: magic-armour is reactive-only:
+	decide yes.
+Definition: magic-armour is fetish appropriate:
+	if the player is a september 2026 top donator, decide yes;
+	decide no.
+To say MagicSpellEffect of (S - magic-armour):
+	say "banish your clothing to the pink wardrobe in return for invisible magic 'armor' (defence buff reduced for each garment [if diaper lover > 0]except diapers [end if]this fails to banish)".
+Check Spellcasting magic-armour:
+	now the damage-reduction of magic-armour is 4;
+	repeat with C running through worn nudism-disabling clothing:
+		if C is usually autoremovable:
+			WardrobeVanish C;
+		otherwise if C is not diaper:
+			decrease the damage-reduction of magic-armour by 1;
+	if damage-reduction of magic-armour > 0, say "You can sense invisible magical armor surrounding you! The next [if damage-reduction of magic-armour is 1]normal attack[otherwise][damage-reduction of magic-armour] normal attacks[end if] against you will be blocked (this protection will also gradually fade over time).";
+	otherwise say "You're wearing too much unremovable clothing! You can tell that this had no effect.".
+
+An all time based rule (this is the magic armour cooldown rule):
+	if the damage-reduction of magic-armour > 0 and the player is not in a predicament room:
+		increase the armour-cooldown of magic-armour by time-seconds;
+		if the armour-cooldown of magic-armour > 100:
+			now the armour-cooldown of magic-armour is 0;
+			decrease the damage-reduction of magic-armour by 1;
+			if the damage-reduction of magic-armour > 0, say "Your magic armor weakens.";
+			otherwise say "Your magic armor fades away completely! [bold type]You can wear clothes again![roman type][line break]".
+
+This is the nudity for magic armor rule:
+	if wearing-target is nudism-disabling clothing and the damage-reduction of magic-armour > 0:
+		if summoning is 0 and autowear is false, say "Your invisible magic armor won't let you! You'll only be able to wear shoes, accessories and headwear until the armor has completely faded away...";
+		rule fails.
+The purity for virgins rule is listed in the global wearability rules.
+
 Report Spellcasting magic-purify:
 	let T be a random tentacle-breeder in the location of the player;
 	unless T is tentacle-breeder, now T is a random stalking mini-portal;

@@ -67,13 +67,18 @@ Definition: police-hat is pink themed:
 	decide no.
 
 To compute class outfit of (H - police-hat):
-	class summon combat-gloves;
-	class summon combat-boots;
+	if the class of the player is huffer, class summon black rubber mittens;
+	otherwise class summon combat-gloves;
+	if diaper quest is 0, class summon combat-boots;
 	class summon police uniform.
 
 To decide which number is the initial outrage of (H - police-hat):
 	if H is pinkified, decide on 4;
 	decide on 2.
+
+To decide which number is the initial cringe of (H - police-hat):
+	if H is pinkified, decide on 5;
+	decide on 1.
 
 
 
@@ -111,5 +116,6 @@ To say QuestFlav of (Q - domination-quest):
 
 To say QuestTitle of (Q - domination-quest):
 	say " (domination quest)".
+
 
 Rugged Headband ends here.

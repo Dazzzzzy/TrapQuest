@@ -101,7 +101,7 @@ Carry out fanning:
 					reset the Glulx timer;
 			otherwise:
 				if the player is not incontinent and the bladder of the player > 0:
-					say "The stinging wind squeezes you tight, forcing the air out of your lungs and the urine out of your bladder.";
+					say "The stinging wind squeezes you tight, forcing the air out of your lungs and the [slime] out of your [SlimeContainer].";
 					now delayed urination is 1;
 					try urinating;
 				otherwise:

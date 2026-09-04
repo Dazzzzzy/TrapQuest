@@ -163,7 +163,8 @@ Definition: mirror soiling is one-turn: decide no.
 To compute resolution of (X - mirror soiling):
 	let nothing-happens be 0;
 	if diaper quest is 0 and (the player is diaper focused or the player is an adult baby):
-		say "You suddenly feel your bladder [if there is a worn total protection diaper and diaper messing >= 4]and bowels [end if]fill, leaving you desperate to go!";
+		if legacy watersports mechanics is 1, say "You suddenly feel your [SlimeContainer] [if there is a worn total protection diaper and diaper messing >= 4]and bowels [end if]fill, leaving you desperate to go!";
+		otherwise say "You suddenly feel your slimeshooter fill, leaving it on the verge of bursting!";
 		now the bladder of the player is 10;
 		if there is a worn total protection diaper and diaper messing >= 3:
 			now rectum is 11;
